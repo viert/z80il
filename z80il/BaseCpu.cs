@@ -1,5 +1,22 @@
-﻿namespace Z80
+﻿using System;
+using System.Collections.Generic;
+
+namespace Z80
 {
+    public class CodesList: List<byte> {
+        public override string ToString()
+        {
+            string result = "";
+            foreach (byte code in this) {
+                if (result != "") {
+                    result += " ";
+                }
+                result += string.Format("#{0:X2}", code);
+            }
+            return result;
+        }
+    }
+
     public class Cpu
     {
         /* Code generation helpers */
@@ -220,7 +237,7 @@
             r = (byte)((r & 0x80) | ((r - 1) & 0x7f));
         }
 
-        protected byte doArithmetics(byte value, bool withCarry, bool isSub) {
+        protected byte DoArithmetics(byte value, bool withCarry, bool isSub) {
             ushort res;
             if (isSub) {
                 SetFlag(f_n);
@@ -257,17 +274,17 @@
             return (byte)(res & 0xFF);
         }
 
-        protected void DoAnd(byte value) {
+        protected void DoAND(byte value) {
             r1.a &= value;
             AdjustLogicFlag(true);
         }
 
-        protected void DoOr(byte value) {
+        protected void DoOR(byte value) {
             r1.a |= value;
             AdjustLogicFlag(false);
         }
 
-        protected void DoXor(byte value) {
+        protected void DoXOR(byte value) {
             r1.a ^= value;
             AdjustLogicFlag(false);
         }
@@ -330,6 +347,96 @@
             AdjustFlags(r1.a);
             AdjustFlagsSZP(r1.a);
         }
+
+        protected byte doCPHL() {
+            byte value = Read8(r1.hl);
+            byte res = DoArithmetics(value, false, true);
+            AdjustFlags(value);
+            return res;
+        }
+
+        protected byte doRLC(byte value, bool adjust) {
+            ValFlag(f_c, (value & 0x80) != 0);
+            value <<= 1;
+            byte cy = (byte)(GetFlag(f_c) ? 1 : 0);
+            value |= cy;
+            AdjustFlags(value);
+            ResFlag(f_h | f_n);
+            if (adjust) {
+                AdjustFlagsSZP(value);
+            }
+            return value;
+        }
+
+        protected byte doRRC(byte value, bool adjust)
+        {
+            ValFlag(f_c, (value & 0x01) != 0);
+            value >>= 1;
+            byte cy = (byte)(GetFlag(f_c) ? 0x80 : 0);
+            value |= cy;
+            AdjustFlags(value);
+            ResFlag(f_h | f_n);
+            if (adjust)
+            {
+                AdjustFlagsSZP(value);
+            }
+            return value;
+        }
+
+        protected byte doRL(byte value, bool adjust)
+        {
+            byte cy = (byte)(GetFlag(f_c) ? 1 : 0);
+            ValFlag(f_c, (value & 0x80) != 0);
+            value <<= 1;
+            value |= cy;
+            AdjustFlags(value);
+            ResFlag(f_h | f_n);
+            if (adjust)
+            {
+                AdjustFlagsSZP(value);
+            }
+            return value;
+        }
+
+        protected byte doRR(byte value, bool adjust)
+        {
+            byte cy = (byte)(GetFlag(f_c) ? 0x80 : 0);
+            ValFlag(f_c, (value & 0x01) != 0);
+            value >>= 1;
+            value |= cy;
+            AdjustFlags(value);
+            ResFlag(f_h | f_n);
+            if (adjust)
+            {
+                AdjustFlagsSZP(value);
+            }
+            return value;
+        }
+
+        protected byte doSL(byte value, bool isArithmetics) {
+            ValFlag(f_c, (value & 0x80) != 0);
+            value <<= 1;
+            if (isArithmetics) {
+                value |= 1;
+            }
+            AdjustFlags(value);
+            ResFlag(f_h | f_n);
+            AdjustFlagsSZP(value);
+            return value;
+        }
+         
+        protected byte doSR(byte value, bool isArithmetics) {
+            byte bit = (byte)(value & 0x80);
+            ValFlag(f_c, (value & 0x01) != 0);
+            value >>= 1;
+            if (isArithmetics) {
+                value |= bit;
+            }
+            AdjustFlags(value);
+            ResFlag(f_h | f_n);
+            AdjustFlagsSZP(value);
+            return value;
+        }
          
         protected void CreateTables() {
             // Creating tables
@@ -383,5 +490,91 @@
             i = 0;
         }
 
+        // Execute() executes a single CPU operation
+        public ulong Execute() {
+            ulong t = tStates;
+            byte opCode;
+            CodesList codes = new CodesList();
+            int offset = 0;
+            OpcodeTableEntry operation;
+            OpcodeTable current = opcodeTable;
+
+            while (true) {
+                opCode = Read8((ushort)(pc + offset));
+                codes.Add(opCode);
+                pc++;
+                tStates++;
+                IncR();
+
+                operation = current.entries[opCode];
+                if (operation == null) {
+                    throw new NullReferenceException(
+                        string.Format("Operation [{0}] is not implemented", 
+                                      codes));
+                }
+
+                if (operation.func != null) {
+                    pc = (ushort)(pc - offset);
+                    operation.func();
+                    break;
+                }
+                if (operation.nextTable != null) {
+                    current = operation.nextTable;
+                    offset = current.opcodeOffset;
+                    if (offset > 0) {
+                        DecR();
+                    }
+                }
+
+            }
+            return tStates - t; // total number of tStates elapsed
+        }
+
+        // Disassemble(ushort addr) disassembles a single CPU operation
+        // based at addr and puts it into result variable. Returns the addr
+        // of the next instruction
+        //
+        public ushort Disassemble(ushort addr, out string result) {
+            CodesList codes = new CodesList();
+            byte opCode = this.memory.Read8(addr++);
+            codes.Add(opCode);
+
+            OpcodeTableEntry instr = opcodeTable.entries[opCode];
+            if (instr == null)
+            {
+                result = string.Format("Error disassembling [{0}]", codes);
+                return addr;
+            }
+
+            while (instr.nextTable != null) {
+                OpcodeTable nextTable = instr.nextTable;
+                opCode = this.memory.Read8(addr++);
+                codes.Add(opCode);
+                instr = nextTable.entries[opCode];
+                if (instr == null) {
+                    result = string.Format("Error disassembling [{0}]", codes);
+                    return addr;
+                }
+            }
+
+            object[] args = new object[instr.args.Length];
+            for (int j = 0; j < instr.args.Length; j++) {
+                var argType = instr.args[j];    
+                switch (argType) {
+                    case ArgType.Byte:
+                        args[j] = Read8(addr++);
+                        break;
+                    case ArgType.Word:
+                        args[j] = Read16(addr);
+                        addr += 2;
+                        break;
+                    case ArgType.Offset:
+                        args[j] = (int)((SByte)Read8(addr++));
+                        break;
+                }
+            }
+            result = string.Format(instr.dasm, args);
+            return addr;
+        }
     }
 }
