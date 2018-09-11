@@ -30,7 +30,8 @@ namespace Z80 {
             base.CreateTables();
 
             // LD r, r'
-<#  foreach (var dst in RegisterMap) {
+<#  
+    foreach (var dst in RegisterMap) {
         foreach (var src in RegisterMap) { 
             var opCode = 0x40 | (dst.Key << 3) | src.Key;
             var srcRegName = src.Value;
@@ -39,17 +40,21 @@ namespace Z80 {
             var dasm = string.Format("ld {0}, {1}", dstRegName, srcRegName);
 #>
             opcodeTable.entries[<#= opCode #>] = new OpcodeTableEntry(<#= opFuncName #>, "<#= dasm #>", new ArgType[0]);
-<#      }
-    } #>
+<#  
+        }
+    } 
+#>
 
             // LD r, n
-<#  foreach (var dst in RegisterMap) {
+<#  
+    foreach (var dst in RegisterMap) {
         var opCode = 0x06 | (dst.Key << 3);
         var opFuncName = string.Format("ld_{0}_n", dst.Value);
         var dasm = string.Format("ld {0}, {{0}}", dst.Value);
 #>
             opcodeTable.entries[<#= opCode #>] = new OpcodeTableEntry(<#= opFuncName #>, "<#= dasm #>", new ArgType[1]{ArgType.Byte});
-<#  }
+<#  
+    }
 #>
             opcodeTableDD.entries[0x26] = new OpcodeTableEntry(ld_ixh_n, "ld ixh, {0}", new ArgType[1]{ArgType.Byte});
             opcodeTableDD.entries[0x2e] = new OpcodeTableEntry(ld_ixl_n, "ld ixl, {0}", new ArgType[1]{ArgType.Byte});
@@ -57,13 +62,18 @@ namespace Z80 {
             opcodeTableFD.entries[0x2e] = new OpcodeTableEntry(ld_iyl_n, "ld iyl, {0}", new ArgType[1]{ArgType.Byte});
         }
 
-<#  foreach (var dst in All8BitRegs) {
+<#  
+    foreach (var dst in All8BitRegs) {
         foreach (var src in All8BitRegs) { 
 #>
         protected void ld_<#= dst #>_<#= src #>() {
-<# if (dst != src) { #>
+<# 
+    if (dst != src) { 
+#>
             r1.<#= dst #> = r1.<#= src #>;
-<# } #>
+<# 
+    } 
+#>
         }
 
 <#
@@ -71,13 +81,15 @@ namespace Z80 {
 }
 #>
 
-<#  foreach (var dst in All8BitRegs) {
+<#  
+    foreach (var dst in All8BitRegs) {
 #>
         protected void ld_<#= dst #>_n() {
             r1.<#= dst #> = Read8(pc++);
         }
 
-<#  }
+<#  
+    }
 #>
 
     }
