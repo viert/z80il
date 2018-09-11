@@ -10,10 +10,11 @@ namespace Z80
         public ArgType[] args;
         public OpcodeTable nextTable;
 
-        public OpcodeTableEntry(Action f, string d, ArgType[] a) {
+        public OpcodeTableEntry(Action f, string d, ArgType[] a, OpcodeTable nt = null) {
             func = f;
             dasm = d;
             args = a;
+            nextTable = nt;
         }
 
     }

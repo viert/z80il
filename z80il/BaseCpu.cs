@@ -86,16 +86,15 @@ namespace Z80
         protected IMemory memory;
 
         // Registers
-        protected RegisterSet r1;
-        protected RegisterSet r2;
+        public RegisterSet r1;
+        public RegisterSet r2;
 
-        protected ushort pc;
-        protected ushort sp;
-        protected byte r;
-        protected byte i;
+        public ushort pc;
+        public ushort sp;
+        public byte r;
+        public byte i;
         protected int im;
         protected bool iff1, iff2;
-
 
         // Opcodes
         protected OpcodeTable opcodeTable;
@@ -107,7 +106,7 @@ namespace Z80
         protected OpcodeTable opcodeTableFDCB;
 
         // Execution
-        protected ulong tStates;
+        public ulong tStates;
         protected bool halted;
 
         // Interrupts
@@ -454,17 +453,17 @@ namespace Z80
             opcodeTableFDCB = new OpcodeTable(1);
 
             // Linking tables
-            opcodeTable.entries[0xCB].nextTable = opcodeTableCB;
-            opcodeTable.entries[0xDD].nextTable = opcodeTableDD;
-            opcodeTable.entries[0xED].nextTable = opcodeTableED;
-            opcodeTable.entries[0xFD].nextTable = opcodeTableFD;
-            opcodeTableDD.entries[0xCB].nextTable = opcodeTableDDCB;
-            opcodeTableFD.entries[0xCB].nextTable = opcodeTableFDCB;
+            opcodeTable.entries[0xCB] = new OpcodeTableEntry(null, "", null, opcodeTableCB);
+            opcodeTable.entries[0xDD] = new OpcodeTableEntry(null, "", null, opcodeTableDD);
+            opcodeTable.entries[0xED] = new OpcodeTableEntry(null, "", null, opcodeTableED);
+            opcodeTable.entries[0xFD] = new OpcodeTableEntry(null, "", null, opcodeTableFD);
+            opcodeTableDD.entries[0xCB] = new OpcodeTableEntry(null, "", null, opcodeTableDDCB);
+            opcodeTableFD.entries[0xCB] = new OpcodeTableEntry(null, "", null, opcodeTableFDCB);
 
-            opcodeTableDD.entries[0xDD].nextTable = opcodeTableDD;
-            opcodeTableFD.entries[0xDD].nextTable = opcodeTableDD;
-            opcodeTableDD.entries[0xFD].nextTable = opcodeTableFD;
-            opcodeTableFD.entries[0xFD].nextTable = opcodeTableFD;
+            opcodeTableDD.entries[0xDD] = new OpcodeTableEntry(null, "", null, opcodeTableDD);
+            opcodeTableFD.entries[0xDD] = new OpcodeTableEntry(null, "", null, opcodeTableDD);
+            opcodeTableDD.entries[0xFD] = new OpcodeTableEntry(null, "", null, opcodeTableFD);
+            opcodeTableFD.entries[0xFD] = new OpcodeTableEntry(null, "", null, opcodeTableFD);
         }
 
         // Public methods
