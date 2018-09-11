@@ -6,4 +6,15 @@
     <RootNamespace>Z80</RootNamespace>
   </PropertyGroup>
 
+  <ItemGroup>
+    <None Update="Cpu.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>Cpu.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Update="Cpu.cs">
+      <DependentUpon>Cpu.tt</DependentUpon>
+    </Compile>
+  </ItemGroup>
 </Project>

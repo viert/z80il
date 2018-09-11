@@ -17,7 +17,7 @@ namespace Z80
         }
     }
 
-    public class Cpu
+    public class BaseCpu
     {
         /* Code generation helpers */
         // Parity Bit
@@ -75,6 +75,11 @@ namespace Z80
         // Inc/Dec helpers
         protected const bool isDec_inc = false;
         protected const bool isDec_dec = false;
+
+        protected const bool isArithmeticsA = true;
+        protected const bool isArithmeticsL = false;
+        protected const bool bitStateSet = true;
+        protected const bool bitStateRes = false;
 
         /* Code generation helpers end */
 
@@ -438,7 +443,7 @@ namespace Z80
             return value;
         }
          
-        protected void CreateTables() {
+        virtual protected void CreateTables() {
             // Creating tables
             opcodeTable = new OpcodeTable();
             opcodeTableCB = new OpcodeTable();
