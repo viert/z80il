@@ -67,470 +67,470 @@ namespace Z80 {
         }
 
         protected void ld_a_b() {
-                    r1.a = r1.b;
+            r1.a = r1.b;
         }
 
         protected void ld_a_c() {
-                    r1.a = r1.c;
+            r1.a = r1.c;
         }
 
         protected void ld_a_d() {
-                    r1.a = r1.d;
+            r1.a = r1.d;
         }
 
         protected void ld_a_e() {
-                    r1.a = r1.e;
+            r1.a = r1.e;
         }
 
         protected void ld_a_h() {
-                    r1.a = r1.h;
+            r1.a = r1.h;
         }
 
         protected void ld_a_l() {
-                    r1.a = r1.l;
+            r1.a = r1.l;
         }
 
         protected void ld_a_ixh() {
-                    r1.a = r1.ixh;
+            r1.a = r1.ixh;
         }
 
         protected void ld_a_ixl() {
-                    r1.a = r1.ixl;
+            r1.a = r1.ixl;
         }
 
         protected void ld_a_iyh() {
-                    r1.a = r1.iyh;
+            r1.a = r1.iyh;
         }
 
         protected void ld_a_iyl() {
-                    r1.a = r1.iyl;
+            r1.a = r1.iyl;
         }
 
         protected void ld_b_a() {
-                    r1.b = r1.a;
+            r1.b = r1.a;
         }
 
         protected void ld_b_b() {
         }
 
         protected void ld_b_c() {
-                    r1.b = r1.c;
+            r1.b = r1.c;
         }
 
         protected void ld_b_d() {
-                    r1.b = r1.d;
+            r1.b = r1.d;
         }
 
         protected void ld_b_e() {
-                    r1.b = r1.e;
+            r1.b = r1.e;
         }
 
         protected void ld_b_h() {
-                    r1.b = r1.h;
+            r1.b = r1.h;
         }
 
         protected void ld_b_l() {
-                    r1.b = r1.l;
+            r1.b = r1.l;
         }
 
         protected void ld_b_ixh() {
-                    r1.b = r1.ixh;
+            r1.b = r1.ixh;
         }
 
         protected void ld_b_ixl() {
-                    r1.b = r1.ixl;
+            r1.b = r1.ixl;
         }
 
         protected void ld_b_iyh() {
-                    r1.b = r1.iyh;
+            r1.b = r1.iyh;
         }
 
         protected void ld_b_iyl() {
-                    r1.b = r1.iyl;
+            r1.b = r1.iyl;
         }
 
         protected void ld_c_a() {
-                    r1.c = r1.a;
+            r1.c = r1.a;
         }
 
         protected void ld_c_b() {
-                    r1.c = r1.b;
+            r1.c = r1.b;
         }
 
         protected void ld_c_c() {
         }
 
         protected void ld_c_d() {
-                    r1.c = r1.d;
+            r1.c = r1.d;
         }
 
         protected void ld_c_e() {
-                    r1.c = r1.e;
+            r1.c = r1.e;
         }
 
         protected void ld_c_h() {
-                    r1.c = r1.h;
+            r1.c = r1.h;
         }
 
         protected void ld_c_l() {
-                    r1.c = r1.l;
+            r1.c = r1.l;
         }
 
         protected void ld_c_ixh() {
-                    r1.c = r1.ixh;
+            r1.c = r1.ixh;
         }
 
         protected void ld_c_ixl() {
-                    r1.c = r1.ixl;
+            r1.c = r1.ixl;
         }
 
         protected void ld_c_iyh() {
-                    r1.c = r1.iyh;
+            r1.c = r1.iyh;
         }
 
         protected void ld_c_iyl() {
-                    r1.c = r1.iyl;
+            r1.c = r1.iyl;
         }
 
         protected void ld_d_a() {
-                    r1.d = r1.a;
+            r1.d = r1.a;
         }
 
         protected void ld_d_b() {
-                    r1.d = r1.b;
+            r1.d = r1.b;
         }
 
         protected void ld_d_c() {
-                    r1.d = r1.c;
+            r1.d = r1.c;
         }
 
         protected void ld_d_d() {
         }
 
         protected void ld_d_e() {
-                    r1.d = r1.e;
+            r1.d = r1.e;
         }
 
         protected void ld_d_h() {
-                    r1.d = r1.h;
+            r1.d = r1.h;
         }
 
         protected void ld_d_l() {
-                    r1.d = r1.l;
+            r1.d = r1.l;
         }
 
         protected void ld_d_ixh() {
-                    r1.d = r1.ixh;
+            r1.d = r1.ixh;
         }
 
         protected void ld_d_ixl() {
-                    r1.d = r1.ixl;
+            r1.d = r1.ixl;
         }
 
         protected void ld_d_iyh() {
-                    r1.d = r1.iyh;
+            r1.d = r1.iyh;
         }
 
         protected void ld_d_iyl() {
-                    r1.d = r1.iyl;
+            r1.d = r1.iyl;
         }
 
         protected void ld_e_a() {
-                    r1.e = r1.a;
+            r1.e = r1.a;
         }
 
         protected void ld_e_b() {
-                    r1.e = r1.b;
+            r1.e = r1.b;
         }
 
         protected void ld_e_c() {
-                    r1.e = r1.c;
+            r1.e = r1.c;
         }
 
         protected void ld_e_d() {
-                    r1.e = r1.d;
+            r1.e = r1.d;
         }
 
         protected void ld_e_e() {
         }
 
         protected void ld_e_h() {
-                    r1.e = r1.h;
+            r1.e = r1.h;
         }
 
         protected void ld_e_l() {
-                    r1.e = r1.l;
+            r1.e = r1.l;
         }
 
         protected void ld_e_ixh() {
-                    r1.e = r1.ixh;
+            r1.e = r1.ixh;
         }
 
         protected void ld_e_ixl() {
-                    r1.e = r1.ixl;
+            r1.e = r1.ixl;
         }
 
         protected void ld_e_iyh() {
-                    r1.e = r1.iyh;
+            r1.e = r1.iyh;
         }
 
         protected void ld_e_iyl() {
-                    r1.e = r1.iyl;
+            r1.e = r1.iyl;
         }
 
         protected void ld_h_a() {
-                    r1.h = r1.a;
+            r1.h = r1.a;
         }
 
         protected void ld_h_b() {
-                    r1.h = r1.b;
+            r1.h = r1.b;
         }
 
         protected void ld_h_c() {
-                    r1.h = r1.c;
+            r1.h = r1.c;
         }
 
         protected void ld_h_d() {
-                    r1.h = r1.d;
+            r1.h = r1.d;
         }
 
         protected void ld_h_e() {
-                    r1.h = r1.e;
+            r1.h = r1.e;
         }
 
         protected void ld_h_h() {
         }
 
         protected void ld_h_l() {
-                    r1.h = r1.l;
+            r1.h = r1.l;
         }
 
         protected void ld_h_ixh() {
-                    r1.h = r1.ixh;
+            r1.h = r1.ixh;
         }
 
         protected void ld_h_ixl() {
-                    r1.h = r1.ixl;
+            r1.h = r1.ixl;
         }
 
         protected void ld_h_iyh() {
-                    r1.h = r1.iyh;
+            r1.h = r1.iyh;
         }
 
         protected void ld_h_iyl() {
-                    r1.h = r1.iyl;
+            r1.h = r1.iyl;
         }
 
         protected void ld_l_a() {
-                    r1.l = r1.a;
+            r1.l = r1.a;
         }
 
         protected void ld_l_b() {
-                    r1.l = r1.b;
+            r1.l = r1.b;
         }
 
         protected void ld_l_c() {
-                    r1.l = r1.c;
+            r1.l = r1.c;
         }
 
         protected void ld_l_d() {
-                    r1.l = r1.d;
+            r1.l = r1.d;
         }
 
         protected void ld_l_e() {
-                    r1.l = r1.e;
+            r1.l = r1.e;
         }
 
         protected void ld_l_h() {
-                    r1.l = r1.h;
+            r1.l = r1.h;
         }
 
         protected void ld_l_l() {
         }
 
         protected void ld_l_ixh() {
-                    r1.l = r1.ixh;
+            r1.l = r1.ixh;
         }
 
         protected void ld_l_ixl() {
-                    r1.l = r1.ixl;
+            r1.l = r1.ixl;
         }
 
         protected void ld_l_iyh() {
-                    r1.l = r1.iyh;
+            r1.l = r1.iyh;
         }
 
         protected void ld_l_iyl() {
-                    r1.l = r1.iyl;
+            r1.l = r1.iyl;
         }
 
         protected void ld_ixh_a() {
-                    r1.ixh = r1.a;
+            r1.ixh = r1.a;
         }
 
         protected void ld_ixh_b() {
-                    r1.ixh = r1.b;
+            r1.ixh = r1.b;
         }
 
         protected void ld_ixh_c() {
-                    r1.ixh = r1.c;
+            r1.ixh = r1.c;
         }
 
         protected void ld_ixh_d() {
-                    r1.ixh = r1.d;
+            r1.ixh = r1.d;
         }
 
         protected void ld_ixh_e() {
-                    r1.ixh = r1.e;
+            r1.ixh = r1.e;
         }
 
         protected void ld_ixh_h() {
-                    r1.ixh = r1.h;
+            r1.ixh = r1.h;
         }
 
         protected void ld_ixh_l() {
-                    r1.ixh = r1.l;
+            r1.ixh = r1.l;
         }
 
         protected void ld_ixh_ixh() {
         }
 
         protected void ld_ixh_ixl() {
-                    r1.ixh = r1.ixl;
+            r1.ixh = r1.ixl;
         }
 
         protected void ld_ixh_iyh() {
-                    r1.ixh = r1.iyh;
+            r1.ixh = r1.iyh;
         }
 
         protected void ld_ixh_iyl() {
-                    r1.ixh = r1.iyl;
+            r1.ixh = r1.iyl;
         }
 
         protected void ld_ixl_a() {
-                    r1.ixl = r1.a;
+            r1.ixl = r1.a;
         }
 
         protected void ld_ixl_b() {
-                    r1.ixl = r1.b;
+            r1.ixl = r1.b;
         }
 
         protected void ld_ixl_c() {
-                    r1.ixl = r1.c;
+            r1.ixl = r1.c;
         }
 
         protected void ld_ixl_d() {
-                    r1.ixl = r1.d;
+            r1.ixl = r1.d;
         }
 
         protected void ld_ixl_e() {
-                    r1.ixl = r1.e;
+            r1.ixl = r1.e;
         }
 
         protected void ld_ixl_h() {
-                    r1.ixl = r1.h;
+            r1.ixl = r1.h;
         }
 
         protected void ld_ixl_l() {
-                    r1.ixl = r1.l;
+            r1.ixl = r1.l;
         }
 
         protected void ld_ixl_ixh() {
-                    r1.ixl = r1.ixh;
+            r1.ixl = r1.ixh;
         }
 
         protected void ld_ixl_ixl() {
         }
 
         protected void ld_ixl_iyh() {
-                    r1.ixl = r1.iyh;
+            r1.ixl = r1.iyh;
         }
 
         protected void ld_ixl_iyl() {
-                    r1.ixl = r1.iyl;
+            r1.ixl = r1.iyl;
         }
 
         protected void ld_iyh_a() {
-                    r1.iyh = r1.a;
+            r1.iyh = r1.a;
         }
 
         protected void ld_iyh_b() {
-                    r1.iyh = r1.b;
+            r1.iyh = r1.b;
         }
 
         protected void ld_iyh_c() {
-                    r1.iyh = r1.c;
+            r1.iyh = r1.c;
         }
 
         protected void ld_iyh_d() {
-                    r1.iyh = r1.d;
+            r1.iyh = r1.d;
         }
 
         protected void ld_iyh_e() {
-                    r1.iyh = r1.e;
+            r1.iyh = r1.e;
         }
 
         protected void ld_iyh_h() {
-                    r1.iyh = r1.h;
+            r1.iyh = r1.h;
         }
 
         protected void ld_iyh_l() {
-                    r1.iyh = r1.l;
+            r1.iyh = r1.l;
         }
 
         protected void ld_iyh_ixh() {
-                    r1.iyh = r1.ixh;
+            r1.iyh = r1.ixh;
         }
 
         protected void ld_iyh_ixl() {
-                    r1.iyh = r1.ixl;
+            r1.iyh = r1.ixl;
         }
 
         protected void ld_iyh_iyh() {
         }
 
         protected void ld_iyh_iyl() {
-                    r1.iyh = r1.iyl;
+            r1.iyh = r1.iyl;
         }
 
         protected void ld_iyl_a() {
-                    r1.iyl = r1.a;
+            r1.iyl = r1.a;
         }
 
         protected void ld_iyl_b() {
-                    r1.iyl = r1.b;
+            r1.iyl = r1.b;
         }
 
         protected void ld_iyl_c() {
-                    r1.iyl = r1.c;
+            r1.iyl = r1.c;
         }
 
         protected void ld_iyl_d() {
-                    r1.iyl = r1.d;
+            r1.iyl = r1.d;
         }
 
         protected void ld_iyl_e() {
-                    r1.iyl = r1.e;
+            r1.iyl = r1.e;
         }
 
         protected void ld_iyl_h() {
-                    r1.iyl = r1.h;
+            r1.iyl = r1.h;
         }
 
         protected void ld_iyl_l() {
-                    r1.iyl = r1.l;
+            r1.iyl = r1.l;
         }
 
         protected void ld_iyl_ixh() {
-                    r1.iyl = r1.ixh;
+            r1.iyl = r1.ixh;
         }
 
         protected void ld_iyl_ixl() {
-                    r1.iyl = r1.ixl;
+            r1.iyl = r1.ixl;
         }
 
         protected void ld_iyl_iyh() {
-                    r1.iyl = r1.iyh;
+            r1.iyl = r1.iyh;
         }
 
         protected void ld_iyl_iyl() {

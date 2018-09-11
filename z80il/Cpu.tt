@@ -47,10 +47,10 @@ namespace Z80 {
         foreach (var src in All8BitRegs) { 
 #>
         protected void ld_<#= dst #>_<#= src #>() {
-        <# if (dst != src) { #>
+<# if (dst != src) { #>
             r1.<#= dst #> = r1.<#= src #>;
-        <# } #>
-}
+<# } #>
+        }
 
 <#
         }    
