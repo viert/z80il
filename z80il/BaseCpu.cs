@@ -469,7 +469,7 @@ namespace Z80
 
         // Public methods
         // Constructor
-        public Cpu(IMemory mem)
+        public BaseCpu(IMemory mem)
         {
             memory = mem;
             CreateTables();

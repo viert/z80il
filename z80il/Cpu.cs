@@ -60,7 +60,19 @@ namespace Z80 {
             opcodeTable.entries[124] = new OpcodeTableEntry(ld_a_h, "ld a, h", new ArgType[0]);
             opcodeTable.entries[125] = new OpcodeTableEntry(ld_a_l, "ld a, l", new ArgType[0]);
             opcodeTable.entries[127] = new OpcodeTableEntry(ld_a_a, "ld a, a", new ArgType[0]);
- 
+
+            // LD r, n
+            opcodeTable.entries[6] = new OpcodeTableEntry(ld_b_n, "ld b, {0}", new ArgType[1]{ArgType.Byte});
+            opcodeTable.entries[14] = new OpcodeTableEntry(ld_c_n, "ld c, {0}", new ArgType[1]{ArgType.Byte});
+            opcodeTable.entries[22] = new OpcodeTableEntry(ld_d_n, "ld d, {0}", new ArgType[1]{ArgType.Byte});
+            opcodeTable.entries[30] = new OpcodeTableEntry(ld_e_n, "ld e, {0}", new ArgType[1]{ArgType.Byte});
+            opcodeTable.entries[38] = new OpcodeTableEntry(ld_h_n, "ld h, {0}", new ArgType[1]{ArgType.Byte});
+            opcodeTable.entries[46] = new OpcodeTableEntry(ld_l_n, "ld l, {0}", new ArgType[1]{ArgType.Byte});
+            opcodeTable.entries[62] = new OpcodeTableEntry(ld_a_n, "ld a, {0}", new ArgType[1]{ArgType.Byte});
+            opcodeTableDD.entries[0x26] = new OpcodeTableEntry(ld_ixh_n, "ld ixh, {0}", new ArgType[1]{ArgType.Byte});
+            opcodeTableDD.entries[0x2e] = new OpcodeTableEntry(ld_ixl_n, "ld ixl, {0}", new ArgType[1]{ArgType.Byte});
+            opcodeTableFD.entries[0x26] = new OpcodeTableEntry(ld_iyh_n, "ld iyh, {0}", new ArgType[1]{ArgType.Byte});
+            opcodeTableFD.entries[0x2e] = new OpcodeTableEntry(ld_iyl_n, "ld iyl, {0}", new ArgType[1]{ArgType.Byte});
         }
 
         protected void ld_a_a() {
@@ -534,6 +546,51 @@ namespace Z80 {
         }
 
         protected void ld_iyl_iyl() {
+        }
+
+
+        protected void ld_a_n() {
+            r1.a = Read8(pc++);
+        }
+
+        protected void ld_b_n() {
+            r1.b = Read8(pc++);
+        }
+
+        protected void ld_c_n() {
+            r1.c = Read8(pc++);
+        }
+
+        protected void ld_d_n() {
+            r1.d = Read8(pc++);
+        }
+
+        protected void ld_e_n() {
+            r1.e = Read8(pc++);
+        }
+
+        protected void ld_h_n() {
+            r1.h = Read8(pc++);
+        }
+
+        protected void ld_l_n() {
+            r1.l = Read8(pc++);
+        }
+
+        protected void ld_ixh_n() {
+            r1.ixh = Read8(pc++);
+        }
+
+        protected void ld_ixl_n() {
+            r1.ixl = Read8(pc++);
+        }
+
+        protected void ld_iyh_n() {
+            r1.iyh = Read8(pc++);
+        }
+
+        protected void ld_iyl_n() {
+            r1.iyl = Read8(pc++);
         }
 
 
