@@ -4,14 +4,29 @@
 <#@ import namespace="System.Text" #>
 <#@ import namespace="System.Collections.Generic" #>
 <# 
-Dictionary<int, string> RegisterMap = new Dictionary<int, string>();
-RegisterMap[0] = "b";
-RegisterMap[1] = "c";
-RegisterMap[2] = "d";
-RegisterMap[3] = "e";
-RegisterMap[4] = "h";
-RegisterMap[5] = "l";
-RegisterMap[7] = "a";
+Dictionary<int, string> RegisterMap = new Dictionary<int, string>{
+    {0, "b"},
+    {1, "c"},
+    {2, "d"},
+    {3, "e"},
+    {4, "h"},
+    {5, "l"},
+    {7, "a"},
+};
+
+Dictionary<int, string> Register16Map = new Dictionary<int, string>{
+    {0, "bc"},
+    {1, "de"},
+    {2, "hl"},
+    {3, "sp"}
+};
+
+Dictionary<int, string> Register16Map2 = new Dictionary<int, string>{
+    {0, "bc"},
+    {1, "de"},
+    {2, "hl"},
+    {3, "af"}
+};
 
 string[] All8BitRegs = new string[11] {
     "a", "b", "c", "d", "e", "h", "l", "ixh", "ixl", "iyh", "iyl"
@@ -138,6 +153,62 @@ namespace Z80 {
         }
     }
 #>
+<#
+    foreach (var iReg in Prefixes) {
+        var opFuncName = string.Format("ld__{0}_d__n", iReg.Key);
+        var dasm = string.Format("ld ({0}+{{0}}), {{1}}", iReg.Key);
+#>
+            opcodeTable.entries[<#= iReg.Value #>].nextTable.entries[0x36] =
+                new OpcodeTableEntry(<#= opFuncName #>, "<#= dasm #>", new ArgType[]{ArgType.Offset, ArgType.Byte});
+<#    
+    }
+#>
+
+<#
+    foreach (var rCode in Register16Map) {
+        var opCode = 1 | (rCode.Key << 4);
+        var opFuncName = string.Format("ld_{0}_nn", rCode.Value);
+        var dasm = string.Format("ld {0}, {{0}}", rCode.Value);
+#>
+            opcodeTable.entries[<#= opCode #>] = new OpcodeTableEntry(<#= opFuncName #>, "<#= dasm #>", new ArgType[]{ArgType.Word});
+<#
+    }
+#>
+
+<#
+    foreach (var iReg in Prefixes) {
+        var opFuncName = string.Format("ld_{0}_nn", iReg.Key);
+        var dasm = string.Format("ld {0}, {{0}}", iReg.Key);
+#>
+            opcodeTable.entries[<#= iReg.Value #>].nextTable.entries[0x21] =
+                new OpcodeTableEntry(<#= opFuncName #>, "<#= dasm #>", new ArgType[]{ArgType.Word});
+<#
+    }
+#>
+
+<#
+    foreach (var rCode in Register16Map) {
+        var opCode = 0x4B | (rCode.Key << 4);
+        var opFuncName = string.Format("ld_{0}__nn_", rCode.Value);
+        var dasm = string.Format("ld {0}, ({{0}})", rCode.Value);
+#>
+            opcodeTableED.entries[<#= opCode #>] = new OpcodeTableEntry(<#= opFuncName #>, "<#= dasm #>", new ArgType[]{ArgType.Word});
+<#
+    }
+#>
+
+            opcodeTable.entries[0x2A] = new OpcodeTableEntry(ld_hl__nn_, "ld hl, ({0})", new ArgType[]{ArgType.Word});
+<#
+    foreach (var iReg in Prefixes) {
+        var opFuncName = string.Format("ld_{0}__nn_", iReg.Key);
+        var dasm = string.Format("ld {0}, ({{0}})", iReg.Key);
+#>
+            opcodeTable.entries[<#= iReg.Value #>].nextTable.entries[0x2A] =
+                new OpcodeTableEntry(<#= opFuncName #>, "<#= dasm #>", new ArgType[]{ArgType.Word});
+<#
+    }
+#>
+
 
         }
 
@@ -261,6 +332,37 @@ namespace Z80 {
         }
     }
 #>
-    
+
+<#
+    foreach (var iReg in Prefixes) {
+#>
+        protected void ld__<#= iReg.Key #>_d__n() {
+            tStates += 2;
+            var offset = (SByte)Read8(pc++);
+            var n = Read8(pc++);
+            Write8((ushort)(r1.<#= iReg.Key #> + offset), n);
+        }
+        
+<#
+    }
+#>
+
+<#
+    foreach (var reg in new string[]{"bc", "de", "hl", "sp", "ix", "iy"}) {
+#>
+        protected void ld_<#= reg #>_nn() {
+            r1.<#= reg #> = Read16(pc);
+            pc += 2;
+        }
+        
+        protected void ld_<#= reg #>__nn_() {
+            r1.<#= reg #> = Read16(Read16(pc));
+            pc += 2;
+        }
+        
+<#
+    }
+#>
+
     }
 }

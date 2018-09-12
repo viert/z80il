@@ -166,6 +166,32 @@ namespace Z80 {
                 new OpcodeTableEntry(ld__ix_d__a, "ld (ix+{0}), a", new ArgType[]{ArgType.Offset});
             opcodeTable.entries[253].nextTable.entries[119] = 
                 new OpcodeTableEntry(ld__iy_d__a, "ld (iy+{0}), a", new ArgType[]{ArgType.Offset});
+            opcodeTable.entries[221].nextTable.entries[0x36] =
+                new OpcodeTableEntry(ld__ix_d__n, "ld (ix+{0}), {1}", new ArgType[]{ArgType.Offset, ArgType.Byte});
+            opcodeTable.entries[253].nextTable.entries[0x36] =
+                new OpcodeTableEntry(ld__iy_d__n, "ld (iy+{0}), {1}", new ArgType[]{ArgType.Offset, ArgType.Byte});
+
+            opcodeTable.entries[1] = new OpcodeTableEntry(ld_bc_nn, "ld bc, {0}", new ArgType[]{ArgType.Word});
+            opcodeTable.entries[17] = new OpcodeTableEntry(ld_de_nn, "ld de, {0}", new ArgType[]{ArgType.Word});
+            opcodeTable.entries[33] = new OpcodeTableEntry(ld_hl_nn, "ld hl, {0}", new ArgType[]{ArgType.Word});
+            opcodeTable.entries[49] = new OpcodeTableEntry(ld_sp_nn, "ld sp, {0}", new ArgType[]{ArgType.Word});
+
+            opcodeTable.entries[221].nextTable.entries[0x21] =
+                new OpcodeTableEntry(ld_ix_nn, "ld ix, {0}", new ArgType[]{ArgType.Word});
+            opcodeTable.entries[253].nextTable.entries[0x21] =
+                new OpcodeTableEntry(ld_iy_nn, "ld iy, {0}", new ArgType[]{ArgType.Word});
+
+            opcodeTableED.entries[75] = new OpcodeTableEntry(ld_bc__nn_, "ld bc, ({0})", new ArgType[]{ArgType.Word});
+            opcodeTableED.entries[91] = new OpcodeTableEntry(ld_de__nn_, "ld de, ({0})", new ArgType[]{ArgType.Word});
+            opcodeTableED.entries[107] = new OpcodeTableEntry(ld_hl__nn_, "ld hl, ({0})", new ArgType[]{ArgType.Word});
+            opcodeTableED.entries[123] = new OpcodeTableEntry(ld_sp__nn_, "ld sp, ({0})", new ArgType[]{ArgType.Word});
+
+            opcodeTable.entries[0x2A] = new OpcodeTableEntry(ld_hl__nn_, "ld hl, ({0})", new ArgType[]{ArgType.Word});
+            opcodeTable.entries[221].nextTable.entries[0x2A] =
+                new OpcodeTableEntry(ld_ix__nn_, "ld ix, ({0})", new ArgType[]{ArgType.Word});
+            opcodeTable.entries[253].nextTable.entries[0x2A] =
+                new OpcodeTableEntry(ld_iy__nn_, "ld iy, ({0})", new ArgType[]{ArgType.Word});
+
 
         }
 
@@ -972,6 +998,82 @@ namespace Z80 {
             Write8((ushort)(r1.iy + offset), r1.l);
         }
         
-    
+
+        protected void ld__ix_d__n() {
+            tStates += 2;
+            var offset = (SByte)Read8(pc++);
+            var n = Read8(pc++);
+            Write8((ushort)(r1.ix + offset), n);
+        }
+        
+        protected void ld__iy_d__n() {
+            tStates += 2;
+            var offset = (SByte)Read8(pc++);
+            var n = Read8(pc++);
+            Write8((ushort)(r1.iy + offset), n);
+        }
+        
+
+        protected void ld_bc_nn() {
+            r1.bc = Read16(pc);
+            pc += 2;
+        }
+        
+        protected void ld_bc__nn_() {
+            r1.bc = Read16(Read16(pc));
+            pc += 2;
+        }
+        
+        protected void ld_de_nn() {
+            r1.de = Read16(pc);
+            pc += 2;
+        }
+        
+        protected void ld_de__nn_() {
+            r1.de = Read16(Read16(pc));
+            pc += 2;
+        }
+        
+        protected void ld_hl_nn() {
+            r1.hl = Read16(pc);
+            pc += 2;
+        }
+        
+        protected void ld_hl__nn_() {
+            r1.hl = Read16(Read16(pc));
+            pc += 2;
+        }
+        
+        protected void ld_sp_nn() {
+            r1.sp = Read16(pc);
+            pc += 2;
+        }
+        
+        protected void ld_sp__nn_() {
+            r1.sp = Read16(Read16(pc));
+            pc += 2;
+        }
+        
+        protected void ld_ix_nn() {
+            r1.ix = Read16(pc);
+            pc += 2;
+        }
+        
+        protected void ld_ix__nn_() {
+            r1.ix = Read16(Read16(pc));
+            pc += 2;
+        }
+        
+        protected void ld_iy_nn() {
+            r1.iy = Read16(pc);
+            pc += 2;
+        }
+        
+        protected void ld_iy__nn_() {
+            r1.iy = Read16(Read16(pc));
+            pc += 2;
+        }
+        
+
     }
 }
