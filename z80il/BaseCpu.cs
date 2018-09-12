@@ -277,6 +277,50 @@ namespace Z80
             return (byte)(res & 0xFF);
         }
 
+        protected ushort DoAddWord(ushort a1, ushort a2, bool withCarry, bool isSub)
+        {
+            if (withCarry && GetFlag(f_c))
+            {
+                a2++;
+            }
+
+            int sum = a1;
+            if (isSub)
+            {
+                sum -= a2;
+                ValFlag(f_h, (((a1 & 0x0FFF) - (a2 & 0x0FFF)) & 0x1000) != 0);
+            }
+            else
+            {
+                sum += a2;
+                ValFlag(f_h, (((a1 & 0x0FFF) + (a2 & 0x0FFF)) & 0x1000) != 0);
+            }
+
+            ValFlag(f_c, (sum & 0x10000) != 0);
+
+            if (withCarry || isSub)
+            {
+                var minuedSign = a1 & 0x8000;
+                var subtrahendSign = a2 & 0x8000;
+                var resultSign = sum & 0x8000;
+                bool overflow;
+                if (isSub)
+                {
+                    overflow = minuedSign != subtrahendSign && resultSign != minuedSign;
+                }
+                else
+                {
+                    overflow = minuedSign == subtrahendSign && resultSign != minuedSign;
+                }
+                ValFlag(f_pv, overflow);
+                ValFlag(f_s, resultSign != 0);
+                ValFlag(f_z, sum == 0);
+            }
+            ValFlag(f_n, isSub);
+            AdjustFlags((byte)(sum >> 8));
+            return (ushort)sum;
+        }
+
         protected void DoAND(byte value) {
             r1.a &= value;
             AdjustLogicFlag(true);

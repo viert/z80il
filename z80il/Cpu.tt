@@ -346,6 +346,52 @@ namespace Z80 {
             opcodeTable.entries[0xD6] = new OpcodeTableEntry(sub_a_n, "sub {0}", new ArgType[]{ArgType.Byte});
             opcodeTable.entries[0xDE] = new OpcodeTableEntry(sbc_a_n, "sbc a, {0}", new ArgType[]{ArgType.Byte});
 
+			opcodeTable.entries[0x86] = new OpcodeTableEntry(add_a__hl_, "add a, (hl)", new ArgType[]{});
+			opcodeTableDD.entries[0x86] = new OpcodeTableEntry(add_a__ix_d_, "add a, (ix+{0})", new ArgType[]{ArgType.Offset});
+			opcodeTableFD.entries[0x86] = new OpcodeTableEntry(add_a__iy_d_, "add a, (iy+{0})", new ArgType[]{ArgType.Offset});
+			opcodeTable.entries[0x8E] = new OpcodeTableEntry(adc_a__hl_, "adc a, (hl)", new ArgType[]{});
+			opcodeTableDD.entries[0x8E] = new OpcodeTableEntry(adc_a__ix_d_, "adc a, (ix+{0})", new ArgType[]{ArgType.Offset});
+			opcodeTableFD.entries[0x8E] = new OpcodeTableEntry(adc_a__iy_d_, "adc a, (iy+{0})", new ArgType[]{ArgType.Offset});
+			opcodeTable.entries[0x96] = new OpcodeTableEntry(sub_a__hl_, "sub (hl)", new ArgType[]{});
+			opcodeTableDD.entries[0x96] = new OpcodeTableEntry(sub_a__ix_d_, "sub (ix+{0})", new ArgType[]{ArgType.Offset});
+			opcodeTableFD.entries[0x96] = new OpcodeTableEntry(sub_a__iy_d_, "sub (iy+{0})", new ArgType[]{ArgType.Offset});
+			opcodeTable.entries[0x9E] = new OpcodeTableEntry(sbc_a__hl_, "sbc a, (hl)", new ArgType[]{});
+			opcodeTableDD.entries[0x9E] = new OpcodeTableEntry(sbc_a__ix_d_, "sbc a, (ix+{0})", new ArgType[]{ArgType.Offset});
+			opcodeTableFD.entries[0x9E] = new OpcodeTableEntry(sbc_a__iy_d_, "sbc a, (iy+{0})", new ArgType[]{ArgType.Offset});
+
+			// ADD HL, BC/DE/HL/SP
+<#
+	foreach (var rCode in Register16Map) {
+		var opCode = 0x09 | (rCode.Key << 4);
+		var opFuncName = string.Format("add_hl_{0}", rCode.Value);
+		var dasm = string.Format("add hl, {0}", rCode.Value);
+#>
+			opcodeTable.entries[<#= opCode #>] = new OpcodeTableEntry(<#= opFuncName #>, "<#= dasm #>", new ArgType[]{});
+<#
+		opCode = 0x4A | (rCode.Key << 4);
+		opFuncName = string.Format("adc_hl_{0}", rCode.Value);
+		dasm = string.Format("adc hl, {0}", rCode.Value);
+#>
+			opcodeTableED.entries[<#= opCode #>] = new OpcodeTableEntry(<#= opFuncName #>, "<#= dasm #>", new ArgType[]{});
+<#
+		opCode = 0x42 | (rCode.Key << 4);
+		opFuncName = string.Format("sbc_hl_{0}", rCode.Value);
+		dasm = string.Format("sbc hl, {0}", rCode.Value);
+#>
+			opcodeTableED.entries[<#= opCode #>] = new OpcodeTableEntry(<#= opFuncName #>, "<#= dasm #>", new ArgType[]{});
+<#
+		foreach (var iReg in Prefixes) {
+			var sReg = rCode.Value == "hl" ? iReg.Key : rCode.Value;
+			opFuncName = string.Format("add_{0}_{1}", iReg.Key, sReg);
+			dasm = string.Format("add {0}, {1}", iReg.Key, sReg);
+#>
+			opcodeTable.entries[<#= iReg.Value #>].nextTable.entries[<#= opCode #>] = 
+				new OpcodeTableEntry(<#= opFuncName #>, "<#= dasm #>", new ArgType[]{});
+<#
+		}
+	}
+#>
+
         }
         
         protected void nop() {
@@ -672,10 +718,49 @@ namespace Z80 {
         protected void <#= cmd #>_a_n() {
             r1.a = DoArithmetics(Read8(pc++), hasCarry_<#= cmd #>, isSub_<#= cmd #>);
         }
+
+		protected void <#= cmd #>_a__hl_() {
+			r1.a = DoArithmetics(Read8(r1.hl), hasCarry_<#= cmd #>, isSub_<#= cmd #>);
+		}
 <#
+		foreach (var reg in new string[]{"ix", "iy"}) {
+#>
+		protected void <#= cmd #>_a__<#= reg #>_d_() {
+			tStates += 5;
+			var offset = (SByte)Read8(pc++);
+			r1.a = DoArithmetics(Read8((ushort)(r1.ix + offset)), hasCarry_<#= cmd #>, isSub_<#= cmd #>);
+		}
+<#
+		}
     }
 #>
 
+<#
+	foreach (var cmd in new string[]{"add", "adc", "sbc"}) {
+		foreach (var reg in new string[]{"hl", "bc", "de", "sp"}) {
+#>
+		protected void <#= cmd #>_hl_<#= reg #>() {
+			tStates += 7;
+			r1.hl = DoAddWord(r1.hl, r1.<#= reg #>,  hasCarry_<#= cmd #>, isSub_<#= cmd #>);
+		}
+
+<#
+		}
+	}
+#>
+<#
+	foreach (var reg1 in new string[]{"ix", "iy"}) {
+		foreach (var reg2 in new string[]{"ix", "iy", "bc", "de", "sp"}) {
+#>
+		protected void add_<#= reg1 #>_<#= reg2 #>() {
+			tStates += 7;
+			r1.<#= reg1 #> = DoAddWord(r1.<#= reg1 #>, r1.<#= reg2 #>,  false, false);
+		}
+
+<#
+		}
+	}
+#>
         
     }
 }
