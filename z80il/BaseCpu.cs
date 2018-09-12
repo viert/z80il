@@ -90,7 +90,6 @@ namespace Z80
         public RegisterSet r2;
 
         public ushort pc;
-        public ushort sp;
         public byte r;
         public byte i;
         protected int im;
@@ -204,13 +203,13 @@ namespace Z80
 
         /* Stack-related functions */
         protected void DoPush(ushort value) {
-            sp -= 2;
-            Write16(sp, value);
+            r1.sp -= 2;
+            Write16(r1.sp, value);
         }
 
         protected ushort DoPop() {
-            ushort value = Read16(sp);
-            sp += 2;
+            ushort value = Read16(r1.sp);
+            r1.sp += 2;
             return value;
         }
 

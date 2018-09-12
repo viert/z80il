@@ -27,7 +27,7 @@ namespace z80ilTest
             cpu.r2.hl = 0x0000;
             cpu.r1.ix = 0x0000;
             cpu.r1.iy = 0x0000;
-            cpu.sp = 0x0000;
+            cpu.r1.sp = 0x0000;
             cpu.pc = 0x0000;
             cpu.i = 0x00;
             cpu.r = 0x00;
@@ -50,7 +50,7 @@ namespace z80ilTest
             Assert.AreEqual(0x0000, cpu.r2.hl, "HL' mismatch");
             Assert.AreEqual(0x0000, cpu.r1.ix, "IX mismatch");
             Assert.AreEqual(0x0000, cpu.r1.iy, "IY mismatch");
-            Assert.AreEqual(0x0000, cpu.sp, "SP mismatch");
+            Assert.AreEqual(0x0000, cpu.r1.sp, "SP mismatch");
             Assert.AreEqual(0x0011, cpu.r, "R mismatch");
             Assert.AreEqual(0x0000, cpu.i, "I mismatch");
             Assert.AreEqual(135UL, cpu.tStates, "tStates mismatch");
@@ -69,7 +69,7 @@ namespace z80ilTest
             cpu.r2.hl = 0x0000;
             cpu.r1.ix = 0x0000;
             cpu.r1.iy = 0x0000;
-            cpu.sp = 0x0000;
+            cpu.r1.sp = 0x0000;
             cpu.pc = 0x0000;
             cpu.i = 0x00;
             cpu.r = 0x00;
@@ -91,7 +91,7 @@ namespace z80ilTest
             Assert.AreEqual(0x0000, cpu.r2.hl, "HL' mismatch");
             Assert.AreEqual(0x0000, cpu.r1.ix, "IX mismatch");
             Assert.AreEqual(0x0000, cpu.r1.iy, "IY mismatch");
-            Assert.AreEqual(0x0000, cpu.sp, "SP mismatch");
+            Assert.AreEqual(0x0000, cpu.r1.sp, "SP mismatch");
             Assert.AreEqual(0x0001, cpu.r, "R mismatch");
             Assert.AreEqual(0x0000, cpu.i, "I mismatch");
             Assert.AreEqual(10UL, cpu.tStates, "tStates mismatch");
@@ -110,7 +110,7 @@ namespace z80ilTest
             cpu.r2.hl = 0x0000;
             cpu.r1.ix = 0x0000;
             cpu.r1.iy = 0x0000;
-            cpu.sp = 0x0000;
+            cpu.r1.sp = 0x0000;
             cpu.pc = 0x0000;
             cpu.i = 0x00;
             cpu.r = 0x00;
@@ -130,7 +130,7 @@ namespace z80ilTest
             Assert.AreEqual(0x0000, cpu.r2.hl, "HL' mismatch");
             Assert.AreEqual(0x0000, cpu.r1.ix, "IX mismatch");
             Assert.AreEqual(0x0000, cpu.r1.iy, "IY mismatch");
-            Assert.AreEqual(0x0000, cpu.sp, "SP mismatch");
+            Assert.AreEqual(0x0000, cpu.r1.sp, "SP mismatch");
             Assert.AreEqual(0x0001, cpu.r, "R mismatch");
             Assert.AreEqual(0x0000, cpu.i, "I mismatch");
             Assert.AreEqual(7UL, cpu.tStates, "tStates mismatch");
@@ -149,7 +149,7 @@ namespace z80ilTest
             cpu.r2.hl = 0x0000;
             cpu.r1.ix = 0x0000;
             cpu.r1.iy = 0x0000;
-            cpu.sp = 0x0000;
+            cpu.r1.sp = 0x0000;
             cpu.pc = 0x0000;
             cpu.i = 0x00;
             cpu.r = 0x00;
@@ -169,7 +169,7 @@ namespace z80ilTest
             Assert.AreEqual(0x0000, cpu.r2.hl, "HL' mismatch");
             Assert.AreEqual(0x0000, cpu.r1.ix, "IX mismatch");
             Assert.AreEqual(0x0000, cpu.r1.iy, "IY mismatch");
-            Assert.AreEqual(0x0000, cpu.sp, "SP mismatch");
+            Assert.AreEqual(0x0000, cpu.r1.sp, "SP mismatch");
             Assert.AreEqual(0x0001, cpu.r, "R mismatch");
             Assert.AreEqual(0x0000, cpu.i, "I mismatch");
             Assert.AreEqual(6UL, cpu.tStates, "tStates mismatch");
@@ -188,7 +188,7 @@ namespace z80ilTest
             cpu.r2.hl = 0x0000;
             cpu.r1.ix = 0x0000;
             cpu.r1.iy = 0x0000;
-            cpu.sp = 0x0000;
+            cpu.r1.sp = 0x0000;
             cpu.pc = 0x0000;
             cpu.i = 0x00;
             cpu.r = 0x00;
@@ -208,7 +208,7 @@ namespace z80ilTest
             Assert.AreEqual(0x0000, cpu.r2.hl, "HL' mismatch");
             Assert.AreEqual(0x0000, cpu.r1.ix, "IX mismatch");
             Assert.AreEqual(0x0000, cpu.r1.iy, "IY mismatch");
-            Assert.AreEqual(0x0000, cpu.sp, "SP mismatch");
+            Assert.AreEqual(0x0000, cpu.r1.sp, "SP mismatch");
             Assert.AreEqual(0x0001, cpu.r, "R mismatch");
             Assert.AreEqual(0x0000, cpu.i, "I mismatch");
             Assert.AreEqual(4UL, cpu.tStates, "tStates mismatch");
@@ -227,7 +227,7 @@ namespace z80ilTest
             cpu.r2.hl = 0x0000;
             cpu.r1.ix = 0x0000;
             cpu.r1.iy = 0x0000;
-            cpu.sp = 0x0000;
+            cpu.r1.sp = 0x0000;
             cpu.pc = 0x0000;
             cpu.i = 0x00;
             cpu.r = 0x00;
@@ -247,7 +247,7 @@ namespace z80ilTest
             Assert.AreEqual(0x0000, cpu.r2.hl, "HL' mismatch");
             Assert.AreEqual(0x0000, cpu.r1.ix, "IX mismatch");
             Assert.AreEqual(0x0000, cpu.r1.iy, "IY mismatch");
-            Assert.AreEqual(0x0000, cpu.sp, "SP mismatch");
+            Assert.AreEqual(0x0000, cpu.r1.sp, "SP mismatch");
             Assert.AreEqual(0x0001, cpu.r, "R mismatch");
             Assert.AreEqual(0x0000, cpu.i, "I mismatch");
             Assert.AreEqual(4UL, cpu.tStates, "tStates mismatch");
@@ -266,7 +266,7 @@ namespace z80ilTest
             cpu.r2.hl = 0x0000;
             cpu.r1.ix = 0x0000;
             cpu.r1.iy = 0x0000;
-            cpu.sp = 0x0000;
+            cpu.r1.sp = 0x0000;
             cpu.pc = 0x0000;
             cpu.i = 0x00;
             cpu.r = 0x00;
@@ -287,7 +287,7 @@ namespace z80ilTest
             Assert.AreEqual(0x0000, cpu.r2.hl, "HL' mismatch");
             Assert.AreEqual(0x0000, cpu.r1.ix, "IX mismatch");
             Assert.AreEqual(0x0000, cpu.r1.iy, "IY mismatch");
-            Assert.AreEqual(0x0000, cpu.sp, "SP mismatch");
+            Assert.AreEqual(0x0000, cpu.r1.sp, "SP mismatch");
             Assert.AreEqual(0x0001, cpu.r, "R mismatch");
             Assert.AreEqual(0x0000, cpu.i, "I mismatch");
             Assert.AreEqual(7UL, cpu.tStates, "tStates mismatch");
@@ -306,7 +306,7 @@ namespace z80ilTest
             cpu.r2.hl = 0x0000;
             cpu.r1.ix = 0x0000;
             cpu.r1.iy = 0x0000;
-            cpu.sp = 0x0000;
+            cpu.r1.sp = 0x0000;
             cpu.pc = 0x0000;
             cpu.i = 0x00;
             cpu.r = 0x00;
@@ -326,7 +326,7 @@ namespace z80ilTest
             Assert.AreEqual(0x0000, cpu.r2.hl, "HL' mismatch");
             Assert.AreEqual(0x0000, cpu.r1.ix, "IX mismatch");
             Assert.AreEqual(0x0000, cpu.r1.iy, "IY mismatch");
-            Assert.AreEqual(0x0000, cpu.sp, "SP mismatch");
+            Assert.AreEqual(0x0000, cpu.r1.sp, "SP mismatch");
             Assert.AreEqual(0x0001, cpu.r, "R mismatch");
             Assert.AreEqual(0x0000, cpu.i, "I mismatch");
             Assert.AreEqual(4UL, cpu.tStates, "tStates mismatch");
@@ -345,7 +345,7 @@ namespace z80ilTest
             cpu.r2.hl = 0x0000;
             cpu.r1.ix = 0x0000;
             cpu.r1.iy = 0x0000;
-            cpu.sp = 0x0000;
+            cpu.r1.sp = 0x0000;
             cpu.pc = 0x0000;
             cpu.i = 0x00;
             cpu.r = 0x00;
@@ -366,7 +366,7 @@ namespace z80ilTest
             Assert.AreEqual(0x0000, cpu.r2.hl, "HL' mismatch");
             Assert.AreEqual(0x0000, cpu.r1.ix, "IX mismatch");
             Assert.AreEqual(0x0000, cpu.r1.iy, "IY mismatch");
-            Assert.AreEqual(0x0000, cpu.sp, "SP mismatch");
+            Assert.AreEqual(0x0000, cpu.r1.sp, "SP mismatch");
             Assert.AreEqual(0x0001, cpu.r, "R mismatch");
             Assert.AreEqual(0x0000, cpu.i, "I mismatch");
             Assert.AreEqual(12UL, cpu.tStates, "tStates mismatch");
@@ -385,7 +385,7 @@ namespace z80ilTest
             cpu.r2.hl = 0x0000;
             cpu.r1.ix = 0x0000;
             cpu.r1.iy = 0x0000;
-            cpu.sp = 0x0000;
+            cpu.r1.sp = 0x0000;
             cpu.pc = 0x0000;
             cpu.i = 0x00;
             cpu.r = 0x00;
@@ -405,7 +405,7 @@ namespace z80ilTest
             Assert.AreEqual(0x0000, cpu.r2.hl, "HL' mismatch");
             Assert.AreEqual(0x0000, cpu.r1.ix, "IX mismatch");
             Assert.AreEqual(0x0000, cpu.r1.iy, "IY mismatch");
-            Assert.AreEqual(0x0000, cpu.sp, "SP mismatch");
+            Assert.AreEqual(0x0000, cpu.r1.sp, "SP mismatch");
             Assert.AreEqual(0x0001, cpu.r, "R mismatch");
             Assert.AreEqual(0x0000, cpu.i, "I mismatch");
             Assert.AreEqual(11UL, cpu.tStates, "tStates mismatch");
@@ -424,7 +424,7 @@ namespace z80ilTest
             cpu.r2.hl = 0x0000;
             cpu.r1.ix = 0x0000;
             cpu.r1.iy = 0x0000;
-            cpu.sp = 0x0000;
+            cpu.r1.sp = 0x0000;
             cpu.pc = 0x0000;
             cpu.i = 0x00;
             cpu.r = 0x00;
@@ -446,7 +446,7 @@ namespace z80ilTest
             Assert.AreEqual(0x0000, cpu.r2.hl, "HL' mismatch");
             Assert.AreEqual(0x0000, cpu.r1.ix, "IX mismatch");
             Assert.AreEqual(0x0000, cpu.r1.iy, "IY mismatch");
-            Assert.AreEqual(0x0000, cpu.sp, "SP mismatch");
+            Assert.AreEqual(0x0000, cpu.r1.sp, "SP mismatch");
             Assert.AreEqual(0x0001, cpu.r, "R mismatch");
             Assert.AreEqual(0x0000, cpu.i, "I mismatch");
             Assert.AreEqual(10UL, cpu.tStates, "tStates mismatch");
@@ -465,7 +465,7 @@ namespace z80ilTest
             cpu.r2.hl = 0x0000;
             cpu.r1.ix = 0x0000;
             cpu.r1.iy = 0x0000;
-            cpu.sp = 0x0000;
+            cpu.r1.sp = 0x0000;
             cpu.pc = 0x0000;
             cpu.i = 0x00;
             cpu.r = 0x00;
@@ -487,7 +487,7 @@ namespace z80ilTest
             Assert.AreEqual(0x0000, cpu.r2.hl, "HL' mismatch");
             Assert.AreEqual(0x0000, cpu.r1.ix, "IX mismatch");
             Assert.AreEqual(0x0000, cpu.r1.iy, "IY mismatch");
-            Assert.AreEqual(0x0000, cpu.sp, "SP mismatch");
+            Assert.AreEqual(0x0000, cpu.r1.sp, "SP mismatch");
             Assert.AreEqual(0x0001, cpu.r, "R mismatch");
             Assert.AreEqual(0x0000, cpu.i, "I mismatch");
             Assert.AreEqual(16UL, cpu.tStates, "tStates mismatch");
@@ -506,7 +506,7 @@ namespace z80ilTest
             cpu.r2.hl = 0x0000;
             cpu.r1.ix = 0x0000;
             cpu.r1.iy = 0x0000;
-            cpu.sp = 0x0000;
+            cpu.r1.sp = 0x0000;
             cpu.pc = 0x0000;
             cpu.i = 0x00;
             cpu.r = 0x00;
@@ -526,7 +526,7 @@ namespace z80ilTest
             Assert.AreEqual(0x0000, cpu.r2.hl, "HL' mismatch");
             Assert.AreEqual(0x0000, cpu.r1.ix, "IX mismatch");
             Assert.AreEqual(0x0000, cpu.r1.iy, "IY mismatch");
-            Assert.AreEqual(0x0000, cpu.sp, "SP mismatch");
+            Assert.AreEqual(0x0000, cpu.r1.sp, "SP mismatch");
             Assert.AreEqual(0x0001, cpu.r, "R mismatch");
             Assert.AreEqual(0x0000, cpu.i, "I mismatch");
             Assert.AreEqual(6UL, cpu.tStates, "tStates mismatch");
@@ -545,7 +545,7 @@ namespace z80ilTest
             cpu.r2.hl = 0x0000;
             cpu.r1.ix = 0x0000;
             cpu.r1.iy = 0x0000;
-            cpu.sp = 0x0000;
+            cpu.r1.sp = 0x0000;
             cpu.pc = 0x0000;
             cpu.i = 0x00;
             cpu.r = 0x00;
@@ -565,7 +565,7 @@ namespace z80ilTest
             Assert.AreEqual(0x0000, cpu.r2.hl, "HL' mismatch");
             Assert.AreEqual(0x0000, cpu.r1.ix, "IX mismatch");
             Assert.AreEqual(0x0000, cpu.r1.iy, "IY mismatch");
-            Assert.AreEqual(0x0000, cpu.sp, "SP mismatch");
+            Assert.AreEqual(0x0000, cpu.r1.sp, "SP mismatch");
             Assert.AreEqual(0x0001, cpu.r, "R mismatch");
             Assert.AreEqual(0x0000, cpu.i, "I mismatch");
             Assert.AreEqual(4UL, cpu.tStates, "tStates mismatch");
@@ -584,7 +584,7 @@ namespace z80ilTest
             cpu.r2.hl = 0x0000;
             cpu.r1.ix = 0x0000;
             cpu.r1.iy = 0x0000;
-            cpu.sp = 0x0000;
+            cpu.r1.sp = 0x0000;
             cpu.pc = 0x0000;
             cpu.i = 0x00;
             cpu.r = 0x00;
@@ -604,7 +604,7 @@ namespace z80ilTest
             Assert.AreEqual(0x0000, cpu.r2.hl, "HL' mismatch");
             Assert.AreEqual(0x0000, cpu.r1.ix, "IX mismatch");
             Assert.AreEqual(0x0000, cpu.r1.iy, "IY mismatch");
-            Assert.AreEqual(0x0000, cpu.sp, "SP mismatch");
+            Assert.AreEqual(0x0000, cpu.r1.sp, "SP mismatch");
             Assert.AreEqual(0x0001, cpu.r, "R mismatch");
             Assert.AreEqual(0x0000, cpu.i, "I mismatch");
             Assert.AreEqual(4UL, cpu.tStates, "tStates mismatch");
@@ -623,7 +623,7 @@ namespace z80ilTest
             cpu.r2.hl = 0x0000;
             cpu.r1.ix = 0x0000;
             cpu.r1.iy = 0x0000;
-            cpu.sp = 0x0000;
+            cpu.r1.sp = 0x0000;
             cpu.pc = 0x0000;
             cpu.i = 0x00;
             cpu.r = 0x00;
@@ -644,7 +644,7 @@ namespace z80ilTest
             Assert.AreEqual(0x0000, cpu.r2.hl, "HL' mismatch");
             Assert.AreEqual(0x0000, cpu.r1.ix, "IX mismatch");
             Assert.AreEqual(0x0000, cpu.r1.iy, "IY mismatch");
-            Assert.AreEqual(0x0000, cpu.sp, "SP mismatch");
+            Assert.AreEqual(0x0000, cpu.r1.sp, "SP mismatch");
             Assert.AreEqual(0x0001, cpu.r, "R mismatch");
             Assert.AreEqual(0x0000, cpu.i, "I mismatch");
             Assert.AreEqual(7UL, cpu.tStates, "tStates mismatch");
@@ -663,7 +663,7 @@ namespace z80ilTest
             cpu.r2.hl = 0x0000;
             cpu.r1.ix = 0x0000;
             cpu.r1.iy = 0x0000;
-            cpu.sp = 0x0000;
+            cpu.r1.sp = 0x0000;
             cpu.pc = 0x0000;
             cpu.i = 0x00;
             cpu.r = 0x00;
@@ -683,7 +683,7 @@ namespace z80ilTest
             Assert.AreEqual(0x0000, cpu.r2.hl, "HL' mismatch");
             Assert.AreEqual(0x0000, cpu.r1.ix, "IX mismatch");
             Assert.AreEqual(0x0000, cpu.r1.iy, "IY mismatch");
-            Assert.AreEqual(0x0000, cpu.sp, "SP mismatch");
+            Assert.AreEqual(0x0000, cpu.r1.sp, "SP mismatch");
             Assert.AreEqual(0x0001, cpu.r, "R mismatch");
             Assert.AreEqual(0x0000, cpu.i, "I mismatch");
             Assert.AreEqual(4UL, cpu.tStates, "tStates mismatch");
@@ -702,7 +702,7 @@ namespace z80ilTest
             cpu.r2.hl = 0x0000;
             cpu.r1.ix = 0x0000;
             cpu.r1.iy = 0x0000;
-            cpu.sp = 0x0000;
+            cpu.r1.sp = 0x0000;
             cpu.pc = 0x0000;
             cpu.i = 0x00;
             cpu.r = 0x00;
@@ -722,7 +722,7 @@ namespace z80ilTest
             Assert.AreEqual(0x0000, cpu.r2.hl, "HL' mismatch");
             Assert.AreEqual(0x0000, cpu.r1.ix, "IX mismatch");
             Assert.AreEqual(0x0000, cpu.r1.iy, "IY mismatch");
-            Assert.AreEqual(0x0000, cpu.sp, "SP mismatch");
+            Assert.AreEqual(0x0000, cpu.r1.sp, "SP mismatch");
             Assert.AreEqual(0x0001, cpu.r, "R mismatch");
             Assert.AreEqual(0x0000, cpu.i, "I mismatch");
             Assert.AreEqual(11UL, cpu.tStates, "tStates mismatch");
@@ -741,7 +741,7 @@ namespace z80ilTest
             cpu.r2.hl = 0x0000;
             cpu.r1.ix = 0x0000;
             cpu.r1.iy = 0x0000;
-            cpu.sp = 0x0000;
+            cpu.r1.sp = 0x0000;
             cpu.pc = 0x0000;
             cpu.i = 0x00;
             cpu.r = 0x00;
@@ -763,7 +763,7 @@ namespace z80ilTest
             Assert.AreEqual(0x0000, cpu.r2.hl, "HL' mismatch");
             Assert.AreEqual(0x0000, cpu.r1.ix, "IX mismatch");
             Assert.AreEqual(0x0000, cpu.r1.iy, "IY mismatch");
-            Assert.AreEqual(0x61D4, cpu.sp, "SP mismatch");
+            Assert.AreEqual(0x61D4, cpu.r1.sp, "SP mismatch");
             Assert.AreEqual(0x0001, cpu.r, "R mismatch");
             Assert.AreEqual(0x0000, cpu.i, "I mismatch");
             Assert.AreEqual(10UL, cpu.tStates, "tStates mismatch");
@@ -782,7 +782,7 @@ namespace z80ilTest
             cpu.r2.hl = 0x0000;
             cpu.r1.ix = 0x0000;
             cpu.r1.iy = 0x0000;
-            cpu.sp = 0x0000;
+            cpu.r1.sp = 0x0000;
             cpu.pc = 0x0000;
             cpu.i = 0x00;
             cpu.r = 0x00;
@@ -804,7 +804,7 @@ namespace z80ilTest
             Assert.AreEqual(0x0000, cpu.r2.hl, "HL' mismatch");
             Assert.AreEqual(0x0000, cpu.r1.ix, "IX mismatch");
             Assert.AreEqual(0x0000, cpu.r1.iy, "IY mismatch");
-            Assert.AreEqual(0x0000, cpu.sp, "SP mismatch");
+            Assert.AreEqual(0x0000, cpu.r1.sp, "SP mismatch");
             Assert.AreEqual(0x0001, cpu.r, "R mismatch");
             Assert.AreEqual(0x0000, cpu.i, "I mismatch");
             Assert.AreEqual(13UL, cpu.tStates, "tStates mismatch");
@@ -823,7 +823,7 @@ namespace z80ilTest
             cpu.r2.hl = 0x0000;
             cpu.r1.ix = 0x0000;
             cpu.r1.iy = 0x0000;
-            cpu.sp = 0xA55A;
+            cpu.r1.sp = 0xA55A;
             cpu.pc = 0x0000;
             cpu.i = 0x00;
             cpu.r = 0x00;
@@ -843,7 +843,7 @@ namespace z80ilTest
             Assert.AreEqual(0x0000, cpu.r2.hl, "HL' mismatch");
             Assert.AreEqual(0x0000, cpu.r1.ix, "IX mismatch");
             Assert.AreEqual(0x0000, cpu.r1.iy, "IY mismatch");
-            Assert.AreEqual(0xA55B, cpu.sp, "SP mismatch");
+            Assert.AreEqual(0xA55B, cpu.r1.sp, "SP mismatch");
             Assert.AreEqual(0x0001, cpu.r, "R mismatch");
             Assert.AreEqual(0x0000, cpu.i, "I mismatch");
             Assert.AreEqual(6UL, cpu.tStates, "tStates mismatch");
@@ -862,7 +862,7 @@ namespace z80ilTest
             cpu.r2.hl = 0x0000;
             cpu.r1.ix = 0x0000;
             cpu.r1.iy = 0x0000;
-            cpu.sp = 0x0000;
+            cpu.r1.sp = 0x0000;
             cpu.pc = 0x0000;
             cpu.i = 0x00;
             cpu.r = 0x00;
@@ -883,7 +883,7 @@ namespace z80ilTest
             Assert.AreEqual(0x0000, cpu.r2.hl, "HL' mismatch");
             Assert.AreEqual(0x0000, cpu.r1.ix, "IX mismatch");
             Assert.AreEqual(0x0000, cpu.r1.iy, "IY mismatch");
-            Assert.AreEqual(0x0000, cpu.sp, "SP mismatch");
+            Assert.AreEqual(0x0000, cpu.r1.sp, "SP mismatch");
             Assert.AreEqual(0x0001, cpu.r, "R mismatch");
             Assert.AreEqual(0x0000, cpu.i, "I mismatch");
             Assert.AreEqual(11UL, cpu.tStates, "tStates mismatch");
@@ -902,7 +902,7 @@ namespace z80ilTest
             cpu.r2.hl = 0x0000;
             cpu.r1.ix = 0x0000;
             cpu.r1.iy = 0x0000;
-            cpu.sp = 0x0000;
+            cpu.r1.sp = 0x0000;
             cpu.pc = 0x0000;
             cpu.i = 0x00;
             cpu.r = 0x00;
@@ -923,7 +923,7 @@ namespace z80ilTest
             Assert.AreEqual(0x0000, cpu.r2.hl, "HL' mismatch");
             Assert.AreEqual(0x0000, cpu.r1.ix, "IX mismatch");
             Assert.AreEqual(0x0000, cpu.r1.iy, "IY mismatch");
-            Assert.AreEqual(0x0000, cpu.sp, "SP mismatch");
+            Assert.AreEqual(0x0000, cpu.r1.sp, "SP mismatch");
             Assert.AreEqual(0x0001, cpu.r, "R mismatch");
             Assert.AreEqual(0x0000, cpu.i, "I mismatch");
             Assert.AreEqual(11UL, cpu.tStates, "tStates mismatch");
@@ -942,7 +942,7 @@ namespace z80ilTest
             cpu.r2.hl = 0x0000;
             cpu.r1.ix = 0x0000;
             cpu.r1.iy = 0x0000;
-            cpu.sp = 0x0000;
+            cpu.r1.sp = 0x0000;
             cpu.pc = 0x0000;
             cpu.i = 0x00;
             cpu.r = 0x00;
@@ -963,7 +963,7 @@ namespace z80ilTest
             Assert.AreEqual(0x0000, cpu.r2.hl, "HL' mismatch");
             Assert.AreEqual(0x0000, cpu.r1.ix, "IX mismatch");
             Assert.AreEqual(0x0000, cpu.r1.iy, "IY mismatch");
-            Assert.AreEqual(0x0000, cpu.sp, "SP mismatch");
+            Assert.AreEqual(0x0000, cpu.r1.sp, "SP mismatch");
             Assert.AreEqual(0x0001, cpu.r, "R mismatch");
             Assert.AreEqual(0x0000, cpu.i, "I mismatch");
             Assert.AreEqual(10UL, cpu.tStates, "tStates mismatch");
@@ -982,7 +982,7 @@ namespace z80ilTest
             cpu.r2.hl = 0x0000;
             cpu.r1.ix = 0x0000;
             cpu.r1.iy = 0x0000;
-            cpu.sp = 0x0000;
+            cpu.r1.sp = 0x0000;
             cpu.pc = 0x0000;
             cpu.i = 0x00;
             cpu.r = 0x00;
@@ -1002,7 +1002,7 @@ namespace z80ilTest
             Assert.AreEqual(0x0000, cpu.r2.hl, "HL' mismatch");
             Assert.AreEqual(0x0000, cpu.r1.ix, "IX mismatch");
             Assert.AreEqual(0x0000, cpu.r1.iy, "IY mismatch");
-            Assert.AreEqual(0x0000, cpu.sp, "SP mismatch");
+            Assert.AreEqual(0x0000, cpu.r1.sp, "SP mismatch");
             Assert.AreEqual(0x0001, cpu.r, "R mismatch");
             Assert.AreEqual(0x0000, cpu.i, "I mismatch");
             Assert.AreEqual(4UL, cpu.tStates, "tStates mismatch");
@@ -1021,7 +1021,7 @@ namespace z80ilTest
             cpu.r2.hl = 0x0000;
             cpu.r1.ix = 0x0000;
             cpu.r1.iy = 0x0000;
-            cpu.sp = 0xC534;
+            cpu.r1.sp = 0xC534;
             cpu.pc = 0x0000;
             cpu.i = 0x00;
             cpu.r = 0x00;
@@ -1041,7 +1041,7 @@ namespace z80ilTest
             Assert.AreEqual(0x0000, cpu.r2.hl, "HL' mismatch");
             Assert.AreEqual(0x0000, cpu.r1.ix, "IX mismatch");
             Assert.AreEqual(0x0000, cpu.r1.iy, "IY mismatch");
-            Assert.AreEqual(0xC534, cpu.sp, "SP mismatch");
+            Assert.AreEqual(0xC534, cpu.r1.sp, "SP mismatch");
             Assert.AreEqual(0x0001, cpu.r, "R mismatch");
             Assert.AreEqual(0x0000, cpu.i, "I mismatch");
             Assert.AreEqual(11UL, cpu.tStates, "tStates mismatch");
@@ -1060,7 +1060,7 @@ namespace z80ilTest
             cpu.r2.hl = 0x0000;
             cpu.r1.ix = 0x0000;
             cpu.r1.iy = 0x0000;
-            cpu.sp = 0x0000;
+            cpu.r1.sp = 0x0000;
             cpu.pc = 0x0000;
             cpu.i = 0x00;
             cpu.r = 0x00;
@@ -1081,7 +1081,7 @@ namespace z80ilTest
             Assert.AreEqual(0x0000, cpu.r2.hl, "HL' mismatch");
             Assert.AreEqual(0x0000, cpu.r1.ix, "IX mismatch");
             Assert.AreEqual(0x0000, cpu.r1.iy, "IY mismatch");
-            Assert.AreEqual(0x0000, cpu.sp, "SP mismatch");
+            Assert.AreEqual(0x0000, cpu.r1.sp, "SP mismatch");
             Assert.AreEqual(0x0001, cpu.r, "R mismatch");
             Assert.AreEqual(0x0000, cpu.i, "I mismatch");
             Assert.AreEqual(4UL, cpu.tStates, "tStates mismatch");
@@ -1100,7 +1100,7 @@ namespace z80ilTest
             cpu.r2.hl = 0x0000;
             cpu.r1.ix = 0x0000;
             cpu.r1.iy = 0x0000;
-            cpu.sp = 0x0000;
+            cpu.r1.sp = 0x0000;
             cpu.pc = 0x0000;
             cpu.i = 0x00;
             cpu.r = 0x00;
@@ -1121,7 +1121,7 @@ namespace z80ilTest
             Assert.AreEqual(0x0000, cpu.r2.hl, "HL' mismatch");
             Assert.AreEqual(0x0000, cpu.r1.ix, "IX mismatch");
             Assert.AreEqual(0x0000, cpu.r1.iy, "IY mismatch");
-            Assert.AreEqual(0x0000, cpu.sp, "SP mismatch");
+            Assert.AreEqual(0x0000, cpu.r1.sp, "SP mismatch");
             Assert.AreEqual(0x0001, cpu.r, "R mismatch");
             Assert.AreEqual(0x0000, cpu.i, "I mismatch");
             Assert.AreEqual(4UL, cpu.tStates, "tStates mismatch");
@@ -1140,7 +1140,7 @@ namespace z80ilTest
             cpu.r2.hl = 0x0000;
             cpu.r1.ix = 0x0000;
             cpu.r1.iy = 0x0000;
-            cpu.sp = 0x0000;
+            cpu.r1.sp = 0x0000;
             cpu.pc = 0x0000;
             cpu.i = 0x00;
             cpu.r = 0x00;
@@ -1161,7 +1161,7 @@ namespace z80ilTest
             Assert.AreEqual(0x0000, cpu.r2.hl, "HL' mismatch");
             Assert.AreEqual(0x0000, cpu.r1.ix, "IX mismatch");
             Assert.AreEqual(0x0000, cpu.r1.iy, "IY mismatch");
-            Assert.AreEqual(0x0000, cpu.sp, "SP mismatch");
+            Assert.AreEqual(0x0000, cpu.r1.sp, "SP mismatch");
             Assert.AreEqual(0x0001, cpu.r, "R mismatch");
             Assert.AreEqual(0x0000, cpu.i, "I mismatch");
             Assert.AreEqual(4UL, cpu.tStates, "tStates mismatch");
@@ -1180,7 +1180,7 @@ namespace z80ilTest
             cpu.r2.hl = 0x0000;
             cpu.r1.ix = 0x0000;
             cpu.r1.iy = 0x0000;
-            cpu.sp = 0x0000;
+            cpu.r1.sp = 0x0000;
             cpu.pc = 0x0000;
             cpu.i = 0x00;
             cpu.r = 0x00;
@@ -1201,7 +1201,7 @@ namespace z80ilTest
             Assert.AreEqual(0x0000, cpu.r2.hl, "HL' mismatch");
             Assert.AreEqual(0x0000, cpu.r1.ix, "IX mismatch");
             Assert.AreEqual(0x0000, cpu.r1.iy, "IY mismatch");
-            Assert.AreEqual(0x0000, cpu.sp, "SP mismatch");
+            Assert.AreEqual(0x0000, cpu.r1.sp, "SP mismatch");
             Assert.AreEqual(0x0001, cpu.r, "R mismatch");
             Assert.AreEqual(0x0000, cpu.i, "I mismatch");
             Assert.AreEqual(4UL, cpu.tStates, "tStates mismatch");
@@ -1220,7 +1220,7 @@ namespace z80ilTest
             cpu.r2.hl = 0x0000;
             cpu.r1.ix = 0x0000;
             cpu.r1.iy = 0x0000;
-            cpu.sp = 0x0000;
+            cpu.r1.sp = 0x0000;
             cpu.pc = 0x0000;
             cpu.i = 0x00;
             cpu.r = 0x00;
@@ -1241,7 +1241,7 @@ namespace z80ilTest
             Assert.AreEqual(0x0000, cpu.r2.hl, "HL' mismatch");
             Assert.AreEqual(0x0000, cpu.r1.ix, "IX mismatch");
             Assert.AreEqual(0x0000, cpu.r1.iy, "IY mismatch");
-            Assert.AreEqual(0x0000, cpu.sp, "SP mismatch");
+            Assert.AreEqual(0x0000, cpu.r1.sp, "SP mismatch");
             Assert.AreEqual(0x0001, cpu.r, "R mismatch");
             Assert.AreEqual(0x0000, cpu.i, "I mismatch");
             Assert.AreEqual(4UL, cpu.tStates, "tStates mismatch");
@@ -1260,7 +1260,7 @@ namespace z80ilTest
             cpu.r2.hl = 0x0000;
             cpu.r1.ix = 0x0000;
             cpu.r1.iy = 0x0000;
-            cpu.sp = 0x0000;
+            cpu.r1.sp = 0x0000;
             cpu.pc = 0x0000;
             cpu.i = 0x00;
             cpu.r = 0x00;
@@ -1281,7 +1281,7 @@ namespace z80ilTest
             Assert.AreEqual(0x0000, cpu.r2.hl, "HL' mismatch");
             Assert.AreEqual(0x0000, cpu.r1.ix, "IX mismatch");
             Assert.AreEqual(0x0000, cpu.r1.iy, "IY mismatch");
-            Assert.AreEqual(0x0000, cpu.sp, "SP mismatch");
+            Assert.AreEqual(0x0000, cpu.r1.sp, "SP mismatch");
             Assert.AreEqual(0x0001, cpu.r, "R mismatch");
             Assert.AreEqual(0x0000, cpu.i, "I mismatch");
             Assert.AreEqual(4UL, cpu.tStates, "tStates mismatch");
@@ -1300,7 +1300,7 @@ namespace z80ilTest
             cpu.r2.hl = 0x0000;
             cpu.r1.ix = 0x0000;
             cpu.r1.iy = 0x0000;
-            cpu.sp = 0x0000;
+            cpu.r1.sp = 0x0000;
             cpu.pc = 0x0000;
             cpu.i = 0x00;
             cpu.r = 0x00;
@@ -1321,7 +1321,7 @@ namespace z80ilTest
             Assert.AreEqual(0x0000, cpu.r2.hl, "HL' mismatch");
             Assert.AreEqual(0x0000, cpu.r1.ix, "IX mismatch");
             Assert.AreEqual(0x0000, cpu.r1.iy, "IY mismatch");
-            Assert.AreEqual(0x0000, cpu.sp, "SP mismatch");
+            Assert.AreEqual(0x0000, cpu.r1.sp, "SP mismatch");
             Assert.AreEqual(0x0001, cpu.r, "R mismatch");
             Assert.AreEqual(0x0000, cpu.i, "I mismatch");
             Assert.AreEqual(7UL, cpu.tStates, "tStates mismatch");
@@ -1340,7 +1340,7 @@ namespace z80ilTest
             cpu.r2.hl = 0x0000;
             cpu.r1.ix = 0x0000;
             cpu.r1.iy = 0x0000;
-            cpu.sp = 0x0000;
+            cpu.r1.sp = 0x0000;
             cpu.pc = 0x0000;
             cpu.i = 0x00;
             cpu.r = 0x00;
@@ -1361,7 +1361,7 @@ namespace z80ilTest
             Assert.AreEqual(0x0000, cpu.r2.hl, "HL' mismatch");
             Assert.AreEqual(0x0000, cpu.r1.ix, "IX mismatch");
             Assert.AreEqual(0x0000, cpu.r1.iy, "IY mismatch");
-            Assert.AreEqual(0x0000, cpu.sp, "SP mismatch");
+            Assert.AreEqual(0x0000, cpu.r1.sp, "SP mismatch");
             Assert.AreEqual(0x0001, cpu.r, "R mismatch");
             Assert.AreEqual(0x0000, cpu.i, "I mismatch");
             Assert.AreEqual(4UL, cpu.tStates, "tStates mismatch");
@@ -1380,7 +1380,7 @@ namespace z80ilTest
             cpu.r2.hl = 0x0000;
             cpu.r1.ix = 0x0000;
             cpu.r1.iy = 0x0000;
-            cpu.sp = 0x0000;
+            cpu.r1.sp = 0x0000;
             cpu.pc = 0x0000;
             cpu.i = 0x00;
             cpu.r = 0x00;
@@ -1401,7 +1401,7 @@ namespace z80ilTest
             Assert.AreEqual(0x0000, cpu.r2.hl, "HL' mismatch");
             Assert.AreEqual(0x0000, cpu.r1.ix, "IX mismatch");
             Assert.AreEqual(0x0000, cpu.r1.iy, "IY mismatch");
-            Assert.AreEqual(0x0000, cpu.sp, "SP mismatch");
+            Assert.AreEqual(0x0000, cpu.r1.sp, "SP mismatch");
             Assert.AreEqual(0x0001, cpu.r, "R mismatch");
             Assert.AreEqual(0x0000, cpu.i, "I mismatch");
             Assert.AreEqual(4UL, cpu.tStates, "tStates mismatch");
@@ -1420,7 +1420,7 @@ namespace z80ilTest
             cpu.r2.hl = 0x0000;
             cpu.r1.ix = 0x0000;
             cpu.r1.iy = 0x0000;
-            cpu.sp = 0x0000;
+            cpu.r1.sp = 0x0000;
             cpu.pc = 0x0000;
             cpu.i = 0x00;
             cpu.r = 0x00;
@@ -1441,7 +1441,7 @@ namespace z80ilTest
             Assert.AreEqual(0x0000, cpu.r2.hl, "HL' mismatch");
             Assert.AreEqual(0x0000, cpu.r1.ix, "IX mismatch");
             Assert.AreEqual(0x0000, cpu.r1.iy, "IY mismatch");
-            Assert.AreEqual(0x0000, cpu.sp, "SP mismatch");
+            Assert.AreEqual(0x0000, cpu.r1.sp, "SP mismatch");
             Assert.AreEqual(0x0001, cpu.r, "R mismatch");
             Assert.AreEqual(0x0000, cpu.i, "I mismatch");
             Assert.AreEqual(4UL, cpu.tStates, "tStates mismatch");
@@ -1460,7 +1460,7 @@ namespace z80ilTest
             cpu.r2.hl = 0x0000;
             cpu.r1.ix = 0x0000;
             cpu.r1.iy = 0x0000;
-            cpu.sp = 0x0000;
+            cpu.r1.sp = 0x0000;
             cpu.pc = 0x0000;
             cpu.i = 0x00;
             cpu.r = 0x00;
@@ -1481,7 +1481,7 @@ namespace z80ilTest
             Assert.AreEqual(0x0000, cpu.r2.hl, "HL' mismatch");
             Assert.AreEqual(0x0000, cpu.r1.ix, "IX mismatch");
             Assert.AreEqual(0x0000, cpu.r1.iy, "IY mismatch");
-            Assert.AreEqual(0x0000, cpu.sp, "SP mismatch");
+            Assert.AreEqual(0x0000, cpu.r1.sp, "SP mismatch");
             Assert.AreEqual(0x0001, cpu.r, "R mismatch");
             Assert.AreEqual(0x0000, cpu.i, "I mismatch");
             Assert.AreEqual(4UL, cpu.tStates, "tStates mismatch");
@@ -1500,7 +1500,7 @@ namespace z80ilTest
             cpu.r2.hl = 0x0000;
             cpu.r1.ix = 0x0000;
             cpu.r1.iy = 0x0000;
-            cpu.sp = 0x0000;
+            cpu.r1.sp = 0x0000;
             cpu.pc = 0x0000;
             cpu.i = 0x00;
             cpu.r = 0x00;
@@ -1521,7 +1521,7 @@ namespace z80ilTest
             Assert.AreEqual(0x0000, cpu.r2.hl, "HL' mismatch");
             Assert.AreEqual(0x0000, cpu.r1.ix, "IX mismatch");
             Assert.AreEqual(0x0000, cpu.r1.iy, "IY mismatch");
-            Assert.AreEqual(0x0000, cpu.sp, "SP mismatch");
+            Assert.AreEqual(0x0000, cpu.r1.sp, "SP mismatch");
             Assert.AreEqual(0x0001, cpu.r, "R mismatch");
             Assert.AreEqual(0x0000, cpu.i, "I mismatch");
             Assert.AreEqual(4UL, cpu.tStates, "tStates mismatch");
@@ -1540,7 +1540,7 @@ namespace z80ilTest
             cpu.r2.hl = 0x0000;
             cpu.r1.ix = 0x0000;
             cpu.r1.iy = 0x0000;
-            cpu.sp = 0x0000;
+            cpu.r1.sp = 0x0000;
             cpu.pc = 0x0000;
             cpu.i = 0x00;
             cpu.r = 0x00;
@@ -1561,7 +1561,7 @@ namespace z80ilTest
             Assert.AreEqual(0x0000, cpu.r2.hl, "HL' mismatch");
             Assert.AreEqual(0x0000, cpu.r1.ix, "IX mismatch");
             Assert.AreEqual(0x0000, cpu.r1.iy, "IY mismatch");
-            Assert.AreEqual(0x0000, cpu.sp, "SP mismatch");
+            Assert.AreEqual(0x0000, cpu.r1.sp, "SP mismatch");
             Assert.AreEqual(0x0001, cpu.r, "R mismatch");
             Assert.AreEqual(0x0000, cpu.i, "I mismatch");
             Assert.AreEqual(4UL, cpu.tStates, "tStates mismatch");
@@ -1580,7 +1580,7 @@ namespace z80ilTest
             cpu.r2.hl = 0x0000;
             cpu.r1.ix = 0x0000;
             cpu.r1.iy = 0x0000;
-            cpu.sp = 0x0000;
+            cpu.r1.sp = 0x0000;
             cpu.pc = 0x0000;
             cpu.i = 0x00;
             cpu.r = 0x00;
@@ -1601,7 +1601,7 @@ namespace z80ilTest
             Assert.AreEqual(0x0000, cpu.r2.hl, "HL' mismatch");
             Assert.AreEqual(0x0000, cpu.r1.ix, "IX mismatch");
             Assert.AreEqual(0x0000, cpu.r1.iy, "IY mismatch");
-            Assert.AreEqual(0x0000, cpu.sp, "SP mismatch");
+            Assert.AreEqual(0x0000, cpu.r1.sp, "SP mismatch");
             Assert.AreEqual(0x0001, cpu.r, "R mismatch");
             Assert.AreEqual(0x0000, cpu.i, "I mismatch");
             Assert.AreEqual(4UL, cpu.tStates, "tStates mismatch");
@@ -1620,7 +1620,7 @@ namespace z80ilTest
             cpu.r2.hl = 0x0000;
             cpu.r1.ix = 0x0000;
             cpu.r1.iy = 0x0000;
-            cpu.sp = 0x0000;
+            cpu.r1.sp = 0x0000;
             cpu.pc = 0x0000;
             cpu.i = 0x00;
             cpu.r = 0x00;
@@ -1641,7 +1641,7 @@ namespace z80ilTest
             Assert.AreEqual(0x0000, cpu.r2.hl, "HL' mismatch");
             Assert.AreEqual(0x0000, cpu.r1.ix, "IX mismatch");
             Assert.AreEqual(0x0000, cpu.r1.iy, "IY mismatch");
-            Assert.AreEqual(0x0000, cpu.sp, "SP mismatch");
+            Assert.AreEqual(0x0000, cpu.r1.sp, "SP mismatch");
             Assert.AreEqual(0x0001, cpu.r, "R mismatch");
             Assert.AreEqual(0x0000, cpu.i, "I mismatch");
             Assert.AreEqual(4UL, cpu.tStates, "tStates mismatch");
@@ -1660,7 +1660,7 @@ namespace z80ilTest
             cpu.r2.hl = 0x0000;
             cpu.r1.ix = 0x0000;
             cpu.r1.iy = 0x0000;
-            cpu.sp = 0x0000;
+            cpu.r1.sp = 0x0000;
             cpu.pc = 0x0000;
             cpu.i = 0x00;
             cpu.r = 0x00;
@@ -1681,7 +1681,7 @@ namespace z80ilTest
             Assert.AreEqual(0x0000, cpu.r2.hl, "HL' mismatch");
             Assert.AreEqual(0x0000, cpu.r1.ix, "IX mismatch");
             Assert.AreEqual(0x0000, cpu.r1.iy, "IY mismatch");
-            Assert.AreEqual(0x0000, cpu.sp, "SP mismatch");
+            Assert.AreEqual(0x0000, cpu.r1.sp, "SP mismatch");
             Assert.AreEqual(0x0001, cpu.r, "R mismatch");
             Assert.AreEqual(0x0000, cpu.i, "I mismatch");
             Assert.AreEqual(4UL, cpu.tStates, "tStates mismatch");
@@ -1700,7 +1700,7 @@ namespace z80ilTest
             cpu.r2.hl = 0x0000;
             cpu.r1.ix = 0x0000;
             cpu.r1.iy = 0x0000;
-            cpu.sp = 0x0000;
+            cpu.r1.sp = 0x0000;
             cpu.pc = 0x0000;
             cpu.i = 0x00;
             cpu.r = 0x00;
@@ -1721,7 +1721,7 @@ namespace z80ilTest
             Assert.AreEqual(0x0000, cpu.r2.hl, "HL' mismatch");
             Assert.AreEqual(0x0000, cpu.r1.ix, "IX mismatch");
             Assert.AreEqual(0x0000, cpu.r1.iy, "IY mismatch");
-            Assert.AreEqual(0x0000, cpu.sp, "SP mismatch");
+            Assert.AreEqual(0x0000, cpu.r1.sp, "SP mismatch");
             Assert.AreEqual(0x0001, cpu.r, "R mismatch");
             Assert.AreEqual(0x0000, cpu.i, "I mismatch");
             Assert.AreEqual(7UL, cpu.tStates, "tStates mismatch");
@@ -1740,7 +1740,7 @@ namespace z80ilTest
             cpu.r2.hl = 0x0000;
             cpu.r1.ix = 0x0000;
             cpu.r1.iy = 0x0000;
-            cpu.sp = 0x0000;
+            cpu.r1.sp = 0x0000;
             cpu.pc = 0x0000;
             cpu.i = 0x00;
             cpu.r = 0x00;
@@ -1761,7 +1761,7 @@ namespace z80ilTest
             Assert.AreEqual(0x0000, cpu.r2.hl, "HL' mismatch");
             Assert.AreEqual(0x0000, cpu.r1.ix, "IX mismatch");
             Assert.AreEqual(0x0000, cpu.r1.iy, "IY mismatch");
-            Assert.AreEqual(0x0000, cpu.sp, "SP mismatch");
+            Assert.AreEqual(0x0000, cpu.r1.sp, "SP mismatch");
             Assert.AreEqual(0x0001, cpu.r, "R mismatch");
             Assert.AreEqual(0x0000, cpu.i, "I mismatch");
             Assert.AreEqual(4UL, cpu.tStates, "tStates mismatch");
@@ -1780,7 +1780,7 @@ namespace z80ilTest
             cpu.r2.hl = 0x0000;
             cpu.r1.ix = 0x0000;
             cpu.r1.iy = 0x0000;
-            cpu.sp = 0x0000;
+            cpu.r1.sp = 0x0000;
             cpu.pc = 0x0000;
             cpu.i = 0x00;
             cpu.r = 0x00;
@@ -1801,7 +1801,7 @@ namespace z80ilTest
             Assert.AreEqual(0x0000, cpu.r2.hl, "HL' mismatch");
             Assert.AreEqual(0x0000, cpu.r1.ix, "IX mismatch");
             Assert.AreEqual(0x0000, cpu.r1.iy, "IY mismatch");
-            Assert.AreEqual(0x0000, cpu.sp, "SP mismatch");
+            Assert.AreEqual(0x0000, cpu.r1.sp, "SP mismatch");
             Assert.AreEqual(0x0001, cpu.r, "R mismatch");
             Assert.AreEqual(0x0000, cpu.i, "I mismatch");
             Assert.AreEqual(4UL, cpu.tStates, "tStates mismatch");
@@ -1820,7 +1820,7 @@ namespace z80ilTest
             cpu.r2.hl = 0x0000;
             cpu.r1.ix = 0x0000;
             cpu.r1.iy = 0x0000;
-            cpu.sp = 0x0000;
+            cpu.r1.sp = 0x0000;
             cpu.pc = 0x0000;
             cpu.i = 0x00;
             cpu.r = 0x00;
@@ -1841,7 +1841,7 @@ namespace z80ilTest
             Assert.AreEqual(0x0000, cpu.r2.hl, "HL' mismatch");
             Assert.AreEqual(0x0000, cpu.r1.ix, "IX mismatch");
             Assert.AreEqual(0x0000, cpu.r1.iy, "IY mismatch");
-            Assert.AreEqual(0x0000, cpu.sp, "SP mismatch");
+            Assert.AreEqual(0x0000, cpu.r1.sp, "SP mismatch");
             Assert.AreEqual(0x0001, cpu.r, "R mismatch");
             Assert.AreEqual(0x0000, cpu.i, "I mismatch");
             Assert.AreEqual(4UL, cpu.tStates, "tStates mismatch");
@@ -1860,7 +1860,7 @@ namespace z80ilTest
             cpu.r2.hl = 0x0000;
             cpu.r1.ix = 0x0000;
             cpu.r1.iy = 0x0000;
-            cpu.sp = 0x0000;
+            cpu.r1.sp = 0x0000;
             cpu.pc = 0x0000;
             cpu.i = 0x00;
             cpu.r = 0x00;
@@ -1881,7 +1881,7 @@ namespace z80ilTest
             Assert.AreEqual(0x0000, cpu.r2.hl, "HL' mismatch");
             Assert.AreEqual(0x0000, cpu.r1.ix, "IX mismatch");
             Assert.AreEqual(0x0000, cpu.r1.iy, "IY mismatch");
-            Assert.AreEqual(0x0000, cpu.sp, "SP mismatch");
+            Assert.AreEqual(0x0000, cpu.r1.sp, "SP mismatch");
             Assert.AreEqual(0x0001, cpu.r, "R mismatch");
             Assert.AreEqual(0x0000, cpu.i, "I mismatch");
             Assert.AreEqual(4UL, cpu.tStates, "tStates mismatch");
@@ -1900,7 +1900,7 @@ namespace z80ilTest
             cpu.r2.hl = 0x0000;
             cpu.r1.ix = 0x0000;
             cpu.r1.iy = 0x0000;
-            cpu.sp = 0x0000;
+            cpu.r1.sp = 0x0000;
             cpu.pc = 0x0000;
             cpu.i = 0x00;
             cpu.r = 0x00;
@@ -1921,7 +1921,7 @@ namespace z80ilTest
             Assert.AreEqual(0x0000, cpu.r2.hl, "HL' mismatch");
             Assert.AreEqual(0x0000, cpu.r1.ix, "IX mismatch");
             Assert.AreEqual(0x0000, cpu.r1.iy, "IY mismatch");
-            Assert.AreEqual(0x0000, cpu.sp, "SP mismatch");
+            Assert.AreEqual(0x0000, cpu.r1.sp, "SP mismatch");
             Assert.AreEqual(0x0001, cpu.r, "R mismatch");
             Assert.AreEqual(0x0000, cpu.i, "I mismatch");
             Assert.AreEqual(4UL, cpu.tStates, "tStates mismatch");
@@ -1940,7 +1940,7 @@ namespace z80ilTest
             cpu.r2.hl = 0x0000;
             cpu.r1.ix = 0x0000;
             cpu.r1.iy = 0x0000;
-            cpu.sp = 0x0000;
+            cpu.r1.sp = 0x0000;
             cpu.pc = 0x0000;
             cpu.i = 0x00;
             cpu.r = 0x00;
@@ -1961,7 +1961,7 @@ namespace z80ilTest
             Assert.AreEqual(0x0000, cpu.r2.hl, "HL' mismatch");
             Assert.AreEqual(0x0000, cpu.r1.ix, "IX mismatch");
             Assert.AreEqual(0x0000, cpu.r1.iy, "IY mismatch");
-            Assert.AreEqual(0x0000, cpu.sp, "SP mismatch");
+            Assert.AreEqual(0x0000, cpu.r1.sp, "SP mismatch");
             Assert.AreEqual(0x0001, cpu.r, "R mismatch");
             Assert.AreEqual(0x0000, cpu.i, "I mismatch");
             Assert.AreEqual(4UL, cpu.tStates, "tStates mismatch");
@@ -1980,7 +1980,7 @@ namespace z80ilTest
             cpu.r2.hl = 0x0000;
             cpu.r1.ix = 0x0000;
             cpu.r1.iy = 0x0000;
-            cpu.sp = 0x0000;
+            cpu.r1.sp = 0x0000;
             cpu.pc = 0x0000;
             cpu.i = 0x00;
             cpu.r = 0x00;
@@ -2001,7 +2001,7 @@ namespace z80ilTest
             Assert.AreEqual(0x0000, cpu.r2.hl, "HL' mismatch");
             Assert.AreEqual(0x0000, cpu.r1.ix, "IX mismatch");
             Assert.AreEqual(0x0000, cpu.r1.iy, "IY mismatch");
-            Assert.AreEqual(0x0000, cpu.sp, "SP mismatch");
+            Assert.AreEqual(0x0000, cpu.r1.sp, "SP mismatch");
             Assert.AreEqual(0x0001, cpu.r, "R mismatch");
             Assert.AreEqual(0x0000, cpu.i, "I mismatch");
             Assert.AreEqual(4UL, cpu.tStates, "tStates mismatch");
@@ -2020,7 +2020,7 @@ namespace z80ilTest
             cpu.r2.hl = 0x0000;
             cpu.r1.ix = 0x0000;
             cpu.r1.iy = 0x0000;
-            cpu.sp = 0x0000;
+            cpu.r1.sp = 0x0000;
             cpu.pc = 0x0000;
             cpu.i = 0x00;
             cpu.r = 0x00;
@@ -2041,7 +2041,7 @@ namespace z80ilTest
             Assert.AreEqual(0x0000, cpu.r2.hl, "HL' mismatch");
             Assert.AreEqual(0x0000, cpu.r1.ix, "IX mismatch");
             Assert.AreEqual(0x0000, cpu.r1.iy, "IY mismatch");
-            Assert.AreEqual(0x0000, cpu.sp, "SP mismatch");
+            Assert.AreEqual(0x0000, cpu.r1.sp, "SP mismatch");
             Assert.AreEqual(0x0001, cpu.r, "R mismatch");
             Assert.AreEqual(0x0000, cpu.i, "I mismatch");
             Assert.AreEqual(4UL, cpu.tStates, "tStates mismatch");
@@ -2060,7 +2060,7 @@ namespace z80ilTest
             cpu.r2.hl = 0x0000;
             cpu.r1.ix = 0x0000;
             cpu.r1.iy = 0x0000;
-            cpu.sp = 0x0000;
+            cpu.r1.sp = 0x0000;
             cpu.pc = 0x0000;
             cpu.i = 0x00;
             cpu.r = 0x00;
@@ -2081,7 +2081,7 @@ namespace z80ilTest
             Assert.AreEqual(0x0000, cpu.r2.hl, "HL' mismatch");
             Assert.AreEqual(0x0000, cpu.r1.ix, "IX mismatch");
             Assert.AreEqual(0x0000, cpu.r1.iy, "IY mismatch");
-            Assert.AreEqual(0x0000, cpu.sp, "SP mismatch");
+            Assert.AreEqual(0x0000, cpu.r1.sp, "SP mismatch");
             Assert.AreEqual(0x0001, cpu.r, "R mismatch");
             Assert.AreEqual(0x0000, cpu.i, "I mismatch");
             Assert.AreEqual(4UL, cpu.tStates, "tStates mismatch");
@@ -2100,7 +2100,7 @@ namespace z80ilTest
             cpu.r2.hl = 0x0000;
             cpu.r1.ix = 0x0000;
             cpu.r1.iy = 0x0000;
-            cpu.sp = 0x0000;
+            cpu.r1.sp = 0x0000;
             cpu.pc = 0x0000;
             cpu.i = 0x00;
             cpu.r = 0x00;
@@ -2121,7 +2121,7 @@ namespace z80ilTest
             Assert.AreEqual(0x0000, cpu.r2.hl, "HL' mismatch");
             Assert.AreEqual(0x0000, cpu.r1.ix, "IX mismatch");
             Assert.AreEqual(0x0000, cpu.r1.iy, "IY mismatch");
-            Assert.AreEqual(0x0000, cpu.sp, "SP mismatch");
+            Assert.AreEqual(0x0000, cpu.r1.sp, "SP mismatch");
             Assert.AreEqual(0x0001, cpu.r, "R mismatch");
             Assert.AreEqual(0x0000, cpu.i, "I mismatch");
             Assert.AreEqual(7UL, cpu.tStates, "tStates mismatch");
@@ -2140,7 +2140,7 @@ namespace z80ilTest
             cpu.r2.hl = 0x0000;
             cpu.r1.ix = 0x0000;
             cpu.r1.iy = 0x0000;
-            cpu.sp = 0x0000;
+            cpu.r1.sp = 0x0000;
             cpu.pc = 0x0000;
             cpu.i = 0x00;
             cpu.r = 0x00;
@@ -2161,7 +2161,7 @@ namespace z80ilTest
             Assert.AreEqual(0x0000, cpu.r2.hl, "HL' mismatch");
             Assert.AreEqual(0x0000, cpu.r1.ix, "IX mismatch");
             Assert.AreEqual(0x0000, cpu.r1.iy, "IY mismatch");
-            Assert.AreEqual(0x0000, cpu.sp, "SP mismatch");
+            Assert.AreEqual(0x0000, cpu.r1.sp, "SP mismatch");
             Assert.AreEqual(0x0001, cpu.r, "R mismatch");
             Assert.AreEqual(0x0000, cpu.i, "I mismatch");
             Assert.AreEqual(4UL, cpu.tStates, "tStates mismatch");
@@ -2180,7 +2180,7 @@ namespace z80ilTest
             cpu.r2.hl = 0x0000;
             cpu.r1.ix = 0x0000;
             cpu.r1.iy = 0x0000;
-            cpu.sp = 0x0000;
+            cpu.r1.sp = 0x0000;
             cpu.pc = 0x0000;
             cpu.i = 0x00;
             cpu.r = 0x00;
@@ -2201,7 +2201,7 @@ namespace z80ilTest
             Assert.AreEqual(0x0000, cpu.r2.hl, "HL' mismatch");
             Assert.AreEqual(0x0000, cpu.r1.ix, "IX mismatch");
             Assert.AreEqual(0x0000, cpu.r1.iy, "IY mismatch");
-            Assert.AreEqual(0x0000, cpu.sp, "SP mismatch");
+            Assert.AreEqual(0x0000, cpu.r1.sp, "SP mismatch");
             Assert.AreEqual(0x0001, cpu.r, "R mismatch");
             Assert.AreEqual(0x0000, cpu.i, "I mismatch");
             Assert.AreEqual(4UL, cpu.tStates, "tStates mismatch");
@@ -2220,7 +2220,7 @@ namespace z80ilTest
             cpu.r2.hl = 0x0000;
             cpu.r1.ix = 0x0000;
             cpu.r1.iy = 0x0000;
-            cpu.sp = 0x0000;
+            cpu.r1.sp = 0x0000;
             cpu.pc = 0x0000;
             cpu.i = 0x00;
             cpu.r = 0x00;
@@ -2241,7 +2241,7 @@ namespace z80ilTest
             Assert.AreEqual(0x0000, cpu.r2.hl, "HL' mismatch");
             Assert.AreEqual(0x0000, cpu.r1.ix, "IX mismatch");
             Assert.AreEqual(0x0000, cpu.r1.iy, "IY mismatch");
-            Assert.AreEqual(0x0000, cpu.sp, "SP mismatch");
+            Assert.AreEqual(0x0000, cpu.r1.sp, "SP mismatch");
             Assert.AreEqual(0x0001, cpu.r, "R mismatch");
             Assert.AreEqual(0x0000, cpu.i, "I mismatch");
             Assert.AreEqual(4UL, cpu.tStates, "tStates mismatch");
@@ -2260,7 +2260,7 @@ namespace z80ilTest
             cpu.r2.hl = 0x0000;
             cpu.r1.ix = 0x0000;
             cpu.r1.iy = 0x0000;
-            cpu.sp = 0x0000;
+            cpu.r1.sp = 0x0000;
             cpu.pc = 0x0000;
             cpu.i = 0x00;
             cpu.r = 0x00;
@@ -2281,7 +2281,7 @@ namespace z80ilTest
             Assert.AreEqual(0x0000, cpu.r2.hl, "HL' mismatch");
             Assert.AreEqual(0x0000, cpu.r1.ix, "IX mismatch");
             Assert.AreEqual(0x0000, cpu.r1.iy, "IY mismatch");
-            Assert.AreEqual(0x0000, cpu.sp, "SP mismatch");
+            Assert.AreEqual(0x0000, cpu.r1.sp, "SP mismatch");
             Assert.AreEqual(0x0001, cpu.r, "R mismatch");
             Assert.AreEqual(0x0000, cpu.i, "I mismatch");
             Assert.AreEqual(7UL, cpu.tStates, "tStates mismatch");
@@ -2300,7 +2300,7 @@ namespace z80ilTest
             cpu.r2.hl = 0x0000;
             cpu.r1.ix = 0x0000;
             cpu.r1.iy = 0x0000;
-            cpu.sp = 0x0000;
+            cpu.r1.sp = 0x0000;
             cpu.pc = 0x0000;
             cpu.i = 0x00;
             cpu.r = 0x00;
@@ -2321,7 +2321,7 @@ namespace z80ilTest
             Assert.AreEqual(0x0000, cpu.r2.hl, "HL' mismatch");
             Assert.AreEqual(0x0000, cpu.r1.ix, "IX mismatch");
             Assert.AreEqual(0x0000, cpu.r1.iy, "IY mismatch");
-            Assert.AreEqual(0x0000, cpu.sp, "SP mismatch");
+            Assert.AreEqual(0x0000, cpu.r1.sp, "SP mismatch");
             Assert.AreEqual(0x0001, cpu.r, "R mismatch");
             Assert.AreEqual(0x0000, cpu.i, "I mismatch");
             Assert.AreEqual(7UL, cpu.tStates, "tStates mismatch");
@@ -2340,7 +2340,7 @@ namespace z80ilTest
             cpu.r2.hl = 0x0000;
             cpu.r1.ix = 0x0000;
             cpu.r1.iy = 0x0000;
-            cpu.sp = 0x0000;
+            cpu.r1.sp = 0x0000;
             cpu.pc = 0x0000;
             cpu.i = 0x00;
             cpu.r = 0x00;
@@ -2361,7 +2361,7 @@ namespace z80ilTest
             Assert.AreEqual(0x0000, cpu.r2.hl, "HL' mismatch");
             Assert.AreEqual(0x0000, cpu.r1.ix, "IX mismatch");
             Assert.AreEqual(0x0000, cpu.r1.iy, "IY mismatch");
-            Assert.AreEqual(0x0000, cpu.sp, "SP mismatch");
+            Assert.AreEqual(0x0000, cpu.r1.sp, "SP mismatch");
             Assert.AreEqual(0x0001, cpu.r, "R mismatch");
             Assert.AreEqual(0x0000, cpu.i, "I mismatch");
             Assert.AreEqual(7UL, cpu.tStates, "tStates mismatch");
@@ -2380,7 +2380,7 @@ namespace z80ilTest
             cpu.r2.hl = 0x0000;
             cpu.r1.ix = 0x0000;
             cpu.r1.iy = 0x0000;
-            cpu.sp = 0x0000;
+            cpu.r1.sp = 0x0000;
             cpu.pc = 0x0000;
             cpu.i = 0x00;
             cpu.r = 0x00;
@@ -2401,7 +2401,7 @@ namespace z80ilTest
             Assert.AreEqual(0x0000, cpu.r2.hl, "HL' mismatch");
             Assert.AreEqual(0x0000, cpu.r1.ix, "IX mismatch");
             Assert.AreEqual(0x0000, cpu.r1.iy, "IY mismatch");
-            Assert.AreEqual(0x0000, cpu.sp, "SP mismatch");
+            Assert.AreEqual(0x0000, cpu.r1.sp, "SP mismatch");
             Assert.AreEqual(0x0001, cpu.r, "R mismatch");
             Assert.AreEqual(0x0000, cpu.i, "I mismatch");
             Assert.AreEqual(7UL, cpu.tStates, "tStates mismatch");
@@ -2420,7 +2420,7 @@ namespace z80ilTest
             cpu.r2.hl = 0x0000;
             cpu.r1.ix = 0x0000;
             cpu.r1.iy = 0x0000;
-            cpu.sp = 0x0000;
+            cpu.r1.sp = 0x0000;
             cpu.pc = 0x0000;
             cpu.i = 0x00;
             cpu.r = 0x00;
@@ -2441,7 +2441,7 @@ namespace z80ilTest
             Assert.AreEqual(0x0000, cpu.r2.hl, "HL' mismatch");
             Assert.AreEqual(0x0000, cpu.r1.ix, "IX mismatch");
             Assert.AreEqual(0x0000, cpu.r1.iy, "IY mismatch");
-            Assert.AreEqual(0x0000, cpu.sp, "SP mismatch");
+            Assert.AreEqual(0x0000, cpu.r1.sp, "SP mismatch");
             Assert.AreEqual(0x0001, cpu.r, "R mismatch");
             Assert.AreEqual(0x0000, cpu.i, "I mismatch");
             Assert.AreEqual(7UL, cpu.tStates, "tStates mismatch");
@@ -2460,7 +2460,7 @@ namespace z80ilTest
             cpu.r2.hl = 0x0000;
             cpu.r1.ix = 0x0000;
             cpu.r1.iy = 0x0000;
-            cpu.sp = 0x0000;
+            cpu.r1.sp = 0x0000;
             cpu.pc = 0x0000;
             cpu.i = 0x00;
             cpu.r = 0x00;
@@ -2481,7 +2481,7 @@ namespace z80ilTest
             Assert.AreEqual(0x0000, cpu.r2.hl, "HL' mismatch");
             Assert.AreEqual(0x0000, cpu.r1.ix, "IX mismatch");
             Assert.AreEqual(0x0000, cpu.r1.iy, "IY mismatch");
-            Assert.AreEqual(0x0000, cpu.sp, "SP mismatch");
+            Assert.AreEqual(0x0000, cpu.r1.sp, "SP mismatch");
             Assert.AreEqual(0x0001, cpu.r, "R mismatch");
             Assert.AreEqual(0x0000, cpu.i, "I mismatch");
             Assert.AreEqual(7UL, cpu.tStates, "tStates mismatch");
@@ -2500,7 +2500,7 @@ namespace z80ilTest
             cpu.r2.hl = 0x0000;
             cpu.r1.ix = 0x0000;
             cpu.r1.iy = 0x0000;
-            cpu.sp = 0x0000;
+            cpu.r1.sp = 0x0000;
             cpu.pc = 0x0000;
             cpu.i = 0x00;
             cpu.r = 0x00;
@@ -2521,7 +2521,7 @@ namespace z80ilTest
             Assert.AreEqual(0x0000, cpu.r2.hl, "HL' mismatch");
             Assert.AreEqual(0x0000, cpu.r1.ix, "IX mismatch");
             Assert.AreEqual(0x0000, cpu.r1.iy, "IY mismatch");
-            Assert.AreEqual(0x0000, cpu.sp, "SP mismatch");
+            Assert.AreEqual(0x0000, cpu.r1.sp, "SP mismatch");
             Assert.AreEqual(0x0001, cpu.r, "R mismatch");
             Assert.AreEqual(0x0000, cpu.i, "I mismatch");
             Assert.AreEqual(4UL, cpu.tStates, "tStates mismatch");
@@ -2540,7 +2540,7 @@ namespace z80ilTest
             cpu.r2.hl = 0x0000;
             cpu.r1.ix = 0x0000;
             cpu.r1.iy = 0x0000;
-            cpu.sp = 0x0000;
+            cpu.r1.sp = 0x0000;
             cpu.pc = 0x0000;
             cpu.i = 0x00;
             cpu.r = 0x00;
@@ -2561,7 +2561,7 @@ namespace z80ilTest
             Assert.AreEqual(0x0000, cpu.r2.hl, "HL' mismatch");
             Assert.AreEqual(0x0000, cpu.r1.ix, "IX mismatch");
             Assert.AreEqual(0x0000, cpu.r1.iy, "IY mismatch");
-            Assert.AreEqual(0x0000, cpu.sp, "SP mismatch");
+            Assert.AreEqual(0x0000, cpu.r1.sp, "SP mismatch");
             Assert.AreEqual(0x0001, cpu.r, "R mismatch");
             Assert.AreEqual(0x0000, cpu.i, "I mismatch");
             Assert.AreEqual(7UL, cpu.tStates, "tStates mismatch");
@@ -2580,7 +2580,7 @@ namespace z80ilTest
             cpu.r2.hl = 0x0000;
             cpu.r1.ix = 0x0000;
             cpu.r1.iy = 0x0000;
-            cpu.sp = 0x0000;
+            cpu.r1.sp = 0x0000;
             cpu.pc = 0x0000;
             cpu.i = 0x00;
             cpu.r = 0x00;
@@ -2601,7 +2601,7 @@ namespace z80ilTest
             Assert.AreEqual(0x0000, cpu.r2.hl, "HL' mismatch");
             Assert.AreEqual(0x0000, cpu.r1.ix, "IX mismatch");
             Assert.AreEqual(0x0000, cpu.r1.iy, "IY mismatch");
-            Assert.AreEqual(0x0000, cpu.sp, "SP mismatch");
+            Assert.AreEqual(0x0000, cpu.r1.sp, "SP mismatch");
             Assert.AreEqual(0x0001, cpu.r, "R mismatch");
             Assert.AreEqual(0x0000, cpu.i, "I mismatch");
             Assert.AreEqual(4UL, cpu.tStates, "tStates mismatch");
@@ -2620,7 +2620,7 @@ namespace z80ilTest
             cpu.r2.hl = 0x0000;
             cpu.r1.ix = 0x0000;
             cpu.r1.iy = 0x0000;
-            cpu.sp = 0x0000;
+            cpu.r1.sp = 0x0000;
             cpu.pc = 0x0000;
             cpu.i = 0x00;
             cpu.r = 0x00;
@@ -2641,7 +2641,7 @@ namespace z80ilTest
             Assert.AreEqual(0x0000, cpu.r2.hl, "HL' mismatch");
             Assert.AreEqual(0x0000, cpu.r1.ix, "IX mismatch");
             Assert.AreEqual(0x0000, cpu.r1.iy, "IY mismatch");
-            Assert.AreEqual(0x0000, cpu.sp, "SP mismatch");
+            Assert.AreEqual(0x0000, cpu.r1.sp, "SP mismatch");
             Assert.AreEqual(0x0001, cpu.r, "R mismatch");
             Assert.AreEqual(0x0000, cpu.i, "I mismatch");
             Assert.AreEqual(4UL, cpu.tStates, "tStates mismatch");
@@ -2660,7 +2660,7 @@ namespace z80ilTest
             cpu.r2.hl = 0x0000;
             cpu.r1.ix = 0x0000;
             cpu.r1.iy = 0x0000;
-            cpu.sp = 0x0000;
+            cpu.r1.sp = 0x0000;
             cpu.pc = 0x0000;
             cpu.i = 0x00;
             cpu.r = 0x00;
@@ -2681,7 +2681,7 @@ namespace z80ilTest
             Assert.AreEqual(0x0000, cpu.r2.hl, "HL' mismatch");
             Assert.AreEqual(0x0000, cpu.r1.ix, "IX mismatch");
             Assert.AreEqual(0x0000, cpu.r1.iy, "IY mismatch");
-            Assert.AreEqual(0x0000, cpu.sp, "SP mismatch");
+            Assert.AreEqual(0x0000, cpu.r1.sp, "SP mismatch");
             Assert.AreEqual(0x0001, cpu.r, "R mismatch");
             Assert.AreEqual(0x0000, cpu.i, "I mismatch");
             Assert.AreEqual(4UL, cpu.tStates, "tStates mismatch");
@@ -2700,7 +2700,7 @@ namespace z80ilTest
             cpu.r2.hl = 0x0000;
             cpu.r1.ix = 0x0000;
             cpu.r1.iy = 0x0000;
-            cpu.sp = 0x0000;
+            cpu.r1.sp = 0x0000;
             cpu.pc = 0x0000;
             cpu.i = 0x00;
             cpu.r = 0x00;
@@ -2721,7 +2721,7 @@ namespace z80ilTest
             Assert.AreEqual(0x0000, cpu.r2.hl, "HL' mismatch");
             Assert.AreEqual(0x0000, cpu.r1.ix, "IX mismatch");
             Assert.AreEqual(0x0000, cpu.r1.iy, "IY mismatch");
-            Assert.AreEqual(0x0000, cpu.sp, "SP mismatch");
+            Assert.AreEqual(0x0000, cpu.r1.sp, "SP mismatch");
             Assert.AreEqual(0x0001, cpu.r, "R mismatch");
             Assert.AreEqual(0x0000, cpu.i, "I mismatch");
             Assert.AreEqual(4UL, cpu.tStates, "tStates mismatch");
@@ -2740,7 +2740,7 @@ namespace z80ilTest
             cpu.r2.hl = 0x0000;
             cpu.r1.ix = 0x0000;
             cpu.r1.iy = 0x0000;
-            cpu.sp = 0x0000;
+            cpu.r1.sp = 0x0000;
             cpu.pc = 0x0000;
             cpu.i = 0x00;
             cpu.r = 0x00;
@@ -2761,7 +2761,7 @@ namespace z80ilTest
             Assert.AreEqual(0x0000, cpu.r2.hl, "HL' mismatch");
             Assert.AreEqual(0x0000, cpu.r1.ix, "IX mismatch");
             Assert.AreEqual(0x0000, cpu.r1.iy, "IY mismatch");
-            Assert.AreEqual(0x0000, cpu.sp, "SP mismatch");
+            Assert.AreEqual(0x0000, cpu.r1.sp, "SP mismatch");
             Assert.AreEqual(0x0001, cpu.r, "R mismatch");
             Assert.AreEqual(0x0000, cpu.i, "I mismatch");
             Assert.AreEqual(4UL, cpu.tStates, "tStates mismatch");
@@ -2780,7 +2780,7 @@ namespace z80ilTest
             cpu.r2.hl = 0x0000;
             cpu.r1.ix = 0x0000;
             cpu.r1.iy = 0x0000;
-            cpu.sp = 0x0000;
+            cpu.r1.sp = 0x0000;
             cpu.pc = 0x0000;
             cpu.i = 0x00;
             cpu.r = 0x00;
@@ -2801,7 +2801,7 @@ namespace z80ilTest
             Assert.AreEqual(0x0000, cpu.r2.hl, "HL' mismatch");
             Assert.AreEqual(0x0000, cpu.r1.ix, "IX mismatch");
             Assert.AreEqual(0x0000, cpu.r1.iy, "IY mismatch");
-            Assert.AreEqual(0x0000, cpu.sp, "SP mismatch");
+            Assert.AreEqual(0x0000, cpu.r1.sp, "SP mismatch");
             Assert.AreEqual(0x0001, cpu.r, "R mismatch");
             Assert.AreEqual(0x0000, cpu.i, "I mismatch");
             Assert.AreEqual(4UL, cpu.tStates, "tStates mismatch");
@@ -2820,7 +2820,7 @@ namespace z80ilTest
             cpu.r2.hl = 0x0000;
             cpu.r1.ix = 0x0000;
             cpu.r1.iy = 0x0000;
-            cpu.sp = 0x0000;
+            cpu.r1.sp = 0x0000;
             cpu.pc = 0x0000;
             cpu.i = 0x00;
             cpu.r = 0x00;
@@ -2841,7 +2841,7 @@ namespace z80ilTest
             Assert.AreEqual(0x0000, cpu.r2.hl, "HL' mismatch");
             Assert.AreEqual(0x0000, cpu.r1.ix, "IX mismatch");
             Assert.AreEqual(0x0000, cpu.r1.iy, "IY mismatch");
-            Assert.AreEqual(0x0000, cpu.sp, "SP mismatch");
+            Assert.AreEqual(0x0000, cpu.r1.sp, "SP mismatch");
             Assert.AreEqual(0x0001, cpu.r, "R mismatch");
             Assert.AreEqual(0x0000, cpu.i, "I mismatch");
             Assert.AreEqual(4UL, cpu.tStates, "tStates mismatch");
@@ -2860,7 +2860,7 @@ namespace z80ilTest
             cpu.r2.hl = 0x0000;
             cpu.r1.ix = 0x0000;
             cpu.r1.iy = 0x0000;
-            cpu.sp = 0x0000;
+            cpu.r1.sp = 0x0000;
             cpu.pc = 0x0000;
             cpu.i = 0x00;
             cpu.r = 0x00;
@@ -2881,7 +2881,7 @@ namespace z80ilTest
             Assert.AreEqual(0x0000, cpu.r2.hl, "HL' mismatch");
             Assert.AreEqual(0x0000, cpu.r1.ix, "IX mismatch");
             Assert.AreEqual(0x0000, cpu.r1.iy, "IY mismatch");
-            Assert.AreEqual(0x0000, cpu.sp, "SP mismatch");
+            Assert.AreEqual(0x0000, cpu.r1.sp, "SP mismatch");
             Assert.AreEqual(0x0001, cpu.r, "R mismatch");
             Assert.AreEqual(0x0000, cpu.i, "I mismatch");
             Assert.AreEqual(4UL, cpu.tStates, "tStates mismatch");
@@ -2900,7 +2900,7 @@ namespace z80ilTest
             cpu.r2.hl = 0x0000;
             cpu.r1.ix = 0x0000;
             cpu.r1.iy = 0x0000;
-            cpu.sp = 0x0000;
+            cpu.r1.sp = 0x0000;
             cpu.pc = 0x0000;
             cpu.i = 0x00;
             cpu.r = 0x00;
@@ -2921,7 +2921,7 @@ namespace z80ilTest
             Assert.AreEqual(0x0000, cpu.r2.hl, "HL' mismatch");
             Assert.AreEqual(0x0000, cpu.r1.ix, "IX mismatch");
             Assert.AreEqual(0x0000, cpu.r1.iy, "IY mismatch");
-            Assert.AreEqual(0x0000, cpu.sp, "SP mismatch");
+            Assert.AreEqual(0x0000, cpu.r1.sp, "SP mismatch");
             Assert.AreEqual(0x0001, cpu.r, "R mismatch");
             Assert.AreEqual(0x0000, cpu.i, "I mismatch");
             Assert.AreEqual(7UL, cpu.tStates, "tStates mismatch");
@@ -2940,7 +2940,7 @@ namespace z80ilTest
             cpu.r2.hl = 0x0000;
             cpu.r1.ix = 0x0000;
             cpu.r1.iy = 0x0000;
-            cpu.sp = 0x0000;
+            cpu.r1.sp = 0x0000;
             cpu.pc = 0x0000;
             cpu.i = 0x00;
             cpu.r = 0x00;
@@ -2961,7 +2961,7 @@ namespace z80ilTest
             Assert.AreEqual(0x0000, cpu.r2.hl, "HL' mismatch");
             Assert.AreEqual(0x0000, cpu.r1.ix, "IX mismatch");
             Assert.AreEqual(0x0000, cpu.r1.iy, "IY mismatch");
-            Assert.AreEqual(0x0000, cpu.sp, "SP mismatch");
+            Assert.AreEqual(0x0000, cpu.r1.sp, "SP mismatch");
             Assert.AreEqual(0x0001, cpu.r, "R mismatch");
             Assert.AreEqual(0x0000, cpu.i, "I mismatch");
             Assert.AreEqual(4UL, cpu.tStates, "tStates mismatch");
@@ -2980,7 +2980,7 @@ namespace z80ilTest
             cpu.r2.hl = 0x0000;
             cpu.r1.ix = 0x0000;
             cpu.r1.iy = 0x0000;
-            cpu.sp = 0x0000;
+            cpu.r1.sp = 0x0000;
             cpu.pc = 0x0000;
             cpu.i = 0x00;
             cpu.r = 0x00;
@@ -3001,7 +3001,7 @@ namespace z80ilTest
             Assert.AreEqual(0x0000, cpu.r2.hl, "HL' mismatch");
             Assert.AreEqual(0x0000, cpu.r1.ix, "IX mismatch");
             Assert.AreEqual(0x0000, cpu.r1.iy, "IY mismatch");
-            Assert.AreEqual(0x0000, cpu.sp, "SP mismatch");
+            Assert.AreEqual(0x0000, cpu.r1.sp, "SP mismatch");
             Assert.AreEqual(0x0001, cpu.r, "R mismatch");
             Assert.AreEqual(0x0000, cpu.i, "I mismatch");
             Assert.AreEqual(4UL, cpu.tStates, "tStates mismatch");
@@ -3020,7 +3020,7 @@ namespace z80ilTest
             cpu.r2.hl = 0x0000;
             cpu.r1.ix = 0x0000;
             cpu.r1.iy = 0x0000;
-            cpu.sp = 0x0000;
+            cpu.r1.sp = 0x0000;
             cpu.pc = 0x0000;
             cpu.i = 0x00;
             cpu.r = 0x00;
@@ -3041,7 +3041,7 @@ namespace z80ilTest
             Assert.AreEqual(0x0000, cpu.r2.hl, "HL' mismatch");
             Assert.AreEqual(0x0000, cpu.r1.ix, "IX mismatch");
             Assert.AreEqual(0x0000, cpu.r1.iy, "IY mismatch");
-            Assert.AreEqual(0x0000, cpu.sp, "SP mismatch");
+            Assert.AreEqual(0x0000, cpu.r1.sp, "SP mismatch");
             Assert.AreEqual(0x0001, cpu.r, "R mismatch");
             Assert.AreEqual(0x0000, cpu.i, "I mismatch");
             Assert.AreEqual(4UL, cpu.tStates, "tStates mismatch");
@@ -3060,7 +3060,7 @@ namespace z80ilTest
             cpu.r2.hl = 0x0000;
             cpu.r1.ix = 0x0000;
             cpu.r1.iy = 0x0000;
-            cpu.sp = 0x0000;
+            cpu.r1.sp = 0x0000;
             cpu.pc = 0x0000;
             cpu.i = 0x00;
             cpu.r = 0x00;
@@ -3081,7 +3081,7 @@ namespace z80ilTest
             Assert.AreEqual(0x0000, cpu.r2.hl, "HL' mismatch");
             Assert.AreEqual(0x0000, cpu.r1.ix, "IX mismatch");
             Assert.AreEqual(0x0000, cpu.r1.iy, "IY mismatch");
-            Assert.AreEqual(0x0000, cpu.sp, "SP mismatch");
+            Assert.AreEqual(0x0000, cpu.r1.sp, "SP mismatch");
             Assert.AreEqual(0x0001, cpu.r, "R mismatch");
             Assert.AreEqual(0x0000, cpu.i, "I mismatch");
             Assert.AreEqual(4UL, cpu.tStates, "tStates mismatch");
@@ -3100,7 +3100,7 @@ namespace z80ilTest
             cpu.r2.hl = 0x0000;
             cpu.r1.ix = 0x0000;
             cpu.r1.iy = 0x0000;
-            cpu.sp = 0x0000;
+            cpu.r1.sp = 0x0000;
             cpu.pc = 0x0000;
             cpu.i = 0x00;
             cpu.r = 0x00;
@@ -3121,7 +3121,7 @@ namespace z80ilTest
             Assert.AreEqual(0x0000, cpu.r2.hl, "HL' mismatch");
             Assert.AreEqual(0x0000, cpu.r1.ix, "IX mismatch");
             Assert.AreEqual(0x0000, cpu.r1.iy, "IY mismatch");
-            Assert.AreEqual(0x0000, cpu.sp, "SP mismatch");
+            Assert.AreEqual(0x0000, cpu.r1.sp, "SP mismatch");
             Assert.AreEqual(0x0001, cpu.r, "R mismatch");
             Assert.AreEqual(0x0000, cpu.i, "I mismatch");
             Assert.AreEqual(4UL, cpu.tStates, "tStates mismatch");
@@ -3140,7 +3140,7 @@ namespace z80ilTest
             cpu.r2.hl = 0x0000;
             cpu.r1.ix = 0x0000;
             cpu.r1.iy = 0x0000;
-            cpu.sp = 0x0000;
+            cpu.r1.sp = 0x0000;
             cpu.pc = 0x0000;
             cpu.i = 0x00;
             cpu.r = 0x00;
@@ -3161,7 +3161,7 @@ namespace z80ilTest
             Assert.AreEqual(0x0000, cpu.r2.hl, "HL' mismatch");
             Assert.AreEqual(0x0000, cpu.r1.ix, "IX mismatch");
             Assert.AreEqual(0x0000, cpu.r1.iy, "IY mismatch");
-            Assert.AreEqual(0x0000, cpu.sp, "SP mismatch");
+            Assert.AreEqual(0x0000, cpu.r1.sp, "SP mismatch");
             Assert.AreEqual(0x0001, cpu.r, "R mismatch");
             Assert.AreEqual(0x0000, cpu.i, "I mismatch");
             Assert.AreEqual(4UL, cpu.tStates, "tStates mismatch");
@@ -3180,7 +3180,7 @@ namespace z80ilTest
             cpu.r2.hl = 0x0000;
             cpu.r1.ix = 0x0000;
             cpu.r1.iy = 0x0000;
-            cpu.sp = 0x0000;
+            cpu.r1.sp = 0x0000;
             cpu.pc = 0x0000;
             cpu.i = 0x00;
             cpu.r = 0x00;
@@ -3201,7 +3201,7 @@ namespace z80ilTest
             Assert.AreEqual(0x0000, cpu.r2.hl, "HL' mismatch");
             Assert.AreEqual(0x0000, cpu.r1.ix, "IX mismatch");
             Assert.AreEqual(0x0000, cpu.r1.iy, "IY mismatch");
-            Assert.AreEqual(0x0000, cpu.sp, "SP mismatch");
+            Assert.AreEqual(0x0000, cpu.r1.sp, "SP mismatch");
             Assert.AreEqual(0x0001, cpu.r, "R mismatch");
             Assert.AreEqual(0x0000, cpu.i, "I mismatch");
             Assert.AreEqual(4UL, cpu.tStates, "tStates mismatch");
@@ -3220,7 +3220,7 @@ namespace z80ilTest
             cpu.r2.hl = 0x0000;
             cpu.r1.ix = 0x0000;
             cpu.r1.iy = 0x0000;
-            cpu.sp = 0x0000;
+            cpu.r1.sp = 0x0000;
             cpu.pc = 0x0000;
             cpu.i = 0x00;
             cpu.r = 0x00;
@@ -3241,7 +3241,7 @@ namespace z80ilTest
             Assert.AreEqual(0x0000, cpu.r2.hl, "HL' mismatch");
             Assert.AreEqual(0x0000, cpu.r1.ix, "IX mismatch");
             Assert.AreEqual(0x0000, cpu.r1.iy, "IY mismatch");
-            Assert.AreEqual(0x0000, cpu.sp, "SP mismatch");
+            Assert.AreEqual(0x0000, cpu.r1.sp, "SP mismatch");
             Assert.AreEqual(0x0001, cpu.r, "R mismatch");
             Assert.AreEqual(0x0000, cpu.i, "I mismatch");
             Assert.AreEqual(4UL, cpu.tStates, "tStates mismatch");
@@ -3260,7 +3260,7 @@ namespace z80ilTest
             cpu.r2.hl = 0x0000;
             cpu.r1.ix = 0x0000;
             cpu.r1.iy = 0x0000;
-            cpu.sp = 0x0000;
+            cpu.r1.sp = 0x0000;
             cpu.pc = 0x0000;
             cpu.i = 0x00;
             cpu.r = 0x00;
@@ -3281,7 +3281,7 @@ namespace z80ilTest
             Assert.AreEqual(0x0000, cpu.r2.hl, "HL' mismatch");
             Assert.AreEqual(0x0000, cpu.r1.ix, "IX mismatch");
             Assert.AreEqual(0x0000, cpu.r1.iy, "IY mismatch");
-            Assert.AreEqual(0x0000, cpu.sp, "SP mismatch");
+            Assert.AreEqual(0x0000, cpu.r1.sp, "SP mismatch");
             Assert.AreEqual(0x0001, cpu.r, "R mismatch");
             Assert.AreEqual(0x0000, cpu.i, "I mismatch");
             Assert.AreEqual(4UL, cpu.tStates, "tStates mismatch");
@@ -3300,7 +3300,7 @@ namespace z80ilTest
             cpu.r2.hl = 0x0000;
             cpu.r1.ix = 0x0000;
             cpu.r1.iy = 0x0000;
-            cpu.sp = 0x0000;
+            cpu.r1.sp = 0x0000;
             cpu.pc = 0x0000;
             cpu.i = 0x00;
             cpu.r = 0x00;
@@ -3321,7 +3321,7 @@ namespace z80ilTest
             Assert.AreEqual(0x0000, cpu.r2.hl, "HL' mismatch");
             Assert.AreEqual(0x0000, cpu.r1.ix, "IX mismatch");
             Assert.AreEqual(0x0000, cpu.r1.iy, "IY mismatch");
-            Assert.AreEqual(0x0000, cpu.sp, "SP mismatch");
+            Assert.AreEqual(0x0000, cpu.r1.sp, "SP mismatch");
             Assert.AreEqual(0x0001, cpu.r, "R mismatch");
             Assert.AreEqual(0x0000, cpu.i, "I mismatch");
             Assert.AreEqual(7UL, cpu.tStates, "tStates mismatch");
@@ -3340,7 +3340,7 @@ namespace z80ilTest
             cpu.r2.hl = 0x0000;
             cpu.r1.ix = 0x0000;
             cpu.r1.iy = 0x0000;
-            cpu.sp = 0x0000;
+            cpu.r1.sp = 0x0000;
             cpu.pc = 0x0000;
             cpu.i = 0x00;
             cpu.r = 0x00;
@@ -3361,7 +3361,7 @@ namespace z80ilTest
             Assert.AreEqual(0x0000, cpu.r2.hl, "HL' mismatch");
             Assert.AreEqual(0x0000, cpu.r1.ix, "IX mismatch");
             Assert.AreEqual(0x0000, cpu.r1.iy, "IY mismatch");
-            Assert.AreEqual(0x0000, cpu.sp, "SP mismatch");
+            Assert.AreEqual(0x0000, cpu.r1.sp, "SP mismatch");
             Assert.AreEqual(0x0001, cpu.r, "R mismatch");
             Assert.AreEqual(0x0000, cpu.i, "I mismatch");
             Assert.AreEqual(4UL, cpu.tStates, "tStates mismatch");
@@ -3380,7 +3380,7 @@ namespace z80ilTest
             cpu.r2.hl = 0x0000;
             cpu.r1.ix = 0x0000;
             cpu.r1.iy = 0x0000;
-            cpu.sp = 0x0000;
+            cpu.r1.sp = 0x0000;
             cpu.pc = 0x0000;
             cpu.i = 0x00;
             cpu.r = 0x00;
@@ -3401,7 +3401,7 @@ namespace z80ilTest
             Assert.AreEqual(0x0000, cpu.r2.hl, "HL' mismatch");
             Assert.AreEqual(0x0000, cpu.r1.ix, "IX mismatch");
             Assert.AreEqual(0x0000, cpu.r1.iy, "IY mismatch");
-            Assert.AreEqual(0x0000, cpu.sp, "SP mismatch");
+            Assert.AreEqual(0x0000, cpu.r1.sp, "SP mismatch");
             Assert.AreEqual(0x0001, cpu.r, "R mismatch");
             Assert.AreEqual(0x0000, cpu.i, "I mismatch");
             Assert.AreEqual(4UL, cpu.tStates, "tStates mismatch");
@@ -3420,7 +3420,7 @@ namespace z80ilTest
             cpu.r2.hl = 0x0000;
             cpu.r1.ix = 0x0000;
             cpu.r1.iy = 0x0000;
-            cpu.sp = 0x0000;
+            cpu.r1.sp = 0x0000;
             cpu.pc = 0x0000;
             cpu.i = 0x00;
             cpu.r = 0x00;
@@ -3441,7 +3441,7 @@ namespace z80ilTest
             Assert.AreEqual(0x0000, cpu.r2.hl, "HL' mismatch");
             Assert.AreEqual(0x0000, cpu.r1.ix, "IX mismatch");
             Assert.AreEqual(0x0000, cpu.r1.iy, "IY mismatch");
-            Assert.AreEqual(0x0000, cpu.sp, "SP mismatch");
+            Assert.AreEqual(0x0000, cpu.r1.sp, "SP mismatch");
             Assert.AreEqual(0x0001, cpu.r, "R mismatch");
             Assert.AreEqual(0x0000, cpu.i, "I mismatch");
             Assert.AreEqual(4UL, cpu.tStates, "tStates mismatch");
@@ -3460,7 +3460,7 @@ namespace z80ilTest
             cpu.r2.hl = 0x0000;
             cpu.r1.ix = 0x0000;
             cpu.r1.iy = 0x0000;
-            cpu.sp = 0x0000;
+            cpu.r1.sp = 0x0000;
             cpu.pc = 0x0000;
             cpu.i = 0x00;
             cpu.r = 0x00;
@@ -3480,7 +3480,7 @@ namespace z80ilTest
             Assert.AreEqual(0x0000, cpu.r2.hl, "HL' mismatch");
             Assert.AreEqual(0x0000, cpu.r1.ix, "IX mismatch");
             Assert.AreEqual(0x0000, cpu.r1.iy, "IY mismatch");
-            Assert.AreEqual(0x0000, cpu.sp, "SP mismatch");
+            Assert.AreEqual(0x0000, cpu.r1.sp, "SP mismatch");
             Assert.AreEqual(0x0001, cpu.r, "R mismatch");
             Assert.AreEqual(0x0000, cpu.i, "I mismatch");
             Assert.AreEqual(4UL, cpu.tStates, "tStates mismatch");
@@ -3499,7 +3499,7 @@ namespace z80ilTest
             cpu.r2.hl = 0x0000;
             cpu.r1.ix = 0x0000;
             cpu.r1.iy = 0x0000;
-            cpu.sp = 0x0000;
+            cpu.r1.sp = 0x0000;
             cpu.pc = 0x0000;
             cpu.i = 0x00;
             cpu.r = 0x00;
@@ -3521,7 +3521,7 @@ namespace z80ilTest
             Assert.AreEqual(0x0000, cpu.r2.hl, "HL' mismatch");
             Assert.AreEqual(0x0000, cpu.r1.ix, "IX mismatch");
             Assert.AreEqual(0x0000, cpu.r1.iy, "IY mismatch");
-            Assert.AreEqual(0x0000, cpu.sp, "SP mismatch");
+            Assert.AreEqual(0x0000, cpu.r1.sp, "SP mismatch");
             Assert.AreEqual(0x0001, cpu.r, "R mismatch");
             Assert.AreEqual(0x0000, cpu.i, "I mismatch");
             Assert.AreEqual(10UL, cpu.tStates, "tStates mismatch");
@@ -3540,7 +3540,7 @@ namespace z80ilTest
             cpu.r2.hl = 0x0000;
             cpu.r1.ix = 0x0000;
             cpu.r1.iy = 0x0000;
-            cpu.sp = 0x0000;
+            cpu.r1.sp = 0x0000;
             cpu.pc = 0x0000;
             cpu.i = 0x00;
             cpu.r = 0x00;
@@ -3560,7 +3560,7 @@ namespace z80ilTest
             Assert.AreEqual(0x0000, cpu.r2.hl, "HL' mismatch");
             Assert.AreEqual(0x0000, cpu.r1.ix, "IX mismatch");
             Assert.AreEqual(0x0000, cpu.r1.iy, "IY mismatch");
-            Assert.AreEqual(0x0000, cpu.sp, "SP mismatch");
+            Assert.AreEqual(0x0000, cpu.r1.sp, "SP mismatch");
             Assert.AreEqual(0x0001, cpu.r, "R mismatch");
             Assert.AreEqual(0x0000, cpu.i, "I mismatch");
             Assert.AreEqual(7UL, cpu.tStates, "tStates mismatch");
@@ -3579,7 +3579,7 @@ namespace z80ilTest
             cpu.r2.hl = 0x0000;
             cpu.r1.ix = 0x0000;
             cpu.r1.iy = 0x0000;
-            cpu.sp = 0x0000;
+            cpu.r1.sp = 0x0000;
             cpu.pc = 0x0000;
             cpu.i = 0x00;
             cpu.r = 0x00;
@@ -3599,7 +3599,7 @@ namespace z80ilTest
             Assert.AreEqual(0x0000, cpu.r2.hl, "HL' mismatch");
             Assert.AreEqual(0x0000, cpu.r1.ix, "IX mismatch");
             Assert.AreEqual(0x0000, cpu.r1.iy, "IY mismatch");
-            Assert.AreEqual(0x0000, cpu.sp, "SP mismatch");
+            Assert.AreEqual(0x0000, cpu.r1.sp, "SP mismatch");
             Assert.AreEqual(0x0001, cpu.r, "R mismatch");
             Assert.AreEqual(0x0000, cpu.i, "I mismatch");
             Assert.AreEqual(6UL, cpu.tStates, "tStates mismatch");
@@ -3618,7 +3618,7 @@ namespace z80ilTest
             cpu.r2.hl = 0x0000;
             cpu.r1.ix = 0x0000;
             cpu.r1.iy = 0x0000;
-            cpu.sp = 0x0000;
+            cpu.r1.sp = 0x0000;
             cpu.pc = 0x0000;
             cpu.i = 0x00;
             cpu.r = 0x00;
@@ -3638,7 +3638,7 @@ namespace z80ilTest
             Assert.AreEqual(0x0000, cpu.r2.hl, "HL' mismatch");
             Assert.AreEqual(0x0000, cpu.r1.ix, "IX mismatch");
             Assert.AreEqual(0x0000, cpu.r1.iy, "IY mismatch");
-            Assert.AreEqual(0x0000, cpu.sp, "SP mismatch");
+            Assert.AreEqual(0x0000, cpu.r1.sp, "SP mismatch");
             Assert.AreEqual(0x0001, cpu.r, "R mismatch");
             Assert.AreEqual(0x0000, cpu.i, "I mismatch");
             Assert.AreEqual(4UL, cpu.tStates, "tStates mismatch");
@@ -3657,7 +3657,7 @@ namespace z80ilTest
             cpu.r2.hl = 0x0000;
             cpu.r1.ix = 0x0000;
             cpu.r1.iy = 0x0000;
-            cpu.sp = 0x0000;
+            cpu.r1.sp = 0x0000;
             cpu.pc = 0x0000;
             cpu.i = 0x00;
             cpu.r = 0x00;
@@ -3677,7 +3677,7 @@ namespace z80ilTest
             Assert.AreEqual(0x0000, cpu.r2.hl, "HL' mismatch");
             Assert.AreEqual(0x0000, cpu.r1.ix, "IX mismatch");
             Assert.AreEqual(0x0000, cpu.r1.iy, "IY mismatch");
-            Assert.AreEqual(0x0000, cpu.sp, "SP mismatch");
+            Assert.AreEqual(0x0000, cpu.r1.sp, "SP mismatch");
             Assert.AreEqual(0x0001, cpu.r, "R mismatch");
             Assert.AreEqual(0x0000, cpu.i, "I mismatch");
             Assert.AreEqual(4UL, cpu.tStates, "tStates mismatch");
@@ -3696,7 +3696,7 @@ namespace z80ilTest
             cpu.r2.hl = 0x0000;
             cpu.r1.ix = 0x0000;
             cpu.r1.iy = 0x0000;
-            cpu.sp = 0x0000;
+            cpu.r1.sp = 0x0000;
             cpu.pc = 0x0000;
             cpu.i = 0x00;
             cpu.r = 0x00;
@@ -3717,7 +3717,7 @@ namespace z80ilTest
             Assert.AreEqual(0x0000, cpu.r2.hl, "HL' mismatch");
             Assert.AreEqual(0x0000, cpu.r1.ix, "IX mismatch");
             Assert.AreEqual(0x0000, cpu.r1.iy, "IY mismatch");
-            Assert.AreEqual(0x0000, cpu.sp, "SP mismatch");
+            Assert.AreEqual(0x0000, cpu.r1.sp, "SP mismatch");
             Assert.AreEqual(0x0001, cpu.r, "R mismatch");
             Assert.AreEqual(0x0000, cpu.i, "I mismatch");
             Assert.AreEqual(7UL, cpu.tStates, "tStates mismatch");
@@ -3736,7 +3736,7 @@ namespace z80ilTest
             cpu.r2.hl = 0x0000;
             cpu.r1.ix = 0x0000;
             cpu.r1.iy = 0x0000;
-            cpu.sp = 0x0000;
+            cpu.r1.sp = 0x0000;
             cpu.pc = 0x0000;
             cpu.i = 0x00;
             cpu.r = 0x00;
@@ -3756,7 +3756,7 @@ namespace z80ilTest
             Assert.AreEqual(0x0000, cpu.r2.hl, "HL' mismatch");
             Assert.AreEqual(0x0000, cpu.r1.ix, "IX mismatch");
             Assert.AreEqual(0x0000, cpu.r1.iy, "IY mismatch");
-            Assert.AreEqual(0x0000, cpu.sp, "SP mismatch");
+            Assert.AreEqual(0x0000, cpu.r1.sp, "SP mismatch");
             Assert.AreEqual(0x0001, cpu.r, "R mismatch");
             Assert.AreEqual(0x0000, cpu.i, "I mismatch");
             Assert.AreEqual(4UL, cpu.tStates, "tStates mismatch");
@@ -3775,7 +3775,7 @@ namespace z80ilTest
             cpu.r2.hl = 0x0000;
             cpu.r1.ix = 0x0000;
             cpu.r1.iy = 0x0000;
-            cpu.sp = 0x0000;
+            cpu.r1.sp = 0x0000;
             cpu.pc = 0x0000;
             cpu.i = 0x00;
             cpu.r = 0x00;
@@ -3795,7 +3795,7 @@ namespace z80ilTest
             Assert.AreEqual(0x0000, cpu.r2.hl, "HL' mismatch");
             Assert.AreEqual(0x0000, cpu.r1.ix, "IX mismatch");
             Assert.AreEqual(0x0000, cpu.r1.iy, "IY mismatch");
-            Assert.AreEqual(0x0000, cpu.sp, "SP mismatch");
+            Assert.AreEqual(0x0000, cpu.r1.sp, "SP mismatch");
             Assert.AreEqual(0x0001, cpu.r, "R mismatch");
             Assert.AreEqual(0x0000, cpu.i, "I mismatch");
             Assert.AreEqual(4UL, cpu.tStates, "tStates mismatch");
@@ -3814,7 +3814,7 @@ namespace z80ilTest
             cpu.r2.hl = 0x0000;
             cpu.r1.ix = 0x0000;
             cpu.r1.iy = 0x0000;
-            cpu.sp = 0x0000;
+            cpu.r1.sp = 0x0000;
             cpu.pc = 0x0000;
             cpu.i = 0x00;
             cpu.r = 0x00;
@@ -3834,7 +3834,7 @@ namespace z80ilTest
             Assert.AreEqual(0x0000, cpu.r2.hl, "HL' mismatch");
             Assert.AreEqual(0x0000, cpu.r1.ix, "IX mismatch");
             Assert.AreEqual(0x0000, cpu.r1.iy, "IY mismatch");
-            Assert.AreEqual(0x0000, cpu.sp, "SP mismatch");
+            Assert.AreEqual(0x0000, cpu.r1.sp, "SP mismatch");
             Assert.AreEqual(0x0001, cpu.r, "R mismatch");
             Assert.AreEqual(0x0000, cpu.i, "I mismatch");
             Assert.AreEqual(11UL, cpu.tStates, "tStates mismatch");
@@ -3853,7 +3853,7 @@ namespace z80ilTest
             cpu.r2.hl = 0x0000;
             cpu.r1.ix = 0x0000;
             cpu.r1.iy = 0x0000;
-            cpu.sp = 0x0000;
+            cpu.r1.sp = 0x0000;
             cpu.pc = 0x0000;
             cpu.i = 0x00;
             cpu.r = 0x00;
@@ -3874,7 +3874,7 @@ namespace z80ilTest
             Assert.AreEqual(0x0000, cpu.r2.hl, "HL' mismatch");
             Assert.AreEqual(0x0000, cpu.r1.ix, "IX mismatch");
             Assert.AreEqual(0x0000, cpu.r1.iy, "IY mismatch");
-            Assert.AreEqual(0x0000, cpu.sp, "SP mismatch");
+            Assert.AreEqual(0x0000, cpu.r1.sp, "SP mismatch");
             Assert.AreEqual(0x0001, cpu.r, "R mismatch");
             Assert.AreEqual(0x0000, cpu.i, "I mismatch");
             Assert.AreEqual(7UL, cpu.tStates, "tStates mismatch");
@@ -3893,7 +3893,7 @@ namespace z80ilTest
             cpu.r2.hl = 0x0000;
             cpu.r1.ix = 0x0000;
             cpu.r1.iy = 0x0000;
-            cpu.sp = 0x0000;
+            cpu.r1.sp = 0x0000;
             cpu.pc = 0x0000;
             cpu.i = 0x00;
             cpu.r = 0x00;
@@ -3913,7 +3913,7 @@ namespace z80ilTest
             Assert.AreEqual(0x0000, cpu.r2.hl, "HL' mismatch");
             Assert.AreEqual(0x0000, cpu.r1.ix, "IX mismatch");
             Assert.AreEqual(0x0000, cpu.r1.iy, "IY mismatch");
-            Assert.AreEqual(0x0000, cpu.sp, "SP mismatch");
+            Assert.AreEqual(0x0000, cpu.r1.sp, "SP mismatch");
             Assert.AreEqual(0x0001, cpu.r, "R mismatch");
             Assert.AreEqual(0x0000, cpu.i, "I mismatch");
             Assert.AreEqual(6UL, cpu.tStates, "tStates mismatch");
@@ -3932,7 +3932,7 @@ namespace z80ilTest
             cpu.r2.hl = 0x0000;
             cpu.r1.ix = 0x0000;
             cpu.r1.iy = 0x0000;
-            cpu.sp = 0x0000;
+            cpu.r1.sp = 0x0000;
             cpu.pc = 0x0000;
             cpu.i = 0x00;
             cpu.r = 0x00;
@@ -3952,7 +3952,7 @@ namespace z80ilTest
             Assert.AreEqual(0x0000, cpu.r2.hl, "HL' mismatch");
             Assert.AreEqual(0x0000, cpu.r1.ix, "IX mismatch");
             Assert.AreEqual(0x0000, cpu.r1.iy, "IY mismatch");
-            Assert.AreEqual(0x0000, cpu.sp, "SP mismatch");
+            Assert.AreEqual(0x0000, cpu.r1.sp, "SP mismatch");
             Assert.AreEqual(0x0001, cpu.r, "R mismatch");
             Assert.AreEqual(0x0000, cpu.i, "I mismatch");
             Assert.AreEqual(4UL, cpu.tStates, "tStates mismatch");
@@ -3971,7 +3971,7 @@ namespace z80ilTest
             cpu.r2.hl = 0x0000;
             cpu.r1.ix = 0x0000;
             cpu.r1.iy = 0x0000;
-            cpu.sp = 0x0000;
+            cpu.r1.sp = 0x0000;
             cpu.pc = 0x0000;
             cpu.i = 0x00;
             cpu.r = 0x00;
@@ -3991,7 +3991,7 @@ namespace z80ilTest
             Assert.AreEqual(0x0000, cpu.r2.hl, "HL' mismatch");
             Assert.AreEqual(0x0000, cpu.r1.ix, "IX mismatch");
             Assert.AreEqual(0x0000, cpu.r1.iy, "IY mismatch");
-            Assert.AreEqual(0x0000, cpu.sp, "SP mismatch");
+            Assert.AreEqual(0x0000, cpu.r1.sp, "SP mismatch");
             Assert.AreEqual(0x0001, cpu.r, "R mismatch");
             Assert.AreEqual(0x0000, cpu.i, "I mismatch");
             Assert.AreEqual(4UL, cpu.tStates, "tStates mismatch");
@@ -4010,7 +4010,7 @@ namespace z80ilTest
             cpu.r2.hl = 0x0000;
             cpu.r1.ix = 0x0000;
             cpu.r1.iy = 0x0000;
-            cpu.sp = 0x0000;
+            cpu.r1.sp = 0x0000;
             cpu.pc = 0x0000;
             cpu.i = 0x00;
             cpu.r = 0x00;
@@ -4031,7 +4031,7 @@ namespace z80ilTest
             Assert.AreEqual(0x0000, cpu.r2.hl, "HL' mismatch");
             Assert.AreEqual(0x0000, cpu.r1.ix, "IX mismatch");
             Assert.AreEqual(0x0000, cpu.r1.iy, "IY mismatch");
-            Assert.AreEqual(0x0000, cpu.sp, "SP mismatch");
+            Assert.AreEqual(0x0000, cpu.r1.sp, "SP mismatch");
             Assert.AreEqual(0x0001, cpu.r, "R mismatch");
             Assert.AreEqual(0x0000, cpu.i, "I mismatch");
             Assert.AreEqual(7UL, cpu.tStates, "tStates mismatch");
@@ -4050,7 +4050,7 @@ namespace z80ilTest
             cpu.r2.hl = 0x0000;
             cpu.r1.ix = 0x0000;
             cpu.r1.iy = 0x0000;
-            cpu.sp = 0x0000;
+            cpu.r1.sp = 0x0000;
             cpu.pc = 0x0000;
             cpu.i = 0x00;
             cpu.r = 0x00;
@@ -4070,7 +4070,7 @@ namespace z80ilTest
             Assert.AreEqual(0x0000, cpu.r2.hl, "HL' mismatch");
             Assert.AreEqual(0x0000, cpu.r1.ix, "IX mismatch");
             Assert.AreEqual(0x0000, cpu.r1.iy, "IY mismatch");
-            Assert.AreEqual(0x0000, cpu.sp, "SP mismatch");
+            Assert.AreEqual(0x0000, cpu.r1.sp, "SP mismatch");
             Assert.AreEqual(0x0001, cpu.r, "R mismatch");
             Assert.AreEqual(0x0000, cpu.i, "I mismatch");
             Assert.AreEqual(4UL, cpu.tStates, "tStates mismatch");
@@ -4089,7 +4089,7 @@ namespace z80ilTest
             cpu.r2.hl = 0x0000;
             cpu.r1.ix = 0x0000;
             cpu.r1.iy = 0x0000;
-            cpu.sp = 0x0000;
+            cpu.r1.sp = 0x0000;
             cpu.pc = 0x0000;
             cpu.i = 0x00;
             cpu.r = 0x00;
@@ -4110,7 +4110,7 @@ namespace z80ilTest
             Assert.AreEqual(0x0000, cpu.r2.hl, "HL' mismatch");
             Assert.AreEqual(0x0000, cpu.r1.ix, "IX mismatch");
             Assert.AreEqual(0x0000, cpu.r1.iy, "IY mismatch");
-            Assert.AreEqual(0x0000, cpu.sp, "SP mismatch");
+            Assert.AreEqual(0x0000, cpu.r1.sp, "SP mismatch");
             Assert.AreEqual(0x0001, cpu.r, "R mismatch");
             Assert.AreEqual(0x0000, cpu.i, "I mismatch");
             Assert.AreEqual(7UL, cpu.tStates, "tStates mismatch");
@@ -4129,7 +4129,7 @@ namespace z80ilTest
             cpu.r2.hl = 0x0000;
             cpu.r1.ix = 0x0000;
             cpu.r1.iy = 0x0000;
-            cpu.sp = 0x0000;
+            cpu.r1.sp = 0x0000;
             cpu.pc = 0x0000;
             cpu.i = 0x00;
             cpu.r = 0x00;
@@ -4149,7 +4149,7 @@ namespace z80ilTest
             Assert.AreEqual(0x0000, cpu.r2.hl, "HL' mismatch");
             Assert.AreEqual(0x0000, cpu.r1.ix, "IX mismatch");
             Assert.AreEqual(0x0000, cpu.r1.iy, "IY mismatch");
-            Assert.AreEqual(0x0000, cpu.sp, "SP mismatch");
+            Assert.AreEqual(0x0000, cpu.r1.sp, "SP mismatch");
             Assert.AreEqual(0x0001, cpu.r, "R mismatch");
             Assert.AreEqual(0x0000, cpu.i, "I mismatch");
             Assert.AreEqual(6UL, cpu.tStates, "tStates mismatch");
@@ -4168,7 +4168,7 @@ namespace z80ilTest
             cpu.r2.hl = 0x0000;
             cpu.r1.ix = 0x0000;
             cpu.r1.iy = 0x0000;
-            cpu.sp = 0x0000;
+            cpu.r1.sp = 0x0000;
             cpu.pc = 0x0000;
             cpu.i = 0x00;
             cpu.r = 0x00;
@@ -4188,7 +4188,7 @@ namespace z80ilTest
             Assert.AreEqual(0x0000, cpu.r2.hl, "HL' mismatch");
             Assert.AreEqual(0x0000, cpu.r1.ix, "IX mismatch");
             Assert.AreEqual(0x0000, cpu.r1.iy, "IY mismatch");
-            Assert.AreEqual(0x0000, cpu.sp, "SP mismatch");
+            Assert.AreEqual(0x0000, cpu.r1.sp, "SP mismatch");
             Assert.AreEqual(0x0001, cpu.r, "R mismatch");
             Assert.AreEqual(0x0000, cpu.i, "I mismatch");
             Assert.AreEqual(4UL, cpu.tStates, "tStates mismatch");
@@ -4207,7 +4207,7 @@ namespace z80ilTest
             cpu.r2.hl = 0x0000;
             cpu.r1.ix = 0x0000;
             cpu.r1.iy = 0x0000;
-            cpu.sp = 0x0000;
+            cpu.r1.sp = 0x0000;
             cpu.pc = 0x0000;
             cpu.i = 0x00;
             cpu.r = 0x00;
@@ -4227,7 +4227,7 @@ namespace z80ilTest
             Assert.AreEqual(0x0000, cpu.r2.hl, "HL' mismatch");
             Assert.AreEqual(0x0000, cpu.r1.ix, "IX mismatch");
             Assert.AreEqual(0x0000, cpu.r1.iy, "IY mismatch");
-            Assert.AreEqual(0x0000, cpu.sp, "SP mismatch");
+            Assert.AreEqual(0x0000, cpu.r1.sp, "SP mismatch");
             Assert.AreEqual(0x0001, cpu.r, "R mismatch");
             Assert.AreEqual(0x0000, cpu.i, "I mismatch");
             Assert.AreEqual(4UL, cpu.tStates, "tStates mismatch");
@@ -4246,7 +4246,7 @@ namespace z80ilTest
             cpu.r2.hl = 0x0000;
             cpu.r1.ix = 0x0000;
             cpu.r1.iy = 0x0000;
-            cpu.sp = 0x0000;
+            cpu.r1.sp = 0x0000;
             cpu.pc = 0x0000;
             cpu.i = 0x00;
             cpu.r = 0x00;
@@ -4267,7 +4267,7 @@ namespace z80ilTest
             Assert.AreEqual(0x0000, cpu.r2.hl, "HL' mismatch");
             Assert.AreEqual(0x0000, cpu.r1.ix, "IX mismatch");
             Assert.AreEqual(0x0000, cpu.r1.iy, "IY mismatch");
-            Assert.AreEqual(0x0000, cpu.sp, "SP mismatch");
+            Assert.AreEqual(0x0000, cpu.r1.sp, "SP mismatch");
             Assert.AreEqual(0x0001, cpu.r, "R mismatch");
             Assert.AreEqual(0x0000, cpu.i, "I mismatch");
             Assert.AreEqual(7UL, cpu.tStates, "tStates mismatch");
@@ -4286,7 +4286,7 @@ namespace z80ilTest
             cpu.r2.hl = 0x0000;
             cpu.r1.ix = 0x0000;
             cpu.r1.iy = 0x0000;
-            cpu.sp = 0x0000;
+            cpu.r1.sp = 0x0000;
             cpu.pc = 0x0000;
             cpu.i = 0x00;
             cpu.r = 0x00;
@@ -4306,7 +4306,7 @@ namespace z80ilTest
             Assert.AreEqual(0x0000, cpu.r2.hl, "HL' mismatch");
             Assert.AreEqual(0x0000, cpu.r1.ix, "IX mismatch");
             Assert.AreEqual(0x0000, cpu.r1.iy, "IY mismatch");
-            Assert.AreEqual(0x0000, cpu.sp, "SP mismatch");
+            Assert.AreEqual(0x0000, cpu.r1.sp, "SP mismatch");
             Assert.AreEqual(0x0001, cpu.r, "R mismatch");
             Assert.AreEqual(0x0000, cpu.i, "I mismatch");
             Assert.AreEqual(4UL, cpu.tStates, "tStates mismatch");
@@ -4325,7 +4325,7 @@ namespace z80ilTest
             cpu.r2.hl = 0x0000;
             cpu.r1.ix = 0x0000;
             cpu.r1.iy = 0x0000;
-            cpu.sp = 0x0000;
+            cpu.r1.sp = 0x0000;
             cpu.pc = 0x0000;
             cpu.i = 0x00;
             cpu.r = 0x00;
@@ -4346,7 +4346,7 @@ namespace z80ilTest
             Assert.AreEqual(0x0000, cpu.r2.hl, "HL' mismatch");
             Assert.AreEqual(0x0000, cpu.r1.ix, "IX mismatch");
             Assert.AreEqual(0x0000, cpu.r1.iy, "IY mismatch");
-            Assert.AreEqual(0x0000, cpu.sp, "SP mismatch");
+            Assert.AreEqual(0x0000, cpu.r1.sp, "SP mismatch");
             Assert.AreEqual(0x0001, cpu.r, "R mismatch");
             Assert.AreEqual(0x0000, cpu.i, "I mismatch");
             Assert.AreEqual(12UL, cpu.tStates, "tStates mismatch");
@@ -4365,7 +4365,7 @@ namespace z80ilTest
             cpu.r2.hl = 0x0000;
             cpu.r1.ix = 0x0000;
             cpu.r1.iy = 0x0000;
-            cpu.sp = 0x0000;
+            cpu.r1.sp = 0x0000;
             cpu.pc = 0x0000;
             cpu.i = 0x00;
             cpu.r = 0x00;
@@ -4386,7 +4386,7 @@ namespace z80ilTest
             Assert.AreEqual(0x0000, cpu.r2.hl, "HL' mismatch");
             Assert.AreEqual(0x0000, cpu.r1.ix, "IX mismatch");
             Assert.AreEqual(0x0000, cpu.r1.iy, "IY mismatch");
-            Assert.AreEqual(0x0000, cpu.sp, "SP mismatch");
+            Assert.AreEqual(0x0000, cpu.r1.sp, "SP mismatch");
             Assert.AreEqual(0x0001, cpu.r, "R mismatch");
             Assert.AreEqual(0x0000, cpu.i, "I mismatch");
             Assert.AreEqual(7UL, cpu.tStates, "tStates mismatch");
@@ -4405,7 +4405,7 @@ namespace z80ilTest
             cpu.r2.hl = 0x0000;
             cpu.r1.ix = 0x0000;
             cpu.r1.iy = 0x0000;
-            cpu.sp = 0x0000;
+            cpu.r1.sp = 0x0000;
             cpu.pc = 0x0000;
             cpu.i = 0x00;
             cpu.r = 0x00;
@@ -4425,7 +4425,7 @@ namespace z80ilTest
             Assert.AreEqual(0x0000, cpu.r2.hl, "HL' mismatch");
             Assert.AreEqual(0x0000, cpu.r1.ix, "IX mismatch");
             Assert.AreEqual(0x0000, cpu.r1.iy, "IY mismatch");
-            Assert.AreEqual(0x0000, cpu.sp, "SP mismatch");
+            Assert.AreEqual(0x0000, cpu.r1.sp, "SP mismatch");
             Assert.AreEqual(0x0001, cpu.r, "R mismatch");
             Assert.AreEqual(0x0000, cpu.i, "I mismatch");
             Assert.AreEqual(4UL, cpu.tStates, "tStates mismatch");
@@ -4444,7 +4444,7 @@ namespace z80ilTest
             cpu.r2.hl = 0x0000;
             cpu.r1.ix = 0x0000;
             cpu.r1.iy = 0x0000;
-            cpu.sp = 0x0000;
+            cpu.r1.sp = 0x0000;
             cpu.pc = 0x0000;
             cpu.i = 0x00;
             cpu.r = 0x00;
@@ -4465,7 +4465,7 @@ namespace z80ilTest
             Assert.AreEqual(0x0000, cpu.r2.hl, "HL' mismatch");
             Assert.AreEqual(0x0000, cpu.r1.ix, "IX mismatch");
             Assert.AreEqual(0x0000, cpu.r1.iy, "IY mismatch");
-            Assert.AreEqual(0x0000, cpu.sp, "SP mismatch");
+            Assert.AreEqual(0x0000, cpu.r1.sp, "SP mismatch");
             Assert.AreEqual(0x0001, cpu.r, "R mismatch");
             Assert.AreEqual(0x0000, cpu.i, "I mismatch");
             Assert.AreEqual(7UL, cpu.tStates, "tStates mismatch");
@@ -4484,7 +4484,7 @@ namespace z80ilTest
             cpu.r2.hl = 0x0000;
             cpu.r1.ix = 0x0000;
             cpu.r1.iy = 0x0000;
-            cpu.sp = 0x0000;
+            cpu.r1.sp = 0x0000;
             cpu.pc = 0x0000;
             cpu.i = 0x00;
             cpu.r = 0x00;
@@ -4505,7 +4505,7 @@ namespace z80ilTest
             Assert.AreEqual(0x0000, cpu.r2.hl, "HL' mismatch");
             Assert.AreEqual(0x0000, cpu.r1.ix, "IX mismatch");
             Assert.AreEqual(0x0000, cpu.r1.iy, "IY mismatch");
-            Assert.AreEqual(0x0000, cpu.sp, "SP mismatch");
+            Assert.AreEqual(0x0000, cpu.r1.sp, "SP mismatch");
             Assert.AreEqual(0x0001, cpu.r, "R mismatch");
             Assert.AreEqual(0x0000, cpu.i, "I mismatch");
             Assert.AreEqual(12UL, cpu.tStates, "tStates mismatch");
@@ -4524,7 +4524,7 @@ namespace z80ilTest
             cpu.r2.hl = 0x0000;
             cpu.r1.ix = 0x0000;
             cpu.r1.iy = 0x0000;
-            cpu.sp = 0x0000;
+            cpu.r1.sp = 0x0000;
             cpu.pc = 0x0000;
             cpu.i = 0x00;
             cpu.r = 0x00;
@@ -4548,7 +4548,7 @@ namespace z80ilTest
             Assert.AreEqual(0x0000, cpu.r2.hl, "HL' mismatch");
             Assert.AreEqual(0x0000, cpu.r1.ix, "IX mismatch");
             Assert.AreEqual(0x0000, cpu.r1.iy, "IY mismatch");
-            Assert.AreEqual(0x0000, cpu.sp, "SP mismatch");
+            Assert.AreEqual(0x0000, cpu.r1.sp, "SP mismatch");
             Assert.AreEqual(0x0001, cpu.r, "R mismatch");
             Assert.AreEqual(0x0000, cpu.i, "I mismatch");
             Assert.AreEqual(16UL, cpu.tStates, "tStates mismatch");
@@ -4567,7 +4567,7 @@ namespace z80ilTest
             cpu.r2.hl = 0x0000;
             cpu.r1.ix = 0x0000;
             cpu.r1.iy = 0x0000;
-            cpu.sp = 0x0000;
+            cpu.r1.sp = 0x0000;
             cpu.pc = 0x0000;
             cpu.i = 0x00;
             cpu.r = 0x00;
@@ -4587,7 +4587,7 @@ namespace z80ilTest
             Assert.AreEqual(0x0000, cpu.r2.hl, "HL' mismatch");
             Assert.AreEqual(0x0000, cpu.r1.ix, "IX mismatch");
             Assert.AreEqual(0x0000, cpu.r1.iy, "IY mismatch");
-            Assert.AreEqual(0x0000, cpu.sp, "SP mismatch");
+            Assert.AreEqual(0x0000, cpu.r1.sp, "SP mismatch");
             Assert.AreEqual(0x0001, cpu.r, "R mismatch");
             Assert.AreEqual(0x0000, cpu.i, "I mismatch");
             Assert.AreEqual(6UL, cpu.tStates, "tStates mismatch");
@@ -4606,7 +4606,7 @@ namespace z80ilTest
             cpu.r2.hl = 0x0000;
             cpu.r1.ix = 0x0000;
             cpu.r1.iy = 0x0000;
-            cpu.sp = 0x0000;
+            cpu.r1.sp = 0x0000;
             cpu.pc = 0x0000;
             cpu.i = 0x00;
             cpu.r = 0x00;
@@ -4626,7 +4626,7 @@ namespace z80ilTest
             Assert.AreEqual(0x0000, cpu.r2.hl, "HL' mismatch");
             Assert.AreEqual(0x0000, cpu.r1.ix, "IX mismatch");
             Assert.AreEqual(0x0000, cpu.r1.iy, "IY mismatch");
-            Assert.AreEqual(0x0000, cpu.sp, "SP mismatch");
+            Assert.AreEqual(0x0000, cpu.r1.sp, "SP mismatch");
             Assert.AreEqual(0x0001, cpu.r, "R mismatch");
             Assert.AreEqual(0x0000, cpu.i, "I mismatch");
             Assert.AreEqual(4UL, cpu.tStates, "tStates mismatch");
@@ -4645,7 +4645,7 @@ namespace z80ilTest
             cpu.r2.hl = 0x0000;
             cpu.r1.ix = 0x0000;
             cpu.r1.iy = 0x0000;
-            cpu.sp = 0x0000;
+            cpu.r1.sp = 0x0000;
             cpu.pc = 0x0000;
             cpu.i = 0x00;
             cpu.r = 0x00;
@@ -4665,7 +4665,7 @@ namespace z80ilTest
             Assert.AreEqual(0x0000, cpu.r2.hl, "HL' mismatch");
             Assert.AreEqual(0x0000, cpu.r1.ix, "IX mismatch");
             Assert.AreEqual(0x0000, cpu.r1.iy, "IY mismatch");
-            Assert.AreEqual(0x0000, cpu.sp, "SP mismatch");
+            Assert.AreEqual(0x0000, cpu.r1.sp, "SP mismatch");
             Assert.AreEqual(0x0001, cpu.r, "R mismatch");
             Assert.AreEqual(0x0000, cpu.i, "I mismatch");
             Assert.AreEqual(4UL, cpu.tStates, "tStates mismatch");
@@ -4684,7 +4684,7 @@ namespace z80ilTest
             cpu.r2.hl = 0x0000;
             cpu.r1.ix = 0x0000;
             cpu.r1.iy = 0x0000;
-            cpu.sp = 0x0000;
+            cpu.r1.sp = 0x0000;
             cpu.pc = 0x0000;
             cpu.i = 0x00;
             cpu.r = 0x00;
@@ -4705,7 +4705,7 @@ namespace z80ilTest
             Assert.AreEqual(0x0000, cpu.r2.hl, "HL' mismatch");
             Assert.AreEqual(0x0000, cpu.r1.ix, "IX mismatch");
             Assert.AreEqual(0x0000, cpu.r1.iy, "IY mismatch");
-            Assert.AreEqual(0x0000, cpu.sp, "SP mismatch");
+            Assert.AreEqual(0x0000, cpu.r1.sp, "SP mismatch");
             Assert.AreEqual(0x0001, cpu.r, "R mismatch");
             Assert.AreEqual(0x0000, cpu.i, "I mismatch");
             Assert.AreEqual(7UL, cpu.tStates, "tStates mismatch");
@@ -4724,7 +4724,7 @@ namespace z80ilTest
             cpu.r2.hl = 0x0000;
             cpu.r1.ix = 0x0000;
             cpu.r1.iy = 0x0000;
-            cpu.sp = 0x0000;
+            cpu.r1.sp = 0x0000;
             cpu.pc = 0x0000;
             cpu.i = 0x00;
             cpu.r = 0x00;
@@ -4744,7 +4744,7 @@ namespace z80ilTest
             Assert.AreEqual(0x0000, cpu.r2.hl, "HL' mismatch");
             Assert.AreEqual(0x0000, cpu.r1.ix, "IX mismatch");
             Assert.AreEqual(0x0000, cpu.r1.iy, "IY mismatch");
-            Assert.AreEqual(0x0000, cpu.sp, "SP mismatch");
+            Assert.AreEqual(0x0000, cpu.r1.sp, "SP mismatch");
             Assert.AreEqual(0x0001, cpu.r, "R mismatch");
             Assert.AreEqual(0x0000, cpu.i, "I mismatch");
             Assert.AreEqual(4UL, cpu.tStates, "tStates mismatch");
@@ -4763,7 +4763,7 @@ namespace z80ilTest
             cpu.r2.hl = 0x0000;
             cpu.r1.ix = 0x0000;
             cpu.r1.iy = 0x0000;
-            cpu.sp = 0x0000;
+            cpu.r1.sp = 0x0000;
             cpu.pc = 0x0000;
             cpu.i = 0x00;
             cpu.r = 0x00;
@@ -4784,7 +4784,7 @@ namespace z80ilTest
             Assert.AreEqual(0x0000, cpu.r2.hl, "HL' mismatch");
             Assert.AreEqual(0x0000, cpu.r1.ix, "IX mismatch");
             Assert.AreEqual(0x0000, cpu.r1.iy, "IY mismatch");
-            Assert.AreEqual(0x0000, cpu.sp, "SP mismatch");
+            Assert.AreEqual(0x0000, cpu.r1.sp, "SP mismatch");
             Assert.AreEqual(0x0001, cpu.r, "R mismatch");
             Assert.AreEqual(0x0000, cpu.i, "I mismatch");
             Assert.AreEqual(12UL, cpu.tStates, "tStates mismatch");
@@ -4803,7 +4803,7 @@ namespace z80ilTest
             cpu.r2.hl = 0x0000;
             cpu.r1.ix = 0x0000;
             cpu.r1.iy = 0x0000;
-            cpu.sp = 0x0000;
+            cpu.r1.sp = 0x0000;
             cpu.pc = 0x0000;
             cpu.i = 0x00;
             cpu.r = 0x00;
@@ -4824,7 +4824,7 @@ namespace z80ilTest
             Assert.AreEqual(0x0000, cpu.r2.hl, "HL' mismatch");
             Assert.AreEqual(0x0000, cpu.r1.ix, "IX mismatch");
             Assert.AreEqual(0x0000, cpu.r1.iy, "IY mismatch");
-            Assert.AreEqual(0x0000, cpu.sp, "SP mismatch");
+            Assert.AreEqual(0x0000, cpu.r1.sp, "SP mismatch");
             Assert.AreEqual(0x0001, cpu.r, "R mismatch");
             Assert.AreEqual(0x0000, cpu.i, "I mismatch");
             Assert.AreEqual(7UL, cpu.tStates, "tStates mismatch");
@@ -4843,7 +4843,7 @@ namespace z80ilTest
             cpu.r2.hl = 0x0000;
             cpu.r1.ix = 0x0000;
             cpu.r1.iy = 0x0000;
-            cpu.sp = 0x0000;
+            cpu.r1.sp = 0x0000;
             cpu.pc = 0x0000;
             cpu.i = 0x00;
             cpu.r = 0x00;
@@ -4863,7 +4863,7 @@ namespace z80ilTest
             Assert.AreEqual(0x0000, cpu.r2.hl, "HL' mismatch");
             Assert.AreEqual(0x0000, cpu.r1.ix, "IX mismatch");
             Assert.AreEqual(0x0000, cpu.r1.iy, "IY mismatch");
-            Assert.AreEqual(0x0000, cpu.sp, "SP mismatch");
+            Assert.AreEqual(0x0000, cpu.r1.sp, "SP mismatch");
             Assert.AreEqual(0x0001, cpu.r, "R mismatch");
             Assert.AreEqual(0x0000, cpu.i, "I mismatch");
             Assert.AreEqual(4UL, cpu.tStates, "tStates mismatch");
@@ -4882,7 +4882,7 @@ namespace z80ilTest
             cpu.r2.hl = 0x0000;
             cpu.r1.ix = 0x0000;
             cpu.r1.iy = 0x0000;
-            cpu.sp = 0x0000;
+            cpu.r1.sp = 0x0000;
             cpu.pc = 0x0000;
             cpu.i = 0x00;
             cpu.r = 0x00;
@@ -4902,7 +4902,7 @@ namespace z80ilTest
             Assert.AreEqual(0x0000, cpu.r2.hl, "HL' mismatch");
             Assert.AreEqual(0x0000, cpu.r1.ix, "IX mismatch");
             Assert.AreEqual(0x0000, cpu.r1.iy, "IY mismatch");
-            Assert.AreEqual(0x0000, cpu.sp, "SP mismatch");
+            Assert.AreEqual(0x0000, cpu.r1.sp, "SP mismatch");
             Assert.AreEqual(0x0001, cpu.r, "R mismatch");
             Assert.AreEqual(0x0000, cpu.i, "I mismatch");
             Assert.AreEqual(4UL, cpu.tStates, "tStates mismatch");
@@ -4921,7 +4921,7 @@ namespace z80ilTest
             cpu.r2.hl = 0x0000;
             cpu.r1.ix = 0x0000;
             cpu.r1.iy = 0x0000;
-            cpu.sp = 0x0000;
+            cpu.r1.sp = 0x0000;
             cpu.pc = 0x0000;
             cpu.i = 0x00;
             cpu.r = 0x00;
@@ -4941,7 +4941,7 @@ namespace z80ilTest
             Assert.AreEqual(0x0000, cpu.r2.hl, "HL' mismatch");
             Assert.AreEqual(0x0000, cpu.r1.ix, "IX mismatch");
             Assert.AreEqual(0x0000, cpu.r1.iy, "IY mismatch");
-            Assert.AreEqual(0x0000, cpu.sp, "SP mismatch");
+            Assert.AreEqual(0x0000, cpu.r1.sp, "SP mismatch");
             Assert.AreEqual(0x0001, cpu.r, "R mismatch");
             Assert.AreEqual(0x0000, cpu.i, "I mismatch");
             Assert.AreEqual(4UL, cpu.tStates, "tStates mismatch");
@@ -4960,7 +4960,7 @@ namespace z80ilTest
             cpu.r2.hl = 0x0000;
             cpu.r1.ix = 0x0000;
             cpu.r1.iy = 0x0000;
-            cpu.sp = 0x0000;
+            cpu.r1.sp = 0x0000;
             cpu.pc = 0x0000;
             cpu.i = 0x00;
             cpu.r = 0x00;
@@ -4981,7 +4981,7 @@ namespace z80ilTest
             Assert.AreEqual(0x0000, cpu.r2.hl, "HL' mismatch");
             Assert.AreEqual(0x0000, cpu.r1.ix, "IX mismatch");
             Assert.AreEqual(0x0000, cpu.r1.iy, "IY mismatch");
-            Assert.AreEqual(0x0000, cpu.sp, "SP mismatch");
+            Assert.AreEqual(0x0000, cpu.r1.sp, "SP mismatch");
             Assert.AreEqual(0x0001, cpu.r, "R mismatch");
             Assert.AreEqual(0x0000, cpu.i, "I mismatch");
             Assert.AreEqual(7UL, cpu.tStates, "tStates mismatch");
@@ -5000,7 +5000,7 @@ namespace z80ilTest
             cpu.r2.hl = 0x0000;
             cpu.r1.ix = 0x0000;
             cpu.r1.iy = 0x0000;
-            cpu.sp = 0x0000;
+            cpu.r1.sp = 0x0000;
             cpu.pc = 0x0000;
             cpu.i = 0x00;
             cpu.r = 0x00;
@@ -5021,7 +5021,7 @@ namespace z80ilTest
             Assert.AreEqual(0x0000, cpu.r2.hl, "HL' mismatch");
             Assert.AreEqual(0x0000, cpu.r1.ix, "IX mismatch");
             Assert.AreEqual(0x0000, cpu.r1.iy, "IY mismatch");
-            Assert.AreEqual(0x0000, cpu.sp, "SP mismatch");
+            Assert.AreEqual(0x0000, cpu.r1.sp, "SP mismatch");
             Assert.AreEqual(0x0001, cpu.r, "R mismatch");
             Assert.AreEqual(0x0000, cpu.i, "I mismatch");
             Assert.AreEqual(12UL, cpu.tStates, "tStates mismatch");
@@ -5040,7 +5040,7 @@ namespace z80ilTest
             cpu.r2.hl = 0x0000;
             cpu.r1.ix = 0x0000;
             cpu.r1.iy = 0x0000;
-            cpu.sp = 0x0000;
+            cpu.r1.sp = 0x0000;
             cpu.pc = 0x0000;
             cpu.i = 0x00;
             cpu.r = 0x00;
@@ -5063,7 +5063,7 @@ namespace z80ilTest
             Assert.AreEqual(0x0000, cpu.r2.hl, "HL' mismatch");
             Assert.AreEqual(0x0000, cpu.r1.ix, "IX mismatch");
             Assert.AreEqual(0x0000, cpu.r1.iy, "IY mismatch");
-            Assert.AreEqual(0x0000, cpu.sp, "SP mismatch");
+            Assert.AreEqual(0x0000, cpu.r1.sp, "SP mismatch");
             Assert.AreEqual(0x0001, cpu.r, "R mismatch");
             Assert.AreEqual(0x0000, cpu.i, "I mismatch");
             Assert.AreEqual(13UL, cpu.tStates, "tStates mismatch");
@@ -5082,7 +5082,7 @@ namespace z80ilTest
             cpu.r2.hl = 0x0000;
             cpu.r1.ix = 0x0000;
             cpu.r1.iy = 0x0000;
-            cpu.sp = 0x9D36;
+            cpu.r1.sp = 0x9D36;
             cpu.pc = 0x0000;
             cpu.i = 0x00;
             cpu.r = 0x00;
@@ -5102,7 +5102,7 @@ namespace z80ilTest
             Assert.AreEqual(0x0000, cpu.r2.hl, "HL' mismatch");
             Assert.AreEqual(0x0000, cpu.r1.ix, "IX mismatch");
             Assert.AreEqual(0x0000, cpu.r1.iy, "IY mismatch");
-            Assert.AreEqual(0x9D35, cpu.sp, "SP mismatch");
+            Assert.AreEqual(0x9D35, cpu.r1.sp, "SP mismatch");
             Assert.AreEqual(0x0001, cpu.r, "R mismatch");
             Assert.AreEqual(0x0000, cpu.i, "I mismatch");
             Assert.AreEqual(6UL, cpu.tStates, "tStates mismatch");
@@ -5121,7 +5121,7 @@ namespace z80ilTest
             cpu.r2.hl = 0x0000;
             cpu.r1.ix = 0x0000;
             cpu.r1.iy = 0x0000;
-            cpu.sp = 0x0000;
+            cpu.r1.sp = 0x0000;
             cpu.pc = 0x0000;
             cpu.i = 0x00;
             cpu.r = 0x00;
@@ -5141,7 +5141,7 @@ namespace z80ilTest
             Assert.AreEqual(0x0000, cpu.r2.hl, "HL' mismatch");
             Assert.AreEqual(0x0000, cpu.r1.ix, "IX mismatch");
             Assert.AreEqual(0x0000, cpu.r1.iy, "IY mismatch");
-            Assert.AreEqual(0x0000, cpu.sp, "SP mismatch");
+            Assert.AreEqual(0x0000, cpu.r1.sp, "SP mismatch");
             Assert.AreEqual(0x0001, cpu.r, "R mismatch");
             Assert.AreEqual(0x0000, cpu.i, "I mismatch");
             Assert.AreEqual(4UL, cpu.tStates, "tStates mismatch");
@@ -5160,7 +5160,7 @@ namespace z80ilTest
             cpu.r2.hl = 0x0000;
             cpu.r1.ix = 0x0000;
             cpu.r1.iy = 0x0000;
-            cpu.sp = 0x0000;
+            cpu.r1.sp = 0x0000;
             cpu.pc = 0x0000;
             cpu.i = 0x00;
             cpu.r = 0x00;
@@ -5180,7 +5180,7 @@ namespace z80ilTest
             Assert.AreEqual(0x0000, cpu.r2.hl, "HL' mismatch");
             Assert.AreEqual(0x0000, cpu.r1.ix, "IX mismatch");
             Assert.AreEqual(0x0000, cpu.r1.iy, "IY mismatch");
-            Assert.AreEqual(0x0000, cpu.sp, "SP mismatch");
+            Assert.AreEqual(0x0000, cpu.r1.sp, "SP mismatch");
             Assert.AreEqual(0x0001, cpu.r, "R mismatch");
             Assert.AreEqual(0x0000, cpu.i, "I mismatch");
             Assert.AreEqual(4UL, cpu.tStates, "tStates mismatch");
@@ -5199,7 +5199,7 @@ namespace z80ilTest
             cpu.r2.hl = 0x0000;
             cpu.r1.ix = 0x0000;
             cpu.r1.iy = 0x0000;
-            cpu.sp = 0x0000;
+            cpu.r1.sp = 0x0000;
             cpu.pc = 0x0000;
             cpu.i = 0x00;
             cpu.r = 0x00;
@@ -5220,7 +5220,7 @@ namespace z80ilTest
             Assert.AreEqual(0x0000, cpu.r2.hl, "HL' mismatch");
             Assert.AreEqual(0x0000, cpu.r1.ix, "IX mismatch");
             Assert.AreEqual(0x0000, cpu.r1.iy, "IY mismatch");
-            Assert.AreEqual(0x0000, cpu.sp, "SP mismatch");
+            Assert.AreEqual(0x0000, cpu.r1.sp, "SP mismatch");
             Assert.AreEqual(0x0001, cpu.r, "R mismatch");
             Assert.AreEqual(0x0000, cpu.i, "I mismatch");
             Assert.AreEqual(7UL, cpu.tStates, "tStates mismatch");
@@ -5239,7 +5239,7 @@ namespace z80ilTest
             cpu.r2.hl = 0x0000;
             cpu.r1.ix = 0x0000;
             cpu.r1.iy = 0x0000;
-            cpu.sp = 0x0000;
+            cpu.r1.sp = 0x0000;
             cpu.pc = 0x0000;
             cpu.i = 0x00;
             cpu.r = 0x00;
@@ -5259,7 +5259,7 @@ namespace z80ilTest
             Assert.AreEqual(0x0000, cpu.r2.hl, "HL' mismatch");
             Assert.AreEqual(0x0000, cpu.r1.ix, "IX mismatch");
             Assert.AreEqual(0x0000, cpu.r1.iy, "IY mismatch");
-            Assert.AreEqual(0x0000, cpu.sp, "SP mismatch");
+            Assert.AreEqual(0x0000, cpu.r1.sp, "SP mismatch");
             Assert.AreEqual(0x0001, cpu.r, "R mismatch");
             Assert.AreEqual(0x0000, cpu.i, "I mismatch");
             Assert.AreEqual(4UL, cpu.tStates, "tStates mismatch");
@@ -5278,7 +5278,7 @@ namespace z80ilTest
             cpu.r2.hl = 0x0000;
             cpu.r1.ix = 0x0000;
             cpu.r1.iy = 0x0000;
-            cpu.sp = 0x0000;
+            cpu.r1.sp = 0x0000;
             cpu.pc = 0x0000;
             cpu.i = 0x00;
             cpu.r = 0x00;
@@ -5299,7 +5299,7 @@ namespace z80ilTest
             Assert.AreEqual(0x0000, cpu.r2.hl, "HL' mismatch");
             Assert.AreEqual(0x0000, cpu.r1.ix, "IX mismatch");
             Assert.AreEqual(0x0000, cpu.r1.iy, "IY mismatch");
-            Assert.AreEqual(0x0000, cpu.sp, "SP mismatch");
+            Assert.AreEqual(0x0000, cpu.r1.sp, "SP mismatch");
             Assert.AreEqual(0x0001, cpu.r, "R mismatch");
             Assert.AreEqual(0x0000, cpu.i, "I mismatch");
             Assert.AreEqual(4UL, cpu.tStates, "tStates mismatch");
@@ -5318,7 +5318,7 @@ namespace z80ilTest
             cpu.r2.hl = 0x0000;
             cpu.r1.ix = 0x0000;
             cpu.r1.iy = 0x0000;
-            cpu.sp = 0x0000;
+            cpu.r1.sp = 0x0000;
             cpu.pc = 0x0000;
             cpu.i = 0x00;
             cpu.r = 0x00;
@@ -5339,7 +5339,7 @@ namespace z80ilTest
             Assert.AreEqual(0x0000, cpu.r2.hl, "HL' mismatch");
             Assert.AreEqual(0x0000, cpu.r1.ix, "IX mismatch");
             Assert.AreEqual(0x0000, cpu.r1.iy, "IY mismatch");
-            Assert.AreEqual(0x0000, cpu.sp, "SP mismatch");
+            Assert.AreEqual(0x0000, cpu.r1.sp, "SP mismatch");
             Assert.AreEqual(0x0001, cpu.r, "R mismatch");
             Assert.AreEqual(0x0000, cpu.i, "I mismatch");
             Assert.AreEqual(4UL, cpu.tStates, "tStates mismatch");
@@ -5358,7 +5358,7 @@ namespace z80ilTest
             cpu.r2.hl = 0x0000;
             cpu.r1.ix = 0x0000;
             cpu.r1.iy = 0x0000;
-            cpu.sp = 0x0000;
+            cpu.r1.sp = 0x0000;
             cpu.pc = 0x0000;
             cpu.i = 0x00;
             cpu.r = 0x00;
@@ -5379,7 +5379,7 @@ namespace z80ilTest
             Assert.AreEqual(0x0000, cpu.r2.hl, "HL' mismatch");
             Assert.AreEqual(0x0000, cpu.r1.ix, "IX mismatch");
             Assert.AreEqual(0x0000, cpu.r1.iy, "IY mismatch");
-            Assert.AreEqual(0x0000, cpu.sp, "SP mismatch");
+            Assert.AreEqual(0x0000, cpu.r1.sp, "SP mismatch");
             Assert.AreEqual(0x0001, cpu.r, "R mismatch");
             Assert.AreEqual(0x0000, cpu.i, "I mismatch");
             Assert.AreEqual(4UL, cpu.tStates, "tStates mismatch");
@@ -5398,7 +5398,7 @@ namespace z80ilTest
             cpu.r2.hl = 0x0000;
             cpu.r1.ix = 0x0000;
             cpu.r1.iy = 0x0000;
-            cpu.sp = 0x0000;
+            cpu.r1.sp = 0x0000;
             cpu.pc = 0x0000;
             cpu.i = 0x00;
             cpu.r = 0x00;
@@ -5419,7 +5419,7 @@ namespace z80ilTest
             Assert.AreEqual(0x0000, cpu.r2.hl, "HL' mismatch");
             Assert.AreEqual(0x0000, cpu.r1.ix, "IX mismatch");
             Assert.AreEqual(0x0000, cpu.r1.iy, "IY mismatch");
-            Assert.AreEqual(0x0000, cpu.sp, "SP mismatch");
+            Assert.AreEqual(0x0000, cpu.r1.sp, "SP mismatch");
             Assert.AreEqual(0x0001, cpu.r, "R mismatch");
             Assert.AreEqual(0x0000, cpu.i, "I mismatch");
             Assert.AreEqual(4UL, cpu.tStates, "tStates mismatch");
@@ -5438,7 +5438,7 @@ namespace z80ilTest
             cpu.r2.hl = 0x0000;
             cpu.r1.ix = 0x0000;
             cpu.r1.iy = 0x0000;
-            cpu.sp = 0x0000;
+            cpu.r1.sp = 0x0000;
             cpu.pc = 0x0000;
             cpu.i = 0x00;
             cpu.r = 0x00;
@@ -5459,7 +5459,7 @@ namespace z80ilTest
             Assert.AreEqual(0x0000, cpu.r2.hl, "HL' mismatch");
             Assert.AreEqual(0x0000, cpu.r1.ix, "IX mismatch");
             Assert.AreEqual(0x0000, cpu.r1.iy, "IY mismatch");
-            Assert.AreEqual(0x0000, cpu.sp, "SP mismatch");
+            Assert.AreEqual(0x0000, cpu.r1.sp, "SP mismatch");
             Assert.AreEqual(0x0001, cpu.r, "R mismatch");
             Assert.AreEqual(0x0000, cpu.i, "I mismatch");
             Assert.AreEqual(7UL, cpu.tStates, "tStates mismatch");
@@ -5478,7 +5478,7 @@ namespace z80ilTest
             cpu.r2.hl = 0x0000;
             cpu.r1.ix = 0x0000;
             cpu.r1.iy = 0x0000;
-            cpu.sp = 0x0000;
+            cpu.r1.sp = 0x0000;
             cpu.pc = 0x0000;
             cpu.i = 0x00;
             cpu.r = 0x00;
@@ -5499,7 +5499,7 @@ namespace z80ilTest
             Assert.AreEqual(0x0000, cpu.r2.hl, "HL' mismatch");
             Assert.AreEqual(0x0000, cpu.r1.ix, "IX mismatch");
             Assert.AreEqual(0x0000, cpu.r1.iy, "IY mismatch");
-            Assert.AreEqual(0x0000, cpu.sp, "SP mismatch");
+            Assert.AreEqual(0x0000, cpu.r1.sp, "SP mismatch");
             Assert.AreEqual(0x0001, cpu.r, "R mismatch");
             Assert.AreEqual(0x0000, cpu.i, "I mismatch");
             Assert.AreEqual(4UL, cpu.tStates, "tStates mismatch");
@@ -5518,7 +5518,7 @@ namespace z80ilTest
             cpu.r2.hl = 0x0000;
             cpu.r1.ix = 0x0000;
             cpu.r1.iy = 0x0000;
-            cpu.sp = 0x0000;
+            cpu.r1.sp = 0x0000;
             cpu.pc = 0x0000;
             cpu.i = 0x00;
             cpu.r = 0x00;
@@ -5539,7 +5539,7 @@ namespace z80ilTest
             Assert.AreEqual(0x0000, cpu.r2.hl, "HL' mismatch");
             Assert.AreEqual(0x0000, cpu.r1.ix, "IX mismatch");
             Assert.AreEqual(0x0000, cpu.r1.iy, "IY mismatch");
-            Assert.AreEqual(0x0000, cpu.sp, "SP mismatch");
+            Assert.AreEqual(0x0000, cpu.r1.sp, "SP mismatch");
             Assert.AreEqual(0x0001, cpu.r, "R mismatch");
             Assert.AreEqual(0x0000, cpu.i, "I mismatch");
             Assert.AreEqual(4UL, cpu.tStates, "tStates mismatch");
@@ -5558,7 +5558,7 @@ namespace z80ilTest
             cpu.r2.hl = 0x0000;
             cpu.r1.ix = 0x0000;
             cpu.r1.iy = 0x0000;
-            cpu.sp = 0x0000;
+            cpu.r1.sp = 0x0000;
             cpu.pc = 0x0000;
             cpu.i = 0x00;
             cpu.r = 0x00;
@@ -5579,7 +5579,7 @@ namespace z80ilTest
             Assert.AreEqual(0x0000, cpu.r2.hl, "HL' mismatch");
             Assert.AreEqual(0x0000, cpu.r1.ix, "IX mismatch");
             Assert.AreEqual(0x0000, cpu.r1.iy, "IY mismatch");
-            Assert.AreEqual(0x0000, cpu.sp, "SP mismatch");
+            Assert.AreEqual(0x0000, cpu.r1.sp, "SP mismatch");
             Assert.AreEqual(0x0001, cpu.r, "R mismatch");
             Assert.AreEqual(0x0000, cpu.i, "I mismatch");
             Assert.AreEqual(4UL, cpu.tStates, "tStates mismatch");
@@ -5598,7 +5598,7 @@ namespace z80ilTest
             cpu.r2.hl = 0x0000;
             cpu.r1.ix = 0x0000;
             cpu.r1.iy = 0x0000;
-            cpu.sp = 0x0000;
+            cpu.r1.sp = 0x0000;
             cpu.pc = 0x0000;
             cpu.i = 0x00;
             cpu.r = 0x00;
@@ -5619,7 +5619,7 @@ namespace z80ilTest
             Assert.AreEqual(0x0000, cpu.r2.hl, "HL' mismatch");
             Assert.AreEqual(0x0000, cpu.r1.ix, "IX mismatch");
             Assert.AreEqual(0x0000, cpu.r1.iy, "IY mismatch");
-            Assert.AreEqual(0x0000, cpu.sp, "SP mismatch");
+            Assert.AreEqual(0x0000, cpu.r1.sp, "SP mismatch");
             Assert.AreEqual(0x0001, cpu.r, "R mismatch");
             Assert.AreEqual(0x0000, cpu.i, "I mismatch");
             Assert.AreEqual(4UL, cpu.tStates, "tStates mismatch");
@@ -5638,7 +5638,7 @@ namespace z80ilTest
             cpu.r2.hl = 0x0000;
             cpu.r1.ix = 0x0000;
             cpu.r1.iy = 0x0000;
-            cpu.sp = 0x0000;
+            cpu.r1.sp = 0x0000;
             cpu.pc = 0x0000;
             cpu.i = 0x00;
             cpu.r = 0x00;
@@ -5659,7 +5659,7 @@ namespace z80ilTest
             Assert.AreEqual(0x0000, cpu.r2.hl, "HL' mismatch");
             Assert.AreEqual(0x0000, cpu.r1.ix, "IX mismatch");
             Assert.AreEqual(0x0000, cpu.r1.iy, "IY mismatch");
-            Assert.AreEqual(0x0000, cpu.sp, "SP mismatch");
+            Assert.AreEqual(0x0000, cpu.r1.sp, "SP mismatch");
             Assert.AreEqual(0x0001, cpu.r, "R mismatch");
             Assert.AreEqual(0x0000, cpu.i, "I mismatch");
             Assert.AreEqual(4UL, cpu.tStates, "tStates mismatch");
@@ -5678,7 +5678,7 @@ namespace z80ilTest
             cpu.r2.hl = 0x0000;
             cpu.r1.ix = 0x0000;
             cpu.r1.iy = 0x0000;
-            cpu.sp = 0x0000;
+            cpu.r1.sp = 0x0000;
             cpu.pc = 0x0000;
             cpu.i = 0x00;
             cpu.r = 0x00;
@@ -5699,7 +5699,7 @@ namespace z80ilTest
             Assert.AreEqual(0x0000, cpu.r2.hl, "HL' mismatch");
             Assert.AreEqual(0x0000, cpu.r1.ix, "IX mismatch");
             Assert.AreEqual(0x0000, cpu.r1.iy, "IY mismatch");
-            Assert.AreEqual(0x0000, cpu.sp, "SP mismatch");
+            Assert.AreEqual(0x0000, cpu.r1.sp, "SP mismatch");
             Assert.AreEqual(0x0001, cpu.r, "R mismatch");
             Assert.AreEqual(0x0000, cpu.i, "I mismatch");
             Assert.AreEqual(7UL, cpu.tStates, "tStates mismatch");
@@ -5718,7 +5718,7 @@ namespace z80ilTest
             cpu.r2.hl = 0x0000;
             cpu.r1.ix = 0x0000;
             cpu.r1.iy = 0x0000;
-            cpu.sp = 0x0000;
+            cpu.r1.sp = 0x0000;
             cpu.pc = 0x0000;
             cpu.i = 0x00;
             cpu.r = 0x00;
@@ -5739,7 +5739,7 @@ namespace z80ilTest
             Assert.AreEqual(0x0000, cpu.r2.hl, "HL' mismatch");
             Assert.AreEqual(0x0000, cpu.r1.ix, "IX mismatch");
             Assert.AreEqual(0x0000, cpu.r1.iy, "IY mismatch");
-            Assert.AreEqual(0x0000, cpu.sp, "SP mismatch");
+            Assert.AreEqual(0x0000, cpu.r1.sp, "SP mismatch");
             Assert.AreEqual(0x0001, cpu.r, "R mismatch");
             Assert.AreEqual(0x0000, cpu.i, "I mismatch");
             Assert.AreEqual(4UL, cpu.tStates, "tStates mismatch");
@@ -5758,7 +5758,7 @@ namespace z80ilTest
             cpu.r2.hl = 0x0000;
             cpu.r1.ix = 0x0000;
             cpu.r1.iy = 0x0000;
-            cpu.sp = 0x0000;
+            cpu.r1.sp = 0x0000;
             cpu.pc = 0x0000;
             cpu.i = 0x00;
             cpu.r = 0x00;
@@ -5779,7 +5779,7 @@ namespace z80ilTest
             Assert.AreEqual(0x0000, cpu.r2.hl, "HL' mismatch");
             Assert.AreEqual(0x0000, cpu.r1.ix, "IX mismatch");
             Assert.AreEqual(0x0000, cpu.r1.iy, "IY mismatch");
-            Assert.AreEqual(0x0000, cpu.sp, "SP mismatch");
+            Assert.AreEqual(0x0000, cpu.r1.sp, "SP mismatch");
             Assert.AreEqual(0x0001, cpu.r, "R mismatch");
             Assert.AreEqual(0x0000, cpu.i, "I mismatch");
             Assert.AreEqual(4UL, cpu.tStates, "tStates mismatch");
@@ -5798,7 +5798,7 @@ namespace z80ilTest
             cpu.r2.hl = 0x0000;
             cpu.r1.ix = 0x0000;
             cpu.r1.iy = 0x0000;
-            cpu.sp = 0x0000;
+            cpu.r1.sp = 0x0000;
             cpu.pc = 0x0000;
             cpu.i = 0x00;
             cpu.r = 0x00;
@@ -5819,7 +5819,7 @@ namespace z80ilTest
             Assert.AreEqual(0x0000, cpu.r2.hl, "HL' mismatch");
             Assert.AreEqual(0x0000, cpu.r1.ix, "IX mismatch");
             Assert.AreEqual(0x0000, cpu.r1.iy, "IY mismatch");
-            Assert.AreEqual(0x0000, cpu.sp, "SP mismatch");
+            Assert.AreEqual(0x0000, cpu.r1.sp, "SP mismatch");
             Assert.AreEqual(0x0001, cpu.r, "R mismatch");
             Assert.AreEqual(0x0000, cpu.i, "I mismatch");
             Assert.AreEqual(4UL, cpu.tStates, "tStates mismatch");
@@ -5838,7 +5838,7 @@ namespace z80ilTest
             cpu.r2.hl = 0x0000;
             cpu.r1.ix = 0x0000;
             cpu.r1.iy = 0x0000;
-            cpu.sp = 0x0000;
+            cpu.r1.sp = 0x0000;
             cpu.pc = 0x0000;
             cpu.i = 0x00;
             cpu.r = 0x00;
@@ -5859,7 +5859,7 @@ namespace z80ilTest
             Assert.AreEqual(0x0000, cpu.r2.hl, "HL' mismatch");
             Assert.AreEqual(0x0000, cpu.r1.ix, "IX mismatch");
             Assert.AreEqual(0x0000, cpu.r1.iy, "IY mismatch");
-            Assert.AreEqual(0x0000, cpu.sp, "SP mismatch");
+            Assert.AreEqual(0x0000, cpu.r1.sp, "SP mismatch");
             Assert.AreEqual(0x0001, cpu.r, "R mismatch");
             Assert.AreEqual(0x0000, cpu.i, "I mismatch");
             Assert.AreEqual(4UL, cpu.tStates, "tStates mismatch");
@@ -5878,7 +5878,7 @@ namespace z80ilTest
             cpu.r2.hl = 0x0000;
             cpu.r1.ix = 0x0000;
             cpu.r1.iy = 0x0000;
-            cpu.sp = 0x0000;
+            cpu.r1.sp = 0x0000;
             cpu.pc = 0x0000;
             cpu.i = 0x00;
             cpu.r = 0x00;
@@ -5899,7 +5899,7 @@ namespace z80ilTest
             Assert.AreEqual(0x0000, cpu.r2.hl, "HL' mismatch");
             Assert.AreEqual(0x0000, cpu.r1.ix, "IX mismatch");
             Assert.AreEqual(0x0000, cpu.r1.iy, "IY mismatch");
-            Assert.AreEqual(0x0000, cpu.sp, "SP mismatch");
+            Assert.AreEqual(0x0000, cpu.r1.sp, "SP mismatch");
             Assert.AreEqual(0x0001, cpu.r, "R mismatch");
             Assert.AreEqual(0x0000, cpu.i, "I mismatch");
             Assert.AreEqual(4UL, cpu.tStates, "tStates mismatch");
@@ -5918,7 +5918,7 @@ namespace z80ilTest
             cpu.r2.hl = 0x0000;
             cpu.r1.ix = 0x0000;
             cpu.r1.iy = 0x0000;
-            cpu.sp = 0x0000;
+            cpu.r1.sp = 0x0000;
             cpu.pc = 0x0000;
             cpu.i = 0x00;
             cpu.r = 0x00;
@@ -5939,7 +5939,7 @@ namespace z80ilTest
             Assert.AreEqual(0x0000, cpu.r2.hl, "HL' mismatch");
             Assert.AreEqual(0x0000, cpu.r1.ix, "IX mismatch");
             Assert.AreEqual(0x0000, cpu.r1.iy, "IY mismatch");
-            Assert.AreEqual(0x0000, cpu.sp, "SP mismatch");
+            Assert.AreEqual(0x0000, cpu.r1.sp, "SP mismatch");
             Assert.AreEqual(0x0001, cpu.r, "R mismatch");
             Assert.AreEqual(0x0000, cpu.i, "I mismatch");
             Assert.AreEqual(7UL, cpu.tStates, "tStates mismatch");
@@ -5958,7 +5958,7 @@ namespace z80ilTest
             cpu.r2.hl = 0x0000;
             cpu.r1.ix = 0x0000;
             cpu.r1.iy = 0x0000;
-            cpu.sp = 0x0000;
+            cpu.r1.sp = 0x0000;
             cpu.pc = 0x0000;
             cpu.i = 0x00;
             cpu.r = 0x00;
@@ -5979,7 +5979,7 @@ namespace z80ilTest
             Assert.AreEqual(0x0000, cpu.r2.hl, "HL' mismatch");
             Assert.AreEqual(0x0000, cpu.r1.ix, "IX mismatch");
             Assert.AreEqual(0x0000, cpu.r1.iy, "IY mismatch");
-            Assert.AreEqual(0x0000, cpu.sp, "SP mismatch");
+            Assert.AreEqual(0x0000, cpu.r1.sp, "SP mismatch");
             Assert.AreEqual(0x0001, cpu.r, "R mismatch");
             Assert.AreEqual(0x0000, cpu.i, "I mismatch");
             Assert.AreEqual(4UL, cpu.tStates, "tStates mismatch");
@@ -5998,7 +5998,7 @@ namespace z80ilTest
             cpu.r2.hl = 0x0000;
             cpu.r1.ix = 0x0000;
             cpu.r1.iy = 0x0000;
-            cpu.sp = 0x0000;
+            cpu.r1.sp = 0x0000;
             cpu.pc = 0x0000;
             cpu.i = 0x00;
             cpu.r = 0x00;
@@ -6019,7 +6019,7 @@ namespace z80ilTest
             Assert.AreEqual(0x0000, cpu.r2.hl, "HL' mismatch");
             Assert.AreEqual(0x0000, cpu.r1.ix, "IX mismatch");
             Assert.AreEqual(0x0000, cpu.r1.iy, "IY mismatch");
-            Assert.AreEqual(0x0000, cpu.sp, "SP mismatch");
+            Assert.AreEqual(0x0000, cpu.r1.sp, "SP mismatch");
             Assert.AreEqual(0x0001, cpu.r, "R mismatch");
             Assert.AreEqual(0x0000, cpu.i, "I mismatch");
             Assert.AreEqual(4UL, cpu.tStates, "tStates mismatch");
@@ -6038,7 +6038,7 @@ namespace z80ilTest
             cpu.r2.hl = 0x0000;
             cpu.r1.ix = 0x0000;
             cpu.r1.iy = 0x0000;
-            cpu.sp = 0x0000;
+            cpu.r1.sp = 0x0000;
             cpu.pc = 0x0000;
             cpu.i = 0x00;
             cpu.r = 0x00;
@@ -6059,7 +6059,7 @@ namespace z80ilTest
             Assert.AreEqual(0x0000, cpu.r2.hl, "HL' mismatch");
             Assert.AreEqual(0x0000, cpu.r1.ix, "IX mismatch");
             Assert.AreEqual(0x0000, cpu.r1.iy, "IY mismatch");
-            Assert.AreEqual(0x0000, cpu.sp, "SP mismatch");
+            Assert.AreEqual(0x0000, cpu.r1.sp, "SP mismatch");
             Assert.AreEqual(0x0001, cpu.r, "R mismatch");
             Assert.AreEqual(0x0000, cpu.i, "I mismatch");
             Assert.AreEqual(4UL, cpu.tStates, "tStates mismatch");
@@ -6078,7 +6078,7 @@ namespace z80ilTest
             cpu.r2.hl = 0x0000;
             cpu.r1.ix = 0x0000;
             cpu.r1.iy = 0x0000;
-            cpu.sp = 0x0000;
+            cpu.r1.sp = 0x0000;
             cpu.pc = 0x0000;
             cpu.i = 0x00;
             cpu.r = 0x00;
@@ -6099,7 +6099,7 @@ namespace z80ilTest
             Assert.AreEqual(0x0000, cpu.r2.hl, "HL' mismatch");
             Assert.AreEqual(0x0000, cpu.r1.ix, "IX mismatch");
             Assert.AreEqual(0x0000, cpu.r1.iy, "IY mismatch");
-            Assert.AreEqual(0x0000, cpu.sp, "SP mismatch");
+            Assert.AreEqual(0x0000, cpu.r1.sp, "SP mismatch");
             Assert.AreEqual(0x0001, cpu.r, "R mismatch");
             Assert.AreEqual(0x0000, cpu.i, "I mismatch");
             Assert.AreEqual(4UL, cpu.tStates, "tStates mismatch");
@@ -6118,7 +6118,7 @@ namespace z80ilTest
             cpu.r2.hl = 0x0000;
             cpu.r1.ix = 0x0000;
             cpu.r1.iy = 0x0000;
-            cpu.sp = 0x0000;
+            cpu.r1.sp = 0x0000;
             cpu.pc = 0x0000;
             cpu.i = 0x00;
             cpu.r = 0x00;
@@ -6139,7 +6139,7 @@ namespace z80ilTest
             Assert.AreEqual(0x0000, cpu.r2.hl, "HL' mismatch");
             Assert.AreEqual(0x0000, cpu.r1.ix, "IX mismatch");
             Assert.AreEqual(0x0000, cpu.r1.iy, "IY mismatch");
-            Assert.AreEqual(0x0000, cpu.sp, "SP mismatch");
+            Assert.AreEqual(0x0000, cpu.r1.sp, "SP mismatch");
             Assert.AreEqual(0x0001, cpu.r, "R mismatch");
             Assert.AreEqual(0x0000, cpu.i, "I mismatch");
             Assert.AreEqual(4UL, cpu.tStates, "tStates mismatch");
@@ -6158,7 +6158,7 @@ namespace z80ilTest
             cpu.r2.hl = 0x0000;
             cpu.r1.ix = 0x0000;
             cpu.r1.iy = 0x0000;
-            cpu.sp = 0x0000;
+            cpu.r1.sp = 0x0000;
             cpu.pc = 0x0000;
             cpu.i = 0x00;
             cpu.r = 0x00;
@@ -6179,7 +6179,7 @@ namespace z80ilTest
             Assert.AreEqual(0x0000, cpu.r2.hl, "HL' mismatch");
             Assert.AreEqual(0x0000, cpu.r1.ix, "IX mismatch");
             Assert.AreEqual(0x0000, cpu.r1.iy, "IY mismatch");
-            Assert.AreEqual(0x0000, cpu.sp, "SP mismatch");
+            Assert.AreEqual(0x0000, cpu.r1.sp, "SP mismatch");
             Assert.AreEqual(0x0001, cpu.r, "R mismatch");
             Assert.AreEqual(0x0000, cpu.i, "I mismatch");
             Assert.AreEqual(7UL, cpu.tStates, "tStates mismatch");
@@ -6198,7 +6198,7 @@ namespace z80ilTest
             cpu.r2.hl = 0x0000;
             cpu.r1.ix = 0x0000;
             cpu.r1.iy = 0x0000;
-            cpu.sp = 0x0000;
+            cpu.r1.sp = 0x0000;
             cpu.pc = 0x0000;
             cpu.i = 0x00;
             cpu.r = 0x00;
@@ -6219,7 +6219,7 @@ namespace z80ilTest
             Assert.AreEqual(0x0000, cpu.r2.hl, "HL' mismatch");
             Assert.AreEqual(0x0000, cpu.r1.ix, "IX mismatch");
             Assert.AreEqual(0x0000, cpu.r1.iy, "IY mismatch");
-            Assert.AreEqual(0x0000, cpu.sp, "SP mismatch");
+            Assert.AreEqual(0x0000, cpu.r1.sp, "SP mismatch");
             Assert.AreEqual(0x0001, cpu.r, "R mismatch");
             Assert.AreEqual(0x0000, cpu.i, "I mismatch");
             Assert.AreEqual(4UL, cpu.tStates, "tStates mismatch");
@@ -6238,7 +6238,7 @@ namespace z80ilTest
             cpu.r2.hl = 0x0000;
             cpu.r1.ix = 0x0000;
             cpu.r1.iy = 0x0000;
-            cpu.sp = 0x0000;
+            cpu.r1.sp = 0x0000;
             cpu.pc = 0x0000;
             cpu.i = 0x00;
             cpu.r = 0x00;
@@ -6259,7 +6259,7 @@ namespace z80ilTest
             Assert.AreEqual(0x0000, cpu.r2.hl, "HL' mismatch");
             Assert.AreEqual(0x0000, cpu.r1.ix, "IX mismatch");
             Assert.AreEqual(0x0000, cpu.r1.iy, "IY mismatch");
-            Assert.AreEqual(0x0000, cpu.sp, "SP mismatch");
+            Assert.AreEqual(0x0000, cpu.r1.sp, "SP mismatch");
             Assert.AreEqual(0x0001, cpu.r, "R mismatch");
             Assert.AreEqual(0x0000, cpu.i, "I mismatch");
             Assert.AreEqual(4UL, cpu.tStates, "tStates mismatch");
@@ -6278,7 +6278,7 @@ namespace z80ilTest
             cpu.r2.hl = 0x0000;
             cpu.r1.ix = 0x0000;
             cpu.r1.iy = 0x0000;
-            cpu.sp = 0x0000;
+            cpu.r1.sp = 0x0000;
             cpu.pc = 0x0000;
             cpu.i = 0x00;
             cpu.r = 0x00;
@@ -6299,7 +6299,7 @@ namespace z80ilTest
             Assert.AreEqual(0x0000, cpu.r2.hl, "HL' mismatch");
             Assert.AreEqual(0x0000, cpu.r1.ix, "IX mismatch");
             Assert.AreEqual(0x0000, cpu.r1.iy, "IY mismatch");
-            Assert.AreEqual(0x0000, cpu.sp, "SP mismatch");
+            Assert.AreEqual(0x0000, cpu.r1.sp, "SP mismatch");
             Assert.AreEqual(0x0001, cpu.r, "R mismatch");
             Assert.AreEqual(0x0000, cpu.i, "I mismatch");
             Assert.AreEqual(4UL, cpu.tStates, "tStates mismatch");
@@ -6318,7 +6318,7 @@ namespace z80ilTest
             cpu.r2.hl = 0x0000;
             cpu.r1.ix = 0x0000;
             cpu.r1.iy = 0x0000;
-            cpu.sp = 0x0000;
+            cpu.r1.sp = 0x0000;
             cpu.pc = 0x0000;
             cpu.i = 0x00;
             cpu.r = 0x00;
@@ -6339,7 +6339,7 @@ namespace z80ilTest
             Assert.AreEqual(0x0000, cpu.r2.hl, "HL' mismatch");
             Assert.AreEqual(0x0000, cpu.r1.ix, "IX mismatch");
             Assert.AreEqual(0x0000, cpu.r1.iy, "IY mismatch");
-            Assert.AreEqual(0x0000, cpu.sp, "SP mismatch");
+            Assert.AreEqual(0x0000, cpu.r1.sp, "SP mismatch");
             Assert.AreEqual(0x0001, cpu.r, "R mismatch");
             Assert.AreEqual(0x0000, cpu.i, "I mismatch");
             Assert.AreEqual(4UL, cpu.tStates, "tStates mismatch");
@@ -6358,7 +6358,7 @@ namespace z80ilTest
             cpu.r2.hl = 0x0000;
             cpu.r1.ix = 0x0000;
             cpu.r1.iy = 0x0000;
-            cpu.sp = 0x0000;
+            cpu.r1.sp = 0x0000;
             cpu.pc = 0x0000;
             cpu.i = 0x00;
             cpu.r = 0x00;
@@ -6379,7 +6379,7 @@ namespace z80ilTest
             Assert.AreEqual(0x0000, cpu.r2.hl, "HL' mismatch");
             Assert.AreEqual(0x0000, cpu.r1.ix, "IX mismatch");
             Assert.AreEqual(0x0000, cpu.r1.iy, "IY mismatch");
-            Assert.AreEqual(0x0000, cpu.sp, "SP mismatch");
+            Assert.AreEqual(0x0000, cpu.r1.sp, "SP mismatch");
             Assert.AreEqual(0x0001, cpu.r, "R mismatch");
             Assert.AreEqual(0x0000, cpu.i, "I mismatch");
             Assert.AreEqual(4UL, cpu.tStates, "tStates mismatch");
@@ -6398,7 +6398,7 @@ namespace z80ilTest
             cpu.r2.hl = 0x0000;
             cpu.r1.ix = 0x0000;
             cpu.r1.iy = 0x0000;
-            cpu.sp = 0x0000;
+            cpu.r1.sp = 0x0000;
             cpu.pc = 0x0000;
             cpu.i = 0x00;
             cpu.r = 0x00;
@@ -6419,7 +6419,7 @@ namespace z80ilTest
             Assert.AreEqual(0x0000, cpu.r2.hl, "HL' mismatch");
             Assert.AreEqual(0x0000, cpu.r1.ix, "IX mismatch");
             Assert.AreEqual(0x0000, cpu.r1.iy, "IY mismatch");
-            Assert.AreEqual(0x0000, cpu.sp, "SP mismatch");
+            Assert.AreEqual(0x0000, cpu.r1.sp, "SP mismatch");
             Assert.AreEqual(0x0001, cpu.r, "R mismatch");
             Assert.AreEqual(0x0000, cpu.i, "I mismatch");
             Assert.AreEqual(7UL, cpu.tStates, "tStates mismatch");
@@ -6438,7 +6438,7 @@ namespace z80ilTest
             cpu.r2.hl = 0x0000;
             cpu.r1.ix = 0x0000;
             cpu.r1.iy = 0x0000;
-            cpu.sp = 0x0000;
+            cpu.r1.sp = 0x0000;
             cpu.pc = 0x0000;
             cpu.i = 0x00;
             cpu.r = 0x00;
@@ -6459,7 +6459,7 @@ namespace z80ilTest
             Assert.AreEqual(0x0000, cpu.r2.hl, "HL' mismatch");
             Assert.AreEqual(0x0000, cpu.r1.ix, "IX mismatch");
             Assert.AreEqual(0x0000, cpu.r1.iy, "IY mismatch");
-            Assert.AreEqual(0x0000, cpu.sp, "SP mismatch");
+            Assert.AreEqual(0x0000, cpu.r1.sp, "SP mismatch");
             Assert.AreEqual(0x0001, cpu.r, "R mismatch");
             Assert.AreEqual(0x0000, cpu.i, "I mismatch");
             Assert.AreEqual(4UL, cpu.tStates, "tStates mismatch");
@@ -6478,7 +6478,7 @@ namespace z80ilTest
             cpu.r2.hl = 0x0000;
             cpu.r1.ix = 0x0000;
             cpu.r1.iy = 0x0000;
-            cpu.sp = 0x0000;
+            cpu.r1.sp = 0x0000;
             cpu.pc = 0x0000;
             cpu.i = 0x00;
             cpu.r = 0x00;
@@ -6499,7 +6499,7 @@ namespace z80ilTest
             Assert.AreEqual(0x0000, cpu.r2.hl, "HL' mismatch");
             Assert.AreEqual(0x0000, cpu.r1.ix, "IX mismatch");
             Assert.AreEqual(0x0000, cpu.r1.iy, "IY mismatch");
-            Assert.AreEqual(0x0000, cpu.sp, "SP mismatch");
+            Assert.AreEqual(0x0000, cpu.r1.sp, "SP mismatch");
             Assert.AreEqual(0x0001, cpu.r, "R mismatch");
             Assert.AreEqual(0x0000, cpu.i, "I mismatch");
             Assert.AreEqual(4UL, cpu.tStates, "tStates mismatch");
@@ -6518,7 +6518,7 @@ namespace z80ilTest
             cpu.r2.hl = 0x0000;
             cpu.r1.ix = 0x0000;
             cpu.r1.iy = 0x0000;
-            cpu.sp = 0x0000;
+            cpu.r1.sp = 0x0000;
             cpu.pc = 0x0000;
             cpu.i = 0x00;
             cpu.r = 0x00;
@@ -6539,7 +6539,7 @@ namespace z80ilTest
             Assert.AreEqual(0x0000, cpu.r2.hl, "HL' mismatch");
             Assert.AreEqual(0x0000, cpu.r1.ix, "IX mismatch");
             Assert.AreEqual(0x0000, cpu.r1.iy, "IY mismatch");
-            Assert.AreEqual(0x0000, cpu.sp, "SP mismatch");
+            Assert.AreEqual(0x0000, cpu.r1.sp, "SP mismatch");
             Assert.AreEqual(0x0001, cpu.r, "R mismatch");
             Assert.AreEqual(0x0000, cpu.i, "I mismatch");
             Assert.AreEqual(4UL, cpu.tStates, "tStates mismatch");
@@ -6558,7 +6558,7 @@ namespace z80ilTest
             cpu.r2.hl = 0x0000;
             cpu.r1.ix = 0x0000;
             cpu.r1.iy = 0x0000;
-            cpu.sp = 0x0000;
+            cpu.r1.sp = 0x0000;
             cpu.pc = 0x0000;
             cpu.i = 0x00;
             cpu.r = 0x00;
@@ -6579,7 +6579,7 @@ namespace z80ilTest
             Assert.AreEqual(0x0000, cpu.r2.hl, "HL' mismatch");
             Assert.AreEqual(0x0000, cpu.r1.ix, "IX mismatch");
             Assert.AreEqual(0x0000, cpu.r1.iy, "IY mismatch");
-            Assert.AreEqual(0x0000, cpu.sp, "SP mismatch");
+            Assert.AreEqual(0x0000, cpu.r1.sp, "SP mismatch");
             Assert.AreEqual(0x0001, cpu.r, "R mismatch");
             Assert.AreEqual(0x0000, cpu.i, "I mismatch");
             Assert.AreEqual(4UL, cpu.tStates, "tStates mismatch");
@@ -6598,7 +6598,7 @@ namespace z80ilTest
             cpu.r2.hl = 0x0000;
             cpu.r1.ix = 0x0000;
             cpu.r1.iy = 0x0000;
-            cpu.sp = 0x0000;
+            cpu.r1.sp = 0x0000;
             cpu.pc = 0x0000;
             cpu.i = 0x00;
             cpu.r = 0x00;
@@ -6619,7 +6619,7 @@ namespace z80ilTest
             Assert.AreEqual(0x0000, cpu.r2.hl, "HL' mismatch");
             Assert.AreEqual(0x0000, cpu.r1.ix, "IX mismatch");
             Assert.AreEqual(0x0000, cpu.r1.iy, "IY mismatch");
-            Assert.AreEqual(0x0000, cpu.sp, "SP mismatch");
+            Assert.AreEqual(0x0000, cpu.r1.sp, "SP mismatch");
             Assert.AreEqual(0x0001, cpu.r, "R mismatch");
             Assert.AreEqual(0x0000, cpu.i, "I mismatch");
             Assert.AreEqual(4UL, cpu.tStates, "tStates mismatch");
@@ -6638,7 +6638,7 @@ namespace z80ilTest
             cpu.r2.hl = 0x0000;
             cpu.r1.ix = 0x0000;
             cpu.r1.iy = 0x0000;
-            cpu.sp = 0x0000;
+            cpu.r1.sp = 0x0000;
             cpu.pc = 0x0000;
             cpu.i = 0x00;
             cpu.r = 0x00;
@@ -6659,7 +6659,7 @@ namespace z80ilTest
             Assert.AreEqual(0x0000, cpu.r2.hl, "HL' mismatch");
             Assert.AreEqual(0x0000, cpu.r1.ix, "IX mismatch");
             Assert.AreEqual(0x0000, cpu.r1.iy, "IY mismatch");
-            Assert.AreEqual(0x0000, cpu.sp, "SP mismatch");
+            Assert.AreEqual(0x0000, cpu.r1.sp, "SP mismatch");
             Assert.AreEqual(0x0001, cpu.r, "R mismatch");
             Assert.AreEqual(0x0000, cpu.i, "I mismatch");
             Assert.AreEqual(7UL, cpu.tStates, "tStates mismatch");
@@ -6678,7 +6678,7 @@ namespace z80ilTest
             cpu.r2.hl = 0x0000;
             cpu.r1.ix = 0x0000;
             cpu.r1.iy = 0x0000;
-            cpu.sp = 0x0000;
+            cpu.r1.sp = 0x0000;
             cpu.pc = 0x0000;
             cpu.i = 0x00;
             cpu.r = 0x00;
@@ -6699,7 +6699,7 @@ namespace z80ilTest
             Assert.AreEqual(0x0000, cpu.r2.hl, "HL' mismatch");
             Assert.AreEqual(0x0000, cpu.r1.ix, "IX mismatch");
             Assert.AreEqual(0x0000, cpu.r1.iy, "IY mismatch");
-            Assert.AreEqual(0x0000, cpu.sp, "SP mismatch");
+            Assert.AreEqual(0x0000, cpu.r1.sp, "SP mismatch");
             Assert.AreEqual(0x0001, cpu.r, "R mismatch");
             Assert.AreEqual(0x0000, cpu.i, "I mismatch");
             Assert.AreEqual(4UL, cpu.tStates, "tStates mismatch");
@@ -6718,7 +6718,7 @@ namespace z80ilTest
             cpu.r2.hl = 0x0000;
             cpu.r1.ix = 0x0000;
             cpu.r1.iy = 0x0000;
-            cpu.sp = 0x0000;
+            cpu.r1.sp = 0x0000;
             cpu.pc = 0x0000;
             cpu.i = 0x00;
             cpu.r = 0x00;
@@ -6739,7 +6739,7 @@ namespace z80ilTest
             Assert.AreEqual(0x0000, cpu.r2.hl, "HL' mismatch");
             Assert.AreEqual(0x0000, cpu.r1.ix, "IX mismatch");
             Assert.AreEqual(0x0000, cpu.r1.iy, "IY mismatch");
-            Assert.AreEqual(0x0000, cpu.sp, "SP mismatch");
+            Assert.AreEqual(0x0000, cpu.r1.sp, "SP mismatch");
             Assert.AreEqual(0x0001, cpu.r, "R mismatch");
             Assert.AreEqual(0x0000, cpu.i, "I mismatch");
             Assert.AreEqual(4UL, cpu.tStates, "tStates mismatch");
@@ -6758,7 +6758,7 @@ namespace z80ilTest
             cpu.r2.hl = 0x0000;
             cpu.r1.ix = 0x0000;
             cpu.r1.iy = 0x0000;
-            cpu.sp = 0x0000;
+            cpu.r1.sp = 0x0000;
             cpu.pc = 0x0000;
             cpu.i = 0x00;
             cpu.r = 0x00;
@@ -6779,7 +6779,7 @@ namespace z80ilTest
             Assert.AreEqual(0x0000, cpu.r2.hl, "HL' mismatch");
             Assert.AreEqual(0x0000, cpu.r1.ix, "IX mismatch");
             Assert.AreEqual(0x0000, cpu.r1.iy, "IY mismatch");
-            Assert.AreEqual(0x0000, cpu.sp, "SP mismatch");
+            Assert.AreEqual(0x0000, cpu.r1.sp, "SP mismatch");
             Assert.AreEqual(0x0001, cpu.r, "R mismatch");
             Assert.AreEqual(0x0000, cpu.i, "I mismatch");
             Assert.AreEqual(4UL, cpu.tStates, "tStates mismatch");
@@ -6798,7 +6798,7 @@ namespace z80ilTest
             cpu.r2.hl = 0x0000;
             cpu.r1.ix = 0x0000;
             cpu.r1.iy = 0x0000;
-            cpu.sp = 0x0000;
+            cpu.r1.sp = 0x0000;
             cpu.pc = 0x0000;
             cpu.i = 0x00;
             cpu.r = 0x00;
@@ -6819,7 +6819,7 @@ namespace z80ilTest
             Assert.AreEqual(0x0000, cpu.r2.hl, "HL' mismatch");
             Assert.AreEqual(0x0000, cpu.r1.ix, "IX mismatch");
             Assert.AreEqual(0x0000, cpu.r1.iy, "IY mismatch");
-            Assert.AreEqual(0x0000, cpu.sp, "SP mismatch");
+            Assert.AreEqual(0x0000, cpu.r1.sp, "SP mismatch");
             Assert.AreEqual(0x0001, cpu.r, "R mismatch");
             Assert.AreEqual(0x0000, cpu.i, "I mismatch");
             Assert.AreEqual(4UL, cpu.tStates, "tStates mismatch");
@@ -6838,7 +6838,7 @@ namespace z80ilTest
             cpu.r2.hl = 0x0000;
             cpu.r1.ix = 0x0000;
             cpu.r1.iy = 0x0000;
-            cpu.sp = 0x0000;
+            cpu.r1.sp = 0x0000;
             cpu.pc = 0x0000;
             cpu.i = 0x00;
             cpu.r = 0x00;
@@ -6859,7 +6859,7 @@ namespace z80ilTest
             Assert.AreEqual(0x0000, cpu.r2.hl, "HL' mismatch");
             Assert.AreEqual(0x0000, cpu.r1.ix, "IX mismatch");
             Assert.AreEqual(0x0000, cpu.r1.iy, "IY mismatch");
-            Assert.AreEqual(0x0000, cpu.sp, "SP mismatch");
+            Assert.AreEqual(0x0000, cpu.r1.sp, "SP mismatch");
             Assert.AreEqual(0x0001, cpu.r, "R mismatch");
             Assert.AreEqual(0x0000, cpu.i, "I mismatch");
             Assert.AreEqual(4UL, cpu.tStates, "tStates mismatch");
@@ -6878,7 +6878,7 @@ namespace z80ilTest
             cpu.r2.hl = 0x0000;
             cpu.r1.ix = 0x0000;
             cpu.r1.iy = 0x0000;
-            cpu.sp = 0x0000;
+            cpu.r1.sp = 0x0000;
             cpu.pc = 0x0000;
             cpu.i = 0x00;
             cpu.r = 0x00;
@@ -6899,7 +6899,7 @@ namespace z80ilTest
             Assert.AreEqual(0x0000, cpu.r2.hl, "HL' mismatch");
             Assert.AreEqual(0x0000, cpu.r1.ix, "IX mismatch");
             Assert.AreEqual(0x0000, cpu.r1.iy, "IY mismatch");
-            Assert.AreEqual(0x0000, cpu.sp, "SP mismatch");
+            Assert.AreEqual(0x0000, cpu.r1.sp, "SP mismatch");
             Assert.AreEqual(0x0001, cpu.r, "R mismatch");
             Assert.AreEqual(0x0000, cpu.i, "I mismatch");
             Assert.AreEqual(4UL, cpu.tStates, "tStates mismatch");
@@ -6918,7 +6918,7 @@ namespace z80ilTest
             cpu.r2.hl = 0x0000;
             cpu.r1.ix = 0x0000;
             cpu.r1.iy = 0x0000;
-            cpu.sp = 0x0000;
+            cpu.r1.sp = 0x0000;
             cpu.pc = 0x0000;
             cpu.i = 0x00;
             cpu.r = 0x00;
@@ -6939,7 +6939,7 @@ namespace z80ilTest
             Assert.AreEqual(0x0000, cpu.r2.hl, "HL' mismatch");
             Assert.AreEqual(0x0000, cpu.r1.ix, "IX mismatch");
             Assert.AreEqual(0x0000, cpu.r1.iy, "IY mismatch");
-            Assert.AreEqual(0x0000, cpu.sp, "SP mismatch");
+            Assert.AreEqual(0x0000, cpu.r1.sp, "SP mismatch");
             Assert.AreEqual(0x0001, cpu.r, "R mismatch");
             Assert.AreEqual(0x0000, cpu.i, "I mismatch");
             Assert.AreEqual(4UL, cpu.tStates, "tStates mismatch");
@@ -6958,7 +6958,7 @@ namespace z80ilTest
             cpu.r2.hl = 0x0000;
             cpu.r1.ix = 0x0000;
             cpu.r1.iy = 0x0000;
-            cpu.sp = 0x0000;
+            cpu.r1.sp = 0x0000;
             cpu.pc = 0x0000;
             cpu.i = 0x00;
             cpu.r = 0x00;
@@ -6979,7 +6979,7 @@ namespace z80ilTest
             Assert.AreEqual(0x0000, cpu.r2.hl, "HL' mismatch");
             Assert.AreEqual(0x0000, cpu.r1.ix, "IX mismatch");
             Assert.AreEqual(0x0000, cpu.r1.iy, "IY mismatch");
-            Assert.AreEqual(0x0000, cpu.sp, "SP mismatch");
+            Assert.AreEqual(0x0000, cpu.r1.sp, "SP mismatch");
             Assert.AreEqual(0x0001, cpu.r, "R mismatch");
             Assert.AreEqual(0x0000, cpu.i, "I mismatch");
             Assert.AreEqual(7UL, cpu.tStates, "tStates mismatch");
@@ -6998,7 +6998,7 @@ namespace z80ilTest
             cpu.r2.hl = 0x0000;
             cpu.r1.ix = 0x0000;
             cpu.r1.iy = 0x0000;
-            cpu.sp = 0x0000;
+            cpu.r1.sp = 0x0000;
             cpu.pc = 0x0000;
             cpu.i = 0x00;
             cpu.r = 0x00;
@@ -7019,7 +7019,7 @@ namespace z80ilTest
             Assert.AreEqual(0x0000, cpu.r2.hl, "HL' mismatch");
             Assert.AreEqual(0x0000, cpu.r1.ix, "IX mismatch");
             Assert.AreEqual(0x0000, cpu.r1.iy, "IY mismatch");
-            Assert.AreEqual(0x0000, cpu.sp, "SP mismatch");
+            Assert.AreEqual(0x0000, cpu.r1.sp, "SP mismatch");
             Assert.AreEqual(0x0001, cpu.r, "R mismatch");
             Assert.AreEqual(0x0000, cpu.i, "I mismatch");
             Assert.AreEqual(4UL, cpu.tStates, "tStates mismatch");
@@ -7038,7 +7038,7 @@ namespace z80ilTest
             cpu.r2.hl = 0x0000;
             cpu.r1.ix = 0x0000;
             cpu.r1.iy = 0x0000;
-            cpu.sp = 0x0000;
+            cpu.r1.sp = 0x0000;
             cpu.pc = 0x0000;
             cpu.i = 0x00;
             cpu.r = 0x00;
@@ -7059,7 +7059,7 @@ namespace z80ilTest
             Assert.AreEqual(0x0000, cpu.r2.hl, "HL' mismatch");
             Assert.AreEqual(0x0000, cpu.r1.ix, "IX mismatch");
             Assert.AreEqual(0x0000, cpu.r1.iy, "IY mismatch");
-            Assert.AreEqual(0x0000, cpu.sp, "SP mismatch");
+            Assert.AreEqual(0x0000, cpu.r1.sp, "SP mismatch");
             Assert.AreEqual(0x0001, cpu.r, "R mismatch");
             Assert.AreEqual(0x0000, cpu.i, "I mismatch");
             Assert.AreEqual(4UL, cpu.tStates, "tStates mismatch");
@@ -7078,7 +7078,7 @@ namespace z80ilTest
             cpu.r2.hl = 0x0000;
             cpu.r1.ix = 0x0000;
             cpu.r1.iy = 0x0000;
-            cpu.sp = 0x0000;
+            cpu.r1.sp = 0x0000;
             cpu.pc = 0x0000;
             cpu.i = 0x00;
             cpu.r = 0x00;
@@ -7099,7 +7099,7 @@ namespace z80ilTest
             Assert.AreEqual(0x0000, cpu.r2.hl, "HL' mismatch");
             Assert.AreEqual(0x0000, cpu.r1.ix, "IX mismatch");
             Assert.AreEqual(0x0000, cpu.r1.iy, "IY mismatch");
-            Assert.AreEqual(0x0000, cpu.sp, "SP mismatch");
+            Assert.AreEqual(0x0000, cpu.r1.sp, "SP mismatch");
             Assert.AreEqual(0x0001, cpu.r, "R mismatch");
             Assert.AreEqual(0x0000, cpu.i, "I mismatch");
             Assert.AreEqual(4UL, cpu.tStates, "tStates mismatch");
@@ -7118,7 +7118,7 @@ namespace z80ilTest
             cpu.r2.hl = 0x0000;
             cpu.r1.ix = 0x0000;
             cpu.r1.iy = 0x0000;
-            cpu.sp = 0x0000;
+            cpu.r1.sp = 0x0000;
             cpu.pc = 0x0000;
             cpu.i = 0x00;
             cpu.r = 0x00;
@@ -7139,7 +7139,7 @@ namespace z80ilTest
             Assert.AreEqual(0x0000, cpu.r2.hl, "HL' mismatch");
             Assert.AreEqual(0x0000, cpu.r1.ix, "IX mismatch");
             Assert.AreEqual(0x0000, cpu.r1.iy, "IY mismatch");
-            Assert.AreEqual(0x0000, cpu.sp, "SP mismatch");
+            Assert.AreEqual(0x0000, cpu.r1.sp, "SP mismatch");
             Assert.AreEqual(0x0001, cpu.r, "R mismatch");
             Assert.AreEqual(0x0000, cpu.i, "I mismatch");
             Assert.AreEqual(4UL, cpu.tStates, "tStates mismatch");
@@ -7158,7 +7158,7 @@ namespace z80ilTest
             cpu.r2.hl = 0x0000;
             cpu.r1.ix = 0x0000;
             cpu.r1.iy = 0x0000;
-            cpu.sp = 0x0000;
+            cpu.r1.sp = 0x0000;
             cpu.pc = 0x0000;
             cpu.i = 0x00;
             cpu.r = 0x00;
@@ -7179,7 +7179,7 @@ namespace z80ilTest
             Assert.AreEqual(0x0000, cpu.r2.hl, "HL' mismatch");
             Assert.AreEqual(0x0000, cpu.r1.ix, "IX mismatch");
             Assert.AreEqual(0x0000, cpu.r1.iy, "IY mismatch");
-            Assert.AreEqual(0x0000, cpu.sp, "SP mismatch");
+            Assert.AreEqual(0x0000, cpu.r1.sp, "SP mismatch");
             Assert.AreEqual(0x0001, cpu.r, "R mismatch");
             Assert.AreEqual(0x0000, cpu.i, "I mismatch");
             Assert.AreEqual(4UL, cpu.tStates, "tStates mismatch");
@@ -7198,7 +7198,7 @@ namespace z80ilTest
             cpu.r2.hl = 0x0000;
             cpu.r1.ix = 0x0000;
             cpu.r1.iy = 0x0000;
-            cpu.sp = 0x0000;
+            cpu.r1.sp = 0x0000;
             cpu.pc = 0x0000;
             cpu.i = 0x00;
             cpu.r = 0x00;
@@ -7219,7 +7219,7 @@ namespace z80ilTest
             Assert.AreEqual(0x0000, cpu.r2.hl, "HL' mismatch");
             Assert.AreEqual(0x0000, cpu.r1.ix, "IX mismatch");
             Assert.AreEqual(0x0000, cpu.r1.iy, "IY mismatch");
-            Assert.AreEqual(0x0000, cpu.sp, "SP mismatch");
+            Assert.AreEqual(0x0000, cpu.r1.sp, "SP mismatch");
             Assert.AreEqual(0x0001, cpu.r, "R mismatch");
             Assert.AreEqual(0x0000, cpu.i, "I mismatch");
             Assert.AreEqual(4UL, cpu.tStates, "tStates mismatch");
@@ -7238,7 +7238,7 @@ namespace z80ilTest
             cpu.r2.hl = 0x0000;
             cpu.r1.ix = 0x0000;
             cpu.r1.iy = 0x0000;
-            cpu.sp = 0x0000;
+            cpu.r1.sp = 0x0000;
             cpu.pc = 0x0000;
             cpu.i = 0x00;
             cpu.r = 0x00;
@@ -7259,7 +7259,7 @@ namespace z80ilTest
             Assert.AreEqual(0x0000, cpu.r2.hl, "HL' mismatch");
             Assert.AreEqual(0x0000, cpu.r1.ix, "IX mismatch");
             Assert.AreEqual(0x0000, cpu.r1.iy, "IY mismatch");
-            Assert.AreEqual(0x0000, cpu.sp, "SP mismatch");
+            Assert.AreEqual(0x0000, cpu.r1.sp, "SP mismatch");
             Assert.AreEqual(0x0001, cpu.r, "R mismatch");
             Assert.AreEqual(0x0000, cpu.i, "I mismatch");
             Assert.AreEqual(4UL, cpu.tStates, "tStates mismatch");
@@ -7278,7 +7278,7 @@ namespace z80ilTest
             cpu.r2.hl = 0x0000;
             cpu.r1.ix = 0x0000;
             cpu.r1.iy = 0x0000;
-            cpu.sp = 0x0000;
+            cpu.r1.sp = 0x0000;
             cpu.pc = 0x0000;
             cpu.i = 0x00;
             cpu.r = 0x00;
@@ -7299,7 +7299,7 @@ namespace z80ilTest
             Assert.AreEqual(0x0000, cpu.r2.hl, "HL' mismatch");
             Assert.AreEqual(0x0000, cpu.r1.ix, "IX mismatch");
             Assert.AreEqual(0x0000, cpu.r1.iy, "IY mismatch");
-            Assert.AreEqual(0x0000, cpu.sp, "SP mismatch");
+            Assert.AreEqual(0x0000, cpu.r1.sp, "SP mismatch");
             Assert.AreEqual(0x0001, cpu.r, "R mismatch");
             Assert.AreEqual(0x0000, cpu.i, "I mismatch");
             Assert.AreEqual(7UL, cpu.tStates, "tStates mismatch");
@@ -7318,7 +7318,7 @@ namespace z80ilTest
             cpu.r2.hl = 0x0000;
             cpu.r1.ix = 0x0000;
             cpu.r1.iy = 0x0000;
-            cpu.sp = 0x0000;
+            cpu.r1.sp = 0x0000;
             cpu.pc = 0x0000;
             cpu.i = 0x00;
             cpu.r = 0x00;
@@ -7339,7 +7339,7 @@ namespace z80ilTest
             Assert.AreEqual(0x0000, cpu.r2.hl, "HL' mismatch");
             Assert.AreEqual(0x0000, cpu.r1.ix, "IX mismatch");
             Assert.AreEqual(0x0000, cpu.r1.iy, "IY mismatch");
-            Assert.AreEqual(0x0000, cpu.sp, "SP mismatch");
+            Assert.AreEqual(0x0000, cpu.r1.sp, "SP mismatch");
             Assert.AreEqual(0x0001, cpu.r, "R mismatch");
             Assert.AreEqual(0x0000, cpu.i, "I mismatch");
             Assert.AreEqual(4UL, cpu.tStates, "tStates mismatch");
@@ -7358,7 +7358,7 @@ namespace z80ilTest
             cpu.r2.hl = 0x0000;
             cpu.r1.ix = 0x0000;
             cpu.r1.iy = 0x0000;
-            cpu.sp = 0x0000;
+            cpu.r1.sp = 0x0000;
             cpu.pc = 0x0000;
             cpu.i = 0x00;
             cpu.r = 0x00;
@@ -7379,7 +7379,7 @@ namespace z80ilTest
             Assert.AreEqual(0x0000, cpu.r2.hl, "HL' mismatch");
             Assert.AreEqual(0x0000, cpu.r1.ix, "IX mismatch");
             Assert.AreEqual(0x0000, cpu.r1.iy, "IY mismatch");
-            Assert.AreEqual(0x0000, cpu.sp, "SP mismatch");
+            Assert.AreEqual(0x0000, cpu.r1.sp, "SP mismatch");
             Assert.AreEqual(0x0001, cpu.r, "R mismatch");
             Assert.AreEqual(0x0000, cpu.i, "I mismatch");
             Assert.AreEqual(4UL, cpu.tStates, "tStates mismatch");
@@ -7398,7 +7398,7 @@ namespace z80ilTest
             cpu.r2.hl = 0x0000;
             cpu.r1.ix = 0x0000;
             cpu.r1.iy = 0x0000;
-            cpu.sp = 0x0000;
+            cpu.r1.sp = 0x0000;
             cpu.pc = 0x0000;
             cpu.i = 0x00;
             cpu.r = 0x00;
@@ -7419,7 +7419,7 @@ namespace z80ilTest
             Assert.AreEqual(0x0000, cpu.r2.hl, "HL' mismatch");
             Assert.AreEqual(0x0000, cpu.r1.ix, "IX mismatch");
             Assert.AreEqual(0x0000, cpu.r1.iy, "IY mismatch");
-            Assert.AreEqual(0x0000, cpu.sp, "SP mismatch");
+            Assert.AreEqual(0x0000, cpu.r1.sp, "SP mismatch");
             Assert.AreEqual(0x0001, cpu.r, "R mismatch");
             Assert.AreEqual(0x0000, cpu.i, "I mismatch");
             Assert.AreEqual(4UL, cpu.tStates, "tStates mismatch");
@@ -7438,7 +7438,7 @@ namespace z80ilTest
             cpu.r2.hl = 0x0000;
             cpu.r1.ix = 0x0000;
             cpu.r1.iy = 0x0000;
-            cpu.sp = 0x0000;
+            cpu.r1.sp = 0x0000;
             cpu.pc = 0x0000;
             cpu.i = 0x00;
             cpu.r = 0x00;
@@ -7459,7 +7459,7 @@ namespace z80ilTest
             Assert.AreEqual(0x0000, cpu.r2.hl, "HL' mismatch");
             Assert.AreEqual(0x0000, cpu.r1.ix, "IX mismatch");
             Assert.AreEqual(0x0000, cpu.r1.iy, "IY mismatch");
-            Assert.AreEqual(0x0000, cpu.sp, "SP mismatch");
+            Assert.AreEqual(0x0000, cpu.r1.sp, "SP mismatch");
             Assert.AreEqual(0x0001, cpu.r, "R mismatch");
             Assert.AreEqual(0x0000, cpu.i, "I mismatch");
             Assert.AreEqual(4UL, cpu.tStates, "tStates mismatch");
@@ -7478,7 +7478,7 @@ namespace z80ilTest
             cpu.r2.hl = 0x0000;
             cpu.r1.ix = 0x0000;
             cpu.r1.iy = 0x0000;
-            cpu.sp = 0x0000;
+            cpu.r1.sp = 0x0000;
             cpu.pc = 0x0000;
             cpu.i = 0x00;
             cpu.r = 0x00;
@@ -7499,7 +7499,7 @@ namespace z80ilTest
             Assert.AreEqual(0x0000, cpu.r2.hl, "HL' mismatch");
             Assert.AreEqual(0x0000, cpu.r1.ix, "IX mismatch");
             Assert.AreEqual(0x0000, cpu.r1.iy, "IY mismatch");
-            Assert.AreEqual(0x0000, cpu.sp, "SP mismatch");
+            Assert.AreEqual(0x0000, cpu.r1.sp, "SP mismatch");
             Assert.AreEqual(0x0001, cpu.r, "R mismatch");
             Assert.AreEqual(0x0000, cpu.i, "I mismatch");
             Assert.AreEqual(4UL, cpu.tStates, "tStates mismatch");
@@ -7518,7 +7518,7 @@ namespace z80ilTest
             cpu.r2.hl = 0x0000;
             cpu.r1.ix = 0x0000;
             cpu.r1.iy = 0x0000;
-            cpu.sp = 0x0000;
+            cpu.r1.sp = 0x0000;
             cpu.pc = 0x0000;
             cpu.i = 0x00;
             cpu.r = 0x00;
@@ -7539,7 +7539,7 @@ namespace z80ilTest
             Assert.AreEqual(0x0000, cpu.r2.hl, "HL' mismatch");
             Assert.AreEqual(0x0000, cpu.r1.ix, "IX mismatch");
             Assert.AreEqual(0x0000, cpu.r1.iy, "IY mismatch");
-            Assert.AreEqual(0x0000, cpu.sp, "SP mismatch");
+            Assert.AreEqual(0x0000, cpu.r1.sp, "SP mismatch");
             Assert.AreEqual(0x0001, cpu.r, "R mismatch");
             Assert.AreEqual(0x0000, cpu.i, "I mismatch");
             Assert.AreEqual(4UL, cpu.tStates, "tStates mismatch");
@@ -7558,7 +7558,7 @@ namespace z80ilTest
             cpu.r2.hl = 0x0000;
             cpu.r1.ix = 0x0000;
             cpu.r1.iy = 0x0000;
-            cpu.sp = 0x0000;
+            cpu.r1.sp = 0x0000;
             cpu.pc = 0x0000;
             cpu.i = 0x00;
             cpu.r = 0x00;
@@ -7579,7 +7579,7 @@ namespace z80ilTest
             Assert.AreEqual(0x0000, cpu.r2.hl, "HL' mismatch");
             Assert.AreEqual(0x0000, cpu.r1.ix, "IX mismatch");
             Assert.AreEqual(0x0000, cpu.r1.iy, "IY mismatch");
-            Assert.AreEqual(0x0000, cpu.sp, "SP mismatch");
+            Assert.AreEqual(0x0000, cpu.r1.sp, "SP mismatch");
             Assert.AreEqual(0x0001, cpu.r, "R mismatch");
             Assert.AreEqual(0x0000, cpu.i, "I mismatch");
             Assert.AreEqual(4UL, cpu.tStates, "tStates mismatch");
@@ -7598,7 +7598,7 @@ namespace z80ilTest
             cpu.r2.hl = 0x0000;
             cpu.r1.ix = 0x0000;
             cpu.r1.iy = 0x0000;
-            cpu.sp = 0x0000;
+            cpu.r1.sp = 0x0000;
             cpu.pc = 0x0000;
             cpu.i = 0x00;
             cpu.r = 0x00;
@@ -7619,7 +7619,7 @@ namespace z80ilTest
             Assert.AreEqual(0x0000, cpu.r2.hl, "HL' mismatch");
             Assert.AreEqual(0x0000, cpu.r1.ix, "IX mismatch");
             Assert.AreEqual(0x0000, cpu.r1.iy, "IY mismatch");
-            Assert.AreEqual(0x0000, cpu.sp, "SP mismatch");
+            Assert.AreEqual(0x0000, cpu.r1.sp, "SP mismatch");
             Assert.AreEqual(0x0001, cpu.r, "R mismatch");
             Assert.AreEqual(0x0000, cpu.i, "I mismatch");
             Assert.AreEqual(7UL, cpu.tStates, "tStates mismatch");
@@ -7638,7 +7638,7 @@ namespace z80ilTest
             cpu.r2.hl = 0x0000;
             cpu.r1.ix = 0x0000;
             cpu.r1.iy = 0x0000;
-            cpu.sp = 0x0000;
+            cpu.r1.sp = 0x0000;
             cpu.pc = 0x0000;
             cpu.i = 0x00;
             cpu.r = 0x00;
@@ -7659,7 +7659,7 @@ namespace z80ilTest
             Assert.AreEqual(0x0000, cpu.r2.hl, "HL' mismatch");
             Assert.AreEqual(0x0000, cpu.r1.ix, "IX mismatch");
             Assert.AreEqual(0x0000, cpu.r1.iy, "IY mismatch");
-            Assert.AreEqual(0x0000, cpu.sp, "SP mismatch");
+            Assert.AreEqual(0x0000, cpu.r1.sp, "SP mismatch");
             Assert.AreEqual(0x0001, cpu.r, "R mismatch");
             Assert.AreEqual(0x0000, cpu.i, "I mismatch");
             Assert.AreEqual(4UL, cpu.tStates, "tStates mismatch");
@@ -7678,7 +7678,7 @@ namespace z80ilTest
             cpu.r2.hl = 0x0000;
             cpu.r1.ix = 0x0000;
             cpu.r1.iy = 0x0000;
-            cpu.sp = 0x0000;
+            cpu.r1.sp = 0x0000;
             cpu.pc = 0x0000;
             cpu.i = 0x00;
             cpu.r = 0x00;
@@ -7699,7 +7699,7 @@ namespace z80ilTest
             Assert.AreEqual(0x0000, cpu.r2.hl, "HL' mismatch");
             Assert.AreEqual(0x0000, cpu.r1.ix, "IX mismatch");
             Assert.AreEqual(0x0000, cpu.r1.iy, "IY mismatch");
-            Assert.AreEqual(0x0000, cpu.sp, "SP mismatch");
+            Assert.AreEqual(0x0000, cpu.r1.sp, "SP mismatch");
             Assert.AreEqual(0x0001, cpu.r, "R mismatch");
             Assert.AreEqual(0x0000, cpu.i, "I mismatch");
             Assert.AreEqual(4UL, cpu.tStates, "tStates mismatch");
@@ -7718,7 +7718,7 @@ namespace z80ilTest
             cpu.r2.hl = 0x0000;
             cpu.r1.ix = 0x0000;
             cpu.r1.iy = 0x0000;
-            cpu.sp = 0x0000;
+            cpu.r1.sp = 0x0000;
             cpu.pc = 0x0000;
             cpu.i = 0x00;
             cpu.r = 0x00;
@@ -7739,7 +7739,7 @@ namespace z80ilTest
             Assert.AreEqual(0x0000, cpu.r2.hl, "HL' mismatch");
             Assert.AreEqual(0x0000, cpu.r1.ix, "IX mismatch");
             Assert.AreEqual(0x0000, cpu.r1.iy, "IY mismatch");
-            Assert.AreEqual(0x0000, cpu.sp, "SP mismatch");
+            Assert.AreEqual(0x0000, cpu.r1.sp, "SP mismatch");
             Assert.AreEqual(0x0001, cpu.r, "R mismatch");
             Assert.AreEqual(0x0000, cpu.i, "I mismatch");
             Assert.AreEqual(4UL, cpu.tStates, "tStates mismatch");
@@ -7758,7 +7758,7 @@ namespace z80ilTest
             cpu.r2.hl = 0x0000;
             cpu.r1.ix = 0x0000;
             cpu.r1.iy = 0x0000;
-            cpu.sp = 0x0000;
+            cpu.r1.sp = 0x0000;
             cpu.pc = 0x0000;
             cpu.i = 0x00;
             cpu.r = 0x00;
@@ -7779,7 +7779,7 @@ namespace z80ilTest
             Assert.AreEqual(0x0000, cpu.r2.hl, "HL' mismatch");
             Assert.AreEqual(0x0000, cpu.r1.ix, "IX mismatch");
             Assert.AreEqual(0x0000, cpu.r1.iy, "IY mismatch");
-            Assert.AreEqual(0x0000, cpu.sp, "SP mismatch");
+            Assert.AreEqual(0x0000, cpu.r1.sp, "SP mismatch");
             Assert.AreEqual(0x0001, cpu.r, "R mismatch");
             Assert.AreEqual(0x0000, cpu.i, "I mismatch");
             Assert.AreEqual(4UL, cpu.tStates, "tStates mismatch");
@@ -7798,7 +7798,7 @@ namespace z80ilTest
             cpu.r2.hl = 0x0000;
             cpu.r1.ix = 0x0000;
             cpu.r1.iy = 0x0000;
-            cpu.sp = 0x0000;
+            cpu.r1.sp = 0x0000;
             cpu.pc = 0x0000;
             cpu.i = 0x00;
             cpu.r = 0x00;
@@ -7819,7 +7819,7 @@ namespace z80ilTest
             Assert.AreEqual(0x0000, cpu.r2.hl, "HL' mismatch");
             Assert.AreEqual(0x0000, cpu.r1.ix, "IX mismatch");
             Assert.AreEqual(0x0000, cpu.r1.iy, "IY mismatch");
-            Assert.AreEqual(0x0000, cpu.sp, "SP mismatch");
+            Assert.AreEqual(0x0000, cpu.r1.sp, "SP mismatch");
             Assert.AreEqual(0x0001, cpu.r, "R mismatch");
             Assert.AreEqual(0x0000, cpu.i, "I mismatch");
             Assert.AreEqual(4UL, cpu.tStates, "tStates mismatch");
@@ -7838,7 +7838,7 @@ namespace z80ilTest
             cpu.r2.hl = 0x0000;
             cpu.r1.ix = 0x0000;
             cpu.r1.iy = 0x0000;
-            cpu.sp = 0x0000;
+            cpu.r1.sp = 0x0000;
             cpu.pc = 0x0000;
             cpu.i = 0x00;
             cpu.r = 0x00;
@@ -7859,7 +7859,7 @@ namespace z80ilTest
             Assert.AreEqual(0x0000, cpu.r2.hl, "HL' mismatch");
             Assert.AreEqual(0x0000, cpu.r1.ix, "IX mismatch");
             Assert.AreEqual(0x0000, cpu.r1.iy, "IY mismatch");
-            Assert.AreEqual(0x0000, cpu.sp, "SP mismatch");
+            Assert.AreEqual(0x0000, cpu.r1.sp, "SP mismatch");
             Assert.AreEqual(0x0001, cpu.r, "R mismatch");
             Assert.AreEqual(0x0000, cpu.i, "I mismatch");
             Assert.AreEqual(4UL, cpu.tStates, "tStates mismatch");
@@ -7878,7 +7878,7 @@ namespace z80ilTest
             cpu.r2.hl = 0x0000;
             cpu.r1.ix = 0x0000;
             cpu.r1.iy = 0x0000;
-            cpu.sp = 0x0000;
+            cpu.r1.sp = 0x0000;
             cpu.pc = 0x0000;
             cpu.i = 0x00;
             cpu.r = 0x00;
@@ -7899,7 +7899,7 @@ namespace z80ilTest
             Assert.AreEqual(0x0000, cpu.r2.hl, "HL' mismatch");
             Assert.AreEqual(0x0000, cpu.r1.ix, "IX mismatch");
             Assert.AreEqual(0x0000, cpu.r1.iy, "IY mismatch");
-            Assert.AreEqual(0x0000, cpu.sp, "SP mismatch");
+            Assert.AreEqual(0x0000, cpu.r1.sp, "SP mismatch");
             Assert.AreEqual(0x0001, cpu.r, "R mismatch");
             Assert.AreEqual(0x0000, cpu.i, "I mismatch");
             Assert.AreEqual(4UL, cpu.tStates, "tStates mismatch");
@@ -7918,7 +7918,7 @@ namespace z80ilTest
             cpu.r2.hl = 0x0000;
             cpu.r1.ix = 0x0000;
             cpu.r1.iy = 0x0000;
-            cpu.sp = 0x0000;
+            cpu.r1.sp = 0x0000;
             cpu.pc = 0x0000;
             cpu.i = 0x00;
             cpu.r = 0x00;
@@ -7939,7 +7939,7 @@ namespace z80ilTest
             Assert.AreEqual(0x0000, cpu.r2.hl, "HL' mismatch");
             Assert.AreEqual(0x0000, cpu.r1.ix, "IX mismatch");
             Assert.AreEqual(0x0000, cpu.r1.iy, "IY mismatch");
-            Assert.AreEqual(0x0000, cpu.sp, "SP mismatch");
+            Assert.AreEqual(0x0000, cpu.r1.sp, "SP mismatch");
             Assert.AreEqual(0x0001, cpu.r, "R mismatch");
             Assert.AreEqual(0x0000, cpu.i, "I mismatch");
             Assert.AreEqual(7UL, cpu.tStates, "tStates mismatch");
@@ -7958,7 +7958,7 @@ namespace z80ilTest
             cpu.r2.hl = 0x0000;
             cpu.r1.ix = 0x0000;
             cpu.r1.iy = 0x0000;
-            cpu.sp = 0x0000;
+            cpu.r1.sp = 0x0000;
             cpu.pc = 0x0000;
             cpu.i = 0x00;
             cpu.r = 0x00;
@@ -7979,7 +7979,7 @@ namespace z80ilTest
             Assert.AreEqual(0x0000, cpu.r2.hl, "HL' mismatch");
             Assert.AreEqual(0x0000, cpu.r1.ix, "IX mismatch");
             Assert.AreEqual(0x0000, cpu.r1.iy, "IY mismatch");
-            Assert.AreEqual(0x0000, cpu.sp, "SP mismatch");
+            Assert.AreEqual(0x0000, cpu.r1.sp, "SP mismatch");
             Assert.AreEqual(0x0001, cpu.r, "R mismatch");
             Assert.AreEqual(0x0000, cpu.i, "I mismatch");
             Assert.AreEqual(4UL, cpu.tStates, "tStates mismatch");
@@ -7998,7 +7998,7 @@ namespace z80ilTest
             cpu.r2.hl = 0x0000;
             cpu.r1.ix = 0x0000;
             cpu.r1.iy = 0x0000;
-            cpu.sp = 0x43F7;
+            cpu.r1.sp = 0x43F7;
             cpu.pc = 0x0000;
             cpu.i = 0x00;
             cpu.r = 0x00;
@@ -8020,7 +8020,7 @@ namespace z80ilTest
             Assert.AreEqual(0x0000, cpu.r2.hl, "HL' mismatch");
             Assert.AreEqual(0x0000, cpu.r1.ix, "IX mismatch");
             Assert.AreEqual(0x0000, cpu.r1.iy, "IY mismatch");
-            Assert.AreEqual(0x43F9, cpu.sp, "SP mismatch");
+            Assert.AreEqual(0x43F9, cpu.r1.sp, "SP mismatch");
             Assert.AreEqual(0x0001, cpu.r, "R mismatch");
             Assert.AreEqual(0x0000, cpu.i, "I mismatch");
             Assert.AreEqual(11UL, cpu.tStates, "tStates mismatch");
@@ -8039,7 +8039,7 @@ namespace z80ilTest
             cpu.r2.hl = 0x0000;
             cpu.r1.ix = 0x0000;
             cpu.r1.iy = 0x0000;
-            cpu.sp = 0x43F7;
+            cpu.r1.sp = 0x43F7;
             cpu.pc = 0x0000;
             cpu.i = 0x00;
             cpu.r = 0x00;
@@ -8061,7 +8061,7 @@ namespace z80ilTest
             Assert.AreEqual(0x0000, cpu.r2.hl, "HL' mismatch");
             Assert.AreEqual(0x0000, cpu.r1.ix, "IX mismatch");
             Assert.AreEqual(0x0000, cpu.r1.iy, "IY mismatch");
-            Assert.AreEqual(0x43F7, cpu.sp, "SP mismatch");
+            Assert.AreEqual(0x43F7, cpu.r1.sp, "SP mismatch");
             Assert.AreEqual(0x0001, cpu.r, "R mismatch");
             Assert.AreEqual(0x0000, cpu.i, "I mismatch");
             Assert.AreEqual(5UL, cpu.tStates, "tStates mismatch");
@@ -8080,7 +8080,7 @@ namespace z80ilTest
             cpu.r2.hl = 0x0000;
             cpu.r1.ix = 0x0000;
             cpu.r1.iy = 0x0000;
-            cpu.sp = 0x4143;
+            cpu.r1.sp = 0x4143;
             cpu.pc = 0x0000;
             cpu.i = 0x00;
             cpu.r = 0x00;
@@ -8102,7 +8102,7 @@ namespace z80ilTest
             Assert.AreEqual(0x0000, cpu.r2.hl, "HL' mismatch");
             Assert.AreEqual(0x0000, cpu.r1.ix, "IX mismatch");
             Assert.AreEqual(0x0000, cpu.r1.iy, "IY mismatch");
-            Assert.AreEqual(0x4145, cpu.sp, "SP mismatch");
+            Assert.AreEqual(0x4145, cpu.r1.sp, "SP mismatch");
             Assert.AreEqual(0x0001, cpu.r, "R mismatch");
             Assert.AreEqual(0x0000, cpu.i, "I mismatch");
             Assert.AreEqual(10UL, cpu.tStates, "tStates mismatch");
@@ -8121,7 +8121,7 @@ namespace z80ilTest
             cpu.r2.hl = 0x0000;
             cpu.r1.ix = 0x0000;
             cpu.r1.iy = 0x0000;
-            cpu.sp = 0x0000;
+            cpu.r1.sp = 0x0000;
             cpu.pc = 0x0000;
             cpu.i = 0x00;
             cpu.r = 0x00;
@@ -8143,7 +8143,7 @@ namespace z80ilTest
             Assert.AreEqual(0x0000, cpu.r2.hl, "HL' mismatch");
             Assert.AreEqual(0x0000, cpu.r1.ix, "IX mismatch");
             Assert.AreEqual(0x0000, cpu.r1.iy, "IY mismatch");
-            Assert.AreEqual(0x0000, cpu.sp, "SP mismatch");
+            Assert.AreEqual(0x0000, cpu.r1.sp, "SP mismatch");
             Assert.AreEqual(0x0001, cpu.r, "R mismatch");
             Assert.AreEqual(0x0000, cpu.i, "I mismatch");
             Assert.AreEqual(10UL, cpu.tStates, "tStates mismatch");
@@ -8162,7 +8162,7 @@ namespace z80ilTest
             cpu.r2.hl = 0x0000;
             cpu.r1.ix = 0x0000;
             cpu.r1.iy = 0x0000;
-            cpu.sp = 0x0000;
+            cpu.r1.sp = 0x0000;
             cpu.pc = 0x0000;
             cpu.i = 0x00;
             cpu.r = 0x00;
@@ -8184,7 +8184,7 @@ namespace z80ilTest
             Assert.AreEqual(0x0000, cpu.r2.hl, "HL' mismatch");
             Assert.AreEqual(0x0000, cpu.r1.ix, "IX mismatch");
             Assert.AreEqual(0x0000, cpu.r1.iy, "IY mismatch");
-            Assert.AreEqual(0x0000, cpu.sp, "SP mismatch");
+            Assert.AreEqual(0x0000, cpu.r1.sp, "SP mismatch");
             Assert.AreEqual(0x0001, cpu.r, "R mismatch");
             Assert.AreEqual(0x0000, cpu.i, "I mismatch");
             Assert.AreEqual(10UL, cpu.tStates, "tStates mismatch");
@@ -8203,7 +8203,7 @@ namespace z80ilTest
             cpu.r2.hl = 0x0000;
             cpu.r1.ix = 0x0000;
             cpu.r1.iy = 0x0000;
-            cpu.sp = 0x0000;
+            cpu.r1.sp = 0x0000;
             cpu.pc = 0x0000;
             cpu.i = 0x00;
             cpu.r = 0x00;
@@ -8225,7 +8225,7 @@ namespace z80ilTest
             Assert.AreEqual(0x0000, cpu.r2.hl, "HL' mismatch");
             Assert.AreEqual(0x0000, cpu.r1.ix, "IX mismatch");
             Assert.AreEqual(0x0000, cpu.r1.iy, "IY mismatch");
-            Assert.AreEqual(0x0000, cpu.sp, "SP mismatch");
+            Assert.AreEqual(0x0000, cpu.r1.sp, "SP mismatch");
             Assert.AreEqual(0x0001, cpu.r, "R mismatch");
             Assert.AreEqual(0x0000, cpu.i, "I mismatch");
             Assert.AreEqual(10UL, cpu.tStates, "tStates mismatch");
@@ -8244,7 +8244,7 @@ namespace z80ilTest
             cpu.r2.hl = 0x0000;
             cpu.r1.ix = 0x0000;
             cpu.r1.iy = 0x0000;
-            cpu.sp = 0x5698;
+            cpu.r1.sp = 0x5698;
             cpu.pc = 0x0000;
             cpu.i = 0x00;
             cpu.r = 0x00;
@@ -8266,7 +8266,7 @@ namespace z80ilTest
             Assert.AreEqual(0x0000, cpu.r2.hl, "HL' mismatch");
             Assert.AreEqual(0x0000, cpu.r1.ix, "IX mismatch");
             Assert.AreEqual(0x0000, cpu.r1.iy, "IY mismatch");
-            Assert.AreEqual(0x5696, cpu.sp, "SP mismatch");
+            Assert.AreEqual(0x5696, cpu.r1.sp, "SP mismatch");
             Assert.AreEqual(0x0001, cpu.r, "R mismatch");
             Assert.AreEqual(0x0000, cpu.i, "I mismatch");
             Assert.AreEqual(17UL, cpu.tStates, "tStates mismatch");
@@ -8285,7 +8285,7 @@ namespace z80ilTest
             cpu.r2.hl = 0x0000;
             cpu.r1.ix = 0x0000;
             cpu.r1.iy = 0x0000;
-            cpu.sp = 0x5698;
+            cpu.r1.sp = 0x5698;
             cpu.pc = 0x0000;
             cpu.i = 0x00;
             cpu.r = 0x00;
@@ -8307,7 +8307,7 @@ namespace z80ilTest
             Assert.AreEqual(0x0000, cpu.r2.hl, "HL' mismatch");
             Assert.AreEqual(0x0000, cpu.r1.ix, "IX mismatch");
             Assert.AreEqual(0x0000, cpu.r1.iy, "IY mismatch");
-            Assert.AreEqual(0x5698, cpu.sp, "SP mismatch");
+            Assert.AreEqual(0x5698, cpu.r1.sp, "SP mismatch");
             Assert.AreEqual(0x0001, cpu.r, "R mismatch");
             Assert.AreEqual(0x0000, cpu.i, "I mismatch");
             Assert.AreEqual(10UL, cpu.tStates, "tStates mismatch");
@@ -8326,7 +8326,7 @@ namespace z80ilTest
             cpu.r2.hl = 0x0000;
             cpu.r1.ix = 0x0000;
             cpu.r1.iy = 0x0000;
-            cpu.sp = 0xEC12;
+            cpu.r1.sp = 0xEC12;
             cpu.pc = 0x0000;
             cpu.i = 0x00;
             cpu.r = 0x00;
@@ -8346,7 +8346,7 @@ namespace z80ilTest
             Assert.AreEqual(0x0000, cpu.r2.hl, "HL' mismatch");
             Assert.AreEqual(0x0000, cpu.r1.ix, "IX mismatch");
             Assert.AreEqual(0x0000, cpu.r1.iy, "IY mismatch");
-            Assert.AreEqual(0xEC10, cpu.sp, "SP mismatch");
+            Assert.AreEqual(0xEC10, cpu.r1.sp, "SP mismatch");
             Assert.AreEqual(0x0001, cpu.r, "R mismatch");
             Assert.AreEqual(0x0000, cpu.i, "I mismatch");
             Assert.AreEqual(11UL, cpu.tStates, "tStates mismatch");
@@ -8365,7 +8365,7 @@ namespace z80ilTest
             cpu.r2.hl = 0x0000;
             cpu.r1.ix = 0x0000;
             cpu.r1.iy = 0x0000;
-            cpu.sp = 0x0000;
+            cpu.r1.sp = 0x0000;
             cpu.pc = 0x0000;
             cpu.i = 0x00;
             cpu.r = 0x00;
@@ -8386,7 +8386,7 @@ namespace z80ilTest
             Assert.AreEqual(0x0000, cpu.r2.hl, "HL' mismatch");
             Assert.AreEqual(0x0000, cpu.r1.ix, "IX mismatch");
             Assert.AreEqual(0x0000, cpu.r1.iy, "IY mismatch");
-            Assert.AreEqual(0x0000, cpu.sp, "SP mismatch");
+            Assert.AreEqual(0x0000, cpu.r1.sp, "SP mismatch");
             Assert.AreEqual(0x0001, cpu.r, "R mismatch");
             Assert.AreEqual(0x0000, cpu.i, "I mismatch");
             Assert.AreEqual(7UL, cpu.tStates, "tStates mismatch");
@@ -8405,7 +8405,7 @@ namespace z80ilTest
             cpu.r2.hl = 0x0000;
             cpu.r1.ix = 0x0000;
             cpu.r1.iy = 0x0000;
-            cpu.sp = 0x5507;
+            cpu.r1.sp = 0x5507;
             cpu.pc = 0x6D33;
             cpu.i = 0x00;
             cpu.r = 0x00;
@@ -8425,7 +8425,7 @@ namespace z80ilTest
             Assert.AreEqual(0x0000, cpu.r2.hl, "HL' mismatch");
             Assert.AreEqual(0x0000, cpu.r1.ix, "IX mismatch");
             Assert.AreEqual(0x0000, cpu.r1.iy, "IY mismatch");
-            Assert.AreEqual(0x5505, cpu.sp, "SP mismatch");
+            Assert.AreEqual(0x5505, cpu.r1.sp, "SP mismatch");
             Assert.AreEqual(0x0001, cpu.r, "R mismatch");
             Assert.AreEqual(0x0000, cpu.i, "I mismatch");
             Assert.AreEqual(11UL, cpu.tStates, "tStates mismatch");
@@ -8444,7 +8444,7 @@ namespace z80ilTest
             cpu.r2.hl = 0x0000;
             cpu.r1.ix = 0x0000;
             cpu.r1.iy = 0x0000;
-            cpu.sp = 0x43F7;
+            cpu.r1.sp = 0x43F7;
             cpu.pc = 0x0000;
             cpu.i = 0x00;
             cpu.r = 0x00;
@@ -8466,7 +8466,7 @@ namespace z80ilTest
             Assert.AreEqual(0x0000, cpu.r2.hl, "HL' mismatch");
             Assert.AreEqual(0x0000, cpu.r1.ix, "IX mismatch");
             Assert.AreEqual(0x0000, cpu.r1.iy, "IY mismatch");
-            Assert.AreEqual(0x43F7, cpu.sp, "SP mismatch");
+            Assert.AreEqual(0x43F7, cpu.r1.sp, "SP mismatch");
             Assert.AreEqual(0x0001, cpu.r, "R mismatch");
             Assert.AreEqual(0x0000, cpu.i, "I mismatch");
             Assert.AreEqual(5UL, cpu.tStates, "tStates mismatch");
@@ -8485,7 +8485,7 @@ namespace z80ilTest
             cpu.r2.hl = 0x0000;
             cpu.r1.ix = 0x0000;
             cpu.r1.iy = 0x0000;
-            cpu.sp = 0x43F7;
+            cpu.r1.sp = 0x43F7;
             cpu.pc = 0x0000;
             cpu.i = 0x00;
             cpu.r = 0x00;
@@ -8507,7 +8507,7 @@ namespace z80ilTest
             Assert.AreEqual(0x0000, cpu.r2.hl, "HL' mismatch");
             Assert.AreEqual(0x0000, cpu.r1.ix, "IX mismatch");
             Assert.AreEqual(0x0000, cpu.r1.iy, "IY mismatch");
-            Assert.AreEqual(0x43F9, cpu.sp, "SP mismatch");
+            Assert.AreEqual(0x43F9, cpu.r1.sp, "SP mismatch");
             Assert.AreEqual(0x0001, cpu.r, "R mismatch");
             Assert.AreEqual(0x0000, cpu.i, "I mismatch");
             Assert.AreEqual(11UL, cpu.tStates, "tStates mismatch");
@@ -8526,7 +8526,7 @@ namespace z80ilTest
             cpu.r2.hl = 0x0000;
             cpu.r1.ix = 0x0000;
             cpu.r1.iy = 0x0000;
-            cpu.sp = 0x887E;
+            cpu.r1.sp = 0x887E;
             cpu.pc = 0x0000;
             cpu.i = 0x00;
             cpu.r = 0x00;
@@ -8548,7 +8548,7 @@ namespace z80ilTest
             Assert.AreEqual(0x0000, cpu.r2.hl, "HL' mismatch");
             Assert.AreEqual(0x0000, cpu.r1.ix, "IX mismatch");
             Assert.AreEqual(0x0000, cpu.r1.iy, "IY mismatch");
-            Assert.AreEqual(0x8880, cpu.sp, "SP mismatch");
+            Assert.AreEqual(0x8880, cpu.r1.sp, "SP mismatch");
             Assert.AreEqual(0x0001, cpu.r, "R mismatch");
             Assert.AreEqual(0x0000, cpu.i, "I mismatch");
             Assert.AreEqual(10UL, cpu.tStates, "tStates mismatch");
@@ -8567,7 +8567,7 @@ namespace z80ilTest
             cpu.r2.hl = 0x0000;
             cpu.r1.ix = 0x0000;
             cpu.r1.iy = 0x0000;
-            cpu.sp = 0x0000;
+            cpu.r1.sp = 0x0000;
             cpu.pc = 0x0000;
             cpu.i = 0x00;
             cpu.r = 0x00;
@@ -8589,7 +8589,7 @@ namespace z80ilTest
             Assert.AreEqual(0x0000, cpu.r2.hl, "HL' mismatch");
             Assert.AreEqual(0x0000, cpu.r1.ix, "IX mismatch");
             Assert.AreEqual(0x0000, cpu.r1.iy, "IY mismatch");
-            Assert.AreEqual(0x0000, cpu.sp, "SP mismatch");
+            Assert.AreEqual(0x0000, cpu.r1.sp, "SP mismatch");
             Assert.AreEqual(0x0001, cpu.r, "R mismatch");
             Assert.AreEqual(0x0000, cpu.i, "I mismatch");
             Assert.AreEqual(10UL, cpu.tStates, "tStates mismatch");
@@ -8608,7 +8608,7 @@ namespace z80ilTest
             cpu.r2.hl = 0x0000;
             cpu.r1.ix = 0x0000;
             cpu.r1.iy = 0x0000;
-            cpu.sp = 0x0000;
+            cpu.r1.sp = 0x0000;
             cpu.pc = 0x0000;
             cpu.i = 0x00;
             cpu.r = 0x00;
@@ -8630,7 +8630,7 @@ namespace z80ilTest
             Assert.AreEqual(0x0000, cpu.r2.hl, "HL' mismatch");
             Assert.AreEqual(0x0000, cpu.r1.ix, "IX mismatch");
             Assert.AreEqual(0x0000, cpu.r1.iy, "IY mismatch");
-            Assert.AreEqual(0x0000, cpu.sp, "SP mismatch");
+            Assert.AreEqual(0x0000, cpu.r1.sp, "SP mismatch");
             Assert.AreEqual(0x0001, cpu.r, "R mismatch");
             Assert.AreEqual(0x0000, cpu.i, "I mismatch");
             Assert.AreEqual(10UL, cpu.tStates, "tStates mismatch");
@@ -8649,7 +8649,7 @@ namespace z80ilTest
             cpu.r2.hl = 0x0000;
             cpu.r1.ix = 0x0000;
             cpu.r1.iy = 0x0000;
-            cpu.sp = 0x5698;
+            cpu.r1.sp = 0x5698;
             cpu.pc = 0x0000;
             cpu.i = 0x00;
             cpu.r = 0x00;
@@ -8671,7 +8671,7 @@ namespace z80ilTest
             Assert.AreEqual(0x0000, cpu.r2.hl, "HL' mismatch");
             Assert.AreEqual(0x0000, cpu.r1.ix, "IX mismatch");
             Assert.AreEqual(0x0000, cpu.r1.iy, "IY mismatch");
-            Assert.AreEqual(0x5696, cpu.sp, "SP mismatch");
+            Assert.AreEqual(0x5696, cpu.r1.sp, "SP mismatch");
             Assert.AreEqual(0x0001, cpu.r, "R mismatch");
             Assert.AreEqual(0x0000, cpu.i, "I mismatch");
             Assert.AreEqual(17UL, cpu.tStates, "tStates mismatch");
@@ -8690,7 +8690,7 @@ namespace z80ilTest
             cpu.r2.hl = 0x0000;
             cpu.r1.ix = 0x0000;
             cpu.r1.iy = 0x0000;
-            cpu.sp = 0x5698;
+            cpu.r1.sp = 0x5698;
             cpu.pc = 0x0000;
             cpu.i = 0x00;
             cpu.r = 0x00;
@@ -8712,7 +8712,7 @@ namespace z80ilTest
             Assert.AreEqual(0x0000, cpu.r2.hl, "HL' mismatch");
             Assert.AreEqual(0x0000, cpu.r1.ix, "IX mismatch");
             Assert.AreEqual(0x0000, cpu.r1.iy, "IY mismatch");
-            Assert.AreEqual(0x5698, cpu.sp, "SP mismatch");
+            Assert.AreEqual(0x5698, cpu.r1.sp, "SP mismatch");
             Assert.AreEqual(0x0001, cpu.r, "R mismatch");
             Assert.AreEqual(0x0000, cpu.i, "I mismatch");
             Assert.AreEqual(10UL, cpu.tStates, "tStates mismatch");
@@ -8731,7 +8731,7 @@ namespace z80ilTest
             cpu.r2.hl = 0x0000;
             cpu.r1.ix = 0x0000;
             cpu.r1.iy = 0x0000;
-            cpu.sp = 0xB07D;
+            cpu.r1.sp = 0xB07D;
             cpu.pc = 0x0000;
             cpu.i = 0x00;
             cpu.r = 0x00;
@@ -8753,7 +8753,7 @@ namespace z80ilTest
             Assert.AreEqual(0x0000, cpu.r2.hl, "HL' mismatch");
             Assert.AreEqual(0x0000, cpu.r1.ix, "IX mismatch");
             Assert.AreEqual(0x0000, cpu.r1.iy, "IY mismatch");
-            Assert.AreEqual(0xB07B, cpu.sp, "SP mismatch");
+            Assert.AreEqual(0xB07B, cpu.r1.sp, "SP mismatch");
             Assert.AreEqual(0x0001, cpu.r, "R mismatch");
             Assert.AreEqual(0x0000, cpu.i, "I mismatch");
             Assert.AreEqual(17UL, cpu.tStates, "tStates mismatch");
@@ -8772,7 +8772,7 @@ namespace z80ilTest
             cpu.r2.hl = 0x0000;
             cpu.r1.ix = 0x0000;
             cpu.r1.iy = 0x0000;
-            cpu.sp = 0x0000;
+            cpu.r1.sp = 0x0000;
             cpu.pc = 0x0000;
             cpu.i = 0x00;
             cpu.r = 0x00;
@@ -8793,7 +8793,7 @@ namespace z80ilTest
             Assert.AreEqual(0x0000, cpu.r2.hl, "HL' mismatch");
             Assert.AreEqual(0x0000, cpu.r1.ix, "IX mismatch");
             Assert.AreEqual(0x0000, cpu.r1.iy, "IY mismatch");
-            Assert.AreEqual(0x0000, cpu.sp, "SP mismatch");
+            Assert.AreEqual(0x0000, cpu.r1.sp, "SP mismatch");
             Assert.AreEqual(0x0001, cpu.r, "R mismatch");
             Assert.AreEqual(0x0000, cpu.i, "I mismatch");
             Assert.AreEqual(7UL, cpu.tStates, "tStates mismatch");
@@ -8812,7 +8812,7 @@ namespace z80ilTest
             cpu.r2.hl = 0x0000;
             cpu.r1.ix = 0x0000;
             cpu.r1.iy = 0x0000;
-            cpu.sp = 0x5507;
+            cpu.r1.sp = 0x5507;
             cpu.pc = 0x6D33;
             cpu.i = 0x00;
             cpu.r = 0x00;
@@ -8832,7 +8832,7 @@ namespace z80ilTest
             Assert.AreEqual(0x0000, cpu.r2.hl, "HL' mismatch");
             Assert.AreEqual(0x0000, cpu.r1.ix, "IX mismatch");
             Assert.AreEqual(0x0000, cpu.r1.iy, "IY mismatch");
-            Assert.AreEqual(0x5505, cpu.sp, "SP mismatch");
+            Assert.AreEqual(0x5505, cpu.r1.sp, "SP mismatch");
             Assert.AreEqual(0x0001, cpu.r, "R mismatch");
             Assert.AreEqual(0x0000, cpu.i, "I mismatch");
             Assert.AreEqual(11UL, cpu.tStates, "tStates mismatch");
@@ -8851,7 +8851,7 @@ namespace z80ilTest
             cpu.r2.hl = 0x0000;
             cpu.r1.ix = 0x0000;
             cpu.r1.iy = 0x0000;
-            cpu.sp = 0x43F7;
+            cpu.r1.sp = 0x43F7;
             cpu.pc = 0x0000;
             cpu.i = 0x00;
             cpu.r = 0x00;
@@ -8873,7 +8873,7 @@ namespace z80ilTest
             Assert.AreEqual(0x0000, cpu.r2.hl, "HL' mismatch");
             Assert.AreEqual(0x0000, cpu.r1.ix, "IX mismatch");
             Assert.AreEqual(0x0000, cpu.r1.iy, "IY mismatch");
-            Assert.AreEqual(0x43F9, cpu.sp, "SP mismatch");
+            Assert.AreEqual(0x43F9, cpu.r1.sp, "SP mismatch");
             Assert.AreEqual(0x0001, cpu.r, "R mismatch");
             Assert.AreEqual(0x0000, cpu.i, "I mismatch");
             Assert.AreEqual(11UL, cpu.tStates, "tStates mismatch");
@@ -8892,7 +8892,7 @@ namespace z80ilTest
             cpu.r2.hl = 0x0000;
             cpu.r1.ix = 0x0000;
             cpu.r1.iy = 0x0000;
-            cpu.sp = 0x43F7;
+            cpu.r1.sp = 0x43F7;
             cpu.pc = 0x0000;
             cpu.i = 0x00;
             cpu.r = 0x00;
@@ -8914,7 +8914,7 @@ namespace z80ilTest
             Assert.AreEqual(0x0000, cpu.r2.hl, "HL' mismatch");
             Assert.AreEqual(0x0000, cpu.r1.ix, "IX mismatch");
             Assert.AreEqual(0x0000, cpu.r1.iy, "IY mismatch");
-            Assert.AreEqual(0x43F7, cpu.sp, "SP mismatch");
+            Assert.AreEqual(0x43F7, cpu.r1.sp, "SP mismatch");
             Assert.AreEqual(0x0001, cpu.r, "R mismatch");
             Assert.AreEqual(0x0000, cpu.i, "I mismatch");
             Assert.AreEqual(5UL, cpu.tStates, "tStates mismatch");
@@ -8933,7 +8933,7 @@ namespace z80ilTest
             cpu.r2.hl = 0x0000;
             cpu.r1.ix = 0x0000;
             cpu.r1.iy = 0x0000;
-            cpu.sp = 0x4143;
+            cpu.r1.sp = 0x4143;
             cpu.pc = 0x0000;
             cpu.i = 0x00;
             cpu.r = 0x00;
@@ -8955,7 +8955,7 @@ namespace z80ilTest
             Assert.AreEqual(0x0000, cpu.r2.hl, "HL' mismatch");
             Assert.AreEqual(0x0000, cpu.r1.ix, "IX mismatch");
             Assert.AreEqual(0x0000, cpu.r1.iy, "IY mismatch");
-            Assert.AreEqual(0x4145, cpu.sp, "SP mismatch");
+            Assert.AreEqual(0x4145, cpu.r1.sp, "SP mismatch");
             Assert.AreEqual(0x0001, cpu.r, "R mismatch");
             Assert.AreEqual(0x0000, cpu.i, "I mismatch");
             Assert.AreEqual(10UL, cpu.tStates, "tStates mismatch");
@@ -8974,7 +8974,7 @@ namespace z80ilTest
             cpu.r2.hl = 0x0000;
             cpu.r1.ix = 0x0000;
             cpu.r1.iy = 0x0000;
-            cpu.sp = 0x0000;
+            cpu.r1.sp = 0x0000;
             cpu.pc = 0x0000;
             cpu.i = 0x00;
             cpu.r = 0x00;
@@ -8996,7 +8996,7 @@ namespace z80ilTest
             Assert.AreEqual(0x0000, cpu.r2.hl, "HL' mismatch");
             Assert.AreEqual(0x0000, cpu.r1.ix, "IX mismatch");
             Assert.AreEqual(0x0000, cpu.r1.iy, "IY mismatch");
-            Assert.AreEqual(0x0000, cpu.sp, "SP mismatch");
+            Assert.AreEqual(0x0000, cpu.r1.sp, "SP mismatch");
             Assert.AreEqual(0x0001, cpu.r, "R mismatch");
             Assert.AreEqual(0x0000, cpu.i, "I mismatch");
             Assert.AreEqual(10UL, cpu.tStates, "tStates mismatch");
@@ -9015,7 +9015,7 @@ namespace z80ilTest
             cpu.r2.hl = 0x0000;
             cpu.r1.ix = 0x0000;
             cpu.r1.iy = 0x0000;
-            cpu.sp = 0x0000;
+            cpu.r1.sp = 0x0000;
             cpu.pc = 0x0000;
             cpu.i = 0x00;
             cpu.r = 0x00;
@@ -9037,7 +9037,7 @@ namespace z80ilTest
             Assert.AreEqual(0x0000, cpu.r2.hl, "HL' mismatch");
             Assert.AreEqual(0x0000, cpu.r1.ix, "IX mismatch");
             Assert.AreEqual(0x0000, cpu.r1.iy, "IY mismatch");
-            Assert.AreEqual(0x0000, cpu.sp, "SP mismatch");
+            Assert.AreEqual(0x0000, cpu.r1.sp, "SP mismatch");
             Assert.AreEqual(0x0001, cpu.r, "R mismatch");
             Assert.AreEqual(0x0000, cpu.i, "I mismatch");
             Assert.AreEqual(10UL, cpu.tStates, "tStates mismatch");
@@ -9056,7 +9056,7 @@ namespace z80ilTest
             cpu.r2.hl = 0x0000;
             cpu.r1.ix = 0x0000;
             cpu.r1.iy = 0x0000;
-            cpu.sp = 0x0000;
+            cpu.r1.sp = 0x0000;
             cpu.pc = 0x0000;
             cpu.i = 0x00;
             cpu.r = 0x00;
@@ -9077,7 +9077,7 @@ namespace z80ilTest
             Assert.AreEqual(0x0000, cpu.r2.hl, "HL' mismatch");
             Assert.AreEqual(0x0000, cpu.r1.ix, "IX mismatch");
             Assert.AreEqual(0x0000, cpu.r1.iy, "IY mismatch");
-            Assert.AreEqual(0x0000, cpu.sp, "SP mismatch");
+            Assert.AreEqual(0x0000, cpu.r1.sp, "SP mismatch");
             Assert.AreEqual(0x0001, cpu.r, "R mismatch");
             Assert.AreEqual(0x0000, cpu.i, "I mismatch");
             Assert.AreEqual(11UL, cpu.tStates, "tStates mismatch");
@@ -9096,7 +9096,7 @@ namespace z80ilTest
             cpu.r2.hl = 0x0000;
             cpu.r1.ix = 0x0000;
             cpu.r1.iy = 0x0000;
-            cpu.sp = 0x0000;
+            cpu.r1.sp = 0x0000;
             cpu.pc = 0x0000;
             cpu.i = 0x00;
             cpu.r = 0x00;
@@ -9117,7 +9117,7 @@ namespace z80ilTest
             Assert.AreEqual(0x0000, cpu.r2.hl, "HL' mismatch");
             Assert.AreEqual(0x0000, cpu.r1.ix, "IX mismatch");
             Assert.AreEqual(0x0000, cpu.r1.iy, "IY mismatch");
-            Assert.AreEqual(0x0000, cpu.sp, "SP mismatch");
+            Assert.AreEqual(0x0000, cpu.r1.sp, "SP mismatch");
             Assert.AreEqual(0x0001, cpu.r, "R mismatch");
             Assert.AreEqual(0x0000, cpu.i, "I mismatch");
             Assert.AreEqual(11UL, cpu.tStates, "tStates mismatch");
@@ -9136,7 +9136,7 @@ namespace z80ilTest
             cpu.r2.hl = 0x0000;
             cpu.r1.ix = 0x0000;
             cpu.r1.iy = 0x0000;
-            cpu.sp = 0x0000;
+            cpu.r1.sp = 0x0000;
             cpu.pc = 0x0000;
             cpu.i = 0x00;
             cpu.r = 0x00;
@@ -9157,7 +9157,7 @@ namespace z80ilTest
             Assert.AreEqual(0x0000, cpu.r2.hl, "HL' mismatch");
             Assert.AreEqual(0x0000, cpu.r1.ix, "IX mismatch");
             Assert.AreEqual(0x0000, cpu.r1.iy, "IY mismatch");
-            Assert.AreEqual(0x0000, cpu.sp, "SP mismatch");
+            Assert.AreEqual(0x0000, cpu.r1.sp, "SP mismatch");
             Assert.AreEqual(0x0001, cpu.r, "R mismatch");
             Assert.AreEqual(0x0000, cpu.i, "I mismatch");
             Assert.AreEqual(11UL, cpu.tStates, "tStates mismatch");
@@ -9176,7 +9176,7 @@ namespace z80ilTest
             cpu.r2.hl = 0x0000;
             cpu.r1.ix = 0x0000;
             cpu.r1.iy = 0x0000;
-            cpu.sp = 0x0000;
+            cpu.r1.sp = 0x0000;
             cpu.pc = 0x0000;
             cpu.i = 0x00;
             cpu.r = 0x00;
@@ -9197,7 +9197,7 @@ namespace z80ilTest
             Assert.AreEqual(0x0000, cpu.r2.hl, "HL' mismatch");
             Assert.AreEqual(0x0000, cpu.r1.ix, "IX mismatch");
             Assert.AreEqual(0x0000, cpu.r1.iy, "IY mismatch");
-            Assert.AreEqual(0x0000, cpu.sp, "SP mismatch");
+            Assert.AreEqual(0x0000, cpu.r1.sp, "SP mismatch");
             Assert.AreEqual(0x0001, cpu.r, "R mismatch");
             Assert.AreEqual(0x0000, cpu.i, "I mismatch");
             Assert.AreEqual(11UL, cpu.tStates, "tStates mismatch");
@@ -9216,7 +9216,7 @@ namespace z80ilTest
             cpu.r2.hl = 0x0000;
             cpu.r1.ix = 0x0000;
             cpu.r1.iy = 0x0000;
-            cpu.sp = 0x5698;
+            cpu.r1.sp = 0x5698;
             cpu.pc = 0x0000;
             cpu.i = 0x00;
             cpu.r = 0x00;
@@ -9238,7 +9238,7 @@ namespace z80ilTest
             Assert.AreEqual(0x0000, cpu.r2.hl, "HL' mismatch");
             Assert.AreEqual(0x0000, cpu.r1.ix, "IX mismatch");
             Assert.AreEqual(0x0000, cpu.r1.iy, "IY mismatch");
-            Assert.AreEqual(0x5696, cpu.sp, "SP mismatch");
+            Assert.AreEqual(0x5696, cpu.r1.sp, "SP mismatch");
             Assert.AreEqual(0x0001, cpu.r, "R mismatch");
             Assert.AreEqual(0x0000, cpu.i, "I mismatch");
             Assert.AreEqual(17UL, cpu.tStates, "tStates mismatch");
@@ -9257,7 +9257,7 @@ namespace z80ilTest
             cpu.r2.hl = 0x0000;
             cpu.r1.ix = 0x0000;
             cpu.r1.iy = 0x0000;
-            cpu.sp = 0x5698;
+            cpu.r1.sp = 0x5698;
             cpu.pc = 0x0000;
             cpu.i = 0x00;
             cpu.r = 0x00;
@@ -9279,7 +9279,7 @@ namespace z80ilTest
             Assert.AreEqual(0x0000, cpu.r2.hl, "HL' mismatch");
             Assert.AreEqual(0x0000, cpu.r1.ix, "IX mismatch");
             Assert.AreEqual(0x0000, cpu.r1.iy, "IY mismatch");
-            Assert.AreEqual(0x5698, cpu.sp, "SP mismatch");
+            Assert.AreEqual(0x5698, cpu.r1.sp, "SP mismatch");
             Assert.AreEqual(0x0001, cpu.r, "R mismatch");
             Assert.AreEqual(0x0000, cpu.i, "I mismatch");
             Assert.AreEqual(10UL, cpu.tStates, "tStates mismatch");
@@ -9298,7 +9298,7 @@ namespace z80ilTest
             cpu.r2.hl = 0x0000;
             cpu.r1.ix = 0x0000;
             cpu.r1.iy = 0x0000;
-            cpu.sp = 0xEC12;
+            cpu.r1.sp = 0xEC12;
             cpu.pc = 0x0000;
             cpu.i = 0x00;
             cpu.r = 0x00;
@@ -9318,7 +9318,7 @@ namespace z80ilTest
             Assert.AreEqual(0x0000, cpu.r2.hl, "HL' mismatch");
             Assert.AreEqual(0x0000, cpu.r1.ix, "IX mismatch");
             Assert.AreEqual(0x0000, cpu.r1.iy, "IY mismatch");
-            Assert.AreEqual(0xEC10, cpu.sp, "SP mismatch");
+            Assert.AreEqual(0xEC10, cpu.r1.sp, "SP mismatch");
             Assert.AreEqual(0x0001, cpu.r, "R mismatch");
             Assert.AreEqual(0x0000, cpu.i, "I mismatch");
             Assert.AreEqual(11UL, cpu.tStates, "tStates mismatch");
@@ -9337,7 +9337,7 @@ namespace z80ilTest
             cpu.r2.hl = 0x0000;
             cpu.r1.ix = 0x0000;
             cpu.r1.iy = 0x0000;
-            cpu.sp = 0x0000;
+            cpu.r1.sp = 0x0000;
             cpu.pc = 0x0000;
             cpu.i = 0x00;
             cpu.r = 0x00;
@@ -9358,7 +9358,7 @@ namespace z80ilTest
             Assert.AreEqual(0x0000, cpu.r2.hl, "HL' mismatch");
             Assert.AreEqual(0x0000, cpu.r1.ix, "IX mismatch");
             Assert.AreEqual(0x0000, cpu.r1.iy, "IY mismatch");
-            Assert.AreEqual(0x0000, cpu.sp, "SP mismatch");
+            Assert.AreEqual(0x0000, cpu.r1.sp, "SP mismatch");
             Assert.AreEqual(0x0001, cpu.r, "R mismatch");
             Assert.AreEqual(0x0000, cpu.i, "I mismatch");
             Assert.AreEqual(7UL, cpu.tStates, "tStates mismatch");
@@ -9377,7 +9377,7 @@ namespace z80ilTest
             cpu.r2.hl = 0x0000;
             cpu.r1.ix = 0x0000;
             cpu.r1.iy = 0x0000;
-            cpu.sp = 0x5507;
+            cpu.r1.sp = 0x5507;
             cpu.pc = 0x6D33;
             cpu.i = 0x00;
             cpu.r = 0x00;
@@ -9397,7 +9397,7 @@ namespace z80ilTest
             Assert.AreEqual(0x0000, cpu.r2.hl, "HL' mismatch");
             Assert.AreEqual(0x0000, cpu.r1.ix, "IX mismatch");
             Assert.AreEqual(0x0000, cpu.r1.iy, "IY mismatch");
-            Assert.AreEqual(0x5505, cpu.sp, "SP mismatch");
+            Assert.AreEqual(0x5505, cpu.r1.sp, "SP mismatch");
             Assert.AreEqual(0x0001, cpu.r, "R mismatch");
             Assert.AreEqual(0x0000, cpu.i, "I mismatch");
             Assert.AreEqual(11UL, cpu.tStates, "tStates mismatch");
@@ -9416,7 +9416,7 @@ namespace z80ilTest
             cpu.r2.hl = 0x0000;
             cpu.r1.ix = 0x0000;
             cpu.r1.iy = 0x0000;
-            cpu.sp = 0x43F7;
+            cpu.r1.sp = 0x43F7;
             cpu.pc = 0x0000;
             cpu.i = 0x00;
             cpu.r = 0x00;
@@ -9438,7 +9438,7 @@ namespace z80ilTest
             Assert.AreEqual(0x0000, cpu.r2.hl, "HL' mismatch");
             Assert.AreEqual(0x0000, cpu.r1.ix, "IX mismatch");
             Assert.AreEqual(0x0000, cpu.r1.iy, "IY mismatch");
-            Assert.AreEqual(0x43F7, cpu.sp, "SP mismatch");
+            Assert.AreEqual(0x43F7, cpu.r1.sp, "SP mismatch");
             Assert.AreEqual(0x0001, cpu.r, "R mismatch");
             Assert.AreEqual(0x0000, cpu.i, "I mismatch");
             Assert.AreEqual(5UL, cpu.tStates, "tStates mismatch");
@@ -9457,7 +9457,7 @@ namespace z80ilTest
             cpu.r2.hl = 0x0000;
             cpu.r1.ix = 0x0000;
             cpu.r1.iy = 0x0000;
-            cpu.sp = 0x43F7;
+            cpu.r1.sp = 0x43F7;
             cpu.pc = 0x0000;
             cpu.i = 0x00;
             cpu.r = 0x00;
@@ -9479,7 +9479,7 @@ namespace z80ilTest
             Assert.AreEqual(0x0000, cpu.r2.hl, "HL' mismatch");
             Assert.AreEqual(0x0000, cpu.r1.ix, "IX mismatch");
             Assert.AreEqual(0x0000, cpu.r1.iy, "IY mismatch");
-            Assert.AreEqual(0x43F9, cpu.sp, "SP mismatch");
+            Assert.AreEqual(0x43F9, cpu.r1.sp, "SP mismatch");
             Assert.AreEqual(0x0001, cpu.r, "R mismatch");
             Assert.AreEqual(0x0000, cpu.i, "I mismatch");
             Assert.AreEqual(11UL, cpu.tStates, "tStates mismatch");
@@ -9498,7 +9498,7 @@ namespace z80ilTest
             cpu.r2.hl = 0x7D02;
             cpu.r1.ix = 0x0000;
             cpu.r1.iy = 0x0000;
-            cpu.sp = 0x0000;
+            cpu.r1.sp = 0x0000;
             cpu.pc = 0x0000;
             cpu.i = 0x00;
             cpu.r = 0x00;
@@ -9518,7 +9518,7 @@ namespace z80ilTest
             Assert.AreEqual(0x9D64, cpu.r2.hl, "HL' mismatch");
             Assert.AreEqual(0x0000, cpu.r1.ix, "IX mismatch");
             Assert.AreEqual(0x0000, cpu.r1.iy, "IY mismatch");
-            Assert.AreEqual(0x0000, cpu.sp, "SP mismatch");
+            Assert.AreEqual(0x0000, cpu.r1.sp, "SP mismatch");
             Assert.AreEqual(0x0001, cpu.r, "R mismatch");
             Assert.AreEqual(0x0000, cpu.i, "I mismatch");
             Assert.AreEqual(4UL, cpu.tStates, "tStates mismatch");
@@ -9537,7 +9537,7 @@ namespace z80ilTest
             cpu.r2.hl = 0x0000;
             cpu.r1.ix = 0x0000;
             cpu.r1.iy = 0x0000;
-            cpu.sp = 0x0000;
+            cpu.r1.sp = 0x0000;
             cpu.pc = 0x0000;
             cpu.i = 0x00;
             cpu.r = 0x00;
@@ -9559,7 +9559,7 @@ namespace z80ilTest
             Assert.AreEqual(0x0000, cpu.r2.hl, "HL' mismatch");
             Assert.AreEqual(0x0000, cpu.r1.ix, "IX mismatch");
             Assert.AreEqual(0x0000, cpu.r1.iy, "IY mismatch");
-            Assert.AreEqual(0x0000, cpu.sp, "SP mismatch");
+            Assert.AreEqual(0x0000, cpu.r1.sp, "SP mismatch");
             Assert.AreEqual(0x0001, cpu.r, "R mismatch");
             Assert.AreEqual(0x0000, cpu.i, "I mismatch");
             Assert.AreEqual(10UL, cpu.tStates, "tStates mismatch");
@@ -9578,7 +9578,7 @@ namespace z80ilTest
             cpu.r2.hl = 0x0000;
             cpu.r1.ix = 0x0000;
             cpu.r1.iy = 0x0000;
-            cpu.sp = 0x0000;
+            cpu.r1.sp = 0x0000;
             cpu.pc = 0x0000;
             cpu.i = 0x00;
             cpu.r = 0x00;
@@ -9600,7 +9600,7 @@ namespace z80ilTest
             Assert.AreEqual(0x0000, cpu.r2.hl, "HL' mismatch");
             Assert.AreEqual(0x0000, cpu.r1.ix, "IX mismatch");
             Assert.AreEqual(0x0000, cpu.r1.iy, "IY mismatch");
-            Assert.AreEqual(0x0000, cpu.sp, "SP mismatch");
+            Assert.AreEqual(0x0000, cpu.r1.sp, "SP mismatch");
             Assert.AreEqual(0x0001, cpu.r, "R mismatch");
             Assert.AreEqual(0x0000, cpu.i, "I mismatch");
             Assert.AreEqual(10UL, cpu.tStates, "tStates mismatch");
@@ -9619,7 +9619,7 @@ namespace z80ilTest
             cpu.r2.hl = 0x0000;
             cpu.r1.ix = 0x0000;
             cpu.r1.iy = 0x0000;
-            cpu.sp = 0x0000;
+            cpu.r1.sp = 0x0000;
             cpu.pc = 0x0000;
             cpu.i = 0x00;
             cpu.r = 0x00;
@@ -9640,7 +9640,7 @@ namespace z80ilTest
             Assert.AreEqual(0x0000, cpu.r2.hl, "HL' mismatch");
             Assert.AreEqual(0x0000, cpu.r1.ix, "IX mismatch");
             Assert.AreEqual(0x0000, cpu.r1.iy, "IY mismatch");
-            Assert.AreEqual(0x0000, cpu.sp, "SP mismatch");
+            Assert.AreEqual(0x0000, cpu.r1.sp, "SP mismatch");
             Assert.AreEqual(0x0001, cpu.r, "R mismatch");
             Assert.AreEqual(0x0000, cpu.i, "I mismatch");
             Assert.AreEqual(11UL, cpu.tStates, "tStates mismatch");
@@ -9659,7 +9659,7 @@ namespace z80ilTest
             cpu.r2.hl = 0x0000;
             cpu.r1.ix = 0x0000;
             cpu.r1.iy = 0x0000;
-            cpu.sp = 0x0000;
+            cpu.r1.sp = 0x0000;
             cpu.pc = 0x0000;
             cpu.i = 0x00;
             cpu.r = 0x00;
@@ -9680,7 +9680,7 @@ namespace z80ilTest
             Assert.AreEqual(0x0000, cpu.r2.hl, "HL' mismatch");
             Assert.AreEqual(0x0000, cpu.r1.ix, "IX mismatch");
             Assert.AreEqual(0x0000, cpu.r1.iy, "IY mismatch");
-            Assert.AreEqual(0x0000, cpu.sp, "SP mismatch");
+            Assert.AreEqual(0x0000, cpu.r1.sp, "SP mismatch");
             Assert.AreEqual(0x0001, cpu.r, "R mismatch");
             Assert.AreEqual(0x0000, cpu.i, "I mismatch");
             Assert.AreEqual(11UL, cpu.tStates, "tStates mismatch");
@@ -9699,7 +9699,7 @@ namespace z80ilTest
             cpu.r2.hl = 0x0000;
             cpu.r1.ix = 0x0000;
             cpu.r1.iy = 0x0000;
-            cpu.sp = 0x0000;
+            cpu.r1.sp = 0x0000;
             cpu.pc = 0x0000;
             cpu.i = 0x00;
             cpu.r = 0x00;
@@ -9720,7 +9720,7 @@ namespace z80ilTest
             Assert.AreEqual(0x0000, cpu.r2.hl, "HL' mismatch");
             Assert.AreEqual(0x0000, cpu.r1.ix, "IX mismatch");
             Assert.AreEqual(0x0000, cpu.r1.iy, "IY mismatch");
-            Assert.AreEqual(0x0000, cpu.sp, "SP mismatch");
+            Assert.AreEqual(0x0000, cpu.r1.sp, "SP mismatch");
             Assert.AreEqual(0x0001, cpu.r, "R mismatch");
             Assert.AreEqual(0x0000, cpu.i, "I mismatch");
             Assert.AreEqual(11UL, cpu.tStates, "tStates mismatch");
@@ -9739,7 +9739,7 @@ namespace z80ilTest
             cpu.r2.hl = 0x0000;
             cpu.r1.ix = 0x0000;
             cpu.r1.iy = 0x0000;
-            cpu.sp = 0x0000;
+            cpu.r1.sp = 0x0000;
             cpu.pc = 0x0000;
             cpu.i = 0x00;
             cpu.r = 0x00;
@@ -9760,7 +9760,7 @@ namespace z80ilTest
             Assert.AreEqual(0x0000, cpu.r2.hl, "HL' mismatch");
             Assert.AreEqual(0x0000, cpu.r1.ix, "IX mismatch");
             Assert.AreEqual(0x0000, cpu.r1.iy, "IY mismatch");
-            Assert.AreEqual(0x0000, cpu.sp, "SP mismatch");
+            Assert.AreEqual(0x0000, cpu.r1.sp, "SP mismatch");
             Assert.AreEqual(0x0001, cpu.r, "R mismatch");
             Assert.AreEqual(0x0000, cpu.i, "I mismatch");
             Assert.AreEqual(11UL, cpu.tStates, "tStates mismatch");
@@ -9779,7 +9779,7 @@ namespace z80ilTest
             cpu.r2.hl = 0x0000;
             cpu.r1.ix = 0x0000;
             cpu.r1.iy = 0x0000;
-            cpu.sp = 0x5698;
+            cpu.r1.sp = 0x5698;
             cpu.pc = 0x0000;
             cpu.i = 0x00;
             cpu.r = 0x00;
@@ -9801,7 +9801,7 @@ namespace z80ilTest
             Assert.AreEqual(0x0000, cpu.r2.hl, "HL' mismatch");
             Assert.AreEqual(0x0000, cpu.r1.ix, "IX mismatch");
             Assert.AreEqual(0x0000, cpu.r1.iy, "IY mismatch");
-            Assert.AreEqual(0x5696, cpu.sp, "SP mismatch");
+            Assert.AreEqual(0x5696, cpu.r1.sp, "SP mismatch");
             Assert.AreEqual(0x0001, cpu.r, "R mismatch");
             Assert.AreEqual(0x0000, cpu.i, "I mismatch");
             Assert.AreEqual(17UL, cpu.tStates, "tStates mismatch");
@@ -9820,7 +9820,7 @@ namespace z80ilTest
             cpu.r2.hl = 0x0000;
             cpu.r1.ix = 0x0000;
             cpu.r1.iy = 0x0000;
-            cpu.sp = 0x5698;
+            cpu.r1.sp = 0x5698;
             cpu.pc = 0x0000;
             cpu.i = 0x00;
             cpu.r = 0x00;
@@ -9842,7 +9842,7 @@ namespace z80ilTest
             Assert.AreEqual(0x0000, cpu.r2.hl, "HL' mismatch");
             Assert.AreEqual(0x0000, cpu.r1.ix, "IX mismatch");
             Assert.AreEqual(0x0000, cpu.r1.iy, "IY mismatch");
-            Assert.AreEqual(0x5698, cpu.sp, "SP mismatch");
+            Assert.AreEqual(0x5698, cpu.r1.sp, "SP mismatch");
             Assert.AreEqual(0x0001, cpu.r, "R mismatch");
             Assert.AreEqual(0x0000, cpu.i, "I mismatch");
             Assert.AreEqual(10UL, cpu.tStates, "tStates mismatch");
@@ -9861,7 +9861,7 @@ namespace z80ilTest
             cpu.r2.hl = 0x0000;
             cpu.r1.ix = 0x0000;
             cpu.r1.iy = 0x0000;
-            cpu.sp = 0x0000;
+            cpu.r1.sp = 0x0000;
             cpu.pc = 0x0000;
             cpu.i = 0x00;
             cpu.r = 0x00;
@@ -9882,7 +9882,7 @@ namespace z80ilTest
             Assert.AreEqual(0x0000, cpu.r2.hl, "HL' mismatch");
             Assert.AreEqual(0x0000, cpu.r1.ix, "IX mismatch");
             Assert.AreEqual(0x0000, cpu.r1.iy, "IY mismatch");
-            Assert.AreEqual(0x0000, cpu.sp, "SP mismatch");
+            Assert.AreEqual(0x0000, cpu.r1.sp, "SP mismatch");
             Assert.AreEqual(0x0001, cpu.r, "R mismatch");
             Assert.AreEqual(0x0000, cpu.i, "I mismatch");
             Assert.AreEqual(7UL, cpu.tStates, "tStates mismatch");
@@ -9901,7 +9901,7 @@ namespace z80ilTest
             cpu.r2.hl = 0x0000;
             cpu.r1.ix = 0x0000;
             cpu.r1.iy = 0x0000;
-            cpu.sp = 0x5507;
+            cpu.r1.sp = 0x5507;
             cpu.pc = 0x6D33;
             cpu.i = 0x00;
             cpu.r = 0x00;
@@ -9921,7 +9921,7 @@ namespace z80ilTest
             Assert.AreEqual(0x0000, cpu.r2.hl, "HL' mismatch");
             Assert.AreEqual(0x0000, cpu.r1.ix, "IX mismatch");
             Assert.AreEqual(0x0000, cpu.r1.iy, "IY mismatch");
-            Assert.AreEqual(0x5505, cpu.sp, "SP mismatch");
+            Assert.AreEqual(0x5505, cpu.r1.sp, "SP mismatch");
             Assert.AreEqual(0x0001, cpu.r, "R mismatch");
             Assert.AreEqual(0x0000, cpu.i, "I mismatch");
             Assert.AreEqual(11UL, cpu.tStates, "tStates mismatch");
@@ -9940,7 +9940,7 @@ namespace z80ilTest
             cpu.r2.hl = 0x0000;
             cpu.r1.ix = 0x0000;
             cpu.r1.iy = 0x0000;
-            cpu.sp = 0x43F7;
+            cpu.r1.sp = 0x43F7;
             cpu.pc = 0x0000;
             cpu.i = 0x00;
             cpu.r = 0x00;
@@ -9962,7 +9962,7 @@ namespace z80ilTest
             Assert.AreEqual(0x0000, cpu.r2.hl, "HL' mismatch");
             Assert.AreEqual(0x0000, cpu.r1.ix, "IX mismatch");
             Assert.AreEqual(0x0000, cpu.r1.iy, "IY mismatch");
-            Assert.AreEqual(0x43F9, cpu.sp, "SP mismatch");
+            Assert.AreEqual(0x43F9, cpu.r1.sp, "SP mismatch");
             Assert.AreEqual(0x0001, cpu.r, "R mismatch");
             Assert.AreEqual(0x0000, cpu.i, "I mismatch");
             Assert.AreEqual(11UL, cpu.tStates, "tStates mismatch");
@@ -9981,7 +9981,7 @@ namespace z80ilTest
             cpu.r2.hl = 0x0000;
             cpu.r1.ix = 0x0000;
             cpu.r1.iy = 0x0000;
-            cpu.sp = 0x43F7;
+            cpu.r1.sp = 0x43F7;
             cpu.pc = 0x0000;
             cpu.i = 0x00;
             cpu.r = 0x00;
@@ -10003,7 +10003,7 @@ namespace z80ilTest
             Assert.AreEqual(0x0000, cpu.r2.hl, "HL' mismatch");
             Assert.AreEqual(0x0000, cpu.r1.ix, "IX mismatch");
             Assert.AreEqual(0x0000, cpu.r1.iy, "IY mismatch");
-            Assert.AreEqual(0x43F7, cpu.sp, "SP mismatch");
+            Assert.AreEqual(0x43F7, cpu.r1.sp, "SP mismatch");
             Assert.AreEqual(0x0001, cpu.r, "R mismatch");
             Assert.AreEqual(0x0000, cpu.i, "I mismatch");
             Assert.AreEqual(5UL, cpu.tStates, "tStates mismatch");
@@ -10022,7 +10022,7 @@ namespace z80ilTest
             cpu.r2.hl = 0x0000;
             cpu.r1.ix = 0x0000;
             cpu.r1.iy = 0x0000;
-            cpu.sp = 0x4143;
+            cpu.r1.sp = 0x4143;
             cpu.pc = 0x0000;
             cpu.i = 0x00;
             cpu.r = 0x00;
@@ -10044,7 +10044,7 @@ namespace z80ilTest
             Assert.AreEqual(0x0000, cpu.r2.hl, "HL' mismatch");
             Assert.AreEqual(0x0000, cpu.r1.ix, "IX mismatch");
             Assert.AreEqual(0x0000, cpu.r1.iy, "IY mismatch");
-            Assert.AreEqual(0x4145, cpu.sp, "SP mismatch");
+            Assert.AreEqual(0x4145, cpu.r1.sp, "SP mismatch");
             Assert.AreEqual(0x0001, cpu.r, "R mismatch");
             Assert.AreEqual(0x0000, cpu.i, "I mismatch");
             Assert.AreEqual(10UL, cpu.tStates, "tStates mismatch");
@@ -10063,7 +10063,7 @@ namespace z80ilTest
             cpu.r2.hl = 0x0000;
             cpu.r1.ix = 0x0000;
             cpu.r1.iy = 0x0000;
-            cpu.sp = 0x0000;
+            cpu.r1.sp = 0x0000;
             cpu.pc = 0x0000;
             cpu.i = 0x00;
             cpu.r = 0x00;
@@ -10085,7 +10085,7 @@ namespace z80ilTest
             Assert.AreEqual(0x0000, cpu.r2.hl, "HL' mismatch");
             Assert.AreEqual(0x0000, cpu.r1.ix, "IX mismatch");
             Assert.AreEqual(0x0000, cpu.r1.iy, "IY mismatch");
-            Assert.AreEqual(0x0000, cpu.sp, "SP mismatch");
+            Assert.AreEqual(0x0000, cpu.r1.sp, "SP mismatch");
             Assert.AreEqual(0x0001, cpu.r, "R mismatch");
             Assert.AreEqual(0x0000, cpu.i, "I mismatch");
             Assert.AreEqual(10UL, cpu.tStates, "tStates mismatch");
@@ -10104,7 +10104,7 @@ namespace z80ilTest
             cpu.r2.hl = 0x0000;
             cpu.r1.ix = 0x0000;
             cpu.r1.iy = 0x0000;
-            cpu.sp = 0x0000;
+            cpu.r1.sp = 0x0000;
             cpu.pc = 0x0000;
             cpu.i = 0x00;
             cpu.r = 0x00;
@@ -10126,7 +10126,7 @@ namespace z80ilTest
             Assert.AreEqual(0x0000, cpu.r2.hl, "HL' mismatch");
             Assert.AreEqual(0x0000, cpu.r1.ix, "IX mismatch");
             Assert.AreEqual(0x0000, cpu.r1.iy, "IY mismatch");
-            Assert.AreEqual(0x0000, cpu.sp, "SP mismatch");
+            Assert.AreEqual(0x0000, cpu.r1.sp, "SP mismatch");
             Assert.AreEqual(0x0001, cpu.r, "R mismatch");
             Assert.AreEqual(0x0000, cpu.i, "I mismatch");
             Assert.AreEqual(10UL, cpu.tStates, "tStates mismatch");
@@ -10145,7 +10145,7 @@ namespace z80ilTest
             cpu.r2.hl = 0x0000;
             cpu.r1.ix = 0x0000;
             cpu.r1.iy = 0x0000;
-            cpu.sp = 0x0373;
+            cpu.r1.sp = 0x0373;
             cpu.pc = 0x0000;
             cpu.i = 0x00;
             cpu.r = 0x00;
@@ -10167,7 +10167,7 @@ namespace z80ilTest
             Assert.AreEqual(0x0000, cpu.r2.hl, "HL' mismatch");
             Assert.AreEqual(0x0000, cpu.r1.ix, "IX mismatch");
             Assert.AreEqual(0x0000, cpu.r1.iy, "IY mismatch");
-            Assert.AreEqual(0x0373, cpu.sp, "SP mismatch");
+            Assert.AreEqual(0x0373, cpu.r1.sp, "SP mismatch");
             Assert.AreEqual(0x0001, cpu.r, "R mismatch");
             Assert.AreEqual(0x0000, cpu.i, "I mismatch");
             Assert.AreEqual(19UL, cpu.tStates, "tStates mismatch");
@@ -10186,7 +10186,7 @@ namespace z80ilTest
             cpu.r2.hl = 0x0000;
             cpu.r1.ix = 0x0000;
             cpu.r1.iy = 0x0000;
-            cpu.sp = 0x5698;
+            cpu.r1.sp = 0x5698;
             cpu.pc = 0x0000;
             cpu.i = 0x00;
             cpu.r = 0x00;
@@ -10208,7 +10208,7 @@ namespace z80ilTest
             Assert.AreEqual(0x0000, cpu.r2.hl, "HL' mismatch");
             Assert.AreEqual(0x0000, cpu.r1.ix, "IX mismatch");
             Assert.AreEqual(0x0000, cpu.r1.iy, "IY mismatch");
-            Assert.AreEqual(0x5696, cpu.sp, "SP mismatch");
+            Assert.AreEqual(0x5696, cpu.r1.sp, "SP mismatch");
             Assert.AreEqual(0x0001, cpu.r, "R mismatch");
             Assert.AreEqual(0x0000, cpu.i, "I mismatch");
             Assert.AreEqual(17UL, cpu.tStates, "tStates mismatch");
@@ -10227,7 +10227,7 @@ namespace z80ilTest
             cpu.r2.hl = 0x0000;
             cpu.r1.ix = 0x0000;
             cpu.r1.iy = 0x0000;
-            cpu.sp = 0x5698;
+            cpu.r1.sp = 0x5698;
             cpu.pc = 0x0000;
             cpu.i = 0x00;
             cpu.r = 0x00;
@@ -10249,7 +10249,7 @@ namespace z80ilTest
             Assert.AreEqual(0x0000, cpu.r2.hl, "HL' mismatch");
             Assert.AreEqual(0x0000, cpu.r1.ix, "IX mismatch");
             Assert.AreEqual(0x0000, cpu.r1.iy, "IY mismatch");
-            Assert.AreEqual(0x5698, cpu.sp, "SP mismatch");
+            Assert.AreEqual(0x5698, cpu.r1.sp, "SP mismatch");
             Assert.AreEqual(0x0001, cpu.r, "R mismatch");
             Assert.AreEqual(0x0000, cpu.i, "I mismatch");
             Assert.AreEqual(10UL, cpu.tStates, "tStates mismatch");
@@ -10268,7 +10268,7 @@ namespace z80ilTest
             cpu.r2.hl = 0x0000;
             cpu.r1.ix = 0x0000;
             cpu.r1.iy = 0x0000;
-            cpu.sp = 0xEC12;
+            cpu.r1.sp = 0xEC12;
             cpu.pc = 0x0000;
             cpu.i = 0x00;
             cpu.r = 0x00;
@@ -10288,7 +10288,7 @@ namespace z80ilTest
             Assert.AreEqual(0x0000, cpu.r2.hl, "HL' mismatch");
             Assert.AreEqual(0x0000, cpu.r1.ix, "IX mismatch");
             Assert.AreEqual(0x0000, cpu.r1.iy, "IY mismatch");
-            Assert.AreEqual(0xEC10, cpu.sp, "SP mismatch");
+            Assert.AreEqual(0xEC10, cpu.r1.sp, "SP mismatch");
             Assert.AreEqual(0x0001, cpu.r, "R mismatch");
             Assert.AreEqual(0x0000, cpu.i, "I mismatch");
             Assert.AreEqual(11UL, cpu.tStates, "tStates mismatch");
@@ -10307,7 +10307,7 @@ namespace z80ilTest
             cpu.r2.hl = 0x0000;
             cpu.r1.ix = 0x0000;
             cpu.r1.iy = 0x0000;
-            cpu.sp = 0x0000;
+            cpu.r1.sp = 0x0000;
             cpu.pc = 0x0000;
             cpu.i = 0x00;
             cpu.r = 0x00;
@@ -10328,7 +10328,7 @@ namespace z80ilTest
             Assert.AreEqual(0x0000, cpu.r2.hl, "HL' mismatch");
             Assert.AreEqual(0x0000, cpu.r1.ix, "IX mismatch");
             Assert.AreEqual(0x0000, cpu.r1.iy, "IY mismatch");
-            Assert.AreEqual(0x0000, cpu.sp, "SP mismatch");
+            Assert.AreEqual(0x0000, cpu.r1.sp, "SP mismatch");
             Assert.AreEqual(0x0001, cpu.r, "R mismatch");
             Assert.AreEqual(0x0000, cpu.i, "I mismatch");
             Assert.AreEqual(7UL, cpu.tStates, "tStates mismatch");
@@ -10347,7 +10347,7 @@ namespace z80ilTest
             cpu.r2.hl = 0x0000;
             cpu.r1.ix = 0x0000;
             cpu.r1.iy = 0x0000;
-            cpu.sp = 0x5507;
+            cpu.r1.sp = 0x5507;
             cpu.pc = 0x6D33;
             cpu.i = 0x00;
             cpu.r = 0x00;
@@ -10367,7 +10367,7 @@ namespace z80ilTest
             Assert.AreEqual(0x0000, cpu.r2.hl, "HL' mismatch");
             Assert.AreEqual(0x0000, cpu.r1.ix, "IX mismatch");
             Assert.AreEqual(0x0000, cpu.r1.iy, "IY mismatch");
-            Assert.AreEqual(0x5505, cpu.sp, "SP mismatch");
+            Assert.AreEqual(0x5505, cpu.r1.sp, "SP mismatch");
             Assert.AreEqual(0x0001, cpu.r, "R mismatch");
             Assert.AreEqual(0x0000, cpu.i, "I mismatch");
             Assert.AreEqual(11UL, cpu.tStates, "tStates mismatch");
@@ -10386,7 +10386,7 @@ namespace z80ilTest
             cpu.r2.hl = 0x0000;
             cpu.r1.ix = 0x0000;
             cpu.r1.iy = 0x0000;
-            cpu.sp = 0x43F7;
+            cpu.r1.sp = 0x43F7;
             cpu.pc = 0x0000;
             cpu.i = 0x00;
             cpu.r = 0x00;
@@ -10408,7 +10408,7 @@ namespace z80ilTest
             Assert.AreEqual(0x0000, cpu.r2.hl, "HL' mismatch");
             Assert.AreEqual(0x0000, cpu.r1.ix, "IX mismatch");
             Assert.AreEqual(0x0000, cpu.r1.iy, "IY mismatch");
-            Assert.AreEqual(0x43F7, cpu.sp, "SP mismatch");
+            Assert.AreEqual(0x43F7, cpu.r1.sp, "SP mismatch");
             Assert.AreEqual(0x0001, cpu.r, "R mismatch");
             Assert.AreEqual(0x0000, cpu.i, "I mismatch");
             Assert.AreEqual(5UL, cpu.tStates, "tStates mismatch");
@@ -10427,7 +10427,7 @@ namespace z80ilTest
             cpu.r2.hl = 0x0000;
             cpu.r1.ix = 0x0000;
             cpu.r1.iy = 0x0000;
-            cpu.sp = 0x43F7;
+            cpu.r1.sp = 0x43F7;
             cpu.pc = 0x0000;
             cpu.i = 0x00;
             cpu.r = 0x00;
@@ -10449,7 +10449,7 @@ namespace z80ilTest
             Assert.AreEqual(0x0000, cpu.r2.hl, "HL' mismatch");
             Assert.AreEqual(0x0000, cpu.r1.ix, "IX mismatch");
             Assert.AreEqual(0x0000, cpu.r1.iy, "IY mismatch");
-            Assert.AreEqual(0x43F9, cpu.sp, "SP mismatch");
+            Assert.AreEqual(0x43F9, cpu.r1.sp, "SP mismatch");
             Assert.AreEqual(0x0001, cpu.r, "R mismatch");
             Assert.AreEqual(0x0000, cpu.i, "I mismatch");
             Assert.AreEqual(11UL, cpu.tStates, "tStates mismatch");
@@ -10468,7 +10468,7 @@ namespace z80ilTest
             cpu.r2.hl = 0x0000;
             cpu.r1.ix = 0x0000;
             cpu.r1.iy = 0x0000;
-            cpu.sp = 0x0000;
+            cpu.r1.sp = 0x0000;
             cpu.pc = 0x0000;
             cpu.i = 0x00;
             cpu.r = 0x00;
@@ -10488,7 +10488,7 @@ namespace z80ilTest
             Assert.AreEqual(0x0000, cpu.r2.hl, "HL' mismatch");
             Assert.AreEqual(0x0000, cpu.r1.ix, "IX mismatch");
             Assert.AreEqual(0x0000, cpu.r1.iy, "IY mismatch");
-            Assert.AreEqual(0x0000, cpu.sp, "SP mismatch");
+            Assert.AreEqual(0x0000, cpu.r1.sp, "SP mismatch");
             Assert.AreEqual(0x0001, cpu.r, "R mismatch");
             Assert.AreEqual(0x0000, cpu.i, "I mismatch");
             Assert.AreEqual(4UL, cpu.tStates, "tStates mismatch");
@@ -10507,7 +10507,7 @@ namespace z80ilTest
             cpu.r2.hl = 0x0000;
             cpu.r1.ix = 0x0000;
             cpu.r1.iy = 0x0000;
-            cpu.sp = 0x0000;
+            cpu.r1.sp = 0x0000;
             cpu.pc = 0x0000;
             cpu.i = 0x00;
             cpu.r = 0x00;
@@ -10529,7 +10529,7 @@ namespace z80ilTest
             Assert.AreEqual(0x0000, cpu.r2.hl, "HL' mismatch");
             Assert.AreEqual(0x0000, cpu.r1.ix, "IX mismatch");
             Assert.AreEqual(0x0000, cpu.r1.iy, "IY mismatch");
-            Assert.AreEqual(0x0000, cpu.sp, "SP mismatch");
+            Assert.AreEqual(0x0000, cpu.r1.sp, "SP mismatch");
             Assert.AreEqual(0x0001, cpu.r, "R mismatch");
             Assert.AreEqual(0x0000, cpu.i, "I mismatch");
             Assert.AreEqual(10UL, cpu.tStates, "tStates mismatch");
@@ -10548,7 +10548,7 @@ namespace z80ilTest
             cpu.r2.hl = 0x0000;
             cpu.r1.ix = 0x0000;
             cpu.r1.iy = 0x0000;
-            cpu.sp = 0x0000;
+            cpu.r1.sp = 0x0000;
             cpu.pc = 0x0000;
             cpu.i = 0x00;
             cpu.r = 0x00;
@@ -10570,7 +10570,7 @@ namespace z80ilTest
             Assert.AreEqual(0x0000, cpu.r2.hl, "HL' mismatch");
             Assert.AreEqual(0x0000, cpu.r1.ix, "IX mismatch");
             Assert.AreEqual(0x0000, cpu.r1.iy, "IY mismatch");
-            Assert.AreEqual(0x0000, cpu.sp, "SP mismatch");
+            Assert.AreEqual(0x0000, cpu.r1.sp, "SP mismatch");
             Assert.AreEqual(0x0001, cpu.r, "R mismatch");
             Assert.AreEqual(0x0000, cpu.i, "I mismatch");
             Assert.AreEqual(10UL, cpu.tStates, "tStates mismatch");
@@ -10589,7 +10589,7 @@ namespace z80ilTest
             cpu.r2.hl = 0x0000;
             cpu.r1.ix = 0x0000;
             cpu.r1.iy = 0x0000;
-            cpu.sp = 0x0000;
+            cpu.r1.sp = 0x0000;
             cpu.pc = 0x0000;
             cpu.i = 0x00;
             cpu.r = 0x00;
@@ -10609,7 +10609,7 @@ namespace z80ilTest
             Assert.AreEqual(0x0000, cpu.r2.hl, "HL' mismatch");
             Assert.AreEqual(0x0000, cpu.r1.ix, "IX mismatch");
             Assert.AreEqual(0x0000, cpu.r1.iy, "IY mismatch");
-            Assert.AreEqual(0x0000, cpu.sp, "SP mismatch");
+            Assert.AreEqual(0x0000, cpu.r1.sp, "SP mismatch");
             Assert.AreEqual(0x0001, cpu.r, "R mismatch");
             Assert.AreEqual(0x0000, cpu.i, "I mismatch");
             Assert.AreEqual(4UL, cpu.tStates, "tStates mismatch");
@@ -10628,7 +10628,7 @@ namespace z80ilTest
             cpu.r2.hl = 0x0000;
             cpu.r1.ix = 0x0000;
             cpu.r1.iy = 0x0000;
-            cpu.sp = 0x5698;
+            cpu.r1.sp = 0x5698;
             cpu.pc = 0x0000;
             cpu.i = 0x00;
             cpu.r = 0x00;
@@ -10650,7 +10650,7 @@ namespace z80ilTest
             Assert.AreEqual(0x0000, cpu.r2.hl, "HL' mismatch");
             Assert.AreEqual(0x0000, cpu.r1.ix, "IX mismatch");
             Assert.AreEqual(0x0000, cpu.r1.iy, "IY mismatch");
-            Assert.AreEqual(0x5696, cpu.sp, "SP mismatch");
+            Assert.AreEqual(0x5696, cpu.r1.sp, "SP mismatch");
             Assert.AreEqual(0x0001, cpu.r, "R mismatch");
             Assert.AreEqual(0x0000, cpu.i, "I mismatch");
             Assert.AreEqual(17UL, cpu.tStates, "tStates mismatch");
@@ -10669,7 +10669,7 @@ namespace z80ilTest
             cpu.r2.hl = 0x0000;
             cpu.r1.ix = 0x0000;
             cpu.r1.iy = 0x0000;
-            cpu.sp = 0x5698;
+            cpu.r1.sp = 0x5698;
             cpu.pc = 0x0000;
             cpu.i = 0x00;
             cpu.r = 0x00;
@@ -10691,7 +10691,7 @@ namespace z80ilTest
             Assert.AreEqual(0x0000, cpu.r2.hl, "HL' mismatch");
             Assert.AreEqual(0x0000, cpu.r1.ix, "IX mismatch");
             Assert.AreEqual(0x0000, cpu.r1.iy, "IY mismatch");
-            Assert.AreEqual(0x5698, cpu.sp, "SP mismatch");
+            Assert.AreEqual(0x5698, cpu.r1.sp, "SP mismatch");
             Assert.AreEqual(0x0001, cpu.r, "R mismatch");
             Assert.AreEqual(0x0000, cpu.i, "I mismatch");
             Assert.AreEqual(10UL, cpu.tStates, "tStates mismatch");
@@ -10710,7 +10710,7 @@ namespace z80ilTest
             cpu.r2.hl = 0x0000;
             cpu.r1.ix = 0x0000;
             cpu.r1.iy = 0x0000;
-            cpu.sp = 0x0000;
+            cpu.r1.sp = 0x0000;
             cpu.pc = 0x0000;
             cpu.i = 0x00;
             cpu.r = 0x00;
@@ -10731,7 +10731,7 @@ namespace z80ilTest
             Assert.AreEqual(0x0000, cpu.r2.hl, "HL' mismatch");
             Assert.AreEqual(0x0000, cpu.r1.ix, "IX mismatch");
             Assert.AreEqual(0x0000, cpu.r1.iy, "IY mismatch");
-            Assert.AreEqual(0x0000, cpu.sp, "SP mismatch");
+            Assert.AreEqual(0x0000, cpu.r1.sp, "SP mismatch");
             Assert.AreEqual(0x0001, cpu.r, "R mismatch");
             Assert.AreEqual(0x0000, cpu.i, "I mismatch");
             Assert.AreEqual(7UL, cpu.tStates, "tStates mismatch");
@@ -10750,7 +10750,7 @@ namespace z80ilTest
             cpu.r2.hl = 0x0000;
             cpu.r1.ix = 0x0000;
             cpu.r1.iy = 0x0000;
-            cpu.sp = 0x5507;
+            cpu.r1.sp = 0x5507;
             cpu.pc = 0x6D33;
             cpu.i = 0x00;
             cpu.r = 0x00;
@@ -10770,7 +10770,7 @@ namespace z80ilTest
             Assert.AreEqual(0x0000, cpu.r2.hl, "HL' mismatch");
             Assert.AreEqual(0x0000, cpu.r1.ix, "IX mismatch");
             Assert.AreEqual(0x0000, cpu.r1.iy, "IY mismatch");
-            Assert.AreEqual(0x5505, cpu.sp, "SP mismatch");
+            Assert.AreEqual(0x5505, cpu.r1.sp, "SP mismatch");
             Assert.AreEqual(0x0001, cpu.r, "R mismatch");
             Assert.AreEqual(0x0000, cpu.i, "I mismatch");
             Assert.AreEqual(11UL, cpu.tStates, "tStates mismatch");
@@ -10789,7 +10789,7 @@ namespace z80ilTest
             cpu.r2.hl = 0x0000;
             cpu.r1.ix = 0x0000;
             cpu.r1.iy = 0x0000;
-            cpu.sp = 0x43F7;
+            cpu.r1.sp = 0x43F7;
             cpu.pc = 0x0000;
             cpu.i = 0x00;
             cpu.r = 0x00;
@@ -10811,7 +10811,7 @@ namespace z80ilTest
             Assert.AreEqual(0x0000, cpu.r2.hl, "HL' mismatch");
             Assert.AreEqual(0x0000, cpu.r1.ix, "IX mismatch");
             Assert.AreEqual(0x0000, cpu.r1.iy, "IY mismatch");
-            Assert.AreEqual(0x43F9, cpu.sp, "SP mismatch");
+            Assert.AreEqual(0x43F9, cpu.r1.sp, "SP mismatch");
             Assert.AreEqual(0x0001, cpu.r, "R mismatch");
             Assert.AreEqual(0x0000, cpu.i, "I mismatch");
             Assert.AreEqual(11UL, cpu.tStates, "tStates mismatch");
@@ -10830,7 +10830,7 @@ namespace z80ilTest
             cpu.r2.hl = 0x0000;
             cpu.r1.ix = 0x0000;
             cpu.r1.iy = 0x0000;
-            cpu.sp = 0x43F7;
+            cpu.r1.sp = 0x43F7;
             cpu.pc = 0x0000;
             cpu.i = 0x00;
             cpu.r = 0x00;
@@ -10852,7 +10852,7 @@ namespace z80ilTest
             Assert.AreEqual(0x0000, cpu.r2.hl, "HL' mismatch");
             Assert.AreEqual(0x0000, cpu.r1.ix, "IX mismatch");
             Assert.AreEqual(0x0000, cpu.r1.iy, "IY mismatch");
-            Assert.AreEqual(0x43F7, cpu.sp, "SP mismatch");
+            Assert.AreEqual(0x43F7, cpu.r1.sp, "SP mismatch");
             Assert.AreEqual(0x0001, cpu.r, "R mismatch");
             Assert.AreEqual(0x0000, cpu.i, "I mismatch");
             Assert.AreEqual(5UL, cpu.tStates, "tStates mismatch");
@@ -10871,7 +10871,7 @@ namespace z80ilTest
             cpu.r2.hl = 0x0000;
             cpu.r1.ix = 0x0000;
             cpu.r1.iy = 0x0000;
-            cpu.sp = 0x4143;
+            cpu.r1.sp = 0x4143;
             cpu.pc = 0x0000;
             cpu.i = 0x00;
             cpu.r = 0x00;
@@ -10893,7 +10893,7 @@ namespace z80ilTest
             Assert.AreEqual(0x0000, cpu.r2.hl, "HL' mismatch");
             Assert.AreEqual(0x0000, cpu.r1.ix, "IX mismatch");
             Assert.AreEqual(0x0000, cpu.r1.iy, "IY mismatch");
-            Assert.AreEqual(0x4145, cpu.sp, "SP mismatch");
+            Assert.AreEqual(0x4145, cpu.r1.sp, "SP mismatch");
             Assert.AreEqual(0x0001, cpu.r, "R mismatch");
             Assert.AreEqual(0x0000, cpu.i, "I mismatch");
             Assert.AreEqual(10UL, cpu.tStates, "tStates mismatch");
@@ -10912,7 +10912,7 @@ namespace z80ilTest
             cpu.r2.hl = 0x0000;
             cpu.r1.ix = 0x0000;
             cpu.r1.iy = 0x0000;
-            cpu.sp = 0x0000;
+            cpu.r1.sp = 0x0000;
             cpu.pc = 0x0000;
             cpu.i = 0x00;
             cpu.r = 0x00;
@@ -10934,7 +10934,7 @@ namespace z80ilTest
             Assert.AreEqual(0x0000, cpu.r2.hl, "HL' mismatch");
             Assert.AreEqual(0x0000, cpu.r1.ix, "IX mismatch");
             Assert.AreEqual(0x0000, cpu.r1.iy, "IY mismatch");
-            Assert.AreEqual(0x0000, cpu.sp, "SP mismatch");
+            Assert.AreEqual(0x0000, cpu.r1.sp, "SP mismatch");
             Assert.AreEqual(0x0001, cpu.r, "R mismatch");
             Assert.AreEqual(0x0000, cpu.i, "I mismatch");
             Assert.AreEqual(10UL, cpu.tStates, "tStates mismatch");
@@ -10953,7 +10953,7 @@ namespace z80ilTest
             cpu.r2.hl = 0x0000;
             cpu.r1.ix = 0x0000;
             cpu.r1.iy = 0x0000;
-            cpu.sp = 0x0000;
+            cpu.r1.sp = 0x0000;
             cpu.pc = 0x0000;
             cpu.i = 0x00;
             cpu.r = 0x00;
@@ -10975,7 +10975,7 @@ namespace z80ilTest
             Assert.AreEqual(0x0000, cpu.r2.hl, "HL' mismatch");
             Assert.AreEqual(0x0000, cpu.r1.ix, "IX mismatch");
             Assert.AreEqual(0x0000, cpu.r1.iy, "IY mismatch");
-            Assert.AreEqual(0x0000, cpu.sp, "SP mismatch");
+            Assert.AreEqual(0x0000, cpu.r1.sp, "SP mismatch");
             Assert.AreEqual(0x0001, cpu.r, "R mismatch");
             Assert.AreEqual(0x0000, cpu.i, "I mismatch");
             Assert.AreEqual(10UL, cpu.tStates, "tStates mismatch");
@@ -10994,7 +10994,7 @@ namespace z80ilTest
             cpu.r2.hl = 0x0000;
             cpu.r1.ix = 0x0000;
             cpu.r1.iy = 0x0000;
-            cpu.sp = 0x0000;
+            cpu.r1.sp = 0x0000;
             cpu.pc = 0x0000;
             cpu.i = 0x00;
             cpu.r = 0x00;
@@ -11014,7 +11014,7 @@ namespace z80ilTest
             Assert.AreEqual(0x0000, cpu.r2.hl, "HL' mismatch");
             Assert.AreEqual(0x0000, cpu.r1.ix, "IX mismatch");
             Assert.AreEqual(0x0000, cpu.r1.iy, "IY mismatch");
-            Assert.AreEqual(0x0000, cpu.sp, "SP mismatch");
+            Assert.AreEqual(0x0000, cpu.r1.sp, "SP mismatch");
             Assert.AreEqual(0x0001, cpu.r, "R mismatch");
             Assert.AreEqual(0x0000, cpu.i, "I mismatch");
             Assert.AreEqual(4UL, cpu.tStates, "tStates mismatch");
@@ -11033,7 +11033,7 @@ namespace z80ilTest
             cpu.r2.hl = 0x0000;
             cpu.r1.ix = 0x0000;
             cpu.r1.iy = 0x0000;
-            cpu.sp = 0x5698;
+            cpu.r1.sp = 0x5698;
             cpu.pc = 0x0000;
             cpu.i = 0x00;
             cpu.r = 0x00;
@@ -11055,7 +11055,7 @@ namespace z80ilTest
             Assert.AreEqual(0x0000, cpu.r2.hl, "HL' mismatch");
             Assert.AreEqual(0x0000, cpu.r1.ix, "IX mismatch");
             Assert.AreEqual(0x0000, cpu.r1.iy, "IY mismatch");
-            Assert.AreEqual(0x5696, cpu.sp, "SP mismatch");
+            Assert.AreEqual(0x5696, cpu.r1.sp, "SP mismatch");
             Assert.AreEqual(0x0001, cpu.r, "R mismatch");
             Assert.AreEqual(0x0000, cpu.i, "I mismatch");
             Assert.AreEqual(17UL, cpu.tStates, "tStates mismatch");
@@ -11074,7 +11074,7 @@ namespace z80ilTest
             cpu.r2.hl = 0x0000;
             cpu.r1.ix = 0x0000;
             cpu.r1.iy = 0x0000;
-            cpu.sp = 0x5698;
+            cpu.r1.sp = 0x5698;
             cpu.pc = 0x0000;
             cpu.i = 0x00;
             cpu.r = 0x00;
@@ -11096,7 +11096,7 @@ namespace z80ilTest
             Assert.AreEqual(0x0000, cpu.r2.hl, "HL' mismatch");
             Assert.AreEqual(0x0000, cpu.r1.ix, "IX mismatch");
             Assert.AreEqual(0x0000, cpu.r1.iy, "IY mismatch");
-            Assert.AreEqual(0x5698, cpu.sp, "SP mismatch");
+            Assert.AreEqual(0x5698, cpu.r1.sp, "SP mismatch");
             Assert.AreEqual(0x0001, cpu.r, "R mismatch");
             Assert.AreEqual(0x0000, cpu.i, "I mismatch");
             Assert.AreEqual(10UL, cpu.tStates, "tStates mismatch");
@@ -11115,7 +11115,7 @@ namespace z80ilTest
             cpu.r2.hl = 0x0000;
             cpu.r1.ix = 0x0000;
             cpu.r1.iy = 0x0000;
-            cpu.sp = 0xEC12;
+            cpu.r1.sp = 0xEC12;
             cpu.pc = 0x0000;
             cpu.i = 0x00;
             cpu.r = 0x00;
@@ -11135,7 +11135,7 @@ namespace z80ilTest
             Assert.AreEqual(0x0000, cpu.r2.hl, "HL' mismatch");
             Assert.AreEqual(0x0000, cpu.r1.ix, "IX mismatch");
             Assert.AreEqual(0x0000, cpu.r1.iy, "IY mismatch");
-            Assert.AreEqual(0xEC10, cpu.sp, "SP mismatch");
+            Assert.AreEqual(0xEC10, cpu.r1.sp, "SP mismatch");
             Assert.AreEqual(0x0001, cpu.r, "R mismatch");
             Assert.AreEqual(0x0000, cpu.i, "I mismatch");
             Assert.AreEqual(11UL, cpu.tStates, "tStates mismatch");
@@ -11154,7 +11154,7 @@ namespace z80ilTest
             cpu.r2.hl = 0x0000;
             cpu.r1.ix = 0x0000;
             cpu.r1.iy = 0x0000;
-            cpu.sp = 0x0000;
+            cpu.r1.sp = 0x0000;
             cpu.pc = 0x0000;
             cpu.i = 0x00;
             cpu.r = 0x00;
@@ -11175,7 +11175,7 @@ namespace z80ilTest
             Assert.AreEqual(0x0000, cpu.r2.hl, "HL' mismatch");
             Assert.AreEqual(0x0000, cpu.r1.ix, "IX mismatch");
             Assert.AreEqual(0x0000, cpu.r1.iy, "IY mismatch");
-            Assert.AreEqual(0x0000, cpu.sp, "SP mismatch");
+            Assert.AreEqual(0x0000, cpu.r1.sp, "SP mismatch");
             Assert.AreEqual(0x0001, cpu.r, "R mismatch");
             Assert.AreEqual(0x0000, cpu.i, "I mismatch");
             Assert.AreEqual(7UL, cpu.tStates, "tStates mismatch");
@@ -11194,7 +11194,7 @@ namespace z80ilTest
             cpu.r2.hl = 0x0000;
             cpu.r1.ix = 0x0000;
             cpu.r1.iy = 0x0000;
-            cpu.sp = 0x5507;
+            cpu.r1.sp = 0x5507;
             cpu.pc = 0x6D33;
             cpu.i = 0x00;
             cpu.r = 0x00;
@@ -11214,7 +11214,7 @@ namespace z80ilTest
             Assert.AreEqual(0x0000, cpu.r2.hl, "HL' mismatch");
             Assert.AreEqual(0x0000, cpu.r1.ix, "IX mismatch");
             Assert.AreEqual(0x0000, cpu.r1.iy, "IY mismatch");
-            Assert.AreEqual(0x5505, cpu.sp, "SP mismatch");
+            Assert.AreEqual(0x5505, cpu.r1.sp, "SP mismatch");
             Assert.AreEqual(0x0001, cpu.r, "R mismatch");
             Assert.AreEqual(0x0000, cpu.i, "I mismatch");
             Assert.AreEqual(11UL, cpu.tStates, "tStates mismatch");
@@ -11233,7 +11233,7 @@ namespace z80ilTest
             cpu.r2.hl = 0x0000;
             cpu.r1.ix = 0x0000;
             cpu.r1.iy = 0x0000;
-            cpu.sp = 0x43F7;
+            cpu.r1.sp = 0x43F7;
             cpu.pc = 0x0000;
             cpu.i = 0x00;
             cpu.r = 0x00;
@@ -11255,7 +11255,7 @@ namespace z80ilTest
             Assert.AreEqual(0x0000, cpu.r2.hl, "HL' mismatch");
             Assert.AreEqual(0x0000, cpu.r1.ix, "IX mismatch");
             Assert.AreEqual(0x0000, cpu.r1.iy, "IY mismatch");
-            Assert.AreEqual(0x43F7, cpu.sp, "SP mismatch");
+            Assert.AreEqual(0x43F7, cpu.r1.sp, "SP mismatch");
             Assert.AreEqual(0x0001, cpu.r, "R mismatch");
             Assert.AreEqual(0x0000, cpu.i, "I mismatch");
             Assert.AreEqual(5UL, cpu.tStates, "tStates mismatch");
@@ -11274,7 +11274,7 @@ namespace z80ilTest
             cpu.r2.hl = 0x0000;
             cpu.r1.ix = 0x0000;
             cpu.r1.iy = 0x0000;
-            cpu.sp = 0x43F7;
+            cpu.r1.sp = 0x43F7;
             cpu.pc = 0x0000;
             cpu.i = 0x00;
             cpu.r = 0x00;
@@ -11296,7 +11296,7 @@ namespace z80ilTest
             Assert.AreEqual(0x0000, cpu.r2.hl, "HL' mismatch");
             Assert.AreEqual(0x0000, cpu.r1.ix, "IX mismatch");
             Assert.AreEqual(0x0000, cpu.r1.iy, "IY mismatch");
-            Assert.AreEqual(0x43F9, cpu.sp, "SP mismatch");
+            Assert.AreEqual(0x43F9, cpu.r1.sp, "SP mismatch");
             Assert.AreEqual(0x0001, cpu.r, "R mismatch");
             Assert.AreEqual(0x0000, cpu.i, "I mismatch");
             Assert.AreEqual(11UL, cpu.tStates, "tStates mismatch");
@@ -11315,7 +11315,7 @@ namespace z80ilTest
             cpu.r2.hl = 0x0000;
             cpu.r1.ix = 0x0000;
             cpu.r1.iy = 0x0000;
-            cpu.sp = 0x0000;
+            cpu.r1.sp = 0x0000;
             cpu.pc = 0x0000;
             cpu.i = 0x00;
             cpu.r = 0x00;
@@ -11335,7 +11335,7 @@ namespace z80ilTest
             Assert.AreEqual(0x0000, cpu.r2.hl, "HL' mismatch");
             Assert.AreEqual(0x0000, cpu.r1.ix, "IX mismatch");
             Assert.AreEqual(0x0000, cpu.r1.iy, "IY mismatch");
-            Assert.AreEqual(0xCE32, cpu.sp, "SP mismatch");
+            Assert.AreEqual(0xCE32, cpu.r1.sp, "SP mismatch");
             Assert.AreEqual(0x0001, cpu.r, "R mismatch");
             Assert.AreEqual(0x0000, cpu.i, "I mismatch");
             Assert.AreEqual(6UL, cpu.tStates, "tStates mismatch");
@@ -11354,7 +11354,7 @@ namespace z80ilTest
             cpu.r2.hl = 0x0000;
             cpu.r1.ix = 0x0000;
             cpu.r1.iy = 0x0000;
-            cpu.sp = 0x0000;
+            cpu.r1.sp = 0x0000;
             cpu.pc = 0x0000;
             cpu.i = 0x00;
             cpu.r = 0x00;
@@ -11376,7 +11376,7 @@ namespace z80ilTest
             Assert.AreEqual(0x0000, cpu.r2.hl, "HL' mismatch");
             Assert.AreEqual(0x0000, cpu.r1.ix, "IX mismatch");
             Assert.AreEqual(0x0000, cpu.r1.iy, "IY mismatch");
-            Assert.AreEqual(0x0000, cpu.sp, "SP mismatch");
+            Assert.AreEqual(0x0000, cpu.r1.sp, "SP mismatch");
             Assert.AreEqual(0x0001, cpu.r, "R mismatch");
             Assert.AreEqual(0x0000, cpu.i, "I mismatch");
             Assert.AreEqual(10UL, cpu.tStates, "tStates mismatch");
@@ -11395,7 +11395,7 @@ namespace z80ilTest
             cpu.r2.hl = 0x0000;
             cpu.r1.ix = 0x0000;
             cpu.r1.iy = 0x0000;
-            cpu.sp = 0x0000;
+            cpu.r1.sp = 0x0000;
             cpu.pc = 0x0000;
             cpu.i = 0x00;
             cpu.r = 0x00;
@@ -11417,7 +11417,7 @@ namespace z80ilTest
             Assert.AreEqual(0x0000, cpu.r2.hl, "HL' mismatch");
             Assert.AreEqual(0x0000, cpu.r1.ix, "IX mismatch");
             Assert.AreEqual(0x0000, cpu.r1.iy, "IY mismatch");
-            Assert.AreEqual(0x0000, cpu.sp, "SP mismatch");
+            Assert.AreEqual(0x0000, cpu.r1.sp, "SP mismatch");
             Assert.AreEqual(0x0001, cpu.r, "R mismatch");
             Assert.AreEqual(0x0000, cpu.i, "I mismatch");
             Assert.AreEqual(10UL, cpu.tStates, "tStates mismatch");
@@ -11436,7 +11436,7 @@ namespace z80ilTest
             cpu.r2.hl = 0x0000;
             cpu.r1.ix = 0x0000;
             cpu.r1.iy = 0x0000;
-            cpu.sp = 0x0000;
+            cpu.r1.sp = 0x0000;
             cpu.pc = 0x0000;
             cpu.i = 0x00;
             cpu.r = 0x00;
@@ -11456,7 +11456,7 @@ namespace z80ilTest
             Assert.AreEqual(0x0000, cpu.r2.hl, "HL' mismatch");
             Assert.AreEqual(0x0000, cpu.r1.ix, "IX mismatch");
             Assert.AreEqual(0x0000, cpu.r1.iy, "IY mismatch");
-            Assert.AreEqual(0x0000, cpu.sp, "SP mismatch");
+            Assert.AreEqual(0x0000, cpu.r1.sp, "SP mismatch");
             Assert.AreEqual(0x0001, cpu.r, "R mismatch");
             Assert.AreEqual(0x0000, cpu.i, "I mismatch");
             Assert.AreEqual(4UL, cpu.tStates, "tStates mismatch");
@@ -11475,7 +11475,7 @@ namespace z80ilTest
             cpu.r2.hl = 0x0000;
             cpu.r1.ix = 0x0000;
             cpu.r1.iy = 0x0000;
-            cpu.sp = 0x5698;
+            cpu.r1.sp = 0x5698;
             cpu.pc = 0x0000;
             cpu.i = 0x00;
             cpu.r = 0x00;
@@ -11497,7 +11497,7 @@ namespace z80ilTest
             Assert.AreEqual(0x0000, cpu.r2.hl, "HL' mismatch");
             Assert.AreEqual(0x0000, cpu.r1.ix, "IX mismatch");
             Assert.AreEqual(0x0000, cpu.r1.iy, "IY mismatch");
-            Assert.AreEqual(0x5696, cpu.sp, "SP mismatch");
+            Assert.AreEqual(0x5696, cpu.r1.sp, "SP mismatch");
             Assert.AreEqual(0x0001, cpu.r, "R mismatch");
             Assert.AreEqual(0x0000, cpu.i, "I mismatch");
             Assert.AreEqual(17UL, cpu.tStates, "tStates mismatch");
@@ -11516,7 +11516,7 @@ namespace z80ilTest
             cpu.r2.hl = 0x0000;
             cpu.r1.ix = 0x0000;
             cpu.r1.iy = 0x0000;
-            cpu.sp = 0x5698;
+            cpu.r1.sp = 0x5698;
             cpu.pc = 0x0000;
             cpu.i = 0x00;
             cpu.r = 0x00;
@@ -11538,7 +11538,7 @@ namespace z80ilTest
             Assert.AreEqual(0x0000, cpu.r2.hl, "HL' mismatch");
             Assert.AreEqual(0x0000, cpu.r1.ix, "IX mismatch");
             Assert.AreEqual(0x0000, cpu.r1.iy, "IY mismatch");
-            Assert.AreEqual(0x5698, cpu.sp, "SP mismatch");
+            Assert.AreEqual(0x5698, cpu.r1.sp, "SP mismatch");
             Assert.AreEqual(0x0001, cpu.r, "R mismatch");
             Assert.AreEqual(0x0000, cpu.i, "I mismatch");
             Assert.AreEqual(10UL, cpu.tStates, "tStates mismatch");
@@ -11557,7 +11557,7 @@ namespace z80ilTest
             cpu.r2.hl = 0x0000;
             cpu.r1.ix = 0x0000;
             cpu.r1.iy = 0x0000;
-            cpu.sp = 0x0000;
+            cpu.r1.sp = 0x0000;
             cpu.pc = 0x0000;
             cpu.i = 0x00;
             cpu.r = 0x00;
@@ -11578,7 +11578,7 @@ namespace z80ilTest
             Assert.AreEqual(0x0000, cpu.r2.hl, "HL' mismatch");
             Assert.AreEqual(0x0000, cpu.r1.ix, "IX mismatch");
             Assert.AreEqual(0x0000, cpu.r1.iy, "IY mismatch");
-            Assert.AreEqual(0x0000, cpu.sp, "SP mismatch");
+            Assert.AreEqual(0x0000, cpu.r1.sp, "SP mismatch");
             Assert.AreEqual(0x0001, cpu.r, "R mismatch");
             Assert.AreEqual(0x0000, cpu.i, "I mismatch");
             Assert.AreEqual(7UL, cpu.tStates, "tStates mismatch");
@@ -11597,7 +11597,7 @@ namespace z80ilTest
             cpu.r2.hl = 0x0000;
             cpu.r1.ix = 0x0000;
             cpu.r1.iy = 0x0000;
-            cpu.sp = 0x5507;
+            cpu.r1.sp = 0x5507;
             cpu.pc = 0x6D33;
             cpu.i = 0x00;
             cpu.r = 0x00;
@@ -11617,7 +11617,7 @@ namespace z80ilTest
             Assert.AreEqual(0x0000, cpu.r2.hl, "HL' mismatch");
             Assert.AreEqual(0x0000, cpu.r1.ix, "IX mismatch");
             Assert.AreEqual(0x0000, cpu.r1.iy, "IY mismatch");
-            Assert.AreEqual(0x5505, cpu.sp, "SP mismatch");
+            Assert.AreEqual(0x5505, cpu.r1.sp, "SP mismatch");
             Assert.AreEqual(0x0001, cpu.r, "R mismatch");
             Assert.AreEqual(0x0000, cpu.i, "I mismatch");
             Assert.AreEqual(11UL, cpu.tStates, "tStates mismatch");

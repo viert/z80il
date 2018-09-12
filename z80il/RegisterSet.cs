@@ -42,5 +42,7 @@ namespace Z80
         public ushort ix;
         [FieldOffset(10)]
         public ushort iy;
+        [FieldOffset(12)]
+        public ushort sp;
     }
 }
