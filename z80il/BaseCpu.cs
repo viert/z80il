@@ -351,7 +351,7 @@ namespace Z80
             AdjustFlagsSZP(r1.a);
         }
 
-        protected byte doCPHL() {
+        protected byte DoCPHL() {
             byte value = Read8(r1.hl);
             byte res = DoArithmetics(value, false, true);
             AdjustFlags(value);

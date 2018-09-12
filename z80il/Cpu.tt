@@ -68,6 +68,8 @@ namespace Z80 {
         }
     } 
 #>
+            // NOP
+            opcodeTable.entries[0x00] = new OpcodeTableEntry(nop, "nop", new ArgType[]{});
 
             // LD r, n
 <#  
@@ -246,6 +248,12 @@ namespace Z80 {
 #>
             opcodeTable.entries[<#= opCode #>] = new OpcodeTableEntry(<#= opFuncName #>, "<#= dasm #>", new ArgType[]{});
 <#  
+        opCode = 0xC1 | (rCode.Key << 4);
+        opFuncName = string.Format("pop_{0}", rCode.Value);
+        dasm = string.Format("pop {0}", rCode.Value);
+#>
+            opcodeTable.entries[<#= opCode #>] = new OpcodeTableEntry(<#= opFuncName #>, "<#= dasm #>", new ArgType[]{});
+<#
     }
 #>
 <#
@@ -256,10 +264,35 @@ namespace Z80 {
             opcodeTable.entries[<#= iReg.Value #>].nextTable.entries[0xE5] =
                 new OpcodeTableEntry(<#= opFuncName #>, "<#= dasm #>", new ArgType[]{});
 <#
+        opFuncName = string.Format("pop_{0}", iReg.Key);
+        dasm = string.Format("pop {0}", iReg.Key);
+#>
+            opcodeTable.entries[<#= iReg.Value #>].nextTable.entries[0xE1] =
+                new OpcodeTableEntry(<#= opFuncName #>, "<#= dasm #>", new ArgType[]{});
+<#
     }
 #>            
-        }
+            opcodeTable.entries[0xEB] = new OpcodeTableEntry(ex_de_hl, "ex de, hl", new ArgType[]{});
+            opcodeTable.entries[0x08] = new OpcodeTableEntry(ex_af_af_, "ex af, af'", new ArgType[]{});
+            opcodeTable.entries[0xD9] = new OpcodeTableEntry(exx, "exx", new ArgType[]{});
+            opcodeTable.entries[0xE3] = new OpcodeTableEntry(ex__sp__hl, "ex (sp), hl", new ArgType[]{});
+            opcodeTableDD.entries[0xE3] = new OpcodeTableEntry(ex__sp__ix, "ex (sp), ix", new ArgType[]{});
+            opcodeTableFD.entries[0xE3] = new OpcodeTableEntry(ex__sp__iy, "ex (sp), iy", new ArgType[]{});
+            
+            opcodeTableED.entries[0xA0] = new OpcodeTableEntry(ldi, "ldi", new ArgType[] { });
+            opcodeTableED.entries[0xB0] = new OpcodeTableEntry(ldir, "ldir", new ArgType[] { });
+            opcodeTableED.entries[0xA8] = new OpcodeTableEntry(ldd, "ldd", new ArgType[] { });
+            opcodeTableED.entries[0xB8] = new OpcodeTableEntry(lddr, "lddr", new ArgType[] { });
+            opcodeTableED.entries[0xA1] = new OpcodeTableEntry(cpi, "cpi", new ArgType[] { });
+            opcodeTableED.entries[0xB1] = new OpcodeTableEntry(cpir, "cpir", new ArgType[] { });
+            opcodeTableED.entries[0xA9] = new OpcodeTableEntry(cpd, "cpd", new ArgType[] { });
+            opcodeTableED.entries[0xB9] = new OpcodeTableEntry(cpdr, "cpdr", new ArgType[] { });
 
+        }
+        
+        protected void nop() {
+            // NOP
+        }
 <#  
     foreach (var dst in All8BitRegs) {
         foreach (var src in All8BitRegs) { 
@@ -425,6 +458,14 @@ namespace Z80 {
             tStates += 2;
             r1.sp = r1.<#= reg #>;
         }
+        
+        protected void ex__sp__<#= reg #>() {
+            tStates += 3;
+            var _t = r1.<#= reg #>;
+            r1.<#= reg #> = Read16(r1.sp);
+            Write16(r1.sp, _t);
+        }
+        
 <#    
     }
 #>
@@ -436,10 +477,128 @@ namespace Z80 {
             tStates++;
             DoPush(r1.<#= reg #>);
         }
+        
+        protected void pop_<#= reg #>() {
+            r1.<#= reg #> = DoPop();
+        }
 <#    
     }
 #>
+        protected void ex_de_hl() {
+            var _t = r1.de;
+            r1.de = r1.hl;
+            r1.hl = _t;
+        }
+        
+        protected void ex_af_af_() {
+            var _t = r1.af;
+            r1.af = r2.af;
+            r2.af = _t;
+        }
+        
+        protected void exx() {
+            ushort _t;
+            
+            _t = r1.bc;
+            r1.bc = r2.bc;
+            r2.bc = _t;
+            _t = r1.de;
+            r1.de = r2.de;
+            r2.de = _t;
+            _t = r1.hl;
+            r1.hl = r2.hl;
+            r2.hl= _t;
+        }
+        
+        protected void ldi() {
+            byte val, sum;
+            
+            tStates += 2;
+            val = Read8(r1.hl++);
+            Write8(r1.de++, val);
+            r1.bc--;
+            sum = (byte)(r1.a + val);
+            ValFlag(f_5, (sum & 0x02) != 0);
+            ValFlag(f_3, (sum & f_3) != 0);
+            ResFlag(f_h | f_n);
+            ValFlag(f_pv, r1.bc != 0);
+        }
+        
+        protected void ldir() {
+            ldi();
+            if (r1.bc != 0) {
+                tStates += 5;
+                pc -= 2;
+            }
+        }
 
-
+        protected void ldd() {
+            byte val, sum;
+            
+            tStates += 2;
+            val = Read8(r1.hl--);
+            Write8(r1.de--, val);
+            r1.bc--;
+            sum = (byte)(r1.a + val);
+            ValFlag(f_5, (sum & 0x02) != 0);
+            ValFlag(f_3, (sum & f_3) != 0);
+            ResFlag(f_h | f_n);
+            ValFlag(f_pv, r1.bc != 0);
+        }
+        
+        protected void lddr() {
+            ldd();
+            if (r1.bc != 0) {
+                tStates += 5;
+                pc -= 2;
+            }
+        }
+        
+        protected void cpi() {
+            tStates += 5;
+            var carry = GetFlag(f_c);
+            var value = DoCPHL();
+            if (GetFlag(f_h)) {
+                value--;
+            }
+            r1.hl++;
+            r1.bc--;
+            ValFlag(f_pv, r1.bc != 0);
+            ValFlag(f_c, carry);
+            ValFlag(f_5, (value & (1 << 2)) != 0);
+            ValFlag(f_3, (value & (1 << 3)) != 0);
+        }
+        
+        protected void cpir() {
+            cpi();
+            if (r1.bc != 0 && !GetFlag(f_z)) {
+                tStates += 5;
+                pc -= 2;
+            }
+        }
+        
+        protected void cpd() {
+            tStates += 5;
+            var carry = GetFlag(f_c);
+            var value = DoCPHL();
+            if (GetFlag(f_h)) {
+                value--;
+            }
+            r1.hl--;
+            r1.bc--;
+            ValFlag(f_pv, r1.bc != 0);
+            ValFlag(f_c, carry);
+            ValFlag(f_5, (value & (1 << 1)) != 0);
+            ValFlag(f_3, (value & (1 << 3)) != 0);
+        }
+        
+        protected void cpdr() {
+            cpd();
+            if (r1.bc != 0 && !GetFlag(f_z)) {
+                tStates += 5;
+                pc -= 2;
+            }
+        }
+        
     }
 }

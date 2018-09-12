@@ -60,6 +60,8 @@ namespace Z80 {
             opcodeTable.entries[124] = new OpcodeTableEntry(ld_a_h, "ld a, h", new ArgType[]{});
             opcodeTable.entries[125] = new OpcodeTableEntry(ld_a_l, "ld a, l", new ArgType[]{});
             opcodeTable.entries[127] = new OpcodeTableEntry(ld_a_a, "ld a, a", new ArgType[]{});
+            // NOP
+            opcodeTable.entries[0x00] = new OpcodeTableEntry(nop, "nop", new ArgType[]{});
 
             // LD r, n
             opcodeTable.entries[6] = new OpcodeTableEntry(ld_b_n, "ld b, {0}", new ArgType[]{ArgType.Byte});
@@ -210,16 +212,43 @@ namespace Z80 {
             opcodeTableFD.entries[0xF9] = new OpcodeTableEntry(ld_sp_iy, "ld sp, iy", new ArgType[]{});
             
             opcodeTable.entries[197] = new OpcodeTableEntry(push_bc, "push bc", new ArgType[]{});
+            opcodeTable.entries[193] = new OpcodeTableEntry(pop_bc, "pop bc", new ArgType[]{});
             opcodeTable.entries[213] = new OpcodeTableEntry(push_de, "push de", new ArgType[]{});
+            opcodeTable.entries[209] = new OpcodeTableEntry(pop_de, "pop de", new ArgType[]{});
             opcodeTable.entries[229] = new OpcodeTableEntry(push_hl, "push hl", new ArgType[]{});
+            opcodeTable.entries[225] = new OpcodeTableEntry(pop_hl, "pop hl", new ArgType[]{});
             opcodeTable.entries[245] = new OpcodeTableEntry(push_af, "push af", new ArgType[]{});
+            opcodeTable.entries[241] = new OpcodeTableEntry(pop_af, "pop af", new ArgType[]{});
             opcodeTable.entries[221].nextTable.entries[0xE5] =
                 new OpcodeTableEntry(push_ix, "push ix", new ArgType[]{});
+            opcodeTable.entries[221].nextTable.entries[0xE1] =
+                new OpcodeTableEntry(pop_ix, "pop ix", new ArgType[]{});
             opcodeTable.entries[253].nextTable.entries[0xE5] =
                 new OpcodeTableEntry(push_iy, "push iy", new ArgType[]{});
+            opcodeTable.entries[253].nextTable.entries[0xE1] =
+                new OpcodeTableEntry(pop_iy, "pop iy", new ArgType[]{});
             
-        }
+            opcodeTable.entries[0xEB] = new OpcodeTableEntry(ex_de_hl, "ex de, hl", new ArgType[]{});
+            opcodeTable.entries[0x08] = new OpcodeTableEntry(ex_af_af_, "ex af, af'", new ArgType[]{});
+            opcodeTable.entries[0xD9] = new OpcodeTableEntry(exx, "exx", new ArgType[]{});
+            opcodeTable.entries[0xE3] = new OpcodeTableEntry(ex__sp__hl, "ex (sp), hl", new ArgType[]{});
+            opcodeTableDD.entries[0xE3] = new OpcodeTableEntry(ex__sp__ix, "ex (sp), ix", new ArgType[]{});
+            opcodeTableFD.entries[0xE3] = new OpcodeTableEntry(ex__sp__iy, "ex (sp), iy", new ArgType[]{});
+            
+            opcodeTableED.entries[0xA0] = new OpcodeTableEntry(ldi, "ldi", new ArgType[] { });
+            opcodeTableED.entries[0xB0] = new OpcodeTableEntry(ldir, "ldir", new ArgType[] { });
+            opcodeTableED.entries[0xA8] = new OpcodeTableEntry(ldd, "ldd", new ArgType[] { });
+            opcodeTableED.entries[0xB8] = new OpcodeTableEntry(lddr, "lddr", new ArgType[] { });
+            opcodeTableED.entries[0xA1] = new OpcodeTableEntry(cpi, "cpi", new ArgType[] { });
+            opcodeTableED.entries[0xB1] = new OpcodeTableEntry(cpir, "cpir", new ArgType[] { });
+            opcodeTableED.entries[0xA9] = new OpcodeTableEntry(cpd, "cpd", new ArgType[] { });
+            opcodeTableED.entries[0xB9] = new OpcodeTableEntry(cpdr, "cpdr", new ArgType[] { });
 
+        }
+        
+        protected void nop() {
+            // NOP
+        }
         protected void ld_a_a() {
         }
 
@@ -1140,40 +1169,202 @@ namespace Z80 {
             tStates += 2;
             r1.sp = r1.hl;
         }
+        
+        protected void ex__sp__hl() {
+            tStates += 3;
+            var _t = r1.hl;
+            r1.hl = Read16(r1.sp);
+            Write16(r1.sp, _t);
+        }
+        
         protected void ld_sp_ix() {
             tStates += 2;
             r1.sp = r1.ix;
         }
+        
+        protected void ex__sp__ix() {
+            tStates += 3;
+            var _t = r1.ix;
+            r1.ix = Read16(r1.sp);
+            Write16(r1.sp, _t);
+        }
+        
         protected void ld_sp_iy() {
             tStates += 2;
             r1.sp = r1.iy;
         }
+        
+        protected void ex__sp__iy() {
+            tStates += 3;
+            var _t = r1.iy;
+            r1.iy = Read16(r1.sp);
+            Write16(r1.sp, _t);
+        }
+        
 
         protected void push_af() {
             tStates++;
             DoPush(r1.af);
         }
+        
+        protected void pop_af() {
+            r1.af = DoPop();
+        }
         protected void push_bc() {
             tStates++;
             DoPush(r1.bc);
+        }
+        
+        protected void pop_bc() {
+            r1.bc = DoPop();
         }
         protected void push_de() {
             tStates++;
             DoPush(r1.de);
         }
+        
+        protected void pop_de() {
+            r1.de = DoPop();
+        }
         protected void push_hl() {
             tStates++;
             DoPush(r1.hl);
+        }
+        
+        protected void pop_hl() {
+            r1.hl = DoPop();
         }
         protected void push_ix() {
             tStates++;
             DoPush(r1.ix);
         }
+        
+        protected void pop_ix() {
+            r1.ix = DoPop();
+        }
         protected void push_iy() {
             tStates++;
             DoPush(r1.iy);
         }
+        
+        protected void pop_iy() {
+            r1.iy = DoPop();
+        }
+        protected void ex_de_hl() {
+            var _t = r1.de;
+            r1.de = r1.hl;
+            r1.hl = _t;
+        }
+        
+        protected void ex_af_af_() {
+            var _t = r1.af;
+            r1.af = r2.af;
+            r2.af = _t;
+        }
+        
+        protected void exx() {
+            ushort _t;
+            
+            _t = r1.bc;
+            r1.bc = r2.bc;
+            r2.bc = _t;
+            _t = r1.de;
+            r1.de = r2.de;
+            r2.de = _t;
+            _t = r1.hl;
+            r1.hl = r2.hl;
+            r2.hl= _t;
+        }
+        
+        protected void ldi() {
+            byte val, sum;
+            
+            tStates += 2;
+            val = Read8(r1.hl++);
+            Write8(r1.de++, val);
+            r1.bc--;
+            sum = (byte)(r1.a + val);
+            ValFlag(f_5, (sum & 0x02) != 0);
+            ValFlag(f_3, (sum & f_3) != 0);
+            ResFlag(f_h | f_n);
+            ValFlag(f_pv, r1.bc != 0);
+        }
+        
+        protected void ldir() {
+            ldi();
+            if (r1.bc != 0) {
+                tStates += 5;
+                pc -= 2;
+            }
+        }
 
-
+        protected void ldd() {
+            byte val, sum;
+            
+            tStates += 2;
+            val = Read8(r1.hl--);
+            Write8(r1.de--, val);
+            r1.bc--;
+            sum = (byte)(r1.a + val);
+            ValFlag(f_5, (sum & 0x02) != 0);
+            ValFlag(f_3, (sum & f_3) != 0);
+            ResFlag(f_h | f_n);
+            ValFlag(f_pv, r1.bc != 0);
+        }
+        
+        protected void lddr() {
+            ldd();
+            if (r1.bc != 0) {
+                tStates += 5;
+                pc -= 2;
+            }
+        }
+        
+        protected void cpi() {
+            tStates += 5;
+            var carry = GetFlag(f_c);
+            var value = DoCPHL();
+            if (GetFlag(f_h)) {
+                value--;
+            }
+            r1.hl++;
+            r1.bc--;
+            ValFlag(f_pv, r1.bc != 0);
+            ValFlag(f_c, carry);
+            ValFlag(f_5, (value & (1 << 2)) != 0);
+            ValFlag(f_3, (value & (1 << 3)) != 0);
+        }
+        
+        protected void cpir() {
+            cpi();
+            if (r1.bc != 0 && !GetFlag(f_z)) {
+                tStates += 5;
+                pc -= 2;
+            }
+        }
+        
+        protected void cpd() {
+            tStates += 5;
+            var carry = GetFlag(f_c);
+            var value = DoCPHL();
+            if (GetFlag(f_h)) {
+                value--;
+            }
+            r1.hl--;
+            r1.bc--;
+            ValFlag(f_pv, r1.bc != 0);
+            ValFlag(f_c, carry);
+            ValFlag(f_5, (value & (1 << 1)) != 0);
+            ValFlag(f_3, (value & (1 << 3)) != 0);
+        }
+        
+        protected void cpdr() {
+            cpd();
+            if (r1.bc != 0 && !GetFlag(f_z)) {
+                tStates += 5;
+                pc -= 2;
+            }
+        }
+        
     }
 }
