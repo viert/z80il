@@ -211,6 +211,7 @@ namespace Z80 {
             opcodeTableDD.entries[0xF9] = new OpcodeTableEntry(ld_sp_ix, "ld sp, ix", new ArgType[]{});
             opcodeTableFD.entries[0xF9] = new OpcodeTableEntry(ld_sp_iy, "ld sp, iy", new ArgType[]{});
             
+            // PUSH qq / POP qq
             opcodeTable.entries[197] = new OpcodeTableEntry(push_bc, "push bc", new ArgType[]{});
             opcodeTable.entries[193] = new OpcodeTableEntry(pop_bc, "pop bc", new ArgType[]{});
             opcodeTable.entries[213] = new OpcodeTableEntry(push_de, "push de", new ArgType[]{});
@@ -227,7 +228,8 @@ namespace Z80 {
                 new OpcodeTableEntry(push_iy, "push iy", new ArgType[]{});
             opcodeTable.entries[253].nextTable.entries[0xE1] =
                 new OpcodeTableEntry(pop_iy, "pop iy", new ArgType[]{});
-            
+          
+            // More stack ops  
             opcodeTable.entries[0xEB] = new OpcodeTableEntry(ex_de_hl, "ex de, hl", new ArgType[]{});
             opcodeTable.entries[0x08] = new OpcodeTableEntry(ex_af_af_, "ex af, af'", new ArgType[]{});
             opcodeTable.entries[0xD9] = new OpcodeTableEntry(exx, "exx", new ArgType[]{});
@@ -235,6 +237,7 @@ namespace Z80 {
             opcodeTableDD.entries[0xE3] = new OpcodeTableEntry(ex__sp__ix, "ex (sp), ix", new ArgType[]{});
             opcodeTableFD.entries[0xE3] = new OpcodeTableEntry(ex__sp__iy, "ex (sp), iy", new ArgType[]{});
             
+            // Block operations
             opcodeTableED.entries[0xA0] = new OpcodeTableEntry(ldi, "ldi", new ArgType[] { });
             opcodeTableED.entries[0xB0] = new OpcodeTableEntry(ldir, "ldir", new ArgType[] { });
             opcodeTableED.entries[0xA8] = new OpcodeTableEntry(ldd, "ldd", new ArgType[] { });
@@ -243,6 +246,54 @@ namespace Z80 {
             opcodeTableED.entries[0xB1] = new OpcodeTableEntry(cpir, "cpir", new ArgType[] { });
             opcodeTableED.entries[0xA9] = new OpcodeTableEntry(cpd, "cpd", new ArgType[] { });
             opcodeTableED.entries[0xB9] = new OpcodeTableEntry(cpdr, "cpdr", new ArgType[] { });
+            opcodeTable.entries[128] = new OpcodeTableEntry(add_a_b, "add a, b", new ArgType[]{}); 
+            opcodeTable.entries[136] = new OpcodeTableEntry(adc_a_b, "adc a, b", new ArgType[]{}); 
+            opcodeTable.entries[144] = new OpcodeTableEntry(sub_a_b, "sub b", new ArgType[]{}); 
+            opcodeTable.entries[152] = new OpcodeTableEntry(sbc_a_b, "sbc a, b", new ArgType[]{}); 
+            opcodeTable.entries[129] = new OpcodeTableEntry(add_a_c, "add a, c", new ArgType[]{}); 
+            opcodeTable.entries[137] = new OpcodeTableEntry(adc_a_c, "adc a, c", new ArgType[]{}); 
+            opcodeTable.entries[145] = new OpcodeTableEntry(sub_a_c, "sub c", new ArgType[]{}); 
+            opcodeTable.entries[153] = new OpcodeTableEntry(sbc_a_c, "sbc a, c", new ArgType[]{}); 
+            opcodeTable.entries[130] = new OpcodeTableEntry(add_a_d, "add a, d", new ArgType[]{}); 
+            opcodeTable.entries[138] = new OpcodeTableEntry(adc_a_d, "adc a, d", new ArgType[]{}); 
+            opcodeTable.entries[146] = new OpcodeTableEntry(sub_a_d, "sub d", new ArgType[]{}); 
+            opcodeTable.entries[154] = new OpcodeTableEntry(sbc_a_d, "sbc a, d", new ArgType[]{}); 
+            opcodeTable.entries[131] = new OpcodeTableEntry(add_a_e, "add a, e", new ArgType[]{}); 
+            opcodeTable.entries[139] = new OpcodeTableEntry(adc_a_e, "adc a, e", new ArgType[]{}); 
+            opcodeTable.entries[147] = new OpcodeTableEntry(sub_a_e, "sub e", new ArgType[]{}); 
+            opcodeTable.entries[155] = new OpcodeTableEntry(sbc_a_e, "sbc a, e", new ArgType[]{}); 
+            opcodeTable.entries[132] = new OpcodeTableEntry(add_a_h, "add a, h", new ArgType[]{}); 
+            opcodeTable.entries[140] = new OpcodeTableEntry(adc_a_h, "adc a, h", new ArgType[]{}); 
+            opcodeTable.entries[148] = new OpcodeTableEntry(sub_a_h, "sub h", new ArgType[]{}); 
+            opcodeTable.entries[156] = new OpcodeTableEntry(sbc_a_h, "sbc a, h", new ArgType[]{}); 
+            opcodeTable.entries[133] = new OpcodeTableEntry(add_a_l, "add a, l", new ArgType[]{}); 
+            opcodeTable.entries[141] = new OpcodeTableEntry(adc_a_l, "adc a, l", new ArgType[]{}); 
+            opcodeTable.entries[149] = new OpcodeTableEntry(sub_a_l, "sub l", new ArgType[]{}); 
+            opcodeTable.entries[157] = new OpcodeTableEntry(sbc_a_l, "sbc a, l", new ArgType[]{}); 
+            opcodeTable.entries[135] = new OpcodeTableEntry(add_a_a, "add a, a", new ArgType[]{}); 
+            opcodeTable.entries[143] = new OpcodeTableEntry(adc_a_a, "adc a, a", new ArgType[]{}); 
+            opcodeTable.entries[151] = new OpcodeTableEntry(sub_a_a, "sub a", new ArgType[]{}); 
+            opcodeTable.entries[159] = new OpcodeTableEntry(sbc_a_a, "sbc a, a", new ArgType[]{}); 
+            
+            opcodeTableDD.entries[0x84] = new OpcodeTableEntry(add_a_ixh, "add a, ixh", new ArgType[]{});
+            opcodeTableDD.entries[0x85] = new OpcodeTableEntry(add_a_ixl, "add a, ixl", new ArgType[]{});
+            opcodeTableFD.entries[0x84] = new OpcodeTableEntry(add_a_iyh, "add a, iyh", new ArgType[]{});
+            opcodeTableFD.entries[0x85] = new OpcodeTableEntry(add_a_iyl, "add a, iyl", new ArgType[]{});
+            
+            opcodeTableDD.entries[0x8C] = new OpcodeTableEntry(adc_a_ixh, "adc a, ixh", new ArgType[]{});
+            opcodeTableDD.entries[0x8D] = new OpcodeTableEntry(adc_a_ixl, "adc a, ixl", new ArgType[]{});
+            opcodeTableFD.entries[0x8C] = new OpcodeTableEntry(adc_a_iyh, "adc a, iyh", new ArgType[]{});
+            opcodeTableFD.entries[0x8D] = new OpcodeTableEntry(adc_a_iyl, "adc a, iyl", new ArgType[]{});
+
+            opcodeTableDD.entries[0x94] = new OpcodeTableEntry(sub_a_ixh, "sub ixh", new ArgType[]{});
+            opcodeTableDD.entries[0x95] = new OpcodeTableEntry(sub_a_ixl, "sub ixl", new ArgType[]{});
+            opcodeTableFD.entries[0x94] = new OpcodeTableEntry(sub_a_iyh, "sub iyh", new ArgType[]{});
+            opcodeTableFD.entries[0x95] = new OpcodeTableEntry(sub_a_iyl, "sub iyl", new ArgType[]{});
+            
+            opcodeTableDD.entries[0x9C] = new OpcodeTableEntry(sbc_a_ixh, "sbc a, ixh", new ArgType[]{});
+            opcodeTableDD.entries[0x9D] = new OpcodeTableEntry(sbc_a_ixl, "sbc a, ixl", new ArgType[]{});
+            opcodeTableFD.entries[0x9C] = new OpcodeTableEntry(sbc_a_iyh, "sbc a, iyh", new ArgType[]{});
+            opcodeTableFD.entries[0x9D] = new OpcodeTableEntry(sbc_a_iyl, "sbc a, iyl", new ArgType[]{});
 
         }
         
@@ -1365,6 +1416,184 @@ namespace Z80 {
                 pc -= 2;
             }
         }
+        
+        protected void adc_a_a() {
+            r1.a = DoArithmetics(r1.a, hasCarry_adc, isSub_adc);
+        }
+        
+        protected void adc_a_b() {
+            r1.a = DoArithmetics(r1.b, hasCarry_adc, isSub_adc);
+        }
+        
+        protected void adc_a_c() {
+            r1.a = DoArithmetics(r1.c, hasCarry_adc, isSub_adc);
+        }
+        
+        protected void adc_a_d() {
+            r1.a = DoArithmetics(r1.d, hasCarry_adc, isSub_adc);
+        }
+        
+        protected void adc_a_e() {
+            r1.a = DoArithmetics(r1.e, hasCarry_adc, isSub_adc);
+        }
+        
+        protected void adc_a_h() {
+            r1.a = DoArithmetics(r1.h, hasCarry_adc, isSub_adc);
+        }
+        
+        protected void adc_a_l() {
+            r1.a = DoArithmetics(r1.l, hasCarry_adc, isSub_adc);
+        }
+        
+        protected void adc_a_ixh() {
+            r1.a = DoArithmetics(r1.ixh, hasCarry_adc, isSub_adc);
+        }
+        
+        protected void adc_a_ixl() {
+            r1.a = DoArithmetics(r1.ixl, hasCarry_adc, isSub_adc);
+        }
+        
+        protected void adc_a_iyh() {
+            r1.a = DoArithmetics(r1.iyh, hasCarry_adc, isSub_adc);
+        }
+        
+        protected void adc_a_iyl() {
+            r1.a = DoArithmetics(r1.iyl, hasCarry_adc, isSub_adc);
+        }
+        
+        protected void sbc_a_a() {
+            r1.a = DoArithmetics(r1.a, hasCarry_sbc, isSub_sbc);
+        }
+        
+        protected void sbc_a_b() {
+            r1.a = DoArithmetics(r1.b, hasCarry_sbc, isSub_sbc);
+        }
+        
+        protected void sbc_a_c() {
+            r1.a = DoArithmetics(r1.c, hasCarry_sbc, isSub_sbc);
+        }
+        
+        protected void sbc_a_d() {
+            r1.a = DoArithmetics(r1.d, hasCarry_sbc, isSub_sbc);
+        }
+        
+        protected void sbc_a_e() {
+            r1.a = DoArithmetics(r1.e, hasCarry_sbc, isSub_sbc);
+        }
+        
+        protected void sbc_a_h() {
+            r1.a = DoArithmetics(r1.h, hasCarry_sbc, isSub_sbc);
+        }
+        
+        protected void sbc_a_l() {
+            r1.a = DoArithmetics(r1.l, hasCarry_sbc, isSub_sbc);
+        }
+        
+        protected void sbc_a_ixh() {
+            r1.a = DoArithmetics(r1.ixh, hasCarry_sbc, isSub_sbc);
+        }
+        
+        protected void sbc_a_ixl() {
+            r1.a = DoArithmetics(r1.ixl, hasCarry_sbc, isSub_sbc);
+        }
+        
+        protected void sbc_a_iyh() {
+            r1.a = DoArithmetics(r1.iyh, hasCarry_sbc, isSub_sbc);
+        }
+        
+        protected void sbc_a_iyl() {
+            r1.a = DoArithmetics(r1.iyl, hasCarry_sbc, isSub_sbc);
+        }
+        
+        protected void add_a_a() {
+            r1.a = DoArithmetics(r1.a, hasCarry_add, isSub_add);
+        }
+        
+        protected void add_a_b() {
+            r1.a = DoArithmetics(r1.b, hasCarry_add, isSub_add);
+        }
+        
+        protected void add_a_c() {
+            r1.a = DoArithmetics(r1.c, hasCarry_add, isSub_add);
+        }
+        
+        protected void add_a_d() {
+            r1.a = DoArithmetics(r1.d, hasCarry_add, isSub_add);
+        }
+        
+        protected void add_a_e() {
+            r1.a = DoArithmetics(r1.e, hasCarry_add, isSub_add);
+        }
+        
+        protected void add_a_h() {
+            r1.a = DoArithmetics(r1.h, hasCarry_add, isSub_add);
+        }
+        
+        protected void add_a_l() {
+            r1.a = DoArithmetics(r1.l, hasCarry_add, isSub_add);
+        }
+        
+        protected void add_a_ixh() {
+            r1.a = DoArithmetics(r1.ixh, hasCarry_add, isSub_add);
+        }
+        
+        protected void add_a_ixl() {
+            r1.a = DoArithmetics(r1.ixl, hasCarry_add, isSub_add);
+        }
+        
+        protected void add_a_iyh() {
+            r1.a = DoArithmetics(r1.iyh, hasCarry_add, isSub_add);
+        }
+        
+        protected void add_a_iyl() {
+            r1.a = DoArithmetics(r1.iyl, hasCarry_add, isSub_add);
+        }
+        
+        protected void sub_a_a() {
+            r1.a = DoArithmetics(r1.a, hasCarry_sub, isSub_sub);
+        }
+        
+        protected void sub_a_b() {
+            r1.a = DoArithmetics(r1.b, hasCarry_sub, isSub_sub);
+        }
+        
+        protected void sub_a_c() {
+            r1.a = DoArithmetics(r1.c, hasCarry_sub, isSub_sub);
+        }
+        
+        protected void sub_a_d() {
+            r1.a = DoArithmetics(r1.d, hasCarry_sub, isSub_sub);
+        }
+        
+        protected void sub_a_e() {
+            r1.a = DoArithmetics(r1.e, hasCarry_sub, isSub_sub);
+        }
+        
+        protected void sub_a_h() {
+            r1.a = DoArithmetics(r1.h, hasCarry_sub, isSub_sub);
+        }
+        
+        protected void sub_a_l() {
+            r1.a = DoArithmetics(r1.l, hasCarry_sub, isSub_sub);
+        }
+        
+        protected void sub_a_ixh() {
+            r1.a = DoArithmetics(r1.ixh, hasCarry_sub, isSub_sub);
+        }
+        
+        protected void sub_a_ixl() {
+            r1.a = DoArithmetics(r1.ixl, hasCarry_sub, isSub_sub);
+        }
+        
+        protected void sub_a_iyh() {
+            r1.a = DoArithmetics(r1.iyh, hasCarry_sub, isSub_sub);
+        }
+        
+        protected void sub_a_iyl() {
+            r1.a = DoArithmetics(r1.iyl, hasCarry_sub, isSub_sub);
+        }
+        
+
         
     }
 }
