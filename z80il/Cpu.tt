@@ -750,6 +750,24 @@ namespace Z80 {
 		}
 <#
 		}
+#>
+		protected void <#= cmd #>_n() {
+			Do<#= cmd.ToUpper() #>(Read8(pc++));
+		}
+
+		protected void <#= cmd #>__hl_() {
+			Do<#= cmd.ToUpper() #>(Read8(r1.hl));
+		}
+<#
+		foreach (var reg in new string[]{"ix", "iy"}) {
+#>
+		protected void <#= cmd #>__<#= reg #>_d_() {
+			tStates += 5;
+			var offset = (SByte)Read8(pc++);
+			Do<#= cmd.ToUpper() #>(Read8((ushort)(r1.<#= reg #> + offset)));
+		}
+<#
+		}
 	}
 #>
 

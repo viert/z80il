@@ -2547,6 +2547,26 @@ namespace Z80 {
 			DoAND(r1.iyl);
 		}
 
+		protected void and_n() {
+			DoAND(Read8(pc++));
+		}
+
+		protected void and__hl_() {
+			DoAND(Read8(r1.hl));
+		}
+
+		protected void and__ix_d_() {
+			tStates += 5;
+			var offset = (SByte)Read8(pc++);
+			DoAND(Read8((ushort)(r1.ix + offset)));
+		}
+
+		protected void and__iy_d_() {
+			tStates += 5;
+			var offset = (SByte)Read8(pc++);
+			DoAND(Read8((ushort)(r1.iy + offset)));
+		}
+
 		protected void or_a() {
 			DoOR(r1.a);
 		}
@@ -2591,6 +2611,26 @@ namespace Z80 {
 			DoOR(r1.iyl);
 		}
 
+		protected void or_n() {
+			DoOR(Read8(pc++));
+		}
+
+		protected void or__hl_() {
+			DoOR(Read8(r1.hl));
+		}
+
+		protected void or__ix_d_() {
+			tStates += 5;
+			var offset = (SByte)Read8(pc++);
+			DoOR(Read8((ushort)(r1.ix + offset)));
+		}
+
+		protected void or__iy_d_() {
+			tStates += 5;
+			var offset = (SByte)Read8(pc++);
+			DoOR(Read8((ushort)(r1.iy + offset)));
+		}
+
 		protected void xor_a() {
 			DoXOR(r1.a);
 		}
@@ -2633,6 +2673,26 @@ namespace Z80 {
 
 		protected void xor_iyl() {
 			DoXOR(r1.iyl);
+		}
+
+		protected void xor_n() {
+			DoXOR(Read8(pc++));
+		}
+
+		protected void xor__hl_() {
+			DoXOR(Read8(r1.hl));
+		}
+
+		protected void xor__ix_d_() {
+			tStates += 5;
+			var offset = (SByte)Read8(pc++);
+			DoXOR(Read8((ushort)(r1.ix + offset)));
+		}
+
+		protected void xor__iy_d_() {
+			tStates += 5;
+			var offset = (SByte)Read8(pc++);
+			DoXOR(Read8((ushort)(r1.iy + offset)));
 		}
 
 
