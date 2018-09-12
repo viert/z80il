@@ -340,6 +340,11 @@ namespace Z80 {
             opcodeTableDD.entries[0x9D] = new OpcodeTableEntry(sbc_a_ixl, "sbc a, ixl", new ArgType[]{});
             opcodeTableFD.entries[0x9C] = new OpcodeTableEntry(sbc_a_iyh, "sbc a, iyh", new ArgType[]{});
             opcodeTableFD.entries[0x9D] = new OpcodeTableEntry(sbc_a_iyl, "sbc a, iyl", new ArgType[]{});
+            
+            opcodeTable.entries[0xC6] = new OpcodeTableEntry(add_a_n, "add a, {0}", new ArgType[]{ArgType.Byte});
+            opcodeTable.entries[0xCE] = new OpcodeTableEntry(adc_a_n, "adc a, {0}", new ArgType[]{ArgType.Byte});
+            opcodeTable.entries[0xD6] = new OpcodeTableEntry(sub_a_n, "sub {0}", new ArgType[]{ArgType.Byte});
+            opcodeTable.entries[0xDE] = new OpcodeTableEntry(sbc_a_n, "sbc a, {0}", new ArgType[]{ArgType.Byte});
 
         }
         
@@ -663,6 +668,11 @@ namespace Z80 {
         
 <#  
         }
+#>
+        protected void <#= cmd #>_a_n() {
+            r1.a = DoArithmetics(Read8(pc++), hasCarry_<#= cmd #>, isSub_<#= cmd #>);
+        }
+<#
     }
 #>
 

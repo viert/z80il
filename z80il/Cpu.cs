@@ -294,6 +294,11 @@ namespace Z80 {
             opcodeTableDD.entries[0x9D] = new OpcodeTableEntry(sbc_a_ixl, "sbc a, ixl", new ArgType[]{});
             opcodeTableFD.entries[0x9C] = new OpcodeTableEntry(sbc_a_iyh, "sbc a, iyh", new ArgType[]{});
             opcodeTableFD.entries[0x9D] = new OpcodeTableEntry(sbc_a_iyl, "sbc a, iyl", new ArgType[]{});
+            
+            opcodeTable.entries[0xC6] = new OpcodeTableEntry(add_a_n, "add a, {0}", new ArgType[]{ArgType.Byte});
+            opcodeTable.entries[0xCE] = new OpcodeTableEntry(adc_a_n, "adc a, {0}", new ArgType[]{ArgType.Byte});
+            opcodeTable.entries[0xD6] = new OpcodeTableEntry(sub_a_n, "sub {0}", new ArgType[]{ArgType.Byte});
+            opcodeTable.entries[0xDE] = new OpcodeTableEntry(sbc_a_n, "sbc a, {0}", new ArgType[]{ArgType.Byte});
 
         }
         
@@ -1461,6 +1466,9 @@ namespace Z80 {
             r1.a = DoArithmetics(r1.iyl, hasCarry_adc, isSub_adc);
         }
         
+        protected void adc_a_n() {
+            r1.a = DoArithmetics(Read8(pc++), hasCarry_adc, isSub_adc);
+        }
         protected void sbc_a_a() {
             r1.a = DoArithmetics(r1.a, hasCarry_sbc, isSub_sbc);
         }
@@ -1505,6 +1513,9 @@ namespace Z80 {
             r1.a = DoArithmetics(r1.iyl, hasCarry_sbc, isSub_sbc);
         }
         
+        protected void sbc_a_n() {
+            r1.a = DoArithmetics(Read8(pc++), hasCarry_sbc, isSub_sbc);
+        }
         protected void add_a_a() {
             r1.a = DoArithmetics(r1.a, hasCarry_add, isSub_add);
         }
@@ -1549,6 +1560,9 @@ namespace Z80 {
             r1.a = DoArithmetics(r1.iyl, hasCarry_add, isSub_add);
         }
         
+        protected void add_a_n() {
+            r1.a = DoArithmetics(Read8(pc++), hasCarry_add, isSub_add);
+        }
         protected void sub_a_a() {
             r1.a = DoArithmetics(r1.a, hasCarry_sub, isSub_sub);
         }
@@ -1593,6 +1607,9 @@ namespace Z80 {
             r1.a = DoArithmetics(r1.iyl, hasCarry_sub, isSub_sub);
         }
         
+        protected void sub_a_n() {
+            r1.a = DoArithmetics(Read8(pc++), hasCarry_sub, isSub_sub);
+        }
 
         
     }
