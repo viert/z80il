@@ -1373,8 +1373,6 @@ namespace Z80 {
         }
 
 
-
-
         protected void ld_a_n() {
             r1.a = Read8(pc++);
         }
@@ -1430,8 +1428,6 @@ namespace Z80 {
         }
 
 
-
-
         protected void ld_a__hl_() {
             r1.a = Read8(r1.hl);
         }
@@ -1465,8 +1461,6 @@ namespace Z80 {
         protected void ld_l__hl_() {
             r1.l = Read8(r1.hl);
         }
-
-
 
 
         protected void ld__hl__a() {
@@ -1566,8 +1560,6 @@ namespace Z80 {
             tStates++;
             r = r1.a;
         }
-    
-
 
         protected void ld_a__ix_d_() {
             tStates += 5;
@@ -1751,8 +1743,6 @@ namespace Z80 {
         }
         
 
-
-
         protected void ld__ix_d__n() {
             tStates += 2;
             var offset = (SByte)Read8(pc++);
@@ -1768,8 +1758,6 @@ namespace Z80 {
             Write8((ushort)(r1.iy + offset), n);
         }
         
-
-
 
         protected void ld_bc_nn() {
             r1.bc = Read16(pc);
@@ -1873,8 +1861,6 @@ namespace Z80 {
         }
         
 
-
-
         protected void ld_sp_hl() {
             tStates += 2;
             r1.sp = r1.hl;
@@ -1913,8 +1899,6 @@ namespace Z80 {
             Write16(r1.sp, _t);
         }
         
-
-
 
         protected void push_af() {
             tStates++;
@@ -2387,8 +2371,6 @@ namespace Z80 {
 			r1.a = DoArithmetics(Read8((ushort)(r1.ix + offset)), hasCarry_sub, isSub_sub);
 		}
 
-
-
 		protected void add_hl_hl() {
 			tStates += 7;
 			r1.hl = DoAddWord(r1.hl, r1.hl,  hasCarry_add, isSub_add);
@@ -2461,7 +2443,6 @@ namespace Z80 {
 		}
 
 
-
 		protected void add_ix_ix() {
 			tStates += 7;
 			r1.ix = DoAddWord(r1.ix, r1.ix,  false, false);
@@ -2519,6 +2500,139 @@ namespace Z80 {
 		protected void add_iy_sp() {
 			tStates += 7;
 			r1.iy = DoAddWord(r1.iy, r1.sp,  false, false);
+		}
+
+
+		protected void and_a() {
+			DoAND(r1.a);
+		}
+
+		protected void and_b() {
+			DoAND(r1.b);
+		}
+
+		protected void and_c() {
+			DoAND(r1.c);
+		}
+
+		protected void and_d() {
+			DoAND(r1.d);
+		}
+
+		protected void and_e() {
+			DoAND(r1.e);
+		}
+
+		protected void and_h() {
+			DoAND(r1.h);
+		}
+
+		protected void and_l() {
+			DoAND(r1.l);
+		}
+
+		protected void and_ixh() {
+			DoAND(r1.ixh);
+		}
+
+		protected void and_ixl() {
+			DoAND(r1.ixl);
+		}
+
+		protected void and_iyh() {
+			DoAND(r1.iyh);
+		}
+
+		protected void and_iyl() {
+			DoAND(r1.iyl);
+		}
+
+		protected void or_a() {
+			DoOR(r1.a);
+		}
+
+		protected void or_b() {
+			DoOR(r1.b);
+		}
+
+		protected void or_c() {
+			DoOR(r1.c);
+		}
+
+		protected void or_d() {
+			DoOR(r1.d);
+		}
+
+		protected void or_e() {
+			DoOR(r1.e);
+		}
+
+		protected void or_h() {
+			DoOR(r1.h);
+		}
+
+		protected void or_l() {
+			DoOR(r1.l);
+		}
+
+		protected void or_ixh() {
+			DoOR(r1.ixh);
+		}
+
+		protected void or_ixl() {
+			DoOR(r1.ixl);
+		}
+
+		protected void or_iyh() {
+			DoOR(r1.iyh);
+		}
+
+		protected void or_iyl() {
+			DoOR(r1.iyl);
+		}
+
+		protected void xor_a() {
+			DoXOR(r1.a);
+		}
+
+		protected void xor_b() {
+			DoXOR(r1.b);
+		}
+
+		protected void xor_c() {
+			DoXOR(r1.c);
+		}
+
+		protected void xor_d() {
+			DoXOR(r1.d);
+		}
+
+		protected void xor_e() {
+			DoXOR(r1.e);
+		}
+
+		protected void xor_h() {
+			DoXOR(r1.h);
+		}
+
+		protected void xor_l() {
+			DoXOR(r1.l);
+		}
+
+		protected void xor_ixh() {
+			DoXOR(r1.ixh);
+		}
+
+		protected void xor_ixl() {
+			DoXOR(r1.ixl);
+		}
+
+		protected void xor_iyh() {
+			DoXOR(r1.iyh);
+		}
+
+		protected void xor_iyl() {
+			DoXOR(r1.iyl);
 		}
 
 

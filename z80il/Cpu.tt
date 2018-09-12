@@ -413,10 +413,8 @@ namespace Z80 {
 
 <#
         }    
-}
-#>
+	}
 
-<#  
     foreach (var dst in All8BitRegs) {
 #>
         protected void ld_<#= dst #>_n() {
@@ -425,9 +423,7 @@ namespace Z80 {
 
 <#  
     }
-#>
 
-<#  
     foreach (var dst in Lim8BitRegs) {
 #>
         protected void ld_<#= dst #>__hl_() {
@@ -436,9 +432,7 @@ namespace Z80 {
 
 <#  
     }
-#>
 
-<#  
     foreach (var src in Lim8BitRegs) {
 #>
         protected void ld__hl__<#= src #>() {
@@ -495,9 +489,7 @@ namespace Z80 {
         }
 <#    
     }
-#>    
 
-<#
     foreach (var reg in Lim8BitRegs) {
         foreach (var iReg in Prefixes) {
 #>
@@ -516,9 +508,7 @@ namespace Z80 {
 <#
         }
     }
-#>
 
-<#
     foreach (var iReg in Prefixes) {
 #>
         protected void ld__<#= iReg.Key #>_d__n() {
@@ -530,9 +520,7 @@ namespace Z80 {
         
 <#
     }
-#>
 
-<#
     foreach (var reg in new string[]{"bc", "de", "hl", "sp", "ix", "iy"}) {
 #>
         protected void ld_<#= reg #>_nn() {
@@ -553,9 +541,7 @@ namespace Z80 {
         
 <#
     }
-#>
 
-<#
     foreach (var reg in new string[]{"hl", "ix", "iy"}) {
 #>
         protected void ld_sp_<#= reg #>() {
@@ -572,9 +558,7 @@ namespace Z80 {
         
 <#    
     }
-#>
 
-<#
     foreach (var reg in new string[]{"af", "bc", "de", "hl", "ix", "iy"}) {
 #>
         protected void push_<#= reg #>() {
@@ -733,9 +717,7 @@ namespace Z80 {
 <#
 		}
     }
-#>
 
-<#
 	foreach (var cmd in new string[]{"add", "adc", "sbc"}) {
 		foreach (var reg in new string[]{"hl", "bc", "de", "sp"}) {
 #>
@@ -747,8 +729,7 @@ namespace Z80 {
 <#
 		}
 	}
-#>
-<#
+
 	foreach (var reg1 in new string[]{"ix", "iy"}) {
 		foreach (var reg2 in new string[]{"ix", "iy", "bc", "de", "sp"}) {
 #>
@@ -760,7 +741,18 @@ namespace Z80 {
 <#
 		}
 	}
+
+    foreach (var cmd in new string[]{"and", "or", "xor"}) {
+        foreach (var reg in new string[]{"a", "b", "c", "d", "e", "h", "l", "ixh", "ixl", "iyh", "iyl"}) {
 #>
+		protected void <#= cmd #>_<#= reg #>() {
+			Do<#= cmd.ToUpper() #>(r1.<#= reg #>);
+		}
+<#
+		}
+	}
+#>
+
         
     }
 }
