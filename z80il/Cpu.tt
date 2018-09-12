@@ -20,6 +20,11 @@ string[] All8BitRegs = new string[11] {
 string[] Lim8BitRegs = new string[7] {
     "a", "b", "c", "d", "e", "h", "l"
 };
+
+Dictionary<string, int> Prefixes = new Dictionary<string, int>{
+    {"ix", 0xDD},
+    {"iy", 0xFD}
+};
 #>
 using System;
 
@@ -43,7 +48,7 @@ namespace Z80 {
             var opFuncName = string.Format("ld_{0}_{1}", dstRegName, srcRegName);
             var dasm = string.Format("ld {0}, {1}", dstRegName, srcRegName);
 #>
-            opcodeTable.entries[<#= opCode #>] = new OpcodeTableEntry(<#= opFuncName #>, "<#= dasm #>", new ArgType[0]);
+            opcodeTable.entries[<#= opCode #>] = new OpcodeTableEntry(<#= opFuncName #>, "<#= dasm #>", new ArgType[]{});
 <#  
         }
     } 
@@ -56,14 +61,14 @@ namespace Z80 {
         var opFuncName = string.Format("ld_{0}_n", dst.Value);
         var dasm = string.Format("ld {0}, {{0}}", dst.Value);
 #>
-            opcodeTable.entries[<#= opCode #>] = new OpcodeTableEntry(<#= opFuncName #>, "<#= dasm #>", new ArgType[1]{ArgType.Byte});
+            opcodeTable.entries[<#= opCode #>] = new OpcodeTableEntry(<#= opFuncName #>, "<#= dasm #>", new ArgType[]{ArgType.Byte});
 <#  
     }
 #>
-            opcodeTableDD.entries[0x26] = new OpcodeTableEntry(ld_ixh_n, "ld ixh, {0}", new ArgType[1]{ArgType.Byte});
-            opcodeTableDD.entries[0x2e] = new OpcodeTableEntry(ld_ixl_n, "ld ixl, {0}", new ArgType[1]{ArgType.Byte});
-            opcodeTableFD.entries[0x26] = new OpcodeTableEntry(ld_iyh_n, "ld iyh, {0}", new ArgType[1]{ArgType.Byte});
-            opcodeTableFD.entries[0x2e] = new OpcodeTableEntry(ld_iyl_n, "ld iyl, {0}", new ArgType[1]{ArgType.Byte});
+            opcodeTableDD.entries[0x26] = new OpcodeTableEntry(ld_ixh_n, "ld ixh, {0}", new ArgType[]{ArgType.Byte});
+            opcodeTableDD.entries[0x2e] = new OpcodeTableEntry(ld_ixl_n, "ld ixl, {0}", new ArgType[]{ArgType.Byte});
+            opcodeTableFD.entries[0x26] = new OpcodeTableEntry(ld_iyh_n, "ld iyh, {0}", new ArgType[]{ArgType.Byte});
+            opcodeTableFD.entries[0x2e] = new OpcodeTableEntry(ld_iyl_n, "ld iyl, {0}", new ArgType[]{ArgType.Byte});
             
             // LD r, (HL)
 <#
@@ -72,7 +77,7 @@ namespace Z80 {
         var opFuncName = string.Format("ld_{0}__hl_", dst.Value);
         var dasm = string.Format("ld {0}, (hl)", dst.Value);
 #>
-            opcodeTable.entries[<#= opCode #>] = new OpcodeTableEntry(<#= opFuncName #>, "<#= dasm #>", new ArgType[0]);
+            opcodeTable.entries[<#= opCode #>] = new OpcodeTableEntry(<#= opFuncName #>, "<#= dasm #>", new ArgType[]{});
 <#
     }
 #>
@@ -84,8 +89,53 @@ namespace Z80 {
         var opFuncName = string.Format("ld__hl__{0}", src.Value);
         var dasm = string.Format("ld (hl), {0}", src.Value);
 #>
-            opcodeTable.entries[<#= opCode #>] = new OpcodeTableEntry(<#= opFuncName #>, "<#= dasm #>", new ArgType[0]);
+            opcodeTable.entries[<#= opCode #>] = new OpcodeTableEntry(<#= opFuncName #>, "<#= dasm #>", new ArgType[]{});
 <#
+    }
+#>
+            opcodeTable.entries[0x36] = new OpcodeTableEntry(ld__hl__n, "ld (hl), n", new ArgType[]{ArgType.Byte});
+            
+            // LD (DE/BC), A; LD A, (DE/BC)
+            opcodeTable.entries[0x0A] = new OpcodeTableEntry(ld_a__bc_, "ld a, (bc)", new ArgType[]{});
+            opcodeTable.entries[0x1A] = new OpcodeTableEntry(ld_a__de_, "ld a, (de)", new ArgType[]{});
+            opcodeTable.entries[0x02] = new OpcodeTableEntry(ld__bc__a, "ld (bc), a", new ArgType[]{});
+            opcodeTable.entries[0x12] = new OpcodeTableEntry(ld__de__a, "ld (de), a", new ArgType[]{});
+            
+            // LD A, (nn); LD (nn), A
+            opcodeTable.entries[0x3A] = new OpcodeTableEntry(ld_a__nn_, "ld a, ({0})", new ArgType[]{ArgType.Word});
+            opcodeTable.entries[0x32] = new OpcodeTableEntry(ld__nn__a, "ld ({0}), a", new ArgType[]{ArgType.Word});
+            
+            // LD A, R/I; LD R/I, A
+            opcodeTableED.entries[0x57] = new OpcodeTableEntry(ld_a_i, "ld a, i", new ArgType[]{});
+            opcodeTableED.entries[0x5F] = new OpcodeTableEntry(ld_a_r, "ld a, r", new ArgType[]{});
+            opcodeTableED.entries[0x47] = new OpcodeTableEntry(ld_i_a, "ld i, a", new ArgType[]{});
+            opcodeTableED.entries[0x4F] = new OpcodeTableEntry(ld_r_a, "ld r, a", new ArgType[]{});
+            
+            // Indexed 8 bit load
+<#
+    foreach (var dst in RegisterMap) {
+        var opCode = 0x46 | (dst.Key << 3);
+        foreach (var iReg in Prefixes) {
+            var opFuncName = string.Format("ld_{0}__{1}_d_", dst.Value, iReg.Key);
+            var dasm = string.Format("ld {0}, ({1}+{{0}})", dst.Value, iReg.Key);
+#>
+            opcodeTable.entries[<#= iReg.Value #>].nextTable.entries[<#= opCode #>] = 
+                new OpcodeTableEntry(<#= opFuncName #>, "<#= dasm #>", new ArgType[]{ArgType.Offset});
+<#
+        }
+    }
+#>
+<#
+    foreach (var src in RegisterMap) {
+        var opCode = 0x70 | src.Key;
+        foreach (var iReg in Prefixes) {
+            var opFuncName = string.Format("ld__{1}_d__{0}", src.Value, iReg.Key);
+            var dasm = string.Format("ld ({1}+{{0}}), {0}", src.Value, iReg.Key);
+#>
+            opcodeTable.entries[<#= iReg.Value #>].nextTable.entries[<#= opCode #>] = 
+                new OpcodeTableEntry(<#= opFuncName #>, "<#= dasm #>", new ArgType[]{ArgType.Offset});
+<#
+        }
     }
 #>
 
@@ -142,6 +192,75 @@ namespace Z80 {
 <#  
     }
 #>
+        protected void ld__hl__n() {
+            Write8(r1.hl, Read8(pc++));
+        }
+        
+<#  
+    foreach (var reg in new string[]{"bc", "de"}) {
+#>
+        protected void ld_a__<#= reg #>_() {
+            r1.a = Read8(r1.<#= reg #>);
+        }
+        
+        protected void ld__<#= reg #>__a() {
+            Write8(r1.<#= reg #>, r1.a);
+        }
+<#  
+    }
+#>
 
+        protected void ld_a__nn_() {
+            r1.a = Read8(Read16(pc));
+            pc += 2;
+        }        
+        
+        protected void ld__nn__a() {
+            Write8(Read16(pc), r1.a);
+            pc += 2;
+        }
+        
+<#
+    foreach (var reg in new string[]{"i", "r"}) {
+#>
+        protected void ld_a_<#= reg #>() {
+            tStates++;
+            r1.a = <#= reg #>;
+            AdjustFlags(r1.a);
+            ResFlag(f_h | f_n);
+            ValFlag(f_pv, iff2);
+            ValFlag(f_s, (r1.a & 0x80) != 0);
+            ValFlag(f_z, r1.a == 0);
+        }
+        
+        protected void ld_<#= reg #>_a() {
+            tStates++;
+            <#= reg #> = r1.a;
+        }
+<#    
+    }
+#>    
+
+<#
+    foreach (var reg in Lim8BitRegs) {
+        foreach (var iReg in Prefixes) {
+#>
+        protected void ld_<#= reg #>__<#= iReg.Key #>_d_() {
+            tStates += 5;
+            var offset = (SByte)Read8(pc++);
+            r1.<#= reg #> = Read8((ushort)(r1.<#= iReg.Key #> + offset));
+        }
+        
+        protected void ld__<#= iReg.Key #>_d__<#= reg #>() {
+            tStates += 5;
+            var offset = (SByte)Read8(pc++);
+            Write8((ushort)(r1.<#= iReg.Key #> + offset), r1.<#= reg #>);
+        }
+        
+<#
+        }
+    }
+#>
+    
     }
 }
