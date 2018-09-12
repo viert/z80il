@@ -171,6 +171,7 @@ namespace Z80 {
             opcodeTable.entries[253].nextTable.entries[0x36] =
                 new OpcodeTableEntry(ld__iy_d__n, "ld (iy+{0}), {1}", new ArgType[]{ArgType.Offset, ArgType.Byte});
 
+            // LD dd, nn
             opcodeTable.entries[1] = new OpcodeTableEntry(ld_bc_nn, "ld bc, {0}", new ArgType[]{ArgType.Word});
             opcodeTable.entries[17] = new OpcodeTableEntry(ld_de_nn, "ld de, {0}", new ArgType[]{ArgType.Word});
             opcodeTable.entries[33] = new OpcodeTableEntry(ld_hl_nn, "ld hl, {0}", new ArgType[]{ArgType.Word});
@@ -181,6 +182,7 @@ namespace Z80 {
             opcodeTable.entries[253].nextTable.entries[0x21] =
                 new OpcodeTableEntry(ld_iy_nn, "ld iy, {0}", new ArgType[]{ArgType.Word});
 
+            // LD dd, (nn)
             opcodeTableED.entries[75] = new OpcodeTableEntry(ld_bc__nn_, "ld bc, ({0})", new ArgType[]{ArgType.Word});
             opcodeTableED.entries[91] = new OpcodeTableEntry(ld_de__nn_, "ld de, ({0})", new ArgType[]{ArgType.Word});
             opcodeTableED.entries[107] = new OpcodeTableEntry(ld_hl__nn_, "ld hl, ({0})", new ArgType[]{ArgType.Word});
@@ -192,7 +194,30 @@ namespace Z80 {
             opcodeTable.entries[253].nextTable.entries[0x2A] =
                 new OpcodeTableEntry(ld_iy__nn_, "ld iy, ({0})", new ArgType[]{ArgType.Word});
 
+            // LD (nn), dd
+            opcodeTableED.entries[67] = new OpcodeTableEntry(ld__nn__bc, "ld ({0}), bc", new ArgType[]{ArgType.Word});
+            opcodeTableED.entries[83] = new OpcodeTableEntry(ld__nn__de, "ld ({0}), de", new ArgType[]{ArgType.Word});
+            opcodeTableED.entries[99] = new OpcodeTableEntry(ld__nn__hl, "ld ({0}), hl", new ArgType[]{ArgType.Word});
+            opcodeTableED.entries[115] = new OpcodeTableEntry(ld__nn__sp, "ld ({0}), sp", new ArgType[]{ArgType.Word});
 
+            opcodeTable.entries[0x22] = new OpcodeTableEntry(ld__nn__hl, "ld ({0}), hl", new ArgType[]{ArgType.Word});
+            opcodeTable.entries[221].nextTable.entries[0x22] =
+                new OpcodeTableEntry(ld__nn__ix, "ld ({0}), ix", new ArgType[]{ArgType.Word});
+            opcodeTable.entries[253].nextTable.entries[0x22] =
+                new OpcodeTableEntry(ld__nn__iy, "ld ({0}), iy", new ArgType[]{ArgType.Word});
+            opcodeTable.entries[0xF9] = new OpcodeTableEntry(ld_sp_hl, "ld sp, hl", new ArgType[]{});
+            opcodeTableDD.entries[0xF9] = new OpcodeTableEntry(ld_sp_ix, "ld sp, ix", new ArgType[]{});
+            opcodeTableFD.entries[0xF9] = new OpcodeTableEntry(ld_sp_iy, "ld sp, iy", new ArgType[]{});
+            
+            opcodeTable.entries[197] = new OpcodeTableEntry(push_bc, "push bc", new ArgType[]{});
+            opcodeTable.entries[213] = new OpcodeTableEntry(push_de, "push de", new ArgType[]{});
+            opcodeTable.entries[229] = new OpcodeTableEntry(push_hl, "push hl", new ArgType[]{});
+            opcodeTable.entries[245] = new OpcodeTableEntry(push_af, "push af", new ArgType[]{});
+            opcodeTable.entries[221].nextTable.entries[0xE5] =
+                new OpcodeTableEntry(push_ix, "push ix", new ArgType[]{});
+            opcodeTable.entries[253].nextTable.entries[0xE5] =
+                new OpcodeTableEntry(push_iy, "push iy", new ArgType[]{});
+            
         }
 
         protected void ld_a_a() {
@@ -1024,6 +1049,12 @@ namespace Z80 {
             pc += 2;
         }
         
+        protected void ld__nn__bc() {
+            var addr = Read16(pc);
+            pc += 2;
+            Write16(addr, r1.bc);
+        }
+        
         protected void ld_de_nn() {
             r1.de = Read16(pc);
             pc += 2;
@@ -1032,6 +1063,12 @@ namespace Z80 {
         protected void ld_de__nn_() {
             r1.de = Read16(Read16(pc));
             pc += 2;
+        }
+        
+        protected void ld__nn__de() {
+            var addr = Read16(pc);
+            pc += 2;
+            Write16(addr, r1.de);
         }
         
         protected void ld_hl_nn() {
@@ -1044,6 +1081,12 @@ namespace Z80 {
             pc += 2;
         }
         
+        protected void ld__nn__hl() {
+            var addr = Read16(pc);
+            pc += 2;
+            Write16(addr, r1.hl);
+        }
+        
         protected void ld_sp_nn() {
             r1.sp = Read16(pc);
             pc += 2;
@@ -1052,6 +1095,12 @@ namespace Z80 {
         protected void ld_sp__nn_() {
             r1.sp = Read16(Read16(pc));
             pc += 2;
+        }
+        
+        protected void ld__nn__sp() {
+            var addr = Read16(pc);
+            pc += 2;
+            Write16(addr, r1.sp);
         }
         
         protected void ld_ix_nn() {
@@ -1064,6 +1113,12 @@ namespace Z80 {
             pc += 2;
         }
         
+        protected void ld__nn__ix() {
+            var addr = Read16(pc);
+            pc += 2;
+            Write16(addr, r1.ix);
+        }
+        
         protected void ld_iy_nn() {
             r1.iy = Read16(pc);
             pc += 2;
@@ -1074,6 +1129,51 @@ namespace Z80 {
             pc += 2;
         }
         
+        protected void ld__nn__iy() {
+            var addr = Read16(pc);
+            pc += 2;
+            Write16(addr, r1.iy);
+        }
+        
+
+        protected void ld_sp_hl() {
+            tStates += 2;
+            r1.sp = r1.hl;
+        }
+        protected void ld_sp_ix() {
+            tStates += 2;
+            r1.sp = r1.ix;
+        }
+        protected void ld_sp_iy() {
+            tStates += 2;
+            r1.sp = r1.iy;
+        }
+
+        protected void push_af() {
+            tStates++;
+            DoPush(r1.af);
+        }
+        protected void push_bc() {
+            tStates++;
+            DoPush(r1.bc);
+        }
+        protected void push_de() {
+            tStates++;
+            DoPush(r1.de);
+        }
+        protected void push_hl() {
+            tStates++;
+            DoPush(r1.hl);
+        }
+        protected void push_ix() {
+            tStates++;
+            DoPush(r1.ix);
+        }
+        protected void push_iy() {
+            tStates++;
+            DoPush(r1.iy);
+        }
+
 
     }
 }
