@@ -16,6 +16,10 @@ RegisterMap[7] = "a";
 string[] All8BitRegs = new string[11] {
     "a", "b", "c", "d", "e", "h", "l", "ixh", "ixl", "iyh", "iyl"
 };
+
+string[] Lim8BitRegs = new string[7] {
+    "a", "b", "c", "d", "e", "h", "l"
+};
 #>
 using System;
 
@@ -60,6 +64,31 @@ namespace Z80 {
             opcodeTableDD.entries[0x2e] = new OpcodeTableEntry(ld_ixl_n, "ld ixl, {0}", new ArgType[1]{ArgType.Byte});
             opcodeTableFD.entries[0x26] = new OpcodeTableEntry(ld_iyh_n, "ld iyh, {0}", new ArgType[1]{ArgType.Byte});
             opcodeTableFD.entries[0x2e] = new OpcodeTableEntry(ld_iyl_n, "ld iyl, {0}", new ArgType[1]{ArgType.Byte});
+            
+            // LD r, (HL)
+<#
+    foreach (var dst in RegisterMap) {
+        var opCode = 0x46 | (dst.Key << 3);
+        var opFuncName = string.Format("ld_{0}__hl_", dst.Value);
+        var dasm = string.Format("ld {0}, (hl)", dst.Value);
+#>
+            opcodeTable.entries[<#= opCode #>] = new OpcodeTableEntry(<#= opFuncName #>, "<#= dasm #>", new ArgType[0]);
+<#
+    }
+#>
+
+            // LD (HL), r
+<#
+    foreach (var src in RegisterMap) {
+        var opCode = 0x70 | src.Key;
+        var opFuncName = string.Format("ld__hl__{0}", src.Value);
+        var dasm = string.Format("ld (hl), {0}", src.Value);
+#>
+            opcodeTable.entries[<#= opCode #>] = new OpcodeTableEntry(<#= opFuncName #>, "<#= dasm #>", new ArgType[0]);
+<#
+    }
+#>
+
         }
 
 <#  
@@ -86,6 +115,28 @@ namespace Z80 {
 #>
         protected void ld_<#= dst #>_n() {
             r1.<#= dst #> = Read8(pc++);
+        }
+
+<#  
+    }
+#>
+
+<#  
+    foreach (var dst in Lim8BitRegs) {
+#>
+        protected void ld_<#= dst #>__hl_() {
+            r1.<#= dst #> = Read8(r1.hl);
+        }
+
+<#  
+    }
+#>
+
+<#  
+    foreach (var src in Lim8BitRegs) {
+#>
+        protected void ld__hl__<#= src #>() {
+            Write8(r1.hl, r1.<#= src #>);
         }
 
 <#  

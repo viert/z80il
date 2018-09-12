@@ -73,6 +73,25 @@ namespace Z80 {
             opcodeTableDD.entries[0x2e] = new OpcodeTableEntry(ld_ixl_n, "ld ixl, {0}", new ArgType[1]{ArgType.Byte});
             opcodeTableFD.entries[0x26] = new OpcodeTableEntry(ld_iyh_n, "ld iyh, {0}", new ArgType[1]{ArgType.Byte});
             opcodeTableFD.entries[0x2e] = new OpcodeTableEntry(ld_iyl_n, "ld iyl, {0}", new ArgType[1]{ArgType.Byte});
+            
+            // LD r, (HL)
+            opcodeTable.entries[70] = new OpcodeTableEntry(ld_b__hl_, "ld b, (hl)", new ArgType[0]);
+            opcodeTable.entries[78] = new OpcodeTableEntry(ld_c__hl_, "ld c, (hl)", new ArgType[0]);
+            opcodeTable.entries[86] = new OpcodeTableEntry(ld_d__hl_, "ld d, (hl)", new ArgType[0]);
+            opcodeTable.entries[94] = new OpcodeTableEntry(ld_e__hl_, "ld e, (hl)", new ArgType[0]);
+            opcodeTable.entries[102] = new OpcodeTableEntry(ld_h__hl_, "ld h, (hl)", new ArgType[0]);
+            opcodeTable.entries[110] = new OpcodeTableEntry(ld_l__hl_, "ld l, (hl)", new ArgType[0]);
+            opcodeTable.entries[126] = new OpcodeTableEntry(ld_a__hl_, "ld a, (hl)", new ArgType[0]);
+
+            // LD (HL), r
+            opcodeTable.entries[112] = new OpcodeTableEntry(ld__hl__b, "ld (hl), b", new ArgType[0]);
+            opcodeTable.entries[113] = new OpcodeTableEntry(ld__hl__c, "ld (hl), c", new ArgType[0]);
+            opcodeTable.entries[114] = new OpcodeTableEntry(ld__hl__d, "ld (hl), d", new ArgType[0]);
+            opcodeTable.entries[115] = new OpcodeTableEntry(ld__hl__e, "ld (hl), e", new ArgType[0]);
+            opcodeTable.entries[116] = new OpcodeTableEntry(ld__hl__h, "ld (hl), h", new ArgType[0]);
+            opcodeTable.entries[117] = new OpcodeTableEntry(ld__hl__l, "ld (hl), l", new ArgType[0]);
+            opcodeTable.entries[119] = new OpcodeTableEntry(ld__hl__a, "ld (hl), a", new ArgType[0]);
+
         }
 
         protected void ld_a_a() {
@@ -591,6 +610,64 @@ namespace Z80 {
 
         protected void ld_iyl_n() {
             r1.iyl = Read8(pc++);
+        }
+
+
+        protected void ld_a__hl_() {
+            r1.a = Read8(r1.hl);
+        }
+
+        protected void ld_b__hl_() {
+            r1.b = Read8(r1.hl);
+        }
+
+        protected void ld_c__hl_() {
+            r1.c = Read8(r1.hl);
+        }
+
+        protected void ld_d__hl_() {
+            r1.d = Read8(r1.hl);
+        }
+
+        protected void ld_e__hl_() {
+            r1.e = Read8(r1.hl);
+        }
+
+        protected void ld_h__hl_() {
+            r1.h = Read8(r1.hl);
+        }
+
+        protected void ld_l__hl_() {
+            r1.l = Read8(r1.hl);
+        }
+
+
+        protected void ld__hl__a() {
+            Write8(r1.hl, r1.a);
+        }
+
+        protected void ld__hl__b() {
+            Write8(r1.hl, r1.b);
+        }
+
+        protected void ld__hl__c() {
+            Write8(r1.hl, r1.c);
+        }
+
+        protected void ld__hl__d() {
+            Write8(r1.hl, r1.d);
+        }
+
+        protected void ld__hl__e() {
+            Write8(r1.hl, r1.e);
+        }
+
+        protected void ld__hl__h() {
+            Write8(r1.hl, r1.h);
+        }
+
+        protected void ld__hl__l() {
+            Write8(r1.hl, r1.l);
         }
 
 
