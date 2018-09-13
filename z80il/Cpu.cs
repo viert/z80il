@@ -4688,7 +4688,7 @@ namespace Z80 {
         
         protected void outi() {
             tStates++;
-            let value = Read8(r1.hl++);
+            var value = Read8(r1.hl++);
             r1.b = DoIncDec(r1.b, isDec_dec);
             IOWrite(r1.bc, value);
             var fv = value + r1.l;
@@ -4709,7 +4709,7 @@ namespace Z80 {
         
         protected void outd() {
             tStates++;
-            let value = Read8(r1.hl--);
+            var value = Read8(r1.hl--);
             r1.b = DoIncDec(r1.b, isDec_dec);
             IOWrite(r1.bc, value);
             var fv = value + r1.l;
