@@ -390,8 +390,64 @@ namespace Z80 {
 <#
 		}
 	}
+    
+    foreach (var rCode in RegisterMap) {
+        var opCode = 0xA0 | rCode.Key;
+        var opFuncName = string.Format("and_{0}", rCode.Value);
+        var dasm = string.Format("and {0}", rCode.Value);
+#>
+            opcodeTable.entries[<#= opCode #>] = new OpcodeTableEntry(<#= opFuncName #>, "<#= dasm #>", new ArgType[]{});
+<#
+        opCode = 0xB0 | rCode.Key;
+        opFuncName = string.Format("or_{0}", rCode.Value);
+        dasm = string.Format("or {0}", rCode.Value);
+#>
+            opcodeTable.entries[<#= opCode #>] = new OpcodeTableEntry(<#= opFuncName #>, "<#= dasm #>", new ArgType[]{});
+<#
+        opCode = 0xA8 | rCode.Key;
+        opFuncName = string.Format("xor_{0}", rCode.Value);
+        dasm = string.Format("xor {0}", rCode.Value);
+#>
+            opcodeTable.entries[<#= opCode #>] = new OpcodeTableEntry(<#= opFuncName #>, "<#= dasm #>", new ArgType[]{});
+<#
+    }
 #>
 
+            opcodeTableDD.entries[0xA4] = new OpcodeTableEntry(and_ixh, "and ixh", new ArgType[]{});
+            opcodeTableDD.entries[0xA5] = new OpcodeTableEntry(and_ixl, "and ixl", new ArgType[]{});
+            opcodeTableFD.entries[0xA4] = new OpcodeTableEntry(and_iyh, "and iyh", new ArgType[]{});
+            opcodeTableFD.entries[0xA5] = new OpcodeTableEntry(and_iyl, "and iyl", new ArgType[]{});
+
+            opcodeTableDD.entries[0xB4] = new OpcodeTableEntry(or_ixh, "or ixh", new ArgType[]{});
+            opcodeTableDD.entries[0xB5] = new OpcodeTableEntry(or_ixl, "or ixl", new ArgType[]{});
+            opcodeTableFD.entries[0xB4] = new OpcodeTableEntry(or_iyh, "or iyh", new ArgType[]{});
+            opcodeTableFD.entries[0xB5] = new OpcodeTableEntry(or_iyl, "or iyl", new ArgType[]{});
+
+            opcodeTableDD.entries[0xAC] = new OpcodeTableEntry(xor_ixh, "xor ixh", new ArgType[]{});
+            opcodeTableDD.entries[0xAD] = new OpcodeTableEntry(xor_ixl, "xor ixl", new ArgType[]{});
+            opcodeTableFD.entries[0xAC] = new OpcodeTableEntry(xor_iyh, "xor iyh", new ArgType[]{});
+            opcodeTableFD.entries[0xAD] = new OpcodeTableEntry(xor_iyl, "xor iyl", new ArgType[]{});
+            
+            opcodeTable.entries[0xE6] = new OpcodeTableEntry(and_n, "and {0}", new ArgType[]{ArgType.Byte});
+            opcodeTable.entries[0xF6] = new OpcodeTableEntry(or_n, "or {0}", new ArgType[]{ArgType.Byte});
+            opcodeTable.entries[0xEE] = new OpcodeTableEntry(xor_n, "xor {0}", new ArgType[]{ArgType.Byte});
+            
+            opcodeTable.entries[0xA6] = new OpcodeTableEntry(and__hl_, "and (hl)", new ArgType[]{});
+            opcodeTable.entries[0xB6] = new OpcodeTableEntry(or__hl_, "or (hl)", new ArgType[]{});
+            opcodeTable.entries[0xAE] = new OpcodeTableEntry(xor__hl_, "xor (hl)", new ArgType[]{});
+            
+<#
+    foreach (var iReg in Prefixes) {
+#>
+            opcodeTable.entries[<#= iReg.Value #>].nextTable.entries[0xA6] = 
+                new OpcodeTableEntry(and__<#= iReg.Key #>_d_, "and (<#= iReg.Key #>+{0})", new ArgType[]{ArgType.Offset});
+            opcodeTable.entries[<#= iReg.Value #>].nextTable.entries[0xB6] = 
+                new OpcodeTableEntry(or__<#= iReg.Key #>_d_, "or (<#= iReg.Key #>+{0})", new ArgType[]{ArgType.Offset});
+            opcodeTable.entries[<#= iReg.Value #>].nextTable.entries[0xAE] = 
+                new OpcodeTableEntry(xor__<#= iReg.Key #>_d_, "xor (<#= iReg.Key #>+{0})", new ArgType[]{ArgType.Offset});
+<#
+    }
+#>            
         }
         
         protected void nop() {
@@ -748,6 +804,7 @@ namespace Z80 {
 		protected void <#= cmd #>_<#= reg #>() {
 			Do<#= cmd.ToUpper() #>(r1.<#= reg #>);
 		}
+        
 <#
 		}
 #>
@@ -758,6 +815,7 @@ namespace Z80 {
 		protected void <#= cmd #>__hl_() {
 			Do<#= cmd.ToUpper() #>(Read8(r1.hl));
 		}
+        
 <#
 		foreach (var reg in new string[]{"ix", "iy"}) {
 #>
@@ -766,6 +824,7 @@ namespace Z80 {
 			var offset = (SByte)Read8(pc++);
 			Do<#= cmd.ToUpper() #>(Read8((ushort)(r1.<#= reg #> + offset)));
 		}
+        
 <#
 		}
 	}
