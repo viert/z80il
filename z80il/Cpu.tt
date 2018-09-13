@@ -547,6 +547,131 @@ namespace Z80 {
             opcodeTable.entries[0x17] = new OpcodeTableEntry(rla, "rla", new ArgType[]{});
             opcodeTable.entries[0x0F] = new OpcodeTableEntry(rrca, "rrca", new ArgType[]{});
             opcodeTable.entries[0x1F] = new OpcodeTableEntry(rra, "rra", new ArgType[]{});
+            
+            opcodeTable.entries[0x6F] = new OpcodeTableEntry(rld, "rld", new ArgType[]{});
+            opcodeTable.entries[0x67] = new OpcodeTableEntry(rrd, "rrd", new ArgType[]{});
+           
+<#
+    foreach (var rCode in RegisterMap) {
+        int opCode;
+        string opFuncName, dasm;
+        
+        opCode = rCode.Key;
+        opFuncName = string.Format("rlc_{0}", rCode.Value);
+        dasm = string.Format("rlc {0}", rCode.Value);
+#>
+            opcodeTableCB.entries[<#= opCode #>] = new OpcodeTableEntry(<#= opFuncName #>, "<#= dasm #>", new ArgType[]{});
+<#
+        opCode = 0x10 | rCode.Key;
+        opFuncName = string.Format("rl_{0}", rCode.Value);
+        dasm = string.Format("rl {0}", rCode.Value);
+#>
+            opcodeTableCB.entries[<#= opCode #>] = new OpcodeTableEntry(<#= opFuncName #>, "<#= dasm #>", new ArgType[]{});
+<#
+        opCode = 0x08 | rCode.Key;
+        opFuncName = string.Format("rrc_{0}", rCode.Value);
+        dasm = string.Format("rrc {0}", rCode.Value);
+#>
+            opcodeTableCB.entries[<#= opCode #>] = new OpcodeTableEntry(<#= opFuncName #>, "<#= dasm #>", new ArgType[]{});
+<#
+        opCode = 0x18 | rCode.Key;
+        opFuncName = string.Format("rr_{0}", rCode.Value);
+        dasm = string.Format("rr {0}", rCode.Value);
+#>
+            opcodeTableCB.entries[<#= opCode #>] = new OpcodeTableEntry(<#= opFuncName #>, "<#= dasm #>", new ArgType[]{});
+<#
+        opCode = 0x20 | rCode.Key;
+        opFuncName = string.Format("sla_{0}", rCode.Value);
+        dasm = string.Format("sla {0}", rCode.Value);
+#>
+            opcodeTableCB.entries[<#= opCode #>] = new OpcodeTableEntry(<#= opFuncName #>, "<#= dasm #>", new ArgType[]{});
+<#
+        opCode = 0x28 | rCode.Key;
+        opFuncName = string.Format("sra_{0}", rCode.Value);
+        dasm = string.Format("sra {0}", rCode.Value);
+#>
+            opcodeTableCB.entries[<#= opCode #>] = new OpcodeTableEntry(<#= opFuncName #>, "<#= dasm #>", new ArgType[]{});
+<#
+        opCode = 0x30 | rCode.Key;
+        opFuncName = string.Format("sll_{0}", rCode.Value);
+        dasm = string.Format("sll {0}", rCode.Value);
+#>
+            opcodeTableCB.entries[<#= opCode #>] = new OpcodeTableEntry(<#= opFuncName #>, "<#= dasm #>", new ArgType[]{});
+<#
+        opCode = 0x38 | rCode.Key;
+        opFuncName = string.Format("srl_{0}", rCode.Value);
+        dasm = string.Format("srl {0}", rCode.Value);
+#>
+            opcodeTableCB.entries[<#= opCode #>] = new OpcodeTableEntry(<#= opFuncName #>, "<#= dasm #>", new ArgType[]{});
+<#
+    }
+#>
+
+            opcodeTableCB.entries[0x06] = new OpcodeTableEntry(rlc__hl_, "rlc (hl)", new ArgType[]{});       
+            opcodeTableCB.entries[0x16] = new OpcodeTableEntry(rl__hl_, "rl (hl)", new ArgType[]{});       
+            opcodeTableCB.entries[0x0E] = new OpcodeTableEntry(rrc__hl_, "rrc (hl)", new ArgType[]{});       
+            opcodeTableCB.entries[0x1E] = new OpcodeTableEntry(rr__hl_, "rr (hl)", new ArgType[]{});
+            
+            opcodeTableDDCB.entries[0x06] = new OpcodeTableEntry(rlc__ix_d_, "rlc (ix+{0})", new ArgType[]{ArgType.Offset});       
+            opcodeTableDDCB.entries[0x16] = new OpcodeTableEntry(rl__ix_d_, "rl (ix+{0})", new ArgType[]{ArgType.Offset});       
+            opcodeTableDDCB.entries[0x0E] = new OpcodeTableEntry(rrc__ix_d_, "rrc (ix+{0})", new ArgType[]{ArgType.Offset});       
+            opcodeTableDDCB.entries[0x1E] = new OpcodeTableEntry(rr__ix_d_, "rr (ix+{0})", new ArgType[]{ArgType.Offset});  
+
+            opcodeTableFDCB.entries[0x06] = new OpcodeTableEntry(rlc__iy_d_, "rlc (iy+{0})", new ArgType[]{ArgType.Offset});       
+            opcodeTableFDCB.entries[0x16] = new OpcodeTableEntry(rl__iy_d_, "rl (iy+{0})", new ArgType[]{ArgType.Offset});       
+            opcodeTableFDCB.entries[0x0E] = new OpcodeTableEntry(rrc__iy_d_, "rrc (iy+{0})", new ArgType[]{ArgType.Offset});       
+            opcodeTableFDCB.entries[0x1E] = new OpcodeTableEntry(rr__iy_d_, "rr (iy+{0})", new ArgType[]{ArgType.Offset});  
+            
+            opcodeTableCB.entries[0x26] = new OpcodeTableEntry(sla__hl_, "sla (hl)", new ArgType[]{});       
+            opcodeTableCB.entries[0x2E] = new OpcodeTableEntry(sra__hl_, "sra (hl)", new ArgType[]{});       
+            opcodeTableCB.entries[0x36] = new OpcodeTableEntry(sll__hl_, "sll (hl)", new ArgType[]{});       
+            opcodeTableCB.entries[0x3E] = new OpcodeTableEntry(srl__hl_, "srl (hl)", new ArgType[]{});
+
+            opcodeTableDDCB.entries[0x26] = new OpcodeTableEntry(sla__ix_d_, "sla (ix+{0})", new ArgType[]{ArgType.Offset});       
+            opcodeTableDDCB.entries[0x2E] = new OpcodeTableEntry(sra__ix_d_, "sra (ix+{0})", new ArgType[]{ArgType.Offset});       
+            opcodeTableDDCB.entries[0x36] = new OpcodeTableEntry(sll__ix_d_, "sll (ix+{0})", new ArgType[]{ArgType.Offset});       
+            opcodeTableDDCB.entries[0x3E] = new OpcodeTableEntry(srl__ix_d_, "srl (ix+{0})", new ArgType[]{ArgType.Offset});
+                 
+            opcodeTableFDCB.entries[0x26] = new OpcodeTableEntry(sla__iy_d_, "sla (iy+{0})", new ArgType[]{ArgType.Offset});       
+            opcodeTableFDCB.entries[0x2E] = new OpcodeTableEntry(sra__iy_d_, "sra (iy+{0})", new ArgType[]{ArgType.Offset});       
+            opcodeTableFDCB.entries[0x36] = new OpcodeTableEntry(sll__iy_d_, "sll (iy+{0})", new ArgType[]{ArgType.Offset});       
+            opcodeTableFDCB.entries[0x3E] = new OpcodeTableEntry(srl__iy_d_, "srl (iy+{0})", new ArgType[]{ArgType.Offset});
+            
+<#
+    for (var b = 0; b < 8; b++) {
+        int opCode;
+        string opFuncName, dasm;
+        
+        foreach (var rCode in RegisterMap) {
+            opCode = 0x40 | (b << 3) | rCode.Key;
+            opFuncName = string.Format("bit_{0}_{1}", b, rCode.Value);
+            dasm = string.Format("bit {0}, {1}", b, rCode.Value);
+#>
+            opcodeTableCB.entries[<#= opCode #>] = new OpcodeTableEntry(<#= opFuncName #>, "<#= dasm #>", new ArgType[]{});
+<#
+        }
+        opCode = 0x46 | (b << 3);
+        opFuncName = string.Format("bit_{0}__hl_", b);
+        dasm = string.Format("bit {0}, (hl)", b);
+#>
+            opcodeTableCB.entries[<#= opCode #>] = new OpcodeTableEntry(<#= opFuncName #>, "<#= dasm #>", new ArgType[]{});
+<#
+        for (var s = 0; s < 8; s++) {
+            opCode = 0x40 | (b << 3) | s;
+            opFuncName = string.Format("bit_{0}__ix_d_", b);
+            dasm = string.Format("bit {0}, (ix+{{0}})", b);
+#>
+            opcodeTableDDCB.entries[<#= opCode #>] = new OpcodeTableEntry(<#= opFuncName #>, "<#= dasm #>", new ArgType[]{ArgType.Offset});
+<#
+        opFuncName = string.Format("bit_{0}__iy_d_", b);
+        dasm = string.Format("bit {0}, (iy+{{0}})", b);
+#>
+            opcodeTableFDCB.entries[<#= opCode #>] = new OpcodeTableEntry(<#= opFuncName #>, "<#= dasm #>", new ArgType[]{ArgType.Offset});
+<#
+        }
+    }
+#>
+                           
         }
         
         protected void nop() {
@@ -1082,9 +1207,110 @@ namespace Z80 {
         
 <#
         }
+#>
+        protected void <#= rtt #>__hl_() {
+            tStates++;
+            Write8(r1.hl, Do<#= rtt.ToUpper() #>(Read8(r1.hl), true));
+        }
+
+<#
+        foreach (var reg in new string[]{"ix", "iy"}) {
+#>
+        protected void <#= rtt #>__<#= reg #>_d_() {
+            tStates += 2;
+            var offset = (SByte)Read8(pc++);
+            var addr = (ushort)(r1.<#= reg #> + offset);
+            Write8(addr, Do<#= rtt.ToUpper() #>(Read8(addr), true));
+        }
+                
+<#
+        }
+    }
+    
+    foreach (var shiftDir in new string[]{"sl", "sr"}) {
+        foreach (var shiftType in new string[]{"a", "l"}) {
+            foreach (var reg in new string[]{"a", "b", "c", "d", "e", "h", "l", "ixh", "ixl", "iyh", "iyl"}) {
+#>
+        protected void <#= shiftDir #><#= shiftType #>_<#= reg #>() {
+            r1.<#= reg #> = Do<#= shiftDir.ToUpper() #>(r1.<#= reg #>, isArithmetics<#= shiftType.ToUpper() #>);
+        }
+        
+<#
+            }
+#>
+        protected void <#= shiftDir #><#= shiftType #>__hl_() {
+            tStates++;
+            Write8(r1.hl, Do<#= shiftDir.ToUpper() #>(Read8(r1.hl), isArithmetics<#= shiftType.ToUpper() #>));
+        }
+
+<#
+            foreach (var reg in new string[]{"ix", "iy"}) {
+#>
+        protected void <#= shiftDir #><#= shiftType #>__<#= reg #>_d_() {
+            tStates += 2;
+            var offset = (SByte)Read8(pc++);
+            var addr = (ushort)(r1.<#= reg #> + offset);
+            Write8(addr, Do<#= shiftDir.ToUpper() #>(Read8(addr), isArithmetics<#= shiftType.ToUpper() #>));
+        }
+                
+<#
+            }
+        }
     }
 #>
+        protected void rld() {
+            tStates += 4;
+            var ah = r1.a & 0x0F;
+            var hl = Read8(r1.hl);
+            r1.a = (byte)((r1.a & 0xF0) | ((hl & 0xF0) >> 4));
+            hl = (byte)((hl << 4) | ah);
+            Write8(r1.hl, hl);
+            ResFlag(f_h | f_n);
+            AdjustFlagsSZP(r1.a);
+            AdjustFlags(r1.a);
+        }
     
+        protected void rrd() {
+            tStates += 4;
+            var ah = r1.a & 0x0F;
+            var hl = Read8(r1.hl);
+            r1.a = (byte)((r1.a & 0xF0) | (hl & 0x0F));
+            hl = (byte)((hl >> 4) | (ah << 4));
+            Write8(r1.hl, hl);
+            ResFlag(f_h | f_n);
+            AdjustFlagsSZP(r1.a);
+        }
+        
+<#
+    for (var b = 0; b < 8; b++) {
+        foreach (var reg in new string[]{"a", "b", "c", "d", "e", "h", "l"}) {
+#>
+        protected void bit_<#= b #>_<#= reg #>() {
+            DoBitR(<#= b #>, r1.<#= reg #>);
+        }
+        
+<#
+        }
+#>
+        protected void bit_<#= b #>__hl_() {
+            tStates++;
+            DoBitR(<#= b #>, Read8(r1.hl));
+        }
+        
+<#      
+        foreach (var reg in new string[]{"ix", "iy"}) {
+#>
+        protected void bit_<#= b #>__<#= reg #>_d_() {
+            tStates += 2;
+            var offset = (SByte)Read8(pc++);
+            var addr = (ushort)(r1.<#= reg #> + offset);
+            DoBitIndexed(<#= b #>, addr);
+        }
+        
+<#
+        }  
+    }
+#>
     
     }
 }
