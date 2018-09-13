@@ -591,7 +591,9 @@ namespace Z80 {
             opcodeTableFDCB.entries[0x2E] = new OpcodeTableEntry(sra__iy_d_, "sra (iy+{0})", new ArgType[]{ArgType.Offset});       
             opcodeTableFDCB.entries[0x36] = new OpcodeTableEntry(sll__iy_d_, "sll (iy+{0})", new ArgType[]{ArgType.Offset});       
             opcodeTableFDCB.entries[0x3E] = new OpcodeTableEntry(srl__iy_d_, "srl (iy+{0})", new ArgType[]{ArgType.Offset});
-            
+
+            // BIT test
+                        
             opcodeTableCB.entries[64] = new OpcodeTableEntry(bit_0_b, "bit 0, b", new ArgType[]{});
             opcodeTableCB.entries[65] = new OpcodeTableEntry(bit_0_c, "bit 0, c", new ArgType[]{});
             opcodeTableCB.entries[66] = new OpcodeTableEntry(bit_0_d, "bit 0, d", new ArgType[]{});
@@ -784,6 +786,169 @@ namespace Z80 {
             opcodeTableFDCB.entries[126] = new OpcodeTableEntry(bit_7__iy_d_, "bit 7, (iy+{0})", new ArgType[]{ArgType.Offset});
             opcodeTableDDCB.entries[127] = new OpcodeTableEntry(bit_7__ix_d_, "bit 7, (ix+{0})", new ArgType[]{ArgType.Offset});
             opcodeTableFDCB.entries[127] = new OpcodeTableEntry(bit_7__iy_d_, "bit 7, (iy+{0})", new ArgType[]{ArgType.Offset});
+
+            // SET / RES
+            
+            opcodeTableCB.entries[192] = new OpcodeTableEntry(set_0_b, "set 0, b", new ArgType[]{});
+            opcodeTableCB.entries[193] = new OpcodeTableEntry(set_0_c, "set 0, c", new ArgType[]{});
+            opcodeTableCB.entries[194] = new OpcodeTableEntry(set_0_d, "set 0, d", new ArgType[]{});
+            opcodeTableCB.entries[195] = new OpcodeTableEntry(set_0_e, "set 0, e", new ArgType[]{});
+            opcodeTableCB.entries[196] = new OpcodeTableEntry(set_0_h, "set 0, h", new ArgType[]{});
+            opcodeTableCB.entries[197] = new OpcodeTableEntry(set_0_l, "set 0, l", new ArgType[]{});
+            opcodeTableCB.entries[199] = new OpcodeTableEntry(set_0_a, "set 0, a", new ArgType[]{});
+            opcodeTableCB.entries[198] = new OpcodeTableEntry(set_0__hl_, "set 0, (hl)", new ArgType[]{});
+            opcodeTableDDCB.entries[198] = new OpcodeTableEntry(set_0__ix_d_, "set 0, (ix+{0})", new ArgType[]{ArgType.Offset});
+            opcodeTableFDCB.entries[198] = new OpcodeTableEntry(set_0__iy_d_, "set 0, (iy+{0})", new ArgType[]{ArgType.Offset});
+            opcodeTableCB.entries[200] = new OpcodeTableEntry(set_1_b, "set 1, b", new ArgType[]{});
+            opcodeTableCB.entries[201] = new OpcodeTableEntry(set_1_c, "set 1, c", new ArgType[]{});
+            opcodeTableCB.entries[202] = new OpcodeTableEntry(set_1_d, "set 1, d", new ArgType[]{});
+            opcodeTableCB.entries[203] = new OpcodeTableEntry(set_1_e, "set 1, e", new ArgType[]{});
+            opcodeTableCB.entries[204] = new OpcodeTableEntry(set_1_h, "set 1, h", new ArgType[]{});
+            opcodeTableCB.entries[205] = new OpcodeTableEntry(set_1_l, "set 1, l", new ArgType[]{});
+            opcodeTableCB.entries[207] = new OpcodeTableEntry(set_1_a, "set 1, a", new ArgType[]{});
+            opcodeTableCB.entries[206] = new OpcodeTableEntry(set_1__hl_, "set 1, (hl)", new ArgType[]{});
+            opcodeTableDDCB.entries[206] = new OpcodeTableEntry(set_1__ix_d_, "set 1, (ix+{0})", new ArgType[]{ArgType.Offset});
+            opcodeTableFDCB.entries[206] = new OpcodeTableEntry(set_1__iy_d_, "set 1, (iy+{0})", new ArgType[]{ArgType.Offset});
+            opcodeTableCB.entries[208] = new OpcodeTableEntry(set_2_b, "set 2, b", new ArgType[]{});
+            opcodeTableCB.entries[209] = new OpcodeTableEntry(set_2_c, "set 2, c", new ArgType[]{});
+            opcodeTableCB.entries[210] = new OpcodeTableEntry(set_2_d, "set 2, d", new ArgType[]{});
+            opcodeTableCB.entries[211] = new OpcodeTableEntry(set_2_e, "set 2, e", new ArgType[]{});
+            opcodeTableCB.entries[212] = new OpcodeTableEntry(set_2_h, "set 2, h", new ArgType[]{});
+            opcodeTableCB.entries[213] = new OpcodeTableEntry(set_2_l, "set 2, l", new ArgType[]{});
+            opcodeTableCB.entries[215] = new OpcodeTableEntry(set_2_a, "set 2, a", new ArgType[]{});
+            opcodeTableCB.entries[214] = new OpcodeTableEntry(set_2__hl_, "set 2, (hl)", new ArgType[]{});
+            opcodeTableDDCB.entries[214] = new OpcodeTableEntry(set_2__ix_d_, "set 2, (ix+{0})", new ArgType[]{ArgType.Offset});
+            opcodeTableFDCB.entries[214] = new OpcodeTableEntry(set_2__iy_d_, "set 2, (iy+{0})", new ArgType[]{ArgType.Offset});
+            opcodeTableCB.entries[216] = new OpcodeTableEntry(set_3_b, "set 3, b", new ArgType[]{});
+            opcodeTableCB.entries[217] = new OpcodeTableEntry(set_3_c, "set 3, c", new ArgType[]{});
+            opcodeTableCB.entries[218] = new OpcodeTableEntry(set_3_d, "set 3, d", new ArgType[]{});
+            opcodeTableCB.entries[219] = new OpcodeTableEntry(set_3_e, "set 3, e", new ArgType[]{});
+            opcodeTableCB.entries[220] = new OpcodeTableEntry(set_3_h, "set 3, h", new ArgType[]{});
+            opcodeTableCB.entries[221] = new OpcodeTableEntry(set_3_l, "set 3, l", new ArgType[]{});
+            opcodeTableCB.entries[223] = new OpcodeTableEntry(set_3_a, "set 3, a", new ArgType[]{});
+            opcodeTableCB.entries[222] = new OpcodeTableEntry(set_3__hl_, "set 3, (hl)", new ArgType[]{});
+            opcodeTableDDCB.entries[222] = new OpcodeTableEntry(set_3__ix_d_, "set 3, (ix+{0})", new ArgType[]{ArgType.Offset});
+            opcodeTableFDCB.entries[222] = new OpcodeTableEntry(set_3__iy_d_, "set 3, (iy+{0})", new ArgType[]{ArgType.Offset});
+            opcodeTableCB.entries[224] = new OpcodeTableEntry(set_4_b, "set 4, b", new ArgType[]{});
+            opcodeTableCB.entries[225] = new OpcodeTableEntry(set_4_c, "set 4, c", new ArgType[]{});
+            opcodeTableCB.entries[226] = new OpcodeTableEntry(set_4_d, "set 4, d", new ArgType[]{});
+            opcodeTableCB.entries[227] = new OpcodeTableEntry(set_4_e, "set 4, e", new ArgType[]{});
+            opcodeTableCB.entries[228] = new OpcodeTableEntry(set_4_h, "set 4, h", new ArgType[]{});
+            opcodeTableCB.entries[229] = new OpcodeTableEntry(set_4_l, "set 4, l", new ArgType[]{});
+            opcodeTableCB.entries[231] = new OpcodeTableEntry(set_4_a, "set 4, a", new ArgType[]{});
+            opcodeTableCB.entries[230] = new OpcodeTableEntry(set_4__hl_, "set 4, (hl)", new ArgType[]{});
+            opcodeTableDDCB.entries[230] = new OpcodeTableEntry(set_4__ix_d_, "set 4, (ix+{0})", new ArgType[]{ArgType.Offset});
+            opcodeTableFDCB.entries[230] = new OpcodeTableEntry(set_4__iy_d_, "set 4, (iy+{0})", new ArgType[]{ArgType.Offset});
+            opcodeTableCB.entries[232] = new OpcodeTableEntry(set_5_b, "set 5, b", new ArgType[]{});
+            opcodeTableCB.entries[233] = new OpcodeTableEntry(set_5_c, "set 5, c", new ArgType[]{});
+            opcodeTableCB.entries[234] = new OpcodeTableEntry(set_5_d, "set 5, d", new ArgType[]{});
+            opcodeTableCB.entries[235] = new OpcodeTableEntry(set_5_e, "set 5, e", new ArgType[]{});
+            opcodeTableCB.entries[236] = new OpcodeTableEntry(set_5_h, "set 5, h", new ArgType[]{});
+            opcodeTableCB.entries[237] = new OpcodeTableEntry(set_5_l, "set 5, l", new ArgType[]{});
+            opcodeTableCB.entries[239] = new OpcodeTableEntry(set_5_a, "set 5, a", new ArgType[]{});
+            opcodeTableCB.entries[238] = new OpcodeTableEntry(set_5__hl_, "set 5, (hl)", new ArgType[]{});
+            opcodeTableDDCB.entries[238] = new OpcodeTableEntry(set_5__ix_d_, "set 5, (ix+{0})", new ArgType[]{ArgType.Offset});
+            opcodeTableFDCB.entries[238] = new OpcodeTableEntry(set_5__iy_d_, "set 5, (iy+{0})", new ArgType[]{ArgType.Offset});
+            opcodeTableCB.entries[240] = new OpcodeTableEntry(set_6_b, "set 6, b", new ArgType[]{});
+            opcodeTableCB.entries[241] = new OpcodeTableEntry(set_6_c, "set 6, c", new ArgType[]{});
+            opcodeTableCB.entries[242] = new OpcodeTableEntry(set_6_d, "set 6, d", new ArgType[]{});
+            opcodeTableCB.entries[243] = new OpcodeTableEntry(set_6_e, "set 6, e", new ArgType[]{});
+            opcodeTableCB.entries[244] = new OpcodeTableEntry(set_6_h, "set 6, h", new ArgType[]{});
+            opcodeTableCB.entries[245] = new OpcodeTableEntry(set_6_l, "set 6, l", new ArgType[]{});
+            opcodeTableCB.entries[247] = new OpcodeTableEntry(set_6_a, "set 6, a", new ArgType[]{});
+            opcodeTableCB.entries[246] = new OpcodeTableEntry(set_6__hl_, "set 6, (hl)", new ArgType[]{});
+            opcodeTableDDCB.entries[246] = new OpcodeTableEntry(set_6__ix_d_, "set 6, (ix+{0})", new ArgType[]{ArgType.Offset});
+            opcodeTableFDCB.entries[246] = new OpcodeTableEntry(set_6__iy_d_, "set 6, (iy+{0})", new ArgType[]{ArgType.Offset});
+            opcodeTableCB.entries[248] = new OpcodeTableEntry(set_7_b, "set 7, b", new ArgType[]{});
+            opcodeTableCB.entries[249] = new OpcodeTableEntry(set_7_c, "set 7, c", new ArgType[]{});
+            opcodeTableCB.entries[250] = new OpcodeTableEntry(set_7_d, "set 7, d", new ArgType[]{});
+            opcodeTableCB.entries[251] = new OpcodeTableEntry(set_7_e, "set 7, e", new ArgType[]{});
+            opcodeTableCB.entries[252] = new OpcodeTableEntry(set_7_h, "set 7, h", new ArgType[]{});
+            opcodeTableCB.entries[253] = new OpcodeTableEntry(set_7_l, "set 7, l", new ArgType[]{});
+            opcodeTableCB.entries[255] = new OpcodeTableEntry(set_7_a, "set 7, a", new ArgType[]{});
+            opcodeTableCB.entries[254] = new OpcodeTableEntry(set_7__hl_, "set 7, (hl)", new ArgType[]{});
+            opcodeTableDDCB.entries[254] = new OpcodeTableEntry(set_7__ix_d_, "set 7, (ix+{0})", new ArgType[]{ArgType.Offset});
+            opcodeTableFDCB.entries[254] = new OpcodeTableEntry(set_7__iy_d_, "set 7, (iy+{0})", new ArgType[]{ArgType.Offset});
+            opcodeTableCB.entries[128] = new OpcodeTableEntry(res_0_b, "res 0, b", new ArgType[]{});
+            opcodeTableCB.entries[129] = new OpcodeTableEntry(res_0_c, "res 0, c", new ArgType[]{});
+            opcodeTableCB.entries[130] = new OpcodeTableEntry(res_0_d, "res 0, d", new ArgType[]{});
+            opcodeTableCB.entries[131] = new OpcodeTableEntry(res_0_e, "res 0, e", new ArgType[]{});
+            opcodeTableCB.entries[132] = new OpcodeTableEntry(res_0_h, "res 0, h", new ArgType[]{});
+            opcodeTableCB.entries[133] = new OpcodeTableEntry(res_0_l, "res 0, l", new ArgType[]{});
+            opcodeTableCB.entries[135] = new OpcodeTableEntry(res_0_a, "res 0, a", new ArgType[]{});
+            opcodeTableCB.entries[134] = new OpcodeTableEntry(res_0__hl_, "res 0, (hl)", new ArgType[]{});
+            opcodeTableDDCB.entries[134] = new OpcodeTableEntry(res_0__ix_d_, "res 0, (ix+{0})", new ArgType[]{ArgType.Offset});
+            opcodeTableFDCB.entries[134] = new OpcodeTableEntry(res_0__iy_d_, "res 0, (iy+{0})", new ArgType[]{ArgType.Offset});
+            opcodeTableCB.entries[136] = new OpcodeTableEntry(res_1_b, "res 1, b", new ArgType[]{});
+            opcodeTableCB.entries[137] = new OpcodeTableEntry(res_1_c, "res 1, c", new ArgType[]{});
+            opcodeTableCB.entries[138] = new OpcodeTableEntry(res_1_d, "res 1, d", new ArgType[]{});
+            opcodeTableCB.entries[139] = new OpcodeTableEntry(res_1_e, "res 1, e", new ArgType[]{});
+            opcodeTableCB.entries[140] = new OpcodeTableEntry(res_1_h, "res 1, h", new ArgType[]{});
+            opcodeTableCB.entries[141] = new OpcodeTableEntry(res_1_l, "res 1, l", new ArgType[]{});
+            opcodeTableCB.entries[143] = new OpcodeTableEntry(res_1_a, "res 1, a", new ArgType[]{});
+            opcodeTableCB.entries[142] = new OpcodeTableEntry(res_1__hl_, "res 1, (hl)", new ArgType[]{});
+            opcodeTableDDCB.entries[142] = new OpcodeTableEntry(res_1__ix_d_, "res 1, (ix+{0})", new ArgType[]{ArgType.Offset});
+            opcodeTableFDCB.entries[142] = new OpcodeTableEntry(res_1__iy_d_, "res 1, (iy+{0})", new ArgType[]{ArgType.Offset});
+            opcodeTableCB.entries[144] = new OpcodeTableEntry(res_2_b, "res 2, b", new ArgType[]{});
+            opcodeTableCB.entries[145] = new OpcodeTableEntry(res_2_c, "res 2, c", new ArgType[]{});
+            opcodeTableCB.entries[146] = new OpcodeTableEntry(res_2_d, "res 2, d", new ArgType[]{});
+            opcodeTableCB.entries[147] = new OpcodeTableEntry(res_2_e, "res 2, e", new ArgType[]{});
+            opcodeTableCB.entries[148] = new OpcodeTableEntry(res_2_h, "res 2, h", new ArgType[]{});
+            opcodeTableCB.entries[149] = new OpcodeTableEntry(res_2_l, "res 2, l", new ArgType[]{});
+            opcodeTableCB.entries[151] = new OpcodeTableEntry(res_2_a, "res 2, a", new ArgType[]{});
+            opcodeTableCB.entries[150] = new OpcodeTableEntry(res_2__hl_, "res 2, (hl)", new ArgType[]{});
+            opcodeTableDDCB.entries[150] = new OpcodeTableEntry(res_2__ix_d_, "res 2, (ix+{0})", new ArgType[]{ArgType.Offset});
+            opcodeTableFDCB.entries[150] = new OpcodeTableEntry(res_2__iy_d_, "res 2, (iy+{0})", new ArgType[]{ArgType.Offset});
+            opcodeTableCB.entries[152] = new OpcodeTableEntry(res_3_b, "res 3, b", new ArgType[]{});
+            opcodeTableCB.entries[153] = new OpcodeTableEntry(res_3_c, "res 3, c", new ArgType[]{});
+            opcodeTableCB.entries[154] = new OpcodeTableEntry(res_3_d, "res 3, d", new ArgType[]{});
+            opcodeTableCB.entries[155] = new OpcodeTableEntry(res_3_e, "res 3, e", new ArgType[]{});
+            opcodeTableCB.entries[156] = new OpcodeTableEntry(res_3_h, "res 3, h", new ArgType[]{});
+            opcodeTableCB.entries[157] = new OpcodeTableEntry(res_3_l, "res 3, l", new ArgType[]{});
+            opcodeTableCB.entries[159] = new OpcodeTableEntry(res_3_a, "res 3, a", new ArgType[]{});
+            opcodeTableCB.entries[158] = new OpcodeTableEntry(res_3__hl_, "res 3, (hl)", new ArgType[]{});
+            opcodeTableDDCB.entries[158] = new OpcodeTableEntry(res_3__ix_d_, "res 3, (ix+{0})", new ArgType[]{ArgType.Offset});
+            opcodeTableFDCB.entries[158] = new OpcodeTableEntry(res_3__iy_d_, "res 3, (iy+{0})", new ArgType[]{ArgType.Offset});
+            opcodeTableCB.entries[160] = new OpcodeTableEntry(res_4_b, "res 4, b", new ArgType[]{});
+            opcodeTableCB.entries[161] = new OpcodeTableEntry(res_4_c, "res 4, c", new ArgType[]{});
+            opcodeTableCB.entries[162] = new OpcodeTableEntry(res_4_d, "res 4, d", new ArgType[]{});
+            opcodeTableCB.entries[163] = new OpcodeTableEntry(res_4_e, "res 4, e", new ArgType[]{});
+            opcodeTableCB.entries[164] = new OpcodeTableEntry(res_4_h, "res 4, h", new ArgType[]{});
+            opcodeTableCB.entries[165] = new OpcodeTableEntry(res_4_l, "res 4, l", new ArgType[]{});
+            opcodeTableCB.entries[167] = new OpcodeTableEntry(res_4_a, "res 4, a", new ArgType[]{});
+            opcodeTableCB.entries[166] = new OpcodeTableEntry(res_4__hl_, "res 4, (hl)", new ArgType[]{});
+            opcodeTableDDCB.entries[166] = new OpcodeTableEntry(res_4__ix_d_, "res 4, (ix+{0})", new ArgType[]{ArgType.Offset});
+            opcodeTableFDCB.entries[166] = new OpcodeTableEntry(res_4__iy_d_, "res 4, (iy+{0})", new ArgType[]{ArgType.Offset});
+            opcodeTableCB.entries[168] = new OpcodeTableEntry(res_5_b, "res 5, b", new ArgType[]{});
+            opcodeTableCB.entries[169] = new OpcodeTableEntry(res_5_c, "res 5, c", new ArgType[]{});
+            opcodeTableCB.entries[170] = new OpcodeTableEntry(res_5_d, "res 5, d", new ArgType[]{});
+            opcodeTableCB.entries[171] = new OpcodeTableEntry(res_5_e, "res 5, e", new ArgType[]{});
+            opcodeTableCB.entries[172] = new OpcodeTableEntry(res_5_h, "res 5, h", new ArgType[]{});
+            opcodeTableCB.entries[173] = new OpcodeTableEntry(res_5_l, "res 5, l", new ArgType[]{});
+            opcodeTableCB.entries[175] = new OpcodeTableEntry(res_5_a, "res 5, a", new ArgType[]{});
+            opcodeTableCB.entries[174] = new OpcodeTableEntry(res_5__hl_, "res 5, (hl)", new ArgType[]{});
+            opcodeTableDDCB.entries[174] = new OpcodeTableEntry(res_5__ix_d_, "res 5, (ix+{0})", new ArgType[]{ArgType.Offset});
+            opcodeTableFDCB.entries[174] = new OpcodeTableEntry(res_5__iy_d_, "res 5, (iy+{0})", new ArgType[]{ArgType.Offset});
+            opcodeTableCB.entries[176] = new OpcodeTableEntry(res_6_b, "res 6, b", new ArgType[]{});
+            opcodeTableCB.entries[177] = new OpcodeTableEntry(res_6_c, "res 6, c", new ArgType[]{});
+            opcodeTableCB.entries[178] = new OpcodeTableEntry(res_6_d, "res 6, d", new ArgType[]{});
+            opcodeTableCB.entries[179] = new OpcodeTableEntry(res_6_e, "res 6, e", new ArgType[]{});
+            opcodeTableCB.entries[180] = new OpcodeTableEntry(res_6_h, "res 6, h", new ArgType[]{});
+            opcodeTableCB.entries[181] = new OpcodeTableEntry(res_6_l, "res 6, l", new ArgType[]{});
+            opcodeTableCB.entries[183] = new OpcodeTableEntry(res_6_a, "res 6, a", new ArgType[]{});
+            opcodeTableCB.entries[182] = new OpcodeTableEntry(res_6__hl_, "res 6, (hl)", new ArgType[]{});
+            opcodeTableDDCB.entries[182] = new OpcodeTableEntry(res_6__ix_d_, "res 6, (ix+{0})", new ArgType[]{ArgType.Offset});
+            opcodeTableFDCB.entries[182] = new OpcodeTableEntry(res_6__iy_d_, "res 6, (iy+{0})", new ArgType[]{ArgType.Offset});
+            opcodeTableCB.entries[184] = new OpcodeTableEntry(res_7_b, "res 7, b", new ArgType[]{});
+            opcodeTableCB.entries[185] = new OpcodeTableEntry(res_7_c, "res 7, c", new ArgType[]{});
+            opcodeTableCB.entries[186] = new OpcodeTableEntry(res_7_d, "res 7, d", new ArgType[]{});
+            opcodeTableCB.entries[187] = new OpcodeTableEntry(res_7_e, "res 7, e", new ArgType[]{});
+            opcodeTableCB.entries[188] = new OpcodeTableEntry(res_7_h, "res 7, h", new ArgType[]{});
+            opcodeTableCB.entries[189] = new OpcodeTableEntry(res_7_l, "res 7, l", new ArgType[]{});
+            opcodeTableCB.entries[191] = new OpcodeTableEntry(res_7_a, "res 7, a", new ArgType[]{});
+            opcodeTableCB.entries[190] = new OpcodeTableEntry(res_7__hl_, "res 7, (hl)", new ArgType[]{});
+            opcodeTableDDCB.entries[190] = new OpcodeTableEntry(res_7__ix_d_, "res 7, (ix+{0})", new ArgType[]{ArgType.Offset});
+            opcodeTableFDCB.entries[190] = new OpcodeTableEntry(res_7__iy_d_, "res 7, (iy+{0})", new ArgType[]{ArgType.Offset});
                            
         }
         
@@ -3694,6 +3859,762 @@ namespace Z80 {
             DoBitIndexed(7, addr);
         }
         
-    
+
+        // SET / RES
+        
+        protected void set_0_a() {
+            r1.a = DoSetRes(bitStateSET, 0, r1.a);
+        }
+        
+        protected void set_0_b() {
+            r1.b = DoSetRes(bitStateSET, 0, r1.b);
+        }
+        
+        protected void set_0_c() {
+            r1.c = DoSetRes(bitStateSET, 0, r1.c);
+        }
+        
+        protected void set_0_d() {
+            r1.d = DoSetRes(bitStateSET, 0, r1.d);
+        }
+        
+        protected void set_0_e() {
+            r1.e = DoSetRes(bitStateSET, 0, r1.e);
+        }
+        
+        protected void set_0_h() {
+            r1.h = DoSetRes(bitStateSET, 0, r1.h);
+        }
+        
+        protected void set_0_l() {
+            r1.l = DoSetRes(bitStateSET, 0, r1.l);
+        }
+        
+        protected void set_0__hl_() {
+            tStates++;
+            Write8(r1.hl, DoSetRes(bitStateSET, 0, Read8(r1.hl)));
+        }
+        
+        protected void set_0__ix_d_() {
+            tStates += 2;
+            var offset = (SByte)Read8(pc++);
+            var addr = (ushort)(r1.ix + offset);
+            Write8(addr, DoSetRes(bitStateSET, 0, Read8(addr)));
+        }
+        
+        protected void set_0__iy_d_() {
+            tStates += 2;
+            var offset = (SByte)Read8(pc++);
+            var addr = (ushort)(r1.iy + offset);
+            Write8(addr, DoSetRes(bitStateSET, 0, Read8(addr)));
+        }
+        
+        protected void set_1_a() {
+            r1.a = DoSetRes(bitStateSET, 1, r1.a);
+        }
+        
+        protected void set_1_b() {
+            r1.b = DoSetRes(bitStateSET, 1, r1.b);
+        }
+        
+        protected void set_1_c() {
+            r1.c = DoSetRes(bitStateSET, 1, r1.c);
+        }
+        
+        protected void set_1_d() {
+            r1.d = DoSetRes(bitStateSET, 1, r1.d);
+        }
+        
+        protected void set_1_e() {
+            r1.e = DoSetRes(bitStateSET, 1, r1.e);
+        }
+        
+        protected void set_1_h() {
+            r1.h = DoSetRes(bitStateSET, 1, r1.h);
+        }
+        
+        protected void set_1_l() {
+            r1.l = DoSetRes(bitStateSET, 1, r1.l);
+        }
+        
+        protected void set_1__hl_() {
+            tStates++;
+            Write8(r1.hl, DoSetRes(bitStateSET, 1, Read8(r1.hl)));
+        }
+        
+        protected void set_1__ix_d_() {
+            tStates += 2;
+            var offset = (SByte)Read8(pc++);
+            var addr = (ushort)(r1.ix + offset);
+            Write8(addr, DoSetRes(bitStateSET, 1, Read8(addr)));
+        }
+        
+        protected void set_1__iy_d_() {
+            tStates += 2;
+            var offset = (SByte)Read8(pc++);
+            var addr = (ushort)(r1.iy + offset);
+            Write8(addr, DoSetRes(bitStateSET, 1, Read8(addr)));
+        }
+        
+        protected void set_2_a() {
+            r1.a = DoSetRes(bitStateSET, 2, r1.a);
+        }
+        
+        protected void set_2_b() {
+            r1.b = DoSetRes(bitStateSET, 2, r1.b);
+        }
+        
+        protected void set_2_c() {
+            r1.c = DoSetRes(bitStateSET, 2, r1.c);
+        }
+        
+        protected void set_2_d() {
+            r1.d = DoSetRes(bitStateSET, 2, r1.d);
+        }
+        
+        protected void set_2_e() {
+            r1.e = DoSetRes(bitStateSET, 2, r1.e);
+        }
+        
+        protected void set_2_h() {
+            r1.h = DoSetRes(bitStateSET, 2, r1.h);
+        }
+        
+        protected void set_2_l() {
+            r1.l = DoSetRes(bitStateSET, 2, r1.l);
+        }
+        
+        protected void set_2__hl_() {
+            tStates++;
+            Write8(r1.hl, DoSetRes(bitStateSET, 2, Read8(r1.hl)));
+        }
+        
+        protected void set_2__ix_d_() {
+            tStates += 2;
+            var offset = (SByte)Read8(pc++);
+            var addr = (ushort)(r1.ix + offset);
+            Write8(addr, DoSetRes(bitStateSET, 2, Read8(addr)));
+        }
+        
+        protected void set_2__iy_d_() {
+            tStates += 2;
+            var offset = (SByte)Read8(pc++);
+            var addr = (ushort)(r1.iy + offset);
+            Write8(addr, DoSetRes(bitStateSET, 2, Read8(addr)));
+        }
+        
+        protected void set_3_a() {
+            r1.a = DoSetRes(bitStateSET, 3, r1.a);
+        }
+        
+        protected void set_3_b() {
+            r1.b = DoSetRes(bitStateSET, 3, r1.b);
+        }
+        
+        protected void set_3_c() {
+            r1.c = DoSetRes(bitStateSET, 3, r1.c);
+        }
+        
+        protected void set_3_d() {
+            r1.d = DoSetRes(bitStateSET, 3, r1.d);
+        }
+        
+        protected void set_3_e() {
+            r1.e = DoSetRes(bitStateSET, 3, r1.e);
+        }
+        
+        protected void set_3_h() {
+            r1.h = DoSetRes(bitStateSET, 3, r1.h);
+        }
+        
+        protected void set_3_l() {
+            r1.l = DoSetRes(bitStateSET, 3, r1.l);
+        }
+        
+        protected void set_3__hl_() {
+            tStates++;
+            Write8(r1.hl, DoSetRes(bitStateSET, 3, Read8(r1.hl)));
+        }
+        
+        protected void set_3__ix_d_() {
+            tStates += 2;
+            var offset = (SByte)Read8(pc++);
+            var addr = (ushort)(r1.ix + offset);
+            Write8(addr, DoSetRes(bitStateSET, 3, Read8(addr)));
+        }
+        
+        protected void set_3__iy_d_() {
+            tStates += 2;
+            var offset = (SByte)Read8(pc++);
+            var addr = (ushort)(r1.iy + offset);
+            Write8(addr, DoSetRes(bitStateSET, 3, Read8(addr)));
+        }
+        
+        protected void set_4_a() {
+            r1.a = DoSetRes(bitStateSET, 4, r1.a);
+        }
+        
+        protected void set_4_b() {
+            r1.b = DoSetRes(bitStateSET, 4, r1.b);
+        }
+        
+        protected void set_4_c() {
+            r1.c = DoSetRes(bitStateSET, 4, r1.c);
+        }
+        
+        protected void set_4_d() {
+            r1.d = DoSetRes(bitStateSET, 4, r1.d);
+        }
+        
+        protected void set_4_e() {
+            r1.e = DoSetRes(bitStateSET, 4, r1.e);
+        }
+        
+        protected void set_4_h() {
+            r1.h = DoSetRes(bitStateSET, 4, r1.h);
+        }
+        
+        protected void set_4_l() {
+            r1.l = DoSetRes(bitStateSET, 4, r1.l);
+        }
+        
+        protected void set_4__hl_() {
+            tStates++;
+            Write8(r1.hl, DoSetRes(bitStateSET, 4, Read8(r1.hl)));
+        }
+        
+        protected void set_4__ix_d_() {
+            tStates += 2;
+            var offset = (SByte)Read8(pc++);
+            var addr = (ushort)(r1.ix + offset);
+            Write8(addr, DoSetRes(bitStateSET, 4, Read8(addr)));
+        }
+        
+        protected void set_4__iy_d_() {
+            tStates += 2;
+            var offset = (SByte)Read8(pc++);
+            var addr = (ushort)(r1.iy + offset);
+            Write8(addr, DoSetRes(bitStateSET, 4, Read8(addr)));
+        }
+        
+        protected void set_5_a() {
+            r1.a = DoSetRes(bitStateSET, 5, r1.a);
+        }
+        
+        protected void set_5_b() {
+            r1.b = DoSetRes(bitStateSET, 5, r1.b);
+        }
+        
+        protected void set_5_c() {
+            r1.c = DoSetRes(bitStateSET, 5, r1.c);
+        }
+        
+        protected void set_5_d() {
+            r1.d = DoSetRes(bitStateSET, 5, r1.d);
+        }
+        
+        protected void set_5_e() {
+            r1.e = DoSetRes(bitStateSET, 5, r1.e);
+        }
+        
+        protected void set_5_h() {
+            r1.h = DoSetRes(bitStateSET, 5, r1.h);
+        }
+        
+        protected void set_5_l() {
+            r1.l = DoSetRes(bitStateSET, 5, r1.l);
+        }
+        
+        protected void set_5__hl_() {
+            tStates++;
+            Write8(r1.hl, DoSetRes(bitStateSET, 5, Read8(r1.hl)));
+        }
+        
+        protected void set_5__ix_d_() {
+            tStates += 2;
+            var offset = (SByte)Read8(pc++);
+            var addr = (ushort)(r1.ix + offset);
+            Write8(addr, DoSetRes(bitStateSET, 5, Read8(addr)));
+        }
+        
+        protected void set_5__iy_d_() {
+            tStates += 2;
+            var offset = (SByte)Read8(pc++);
+            var addr = (ushort)(r1.iy + offset);
+            Write8(addr, DoSetRes(bitStateSET, 5, Read8(addr)));
+        }
+        
+        protected void set_6_a() {
+            r1.a = DoSetRes(bitStateSET, 6, r1.a);
+        }
+        
+        protected void set_6_b() {
+            r1.b = DoSetRes(bitStateSET, 6, r1.b);
+        }
+        
+        protected void set_6_c() {
+            r1.c = DoSetRes(bitStateSET, 6, r1.c);
+        }
+        
+        protected void set_6_d() {
+            r1.d = DoSetRes(bitStateSET, 6, r1.d);
+        }
+        
+        protected void set_6_e() {
+            r1.e = DoSetRes(bitStateSET, 6, r1.e);
+        }
+        
+        protected void set_6_h() {
+            r1.h = DoSetRes(bitStateSET, 6, r1.h);
+        }
+        
+        protected void set_6_l() {
+            r1.l = DoSetRes(bitStateSET, 6, r1.l);
+        }
+        
+        protected void set_6__hl_() {
+            tStates++;
+            Write8(r1.hl, DoSetRes(bitStateSET, 6, Read8(r1.hl)));
+        }
+        
+        protected void set_6__ix_d_() {
+            tStates += 2;
+            var offset = (SByte)Read8(pc++);
+            var addr = (ushort)(r1.ix + offset);
+            Write8(addr, DoSetRes(bitStateSET, 6, Read8(addr)));
+        }
+        
+        protected void set_6__iy_d_() {
+            tStates += 2;
+            var offset = (SByte)Read8(pc++);
+            var addr = (ushort)(r1.iy + offset);
+            Write8(addr, DoSetRes(bitStateSET, 6, Read8(addr)));
+        }
+        
+        protected void set_7_a() {
+            r1.a = DoSetRes(bitStateSET, 7, r1.a);
+        }
+        
+        protected void set_7_b() {
+            r1.b = DoSetRes(bitStateSET, 7, r1.b);
+        }
+        
+        protected void set_7_c() {
+            r1.c = DoSetRes(bitStateSET, 7, r1.c);
+        }
+        
+        protected void set_7_d() {
+            r1.d = DoSetRes(bitStateSET, 7, r1.d);
+        }
+        
+        protected void set_7_e() {
+            r1.e = DoSetRes(bitStateSET, 7, r1.e);
+        }
+        
+        protected void set_7_h() {
+            r1.h = DoSetRes(bitStateSET, 7, r1.h);
+        }
+        
+        protected void set_7_l() {
+            r1.l = DoSetRes(bitStateSET, 7, r1.l);
+        }
+        
+        protected void set_7__hl_() {
+            tStates++;
+            Write8(r1.hl, DoSetRes(bitStateSET, 7, Read8(r1.hl)));
+        }
+        
+        protected void set_7__ix_d_() {
+            tStates += 2;
+            var offset = (SByte)Read8(pc++);
+            var addr = (ushort)(r1.ix + offset);
+            Write8(addr, DoSetRes(bitStateSET, 7, Read8(addr)));
+        }
+        
+        protected void set_7__iy_d_() {
+            tStates += 2;
+            var offset = (SByte)Read8(pc++);
+            var addr = (ushort)(r1.iy + offset);
+            Write8(addr, DoSetRes(bitStateSET, 7, Read8(addr)));
+        }
+        
+        protected void res_0_a() {
+            r1.a = DoSetRes(bitStateRES, 0, r1.a);
+        }
+        
+        protected void res_0_b() {
+            r1.b = DoSetRes(bitStateRES, 0, r1.b);
+        }
+        
+        protected void res_0_c() {
+            r1.c = DoSetRes(bitStateRES, 0, r1.c);
+        }
+        
+        protected void res_0_d() {
+            r1.d = DoSetRes(bitStateRES, 0, r1.d);
+        }
+        
+        protected void res_0_e() {
+            r1.e = DoSetRes(bitStateRES, 0, r1.e);
+        }
+        
+        protected void res_0_h() {
+            r1.h = DoSetRes(bitStateRES, 0, r1.h);
+        }
+        
+        protected void res_0_l() {
+            r1.l = DoSetRes(bitStateRES, 0, r1.l);
+        }
+        
+        protected void res_0__hl_() {
+            tStates++;
+            Write8(r1.hl, DoSetRes(bitStateRES, 0, Read8(r1.hl)));
+        }
+        
+        protected void res_0__ix_d_() {
+            tStates += 2;
+            var offset = (SByte)Read8(pc++);
+            var addr = (ushort)(r1.ix + offset);
+            Write8(addr, DoSetRes(bitStateRES, 0, Read8(addr)));
+        }
+        
+        protected void res_0__iy_d_() {
+            tStates += 2;
+            var offset = (SByte)Read8(pc++);
+            var addr = (ushort)(r1.iy + offset);
+            Write8(addr, DoSetRes(bitStateRES, 0, Read8(addr)));
+        }
+        
+        protected void res_1_a() {
+            r1.a = DoSetRes(bitStateRES, 1, r1.a);
+        }
+        
+        protected void res_1_b() {
+            r1.b = DoSetRes(bitStateRES, 1, r1.b);
+        }
+        
+        protected void res_1_c() {
+            r1.c = DoSetRes(bitStateRES, 1, r1.c);
+        }
+        
+        protected void res_1_d() {
+            r1.d = DoSetRes(bitStateRES, 1, r1.d);
+        }
+        
+        protected void res_1_e() {
+            r1.e = DoSetRes(bitStateRES, 1, r1.e);
+        }
+        
+        protected void res_1_h() {
+            r1.h = DoSetRes(bitStateRES, 1, r1.h);
+        }
+        
+        protected void res_1_l() {
+            r1.l = DoSetRes(bitStateRES, 1, r1.l);
+        }
+        
+        protected void res_1__hl_() {
+            tStates++;
+            Write8(r1.hl, DoSetRes(bitStateRES, 1, Read8(r1.hl)));
+        }
+        
+        protected void res_1__ix_d_() {
+            tStates += 2;
+            var offset = (SByte)Read8(pc++);
+            var addr = (ushort)(r1.ix + offset);
+            Write8(addr, DoSetRes(bitStateRES, 1, Read8(addr)));
+        }
+        
+        protected void res_1__iy_d_() {
+            tStates += 2;
+            var offset = (SByte)Read8(pc++);
+            var addr = (ushort)(r1.iy + offset);
+            Write8(addr, DoSetRes(bitStateRES, 1, Read8(addr)));
+        }
+        
+        protected void res_2_a() {
+            r1.a = DoSetRes(bitStateRES, 2, r1.a);
+        }
+        
+        protected void res_2_b() {
+            r1.b = DoSetRes(bitStateRES, 2, r1.b);
+        }
+        
+        protected void res_2_c() {
+            r1.c = DoSetRes(bitStateRES, 2, r1.c);
+        }
+        
+        protected void res_2_d() {
+            r1.d = DoSetRes(bitStateRES, 2, r1.d);
+        }
+        
+        protected void res_2_e() {
+            r1.e = DoSetRes(bitStateRES, 2, r1.e);
+        }
+        
+        protected void res_2_h() {
+            r1.h = DoSetRes(bitStateRES, 2, r1.h);
+        }
+        
+        protected void res_2_l() {
+            r1.l = DoSetRes(bitStateRES, 2, r1.l);
+        }
+        
+        protected void res_2__hl_() {
+            tStates++;
+            Write8(r1.hl, DoSetRes(bitStateRES, 2, Read8(r1.hl)));
+        }
+        
+        protected void res_2__ix_d_() {
+            tStates += 2;
+            var offset = (SByte)Read8(pc++);
+            var addr = (ushort)(r1.ix + offset);
+            Write8(addr, DoSetRes(bitStateRES, 2, Read8(addr)));
+        }
+        
+        protected void res_2__iy_d_() {
+            tStates += 2;
+            var offset = (SByte)Read8(pc++);
+            var addr = (ushort)(r1.iy + offset);
+            Write8(addr, DoSetRes(bitStateRES, 2, Read8(addr)));
+        }
+        
+        protected void res_3_a() {
+            r1.a = DoSetRes(bitStateRES, 3, r1.a);
+        }
+        
+        protected void res_3_b() {
+            r1.b = DoSetRes(bitStateRES, 3, r1.b);
+        }
+        
+        protected void res_3_c() {
+            r1.c = DoSetRes(bitStateRES, 3, r1.c);
+        }
+        
+        protected void res_3_d() {
+            r1.d = DoSetRes(bitStateRES, 3, r1.d);
+        }
+        
+        protected void res_3_e() {
+            r1.e = DoSetRes(bitStateRES, 3, r1.e);
+        }
+        
+        protected void res_3_h() {
+            r1.h = DoSetRes(bitStateRES, 3, r1.h);
+        }
+        
+        protected void res_3_l() {
+            r1.l = DoSetRes(bitStateRES, 3, r1.l);
+        }
+        
+        protected void res_3__hl_() {
+            tStates++;
+            Write8(r1.hl, DoSetRes(bitStateRES, 3, Read8(r1.hl)));
+        }
+        
+        protected void res_3__ix_d_() {
+            tStates += 2;
+            var offset = (SByte)Read8(pc++);
+            var addr = (ushort)(r1.ix + offset);
+            Write8(addr, DoSetRes(bitStateRES, 3, Read8(addr)));
+        }
+        
+        protected void res_3__iy_d_() {
+            tStates += 2;
+            var offset = (SByte)Read8(pc++);
+            var addr = (ushort)(r1.iy + offset);
+            Write8(addr, DoSetRes(bitStateRES, 3, Read8(addr)));
+        }
+        
+        protected void res_4_a() {
+            r1.a = DoSetRes(bitStateRES, 4, r1.a);
+        }
+        
+        protected void res_4_b() {
+            r1.b = DoSetRes(bitStateRES, 4, r1.b);
+        }
+        
+        protected void res_4_c() {
+            r1.c = DoSetRes(bitStateRES, 4, r1.c);
+        }
+        
+        protected void res_4_d() {
+            r1.d = DoSetRes(bitStateRES, 4, r1.d);
+        }
+        
+        protected void res_4_e() {
+            r1.e = DoSetRes(bitStateRES, 4, r1.e);
+        }
+        
+        protected void res_4_h() {
+            r1.h = DoSetRes(bitStateRES, 4, r1.h);
+        }
+        
+        protected void res_4_l() {
+            r1.l = DoSetRes(bitStateRES, 4, r1.l);
+        }
+        
+        protected void res_4__hl_() {
+            tStates++;
+            Write8(r1.hl, DoSetRes(bitStateRES, 4, Read8(r1.hl)));
+        }
+        
+        protected void res_4__ix_d_() {
+            tStates += 2;
+            var offset = (SByte)Read8(pc++);
+            var addr = (ushort)(r1.ix + offset);
+            Write8(addr, DoSetRes(bitStateRES, 4, Read8(addr)));
+        }
+        
+        protected void res_4__iy_d_() {
+            tStates += 2;
+            var offset = (SByte)Read8(pc++);
+            var addr = (ushort)(r1.iy + offset);
+            Write8(addr, DoSetRes(bitStateRES, 4, Read8(addr)));
+        }
+        
+        protected void res_5_a() {
+            r1.a = DoSetRes(bitStateRES, 5, r1.a);
+        }
+        
+        protected void res_5_b() {
+            r1.b = DoSetRes(bitStateRES, 5, r1.b);
+        }
+        
+        protected void res_5_c() {
+            r1.c = DoSetRes(bitStateRES, 5, r1.c);
+        }
+        
+        protected void res_5_d() {
+            r1.d = DoSetRes(bitStateRES, 5, r1.d);
+        }
+        
+        protected void res_5_e() {
+            r1.e = DoSetRes(bitStateRES, 5, r1.e);
+        }
+        
+        protected void res_5_h() {
+            r1.h = DoSetRes(bitStateRES, 5, r1.h);
+        }
+        
+        protected void res_5_l() {
+            r1.l = DoSetRes(bitStateRES, 5, r1.l);
+        }
+        
+        protected void res_5__hl_() {
+            tStates++;
+            Write8(r1.hl, DoSetRes(bitStateRES, 5, Read8(r1.hl)));
+        }
+        
+        protected void res_5__ix_d_() {
+            tStates += 2;
+            var offset = (SByte)Read8(pc++);
+            var addr = (ushort)(r1.ix + offset);
+            Write8(addr, DoSetRes(bitStateRES, 5, Read8(addr)));
+        }
+        
+        protected void res_5__iy_d_() {
+            tStates += 2;
+            var offset = (SByte)Read8(pc++);
+            var addr = (ushort)(r1.iy + offset);
+            Write8(addr, DoSetRes(bitStateRES, 5, Read8(addr)));
+        }
+        
+        protected void res_6_a() {
+            r1.a = DoSetRes(bitStateRES, 6, r1.a);
+        }
+        
+        protected void res_6_b() {
+            r1.b = DoSetRes(bitStateRES, 6, r1.b);
+        }
+        
+        protected void res_6_c() {
+            r1.c = DoSetRes(bitStateRES, 6, r1.c);
+        }
+        
+        protected void res_6_d() {
+            r1.d = DoSetRes(bitStateRES, 6, r1.d);
+        }
+        
+        protected void res_6_e() {
+            r1.e = DoSetRes(bitStateRES, 6, r1.e);
+        }
+        
+        protected void res_6_h() {
+            r1.h = DoSetRes(bitStateRES, 6, r1.h);
+        }
+        
+        protected void res_6_l() {
+            r1.l = DoSetRes(bitStateRES, 6, r1.l);
+        }
+        
+        protected void res_6__hl_() {
+            tStates++;
+            Write8(r1.hl, DoSetRes(bitStateRES, 6, Read8(r1.hl)));
+        }
+        
+        protected void res_6__ix_d_() {
+            tStates += 2;
+            var offset = (SByte)Read8(pc++);
+            var addr = (ushort)(r1.ix + offset);
+            Write8(addr, DoSetRes(bitStateRES, 6, Read8(addr)));
+        }
+        
+        protected void res_6__iy_d_() {
+            tStates += 2;
+            var offset = (SByte)Read8(pc++);
+            var addr = (ushort)(r1.iy + offset);
+            Write8(addr, DoSetRes(bitStateRES, 6, Read8(addr)));
+        }
+        
+        protected void res_7_a() {
+            r1.a = DoSetRes(bitStateRES, 7, r1.a);
+        }
+        
+        protected void res_7_b() {
+            r1.b = DoSetRes(bitStateRES, 7, r1.b);
+        }
+        
+        protected void res_7_c() {
+            r1.c = DoSetRes(bitStateRES, 7, r1.c);
+        }
+        
+        protected void res_7_d() {
+            r1.d = DoSetRes(bitStateRES, 7, r1.d);
+        }
+        
+        protected void res_7_e() {
+            r1.e = DoSetRes(bitStateRES, 7, r1.e);
+        }
+        
+        protected void res_7_h() {
+            r1.h = DoSetRes(bitStateRES, 7, r1.h);
+        }
+        
+        protected void res_7_l() {
+            r1.l = DoSetRes(bitStateRES, 7, r1.l);
+        }
+        
+        protected void res_7__hl_() {
+            tStates++;
+            Write8(r1.hl, DoSetRes(bitStateRES, 7, Read8(r1.hl)));
+        }
+        
+        protected void res_7__ix_d_() {
+            tStates += 2;
+            var offset = (SByte)Read8(pc++);
+            var addr = (ushort)(r1.ix + offset);
+            Write8(addr, DoSetRes(bitStateRES, 7, Read8(addr)));
+        }
+        
+        protected void res_7__iy_d_() {
+            tStates += 2;
+            var offset = (SByte)Read8(pc++);
+            var addr = (ushort)(r1.iy + offset);
+            Write8(addr, DoSetRes(bitStateRES, 7, Read8(addr)));
+        }
+        
+
+            
     }
 }

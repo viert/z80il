@@ -636,7 +636,9 @@ namespace Z80 {
             opcodeTableFDCB.entries[0x2E] = new OpcodeTableEntry(sra__iy_d_, "sra (iy+{0})", new ArgType[]{ArgType.Offset});       
             opcodeTableFDCB.entries[0x36] = new OpcodeTableEntry(sll__iy_d_, "sll (iy+{0})", new ArgType[]{ArgType.Offset});       
             opcodeTableFDCB.entries[0x3E] = new OpcodeTableEntry(srl__iy_d_, "srl (iy+{0})", new ArgType[]{ArgType.Offset});
-            
+
+            // BIT test
+                        
 <#
     for (var b = 0; b < 8; b++) {
         int opCode;
@@ -669,6 +671,70 @@ namespace Z80 {
             opcodeTableFDCB.entries[<#= opCode #>] = new OpcodeTableEntry(<#= opFuncName #>, "<#= dasm #>", new ArgType[]{ArgType.Offset});
 <#
         }
+    }
+#>
+
+            // SET / RES
+            
+<#
+    for (var b = 0; b < 8; b++) {
+        int opCode;
+        string opFuncName, dasm;
+        
+        foreach (var rCode in RegisterMap) {
+            opCode = 0xC0 | (b << 3) | rCode.Key;
+            opFuncName = string.Format("set_{0}_{1}", b, rCode.Value);
+            dasm = string.Format("set {0}, {1}", b, rCode.Value);
+#>
+            opcodeTableCB.entries[<#= opCode #>] = new OpcodeTableEntry(<#= opFuncName #>, "<#= dasm #>", new ArgType[]{});
+<#
+        }
+        opCode = 0xC6 | (b << 3);
+        opFuncName = string.Format("set_{0}__hl_", b);
+        dasm = string.Format("set {0}, (hl)", b);
+#>
+            opcodeTableCB.entries[<#= opCode #>] = new OpcodeTableEntry(<#= opFuncName #>, "<#= dasm #>", new ArgType[]{});
+<#
+        opFuncName = string.Format("set_{0}__ix_d_", b);
+        dasm = string.Format("set {0}, (ix+{{0}})", b);
+#>
+            opcodeTableDDCB.entries[<#= opCode #>] = new OpcodeTableEntry(<#= opFuncName #>, "<#= dasm #>", new ArgType[]{ArgType.Offset});
+<#
+        opFuncName = string.Format("set_{0}__iy_d_", b);
+        dasm = string.Format("set {0}, (iy+{{0}})", b);
+#>
+            opcodeTableFDCB.entries[<#= opCode #>] = new OpcodeTableEntry(<#= opFuncName #>, "<#= dasm #>", new ArgType[]{ArgType.Offset});
+<#
+    }
+
+    for (var b = 0; b < 8; b++) {
+        int opCode;
+        string opFuncName, dasm;
+        
+        foreach (var rCode in RegisterMap) {
+            opCode = 0x80 | (b << 3) | rCode.Key;
+            opFuncName = string.Format("res_{0}_{1}", b, rCode.Value);
+            dasm = string.Format("res {0}, {1}", b, rCode.Value);
+#>
+            opcodeTableCB.entries[<#= opCode #>] = new OpcodeTableEntry(<#= opFuncName #>, "<#= dasm #>", new ArgType[]{});
+<#
+        }
+        opCode = 0x86 | (b << 3);
+        opFuncName = string.Format("res_{0}__hl_", b);
+        dasm = string.Format("res {0}, (hl)", b);
+#>
+            opcodeTableCB.entries[<#= opCode #>] = new OpcodeTableEntry(<#= opFuncName #>, "<#= dasm #>", new ArgType[]{});
+<#
+        opFuncName = string.Format("res_{0}__ix_d_", b);
+        dasm = string.Format("res {0}, (ix+{{0}})", b);
+#>
+            opcodeTableDDCB.entries[<#= opCode #>] = new OpcodeTableEntry(<#= opFuncName #>, "<#= dasm #>", new ArgType[]{ArgType.Offset});
+<#
+        opFuncName = string.Format("res_{0}__iy_d_", b);
+        dasm = string.Format("res {0}, (iy+{{0}})", b);
+#>
+            opcodeTableFDCB.entries[<#= opCode #>] = new OpcodeTableEntry(<#= opFuncName #>, "<#= dasm #>", new ArgType[]{ArgType.Offset});
+<#
     }
 #>
                            
@@ -1311,6 +1377,42 @@ namespace Z80 {
         }  
     }
 #>
-    
+
+        // SET / RES
+        
+<#
+    foreach (var cmd in new string[]{"set", "res"}) {
+        for (var b = 0; b < 8; b++) {
+            foreach (var reg in new string[]{"a", "b", "c", "d", "e", "h", "l"}) {
+#>
+        protected void <#= cmd #>_<#= b #>_<#= reg #>() {
+            r1.<#= reg #> = DoSetRes(bitState<#= cmd.ToUpper() #>, <#= b #>, r1.<#= reg #>);
+        }
+        
+<#
+        }
+#>
+        protected void <#= cmd #>_<#= b #>__hl_() {
+            tStates++;
+            Write8(r1.hl, DoSetRes(bitState<#= cmd.ToUpper() #>, <#= b #>, Read8(r1.hl)));
+        }
+        
+<#      
+        foreach (var reg in new string[]{"ix", "iy"}) {
+#>
+        protected void <#= cmd #>_<#= b #>__<#= reg #>_d_() {
+            tStates += 2;
+            var offset = (SByte)Read8(pc++);
+            var addr = (ushort)(r1.<#= reg #> + offset);
+            Write8(addr, DoSetRes(bitState<#= cmd.ToUpper() #>, <#= b #>, Read8(addr)));
+        }
+        
+<#
+            }
+        }  
+    }
+#>
+
+            
     }
 }

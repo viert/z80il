@@ -78,8 +78,8 @@ namespace Z80
 
         protected const bool isArithmeticsA = true;
         protected const bool isArithmeticsL = false;
-        protected const bool bitStateSet = true;
-        protected const bool bitStateRes = false;
+        protected const bool bitStateSET = true;
+        protected const bool bitStateRES = false;
 
         /* Code generation helpers end */
 
