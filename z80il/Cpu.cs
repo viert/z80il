@@ -346,30 +346,44 @@ namespace Z80 {
             opcodeTable.entries[176] = new OpcodeTableEntry(or_b, "or b", new ArgType[]{});
             opcodeTable.entries[168] = new OpcodeTableEntry(xor_b, "xor b", new ArgType[]{});
             opcodeTable.entries[184] = new OpcodeTableEntry(cp_b, "cp b", new ArgType[]{});
+            opcodeTable.entries[4] = new OpcodeTableEntry(inc_b, "inc b", new ArgType[]{});
+            opcodeTable.entries[5] = new OpcodeTableEntry(dec_b, "dec b", new ArgType[]{});
             opcodeTable.entries[161] = new OpcodeTableEntry(and_c, "and c", new ArgType[]{});
             opcodeTable.entries[177] = new OpcodeTableEntry(or_c, "or c", new ArgType[]{});
             opcodeTable.entries[169] = new OpcodeTableEntry(xor_c, "xor c", new ArgType[]{});
             opcodeTable.entries[185] = new OpcodeTableEntry(cp_c, "cp c", new ArgType[]{});
+            opcodeTable.entries[12] = new OpcodeTableEntry(inc_c, "inc c", new ArgType[]{});
+            opcodeTable.entries[13] = new OpcodeTableEntry(dec_c, "dec c", new ArgType[]{});
             opcodeTable.entries[162] = new OpcodeTableEntry(and_d, "and d", new ArgType[]{});
             opcodeTable.entries[178] = new OpcodeTableEntry(or_d, "or d", new ArgType[]{});
             opcodeTable.entries[170] = new OpcodeTableEntry(xor_d, "xor d", new ArgType[]{});
             opcodeTable.entries[186] = new OpcodeTableEntry(cp_d, "cp d", new ArgType[]{});
+            opcodeTable.entries[20] = new OpcodeTableEntry(inc_d, "inc d", new ArgType[]{});
+            opcodeTable.entries[21] = new OpcodeTableEntry(dec_d, "dec d", new ArgType[]{});
             opcodeTable.entries[163] = new OpcodeTableEntry(and_e, "and e", new ArgType[]{});
             opcodeTable.entries[179] = new OpcodeTableEntry(or_e, "or e", new ArgType[]{});
             opcodeTable.entries[171] = new OpcodeTableEntry(xor_e, "xor e", new ArgType[]{});
             opcodeTable.entries[187] = new OpcodeTableEntry(cp_e, "cp e", new ArgType[]{});
+            opcodeTable.entries[28] = new OpcodeTableEntry(inc_e, "inc e", new ArgType[]{});
+            opcodeTable.entries[29] = new OpcodeTableEntry(dec_e, "dec e", new ArgType[]{});
             opcodeTable.entries[164] = new OpcodeTableEntry(and_h, "and h", new ArgType[]{});
             opcodeTable.entries[180] = new OpcodeTableEntry(or_h, "or h", new ArgType[]{});
             opcodeTable.entries[172] = new OpcodeTableEntry(xor_h, "xor h", new ArgType[]{});
             opcodeTable.entries[188] = new OpcodeTableEntry(cp_h, "cp h", new ArgType[]{});
+            opcodeTable.entries[36] = new OpcodeTableEntry(inc_h, "inc h", new ArgType[]{});
+            opcodeTable.entries[37] = new OpcodeTableEntry(dec_h, "dec h", new ArgType[]{});
             opcodeTable.entries[165] = new OpcodeTableEntry(and_l, "and l", new ArgType[]{});
             opcodeTable.entries[181] = new OpcodeTableEntry(or_l, "or l", new ArgType[]{});
             opcodeTable.entries[173] = new OpcodeTableEntry(xor_l, "xor l", new ArgType[]{});
             opcodeTable.entries[189] = new OpcodeTableEntry(cp_l, "cp l", new ArgType[]{});
+            opcodeTable.entries[44] = new OpcodeTableEntry(inc_l, "inc l", new ArgType[]{});
+            opcodeTable.entries[45] = new OpcodeTableEntry(dec_l, "dec l", new ArgType[]{});
             opcodeTable.entries[167] = new OpcodeTableEntry(and_a, "and a", new ArgType[]{});
             opcodeTable.entries[183] = new OpcodeTableEntry(or_a, "or a", new ArgType[]{});
             opcodeTable.entries[175] = new OpcodeTableEntry(xor_a, "xor a", new ArgType[]{});
             opcodeTable.entries[191] = new OpcodeTableEntry(cp_a, "cp a", new ArgType[]{});
+            opcodeTable.entries[60] = new OpcodeTableEntry(inc_a, "inc a", new ArgType[]{});
+            opcodeTable.entries[61] = new OpcodeTableEntry(dec_a, "dec a", new ArgType[]{});
 
             opcodeTableDD.entries[0xA4] = new OpcodeTableEntry(and_ixh, "and ixh", new ArgType[]{});
             opcodeTableDD.entries[0xA5] = new OpcodeTableEntry(and_ixl, "and ixl", new ArgType[]{});
@@ -390,6 +404,16 @@ namespace Z80 {
             opcodeTableDD.entries[0xBD] = new OpcodeTableEntry(cp_ixl, "cp ixl", new ArgType[]{});
             opcodeTableFD.entries[0xBC] = new OpcodeTableEntry(cp_iyh, "cp iyh", new ArgType[]{});
             opcodeTableFD.entries[0xBD] = new OpcodeTableEntry(cp_iyl, "cp iyl", new ArgType[]{});
+
+            opcodeTableDD.entries[0x25] = new OpcodeTableEntry(dec_ixh, "dec ixh", new ArgType[]{});
+            opcodeTableDD.entries[0x2D] = new OpcodeTableEntry(dec_ixl, "dec ixl", new ArgType[]{});
+            opcodeTableFD.entries[0x25] = new OpcodeTableEntry(dec_iyh, "dec iyh", new ArgType[]{});
+            opcodeTableFD.entries[0x2D] = new OpcodeTableEntry(dec_iyl, "dec iyl", new ArgType[]{});
+            
+            opcodeTableDD.entries[0x24] = new OpcodeTableEntry(inc_ixh, "inc ixh", new ArgType[]{});
+            opcodeTableDD.entries[0x2C] = new OpcodeTableEntry(inc_ixl, "inc ixl", new ArgType[]{});
+            opcodeTableFD.entries[0x24] = new OpcodeTableEntry(inc_iyh, "inc iyh", new ArgType[]{});
+            opcodeTableFD.entries[0x2C] = new OpcodeTableEntry(inc_iyl, "inc iyl", new ArgType[]{});
             
             opcodeTable.entries[0xE6] = new OpcodeTableEntry(and_n, "and {0}", new ArgType[]{ArgType.Byte});
             opcodeTable.entries[0xF6] = new OpcodeTableEntry(or_n, "or {0}", new ArgType[]{ArgType.Byte});
@@ -400,6 +424,8 @@ namespace Z80 {
             opcodeTable.entries[0xB6] = new OpcodeTableEntry(or__hl_, "or (hl)", new ArgType[]{});
             opcodeTable.entries[0xAE] = new OpcodeTableEntry(xor__hl_, "xor (hl)", new ArgType[]{});
             opcodeTable.entries[0xBE] = new OpcodeTableEntry(cp__hl_, "cp (hl)", new ArgType[]{});
+            opcodeTable.entries[0x34] = new OpcodeTableEntry(inc__hl_, "inc (hl)", new ArgType[]{});
+            opcodeTable.entries[0x35] = new OpcodeTableEntry(dec__hl_, "dec (hl)", new ArgType[]{});
             
             opcodeTable.entries[221].nextTable.entries[0xA6] = 
                 new OpcodeTableEntry(and__ix_d_, "and (ix+{0})", new ArgType[]{ArgType.Offset});
@@ -409,6 +435,10 @@ namespace Z80 {
                 new OpcodeTableEntry(xor__ix_d_, "xor (ix+{0})", new ArgType[]{ArgType.Offset});
             opcodeTable.entries[221].nextTable.entries[0xBE] = 
                 new OpcodeTableEntry(cp__ix_d_, "cp (ix+{0})", new ArgType[]{ArgType.Offset});
+            opcodeTable.entries[221].nextTable.entries[0x34] = 
+                new OpcodeTableEntry(inc__ix_d_, "inc (ix+{0})", new ArgType[]{ArgType.Offset});
+            opcodeTable.entries[221].nextTable.entries[0x35] = 
+                new OpcodeTableEntry(dec__ix_d_, "dec (ix+{0})", new ArgType[]{ArgType.Offset});
             opcodeTable.entries[253].nextTable.entries[0xA6] = 
                 new OpcodeTableEntry(and__iy_d_, "and (iy+{0})", new ArgType[]{ArgType.Offset});
             opcodeTable.entries[253].nextTable.entries[0xB6] = 
@@ -417,7 +447,54 @@ namespace Z80 {
                 new OpcodeTableEntry(xor__iy_d_, "xor (iy+{0})", new ArgType[]{ArgType.Offset});
             opcodeTable.entries[253].nextTable.entries[0xBE] = 
                 new OpcodeTableEntry(cp__iy_d_, "cp (iy+{0})", new ArgType[]{ArgType.Offset});
+            opcodeTable.entries[253].nextTable.entries[0x34] = 
+                new OpcodeTableEntry(inc__iy_d_, "inc (iy+{0})", new ArgType[]{ArgType.Offset});
+            opcodeTable.entries[253].nextTable.entries[0x35] = 
+                new OpcodeTableEntry(dec__iy_d_, "dec (iy+{0})", new ArgType[]{ArgType.Offset});
+            opcodeTable.entries[3] = new OpcodeTableEntry(inc_bc, "inc bc", new ArgType[]{});
+            opcodeTable.entries[11] = new OpcodeTableEntry(dec_bc, "dec bc", new ArgType[]{});
+            opcodeTable.entries[19] = new OpcodeTableEntry(inc_de, "inc de", new ArgType[]{});
+            opcodeTable.entries[27] = new OpcodeTableEntry(dec_de, "dec de", new ArgType[]{});
+            opcodeTable.entries[35] = new OpcodeTableEntry(inc_hl, "inc hl", new ArgType[]{});
+            opcodeTable.entries[43] = new OpcodeTableEntry(dec_hl, "dec hl", new ArgType[]{});
+            opcodeTable.entries[51] = new OpcodeTableEntry(inc_sp, "inc sp", new ArgType[]{});
+            opcodeTable.entries[59] = new OpcodeTableEntry(dec_sp, "dec sp", new ArgType[]{});
+            opcodeTable.entries[221].nextTable.entries[0x23] = 
+                new OpcodeTableEntry(inc_ix, "inc ix", new ArgType[]{});
+            opcodeTable.entries[221].nextTable.entries[0x2B] = 
+                new OpcodeTableEntry(dec_ix, "dec ix", new ArgType[]{});
+        
+            opcodeTable.entries[253].nextTable.entries[0x23] = 
+                new OpcodeTableEntry(inc_iy, "inc iy", new ArgType[]{});
+            opcodeTable.entries[253].nextTable.entries[0x2B] = 
+                new OpcodeTableEntry(dec_iy, "dec iy", new ArgType[]{});
+        
             
+            opcodeTable.entries[0x27] = new OpcodeTableEntry(daa, "daa", new ArgType[]{});
+            opcodeTable.entries[0x2F] = new OpcodeTableEntry(cpl, "cpl", new ArgType[]{});
+            opcodeTableED.entries[0x44] = new OpcodeTableEntry(neg, "neg", new ArgType[]{});
+            opcodeTableED.entries[0x54] = new OpcodeTableEntry(neg, "neg", new ArgType[]{});
+            opcodeTableED.entries[0x64] = new OpcodeTableEntry(neg, "neg", new ArgType[]{});
+            opcodeTableED.entries[0x74] = new OpcodeTableEntry(neg, "neg", new ArgType[]{});
+            opcodeTableED.entries[0x4C] = new OpcodeTableEntry(neg, "neg", new ArgType[]{});
+            opcodeTableED.entries[0x5C] = new OpcodeTableEntry(neg, "neg", new ArgType[]{});
+            opcodeTableED.entries[0x6C] = new OpcodeTableEntry(neg, "neg", new ArgType[]{});
+            opcodeTableED.entries[0x7C] = new OpcodeTableEntry(neg, "neg", new ArgType[]{});
+            opcodeTable.entries[0x3F] = new OpcodeTableEntry(ccf, "ccf", new ArgType[]{});
+            opcodeTable.entries[0x37] = new OpcodeTableEntry(scf, "scf", new ArgType[]{});
+            opcodeTable.entries[0x76] = new OpcodeTableEntry(halt, "halt", new ArgType[]{});
+            opcodeTable.entries[0xF3] = new OpcodeTableEntry(di, "di", new ArgType[]{});
+            opcodeTable.entries[0xFB] = new OpcodeTableEntry(ei, "ei", new ArgType[]{});
+            
+            opcodeTableED.entries[0x46] = new OpcodeTableEntry(im_0, "im 0", new ArgType[]{});
+            opcodeTableED.entries[0x4E] = new OpcodeTableEntry(im_0, "im 0", new ArgType[]{});
+            opcodeTableED.entries[0x66] = new OpcodeTableEntry(im_0, "im 0", new ArgType[]{});
+            opcodeTableED.entries[0x6E] = new OpcodeTableEntry(im_0, "im 0", new ArgType[]{});
+            opcodeTableED.entries[0x56] = new OpcodeTableEntry(im_1, "im 1", new ArgType[]{});
+            opcodeTableED.entries[0x76] = new OpcodeTableEntry(im_1, "im 1", new ArgType[]{});
+            opcodeTableED.entries[0x5E] = new OpcodeTableEntry(im_2, "im 2", new ArgType[]{});
+            opcodeTableED.entries[0x7E] = new OpcodeTableEntry(im_2, "im 2", new ArgType[]{});
+
         }
         
         protected void nop() {
@@ -2156,5 +2233,255 @@ namespace Z80 {
             DoArithmetics(value, false, true);
             AdjustFlags(value);
         }
+
+        protected void inc_a() {
+            r1.a = DoIncDec(r1.a, isDec_inc);
+        }
+        
+        protected void inc_b() {
+            r1.b = DoIncDec(r1.b, isDec_inc);
+        }
+        
+        protected void inc_c() {
+            r1.c = DoIncDec(r1.c, isDec_inc);
+        }
+        
+        protected void inc_d() {
+            r1.d = DoIncDec(r1.d, isDec_inc);
+        }
+        
+        protected void inc_e() {
+            r1.e = DoIncDec(r1.e, isDec_inc);
+        }
+        
+        protected void inc_h() {
+            r1.h = DoIncDec(r1.h, isDec_inc);
+        }
+        
+        protected void inc_l() {
+            r1.l = DoIncDec(r1.l, isDec_inc);
+        }
+        
+        protected void inc_ixh() {
+            r1.ixh = DoIncDec(r1.ixh, isDec_inc);
+        }
+        
+        protected void inc_ixl() {
+            r1.ixl = DoIncDec(r1.ixl, isDec_inc);
+        }
+        
+        protected void inc_iyh() {
+            r1.iyh = DoIncDec(r1.iyh, isDec_inc);
+        }
+        
+        protected void inc_iyl() {
+            r1.iyl = DoIncDec(r1.iyl, isDec_inc);
+        }
+        
+        protected void inc__hl_() {
+            tStates++;
+            var value = Read8(r1.hl);
+            Write8(r1.hl, DoIncDec(value, isDec_inc));
+        }
+        protected void inc__ix_d_() {
+            tStates += 6;
+            var offset = (SByte)Read8(pc++);
+            var addr = (ushort)(r1.ix + offset);
+            var value = Read8(addr);
+            Write8(addr, DoIncDec(value, isDec_inc));
+        }
+        
+        protected void inc__iy_d_() {
+            tStates += 6;
+            var offset = (SByte)Read8(pc++);
+            var addr = (ushort)(r1.iy + offset);
+            var value = Read8(addr);
+            Write8(addr, DoIncDec(value, isDec_inc));
+        }
+        
+        protected void dec_a() {
+            r1.a = DoIncDec(r1.a, isDec_dec);
+        }
+        
+        protected void dec_b() {
+            r1.b = DoIncDec(r1.b, isDec_dec);
+        }
+        
+        protected void dec_c() {
+            r1.c = DoIncDec(r1.c, isDec_dec);
+        }
+        
+        protected void dec_d() {
+            r1.d = DoIncDec(r1.d, isDec_dec);
+        }
+        
+        protected void dec_e() {
+            r1.e = DoIncDec(r1.e, isDec_dec);
+        }
+        
+        protected void dec_h() {
+            r1.h = DoIncDec(r1.h, isDec_dec);
+        }
+        
+        protected void dec_l() {
+            r1.l = DoIncDec(r1.l, isDec_dec);
+        }
+        
+        protected void dec_ixh() {
+            r1.ixh = DoIncDec(r1.ixh, isDec_dec);
+        }
+        
+        protected void dec_ixl() {
+            r1.ixl = DoIncDec(r1.ixl, isDec_dec);
+        }
+        
+        protected void dec_iyh() {
+            r1.iyh = DoIncDec(r1.iyh, isDec_dec);
+        }
+        
+        protected void dec_iyl() {
+            r1.iyl = DoIncDec(r1.iyl, isDec_dec);
+        }
+        
+        protected void dec__hl_() {
+            tStates++;
+            var value = Read8(r1.hl);
+            Write8(r1.hl, DoIncDec(value, isDec_dec));
+        }
+        protected void dec__ix_d_() {
+            tStates += 6;
+            var offset = (SByte)Read8(pc++);
+            var addr = (ushort)(r1.ix + offset);
+            var value = Read8(addr);
+            Write8(addr, DoIncDec(value, isDec_dec));
+        }
+        
+        protected void dec__iy_d_() {
+            tStates += 6;
+            var offset = (SByte)Read8(pc++);
+            var addr = (ushort)(r1.iy + offset);
+            var value = Read8(addr);
+            Write8(addr, DoIncDec(value, isDec_dec));
+        }
+        
+        protected void inc_hl() {
+            tStates += 2;
+            r1.hl++;
+        }
+        
+        protected void dec_hl() {
+            tStates += 2;
+            r1.hl--;
+        }
+        
+        protected void inc_sp() {
+            tStates += 2;
+            r1.sp++;
+        }
+        
+        protected void dec_sp() {
+            tStates += 2;
+            r1.sp--;
+        }
+        
+        protected void inc_de() {
+            tStates += 2;
+            r1.de++;
+        }
+        
+        protected void dec_de() {
+            tStates += 2;
+            r1.de--;
+        }
+        
+        protected void inc_bc() {
+            tStates += 2;
+            r1.bc++;
+        }
+        
+        protected void dec_bc() {
+            tStates += 2;
+            r1.bc--;
+        }
+        
+        protected void inc_ix() {
+            tStates += 2;
+            r1.ix++;
+        }
+        
+        protected void dec_ix() {
+            tStates += 2;
+            r1.ix--;
+        }
+        
+        protected void inc_iy() {
+            tStates += 2;
+            r1.iy++;
+        }
+        
+        protected void dec_iy() {
+            tStates += 2;
+            r1.iy--;
+        }
+        
+
+        protected void daa() {
+            DoDAA();
+        }
+        
+        protected void cpl() {
+            r1.a = (byte)~r1.a;
+            SetFlag(f_h | f_n);
+            AdjustFlags(r1.a);
+        }
+        
+        protected void neg() {
+            var _t = r1.a;
+            r1.a = 0;
+            r1.a = DoArithmetics(_t, false, true);
+            SetFlag(f_n);
+        }
+        
+        protected void ccf() {
+            ValFlag(f_c, !GetFlag(f_c));
+            ResFlag(f_n);
+            AdjustFlags(r1.a);
+        }
+        
+        protected void scf() {
+            SetFlag(f_c);
+            ResFlag(f_h | f_n);
+            AdjustFlags(r1.a);
+        }
+        
+        protected void halt() {
+            halted = true;
+            pc--;
+        }
+        
+        protected void di() {
+            iff1 = false;
+            iff2 = false;
+            deferInt = true;
+        }
+
+        protected void ei() {
+            iff1 = true;
+            iff2 = true;
+            deferInt = true;
+        }
+        protected void im_0() {
+            im = 0;
+        }
+        
+        protected void im_1() {
+            im = 1;
+        }
+        
+        protected void im_2() {
+            im = 2;
+        }
+        
+
     }
 }

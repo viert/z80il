@@ -213,7 +213,7 @@ namespace Z80
             return value;
         }
 
-        protected byte doIncDec(byte value, bool isDec) {
+        protected byte DoIncDec(byte value, bool isDec) {
             if (isDec) {
                 ValFlag(f_pv, (value & 0x80) != 0 && ((value - 1) & 0x80) == 0);
                 value--;
@@ -402,7 +402,7 @@ namespace Z80
             return res;
         }
 
-        protected byte doRLC(byte value, bool adjust) {
+        protected byte DoRLC(byte value, bool adjust) {
             ValFlag(f_c, (value & 0x80) != 0);
             value <<= 1;
             byte cy = (byte)(GetFlag(f_c) ? 1 : 0);
@@ -415,7 +415,7 @@ namespace Z80
             return value;
         }
 
-        protected byte doRRC(byte value, bool adjust)
+        protected byte DoRRC(byte value, bool adjust)
         {
             ValFlag(f_c, (value & 0x01) != 0);
             value >>= 1;
@@ -430,7 +430,7 @@ namespace Z80
             return value;
         }
 
-        protected byte doRL(byte value, bool adjust)
+        protected byte DoRL(byte value, bool adjust)
         {
             byte cy = (byte)(GetFlag(f_c) ? 1 : 0);
             ValFlag(f_c, (value & 0x80) != 0);
@@ -445,7 +445,7 @@ namespace Z80
             return value;
         }
 
-        protected byte doRR(byte value, bool adjust)
+        protected byte DoRR(byte value, bool adjust)
         {
             byte cy = (byte)(GetFlag(f_c) ? 0x80 : 0);
             ValFlag(f_c, (value & 0x01) != 0);
@@ -460,7 +460,7 @@ namespace Z80
             return value;
         }
 
-        protected byte doSL(byte value, bool isArithmetics) {
+        protected byte DoSL(byte value, bool isArithmetics) {
             ValFlag(f_c, (value & 0x80) != 0);
             value <<= 1;
             if (isArithmetics) {
@@ -472,7 +472,7 @@ namespace Z80
             return value;
         }
          
-        protected byte doSR(byte value, bool isArithmetics) {
+        protected byte DoSR(byte value, bool isArithmetics) {
             byte bit = (byte)(value & 0x80);
             ValFlag(f_c, (value & 0x01) != 0);
             value >>= 1;
