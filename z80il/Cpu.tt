@@ -540,7 +540,13 @@ namespace Z80 {
             opcodeTableED.entries[0x76] = new OpcodeTableEntry(im_1, "im 1", new ArgType[]{});
             opcodeTableED.entries[0x5E] = new OpcodeTableEntry(im_2, "im 2", new ArgType[]{});
             opcodeTableED.entries[0x7E] = new OpcodeTableEntry(im_2, "im 2", new ArgType[]{});
-
+            
+            // ROTATE AND SHIFT
+            
+            opcodeTable.entries[0x07] = new OpcodeTableEntry(rlca, "rlca", new ArgType[]{});
+            opcodeTable.entries[0x17] = new OpcodeTableEntry(rla, "rla", new ArgType[]{});
+            opcodeTable.entries[0x0F] = new OpcodeTableEntry(rrca, "rrca", new ArgType[]{});
+            opcodeTable.entries[0x1F] = new OpcodeTableEntry(rra, "rra", new ArgType[]{});
         }
         
         protected void nop() {
@@ -1058,5 +1064,27 @@ namespace Z80 {
     }
 #>
 
+        // ROTATE AND SHIFT
+        
+<#
+    foreach (var rtt in new string[]{"rlc", "rl", "rrc", "rr"}) {
+#>
+        protected void <#= rtt #>a() {
+            r1.a = Do<#= rtt.ToUpper() #>(r1.a, false);
+        }
+        
+<#
+        foreach (var reg in new string[]{"a", "b", "c", "d", "e", "h", "l", "ixh", "ixl", "iyh", "iyl"}) {
+#>
+        protected void <#= rtt #>_<#= reg #>() {
+            r1.<#= reg #> = Do<#= rtt.ToUpper() #>(r1.<#= reg #>, false);
+        }
+        
+<#
+        }
+    }
+#>
+    
+    
     }
 }

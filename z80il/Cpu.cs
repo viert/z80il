@@ -494,7 +494,13 @@ namespace Z80 {
             opcodeTableED.entries[0x76] = new OpcodeTableEntry(im_1, "im 1", new ArgType[]{});
             opcodeTableED.entries[0x5E] = new OpcodeTableEntry(im_2, "im 2", new ArgType[]{});
             opcodeTableED.entries[0x7E] = new OpcodeTableEntry(im_2, "im 2", new ArgType[]{});
-
+            
+            // ROTATE AND SHIFT
+            
+            opcodeTable.entries[0x07] = new OpcodeTableEntry(rlca, "rlca", new ArgType[]{});
+            opcodeTable.entries[0x17] = new OpcodeTableEntry(rla, "rla", new ArgType[]{});
+            opcodeTable.entries[0x0F] = new OpcodeTableEntry(rrca, "rrca", new ArgType[]{});
+            opcodeTable.entries[0x1F] = new OpcodeTableEntry(rra, "rra", new ArgType[]{});
         }
         
         protected void nop() {
@@ -2483,5 +2489,201 @@ namespace Z80 {
         }
         
 
+        // ROTATE AND SHIFT
+        
+        protected void rlca() {
+            r1.a = DoRLC(r1.a, false);
+        }
+        
+        protected void rlc_a() {
+            r1.a = DoRLC(r1.a, false);
+        }
+        
+        protected void rlc_b() {
+            r1.b = DoRLC(r1.b, false);
+        }
+        
+        protected void rlc_c() {
+            r1.c = DoRLC(r1.c, false);
+        }
+        
+        protected void rlc_d() {
+            r1.d = DoRLC(r1.d, false);
+        }
+        
+        protected void rlc_e() {
+            r1.e = DoRLC(r1.e, false);
+        }
+        
+        protected void rlc_h() {
+            r1.h = DoRLC(r1.h, false);
+        }
+        
+        protected void rlc_l() {
+            r1.l = DoRLC(r1.l, false);
+        }
+        
+        protected void rlc_ixh() {
+            r1.ixh = DoRLC(r1.ixh, false);
+        }
+        
+        protected void rlc_ixl() {
+            r1.ixl = DoRLC(r1.ixl, false);
+        }
+        
+        protected void rlc_iyh() {
+            r1.iyh = DoRLC(r1.iyh, false);
+        }
+        
+        protected void rlc_iyl() {
+            r1.iyl = DoRLC(r1.iyl, false);
+        }
+        
+        protected void rla() {
+            r1.a = DoRL(r1.a, false);
+        }
+        
+        protected void rl_a() {
+            r1.a = DoRL(r1.a, false);
+        }
+        
+        protected void rl_b() {
+            r1.b = DoRL(r1.b, false);
+        }
+        
+        protected void rl_c() {
+            r1.c = DoRL(r1.c, false);
+        }
+        
+        protected void rl_d() {
+            r1.d = DoRL(r1.d, false);
+        }
+        
+        protected void rl_e() {
+            r1.e = DoRL(r1.e, false);
+        }
+        
+        protected void rl_h() {
+            r1.h = DoRL(r1.h, false);
+        }
+        
+        protected void rl_l() {
+            r1.l = DoRL(r1.l, false);
+        }
+        
+        protected void rl_ixh() {
+            r1.ixh = DoRL(r1.ixh, false);
+        }
+        
+        protected void rl_ixl() {
+            r1.ixl = DoRL(r1.ixl, false);
+        }
+        
+        protected void rl_iyh() {
+            r1.iyh = DoRL(r1.iyh, false);
+        }
+        
+        protected void rl_iyl() {
+            r1.iyl = DoRL(r1.iyl, false);
+        }
+        
+        protected void rrca() {
+            r1.a = DoRRC(r1.a, false);
+        }
+        
+        protected void rrc_a() {
+            r1.a = DoRRC(r1.a, false);
+        }
+        
+        protected void rrc_b() {
+            r1.b = DoRRC(r1.b, false);
+        }
+        
+        protected void rrc_c() {
+            r1.c = DoRRC(r1.c, false);
+        }
+        
+        protected void rrc_d() {
+            r1.d = DoRRC(r1.d, false);
+        }
+        
+        protected void rrc_e() {
+            r1.e = DoRRC(r1.e, false);
+        }
+        
+        protected void rrc_h() {
+            r1.h = DoRRC(r1.h, false);
+        }
+        
+        protected void rrc_l() {
+            r1.l = DoRRC(r1.l, false);
+        }
+        
+        protected void rrc_ixh() {
+            r1.ixh = DoRRC(r1.ixh, false);
+        }
+        
+        protected void rrc_ixl() {
+            r1.ixl = DoRRC(r1.ixl, false);
+        }
+        
+        protected void rrc_iyh() {
+            r1.iyh = DoRRC(r1.iyh, false);
+        }
+        
+        protected void rrc_iyl() {
+            r1.iyl = DoRRC(r1.iyl, false);
+        }
+        
+        protected void rra() {
+            r1.a = DoRR(r1.a, false);
+        }
+        
+        protected void rr_a() {
+            r1.a = DoRR(r1.a, false);
+        }
+        
+        protected void rr_b() {
+            r1.b = DoRR(r1.b, false);
+        }
+        
+        protected void rr_c() {
+            r1.c = DoRR(r1.c, false);
+        }
+        
+        protected void rr_d() {
+            r1.d = DoRR(r1.d, false);
+        }
+        
+        protected void rr_e() {
+            r1.e = DoRR(r1.e, false);
+        }
+        
+        protected void rr_h() {
+            r1.h = DoRR(r1.h, false);
+        }
+        
+        protected void rr_l() {
+            r1.l = DoRR(r1.l, false);
+        }
+        
+        protected void rr_ixh() {
+            r1.ixh = DoRR(r1.ixh, false);
+        }
+        
+        protected void rr_ixl() {
+            r1.ixl = DoRR(r1.ixl, false);
+        }
+        
+        protected void rr_iyh() {
+            r1.iyh = DoRR(r1.iyh, false);
+        }
+        
+        protected void rr_iyl() {
+            r1.iyl = DoRR(r1.iyl, false);
+        }
+        
+    
+    
     }
 }
