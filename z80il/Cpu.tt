@@ -46,7 +46,7 @@ using System;
 namespace Z80 {
     public class Cpu: BaseCpu {
 
-        public Cpu(IMemory mem) : base(mem) {
+        public Cpu(IMemory mem, IPort port) : base(mem, port) {
             
         }
 
@@ -737,7 +737,30 @@ namespace Z80 {
 <#
     }
 #>
-                           
+
+            opcodeTable.entries[0xDB] = new OpcodeTableEntry(in_a__n_, "in a, ({0})", new ArgType[]{ArgType.Byte});
+            opcodeTable.entries[0xD3] = new OpcodeTableEntry(out__n__a, "out ({0}), a", new ArgType[]{ArgType.Byte});
+            
+            opcodeTableED.entries[0x70] = new OpcodeTableEntry(in_f__c_, "in f, (c)", new ArgType[]{});
+<#
+    foreach (var rCode in RegisterMap) {
+        var opCode = 0x40 | (rCode.Key << 3);
+        var opFuncName = string.Format("in_{0}__c_", rCode.Value);
+        var dasm = string.Format("in {0}, (c)", rCode.Value);
+#>
+            opcodeTableED.entries[<#= opCode #>] = new OpcodeTableEntry(<#= opFuncName #>, "<#= dasm #>", new ArgType[]{});
+<#
+    }
+#>
+            opcodeTableED.entries[0xA2] = new OpcodeTableEntry(ini, "ini", new ArgType[]{});
+            opcodeTableED.entries[0xB2] = new OpcodeTableEntry(inir, "inir", new ArgType[]{});
+            opcodeTableED.entries[0xAA] = new OpcodeTableEntry(ind, "ind", new ArgType[]{});
+            opcodeTableED.entries[0xBA] = new OpcodeTableEntry(indr, "indr", new ArgType[]{});
+            opcodeTableED.entries[0xA3] = new OpcodeTableEntry(outi, "outi", new ArgType[]{});
+            opcodeTableED.entries[0xB3] = new OpcodeTableEntry(otir, "otir", new ArgType[]{});
+            opcodeTableED.entries[0xAB] = new OpcodeTableEntry(outd, "outd", new ArgType[]{});
+            opcodeTableED.entries[0xBB] = new OpcodeTableEntry(otdr, "otdr", new ArgType[]{});
+                                                     
         }
         
         protected void nop() {
@@ -1412,7 +1435,111 @@ namespace Z80 {
         }  
     }
 #>
-
-            
+        protected void in_a__n_() {
+            ushort port = (ushort)Read8(pc++);
+            port = (ushort)((r1.a << 8) | port);
+            r1.a = IORead(port);
+        }
+        
+        protected void out__n__a() {
+            ushort port = (ushort)Read8(pc++);
+            port = (ushort)((r1.a << 8) | port);
+            IOWrite(port, r1.a);        
+        }
+        
+        protected void ind() {
+            tStates++;
+            var value = IORead(r1.bc);
+            Write8(r1.hl--, value);
+            r1.b = DoIncDec(r1.b, isDec_dec);
+            ValFlag(f_n, (value & 0x80) != 0);
+            var fv = value + ((r1.c - 1) & 0xff);
+            ValFlag(f_h, fv > 0xFF);
+            ValFlag(f_c, fv > 0xFF);
+            ValFlag(f_pv, parityBit[(fv & 7) ^ r1.b]);
+        }
+        
+        protected void indr() {
+            ind();
+            if (r1.b != 0) {
+                tStates += 5;
+                pc -= 2;
+            }
+        }
+        
+        protected void ini() {
+            tStates++;
+            var value = IORead(r1.bc);
+            Write8(r1.hl++, value);
+            r1.b = DoIncDec(r1.b, isDec_dec);
+            ValFlag(f_n, (value & 0x80) != 0);
+            var fv = value + ((r1.c + 1) & 0xff);
+            ValFlag(f_h, fv > 0xFF);
+            ValFlag(f_c, fv > 0xFF);
+            ValFlag(f_pv, parityBit[(fv & 7) ^ r1.b]);
+        }
+        
+        protected void inir() {
+            ini();
+            if (r1.b != 0) {
+                tStates += 5;
+                pc -= 2;
+            }
+        }
+        
+        protected void outi() {
+            tStates++;
+            let value = Read8(r1.hl++);
+            r1.b = DoIncDec(r1.b, isDec_dec);
+            IOWrite(r1.bc, value);
+            var fv = value + r1.l;
+            ValFlag(f_n, (value & 0x80) != 0);
+            ValFlag(f_h, fv > 0xFF);
+            ValFlag(f_c, fv > 0xFF);
+            ValFlag(f_pv, parityBit[(fv & 7) ^ r1.b]);
+            AdjustFlags(r1.b);
+        }
+        
+        protected void otir() {
+            outi();
+            if (r1.b != 0) {
+                tStates += 5;
+                pc -= 2;
+            }
+        }
+        
+        protected void outd() {
+            tStates++;
+            let value = Read8(r1.hl--);
+            r1.b = DoIncDec(r1.b, isDec_dec);
+            IOWrite(r1.bc, value);
+            var fv = value + r1.l;
+            ValFlag(f_n, (value & 0x80) != 0);
+            ValFlag(f_h, fv > 0xFF);
+            ValFlag(f_c, fv > 0xFF);
+            ValFlag(f_pv, parityBit[(fv & 7) ^ r1.b]);
+            AdjustFlags(r1.b);
+        }
+        
+        protected void otdr() {
+            outd();
+            if (r1.b != 0) {
+                tStates += 5;
+                pc -= 2;
+            }
+        }
+        
+<#
+    foreach (var reg in new string[]{"a", "b", "c", "d", "e", "f", "h", "l"}) {
+#>
+        protected void in_<#= reg #>__c_() {
+            r1.<#= reg #> = IORead(r1.bc);
+            ResFlag(f_h | f_n);
+            AdjustFlagsSZP(r1.<#= reg #>);
+            AdjustFlags(r1.<#= reg #>);
+        }    
+<#
+    }       
+#>      
     }
 }

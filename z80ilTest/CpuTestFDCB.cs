@@ -8,10 +8,12 @@ namespace z80ilTest
     {
         readonly Cpu cpu;
         SimpleMemory memory;
+        FakePort port;
 
         public CpuTestFDCB() {
             memory = new SimpleMemory();
-            cpu = new Cpu(memory);
+            port = new FakePort();
+            cpu = new Cpu(memory, port);
         }
 
         [TestMethod]

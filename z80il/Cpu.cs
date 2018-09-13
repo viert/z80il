@@ -3,7 +3,7 @@
 namespace Z80 {
     public class Cpu: BaseCpu {
 
-        public Cpu(IMemory mem) : base(mem) {
+        public Cpu(IMemory mem, IPort port) : base(mem, port) {
             
         }
 
@@ -949,7 +949,27 @@ namespace Z80 {
             opcodeTableCB.entries[190] = new OpcodeTableEntry(res_7__hl_, "res 7, (hl)", new ArgType[]{});
             opcodeTableDDCB.entries[190] = new OpcodeTableEntry(res_7__ix_d_, "res 7, (ix+{0})", new ArgType[]{ArgType.Offset});
             opcodeTableFDCB.entries[190] = new OpcodeTableEntry(res_7__iy_d_, "res 7, (iy+{0})", new ArgType[]{ArgType.Offset});
-                           
+
+            opcodeTable.entries[0xDB] = new OpcodeTableEntry(in_a__n_, "in a, ({0})", new ArgType[]{ArgType.Byte});
+            opcodeTable.entries[0xD3] = new OpcodeTableEntry(out__n__a, "out ({0}), a", new ArgType[]{ArgType.Byte});
+            
+            opcodeTableED.entries[0x70] = new OpcodeTableEntry(in_f__c_, "in f, (c)", new ArgType[]{});
+            opcodeTableED.entries[64] = new OpcodeTableEntry(in_b__c_, "in b, (c)", new ArgType[]{});
+            opcodeTableED.entries[72] = new OpcodeTableEntry(in_c__c_, "in c, (c)", new ArgType[]{});
+            opcodeTableED.entries[80] = new OpcodeTableEntry(in_d__c_, "in d, (c)", new ArgType[]{});
+            opcodeTableED.entries[88] = new OpcodeTableEntry(in_e__c_, "in e, (c)", new ArgType[]{});
+            opcodeTableED.entries[96] = new OpcodeTableEntry(in_h__c_, "in h, (c)", new ArgType[]{});
+            opcodeTableED.entries[104] = new OpcodeTableEntry(in_l__c_, "in l, (c)", new ArgType[]{});
+            opcodeTableED.entries[120] = new OpcodeTableEntry(in_a__c_, "in a, (c)", new ArgType[]{});
+            opcodeTableED.entries[0xA2] = new OpcodeTableEntry(ini, "ini", new ArgType[]{});
+            opcodeTableED.entries[0xB2] = new OpcodeTableEntry(inir, "inir", new ArgType[]{});
+            opcodeTableED.entries[0xAA] = new OpcodeTableEntry(ind, "ind", new ArgType[]{});
+            opcodeTableED.entries[0xBA] = new OpcodeTableEntry(indr, "indr", new ArgType[]{});
+            opcodeTableED.entries[0xA3] = new OpcodeTableEntry(outi, "outi", new ArgType[]{});
+            opcodeTableED.entries[0xB3] = new OpcodeTableEntry(otir, "otir", new ArgType[]{});
+            opcodeTableED.entries[0xAB] = new OpcodeTableEntry(outd, "outd", new ArgType[]{});
+            opcodeTableED.entries[0xBB] = new OpcodeTableEntry(otdr, "otdr", new ArgType[]{});
+                                                     
         }
         
         protected void nop() {
@@ -4614,7 +4634,148 @@ namespace Z80 {
             Write8(addr, DoSetRes(bitStateRES, 7, Read8(addr)));
         }
         
-
-            
+        protected void in_a__n_() {
+            ushort port = (ushort)Read8(pc++);
+            port = (ushort)((r1.a << 8) | port);
+            r1.a = IORead(port);
+        }
+        
+        protected void out__n__a() {
+            ushort port = (ushort)Read8(pc++);
+            port = (ushort)((r1.a << 8) | port);
+            IOWrite(port, r1.a);        
+        }
+        
+        protected void ind() {
+            tStates++;
+            var value = IORead(r1.bc);
+            Write8(r1.hl--, value);
+            r1.b = DoIncDec(r1.b, isDec_dec);
+            ValFlag(f_n, (value & 0x80) != 0);
+            var fv = value + ((r1.c - 1) & 0xff);
+            ValFlag(f_h, fv > 0xFF);
+            ValFlag(f_c, fv > 0xFF);
+            ValFlag(f_pv, parityBit[(fv & 7) ^ r1.b]);
+        }
+        
+        protected void indr() {
+            ind();
+            if (r1.b != 0) {
+                tStates += 5;
+                pc -= 2;
+            }
+        }
+        
+        protected void ini() {
+            tStates++;
+            var value = IORead(r1.bc);
+            Write8(r1.hl++, value);
+            r1.b = DoIncDec(r1.b, isDec_dec);
+            ValFlag(f_n, (value & 0x80) != 0);
+            var fv = value + ((r1.c + 1) & 0xff);
+            ValFlag(f_h, fv > 0xFF);
+            ValFlag(f_c, fv > 0xFF);
+            ValFlag(f_pv, parityBit[(fv & 7) ^ r1.b]);
+        }
+        
+        protected void inir() {
+            ini();
+            if (r1.b != 0) {
+                tStates += 5;
+                pc -= 2;
+            }
+        }
+        
+        protected void outi() {
+            tStates++;
+            let value = Read8(r1.hl++);
+            r1.b = DoIncDec(r1.b, isDec_dec);
+            IOWrite(r1.bc, value);
+            var fv = value + r1.l;
+            ValFlag(f_n, (value & 0x80) != 0);
+            ValFlag(f_h, fv > 0xFF);
+            ValFlag(f_c, fv > 0xFF);
+            ValFlag(f_pv, parityBit[(fv & 7) ^ r1.b]);
+            AdjustFlags(r1.b);
+        }
+        
+        protected void otir() {
+            outi();
+            if (r1.b != 0) {
+                tStates += 5;
+                pc -= 2;
+            }
+        }
+        
+        protected void outd() {
+            tStates++;
+            let value = Read8(r1.hl--);
+            r1.b = DoIncDec(r1.b, isDec_dec);
+            IOWrite(r1.bc, value);
+            var fv = value + r1.l;
+            ValFlag(f_n, (value & 0x80) != 0);
+            ValFlag(f_h, fv > 0xFF);
+            ValFlag(f_c, fv > 0xFF);
+            ValFlag(f_pv, parityBit[(fv & 7) ^ r1.b]);
+            AdjustFlags(r1.b);
+        }
+        
+        protected void otdr() {
+            outd();
+            if (r1.b != 0) {
+                tStates += 5;
+                pc -= 2;
+            }
+        }
+        
+        protected void in_a__c_() {
+            r1.a = IORead(r1.bc);
+            ResFlag(f_h | f_n);
+            AdjustFlagsSZP(r1.a);
+            AdjustFlags(r1.a);
+        }    
+        protected void in_b__c_() {
+            r1.b = IORead(r1.bc);
+            ResFlag(f_h | f_n);
+            AdjustFlagsSZP(r1.b);
+            AdjustFlags(r1.b);
+        }    
+        protected void in_c__c_() {
+            r1.c = IORead(r1.bc);
+            ResFlag(f_h | f_n);
+            AdjustFlagsSZP(r1.c);
+            AdjustFlags(r1.c);
+        }    
+        protected void in_d__c_() {
+            r1.d = IORead(r1.bc);
+            ResFlag(f_h | f_n);
+            AdjustFlagsSZP(r1.d);
+            AdjustFlags(r1.d);
+        }    
+        protected void in_e__c_() {
+            r1.e = IORead(r1.bc);
+            ResFlag(f_h | f_n);
+            AdjustFlagsSZP(r1.e);
+            AdjustFlags(r1.e);
+        }    
+        protected void in_f__c_() {
+            r1.f = IORead(r1.bc);
+            ResFlag(f_h | f_n);
+            AdjustFlagsSZP(r1.f);
+            AdjustFlags(r1.f);
+        }    
+        protected void in_h__c_() {
+            r1.h = IORead(r1.bc);
+            ResFlag(f_h | f_n);
+            AdjustFlagsSZP(r1.h);
+            AdjustFlags(r1.h);
+        }    
+        protected void in_l__c_() {
+            r1.l = IORead(r1.bc);
+            ResFlag(f_h | f_n);
+            AdjustFlagsSZP(r1.l);
+            AdjustFlags(r1.l);
+        }    
+      
     }
 }

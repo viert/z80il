@@ -84,6 +84,7 @@ namespace Z80
         /* Code generation helpers end */
 
         protected IMemory memory;
+        protected IPort io;
 
         // Registers
         public RegisterSet r1;
@@ -113,6 +114,16 @@ namespace Z80
         protected bool intRequested;
         protected bool deferInt;
         protected bool execIntVector;
+
+        protected byte IORead(ushort addr) {
+            tStates += 4;
+            return io.Read(addr);
+        }
+
+        protected void IOWrite(ushort addr, byte value) {
+            tStates += 4;
+            io.Write(addr, value);
+        }
 
         protected byte Read8(ushort addr) {
             tStates += 3;
@@ -511,8 +522,9 @@ namespace Z80
 
         // Public methods
         // Constructor
-        public BaseCpu(IMemory mem)
+        public BaseCpu(IMemory mem, IPort port)
         {
+            io = port;
             memory = mem;
             CreateTables();
         }
