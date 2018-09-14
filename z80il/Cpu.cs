@@ -12,54 +12,250 @@ namespace Z80 {
 
             // LD r, r'
             opcodeTable.entries[64] = new OpcodeTableEntry(ld_b_b, "ld b, b", new ArgType[]{});
+            opcodeTable.entries[221].nextTable.entries[64] =
+                new OpcodeTableEntry(ld_b_b, "ld b, b", new ArgType[]{});
+            opcodeTable.entries[253].nextTable.entries[64] =
+                new OpcodeTableEntry(ld_b_b, "ld b, b", new ArgType[]{});
             opcodeTable.entries[65] = new OpcodeTableEntry(ld_b_c, "ld b, c", new ArgType[]{});
+            opcodeTable.entries[221].nextTable.entries[65] =
+                new OpcodeTableEntry(ld_b_c, "ld b, c", new ArgType[]{});
+            opcodeTable.entries[253].nextTable.entries[65] =
+                new OpcodeTableEntry(ld_b_c, "ld b, c", new ArgType[]{});
             opcodeTable.entries[66] = new OpcodeTableEntry(ld_b_d, "ld b, d", new ArgType[]{});
+            opcodeTable.entries[221].nextTable.entries[66] =
+                new OpcodeTableEntry(ld_b_d, "ld b, d", new ArgType[]{});
+            opcodeTable.entries[253].nextTable.entries[66] =
+                new OpcodeTableEntry(ld_b_d, "ld b, d", new ArgType[]{});
             opcodeTable.entries[67] = new OpcodeTableEntry(ld_b_e, "ld b, e", new ArgType[]{});
+            opcodeTable.entries[221].nextTable.entries[67] =
+                new OpcodeTableEntry(ld_b_e, "ld b, e", new ArgType[]{});
+            opcodeTable.entries[253].nextTable.entries[67] =
+                new OpcodeTableEntry(ld_b_e, "ld b, e", new ArgType[]{});
             opcodeTable.entries[68] = new OpcodeTableEntry(ld_b_h, "ld b, h", new ArgType[]{});
+            opcodeTable.entries[221].nextTable.entries[68] =
+                new OpcodeTableEntry(ld_b_ixh, "ld b, ixh", new ArgType[]{});
+            opcodeTable.entries[253].nextTable.entries[68] =
+                new OpcodeTableEntry(ld_b_iyh, "ld b, iyh", new ArgType[]{});
             opcodeTable.entries[69] = new OpcodeTableEntry(ld_b_l, "ld b, l", new ArgType[]{});
+            opcodeTable.entries[221].nextTable.entries[69] =
+                new OpcodeTableEntry(ld_b_ixl, "ld b, ixl", new ArgType[]{});
+            opcodeTable.entries[253].nextTable.entries[69] =
+                new OpcodeTableEntry(ld_b_iyl, "ld b, iyl", new ArgType[]{});
             opcodeTable.entries[71] = new OpcodeTableEntry(ld_b_a, "ld b, a", new ArgType[]{});
+            opcodeTable.entries[221].nextTable.entries[71] =
+                new OpcodeTableEntry(ld_b_a, "ld b, a", new ArgType[]{});
+            opcodeTable.entries[253].nextTable.entries[71] =
+                new OpcodeTableEntry(ld_b_a, "ld b, a", new ArgType[]{});
             opcodeTable.entries[72] = new OpcodeTableEntry(ld_c_b, "ld c, b", new ArgType[]{});
+            opcodeTable.entries[221].nextTable.entries[72] =
+                new OpcodeTableEntry(ld_c_b, "ld c, b", new ArgType[]{});
+            opcodeTable.entries[253].nextTable.entries[72] =
+                new OpcodeTableEntry(ld_c_b, "ld c, b", new ArgType[]{});
             opcodeTable.entries[73] = new OpcodeTableEntry(ld_c_c, "ld c, c", new ArgType[]{});
+            opcodeTable.entries[221].nextTable.entries[73] =
+                new OpcodeTableEntry(ld_c_c, "ld c, c", new ArgType[]{});
+            opcodeTable.entries[253].nextTable.entries[73] =
+                new OpcodeTableEntry(ld_c_c, "ld c, c", new ArgType[]{});
             opcodeTable.entries[74] = new OpcodeTableEntry(ld_c_d, "ld c, d", new ArgType[]{});
+            opcodeTable.entries[221].nextTable.entries[74] =
+                new OpcodeTableEntry(ld_c_d, "ld c, d", new ArgType[]{});
+            opcodeTable.entries[253].nextTable.entries[74] =
+                new OpcodeTableEntry(ld_c_d, "ld c, d", new ArgType[]{});
             opcodeTable.entries[75] = new OpcodeTableEntry(ld_c_e, "ld c, e", new ArgType[]{});
+            opcodeTable.entries[221].nextTable.entries[75] =
+                new OpcodeTableEntry(ld_c_e, "ld c, e", new ArgType[]{});
+            opcodeTable.entries[253].nextTable.entries[75] =
+                new OpcodeTableEntry(ld_c_e, "ld c, e", new ArgType[]{});
             opcodeTable.entries[76] = new OpcodeTableEntry(ld_c_h, "ld c, h", new ArgType[]{});
+            opcodeTable.entries[221].nextTable.entries[76] =
+                new OpcodeTableEntry(ld_c_ixh, "ld c, ixh", new ArgType[]{});
+            opcodeTable.entries[253].nextTable.entries[76] =
+                new OpcodeTableEntry(ld_c_iyh, "ld c, iyh", new ArgType[]{});
             opcodeTable.entries[77] = new OpcodeTableEntry(ld_c_l, "ld c, l", new ArgType[]{});
+            opcodeTable.entries[221].nextTable.entries[77] =
+                new OpcodeTableEntry(ld_c_ixl, "ld c, ixl", new ArgType[]{});
+            opcodeTable.entries[253].nextTable.entries[77] =
+                new OpcodeTableEntry(ld_c_iyl, "ld c, iyl", new ArgType[]{});
             opcodeTable.entries[79] = new OpcodeTableEntry(ld_c_a, "ld c, a", new ArgType[]{});
+            opcodeTable.entries[221].nextTable.entries[79] =
+                new OpcodeTableEntry(ld_c_a, "ld c, a", new ArgType[]{});
+            opcodeTable.entries[253].nextTable.entries[79] =
+                new OpcodeTableEntry(ld_c_a, "ld c, a", new ArgType[]{});
             opcodeTable.entries[80] = new OpcodeTableEntry(ld_d_b, "ld d, b", new ArgType[]{});
+            opcodeTable.entries[221].nextTable.entries[80] =
+                new OpcodeTableEntry(ld_d_b, "ld d, b", new ArgType[]{});
+            opcodeTable.entries[253].nextTable.entries[80] =
+                new OpcodeTableEntry(ld_d_b, "ld d, b", new ArgType[]{});
             opcodeTable.entries[81] = new OpcodeTableEntry(ld_d_c, "ld d, c", new ArgType[]{});
+            opcodeTable.entries[221].nextTable.entries[81] =
+                new OpcodeTableEntry(ld_d_c, "ld d, c", new ArgType[]{});
+            opcodeTable.entries[253].nextTable.entries[81] =
+                new OpcodeTableEntry(ld_d_c, "ld d, c", new ArgType[]{});
             opcodeTable.entries[82] = new OpcodeTableEntry(ld_d_d, "ld d, d", new ArgType[]{});
+            opcodeTable.entries[221].nextTable.entries[82] =
+                new OpcodeTableEntry(ld_d_d, "ld d, d", new ArgType[]{});
+            opcodeTable.entries[253].nextTable.entries[82] =
+                new OpcodeTableEntry(ld_d_d, "ld d, d", new ArgType[]{});
             opcodeTable.entries[83] = new OpcodeTableEntry(ld_d_e, "ld d, e", new ArgType[]{});
+            opcodeTable.entries[221].nextTable.entries[83] =
+                new OpcodeTableEntry(ld_d_e, "ld d, e", new ArgType[]{});
+            opcodeTable.entries[253].nextTable.entries[83] =
+                new OpcodeTableEntry(ld_d_e, "ld d, e", new ArgType[]{});
             opcodeTable.entries[84] = new OpcodeTableEntry(ld_d_h, "ld d, h", new ArgType[]{});
+            opcodeTable.entries[221].nextTable.entries[84] =
+                new OpcodeTableEntry(ld_d_ixh, "ld d, ixh", new ArgType[]{});
+            opcodeTable.entries[253].nextTable.entries[84] =
+                new OpcodeTableEntry(ld_d_iyh, "ld d, iyh", new ArgType[]{});
             opcodeTable.entries[85] = new OpcodeTableEntry(ld_d_l, "ld d, l", new ArgType[]{});
+            opcodeTable.entries[221].nextTable.entries[85] =
+                new OpcodeTableEntry(ld_d_ixl, "ld d, ixl", new ArgType[]{});
+            opcodeTable.entries[253].nextTable.entries[85] =
+                new OpcodeTableEntry(ld_d_iyl, "ld d, iyl", new ArgType[]{});
             opcodeTable.entries[87] = new OpcodeTableEntry(ld_d_a, "ld d, a", new ArgType[]{});
+            opcodeTable.entries[221].nextTable.entries[87] =
+                new OpcodeTableEntry(ld_d_a, "ld d, a", new ArgType[]{});
+            opcodeTable.entries[253].nextTable.entries[87] =
+                new OpcodeTableEntry(ld_d_a, "ld d, a", new ArgType[]{});
             opcodeTable.entries[88] = new OpcodeTableEntry(ld_e_b, "ld e, b", new ArgType[]{});
+            opcodeTable.entries[221].nextTable.entries[88] =
+                new OpcodeTableEntry(ld_e_b, "ld e, b", new ArgType[]{});
+            opcodeTable.entries[253].nextTable.entries[88] =
+                new OpcodeTableEntry(ld_e_b, "ld e, b", new ArgType[]{});
             opcodeTable.entries[89] = new OpcodeTableEntry(ld_e_c, "ld e, c", new ArgType[]{});
+            opcodeTable.entries[221].nextTable.entries[89] =
+                new OpcodeTableEntry(ld_e_c, "ld e, c", new ArgType[]{});
+            opcodeTable.entries[253].nextTable.entries[89] =
+                new OpcodeTableEntry(ld_e_c, "ld e, c", new ArgType[]{});
             opcodeTable.entries[90] = new OpcodeTableEntry(ld_e_d, "ld e, d", new ArgType[]{});
+            opcodeTable.entries[221].nextTable.entries[90] =
+                new OpcodeTableEntry(ld_e_d, "ld e, d", new ArgType[]{});
+            opcodeTable.entries[253].nextTable.entries[90] =
+                new OpcodeTableEntry(ld_e_d, "ld e, d", new ArgType[]{});
             opcodeTable.entries[91] = new OpcodeTableEntry(ld_e_e, "ld e, e", new ArgType[]{});
+            opcodeTable.entries[221].nextTable.entries[91] =
+                new OpcodeTableEntry(ld_e_e, "ld e, e", new ArgType[]{});
+            opcodeTable.entries[253].nextTable.entries[91] =
+                new OpcodeTableEntry(ld_e_e, "ld e, e", new ArgType[]{});
             opcodeTable.entries[92] = new OpcodeTableEntry(ld_e_h, "ld e, h", new ArgType[]{});
+            opcodeTable.entries[221].nextTable.entries[92] =
+                new OpcodeTableEntry(ld_e_ixh, "ld e, ixh", new ArgType[]{});
+            opcodeTable.entries[253].nextTable.entries[92] =
+                new OpcodeTableEntry(ld_e_iyh, "ld e, iyh", new ArgType[]{});
             opcodeTable.entries[93] = new OpcodeTableEntry(ld_e_l, "ld e, l", new ArgType[]{});
+            opcodeTable.entries[221].nextTable.entries[93] =
+                new OpcodeTableEntry(ld_e_ixl, "ld e, ixl", new ArgType[]{});
+            opcodeTable.entries[253].nextTable.entries[93] =
+                new OpcodeTableEntry(ld_e_iyl, "ld e, iyl", new ArgType[]{});
             opcodeTable.entries[95] = new OpcodeTableEntry(ld_e_a, "ld e, a", new ArgType[]{});
+            opcodeTable.entries[221].nextTable.entries[95] =
+                new OpcodeTableEntry(ld_e_a, "ld e, a", new ArgType[]{});
+            opcodeTable.entries[253].nextTable.entries[95] =
+                new OpcodeTableEntry(ld_e_a, "ld e, a", new ArgType[]{});
             opcodeTable.entries[96] = new OpcodeTableEntry(ld_h_b, "ld h, b", new ArgType[]{});
+            opcodeTable.entries[221].nextTable.entries[96] =
+                new OpcodeTableEntry(ld_ixh_b, "ld ixh, b", new ArgType[]{});
+            opcodeTable.entries[253].nextTable.entries[96] =
+                new OpcodeTableEntry(ld_iyh_b, "ld iyh, b", new ArgType[]{});
             opcodeTable.entries[97] = new OpcodeTableEntry(ld_h_c, "ld h, c", new ArgType[]{});
+            opcodeTable.entries[221].nextTable.entries[97] =
+                new OpcodeTableEntry(ld_ixh_c, "ld ixh, c", new ArgType[]{});
+            opcodeTable.entries[253].nextTable.entries[97] =
+                new OpcodeTableEntry(ld_iyh_c, "ld iyh, c", new ArgType[]{});
             opcodeTable.entries[98] = new OpcodeTableEntry(ld_h_d, "ld h, d", new ArgType[]{});
+            opcodeTable.entries[221].nextTable.entries[98] =
+                new OpcodeTableEntry(ld_ixh_d, "ld ixh, d", new ArgType[]{});
+            opcodeTable.entries[253].nextTable.entries[98] =
+                new OpcodeTableEntry(ld_iyh_d, "ld iyh, d", new ArgType[]{});
             opcodeTable.entries[99] = new OpcodeTableEntry(ld_h_e, "ld h, e", new ArgType[]{});
+            opcodeTable.entries[221].nextTable.entries[99] =
+                new OpcodeTableEntry(ld_ixh_e, "ld ixh, e", new ArgType[]{});
+            opcodeTable.entries[253].nextTable.entries[99] =
+                new OpcodeTableEntry(ld_iyh_e, "ld iyh, e", new ArgType[]{});
             opcodeTable.entries[100] = new OpcodeTableEntry(ld_h_h, "ld h, h", new ArgType[]{});
+            opcodeTable.entries[221].nextTable.entries[100] =
+                new OpcodeTableEntry(ld_ixh_ixh, "ld ixh, ixh", new ArgType[]{});
+            opcodeTable.entries[253].nextTable.entries[100] =
+                new OpcodeTableEntry(ld_iyh_iyh, "ld iyh, iyh", new ArgType[]{});
             opcodeTable.entries[101] = new OpcodeTableEntry(ld_h_l, "ld h, l", new ArgType[]{});
+            opcodeTable.entries[221].nextTable.entries[101] =
+                new OpcodeTableEntry(ld_ixh_ixl, "ld ixh, ixl", new ArgType[]{});
+            opcodeTable.entries[253].nextTable.entries[101] =
+                new OpcodeTableEntry(ld_iyh_iyl, "ld iyh, iyl", new ArgType[]{});
             opcodeTable.entries[103] = new OpcodeTableEntry(ld_h_a, "ld h, a", new ArgType[]{});
+            opcodeTable.entries[221].nextTable.entries[103] =
+                new OpcodeTableEntry(ld_ixh_a, "ld ixh, a", new ArgType[]{});
+            opcodeTable.entries[253].nextTable.entries[103] =
+                new OpcodeTableEntry(ld_iyh_a, "ld iyh, a", new ArgType[]{});
             opcodeTable.entries[104] = new OpcodeTableEntry(ld_l_b, "ld l, b", new ArgType[]{});
+            opcodeTable.entries[221].nextTable.entries[104] =
+                new OpcodeTableEntry(ld_ixl_b, "ld ixl, b", new ArgType[]{});
+            opcodeTable.entries[253].nextTable.entries[104] =
+                new OpcodeTableEntry(ld_iyl_b, "ld iyl, b", new ArgType[]{});
             opcodeTable.entries[105] = new OpcodeTableEntry(ld_l_c, "ld l, c", new ArgType[]{});
+            opcodeTable.entries[221].nextTable.entries[105] =
+                new OpcodeTableEntry(ld_ixl_c, "ld ixl, c", new ArgType[]{});
+            opcodeTable.entries[253].nextTable.entries[105] =
+                new OpcodeTableEntry(ld_iyl_c, "ld iyl, c", new ArgType[]{});
             opcodeTable.entries[106] = new OpcodeTableEntry(ld_l_d, "ld l, d", new ArgType[]{});
+            opcodeTable.entries[221].nextTable.entries[106] =
+                new OpcodeTableEntry(ld_ixl_d, "ld ixl, d", new ArgType[]{});
+            opcodeTable.entries[253].nextTable.entries[106] =
+                new OpcodeTableEntry(ld_iyl_d, "ld iyl, d", new ArgType[]{});
             opcodeTable.entries[107] = new OpcodeTableEntry(ld_l_e, "ld l, e", new ArgType[]{});
+            opcodeTable.entries[221].nextTable.entries[107] =
+                new OpcodeTableEntry(ld_ixl_e, "ld ixl, e", new ArgType[]{});
+            opcodeTable.entries[253].nextTable.entries[107] =
+                new OpcodeTableEntry(ld_iyl_e, "ld iyl, e", new ArgType[]{});
             opcodeTable.entries[108] = new OpcodeTableEntry(ld_l_h, "ld l, h", new ArgType[]{});
+            opcodeTable.entries[221].nextTable.entries[108] =
+                new OpcodeTableEntry(ld_ixl_ixh, "ld ixl, ixh", new ArgType[]{});
+            opcodeTable.entries[253].nextTable.entries[108] =
+                new OpcodeTableEntry(ld_iyl_iyh, "ld iyl, iyh", new ArgType[]{});
             opcodeTable.entries[109] = new OpcodeTableEntry(ld_l_l, "ld l, l", new ArgType[]{});
+            opcodeTable.entries[221].nextTable.entries[109] =
+                new OpcodeTableEntry(ld_ixl_ixl, "ld ixl, ixl", new ArgType[]{});
+            opcodeTable.entries[253].nextTable.entries[109] =
+                new OpcodeTableEntry(ld_iyl_iyl, "ld iyl, iyl", new ArgType[]{});
             opcodeTable.entries[111] = new OpcodeTableEntry(ld_l_a, "ld l, a", new ArgType[]{});
+            opcodeTable.entries[221].nextTable.entries[111] =
+                new OpcodeTableEntry(ld_ixl_a, "ld ixl, a", new ArgType[]{});
+            opcodeTable.entries[253].nextTable.entries[111] =
+                new OpcodeTableEntry(ld_iyl_a, "ld iyl, a", new ArgType[]{});
             opcodeTable.entries[120] = new OpcodeTableEntry(ld_a_b, "ld a, b", new ArgType[]{});
+            opcodeTable.entries[221].nextTable.entries[120] =
+                new OpcodeTableEntry(ld_a_b, "ld a, b", new ArgType[]{});
+            opcodeTable.entries[253].nextTable.entries[120] =
+                new OpcodeTableEntry(ld_a_b, "ld a, b", new ArgType[]{});
             opcodeTable.entries[121] = new OpcodeTableEntry(ld_a_c, "ld a, c", new ArgType[]{});
+            opcodeTable.entries[221].nextTable.entries[121] =
+                new OpcodeTableEntry(ld_a_c, "ld a, c", new ArgType[]{});
+            opcodeTable.entries[253].nextTable.entries[121] =
+                new OpcodeTableEntry(ld_a_c, "ld a, c", new ArgType[]{});
             opcodeTable.entries[122] = new OpcodeTableEntry(ld_a_d, "ld a, d", new ArgType[]{});
+            opcodeTable.entries[221].nextTable.entries[122] =
+                new OpcodeTableEntry(ld_a_d, "ld a, d", new ArgType[]{});
+            opcodeTable.entries[253].nextTable.entries[122] =
+                new OpcodeTableEntry(ld_a_d, "ld a, d", new ArgType[]{});
             opcodeTable.entries[123] = new OpcodeTableEntry(ld_a_e, "ld a, e", new ArgType[]{});
+            opcodeTable.entries[221].nextTable.entries[123] =
+                new OpcodeTableEntry(ld_a_e, "ld a, e", new ArgType[]{});
+            opcodeTable.entries[253].nextTable.entries[123] =
+                new OpcodeTableEntry(ld_a_e, "ld a, e", new ArgType[]{});
             opcodeTable.entries[124] = new OpcodeTableEntry(ld_a_h, "ld a, h", new ArgType[]{});
+            opcodeTable.entries[221].nextTable.entries[124] =
+                new OpcodeTableEntry(ld_a_ixh, "ld a, ixh", new ArgType[]{});
+            opcodeTable.entries[253].nextTable.entries[124] =
+                new OpcodeTableEntry(ld_a_iyh, "ld a, iyh", new ArgType[]{});
             opcodeTable.entries[125] = new OpcodeTableEntry(ld_a_l, "ld a, l", new ArgType[]{});
+            opcodeTable.entries[221].nextTable.entries[125] =
+                new OpcodeTableEntry(ld_a_ixl, "ld a, ixl", new ArgType[]{});
+            opcodeTable.entries[253].nextTable.entries[125] =
+                new OpcodeTableEntry(ld_a_iyl, "ld a, iyl", new ArgType[]{});
             opcodeTable.entries[127] = new OpcodeTableEntry(ld_a_a, "ld a, a", new ArgType[]{});
+            opcodeTable.entries[221].nextTable.entries[127] =
+                new OpcodeTableEntry(ld_a_a, "ld a, a", new ArgType[]{});
+            opcodeTable.entries[253].nextTable.entries[127] =
+                new OpcodeTableEntry(ld_a_a, "ld a, a", new ArgType[]{});
             // NOP
             opcodeTable.entries[0x00] = new OpcodeTableEntry(nop, "nop", new ArgType[]{});
 
@@ -315,33 +511,33 @@ namespace Z80 {
 
 			// ADD HL, BC/DE/HL/SP
 			opcodeTable.entries[9] = new OpcodeTableEntry(add_hl_bc, "add hl, bc", new ArgType[]{});
+            opcodeTable.entries[221].nextTable.entries[9] = 
+                new OpcodeTableEntry(add_ix_bc, "add ix, bc", new ArgType[]{});
+            opcodeTable.entries[253].nextTable.entries[9] = 
+                new OpcodeTableEntry(add_iy_bc, "add iy, bc", new ArgType[]{});
 			opcodeTableED.entries[74] = new OpcodeTableEntry(adc_hl_bc, "adc hl, bc", new ArgType[]{});
 			opcodeTableED.entries[66] = new OpcodeTableEntry(sbc_hl_bc, "sbc hl, bc", new ArgType[]{});
-			opcodeTable.entries[221].nextTable.entries[66] = 
-				new OpcodeTableEntry(add_ix_bc, "add ix, bc", new ArgType[]{});
-			opcodeTable.entries[253].nextTable.entries[66] = 
-				new OpcodeTableEntry(add_iy_bc, "add iy, bc", new ArgType[]{});
 			opcodeTable.entries[25] = new OpcodeTableEntry(add_hl_de, "add hl, de", new ArgType[]{});
+            opcodeTable.entries[221].nextTable.entries[25] = 
+                new OpcodeTableEntry(add_ix_de, "add ix, de", new ArgType[]{});
+            opcodeTable.entries[253].nextTable.entries[25] = 
+                new OpcodeTableEntry(add_iy_de, "add iy, de", new ArgType[]{});
 			opcodeTableED.entries[90] = new OpcodeTableEntry(adc_hl_de, "adc hl, de", new ArgType[]{});
 			opcodeTableED.entries[82] = new OpcodeTableEntry(sbc_hl_de, "sbc hl, de", new ArgType[]{});
-			opcodeTable.entries[221].nextTable.entries[82] = 
-				new OpcodeTableEntry(add_ix_de, "add ix, de", new ArgType[]{});
-			opcodeTable.entries[253].nextTable.entries[82] = 
-				new OpcodeTableEntry(add_iy_de, "add iy, de", new ArgType[]{});
 			opcodeTable.entries[41] = new OpcodeTableEntry(add_hl_hl, "add hl, hl", new ArgType[]{});
+            opcodeTable.entries[221].nextTable.entries[41] = 
+                new OpcodeTableEntry(add_ix_ix, "add ix, ix", new ArgType[]{});
+            opcodeTable.entries[253].nextTable.entries[41] = 
+                new OpcodeTableEntry(add_iy_iy, "add iy, iy", new ArgType[]{});
 			opcodeTableED.entries[106] = new OpcodeTableEntry(adc_hl_hl, "adc hl, hl", new ArgType[]{});
 			opcodeTableED.entries[98] = new OpcodeTableEntry(sbc_hl_hl, "sbc hl, hl", new ArgType[]{});
-			opcodeTable.entries[221].nextTable.entries[98] = 
-				new OpcodeTableEntry(add_ix_ix, "add ix, ix", new ArgType[]{});
-			opcodeTable.entries[253].nextTable.entries[98] = 
-				new OpcodeTableEntry(add_iy_iy, "add iy, iy", new ArgType[]{});
 			opcodeTable.entries[57] = new OpcodeTableEntry(add_hl_sp, "add hl, sp", new ArgType[]{});
+            opcodeTable.entries[221].nextTable.entries[57] = 
+                new OpcodeTableEntry(add_ix_sp, "add ix, sp", new ArgType[]{});
+            opcodeTable.entries[253].nextTable.entries[57] = 
+                new OpcodeTableEntry(add_iy_sp, "add iy, sp", new ArgType[]{});
 			opcodeTableED.entries[122] = new OpcodeTableEntry(adc_hl_sp, "adc hl, sp", new ArgType[]{});
 			opcodeTableED.entries[114] = new OpcodeTableEntry(sbc_hl_sp, "sbc hl, sp", new ArgType[]{});
-			opcodeTable.entries[221].nextTable.entries[114] = 
-				new OpcodeTableEntry(add_ix_sp, "add ix, sp", new ArgType[]{});
-			opcodeTable.entries[253].nextTable.entries[114] = 
-				new OpcodeTableEntry(add_iy_sp, "add iy, sp", new ArgType[]{});
             opcodeTable.entries[160] = new OpcodeTableEntry(and_b, "and b", new ArgType[]{});
             opcodeTable.entries[176] = new OpcodeTableEntry(or_b, "or b", new ArgType[]{});
             opcodeTable.entries[168] = new OpcodeTableEntry(xor_b, "xor b", new ArgType[]{});
@@ -502,8 +698,8 @@ namespace Z80 {
             opcodeTable.entries[0x0F] = new OpcodeTableEntry(rrca, "rrca", new ArgType[]{});
             opcodeTable.entries[0x1F] = new OpcodeTableEntry(rra, "rra", new ArgType[]{});
             
-            opcodeTable.entries[0x6F] = new OpcodeTableEntry(rld, "rld", new ArgType[]{});
-            opcodeTable.entries[0x67] = new OpcodeTableEntry(rrd, "rrd", new ArgType[]{});
+            opcodeTableED.entries[0x6F] = new OpcodeTableEntry(rld, "rld", new ArgType[]{});
+            opcodeTableED.entries[0x67] = new OpcodeTableEntry(rrd, "rrd", new ArgType[]{});
            
             opcodeTableCB.entries[0] = new OpcodeTableEntry(rlc_b, "rlc b", new ArgType[]{});
             opcodeTableCB.entries[16] = new OpcodeTableEntry(rl_b, "rl b", new ArgType[]{});
@@ -983,6 +1179,7 @@ namespace Z80 {
             opcodeTable.entries[0xC3] = new OpcodeTableEntry(jp_nn, "jp {0}", new ArgType[]{ArgType.Word});
             opcodeTable.entries[0xCD] = new OpcodeTableEntry(call_nn, "call {0}", new ArgType[]{ArgType.Word});
             opcodeTable.entries[0x18] = new OpcodeTableEntry(jr_pc_e, "jr pc{0}", new ArgType[]{ArgType.Offset});
+            opcodeTable.entries[0xC9] = new OpcodeTableEntry(ret, "ret", new ArgType[]{});
             
             opcodeTable.entries[0x38] = new OpcodeTableEntry(jr_c_pc_e, "jr c, pc{0}", new ArgType[]{ArgType.Offset});
             opcodeTable.entries[0x30] = new OpcodeTableEntry(jr_nc_pc_e, "jr nc, pc{0}", new ArgType[]{ArgType.Offset});
@@ -1938,451 +2135,451 @@ namespace Z80 {
                 new OpcodeTableEntry(ld_a_set_7__iy_d_,
                                      "ld a, set 7, (iy{0})",
                                      new ArgType[]{ArgType.Offset});
-            opcodeTable.entries[221].nextTable.entries[32] =
+            opcodeTable.entries[221].nextTable.entries[0xcb].nextTable.entries[32] =
                 new OpcodeTableEntry(ld_b_sla__ix_d_,
                                      "ld b, sla (ix{0})",
                                      new ArgType[]{ArgType.Offset});
-            opcodeTable.entries[221].nextTable.entries[40] =
+            opcodeTable.entries[221].nextTable.entries[0xcb].nextTable.entries[40] =
                 new OpcodeTableEntry(ld_b_sra__ix_d_,
                                      "ld b, sra (ix{0})",
                                      new ArgType[]{ArgType.Offset});
-            opcodeTable.entries[221].nextTable.entries[48] =
+            opcodeTable.entries[221].nextTable.entries[0xcb].nextTable.entries[48] =
                 new OpcodeTableEntry(ld_b_sll__ix_d_,
                                      "ld b, sll (ix{0})",
                                      new ArgType[]{ArgType.Offset});
-            opcodeTable.entries[221].nextTable.entries[56] =
+            opcodeTable.entries[221].nextTable.entries[0xcb].nextTable.entries[56] =
                 new OpcodeTableEntry(ld_b_srl__ix_d_,
                                      "ld b, srl (ix{0})",
                                      new ArgType[]{ArgType.Offset});
-            opcodeTable.entries[221].nextTable.entries[0] =
+            opcodeTable.entries[221].nextTable.entries[0xcb].nextTable.entries[0] =
                 new OpcodeTableEntry(ld_b_rlc__ix_d_,
                                      "ld b, rlc (ix{0})",
                                      new ArgType[]{ArgType.Offset});
-            opcodeTable.entries[221].nextTable.entries[8] =
+            opcodeTable.entries[221].nextTable.entries[0xcb].nextTable.entries[8] =
                 new OpcodeTableEntry(ld_b_rrc__ix_d_,
                                      "ld b, rrc (ix{0})",
                                      new ArgType[]{ArgType.Offset});
-            opcodeTable.entries[221].nextTable.entries[16] =
+            opcodeTable.entries[221].nextTable.entries[0xcb].nextTable.entries[16] =
                 new OpcodeTableEntry(ld_b_rl__ix_d_,
                                      "ld b, rl (ix{0})",
                                      new ArgType[]{ArgType.Offset});
-            opcodeTable.entries[221].nextTable.entries[24] =
+            opcodeTable.entries[221].nextTable.entries[0xcb].nextTable.entries[24] =
                 new OpcodeTableEntry(ld_b_rr__ix_d_,
                                      "ld b, rr (ix{0})",
                                      new ArgType[]{ArgType.Offset});
-            opcodeTable.entries[253].nextTable.entries[32] =
+            opcodeTable.entries[253].nextTable.entries[0xcb].nextTable.entries[32] =
                 new OpcodeTableEntry(ld_b_sla__iy_d_,
                                      "ld b, sla (iy{0})",
                                      new ArgType[]{ArgType.Offset});
-            opcodeTable.entries[253].nextTable.entries[40] =
+            opcodeTable.entries[253].nextTable.entries[0xcb].nextTable.entries[40] =
                 new OpcodeTableEntry(ld_b_sra__iy_d_,
                                      "ld b, sra (iy{0})",
                                      new ArgType[]{ArgType.Offset});
-            opcodeTable.entries[253].nextTable.entries[48] =
+            opcodeTable.entries[253].nextTable.entries[0xcb].nextTable.entries[48] =
                 new OpcodeTableEntry(ld_b_sll__iy_d_,
                                      "ld b, sll (iy{0})",
                                      new ArgType[]{ArgType.Offset});
-            opcodeTable.entries[253].nextTable.entries[56] =
+            opcodeTable.entries[253].nextTable.entries[0xcb].nextTable.entries[56] =
                 new OpcodeTableEntry(ld_b_srl__iy_d_,
                                      "ld b, srl (iy{0})",
                                      new ArgType[]{ArgType.Offset});
-            opcodeTable.entries[253].nextTable.entries[0] =
+            opcodeTable.entries[253].nextTable.entries[0xcb].nextTable.entries[0] =
                 new OpcodeTableEntry(ld_b_rlc__iy_d_,
                                      "ld b, rlc (iy{0})",
                                      new ArgType[]{ArgType.Offset});
-            opcodeTable.entries[253].nextTable.entries[8] =
+            opcodeTable.entries[253].nextTable.entries[0xcb].nextTable.entries[8] =
                 new OpcodeTableEntry(ld_b_rrc__iy_d_,
                                      "ld b, rrc (iy{0})",
                                      new ArgType[]{ArgType.Offset});
-            opcodeTable.entries[253].nextTable.entries[16] =
+            opcodeTable.entries[253].nextTable.entries[0xcb].nextTable.entries[16] =
                 new OpcodeTableEntry(ld_b_rl__iy_d_,
                                      "ld b, rl (iy{0})",
                                      new ArgType[]{ArgType.Offset});
-            opcodeTable.entries[253].nextTable.entries[24] =
+            opcodeTable.entries[253].nextTable.entries[0xcb].nextTable.entries[24] =
                 new OpcodeTableEntry(ld_b_rr__iy_d_,
                                      "ld b, rr (iy{0})",
                                      new ArgType[]{ArgType.Offset});
-            opcodeTable.entries[221].nextTable.entries[33] =
+            opcodeTable.entries[221].nextTable.entries[0xcb].nextTable.entries[33] =
                 new OpcodeTableEntry(ld_c_sla__ix_d_,
                                      "ld c, sla (ix{0})",
                                      new ArgType[]{ArgType.Offset});
-            opcodeTable.entries[221].nextTable.entries[41] =
+            opcodeTable.entries[221].nextTable.entries[0xcb].nextTable.entries[41] =
                 new OpcodeTableEntry(ld_c_sra__ix_d_,
                                      "ld c, sra (ix{0})",
                                      new ArgType[]{ArgType.Offset});
-            opcodeTable.entries[221].nextTable.entries[49] =
+            opcodeTable.entries[221].nextTable.entries[0xcb].nextTable.entries[49] =
                 new OpcodeTableEntry(ld_c_sll__ix_d_,
                                      "ld c, sll (ix{0})",
                                      new ArgType[]{ArgType.Offset});
-            opcodeTable.entries[221].nextTable.entries[57] =
+            opcodeTable.entries[221].nextTable.entries[0xcb].nextTable.entries[57] =
                 new OpcodeTableEntry(ld_c_srl__ix_d_,
                                      "ld c, srl (ix{0})",
                                      new ArgType[]{ArgType.Offset});
-            opcodeTable.entries[221].nextTable.entries[1] =
+            opcodeTable.entries[221].nextTable.entries[0xcb].nextTable.entries[1] =
                 new OpcodeTableEntry(ld_c_rlc__ix_d_,
                                      "ld c, rlc (ix{0})",
                                      new ArgType[]{ArgType.Offset});
-            opcodeTable.entries[221].nextTable.entries[9] =
+            opcodeTable.entries[221].nextTable.entries[0xcb].nextTable.entries[9] =
                 new OpcodeTableEntry(ld_c_rrc__ix_d_,
                                      "ld c, rrc (ix{0})",
                                      new ArgType[]{ArgType.Offset});
-            opcodeTable.entries[221].nextTable.entries[17] =
+            opcodeTable.entries[221].nextTable.entries[0xcb].nextTable.entries[17] =
                 new OpcodeTableEntry(ld_c_rl__ix_d_,
                                      "ld c, rl (ix{0})",
                                      new ArgType[]{ArgType.Offset});
-            opcodeTable.entries[221].nextTable.entries[25] =
+            opcodeTable.entries[221].nextTable.entries[0xcb].nextTable.entries[25] =
                 new OpcodeTableEntry(ld_c_rr__ix_d_,
                                      "ld c, rr (ix{0})",
                                      new ArgType[]{ArgType.Offset});
-            opcodeTable.entries[253].nextTable.entries[33] =
+            opcodeTable.entries[253].nextTable.entries[0xcb].nextTable.entries[33] =
                 new OpcodeTableEntry(ld_c_sla__iy_d_,
                                      "ld c, sla (iy{0})",
                                      new ArgType[]{ArgType.Offset});
-            opcodeTable.entries[253].nextTable.entries[41] =
+            opcodeTable.entries[253].nextTable.entries[0xcb].nextTable.entries[41] =
                 new OpcodeTableEntry(ld_c_sra__iy_d_,
                                      "ld c, sra (iy{0})",
                                      new ArgType[]{ArgType.Offset});
-            opcodeTable.entries[253].nextTable.entries[49] =
+            opcodeTable.entries[253].nextTable.entries[0xcb].nextTable.entries[49] =
                 new OpcodeTableEntry(ld_c_sll__iy_d_,
                                      "ld c, sll (iy{0})",
                                      new ArgType[]{ArgType.Offset});
-            opcodeTable.entries[253].nextTable.entries[57] =
+            opcodeTable.entries[253].nextTable.entries[0xcb].nextTable.entries[57] =
                 new OpcodeTableEntry(ld_c_srl__iy_d_,
                                      "ld c, srl (iy{0})",
                                      new ArgType[]{ArgType.Offset});
-            opcodeTable.entries[253].nextTable.entries[1] =
+            opcodeTable.entries[253].nextTable.entries[0xcb].nextTable.entries[1] =
                 new OpcodeTableEntry(ld_c_rlc__iy_d_,
                                      "ld c, rlc (iy{0})",
                                      new ArgType[]{ArgType.Offset});
-            opcodeTable.entries[253].nextTable.entries[9] =
+            opcodeTable.entries[253].nextTable.entries[0xcb].nextTable.entries[9] =
                 new OpcodeTableEntry(ld_c_rrc__iy_d_,
                                      "ld c, rrc (iy{0})",
                                      new ArgType[]{ArgType.Offset});
-            opcodeTable.entries[253].nextTable.entries[17] =
+            opcodeTable.entries[253].nextTable.entries[0xcb].nextTable.entries[17] =
                 new OpcodeTableEntry(ld_c_rl__iy_d_,
                                      "ld c, rl (iy{0})",
                                      new ArgType[]{ArgType.Offset});
-            opcodeTable.entries[253].nextTable.entries[25] =
+            opcodeTable.entries[253].nextTable.entries[0xcb].nextTable.entries[25] =
                 new OpcodeTableEntry(ld_c_rr__iy_d_,
                                      "ld c, rr (iy{0})",
                                      new ArgType[]{ArgType.Offset});
-            opcodeTable.entries[221].nextTable.entries[34] =
+            opcodeTable.entries[221].nextTable.entries[0xcb].nextTable.entries[34] =
                 new OpcodeTableEntry(ld_d_sla__ix_d_,
                                      "ld d, sla (ix{0})",
                                      new ArgType[]{ArgType.Offset});
-            opcodeTable.entries[221].nextTable.entries[42] =
+            opcodeTable.entries[221].nextTable.entries[0xcb].nextTable.entries[42] =
                 new OpcodeTableEntry(ld_d_sra__ix_d_,
                                      "ld d, sra (ix{0})",
                                      new ArgType[]{ArgType.Offset});
-            opcodeTable.entries[221].nextTable.entries[50] =
+            opcodeTable.entries[221].nextTable.entries[0xcb].nextTable.entries[50] =
                 new OpcodeTableEntry(ld_d_sll__ix_d_,
                                      "ld d, sll (ix{0})",
                                      new ArgType[]{ArgType.Offset});
-            opcodeTable.entries[221].nextTable.entries[58] =
+            opcodeTable.entries[221].nextTable.entries[0xcb].nextTable.entries[58] =
                 new OpcodeTableEntry(ld_d_srl__ix_d_,
                                      "ld d, srl (ix{0})",
                                      new ArgType[]{ArgType.Offset});
-            opcodeTable.entries[221].nextTable.entries[2] =
+            opcodeTable.entries[221].nextTable.entries[0xcb].nextTable.entries[2] =
                 new OpcodeTableEntry(ld_d_rlc__ix_d_,
                                      "ld d, rlc (ix{0})",
                                      new ArgType[]{ArgType.Offset});
-            opcodeTable.entries[221].nextTable.entries[10] =
+            opcodeTable.entries[221].nextTable.entries[0xcb].nextTable.entries[10] =
                 new OpcodeTableEntry(ld_d_rrc__ix_d_,
                                      "ld d, rrc (ix{0})",
                                      new ArgType[]{ArgType.Offset});
-            opcodeTable.entries[221].nextTable.entries[18] =
+            opcodeTable.entries[221].nextTable.entries[0xcb].nextTable.entries[18] =
                 new OpcodeTableEntry(ld_d_rl__ix_d_,
                                      "ld d, rl (ix{0})",
                                      new ArgType[]{ArgType.Offset});
-            opcodeTable.entries[221].nextTable.entries[26] =
+            opcodeTable.entries[221].nextTable.entries[0xcb].nextTable.entries[26] =
                 new OpcodeTableEntry(ld_d_rr__ix_d_,
                                      "ld d, rr (ix{0})",
                                      new ArgType[]{ArgType.Offset});
-            opcodeTable.entries[253].nextTable.entries[34] =
+            opcodeTable.entries[253].nextTable.entries[0xcb].nextTable.entries[34] =
                 new OpcodeTableEntry(ld_d_sla__iy_d_,
                                      "ld d, sla (iy{0})",
                                      new ArgType[]{ArgType.Offset});
-            opcodeTable.entries[253].nextTable.entries[42] =
+            opcodeTable.entries[253].nextTable.entries[0xcb].nextTable.entries[42] =
                 new OpcodeTableEntry(ld_d_sra__iy_d_,
                                      "ld d, sra (iy{0})",
                                      new ArgType[]{ArgType.Offset});
-            opcodeTable.entries[253].nextTable.entries[50] =
+            opcodeTable.entries[253].nextTable.entries[0xcb].nextTable.entries[50] =
                 new OpcodeTableEntry(ld_d_sll__iy_d_,
                                      "ld d, sll (iy{0})",
                                      new ArgType[]{ArgType.Offset});
-            opcodeTable.entries[253].nextTable.entries[58] =
+            opcodeTable.entries[253].nextTable.entries[0xcb].nextTable.entries[58] =
                 new OpcodeTableEntry(ld_d_srl__iy_d_,
                                      "ld d, srl (iy{0})",
                                      new ArgType[]{ArgType.Offset});
-            opcodeTable.entries[253].nextTable.entries[2] =
+            opcodeTable.entries[253].nextTable.entries[0xcb].nextTable.entries[2] =
                 new OpcodeTableEntry(ld_d_rlc__iy_d_,
                                      "ld d, rlc (iy{0})",
                                      new ArgType[]{ArgType.Offset});
-            opcodeTable.entries[253].nextTable.entries[10] =
+            opcodeTable.entries[253].nextTable.entries[0xcb].nextTable.entries[10] =
                 new OpcodeTableEntry(ld_d_rrc__iy_d_,
                                      "ld d, rrc (iy{0})",
                                      new ArgType[]{ArgType.Offset});
-            opcodeTable.entries[253].nextTable.entries[18] =
+            opcodeTable.entries[253].nextTable.entries[0xcb].nextTable.entries[18] =
                 new OpcodeTableEntry(ld_d_rl__iy_d_,
                                      "ld d, rl (iy{0})",
                                      new ArgType[]{ArgType.Offset});
-            opcodeTable.entries[253].nextTable.entries[26] =
+            opcodeTable.entries[253].nextTable.entries[0xcb].nextTable.entries[26] =
                 new OpcodeTableEntry(ld_d_rr__iy_d_,
                                      "ld d, rr (iy{0})",
                                      new ArgType[]{ArgType.Offset});
-            opcodeTable.entries[221].nextTable.entries[35] =
+            opcodeTable.entries[221].nextTable.entries[0xcb].nextTable.entries[35] =
                 new OpcodeTableEntry(ld_e_sla__ix_d_,
                                      "ld e, sla (ix{0})",
                                      new ArgType[]{ArgType.Offset});
-            opcodeTable.entries[221].nextTable.entries[43] =
+            opcodeTable.entries[221].nextTable.entries[0xcb].nextTable.entries[43] =
                 new OpcodeTableEntry(ld_e_sra__ix_d_,
                                      "ld e, sra (ix{0})",
                                      new ArgType[]{ArgType.Offset});
-            opcodeTable.entries[221].nextTable.entries[51] =
+            opcodeTable.entries[221].nextTable.entries[0xcb].nextTable.entries[51] =
                 new OpcodeTableEntry(ld_e_sll__ix_d_,
                                      "ld e, sll (ix{0})",
                                      new ArgType[]{ArgType.Offset});
-            opcodeTable.entries[221].nextTable.entries[59] =
+            opcodeTable.entries[221].nextTable.entries[0xcb].nextTable.entries[59] =
                 new OpcodeTableEntry(ld_e_srl__ix_d_,
                                      "ld e, srl (ix{0})",
                                      new ArgType[]{ArgType.Offset});
-            opcodeTable.entries[221].nextTable.entries[3] =
+            opcodeTable.entries[221].nextTable.entries[0xcb].nextTable.entries[3] =
                 new OpcodeTableEntry(ld_e_rlc__ix_d_,
                                      "ld e, rlc (ix{0})",
                                      new ArgType[]{ArgType.Offset});
-            opcodeTable.entries[221].nextTable.entries[11] =
+            opcodeTable.entries[221].nextTable.entries[0xcb].nextTable.entries[11] =
                 new OpcodeTableEntry(ld_e_rrc__ix_d_,
                                      "ld e, rrc (ix{0})",
                                      new ArgType[]{ArgType.Offset});
-            opcodeTable.entries[221].nextTable.entries[19] =
+            opcodeTable.entries[221].nextTable.entries[0xcb].nextTable.entries[19] =
                 new OpcodeTableEntry(ld_e_rl__ix_d_,
                                      "ld e, rl (ix{0})",
                                      new ArgType[]{ArgType.Offset});
-            opcodeTable.entries[221].nextTable.entries[27] =
+            opcodeTable.entries[221].nextTable.entries[0xcb].nextTable.entries[27] =
                 new OpcodeTableEntry(ld_e_rr__ix_d_,
                                      "ld e, rr (ix{0})",
                                      new ArgType[]{ArgType.Offset});
-            opcodeTable.entries[253].nextTable.entries[35] =
+            opcodeTable.entries[253].nextTable.entries[0xcb].nextTable.entries[35] =
                 new OpcodeTableEntry(ld_e_sla__iy_d_,
                                      "ld e, sla (iy{0})",
                                      new ArgType[]{ArgType.Offset});
-            opcodeTable.entries[253].nextTable.entries[43] =
+            opcodeTable.entries[253].nextTable.entries[0xcb].nextTable.entries[43] =
                 new OpcodeTableEntry(ld_e_sra__iy_d_,
                                      "ld e, sra (iy{0})",
                                      new ArgType[]{ArgType.Offset});
-            opcodeTable.entries[253].nextTable.entries[51] =
+            opcodeTable.entries[253].nextTable.entries[0xcb].nextTable.entries[51] =
                 new OpcodeTableEntry(ld_e_sll__iy_d_,
                                      "ld e, sll (iy{0})",
                                      new ArgType[]{ArgType.Offset});
-            opcodeTable.entries[253].nextTable.entries[59] =
+            opcodeTable.entries[253].nextTable.entries[0xcb].nextTable.entries[59] =
                 new OpcodeTableEntry(ld_e_srl__iy_d_,
                                      "ld e, srl (iy{0})",
                                      new ArgType[]{ArgType.Offset});
-            opcodeTable.entries[253].nextTable.entries[3] =
+            opcodeTable.entries[253].nextTable.entries[0xcb].nextTable.entries[3] =
                 new OpcodeTableEntry(ld_e_rlc__iy_d_,
                                      "ld e, rlc (iy{0})",
                                      new ArgType[]{ArgType.Offset});
-            opcodeTable.entries[253].nextTable.entries[11] =
+            opcodeTable.entries[253].nextTable.entries[0xcb].nextTable.entries[11] =
                 new OpcodeTableEntry(ld_e_rrc__iy_d_,
                                      "ld e, rrc (iy{0})",
                                      new ArgType[]{ArgType.Offset});
-            opcodeTable.entries[253].nextTable.entries[19] =
+            opcodeTable.entries[253].nextTable.entries[0xcb].nextTable.entries[19] =
                 new OpcodeTableEntry(ld_e_rl__iy_d_,
                                      "ld e, rl (iy{0})",
                                      new ArgType[]{ArgType.Offset});
-            opcodeTable.entries[253].nextTable.entries[27] =
+            opcodeTable.entries[253].nextTable.entries[0xcb].nextTable.entries[27] =
                 new OpcodeTableEntry(ld_e_rr__iy_d_,
                                      "ld e, rr (iy{0})",
                                      new ArgType[]{ArgType.Offset});
-            opcodeTable.entries[221].nextTable.entries[36] =
+            opcodeTable.entries[221].nextTable.entries[0xcb].nextTable.entries[36] =
                 new OpcodeTableEntry(ld_h_sla__ix_d_,
                                      "ld h, sla (ix{0})",
                                      new ArgType[]{ArgType.Offset});
-            opcodeTable.entries[221].nextTable.entries[44] =
+            opcodeTable.entries[221].nextTable.entries[0xcb].nextTable.entries[44] =
                 new OpcodeTableEntry(ld_h_sra__ix_d_,
                                      "ld h, sra (ix{0})",
                                      new ArgType[]{ArgType.Offset});
-            opcodeTable.entries[221].nextTable.entries[52] =
+            opcodeTable.entries[221].nextTable.entries[0xcb].nextTable.entries[52] =
                 new OpcodeTableEntry(ld_h_sll__ix_d_,
                                      "ld h, sll (ix{0})",
                                      new ArgType[]{ArgType.Offset});
-            opcodeTable.entries[221].nextTable.entries[60] =
+            opcodeTable.entries[221].nextTable.entries[0xcb].nextTable.entries[60] =
                 new OpcodeTableEntry(ld_h_srl__ix_d_,
                                      "ld h, srl (ix{0})",
                                      new ArgType[]{ArgType.Offset});
-            opcodeTable.entries[221].nextTable.entries[4] =
+            opcodeTable.entries[221].nextTable.entries[0xcb].nextTable.entries[4] =
                 new OpcodeTableEntry(ld_h_rlc__ix_d_,
                                      "ld h, rlc (ix{0})",
                                      new ArgType[]{ArgType.Offset});
-            opcodeTable.entries[221].nextTable.entries[12] =
+            opcodeTable.entries[221].nextTable.entries[0xcb].nextTable.entries[12] =
                 new OpcodeTableEntry(ld_h_rrc__ix_d_,
                                      "ld h, rrc (ix{0})",
                                      new ArgType[]{ArgType.Offset});
-            opcodeTable.entries[221].nextTable.entries[20] =
+            opcodeTable.entries[221].nextTable.entries[0xcb].nextTable.entries[20] =
                 new OpcodeTableEntry(ld_h_rl__ix_d_,
                                      "ld h, rl (ix{0})",
                                      new ArgType[]{ArgType.Offset});
-            opcodeTable.entries[221].nextTable.entries[28] =
+            opcodeTable.entries[221].nextTable.entries[0xcb].nextTable.entries[28] =
                 new OpcodeTableEntry(ld_h_rr__ix_d_,
                                      "ld h, rr (ix{0})",
                                      new ArgType[]{ArgType.Offset});
-            opcodeTable.entries[253].nextTable.entries[36] =
+            opcodeTable.entries[253].nextTable.entries[0xcb].nextTable.entries[36] =
                 new OpcodeTableEntry(ld_h_sla__iy_d_,
                                      "ld h, sla (iy{0})",
                                      new ArgType[]{ArgType.Offset});
-            opcodeTable.entries[253].nextTable.entries[44] =
+            opcodeTable.entries[253].nextTable.entries[0xcb].nextTable.entries[44] =
                 new OpcodeTableEntry(ld_h_sra__iy_d_,
                                      "ld h, sra (iy{0})",
                                      new ArgType[]{ArgType.Offset});
-            opcodeTable.entries[253].nextTable.entries[52] =
+            opcodeTable.entries[253].nextTable.entries[0xcb].nextTable.entries[52] =
                 new OpcodeTableEntry(ld_h_sll__iy_d_,
                                      "ld h, sll (iy{0})",
                                      new ArgType[]{ArgType.Offset});
-            opcodeTable.entries[253].nextTable.entries[60] =
+            opcodeTable.entries[253].nextTable.entries[0xcb].nextTable.entries[60] =
                 new OpcodeTableEntry(ld_h_srl__iy_d_,
                                      "ld h, srl (iy{0})",
                                      new ArgType[]{ArgType.Offset});
-            opcodeTable.entries[253].nextTable.entries[4] =
+            opcodeTable.entries[253].nextTable.entries[0xcb].nextTable.entries[4] =
                 new OpcodeTableEntry(ld_h_rlc__iy_d_,
                                      "ld h, rlc (iy{0})",
                                      new ArgType[]{ArgType.Offset});
-            opcodeTable.entries[253].nextTable.entries[12] =
+            opcodeTable.entries[253].nextTable.entries[0xcb].nextTable.entries[12] =
                 new OpcodeTableEntry(ld_h_rrc__iy_d_,
                                      "ld h, rrc (iy{0})",
                                      new ArgType[]{ArgType.Offset});
-            opcodeTable.entries[253].nextTable.entries[20] =
+            opcodeTable.entries[253].nextTable.entries[0xcb].nextTable.entries[20] =
                 new OpcodeTableEntry(ld_h_rl__iy_d_,
                                      "ld h, rl (iy{0})",
                                      new ArgType[]{ArgType.Offset});
-            opcodeTable.entries[253].nextTable.entries[28] =
+            opcodeTable.entries[253].nextTable.entries[0xcb].nextTable.entries[28] =
                 new OpcodeTableEntry(ld_h_rr__iy_d_,
                                      "ld h, rr (iy{0})",
                                      new ArgType[]{ArgType.Offset});
-            opcodeTable.entries[221].nextTable.entries[37] =
+            opcodeTable.entries[221].nextTable.entries[0xcb].nextTable.entries[37] =
                 new OpcodeTableEntry(ld_l_sla__ix_d_,
                                      "ld l, sla (ix{0})",
                                      new ArgType[]{ArgType.Offset});
-            opcodeTable.entries[221].nextTable.entries[45] =
+            opcodeTable.entries[221].nextTable.entries[0xcb].nextTable.entries[45] =
                 new OpcodeTableEntry(ld_l_sra__ix_d_,
                                      "ld l, sra (ix{0})",
                                      new ArgType[]{ArgType.Offset});
-            opcodeTable.entries[221].nextTable.entries[53] =
+            opcodeTable.entries[221].nextTable.entries[0xcb].nextTable.entries[53] =
                 new OpcodeTableEntry(ld_l_sll__ix_d_,
                                      "ld l, sll (ix{0})",
                                      new ArgType[]{ArgType.Offset});
-            opcodeTable.entries[221].nextTable.entries[61] =
+            opcodeTable.entries[221].nextTable.entries[0xcb].nextTable.entries[61] =
                 new OpcodeTableEntry(ld_l_srl__ix_d_,
                                      "ld l, srl (ix{0})",
                                      new ArgType[]{ArgType.Offset});
-            opcodeTable.entries[221].nextTable.entries[5] =
+            opcodeTable.entries[221].nextTable.entries[0xcb].nextTable.entries[5] =
                 new OpcodeTableEntry(ld_l_rlc__ix_d_,
                                      "ld l, rlc (ix{0})",
                                      new ArgType[]{ArgType.Offset});
-            opcodeTable.entries[221].nextTable.entries[13] =
+            opcodeTable.entries[221].nextTable.entries[0xcb].nextTable.entries[13] =
                 new OpcodeTableEntry(ld_l_rrc__ix_d_,
                                      "ld l, rrc (ix{0})",
                                      new ArgType[]{ArgType.Offset});
-            opcodeTable.entries[221].nextTable.entries[21] =
+            opcodeTable.entries[221].nextTable.entries[0xcb].nextTable.entries[21] =
                 new OpcodeTableEntry(ld_l_rl__ix_d_,
                                      "ld l, rl (ix{0})",
                                      new ArgType[]{ArgType.Offset});
-            opcodeTable.entries[221].nextTable.entries[29] =
+            opcodeTable.entries[221].nextTable.entries[0xcb].nextTable.entries[29] =
                 new OpcodeTableEntry(ld_l_rr__ix_d_,
                                      "ld l, rr (ix{0})",
                                      new ArgType[]{ArgType.Offset});
-            opcodeTable.entries[253].nextTable.entries[37] =
+            opcodeTable.entries[253].nextTable.entries[0xcb].nextTable.entries[37] =
                 new OpcodeTableEntry(ld_l_sla__iy_d_,
                                      "ld l, sla (iy{0})",
                                      new ArgType[]{ArgType.Offset});
-            opcodeTable.entries[253].nextTable.entries[45] =
+            opcodeTable.entries[253].nextTable.entries[0xcb].nextTable.entries[45] =
                 new OpcodeTableEntry(ld_l_sra__iy_d_,
                                      "ld l, sra (iy{0})",
                                      new ArgType[]{ArgType.Offset});
-            opcodeTable.entries[253].nextTable.entries[53] =
+            opcodeTable.entries[253].nextTable.entries[0xcb].nextTable.entries[53] =
                 new OpcodeTableEntry(ld_l_sll__iy_d_,
                                      "ld l, sll (iy{0})",
                                      new ArgType[]{ArgType.Offset});
-            opcodeTable.entries[253].nextTable.entries[61] =
+            opcodeTable.entries[253].nextTable.entries[0xcb].nextTable.entries[61] =
                 new OpcodeTableEntry(ld_l_srl__iy_d_,
                                      "ld l, srl (iy{0})",
                                      new ArgType[]{ArgType.Offset});
-            opcodeTable.entries[253].nextTable.entries[5] =
+            opcodeTable.entries[253].nextTable.entries[0xcb].nextTable.entries[5] =
                 new OpcodeTableEntry(ld_l_rlc__iy_d_,
                                      "ld l, rlc (iy{0})",
                                      new ArgType[]{ArgType.Offset});
-            opcodeTable.entries[253].nextTable.entries[13] =
+            opcodeTable.entries[253].nextTable.entries[0xcb].nextTable.entries[13] =
                 new OpcodeTableEntry(ld_l_rrc__iy_d_,
                                      "ld l, rrc (iy{0})",
                                      new ArgType[]{ArgType.Offset});
-            opcodeTable.entries[253].nextTable.entries[21] =
+            opcodeTable.entries[253].nextTable.entries[0xcb].nextTable.entries[21] =
                 new OpcodeTableEntry(ld_l_rl__iy_d_,
                                      "ld l, rl (iy{0})",
                                      new ArgType[]{ArgType.Offset});
-            opcodeTable.entries[253].nextTable.entries[29] =
+            opcodeTable.entries[253].nextTable.entries[0xcb].nextTable.entries[29] =
                 new OpcodeTableEntry(ld_l_rr__iy_d_,
                                      "ld l, rr (iy{0})",
                                      new ArgType[]{ArgType.Offset});
-            opcodeTable.entries[221].nextTable.entries[39] =
+            opcodeTable.entries[221].nextTable.entries[0xcb].nextTable.entries[39] =
                 new OpcodeTableEntry(ld_a_sla__ix_d_,
                                      "ld a, sla (ix{0})",
                                      new ArgType[]{ArgType.Offset});
-            opcodeTable.entries[221].nextTable.entries[47] =
+            opcodeTable.entries[221].nextTable.entries[0xcb].nextTable.entries[47] =
                 new OpcodeTableEntry(ld_a_sra__ix_d_,
                                      "ld a, sra (ix{0})",
                                      new ArgType[]{ArgType.Offset});
-            opcodeTable.entries[221].nextTable.entries[55] =
+            opcodeTable.entries[221].nextTable.entries[0xcb].nextTable.entries[55] =
                 new OpcodeTableEntry(ld_a_sll__ix_d_,
                                      "ld a, sll (ix{0})",
                                      new ArgType[]{ArgType.Offset});
-            opcodeTable.entries[221].nextTable.entries[63] =
+            opcodeTable.entries[221].nextTable.entries[0xcb].nextTable.entries[63] =
                 new OpcodeTableEntry(ld_a_srl__ix_d_,
                                      "ld a, srl (ix{0})",
                                      new ArgType[]{ArgType.Offset});
-            opcodeTable.entries[221].nextTable.entries[7] =
+            opcodeTable.entries[221].nextTable.entries[0xcb].nextTable.entries[7] =
                 new OpcodeTableEntry(ld_a_rlc__ix_d_,
                                      "ld a, rlc (ix{0})",
                                      new ArgType[]{ArgType.Offset});
-            opcodeTable.entries[221].nextTable.entries[15] =
+            opcodeTable.entries[221].nextTable.entries[0xcb].nextTable.entries[15] =
                 new OpcodeTableEntry(ld_a_rrc__ix_d_,
                                      "ld a, rrc (ix{0})",
                                      new ArgType[]{ArgType.Offset});
-            opcodeTable.entries[221].nextTable.entries[23] =
+            opcodeTable.entries[221].nextTable.entries[0xcb].nextTable.entries[23] =
                 new OpcodeTableEntry(ld_a_rl__ix_d_,
                                      "ld a, rl (ix{0})",
                                      new ArgType[]{ArgType.Offset});
-            opcodeTable.entries[221].nextTable.entries[31] =
+            opcodeTable.entries[221].nextTable.entries[0xcb].nextTable.entries[31] =
                 new OpcodeTableEntry(ld_a_rr__ix_d_,
                                      "ld a, rr (ix{0})",
                                      new ArgType[]{ArgType.Offset});
-            opcodeTable.entries[253].nextTable.entries[39] =
+            opcodeTable.entries[253].nextTable.entries[0xcb].nextTable.entries[39] =
                 new OpcodeTableEntry(ld_a_sla__iy_d_,
                                      "ld a, sla (iy{0})",
                                      new ArgType[]{ArgType.Offset});
-            opcodeTable.entries[253].nextTable.entries[47] =
+            opcodeTable.entries[253].nextTable.entries[0xcb].nextTable.entries[47] =
                 new OpcodeTableEntry(ld_a_sra__iy_d_,
                                      "ld a, sra (iy{0})",
                                      new ArgType[]{ArgType.Offset});
-            opcodeTable.entries[253].nextTable.entries[55] =
+            opcodeTable.entries[253].nextTable.entries[0xcb].nextTable.entries[55] =
                 new OpcodeTableEntry(ld_a_sll__iy_d_,
                                      "ld a, sll (iy{0})",
                                      new ArgType[]{ArgType.Offset});
-            opcodeTable.entries[253].nextTable.entries[63] =
+            opcodeTable.entries[253].nextTable.entries[0xcb].nextTable.entries[63] =
                 new OpcodeTableEntry(ld_a_srl__iy_d_,
                                      "ld a, srl (iy{0})",
                                      new ArgType[]{ArgType.Offset});
-            opcodeTable.entries[253].nextTable.entries[7] =
+            opcodeTable.entries[253].nextTable.entries[0xcb].nextTable.entries[7] =
                 new OpcodeTableEntry(ld_a_rlc__iy_d_,
                                      "ld a, rlc (iy{0})",
                                      new ArgType[]{ArgType.Offset});
-            opcodeTable.entries[253].nextTable.entries[15] =
+            opcodeTable.entries[253].nextTable.entries[0xcb].nextTable.entries[15] =
                 new OpcodeTableEntry(ld_a_rrc__iy_d_,
                                      "ld a, rrc (iy{0})",
                                      new ArgType[]{ArgType.Offset});
-            opcodeTable.entries[253].nextTable.entries[23] =
+            opcodeTable.entries[253].nextTable.entries[0xcb].nextTable.entries[23] =
                 new OpcodeTableEntry(ld_a_rl__iy_d_,
                                      "ld a, rl (iy{0})",
                                      new ArgType[]{ArgType.Offset});
-            opcodeTable.entries[253].nextTable.entries[31] =
+            opcodeTable.entries[253].nextTable.entries[0xcb].nextTable.entries[31] =
                 new OpcodeTableEntry(ld_a_rr__iy_d_,
                                      "ld a, rr (iy{0})",
                                      new ArgType[]{ArgType.Offset});
@@ -3559,16 +3756,19 @@ namespace Z80 {
 		protected void adc_a__hl_() {
 			r1.a = DoArithmetics(Read8(r1.hl), hasCarry_adc, isSub_adc);
 		}
+        
 		protected void adc_a__ix_d_() {
 			tStates += 5;
 			var offset = (SByte)Read8(pc++);
 			r1.a = DoArithmetics(Read8((ushort)(r1.ix + offset)), hasCarry_adc, isSub_adc);
 		}
+        
 		protected void adc_a__iy_d_() {
 			tStates += 5;
 			var offset = (SByte)Read8(pc++);
-			r1.a = DoArithmetics(Read8((ushort)(r1.ix + offset)), hasCarry_adc, isSub_adc);
+			r1.a = DoArithmetics(Read8((ushort)(r1.iy + offset)), hasCarry_adc, isSub_adc);
 		}
+        
         protected void sbc_a_a() {
             r1.a = DoArithmetics(r1.a, hasCarry_sbc, isSub_sbc);
         }
@@ -3620,16 +3820,19 @@ namespace Z80 {
 		protected void sbc_a__hl_() {
 			r1.a = DoArithmetics(Read8(r1.hl), hasCarry_sbc, isSub_sbc);
 		}
+        
 		protected void sbc_a__ix_d_() {
 			tStates += 5;
 			var offset = (SByte)Read8(pc++);
 			r1.a = DoArithmetics(Read8((ushort)(r1.ix + offset)), hasCarry_sbc, isSub_sbc);
 		}
+        
 		protected void sbc_a__iy_d_() {
 			tStates += 5;
 			var offset = (SByte)Read8(pc++);
-			r1.a = DoArithmetics(Read8((ushort)(r1.ix + offset)), hasCarry_sbc, isSub_sbc);
+			r1.a = DoArithmetics(Read8((ushort)(r1.iy + offset)), hasCarry_sbc, isSub_sbc);
 		}
+        
         protected void add_a_a() {
             r1.a = DoArithmetics(r1.a, hasCarry_add, isSub_add);
         }
@@ -3681,16 +3884,19 @@ namespace Z80 {
 		protected void add_a__hl_() {
 			r1.a = DoArithmetics(Read8(r1.hl), hasCarry_add, isSub_add);
 		}
+        
 		protected void add_a__ix_d_() {
 			tStates += 5;
 			var offset = (SByte)Read8(pc++);
 			r1.a = DoArithmetics(Read8((ushort)(r1.ix + offset)), hasCarry_add, isSub_add);
 		}
+        
 		protected void add_a__iy_d_() {
 			tStates += 5;
 			var offset = (SByte)Read8(pc++);
-			r1.a = DoArithmetics(Read8((ushort)(r1.ix + offset)), hasCarry_add, isSub_add);
+			r1.a = DoArithmetics(Read8((ushort)(r1.iy + offset)), hasCarry_add, isSub_add);
 		}
+        
         protected void sub_a_a() {
             r1.a = DoArithmetics(r1.a, hasCarry_sub, isSub_sub);
         }
@@ -3742,16 +3948,19 @@ namespace Z80 {
 		protected void sub_a__hl_() {
 			r1.a = DoArithmetics(Read8(r1.hl), hasCarry_sub, isSub_sub);
 		}
+        
 		protected void sub_a__ix_d_() {
 			tStates += 5;
 			var offset = (SByte)Read8(pc++);
 			r1.a = DoArithmetics(Read8((ushort)(r1.ix + offset)), hasCarry_sub, isSub_sub);
 		}
+        
 		protected void sub_a__iy_d_() {
 			tStates += 5;
 			var offset = (SByte)Read8(pc++);
-			r1.a = DoArithmetics(Read8((ushort)(r1.ix + offset)), hasCarry_sub, isSub_sub);
+			r1.a = DoArithmetics(Read8((ushort)(r1.iy + offset)), hasCarry_sub, isSub_sub);
 		}
+        
 		protected void add_hl_hl() {
 			tStates += 7;
 			r1.hl = DoAddWord(r1.hl, r1.hl,  hasCarry_add, isSub_add);
@@ -4390,47 +4599,47 @@ namespace Z80 {
         }
         
         protected void rlc_a() {
-            r1.a = DoRLC(r1.a, false);
+            r1.a = DoRLC(r1.a, true);
         }
         
         protected void rlc_b() {
-            r1.b = DoRLC(r1.b, false);
+            r1.b = DoRLC(r1.b, true);
         }
         
         protected void rlc_c() {
-            r1.c = DoRLC(r1.c, false);
+            r1.c = DoRLC(r1.c, true);
         }
         
         protected void rlc_d() {
-            r1.d = DoRLC(r1.d, false);
+            r1.d = DoRLC(r1.d, true);
         }
         
         protected void rlc_e() {
-            r1.e = DoRLC(r1.e, false);
+            r1.e = DoRLC(r1.e, true);
         }
         
         protected void rlc_h() {
-            r1.h = DoRLC(r1.h, false);
+            r1.h = DoRLC(r1.h, true);
         }
         
         protected void rlc_l() {
-            r1.l = DoRLC(r1.l, false);
+            r1.l = DoRLC(r1.l, true);
         }
         
         protected void rlc_ixh() {
-            r1.ixh = DoRLC(r1.ixh, false);
+            r1.ixh = DoRLC(r1.ixh, true);
         }
         
         protected void rlc_ixl() {
-            r1.ixl = DoRLC(r1.ixl, false);
+            r1.ixl = DoRLC(r1.ixl, true);
         }
         
         protected void rlc_iyh() {
-            r1.iyh = DoRLC(r1.iyh, false);
+            r1.iyh = DoRLC(r1.iyh, true);
         }
         
         protected void rlc_iyl() {
-            r1.iyl = DoRLC(r1.iyl, false);
+            r1.iyl = DoRLC(r1.iyl, true);
         }
         
         protected void rlc__hl_() {
@@ -4457,47 +4666,47 @@ namespace Z80 {
         }
         
         protected void rl_a() {
-            r1.a = DoRL(r1.a, false);
+            r1.a = DoRL(r1.a, true);
         }
         
         protected void rl_b() {
-            r1.b = DoRL(r1.b, false);
+            r1.b = DoRL(r1.b, true);
         }
         
         protected void rl_c() {
-            r1.c = DoRL(r1.c, false);
+            r1.c = DoRL(r1.c, true);
         }
         
         protected void rl_d() {
-            r1.d = DoRL(r1.d, false);
+            r1.d = DoRL(r1.d, true);
         }
         
         protected void rl_e() {
-            r1.e = DoRL(r1.e, false);
+            r1.e = DoRL(r1.e, true);
         }
         
         protected void rl_h() {
-            r1.h = DoRL(r1.h, false);
+            r1.h = DoRL(r1.h, true);
         }
         
         protected void rl_l() {
-            r1.l = DoRL(r1.l, false);
+            r1.l = DoRL(r1.l, true);
         }
         
         protected void rl_ixh() {
-            r1.ixh = DoRL(r1.ixh, false);
+            r1.ixh = DoRL(r1.ixh, true);
         }
         
         protected void rl_ixl() {
-            r1.ixl = DoRL(r1.ixl, false);
+            r1.ixl = DoRL(r1.ixl, true);
         }
         
         protected void rl_iyh() {
-            r1.iyh = DoRL(r1.iyh, false);
+            r1.iyh = DoRL(r1.iyh, true);
         }
         
         protected void rl_iyl() {
-            r1.iyl = DoRL(r1.iyl, false);
+            r1.iyl = DoRL(r1.iyl, true);
         }
         
         protected void rl__hl_() {
@@ -4524,47 +4733,47 @@ namespace Z80 {
         }
         
         protected void rrc_a() {
-            r1.a = DoRRC(r1.a, false);
+            r1.a = DoRRC(r1.a, true);
         }
         
         protected void rrc_b() {
-            r1.b = DoRRC(r1.b, false);
+            r1.b = DoRRC(r1.b, true);
         }
         
         protected void rrc_c() {
-            r1.c = DoRRC(r1.c, false);
+            r1.c = DoRRC(r1.c, true);
         }
         
         protected void rrc_d() {
-            r1.d = DoRRC(r1.d, false);
+            r1.d = DoRRC(r1.d, true);
         }
         
         protected void rrc_e() {
-            r1.e = DoRRC(r1.e, false);
+            r1.e = DoRRC(r1.e, true);
         }
         
         protected void rrc_h() {
-            r1.h = DoRRC(r1.h, false);
+            r1.h = DoRRC(r1.h, true);
         }
         
         protected void rrc_l() {
-            r1.l = DoRRC(r1.l, false);
+            r1.l = DoRRC(r1.l, true);
         }
         
         protected void rrc_ixh() {
-            r1.ixh = DoRRC(r1.ixh, false);
+            r1.ixh = DoRRC(r1.ixh, true);
         }
         
         protected void rrc_ixl() {
-            r1.ixl = DoRRC(r1.ixl, false);
+            r1.ixl = DoRRC(r1.ixl, true);
         }
         
         protected void rrc_iyh() {
-            r1.iyh = DoRRC(r1.iyh, false);
+            r1.iyh = DoRRC(r1.iyh, true);
         }
         
         protected void rrc_iyl() {
-            r1.iyl = DoRRC(r1.iyl, false);
+            r1.iyl = DoRRC(r1.iyl, true);
         }
         
         protected void rrc__hl_() {
@@ -4591,47 +4800,47 @@ namespace Z80 {
         }
         
         protected void rr_a() {
-            r1.a = DoRR(r1.a, false);
+            r1.a = DoRR(r1.a, true);
         }
         
         protected void rr_b() {
-            r1.b = DoRR(r1.b, false);
+            r1.b = DoRR(r1.b, true);
         }
         
         protected void rr_c() {
-            r1.c = DoRR(r1.c, false);
+            r1.c = DoRR(r1.c, true);
         }
         
         protected void rr_d() {
-            r1.d = DoRR(r1.d, false);
+            r1.d = DoRR(r1.d, true);
         }
         
         protected void rr_e() {
-            r1.e = DoRR(r1.e, false);
+            r1.e = DoRR(r1.e, true);
         }
         
         protected void rr_h() {
-            r1.h = DoRR(r1.h, false);
+            r1.h = DoRR(r1.h, true);
         }
         
         protected void rr_l() {
-            r1.l = DoRR(r1.l, false);
+            r1.l = DoRR(r1.l, true);
         }
         
         protected void rr_ixh() {
-            r1.ixh = DoRR(r1.ixh, false);
+            r1.ixh = DoRR(r1.ixh, true);
         }
         
         protected void rr_ixl() {
-            r1.ixl = DoRR(r1.ixl, false);
+            r1.ixl = DoRR(r1.ixl, true);
         }
         
         protected void rr_iyh() {
-            r1.iyh = DoRR(r1.iyh, false);
+            r1.iyh = DoRR(r1.iyh, true);
         }
         
         protected void rr_iyl() {
-            r1.iyl = DoRR(r1.iyl, false);
+            r1.iyl = DoRR(r1.iyl, true);
         }
         
         protected void rr__hl_() {

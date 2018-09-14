@@ -74,7 +74,7 @@ namespace Z80
 
         // Inc/Dec helpers
         protected const bool isDec_inc = false;
-        protected const bool isDec_dec = false;
+        protected const bool isDec_dec = true;
 
         protected const bool isArithmeticsA = true;
         protected const bool isArithmeticsL = false;
@@ -474,7 +474,7 @@ namespace Z80
         protected byte DoSL(byte value, bool isArithmetics) {
             ValFlag(f_c, (value & 0x80) != 0);
             value <<= 1;
-            if (isArithmetics) {
+            if (!isArithmetics) {
                 value |= 1;
             }
             AdjustFlags(value);
