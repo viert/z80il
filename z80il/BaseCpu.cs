@@ -114,6 +114,7 @@ namespace Z80
         protected bool intRequested;
         protected bool deferInt;
         protected bool execIntVector;
+        protected byte intVector;
 
         protected byte IORead(ushort addr) {
             tStates += 4;
@@ -550,8 +551,74 @@ namespace Z80
         }
 
         // Execute() executes a single CPU operation
+        // paying attention to interrupts
+
         public ulong Execute() {
             ulong t = tStates;
+            if (nmiRequested) {
+                DoNMI();
+            } else if (intRequested && !deferInt && iff1) {
+                DoINT();
+            } else {
+                deferInt = false;
+                DoExecute();
+            }
+
+            return tStates - t;
+        }
+
+        protected void Unhalt() {
+            if (halted) {
+                halted = false;
+                pc++;
+            }
+        }
+
+        protected void DoNMI() {
+            Unhalt();
+            iff2 = iff1;
+            iff1 = false;
+            DoPush(pc);
+            pc = 0x0066;
+            nmiRequested = false;
+            tStates += 5;
+        }
+
+        protected void DoINT() {
+            Unhalt();
+            iff1 = false;
+            iff2 = false;
+            intRequested = false;
+            switch (im) {
+                case 0:
+                    execIntVector = true;
+                    DoExecute();
+                    execIntVector = false;
+                    break;
+                case 1:
+                    DoPush(pc);
+                    pc = 0x0038;
+                    tStates += 7;
+                    break;
+                case 2:
+                    DoPush(pc);
+                    ushort vectorAddr = (ushort)((i << 8) | intVector);
+                    pc = Read16(vectorAddr);
+                    tStates += 7;
+                    break;
+            }
+        }
+
+        public void Nmi() {
+            nmiRequested = true;
+        }
+
+        public void Int(byte value) {
+            intVector = value;
+            intRequested = true;
+        }
+
+        protected void DoExecute() {
             byte opCode;
             CodesList codes = new CodesList();
             int offset = 0;
@@ -559,10 +626,15 @@ namespace Z80
             OpcodeTable current = opcodeTable;
 
             while (true) {
-                opCode = Read8((ushort)(pc + offset));
+                if (execIntVector) {
+                    opCode = intVector;
+                    tStates += 6;
+                } else {
+                    opCode = Read8((ushort)(pc + offset));
+                    pc++;
+                    tStates++;
+                }
                 codes.Add(opCode);
-                pc++;
-                tStates++;
                 IncR();
 
                 operation = current.entries[opCode];
@@ -586,7 +658,6 @@ namespace Z80
                 }
 
             }
-            return tStates - t; // total number of tStates elapsed
         }
 
         // Disassemble(ushort addr) disassembles a single CPU operation
