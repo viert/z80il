@@ -699,7 +699,12 @@ namespace Z80
                         addr += 2;
                         break;
                     case ArgType.Offset:
-                        args[j] = (int)((SByte)Read8(addr++));
+                        var offset = (int)((SByte)Read8(addr++));
+                        if (offset >= 0) {
+                            args[j] = string.Format("+{0}", offset);
+                        } else {
+                            args[j] = offset;
+                        }
                         break;
                 }
             }
