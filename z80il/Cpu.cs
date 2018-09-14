@@ -954,13 +954,21 @@ namespace Z80 {
             opcodeTable.entries[0xD3] = new OpcodeTableEntry(out__n__a, "out ({0}), a", new ArgType[]{ArgType.Byte});
             
             opcodeTableED.entries[0x70] = new OpcodeTableEntry(in_f__c_, "in f, (c)", new ArgType[]{});
+            opcodeTableED.entries[0x71] = new OpcodeTableEntry(out__c__0, "out (c), 0", new ArgType[]{});
             opcodeTableED.entries[64] = new OpcodeTableEntry(in_b__c_, "in b, (c)", new ArgType[]{});
+            opcodeTableED.entries[65] = new OpcodeTableEntry(out__c__b, "out (c), b", new ArgType[]{});
             opcodeTableED.entries[72] = new OpcodeTableEntry(in_c__c_, "in c, (c)", new ArgType[]{});
+            opcodeTableED.entries[73] = new OpcodeTableEntry(out__c__c, "out (c), c", new ArgType[]{});
             opcodeTableED.entries[80] = new OpcodeTableEntry(in_d__c_, "in d, (c)", new ArgType[]{});
+            opcodeTableED.entries[81] = new OpcodeTableEntry(out__c__d, "out (c), d", new ArgType[]{});
             opcodeTableED.entries[88] = new OpcodeTableEntry(in_e__c_, "in e, (c)", new ArgType[]{});
+            opcodeTableED.entries[89] = new OpcodeTableEntry(out__c__e, "out (c), e", new ArgType[]{});
             opcodeTableED.entries[96] = new OpcodeTableEntry(in_h__c_, "in h, (c)", new ArgType[]{});
+            opcodeTableED.entries[97] = new OpcodeTableEntry(out__c__h, "out (c), h", new ArgType[]{});
             opcodeTableED.entries[104] = new OpcodeTableEntry(in_l__c_, "in l, (c)", new ArgType[]{});
+            opcodeTableED.entries[105] = new OpcodeTableEntry(out__c__l, "out (c), l", new ArgType[]{});
             opcodeTableED.entries[120] = new OpcodeTableEntry(in_a__c_, "in a, (c)", new ArgType[]{});
+            opcodeTableED.entries[121] = new OpcodeTableEntry(out__c__a, "out (c), a", new ArgType[]{});
             opcodeTableED.entries[0xA2] = new OpcodeTableEntry(ini, "ini", new ArgType[]{});
             opcodeTableED.entries[0xB2] = new OpcodeTableEntry(inir, "inir", new ArgType[]{});
             opcodeTableED.entries[0xAA] = new OpcodeTableEntry(ind, "ind", new ArgType[]{});
@@ -969,7 +977,60 @@ namespace Z80 {
             opcodeTableED.entries[0xB3] = new OpcodeTableEntry(otir, "otir", new ArgType[]{});
             opcodeTableED.entries[0xAB] = new OpcodeTableEntry(outd, "outd", new ArgType[]{});
             opcodeTableED.entries[0xBB] = new OpcodeTableEntry(otdr, "otdr", new ArgType[]{});
-                                                     
+            
+            // Jumps and calls
+            
+            opcodeTable.entries[0xC3] = new OpcodeTableEntry(jp_nn, "jp {0}", new ArgType[]{ArgType.Word});
+            opcodeTable.entries[0xCD] = new OpcodeTableEntry(call_nn, "call {0}", new ArgType[]{ArgType.Word});
+            opcodeTable.entries[0x18] = new OpcodeTableEntry(jr_pc_e, "jr pc{0}", new ArgType[]{ArgType.Offset});
+            
+            opcodeTable.entries[0x38] = new OpcodeTableEntry(jr_c_pc_e, "jr c, pc{0}", new ArgType[]{ArgType.Offset});
+            opcodeTable.entries[0x30] = new OpcodeTableEntry(jr_nc_pc_e, "jr nc, pc{0}", new ArgType[]{ArgType.Offset});
+            opcodeTable.entries[0x28] = new OpcodeTableEntry(jr_z_pc_e, "jr z, pc{0}", new ArgType[]{ArgType.Offset});
+            opcodeTable.entries[0x20] = new OpcodeTableEntry(jr_nz_pc_e, "jr nz, pc{0}", new ArgType[]{ArgType.Offset});
+            
+            opcodeTable.entries[0xE9] = new OpcodeTableEntry(jp__hl_, "jp (hl)", new ArgType[]{});
+            opcodeTableDD.entries[0xE9] = new OpcodeTableEntry(jp__ix_, "jp (ix)", new ArgType[]{});
+            opcodeTableFD.entries[0xE9] = new OpcodeTableEntry(jp__iy_, "jp (iy)", new ArgType[]{});
+            
+            opcodeTable.entries[0x10] = new OpcodeTableEntry(djnz_pc_e, "djnz pc{0}", new ArgType[]{ArgType.Offset});
+            
+            
+            opcodeTable.entries[194] = new OpcodeTableEntry(jp_nz_nn, "jp nz, {0}", new ArgType[]{ArgType.Word});
+            opcodeTable.entries[196] = new OpcodeTableEntry(call_nz_nn, "call nz, {0}", new ArgType[]{ArgType.Word});
+            opcodeTable.entries[192] = new OpcodeTableEntry(ret_nz, "ret nz", new ArgType[]{});
+            opcodeTable.entries[202] = new OpcodeTableEntry(jp_z_nn, "jp z, {0}", new ArgType[]{ArgType.Word});
+            opcodeTable.entries[204] = new OpcodeTableEntry(call_z_nn, "call z, {0}", new ArgType[]{ArgType.Word});
+            opcodeTable.entries[200] = new OpcodeTableEntry(ret_z, "ret z", new ArgType[]{});
+            opcodeTable.entries[210] = new OpcodeTableEntry(jp_nc_nn, "jp nc, {0}", new ArgType[]{ArgType.Word});
+            opcodeTable.entries[212] = new OpcodeTableEntry(call_nc_nn, "call nc, {0}", new ArgType[]{ArgType.Word});
+            opcodeTable.entries[208] = new OpcodeTableEntry(ret_nc, "ret nc", new ArgType[]{});
+            opcodeTable.entries[218] = new OpcodeTableEntry(jp_c_nn, "jp c, {0}", new ArgType[]{ArgType.Word});
+            opcodeTable.entries[220] = new OpcodeTableEntry(call_c_nn, "call c, {0}", new ArgType[]{ArgType.Word});
+            opcodeTable.entries[216] = new OpcodeTableEntry(ret_c, "ret c", new ArgType[]{});
+            opcodeTable.entries[226] = new OpcodeTableEntry(jp_po_nn, "jp po, {0}", new ArgType[]{ArgType.Word});
+            opcodeTable.entries[228] = new OpcodeTableEntry(call_po_nn, "call po, {0}", new ArgType[]{ArgType.Word});
+            opcodeTable.entries[224] = new OpcodeTableEntry(ret_po, "ret po", new ArgType[]{});
+            opcodeTable.entries[234] = new OpcodeTableEntry(jp_pe_nn, "jp pe, {0}", new ArgType[]{ArgType.Word});
+            opcodeTable.entries[236] = new OpcodeTableEntry(call_pe_nn, "call pe, {0}", new ArgType[]{ArgType.Word});
+            opcodeTable.entries[232] = new OpcodeTableEntry(ret_pe, "ret pe", new ArgType[]{});
+            opcodeTable.entries[242] = new OpcodeTableEntry(jp_p_nn, "jp p, {0}", new ArgType[]{ArgType.Word});
+            opcodeTable.entries[244] = new OpcodeTableEntry(call_p_nn, "call p, {0}", new ArgType[]{ArgType.Word});
+            opcodeTable.entries[240] = new OpcodeTableEntry(ret_p, "ret p", new ArgType[]{});
+            opcodeTable.entries[250] = new OpcodeTableEntry(jp_m_nn, "jp m, {0}", new ArgType[]{ArgType.Word});
+            opcodeTable.entries[252] = new OpcodeTableEntry(call_m_nn, "call m, {0}", new ArgType[]{ArgType.Word});
+            opcodeTable.entries[248] = new OpcodeTableEntry(ret_m, "ret m", new ArgType[]{});
+
+            var retnDecl = new OpcodeTableEntry(retn, "retn", new ArgType[]{});
+            opcodeTableED.entries[0x45] = retnDecl;                                                     
+            opcodeTableED.entries[0x55] = retnDecl;                                                     
+            opcodeTableED.entries[0x65] = retnDecl;                                                     
+            opcodeTableED.entries[0x75] = retnDecl;                                                     
+            opcodeTableED.entries[0x5D] = retnDecl;                                                     
+            opcodeTableED.entries[0x6D] = retnDecl;                                                     
+            opcodeTableED.entries[0x7D] = retnDecl;
+            
+            opcodeTableED.entries[0x4D] = new OpcodeTableEntry(reti, "reti", new ArgType[]{});                                                                                             
         }
         
         protected void nop() {
@@ -4734,48 +4795,390 @@ namespace Z80 {
             AdjustFlagsSZP(r1.a);
             AdjustFlags(r1.a);
         }    
+
+        protected void out__c__a() {
+            IOWrite(r1.bc, r1.a);
+        }
+        
         protected void in_b__c_() {
             r1.b = IORead(r1.bc);
             ResFlag(f_h | f_n);
             AdjustFlagsSZP(r1.b);
             AdjustFlags(r1.b);
         }    
+
+        protected void out__c__b() {
+            IOWrite(r1.bc, r1.b);
+        }
+        
         protected void in_c__c_() {
             r1.c = IORead(r1.bc);
             ResFlag(f_h | f_n);
             AdjustFlagsSZP(r1.c);
             AdjustFlags(r1.c);
         }    
+
+        protected void out__c__c() {
+            IOWrite(r1.bc, r1.c);
+        }
+        
         protected void in_d__c_() {
             r1.d = IORead(r1.bc);
             ResFlag(f_h | f_n);
             AdjustFlagsSZP(r1.d);
             AdjustFlags(r1.d);
         }    
+
+        protected void out__c__d() {
+            IOWrite(r1.bc, r1.d);
+        }
+        
         protected void in_e__c_() {
             r1.e = IORead(r1.bc);
             ResFlag(f_h | f_n);
             AdjustFlagsSZP(r1.e);
             AdjustFlags(r1.e);
         }    
+
+        protected void out__c__e() {
+            IOWrite(r1.bc, r1.e);
+        }
+        
         protected void in_f__c_() {
             r1.f = IORead(r1.bc);
             ResFlag(f_h | f_n);
             AdjustFlagsSZP(r1.f);
             AdjustFlags(r1.f);
         }    
+
         protected void in_h__c_() {
             r1.h = IORead(r1.bc);
             ResFlag(f_h | f_n);
             AdjustFlagsSZP(r1.h);
             AdjustFlags(r1.h);
         }    
+
+        protected void out__c__h() {
+            IOWrite(r1.bc, r1.h);
+        }
+        
         protected void in_l__c_() {
             r1.l = IORead(r1.bc);
             ResFlag(f_h | f_n);
             AdjustFlagsSZP(r1.l);
             AdjustFlags(r1.l);
         }    
+
+        protected void out__c__l() {
+            IOWrite(r1.bc, r1.l);
+        }
+        
       
+        protected void out__c__0() {
+            IOWrite(r1.bc, 0);
+        }
+        
+        protected void jp_nn() {
+            pc = Read16(pc);
+        }
+        
+        protected void jr_pc_e() {
+            var offset = (SByte)Read8(pc++);
+            tStates += 5;
+            pc = (ushort)(pc + offset);
+        }
+        
+        protected void djnz_pc_e() {
+            tStates++;
+            var offset = (SByte)Read8(pc++);
+            r1.b--;
+            if (r1.b != 0) {
+                tStates += 5;
+                pc = (ushort)(pc + offset);
+            }
+        }
+        
+        protected void call_nn() {
+            var addr = Read16(pc);
+            pc += 2;
+            tStates++;
+            DoPush(pc);
+            pc = addr;
+        }
+        
+        protected void ret() {
+            pc = DoPop();
+        }
+        
+        protected void retn() {
+            iff1 = iff2;
+            ret();
+        }
+        
+        protected void reti() {
+            iff1 = iff2;
+            ret();
+        }
+        
+        protected void jp_nz_nn() {
+            // no matter if the condition is true we spend 6 tstates to read the addr
+            ushort addr = Read16(pc);
+            if (Condition(c_nz)) {
+                pc = addr;
+            } else {
+                pc += 2;
+            }
+        }
+        
+        protected void call_nz_nn() {
+            var addr = Read16(pc);
+            pc += 2;
+            if (Condition(c_nz)) {
+                tStates++;
+                DoPush(pc);
+                pc = addr;
+            }
+        }
+        
+        protected void ret_nz() {
+            tStates++;
+            if (Condition(c_nz)) {
+                ret();
+            }
+        }
+        
+        protected void jp_z_nn() {
+            // no matter if the condition is true we spend 6 tstates to read the addr
+            ushort addr = Read16(pc);
+            if (Condition(c_z)) {
+                pc = addr;
+            } else {
+                pc += 2;
+            }
+        }
+        
+        protected void call_z_nn() {
+            var addr = Read16(pc);
+            pc += 2;
+            if (Condition(c_z)) {
+                tStates++;
+                DoPush(pc);
+                pc = addr;
+            }
+        }
+        
+        protected void ret_z() {
+            tStates++;
+            if (Condition(c_z)) {
+                ret();
+            }
+        }
+        
+        protected void jp_nc_nn() {
+            // no matter if the condition is true we spend 6 tstates to read the addr
+            ushort addr = Read16(pc);
+            if (Condition(c_nc)) {
+                pc = addr;
+            } else {
+                pc += 2;
+            }
+        }
+        
+        protected void call_nc_nn() {
+            var addr = Read16(pc);
+            pc += 2;
+            if (Condition(c_nc)) {
+                tStates++;
+                DoPush(pc);
+                pc = addr;
+            }
+        }
+        
+        protected void ret_nc() {
+            tStates++;
+            if (Condition(c_nc)) {
+                ret();
+            }
+        }
+        
+        protected void jp_c_nn() {
+            // no matter if the condition is true we spend 6 tstates to read the addr
+            ushort addr = Read16(pc);
+            if (Condition(c_c)) {
+                pc = addr;
+            } else {
+                pc += 2;
+            }
+        }
+        
+        protected void call_c_nn() {
+            var addr = Read16(pc);
+            pc += 2;
+            if (Condition(c_c)) {
+                tStates++;
+                DoPush(pc);
+                pc = addr;
+            }
+        }
+        
+        protected void ret_c() {
+            tStates++;
+            if (Condition(c_c)) {
+                ret();
+            }
+        }
+        
+        protected void jp_po_nn() {
+            // no matter if the condition is true we spend 6 tstates to read the addr
+            ushort addr = Read16(pc);
+            if (Condition(c_po)) {
+                pc = addr;
+            } else {
+                pc += 2;
+            }
+        }
+        
+        protected void call_po_nn() {
+            var addr = Read16(pc);
+            pc += 2;
+            if (Condition(c_po)) {
+                tStates++;
+                DoPush(pc);
+                pc = addr;
+            }
+        }
+        
+        protected void ret_po() {
+            tStates++;
+            if (Condition(c_po)) {
+                ret();
+            }
+        }
+        
+        protected void jp_pe_nn() {
+            // no matter if the condition is true we spend 6 tstates to read the addr
+            ushort addr = Read16(pc);
+            if (Condition(c_pe)) {
+                pc = addr;
+            } else {
+                pc += 2;
+            }
+        }
+        
+        protected void call_pe_nn() {
+            var addr = Read16(pc);
+            pc += 2;
+            if (Condition(c_pe)) {
+                tStates++;
+                DoPush(pc);
+                pc = addr;
+            }
+        }
+        
+        protected void ret_pe() {
+            tStates++;
+            if (Condition(c_pe)) {
+                ret();
+            }
+        }
+        
+        protected void jp_p_nn() {
+            // no matter if the condition is true we spend 6 tstates to read the addr
+            ushort addr = Read16(pc);
+            if (Condition(c_p)) {
+                pc = addr;
+            } else {
+                pc += 2;
+            }
+        }
+        
+        protected void call_p_nn() {
+            var addr = Read16(pc);
+            pc += 2;
+            if (Condition(c_p)) {
+                tStates++;
+                DoPush(pc);
+                pc = addr;
+            }
+        }
+        
+        protected void ret_p() {
+            tStates++;
+            if (Condition(c_p)) {
+                ret();
+            }
+        }
+        
+        protected void jp_m_nn() {
+            // no matter if the condition is true we spend 6 tstates to read the addr
+            ushort addr = Read16(pc);
+            if (Condition(c_m)) {
+                pc = addr;
+            } else {
+                pc += 2;
+            }
+        }
+        
+        protected void call_m_nn() {
+            var addr = Read16(pc);
+            pc += 2;
+            if (Condition(c_m)) {
+                tStates++;
+                DoPush(pc);
+                pc = addr;
+            }
+        }
+        
+        protected void ret_m() {
+            tStates++;
+            if (Condition(c_m)) {
+                ret();
+            }
+        }
+        
+        protected void jr_c_pc_e() {
+            var offset = (SByte)Read8(pc++);
+            if (Condition(c_c)) {
+                tStates += 5;
+                pc = (ushort)(pc + offset);
+            }
+        }
+        
+        protected void jr_nc_pc_e() {
+            var offset = (SByte)Read8(pc++);
+            if (Condition(c_nc)) {
+                tStates += 5;
+                pc = (ushort)(pc + offset);
+            }
+        }
+        
+        protected void jr_z_pc_e() {
+            var offset = (SByte)Read8(pc++);
+            if (Condition(c_z)) {
+                tStates += 5;
+                pc = (ushort)(pc + offset);
+            }
+        }
+        
+        protected void jr_nz_pc_e() {
+            var offset = (SByte)Read8(pc++);
+            if (Condition(c_nz)) {
+                tStates += 5;
+                pc = (ushort)(pc + offset);
+            }
+        }
+        
+        protected void jp__hl_() {
+            pc = r1.hl;
+        }
+        
+        protected void jp__ix_() {
+            pc = r1.ix;
+        }
+        
+        protected void jp__iy_() {
+            pc = r1.iy;
+        }
+        
     }
 }

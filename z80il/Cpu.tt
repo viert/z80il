@@ -28,6 +28,17 @@ Dictionary<int, string> Register16Map2 = new Dictionary<int, string>{
     {3, "af"}
 };
 
+Dictionary<int, string> Conditions = new Dictionary<int, string>{
+    {0, "nz"},
+    {1, "z"},
+    {2, "nc"},
+    {3, "c"},
+    {4, "po"},
+    {5, "pe"},
+    {6, "p"},
+    {7, "m"}
+};
+
 string[] All8BitRegs = new string[11] {
     "a", "b", "c", "d", "e", "h", "l", "ixh", "ixl", "iyh", "iyl"
 };
@@ -40,6 +51,10 @@ Dictionary<string, int> Prefixes = new Dictionary<string, int>{
     {"ix", 0xDD},
     {"iy", 0xFD}
 };
+
+int opCode;
+string opFuncName, dasm;
+
 #>
 using System;
 
@@ -57,11 +72,11 @@ namespace Z80 {
 <#  
     foreach (var dst in RegisterMap) {
         foreach (var src in RegisterMap) { 
-            var opCode = 0x40 | (dst.Key << 3) | src.Key;
+            opCode = 0x40 | (dst.Key << 3) | src.Key;
             var srcRegName = src.Value;
             var dstRegName = dst.Value;
-            var opFuncName = string.Format("ld_{0}_{1}", dstRegName, srcRegName);
-            var dasm = string.Format("ld {0}, {1}", dstRegName, srcRegName);
+            opFuncName = string.Format("ld_{0}_{1}", dstRegName, srcRegName);
+            dasm = string.Format("ld {0}, {1}", dstRegName, srcRegName);
 #>
             opcodeTable.entries[<#= opCode #>] = new OpcodeTableEntry(<#= opFuncName #>, "<#= dasm #>", new ArgType[]{});
 <#  
@@ -74,9 +89,9 @@ namespace Z80 {
             // LD r, n
 <#  
     foreach (var dst in RegisterMap) {
-        var opCode = 0x06 | (dst.Key << 3);
-        var opFuncName = string.Format("ld_{0}_n", dst.Value);
-        var dasm = string.Format("ld {0}, {{0}}", dst.Value);
+        opCode = 0x06 | (dst.Key << 3);
+        opFuncName = string.Format("ld_{0}_n", dst.Value);
+        dasm = string.Format("ld {0}, {{0}}", dst.Value);
 #>
             opcodeTable.entries[<#= opCode #>] = new OpcodeTableEntry(<#= opFuncName #>, "<#= dasm #>", new ArgType[]{ArgType.Byte});
 <#  
@@ -90,9 +105,9 @@ namespace Z80 {
             // LD r, (HL)
 <#
     foreach (var dst in RegisterMap) {
-        var opCode = 0x46 | (dst.Key << 3);
-        var opFuncName = string.Format("ld_{0}__hl_", dst.Value);
-        var dasm = string.Format("ld {0}, (hl)", dst.Value);
+        opCode = 0x46 | (dst.Key << 3);
+        opFuncName = string.Format("ld_{0}__hl_", dst.Value);
+        dasm = string.Format("ld {0}, (hl)", dst.Value);
 #>
             opcodeTable.entries[<#= opCode #>] = new OpcodeTableEntry(<#= opFuncName #>, "<#= dasm #>", new ArgType[]{});
 <#
@@ -102,9 +117,9 @@ namespace Z80 {
             // LD (HL), r
 <#
     foreach (var src in RegisterMap) {
-        var opCode = 0x70 | src.Key;
-        var opFuncName = string.Format("ld__hl__{0}", src.Value);
-        var dasm = string.Format("ld (hl), {0}", src.Value);
+        opCode = 0x70 | src.Key;
+        opFuncName = string.Format("ld__hl__{0}", src.Value);
+        dasm = string.Format("ld (hl), {0}", src.Value);
 #>
             opcodeTable.entries[<#= opCode #>] = new OpcodeTableEntry(<#= opFuncName #>, "<#= dasm #>", new ArgType[]{});
 <#
@@ -131,10 +146,10 @@ namespace Z80 {
             // Indexed 8 bit load
 <#
     foreach (var dst in RegisterMap) {
-        var opCode = 0x46 | (dst.Key << 3);
+        opCode = 0x46 | (dst.Key << 3);
         foreach (var iReg in Prefixes) {
-            var opFuncName = string.Format("ld_{0}__{1}_d_", dst.Value, iReg.Key);
-            var dasm = string.Format("ld {0}, ({1}+{{0}})", dst.Value, iReg.Key);
+            opFuncName = string.Format("ld_{0}__{1}_d_", dst.Value, iReg.Key);
+            dasm = string.Format("ld {0}, ({1}+{{0}})", dst.Value, iReg.Key);
 #>
             opcodeTable.entries[<#= iReg.Value #>].nextTable.entries[<#= opCode #>] = 
                 new OpcodeTableEntry(<#= opFuncName #>, "<#= dasm #>", new ArgType[]{ArgType.Offset});
@@ -144,10 +159,10 @@ namespace Z80 {
 #>
 <#
     foreach (var src in RegisterMap) {
-        var opCode = 0x70 | src.Key;
+        opCode = 0x70 | src.Key;
         foreach (var iReg in Prefixes) {
-            var opFuncName = string.Format("ld__{1}_d__{0}", src.Value, iReg.Key);
-            var dasm = string.Format("ld ({1}+{{0}}), {0}", src.Value, iReg.Key);
+            opFuncName = string.Format("ld__{1}_d__{0}", src.Value, iReg.Key);
+            dasm = string.Format("ld ({1}+{{0}}), {0}", src.Value, iReg.Key);
 #>
             opcodeTable.entries[<#= iReg.Value #>].nextTable.entries[<#= opCode #>] = 
                 new OpcodeTableEntry(<#= opFuncName #>, "<#= dasm #>", new ArgType[]{ArgType.Offset});
@@ -157,8 +172,8 @@ namespace Z80 {
 #>
 <#
     foreach (var iReg in Prefixes) {
-        var opFuncName = string.Format("ld__{0}_d__n", iReg.Key);
-        var dasm = string.Format("ld ({0}+{{0}}), {{1}}", iReg.Key);
+        opFuncName = string.Format("ld__{0}_d__n", iReg.Key);
+        dasm = string.Format("ld ({0}+{{0}}), {{1}}", iReg.Key);
 #>
             opcodeTable.entries[<#= iReg.Value #>].nextTable.entries[0x36] =
                 new OpcodeTableEntry(<#= opFuncName #>, "<#= dasm #>", new ArgType[]{ArgType.Offset, ArgType.Byte});
@@ -169,9 +184,9 @@ namespace Z80 {
             // LD dd, nn
 <#
     foreach (var rCode in Register16Map) {
-        var opCode = 1 | (rCode.Key << 4);
-        var opFuncName = string.Format("ld_{0}_nn", rCode.Value);
-        var dasm = string.Format("ld {0}, {{0}}", rCode.Value);
+        opCode = 1 | (rCode.Key << 4);
+        opFuncName = string.Format("ld_{0}_nn", rCode.Value);
+        dasm = string.Format("ld {0}, {{0}}", rCode.Value);
 #>
             opcodeTable.entries[<#= opCode #>] = new OpcodeTableEntry(<#= opFuncName #>, "<#= dasm #>", new ArgType[]{ArgType.Word});
 <#
@@ -180,8 +195,8 @@ namespace Z80 {
 
 <#
     foreach (var iReg in Prefixes) {
-        var opFuncName = string.Format("ld_{0}_nn", iReg.Key);
-        var dasm = string.Format("ld {0}, {{0}}", iReg.Key);
+        opFuncName = string.Format("ld_{0}_nn", iReg.Key);
+        dasm = string.Format("ld {0}, {{0}}", iReg.Key);
 #>
             opcodeTable.entries[<#= iReg.Value #>].nextTable.entries[0x21] =
                 new OpcodeTableEntry(<#= opFuncName #>, "<#= dasm #>", new ArgType[]{ArgType.Word});
@@ -192,9 +207,9 @@ namespace Z80 {
             // LD dd, (nn)
 <#
     foreach (var rCode in Register16Map) {
-        var opCode = 0x4B | (rCode.Key << 4);
-        var opFuncName = string.Format("ld_{0}__nn_", rCode.Value);
-        var dasm = string.Format("ld {0}, ({{0}})", rCode.Value);
+        opCode = 0x4B | (rCode.Key << 4);
+        opFuncName = string.Format("ld_{0}__nn_", rCode.Value);
+        dasm = string.Format("ld {0}, ({{0}})", rCode.Value);
 #>
             opcodeTableED.entries[<#= opCode #>] = new OpcodeTableEntry(<#= opFuncName #>, "<#= dasm #>", new ArgType[]{ArgType.Word});
 <#
@@ -204,8 +219,8 @@ namespace Z80 {
             opcodeTable.entries[0x2A] = new OpcodeTableEntry(ld_hl__nn_, "ld hl, ({0})", new ArgType[]{ArgType.Word});
 <#
     foreach (var iReg in Prefixes) {
-        var opFuncName = string.Format("ld_{0}__nn_", iReg.Key);
-        var dasm = string.Format("ld {0}, ({{0}})", iReg.Key);
+        opFuncName = string.Format("ld_{0}__nn_", iReg.Key);
+        dasm = string.Format("ld {0}, ({{0}})", iReg.Key);
 #>
             opcodeTable.entries[<#= iReg.Value #>].nextTable.entries[0x2A] =
                 new OpcodeTableEntry(<#= opFuncName #>, "<#= dasm #>", new ArgType[]{ArgType.Word});
@@ -216,9 +231,9 @@ namespace Z80 {
             // LD (nn), dd
 <#
     foreach (var rCode in Register16Map) {
-        var opCode = 0x43 | (rCode.Key << 4);
-        var opFuncName = string.Format("ld__nn__{0}", rCode.Value);
-        var dasm = string.Format("ld ({{0}}), {0}", rCode.Value);
+        opCode = 0x43 | (rCode.Key << 4);
+        opFuncName = string.Format("ld__nn__{0}", rCode.Value);
+        dasm = string.Format("ld ({{0}}), {0}", rCode.Value);
 #>
             opcodeTableED.entries[<#= opCode #>] = new OpcodeTableEntry(<#= opFuncName #>, "<#= dasm #>", new ArgType[]{ArgType.Word});
 <#
@@ -228,8 +243,8 @@ namespace Z80 {
             opcodeTable.entries[0x22] = new OpcodeTableEntry(ld__nn__hl, "ld ({0}), hl", new ArgType[]{ArgType.Word});
 <#
     foreach (var iReg in Prefixes) {
-        var opFuncName = string.Format("ld__nn__{0}", iReg.Key);
-        var dasm = string.Format("ld ({{0}}), {0}", iReg.Key);
+        opFuncName = string.Format("ld__nn__{0}", iReg.Key);
+        dasm = string.Format("ld ({{0}}), {0}", iReg.Key);
 #>
             opcodeTable.entries[<#= iReg.Value #>].nextTable.entries[0x22] =
                 new OpcodeTableEntry(<#= opFuncName #>, "<#= dasm #>", new ArgType[]{ArgType.Word});
@@ -243,9 +258,9 @@ namespace Z80 {
             // PUSH qq / POP qq
 <#
     foreach (var rCode in Register16Map2) {
-        var opCode = 0xC5 | (rCode.Key << 4);
-        var opFuncName = string.Format("push_{0}", rCode.Value);
-        var dasm = string.Format("push {0}", rCode.Value);
+        opCode = 0xC5 | (rCode.Key << 4);
+        opFuncName = string.Format("push_{0}", rCode.Value);
+        dasm = string.Format("push {0}", rCode.Value);
 #>
             opcodeTable.entries[<#= opCode #>] = new OpcodeTableEntry(<#= opFuncName #>, "<#= dasm #>", new ArgType[]{});
 <#  
@@ -259,8 +274,8 @@ namespace Z80 {
 #>
 <#
     foreach (var iReg in Prefixes) {
-        var opFuncName = string.Format("push_{0}", iReg.Key);
-        var dasm = string.Format("push {0}", iReg.Key);
+        opFuncName = string.Format("push_{0}", iReg.Key);
+        dasm = string.Format("push {0}", iReg.Key);
 #>
             opcodeTable.entries[<#= iReg.Value #>].nextTable.entries[0xE5] =
                 new OpcodeTableEntry(<#= opFuncName #>, "<#= dasm #>", new ArgType[]{});
@@ -292,8 +307,6 @@ namespace Z80 {
             opcodeTableED.entries[0xB9] = new OpcodeTableEntry(cpdr, "cpdr", new ArgType[] { });
 <#
     foreach (var rCode in RegisterMap) {
-        int opCode;
-        string opFuncName, dasm;
         
         opCode = 0x80 | rCode.Key;
         opFuncName = string.Format("add_a_{0}", rCode.Value);
@@ -362,9 +375,9 @@ namespace Z80 {
 			// ADD HL, BC/DE/HL/SP
 <#
 	foreach (var rCode in Register16Map) {
-		var opCode = 0x09 | (rCode.Key << 4);
-		var opFuncName = string.Format("add_hl_{0}", rCode.Value);
-		var dasm = string.Format("add hl, {0}", rCode.Value);
+		opCode = 0x09 | (rCode.Key << 4);
+		opFuncName = string.Format("add_hl_{0}", rCode.Value);
+		dasm = string.Format("add hl, {0}", rCode.Value);
 #>
 			opcodeTable.entries[<#= opCode #>] = new OpcodeTableEntry(<#= opFuncName #>, "<#= dasm #>", new ArgType[]{});
 <#
@@ -392,9 +405,9 @@ namespace Z80 {
 	}
     
     foreach (var rCode in RegisterMap) {
-        var opCode = 0xA0 | rCode.Key;
-        var opFuncName = string.Format("and_{0}", rCode.Value);
-        var dasm = string.Format("and {0}", rCode.Value);
+        opCode = 0xA0 | rCode.Key;
+        opFuncName = string.Format("and_{0}", rCode.Value);
+        dasm = string.Format("and {0}", rCode.Value);
 #>
             opcodeTable.entries[<#= opCode #>] = new OpcodeTableEntry(<#= opFuncName #>, "<#= dasm #>", new ArgType[]{});
 <#
@@ -492,9 +505,9 @@ namespace Z80 {
     }
     
     foreach (var rCode in Register16Map) {
-        var opCode = 0x03 | (rCode.Key << 4);
-        var opFuncName = string.Format("inc_{0}", rCode.Value);
-        var dasm = string.Format("inc {0}", rCode.Value);
+        opCode = 0x03 | (rCode.Key << 4);
+        opFuncName = string.Format("inc_{0}", rCode.Value);
+        dasm = string.Format("inc {0}", rCode.Value);
 #>
             opcodeTable.entries[<#= opCode #>] = new OpcodeTableEntry(<#= opFuncName #>, "<#= dasm #>", new ArgType[]{});
 <#
@@ -553,9 +566,6 @@ namespace Z80 {
            
 <#
     foreach (var rCode in RegisterMap) {
-        int opCode;
-        string opFuncName, dasm;
-        
         opCode = rCode.Key;
         opFuncName = string.Format("rlc_{0}", rCode.Value);
         dasm = string.Format("rlc {0}", rCode.Value);
@@ -641,9 +651,6 @@ namespace Z80 {
                         
 <#
     for (var b = 0; b < 8; b++) {
-        int opCode;
-        string opFuncName, dasm;
-        
         foreach (var rCode in RegisterMap) {
             opCode = 0x40 | (b << 3) | rCode.Key;
             opFuncName = string.Format("bit_{0}_{1}", b, rCode.Value);
@@ -678,9 +685,6 @@ namespace Z80 {
             
 <#
     for (var b = 0; b < 8; b++) {
-        int opCode;
-        string opFuncName, dasm;
-        
         foreach (var rCode in RegisterMap) {
             opCode = 0xC0 | (b << 3) | rCode.Key;
             opFuncName = string.Format("set_{0}_{1}", b, rCode.Value);
@@ -708,9 +712,6 @@ namespace Z80 {
     }
 
     for (var b = 0; b < 8; b++) {
-        int opCode;
-        string opFuncName, dasm;
-        
         foreach (var rCode in RegisterMap) {
             opCode = 0x80 | (b << 3) | rCode.Key;
             opFuncName = string.Format("res_{0}_{1}", b, rCode.Value);
@@ -742,11 +743,18 @@ namespace Z80 {
             opcodeTable.entries[0xD3] = new OpcodeTableEntry(out__n__a, "out ({0}), a", new ArgType[]{ArgType.Byte});
             
             opcodeTableED.entries[0x70] = new OpcodeTableEntry(in_f__c_, "in f, (c)", new ArgType[]{});
+            opcodeTableED.entries[0x71] = new OpcodeTableEntry(out__c__0, "out (c), 0", new ArgType[]{});
 <#
     foreach (var rCode in RegisterMap) {
-        var opCode = 0x40 | (rCode.Key << 3);
-        var opFuncName = string.Format("in_{0}__c_", rCode.Value);
-        var dasm = string.Format("in {0}, (c)", rCode.Value);
+        opCode = 0x40 | (rCode.Key << 3);
+        opFuncName = string.Format("in_{0}__c_", rCode.Value);
+        dasm = string.Format("in {0}, (c)", rCode.Value);
+#>
+            opcodeTableED.entries[<#= opCode #>] = new OpcodeTableEntry(<#= opFuncName #>, "<#= dasm #>", new ArgType[]{});
+<#
+            opCode = 0x41 | (rCode.Key << 3);
+            opFuncName = string.Format("out__c__{0}", rCode.Value);
+            dasm = string.Format("out (c), {0}", rCode.Value);
 #>
             opcodeTableED.entries[<#= opCode #>] = new OpcodeTableEntry(<#= opFuncName #>, "<#= dasm #>", new ArgType[]{});
 <#
@@ -760,7 +768,58 @@ namespace Z80 {
             opcodeTableED.entries[0xB3] = new OpcodeTableEntry(otir, "otir", new ArgType[]{});
             opcodeTableED.entries[0xAB] = new OpcodeTableEntry(outd, "outd", new ArgType[]{});
             opcodeTableED.entries[0xBB] = new OpcodeTableEntry(otdr, "otdr", new ArgType[]{});
-                                                     
+            
+            // Jumps and calls
+            
+            opcodeTable.entries[0xC3] = new OpcodeTableEntry(jp_nn, "jp {0}", new ArgType[]{ArgType.Word});
+            opcodeTable.entries[0xCD] = new OpcodeTableEntry(call_nn, "call {0}", new ArgType[]{ArgType.Word});
+            opcodeTable.entries[0x18] = new OpcodeTableEntry(jr_pc_e, "jr pc{0}", new ArgType[]{ArgType.Offset});
+            
+            opcodeTable.entries[0x38] = new OpcodeTableEntry(jr_c_pc_e, "jr c, pc{0}", new ArgType[]{ArgType.Offset});
+            opcodeTable.entries[0x30] = new OpcodeTableEntry(jr_nc_pc_e, "jr nc, pc{0}", new ArgType[]{ArgType.Offset});
+            opcodeTable.entries[0x28] = new OpcodeTableEntry(jr_z_pc_e, "jr z, pc{0}", new ArgType[]{ArgType.Offset});
+            opcodeTable.entries[0x20] = new OpcodeTableEntry(jr_nz_pc_e, "jr nz, pc{0}", new ArgType[]{ArgType.Offset});
+            
+            opcodeTable.entries[0xE9] = new OpcodeTableEntry(jp__hl_, "jp (hl)", new ArgType[]{});
+            opcodeTableDD.entries[0xE9] = new OpcodeTableEntry(jp__ix_, "jp (ix)", new ArgType[]{});
+            opcodeTableFD.entries[0xE9] = new OpcodeTableEntry(jp__iy_, "jp (iy)", new ArgType[]{});
+            
+            opcodeTable.entries[0x10] = new OpcodeTableEntry(djnz_pc_e, "djnz pc{0}", new ArgType[]{ArgType.Offset});
+            
+            
+<#
+    foreach (var cond in Conditions) {
+        opCode = 0xC2 | (cond.Key << 3);
+        opFuncName = string.Format("jp_{0}_nn", cond.Value);
+        dasm = string.Format("jp {0}, {{0}}", cond.Value);      
+#>
+            opcodeTable.entries[<#= opCode #>] = new OpcodeTableEntry(<#= opFuncName #>, "<#= dasm #>", new ArgType[]{ArgType.Word});
+<#
+        opCode = 0xC4 | (cond.Key << 3);
+        opFuncName = string.Format("call_{0}_nn", cond.Value);
+        dasm = string.Format("call {0}, {{0}}", cond.Value);      
+#>
+            opcodeTable.entries[<#= opCode #>] = new OpcodeTableEntry(<#= opFuncName #>, "<#= dasm #>", new ArgType[]{ArgType.Word});
+<#
+        opCode = 0xC0 | (cond.Key << 3);
+        opFuncName = string.Format("ret_{0}", cond.Value);
+        dasm = string.Format("ret {0}", cond.Value);      
+#>
+            opcodeTable.entries[<#= opCode #>] = new OpcodeTableEntry(<#= opFuncName #>, "<#= dasm #>", new ArgType[]{});
+<#
+    }
+#>
+
+            var retnDecl = new OpcodeTableEntry(retn, "retn", new ArgType[]{});
+            opcodeTableED.entries[0x45] = retnDecl;                                                     
+            opcodeTableED.entries[0x55] = retnDecl;                                                     
+            opcodeTableED.entries[0x65] = retnDecl;                                                     
+            opcodeTableED.entries[0x75] = retnDecl;                                                     
+            opcodeTableED.entries[0x5D] = retnDecl;                                                     
+            opcodeTableED.entries[0x6D] = retnDecl;                                                     
+            opcodeTableED.entries[0x7D] = retnDecl;
+            
+            opcodeTableED.entries[0x4D] = new OpcodeTableEntry(reti, "reti", new ArgType[]{});                                                                                             
         }
         
         protected void nop() {
@@ -1538,8 +1597,120 @@ namespace Z80 {
             AdjustFlagsSZP(r1.<#= reg #>);
             AdjustFlags(r1.<#= reg #>);
         }    
+
 <#
+        if (reg != "f") {
+#>
+        protected void out__c__<#= reg #>() {
+            IOWrite(r1.bc, r1.<#= reg #>);
+        }
+        
+<#
+        }
     }       
 #>      
+        protected void out__c__0() {
+            IOWrite(r1.bc, 0);
+        }
+        
+        protected void jp_nn() {
+            pc = Read16(pc);
+        }
+        
+        protected void jr_pc_e() {
+            var offset = (SByte)Read8(pc++);
+            tStates += 5;
+            pc = (ushort)(pc + offset);
+        }
+        
+        protected void djnz_pc_e() {
+            tStates++;
+            var offset = (SByte)Read8(pc++);
+            r1.b--;
+            if (r1.b != 0) {
+                tStates += 5;
+                pc = (ushort)(pc + offset);
+            }
+        }
+        
+        protected void call_nn() {
+            var addr = Read16(pc);
+            pc += 2;
+            tStates++;
+            DoPush(pc);
+            pc = addr;
+        }
+        
+        protected void ret() {
+            pc = DoPop();
+        }
+        
+        protected void retn() {
+            iff1 = iff2;
+            ret();
+        }
+        
+        protected void reti() {
+            iff1 = iff2;
+            ret();
+        }
+        
+<#
+    foreach (var cond in Conditions) {
+#>
+        protected void jp_<#= cond.Value #>_nn() {
+            // no matter if the condition is true we spend 6 tstates to read the addr
+            ushort addr = Read16(pc);
+            if (Condition(c_<#= cond.Value #>)) {
+                pc = addr;
+            } else {
+                pc += 2;
+            }
+        }
+        
+        protected void call_<#= cond.Value #>_nn() {
+            var addr = Read16(pc);
+            pc += 2;
+            if (Condition(c_<#= cond.Value #>)) {
+                tStates++;
+                DoPush(pc);
+                pc = addr;
+            }
+        }
+        
+        protected void ret_<#= cond.Value #>() {
+            tStates++;
+            if (Condition(c_<#= cond.Value #>)) {
+                ret();
+            }
+        }
+        
+<#
+    }
+#>
+<#
+    foreach (var cond in new string[]{"c", "nc", "z", "nz"}) {
+#>
+        protected void jr_<#= cond #>_pc_e() {
+            var offset = (SByte)Read8(pc++);
+            if (Condition(c_<#= cond #>)) {
+                tStates += 5;
+                pc = (ushort)(pc + offset);
+            }
+        }
+        
+<#
+    }
+#>
+<#
+    foreach (var reg in new string[]{"hl", "ix", "iy"}) {
+#>
+        protected void jp__<#= reg #>_() {
+            pc = r1.<#= reg #>;
+        }
+        
+<#
+    }
+#>
     }
 }
