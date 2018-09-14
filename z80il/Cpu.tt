@@ -39,6 +39,20 @@ Dictionary<int, string> Conditions = new Dictionary<int, string>{
     {7, "m"}
 };
 
+Dictionary<int, string> iMap = new Dictionary<int, string>{
+    {0, "sla"},
+    {1, "sra"},
+    {2, "sll"},
+    {3, "srl"}
+};
+
+Dictionary<int, string> rMap = new Dictionary<int, string>{
+    {0, "rlc"},
+    {1, "rrc"},
+    {2, "rl"},
+    {3, "rr"}
+};
+
 string[] All8BitRegs = new string[11] {
     "a", "b", "c", "d", "e", "h", "l", "ixh", "ixl", "iyh", "iyl"
 };
@@ -149,7 +163,7 @@ namespace Z80 {
         opCode = 0x46 | (dst.Key << 3);
         foreach (var iReg in Prefixes) {
             opFuncName = string.Format("ld_{0}__{1}_d_", dst.Value, iReg.Key);
-            dasm = string.Format("ld {0}, ({1}+{{0}})", dst.Value, iReg.Key);
+            dasm = string.Format("ld {0}, ({1}{{0}})", dst.Value, iReg.Key);
 #>
             opcodeTable.entries[<#= iReg.Value #>].nextTable.entries[<#= opCode #>] = 
                 new OpcodeTableEntry(<#= opFuncName #>, "<#= dasm #>", new ArgType[]{ArgType.Offset});
@@ -162,7 +176,7 @@ namespace Z80 {
         opCode = 0x70 | src.Key;
         foreach (var iReg in Prefixes) {
             opFuncName = string.Format("ld__{1}_d__{0}", src.Value, iReg.Key);
-            dasm = string.Format("ld ({1}+{{0}}), {0}", src.Value, iReg.Key);
+            dasm = string.Format("ld ({1}{{0}}), {0}", src.Value, iReg.Key);
 #>
             opcodeTable.entries[<#= iReg.Value #>].nextTable.entries[<#= opCode #>] = 
                 new OpcodeTableEntry(<#= opFuncName #>, "<#= dasm #>", new ArgType[]{ArgType.Offset});
@@ -173,7 +187,7 @@ namespace Z80 {
 <#
     foreach (var iReg in Prefixes) {
         opFuncName = string.Format("ld__{0}_d__n", iReg.Key);
-        dasm = string.Format("ld ({0}+{{0}}), {{1}}", iReg.Key);
+        dasm = string.Format("ld ({0}{{0}}), {{1}}", iReg.Key);
 #>
             opcodeTable.entries[<#= iReg.Value #>].nextTable.entries[0x36] =
                 new OpcodeTableEntry(<#= opFuncName #>, "<#= dasm #>", new ArgType[]{ArgType.Offset, ArgType.Byte});
@@ -360,17 +374,17 @@ namespace Z80 {
             opcodeTable.entries[0xDE] = new OpcodeTableEntry(sbc_a_n, "sbc a, {0}", new ArgType[]{ArgType.Byte});
 
 			opcodeTable.entries[0x86] = new OpcodeTableEntry(add_a__hl_, "add a, (hl)", new ArgType[]{});
-			opcodeTableDD.entries[0x86] = new OpcodeTableEntry(add_a__ix_d_, "add a, (ix+{0})", new ArgType[]{ArgType.Offset});
-			opcodeTableFD.entries[0x86] = new OpcodeTableEntry(add_a__iy_d_, "add a, (iy+{0})", new ArgType[]{ArgType.Offset});
+			opcodeTableDD.entries[0x86] = new OpcodeTableEntry(add_a__ix_d_, "add a, (ix{0})", new ArgType[]{ArgType.Offset});
+			opcodeTableFD.entries[0x86] = new OpcodeTableEntry(add_a__iy_d_, "add a, (iy{0})", new ArgType[]{ArgType.Offset});
 			opcodeTable.entries[0x8E] = new OpcodeTableEntry(adc_a__hl_, "adc a, (hl)", new ArgType[]{});
-			opcodeTableDD.entries[0x8E] = new OpcodeTableEntry(adc_a__ix_d_, "adc a, (ix+{0})", new ArgType[]{ArgType.Offset});
-			opcodeTableFD.entries[0x8E] = new OpcodeTableEntry(adc_a__iy_d_, "adc a, (iy+{0})", new ArgType[]{ArgType.Offset});
+			opcodeTableDD.entries[0x8E] = new OpcodeTableEntry(adc_a__ix_d_, "adc a, (ix{0})", new ArgType[]{ArgType.Offset});
+			opcodeTableFD.entries[0x8E] = new OpcodeTableEntry(adc_a__iy_d_, "adc a, (iy{0})", new ArgType[]{ArgType.Offset});
 			opcodeTable.entries[0x96] = new OpcodeTableEntry(sub_a__hl_, "sub (hl)", new ArgType[]{});
-			opcodeTableDD.entries[0x96] = new OpcodeTableEntry(sub_a__ix_d_, "sub (ix+{0})", new ArgType[]{ArgType.Offset});
-			opcodeTableFD.entries[0x96] = new OpcodeTableEntry(sub_a__iy_d_, "sub (iy+{0})", new ArgType[]{ArgType.Offset});
+			opcodeTableDD.entries[0x96] = new OpcodeTableEntry(sub_a__ix_d_, "sub (ix{0})", new ArgType[]{ArgType.Offset});
+			opcodeTableFD.entries[0x96] = new OpcodeTableEntry(sub_a__iy_d_, "sub (iy{0})", new ArgType[]{ArgType.Offset});
 			opcodeTable.entries[0x9E] = new OpcodeTableEntry(sbc_a__hl_, "sbc a, (hl)", new ArgType[]{});
-			opcodeTableDD.entries[0x9E] = new OpcodeTableEntry(sbc_a__ix_d_, "sbc a, (ix+{0})", new ArgType[]{ArgType.Offset});
-			opcodeTableFD.entries[0x9E] = new OpcodeTableEntry(sbc_a__iy_d_, "sbc a, (iy+{0})", new ArgType[]{ArgType.Offset});
+			opcodeTableDD.entries[0x9E] = new OpcodeTableEntry(sbc_a__ix_d_, "sbc a, (ix{0})", new ArgType[]{ArgType.Offset});
+			opcodeTableFD.entries[0x9E] = new OpcodeTableEntry(sbc_a__iy_d_, "sbc a, (iy{0})", new ArgType[]{ArgType.Offset});
 
 			// ADD HL, BC/DE/HL/SP
 <#
@@ -490,17 +504,17 @@ namespace Z80 {
     foreach (var iReg in Prefixes) {
 #>
             opcodeTable.entries[<#= iReg.Value #>].nextTable.entries[0xA6] = 
-                new OpcodeTableEntry(and__<#= iReg.Key #>_d_, "and (<#= iReg.Key #>+{0})", new ArgType[]{ArgType.Offset});
+                new OpcodeTableEntry(and__<#= iReg.Key #>_d_, "and (<#= iReg.Key #>{0})", new ArgType[]{ArgType.Offset});
             opcodeTable.entries[<#= iReg.Value #>].nextTable.entries[0xB6] = 
-                new OpcodeTableEntry(or__<#= iReg.Key #>_d_, "or (<#= iReg.Key #>+{0})", new ArgType[]{ArgType.Offset});
+                new OpcodeTableEntry(or__<#= iReg.Key #>_d_, "or (<#= iReg.Key #>{0})", new ArgType[]{ArgType.Offset});
             opcodeTable.entries[<#= iReg.Value #>].nextTable.entries[0xAE] = 
-                new OpcodeTableEntry(xor__<#= iReg.Key #>_d_, "xor (<#= iReg.Key #>+{0})", new ArgType[]{ArgType.Offset});
+                new OpcodeTableEntry(xor__<#= iReg.Key #>_d_, "xor (<#= iReg.Key #>{0})", new ArgType[]{ArgType.Offset});
             opcodeTable.entries[<#= iReg.Value #>].nextTable.entries[0xBE] = 
-                new OpcodeTableEntry(cp__<#= iReg.Key #>_d_, "cp (<#= iReg.Key #>+{0})", new ArgType[]{ArgType.Offset});
+                new OpcodeTableEntry(cp__<#= iReg.Key #>_d_, "cp (<#= iReg.Key #>{0})", new ArgType[]{ArgType.Offset});
             opcodeTable.entries[<#= iReg.Value #>].nextTable.entries[0x34] = 
-                new OpcodeTableEntry(inc__<#= iReg.Key #>_d_, "inc (<#= iReg.Key #>+{0})", new ArgType[]{ArgType.Offset});
+                new OpcodeTableEntry(inc__<#= iReg.Key #>_d_, "inc (<#= iReg.Key #>{0})", new ArgType[]{ArgType.Offset});
             opcodeTable.entries[<#= iReg.Value #>].nextTable.entries[0x35] = 
-                new OpcodeTableEntry(dec__<#= iReg.Key #>_d_, "dec (<#= iReg.Key #>+{0})", new ArgType[]{ArgType.Offset});
+                new OpcodeTableEntry(dec__<#= iReg.Key #>_d_, "dec (<#= iReg.Key #>{0})", new ArgType[]{ArgType.Offset});
 <#
     }
     
@@ -622,30 +636,30 @@ namespace Z80 {
             opcodeTableCB.entries[0x0E] = new OpcodeTableEntry(rrc__hl_, "rrc (hl)", new ArgType[]{});       
             opcodeTableCB.entries[0x1E] = new OpcodeTableEntry(rr__hl_, "rr (hl)", new ArgType[]{});
             
-            opcodeTableDDCB.entries[0x06] = new OpcodeTableEntry(rlc__ix_d_, "rlc (ix+{0})", new ArgType[]{ArgType.Offset});       
-            opcodeTableDDCB.entries[0x16] = new OpcodeTableEntry(rl__ix_d_, "rl (ix+{0})", new ArgType[]{ArgType.Offset});       
-            opcodeTableDDCB.entries[0x0E] = new OpcodeTableEntry(rrc__ix_d_, "rrc (ix+{0})", new ArgType[]{ArgType.Offset});       
-            opcodeTableDDCB.entries[0x1E] = new OpcodeTableEntry(rr__ix_d_, "rr (ix+{0})", new ArgType[]{ArgType.Offset});  
+            opcodeTableDDCB.entries[0x06] = new OpcodeTableEntry(rlc__ix_d_, "rlc (ix{0})", new ArgType[]{ArgType.Offset});       
+            opcodeTableDDCB.entries[0x16] = new OpcodeTableEntry(rl__ix_d_, "rl (ix{0})", new ArgType[]{ArgType.Offset});       
+            opcodeTableDDCB.entries[0x0E] = new OpcodeTableEntry(rrc__ix_d_, "rrc (ix{0})", new ArgType[]{ArgType.Offset});       
+            opcodeTableDDCB.entries[0x1E] = new OpcodeTableEntry(rr__ix_d_, "rr (ix{0})", new ArgType[]{ArgType.Offset});  
 
-            opcodeTableFDCB.entries[0x06] = new OpcodeTableEntry(rlc__iy_d_, "rlc (iy+{0})", new ArgType[]{ArgType.Offset});       
-            opcodeTableFDCB.entries[0x16] = new OpcodeTableEntry(rl__iy_d_, "rl (iy+{0})", new ArgType[]{ArgType.Offset});       
-            opcodeTableFDCB.entries[0x0E] = new OpcodeTableEntry(rrc__iy_d_, "rrc (iy+{0})", new ArgType[]{ArgType.Offset});       
-            opcodeTableFDCB.entries[0x1E] = new OpcodeTableEntry(rr__iy_d_, "rr (iy+{0})", new ArgType[]{ArgType.Offset});  
+            opcodeTableFDCB.entries[0x06] = new OpcodeTableEntry(rlc__iy_d_, "rlc (iy{0})", new ArgType[]{ArgType.Offset});       
+            opcodeTableFDCB.entries[0x16] = new OpcodeTableEntry(rl__iy_d_, "rl (iy{0})", new ArgType[]{ArgType.Offset});       
+            opcodeTableFDCB.entries[0x0E] = new OpcodeTableEntry(rrc__iy_d_, "rrc (iy{0})", new ArgType[]{ArgType.Offset});       
+            opcodeTableFDCB.entries[0x1E] = new OpcodeTableEntry(rr__iy_d_, "rr (iy{0})", new ArgType[]{ArgType.Offset});  
             
             opcodeTableCB.entries[0x26] = new OpcodeTableEntry(sla__hl_, "sla (hl)", new ArgType[]{});       
             opcodeTableCB.entries[0x2E] = new OpcodeTableEntry(sra__hl_, "sra (hl)", new ArgType[]{});       
             opcodeTableCB.entries[0x36] = new OpcodeTableEntry(sll__hl_, "sll (hl)", new ArgType[]{});       
             opcodeTableCB.entries[0x3E] = new OpcodeTableEntry(srl__hl_, "srl (hl)", new ArgType[]{});
 
-            opcodeTableDDCB.entries[0x26] = new OpcodeTableEntry(sla__ix_d_, "sla (ix+{0})", new ArgType[]{ArgType.Offset});       
-            opcodeTableDDCB.entries[0x2E] = new OpcodeTableEntry(sra__ix_d_, "sra (ix+{0})", new ArgType[]{ArgType.Offset});       
-            opcodeTableDDCB.entries[0x36] = new OpcodeTableEntry(sll__ix_d_, "sll (ix+{0})", new ArgType[]{ArgType.Offset});       
-            opcodeTableDDCB.entries[0x3E] = new OpcodeTableEntry(srl__ix_d_, "srl (ix+{0})", new ArgType[]{ArgType.Offset});
+            opcodeTableDDCB.entries[0x26] = new OpcodeTableEntry(sla__ix_d_, "sla (ix{0})", new ArgType[]{ArgType.Offset});       
+            opcodeTableDDCB.entries[0x2E] = new OpcodeTableEntry(sra__ix_d_, "sra (ix{0})", new ArgType[]{ArgType.Offset});       
+            opcodeTableDDCB.entries[0x36] = new OpcodeTableEntry(sll__ix_d_, "sll (ix{0})", new ArgType[]{ArgType.Offset});       
+            opcodeTableDDCB.entries[0x3E] = new OpcodeTableEntry(srl__ix_d_, "srl (ix{0})", new ArgType[]{ArgType.Offset});
                  
-            opcodeTableFDCB.entries[0x26] = new OpcodeTableEntry(sla__iy_d_, "sla (iy+{0})", new ArgType[]{ArgType.Offset});       
-            opcodeTableFDCB.entries[0x2E] = new OpcodeTableEntry(sra__iy_d_, "sra (iy+{0})", new ArgType[]{ArgType.Offset});       
-            opcodeTableFDCB.entries[0x36] = new OpcodeTableEntry(sll__iy_d_, "sll (iy+{0})", new ArgType[]{ArgType.Offset});       
-            opcodeTableFDCB.entries[0x3E] = new OpcodeTableEntry(srl__iy_d_, "srl (iy+{0})", new ArgType[]{ArgType.Offset});
+            opcodeTableFDCB.entries[0x26] = new OpcodeTableEntry(sla__iy_d_, "sla (iy{0})", new ArgType[]{ArgType.Offset});       
+            opcodeTableFDCB.entries[0x2E] = new OpcodeTableEntry(sra__iy_d_, "sra (iy{0})", new ArgType[]{ArgType.Offset});       
+            opcodeTableFDCB.entries[0x36] = new OpcodeTableEntry(sll__iy_d_, "sll (iy{0})", new ArgType[]{ArgType.Offset});       
+            opcodeTableFDCB.entries[0x3E] = new OpcodeTableEntry(srl__iy_d_, "srl (iy{0})", new ArgType[]{ArgType.Offset});
 
             // BIT test
                         
@@ -668,12 +682,12 @@ namespace Z80 {
         for (var s = 0; s < 8; s++) {
             opCode = 0x40 | (b << 3) | s;
             opFuncName = string.Format("bit_{0}__ix_d_", b);
-            dasm = string.Format("bit {0}, (ix+{{0}})", b);
+            dasm = string.Format("bit {0}, (ix{{0}})", b);
 #>
             opcodeTableDDCB.entries[<#= opCode #>] = new OpcodeTableEntry(<#= opFuncName #>, "<#= dasm #>", new ArgType[]{ArgType.Offset});
 <#
         opFuncName = string.Format("bit_{0}__iy_d_", b);
-        dasm = string.Format("bit {0}, (iy+{{0}})", b);
+        dasm = string.Format("bit {0}, (iy{{0}})", b);
 #>
             opcodeTableFDCB.entries[<#= opCode #>] = new OpcodeTableEntry(<#= opFuncName #>, "<#= dasm #>", new ArgType[]{ArgType.Offset});
 <#
@@ -700,12 +714,12 @@ namespace Z80 {
             opcodeTableCB.entries[<#= opCode #>] = new OpcodeTableEntry(<#= opFuncName #>, "<#= dasm #>", new ArgType[]{});
 <#
         opFuncName = string.Format("set_{0}__ix_d_", b);
-        dasm = string.Format("set {0}, (ix+{{0}})", b);
+        dasm = string.Format("set {0}, (ix{{0}})", b);
 #>
             opcodeTableDDCB.entries[<#= opCode #>] = new OpcodeTableEntry(<#= opFuncName #>, "<#= dasm #>", new ArgType[]{ArgType.Offset});
 <#
         opFuncName = string.Format("set_{0}__iy_d_", b);
-        dasm = string.Format("set {0}, (iy+{{0}})", b);
+        dasm = string.Format("set {0}, (iy{{0}})", b);
 #>
             opcodeTableFDCB.entries[<#= opCode #>] = new OpcodeTableEntry(<#= opFuncName #>, "<#= dasm #>", new ArgType[]{ArgType.Offset});
 <#
@@ -727,12 +741,12 @@ namespace Z80 {
             opcodeTableCB.entries[<#= opCode #>] = new OpcodeTableEntry(<#= opFuncName #>, "<#= dasm #>", new ArgType[]{});
 <#
         opFuncName = string.Format("res_{0}__ix_d_", b);
-        dasm = string.Format("res {0}, (ix+{{0}})", b);
+        dasm = string.Format("res {0}, (ix{{0}})", b);
 #>
             opcodeTableDDCB.entries[<#= opCode #>] = new OpcodeTableEntry(<#= opFuncName #>, "<#= dasm #>", new ArgType[]{ArgType.Offset});
 <#
         opFuncName = string.Format("res_{0}__iy_d_", b);
-        dasm = string.Format("res {0}, (iy+{{0}})", b);
+        dasm = string.Format("res {0}, (iy{{0}})", b);
 #>
             opcodeTableFDCB.entries[<#= opCode #>] = new OpcodeTableEntry(<#= opFuncName #>, "<#= dasm #>", new ArgType[]{ArgType.Offset});
 <#
@@ -819,7 +833,82 @@ namespace Z80 {
             opcodeTableED.entries[0x6D] = retnDecl;                                                     
             opcodeTableED.entries[0x7D] = retnDecl;
             
-            opcodeTableED.entries[0x4D] = new OpcodeTableEntry(reti, "reti", new ArgType[]{});                                                                                             
+            opcodeTableED.entries[0x4D] = new OpcodeTableEntry(reti, "reti", new ArgType[]{});
+            
+<#
+    for (var p = 0; p < 8; p++) {
+        var vector = p << 3;
+        opCode = 0xC7 | vector;
+        opFuncName = string.Format("rst_{0:X2}h", vector);
+        dasm = string.Format("rst {0:X2}h", vector);
+#>
+            opcodeTable.entries[<#= opCode #>] = new OpcodeTableEntry(<#= opFuncName #>, "<#= dasm #>", new ArgType[]{});
+<#
+    }
+#>
+
+            // Sophisticated indexed loads
+<#
+    for (var b = 0; b < 8; b++) {
+        foreach (var rCode in RegisterMap) {
+            opCode = 0x80 | rCode.Key | (b << 3);
+#>
+            opcodeTableDDCB.entries[<#= opCode #>] =
+                new OpcodeTableEntry(ld_<#= rCode.Value #>_res_<#= b #>__ix_d_,
+                                     "ld <#= rCode.Value #>, res <#= b #>, (ix{0})",
+                                     new ArgType[]{ArgType.Offset});
+            opcodeTableFDCB.entries[<#= opCode #>] =
+                new OpcodeTableEntry(ld_<#= rCode.Value #>_res_<#= b #>__iy_d_,
+                                     "ld <#= rCode.Value #>, res <#= b #>, (iy{0})",
+                                     new ArgType[]{ArgType.Offset});
+<#
+            opCode = 0xC0 | rCode.Key | (b << 3);
+#>
+            opcodeTableDDCB.entries[<#= opCode #>] =
+                new OpcodeTableEntry(ld_<#= rCode.Value #>_set_<#= b #>__ix_d_,
+                                     "ld <#= rCode.Value #>, set <#= b #>, (ix{0})",
+                                     new ArgType[]{ArgType.Offset});
+            opcodeTableFDCB.entries[<#= opCode #>] =
+                new OpcodeTableEntry(ld_<#= rCode.Value #>_set_<#= b #>__iy_d_,
+                                     "ld <#= rCode.Value #>, set <#= b #>, (iy{0})",
+                                     new ArgType[]{ArgType.Offset});
+<#
+        }
+    }
+    
+    foreach (var rCode in RegisterMap) {
+        foreach (var iReg in Prefixes) {
+            foreach (var op in iMap) {
+                opCode = 0x20 | (op.Key << 3) | rCode.Key;
+#>
+            opcodeTable.entries[<#= iReg.Value #>].nextTable.entries[<#= opCode #>] =
+                new OpcodeTableEntry(ld_<#= rCode.Value #>_<#= op.Value #>__<#= iReg.Key #>_d_,
+                                     "ld <#= rCode.Value #>, <#= op.Value #> (<#= iReg.Key #>{0})",
+                                     new ArgType[]{ArgType.Offset});
+<#
+            }
+            foreach (var op in rMap) {
+                opCode = rCode.Key | (op.Key << 3);
+#>
+            opcodeTable.entries[<#= iReg.Value #>].nextTable.entries[<#= opCode #>] =
+                new OpcodeTableEntry(ld_<#= rCode.Value #>_<#= op.Value #>__<#= iReg.Key #>_d_,
+                                     "ld <#= rCode.Value #>, <#= op.Value #> (<#= iReg.Key #>{0})",
+                                     new ArgType[]{ArgType.Offset});
+<#
+            }
+        }
+    }
+    
+#>
+            for (var code = 0; code < 256; code++) {
+                if (opcodeTableDD.entries[code] == null) {
+                    opcodeTableDD.entries[code] = opcodeTable.entries[code];
+                }
+                if (opcodeTableFD.entries[code] == null) {
+                    opcodeTableFD.entries[code] = opcodeTable.entries[code];
+                }
+            }
+                                                                                                                                                                                                
         }
         
         protected void nop() {
@@ -1712,5 +1801,73 @@ namespace Z80 {
 <#
     }
 #>
+
+<#
+    foreach (var vector in new string[]{"00", "08", "10", "18", "20", "28", "30", "38"}) {
+#>
+        protected void rst_<#= vector #>h() {
+            tStates++;
+            DoPush(pc);
+            pc = 0x<#= vector #>;
+        }
+        
+<#
+    }
+#>
+
+<#
+    foreach (var reg in new string[]{"a", "b", "c", "d", "e", "h", "l"}) {
+        foreach (var cmd in new string[]{"set", "res"}) {
+            for (var b = 0; b < 8; b++) {
+                foreach (var iReg in new string[]{"ix", "iy"}) {
+#>
+        protected void ld_<#= reg #>_<#= cmd #>_<#= b #>__<#= iReg #>_d_() {
+            tStates += 2;
+            var offset = (SByte)Read8(pc++);
+            ushort addr = (ushort)(r1.<#= iReg #> + offset);
+            r1.<#= reg #> = DoSetRes(bitState<#= cmd.ToUpper() #>, <#= b #>, Read8(addr));
+            Write8(addr, r1.<#= reg #>);
+        }
+        
+<#
+                }
+            }
+        }
+        
+        foreach (var shiftDir in new string[]{"sl", "sr"}) {
+            foreach (var shiftType in new string[]{"a", "l"}) {
+                foreach (var iReg in new string[]{"ix", "iy"}) {
+#>
+        protected void ld_<#= reg #>_<#= shiftDir #><#= shiftType #>__<#= iReg #>_d_() {
+            tStates += 2;
+            var offset = (SByte)Read8(pc++);
+            ushort addr = (ushort)(r1.<#= iReg #> + offset);
+            r1.<#= reg #> = Do<#= shiftDir.ToUpper() #>(Read8(addr), isArithmetics<#= shiftType.ToUpper() #>);
+            Write8(addr, r1.<#= reg #>);
+            
+        }
+        
+<#
+                }
+            }
+        }
+        
+        foreach (var cmd in new string[]{"rl", "rlc", "rr", "rrc"}) {
+            foreach (var iReg in new string[]{"ix", "iy"}) {
+#>
+        protected void ld_<#= reg #>_<#= cmd #>__<#= iReg #>_d_() {
+            tStates += 2;
+            var offset = (SByte)Read8(pc++);
+            ushort addr = (ushort)(r1.<#= iReg #> + offset);
+            r1.<#= reg #> = Do<#= cmd.ToUpper() #>(Read8(addr), true);
+            Write8(addr, r1.<#= reg #>);            
+        }
+        
+<#
+            }
+        }
+    }
+#>
+
     }
 }
