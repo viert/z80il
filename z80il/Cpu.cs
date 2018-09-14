@@ -496,48 +496,48 @@ namespace Z80 {
             opcodeTable.entries[0xD6] = new OpcodeTableEntry(sub_a_n, "sub {0}", new ArgType[]{ArgType.Byte});
             opcodeTable.entries[0xDE] = new OpcodeTableEntry(sbc_a_n, "sbc a, {0}", new ArgType[]{ArgType.Byte});
 
-			opcodeTable.entries[0x86] = new OpcodeTableEntry(add_a__hl_, "add a, (hl)", new ArgType[]{});
-			opcodeTableDD.entries[0x86] = new OpcodeTableEntry(add_a__ix_d_, "add a, (ix{0})", new ArgType[]{ArgType.Offset});
-			opcodeTableFD.entries[0x86] = new OpcodeTableEntry(add_a__iy_d_, "add a, (iy{0})", new ArgType[]{ArgType.Offset});
-			opcodeTable.entries[0x8E] = new OpcodeTableEntry(adc_a__hl_, "adc a, (hl)", new ArgType[]{});
-			opcodeTableDD.entries[0x8E] = new OpcodeTableEntry(adc_a__ix_d_, "adc a, (ix{0})", new ArgType[]{ArgType.Offset});
-			opcodeTableFD.entries[0x8E] = new OpcodeTableEntry(adc_a__iy_d_, "adc a, (iy{0})", new ArgType[]{ArgType.Offset});
-			opcodeTable.entries[0x96] = new OpcodeTableEntry(sub_a__hl_, "sub (hl)", new ArgType[]{});
-			opcodeTableDD.entries[0x96] = new OpcodeTableEntry(sub_a__ix_d_, "sub (ix{0})", new ArgType[]{ArgType.Offset});
-			opcodeTableFD.entries[0x96] = new OpcodeTableEntry(sub_a__iy_d_, "sub (iy{0})", new ArgType[]{ArgType.Offset});
-			opcodeTable.entries[0x9E] = new OpcodeTableEntry(sbc_a__hl_, "sbc a, (hl)", new ArgType[]{});
-			opcodeTableDD.entries[0x9E] = new OpcodeTableEntry(sbc_a__ix_d_, "sbc a, (ix{0})", new ArgType[]{ArgType.Offset});
-			opcodeTableFD.entries[0x9E] = new OpcodeTableEntry(sbc_a__iy_d_, "sbc a, (iy{0})", new ArgType[]{ArgType.Offset});
+            opcodeTable.entries[0x86] = new OpcodeTableEntry(add_a__hl_, "add a, (hl)", new ArgType[]{});
+            opcodeTableDD.entries[0x86] = new OpcodeTableEntry(add_a__ix_d_, "add a, (ix{0})", new ArgType[]{ArgType.Offset});
+            opcodeTableFD.entries[0x86] = new OpcodeTableEntry(add_a__iy_d_, "add a, (iy{0})", new ArgType[]{ArgType.Offset});
+            opcodeTable.entries[0x8E] = new OpcodeTableEntry(adc_a__hl_, "adc a, (hl)", new ArgType[]{});
+            opcodeTableDD.entries[0x8E] = new OpcodeTableEntry(adc_a__ix_d_, "adc a, (ix{0})", new ArgType[]{ArgType.Offset});
+            opcodeTableFD.entries[0x8E] = new OpcodeTableEntry(adc_a__iy_d_, "adc a, (iy{0})", new ArgType[]{ArgType.Offset});
+            opcodeTable.entries[0x96] = new OpcodeTableEntry(sub_a__hl_, "sub (hl)", new ArgType[]{});
+            opcodeTableDD.entries[0x96] = new OpcodeTableEntry(sub_a__ix_d_, "sub (ix{0})", new ArgType[]{ArgType.Offset});
+            opcodeTableFD.entries[0x96] = new OpcodeTableEntry(sub_a__iy_d_, "sub (iy{0})", new ArgType[]{ArgType.Offset});
+            opcodeTable.entries[0x9E] = new OpcodeTableEntry(sbc_a__hl_, "sbc a, (hl)", new ArgType[]{});
+            opcodeTableDD.entries[0x9E] = new OpcodeTableEntry(sbc_a__ix_d_, "sbc a, (ix{0})", new ArgType[]{ArgType.Offset});
+            opcodeTableFD.entries[0x9E] = new OpcodeTableEntry(sbc_a__iy_d_, "sbc a, (iy{0})", new ArgType[]{ArgType.Offset});
 
-			// ADD HL, BC/DE/HL/SP
-			opcodeTable.entries[9] = new OpcodeTableEntry(add_hl_bc, "add hl, bc", new ArgType[]{});
+            // ADD HL, BC/DE/HL/SP
+            opcodeTable.entries[9] = new OpcodeTableEntry(add_hl_bc, "add hl, bc", new ArgType[]{});
             opcodeTable.entries[221].nextTable.entries[9] = 
                 new OpcodeTableEntry(add_ix_bc, "add ix, bc", new ArgType[]{});
             opcodeTable.entries[253].nextTable.entries[9] = 
                 new OpcodeTableEntry(add_iy_bc, "add iy, bc", new ArgType[]{});
-			opcodeTableED.entries[74] = new OpcodeTableEntry(adc_hl_bc, "adc hl, bc", new ArgType[]{});
-			opcodeTableED.entries[66] = new OpcodeTableEntry(sbc_hl_bc, "sbc hl, bc", new ArgType[]{});
-			opcodeTable.entries[25] = new OpcodeTableEntry(add_hl_de, "add hl, de", new ArgType[]{});
+            opcodeTableED.entries[74] = new OpcodeTableEntry(adc_hl_bc, "adc hl, bc", new ArgType[]{});
+            opcodeTableED.entries[66] = new OpcodeTableEntry(sbc_hl_bc, "sbc hl, bc", new ArgType[]{});
+            opcodeTable.entries[25] = new OpcodeTableEntry(add_hl_de, "add hl, de", new ArgType[]{});
             opcodeTable.entries[221].nextTable.entries[25] = 
                 new OpcodeTableEntry(add_ix_de, "add ix, de", new ArgType[]{});
             opcodeTable.entries[253].nextTable.entries[25] = 
                 new OpcodeTableEntry(add_iy_de, "add iy, de", new ArgType[]{});
-			opcodeTableED.entries[90] = new OpcodeTableEntry(adc_hl_de, "adc hl, de", new ArgType[]{});
-			opcodeTableED.entries[82] = new OpcodeTableEntry(sbc_hl_de, "sbc hl, de", new ArgType[]{});
-			opcodeTable.entries[41] = new OpcodeTableEntry(add_hl_hl, "add hl, hl", new ArgType[]{});
+            opcodeTableED.entries[90] = new OpcodeTableEntry(adc_hl_de, "adc hl, de", new ArgType[]{});
+            opcodeTableED.entries[82] = new OpcodeTableEntry(sbc_hl_de, "sbc hl, de", new ArgType[]{});
+            opcodeTable.entries[41] = new OpcodeTableEntry(add_hl_hl, "add hl, hl", new ArgType[]{});
             opcodeTable.entries[221].nextTable.entries[41] = 
                 new OpcodeTableEntry(add_ix_ix, "add ix, ix", new ArgType[]{});
             opcodeTable.entries[253].nextTable.entries[41] = 
                 new OpcodeTableEntry(add_iy_iy, "add iy, iy", new ArgType[]{});
-			opcodeTableED.entries[106] = new OpcodeTableEntry(adc_hl_hl, "adc hl, hl", new ArgType[]{});
-			opcodeTableED.entries[98] = new OpcodeTableEntry(sbc_hl_hl, "sbc hl, hl", new ArgType[]{});
-			opcodeTable.entries[57] = new OpcodeTableEntry(add_hl_sp, "add hl, sp", new ArgType[]{});
+            opcodeTableED.entries[106] = new OpcodeTableEntry(adc_hl_hl, "adc hl, hl", new ArgType[]{});
+            opcodeTableED.entries[98] = new OpcodeTableEntry(sbc_hl_hl, "sbc hl, hl", new ArgType[]{});
+            opcodeTable.entries[57] = new OpcodeTableEntry(add_hl_sp, "add hl, sp", new ArgType[]{});
             opcodeTable.entries[221].nextTable.entries[57] = 
                 new OpcodeTableEntry(add_ix_sp, "add ix, sp", new ArgType[]{});
             opcodeTable.entries[253].nextTable.entries[57] = 
                 new OpcodeTableEntry(add_iy_sp, "add iy, sp", new ArgType[]{});
-			opcodeTableED.entries[122] = new OpcodeTableEntry(adc_hl_sp, "adc hl, sp", new ArgType[]{});
-			opcodeTableED.entries[114] = new OpcodeTableEntry(sbc_hl_sp, "sbc hl, sp", new ArgType[]{});
+            opcodeTableED.entries[122] = new OpcodeTableEntry(adc_hl_sp, "adc hl, sp", new ArgType[]{});
+            opcodeTableED.entries[114] = new OpcodeTableEntry(sbc_hl_sp, "sbc hl, sp", new ArgType[]{});
             opcodeTable.entries[160] = new OpcodeTableEntry(and_b, "and b", new ArgType[]{});
             opcodeTable.entries[176] = new OpcodeTableEntry(or_b, "or b", new ArgType[]{});
             opcodeTable.entries[168] = new OpcodeTableEntry(xor_b, "xor b", new ArgType[]{});
@@ -2594,612 +2594,612 @@ namespace Z80 {
                                                                                                                                                                                                 
         }
         
-        protected void nop() {
+        void nop() {
             // NOP
         }
-        protected void ld_a_a() {
+        void ld_a_a() {
         }
 
-        protected void ld_a_b() {
+        void ld_a_b() {
             r1.a = r1.b;
         }
 
-        protected void ld_a_c() {
+        void ld_a_c() {
             r1.a = r1.c;
         }
 
-        protected void ld_a_d() {
+        void ld_a_d() {
             r1.a = r1.d;
         }
 
-        protected void ld_a_e() {
+        void ld_a_e() {
             r1.a = r1.e;
         }
 
-        protected void ld_a_h() {
+        void ld_a_h() {
             r1.a = r1.h;
         }
 
-        protected void ld_a_l() {
+        void ld_a_l() {
             r1.a = r1.l;
         }
 
-        protected void ld_a_ixh() {
+        void ld_a_ixh() {
             r1.a = r1.ixh;
         }
 
-        protected void ld_a_ixl() {
+        void ld_a_ixl() {
             r1.a = r1.ixl;
         }
 
-        protected void ld_a_iyh() {
+        void ld_a_iyh() {
             r1.a = r1.iyh;
         }
 
-        protected void ld_a_iyl() {
+        void ld_a_iyl() {
             r1.a = r1.iyl;
         }
 
-        protected void ld_b_a() {
+        void ld_b_a() {
             r1.b = r1.a;
         }
 
-        protected void ld_b_b() {
+        void ld_b_b() {
         }
 
-        protected void ld_b_c() {
+        void ld_b_c() {
             r1.b = r1.c;
         }
 
-        protected void ld_b_d() {
+        void ld_b_d() {
             r1.b = r1.d;
         }
 
-        protected void ld_b_e() {
+        void ld_b_e() {
             r1.b = r1.e;
         }
 
-        protected void ld_b_h() {
+        void ld_b_h() {
             r1.b = r1.h;
         }
 
-        protected void ld_b_l() {
+        void ld_b_l() {
             r1.b = r1.l;
         }
 
-        protected void ld_b_ixh() {
+        void ld_b_ixh() {
             r1.b = r1.ixh;
         }
 
-        protected void ld_b_ixl() {
+        void ld_b_ixl() {
             r1.b = r1.ixl;
         }
 
-        protected void ld_b_iyh() {
+        void ld_b_iyh() {
             r1.b = r1.iyh;
         }
 
-        protected void ld_b_iyl() {
+        void ld_b_iyl() {
             r1.b = r1.iyl;
         }
 
-        protected void ld_c_a() {
+        void ld_c_a() {
             r1.c = r1.a;
         }
 
-        protected void ld_c_b() {
+        void ld_c_b() {
             r1.c = r1.b;
         }
 
-        protected void ld_c_c() {
+        void ld_c_c() {
         }
 
-        protected void ld_c_d() {
+        void ld_c_d() {
             r1.c = r1.d;
         }
 
-        protected void ld_c_e() {
+        void ld_c_e() {
             r1.c = r1.e;
         }
 
-        protected void ld_c_h() {
+        void ld_c_h() {
             r1.c = r1.h;
         }
 
-        protected void ld_c_l() {
+        void ld_c_l() {
             r1.c = r1.l;
         }
 
-        protected void ld_c_ixh() {
+        void ld_c_ixh() {
             r1.c = r1.ixh;
         }
 
-        protected void ld_c_ixl() {
+        void ld_c_ixl() {
             r1.c = r1.ixl;
         }
 
-        protected void ld_c_iyh() {
+        void ld_c_iyh() {
             r1.c = r1.iyh;
         }
 
-        protected void ld_c_iyl() {
+        void ld_c_iyl() {
             r1.c = r1.iyl;
         }
 
-        protected void ld_d_a() {
+        void ld_d_a() {
             r1.d = r1.a;
         }
 
-        protected void ld_d_b() {
+        void ld_d_b() {
             r1.d = r1.b;
         }
 
-        protected void ld_d_c() {
+        void ld_d_c() {
             r1.d = r1.c;
         }
 
-        protected void ld_d_d() {
+        void ld_d_d() {
         }
 
-        protected void ld_d_e() {
+        void ld_d_e() {
             r1.d = r1.e;
         }
 
-        protected void ld_d_h() {
+        void ld_d_h() {
             r1.d = r1.h;
         }
 
-        protected void ld_d_l() {
+        void ld_d_l() {
             r1.d = r1.l;
         }
 
-        protected void ld_d_ixh() {
+        void ld_d_ixh() {
             r1.d = r1.ixh;
         }
 
-        protected void ld_d_ixl() {
+        void ld_d_ixl() {
             r1.d = r1.ixl;
         }
 
-        protected void ld_d_iyh() {
+        void ld_d_iyh() {
             r1.d = r1.iyh;
         }
 
-        protected void ld_d_iyl() {
+        void ld_d_iyl() {
             r1.d = r1.iyl;
         }
 
-        protected void ld_e_a() {
+        void ld_e_a() {
             r1.e = r1.a;
         }
 
-        protected void ld_e_b() {
+        void ld_e_b() {
             r1.e = r1.b;
         }
 
-        protected void ld_e_c() {
+        void ld_e_c() {
             r1.e = r1.c;
         }
 
-        protected void ld_e_d() {
+        void ld_e_d() {
             r1.e = r1.d;
         }
 
-        protected void ld_e_e() {
+        void ld_e_e() {
         }
 
-        protected void ld_e_h() {
+        void ld_e_h() {
             r1.e = r1.h;
         }
 
-        protected void ld_e_l() {
+        void ld_e_l() {
             r1.e = r1.l;
         }
 
-        protected void ld_e_ixh() {
+        void ld_e_ixh() {
             r1.e = r1.ixh;
         }
 
-        protected void ld_e_ixl() {
+        void ld_e_ixl() {
             r1.e = r1.ixl;
         }
 
-        protected void ld_e_iyh() {
+        void ld_e_iyh() {
             r1.e = r1.iyh;
         }
 
-        protected void ld_e_iyl() {
+        void ld_e_iyl() {
             r1.e = r1.iyl;
         }
 
-        protected void ld_h_a() {
+        void ld_h_a() {
             r1.h = r1.a;
         }
 
-        protected void ld_h_b() {
+        void ld_h_b() {
             r1.h = r1.b;
         }
 
-        protected void ld_h_c() {
+        void ld_h_c() {
             r1.h = r1.c;
         }
 
-        protected void ld_h_d() {
+        void ld_h_d() {
             r1.h = r1.d;
         }
 
-        protected void ld_h_e() {
+        void ld_h_e() {
             r1.h = r1.e;
         }
 
-        protected void ld_h_h() {
+        void ld_h_h() {
         }
 
-        protected void ld_h_l() {
+        void ld_h_l() {
             r1.h = r1.l;
         }
 
-        protected void ld_h_ixh() {
+        void ld_h_ixh() {
             r1.h = r1.ixh;
         }
 
-        protected void ld_h_ixl() {
+        void ld_h_ixl() {
             r1.h = r1.ixl;
         }
 
-        protected void ld_h_iyh() {
+        void ld_h_iyh() {
             r1.h = r1.iyh;
         }
 
-        protected void ld_h_iyl() {
+        void ld_h_iyl() {
             r1.h = r1.iyl;
         }
 
-        protected void ld_l_a() {
+        void ld_l_a() {
             r1.l = r1.a;
         }
 
-        protected void ld_l_b() {
+        void ld_l_b() {
             r1.l = r1.b;
         }
 
-        protected void ld_l_c() {
+        void ld_l_c() {
             r1.l = r1.c;
         }
 
-        protected void ld_l_d() {
+        void ld_l_d() {
             r1.l = r1.d;
         }
 
-        protected void ld_l_e() {
+        void ld_l_e() {
             r1.l = r1.e;
         }
 
-        protected void ld_l_h() {
+        void ld_l_h() {
             r1.l = r1.h;
         }
 
-        protected void ld_l_l() {
+        void ld_l_l() {
         }
 
-        protected void ld_l_ixh() {
+        void ld_l_ixh() {
             r1.l = r1.ixh;
         }
 
-        protected void ld_l_ixl() {
+        void ld_l_ixl() {
             r1.l = r1.ixl;
         }
 
-        protected void ld_l_iyh() {
+        void ld_l_iyh() {
             r1.l = r1.iyh;
         }
 
-        protected void ld_l_iyl() {
+        void ld_l_iyl() {
             r1.l = r1.iyl;
         }
 
-        protected void ld_ixh_a() {
+        void ld_ixh_a() {
             r1.ixh = r1.a;
         }
 
-        protected void ld_ixh_b() {
+        void ld_ixh_b() {
             r1.ixh = r1.b;
         }
 
-        protected void ld_ixh_c() {
+        void ld_ixh_c() {
             r1.ixh = r1.c;
         }
 
-        protected void ld_ixh_d() {
+        void ld_ixh_d() {
             r1.ixh = r1.d;
         }
 
-        protected void ld_ixh_e() {
+        void ld_ixh_e() {
             r1.ixh = r1.e;
         }
 
-        protected void ld_ixh_h() {
+        void ld_ixh_h() {
             r1.ixh = r1.h;
         }
 
-        protected void ld_ixh_l() {
+        void ld_ixh_l() {
             r1.ixh = r1.l;
         }
 
-        protected void ld_ixh_ixh() {
+        void ld_ixh_ixh() {
         }
 
-        protected void ld_ixh_ixl() {
+        void ld_ixh_ixl() {
             r1.ixh = r1.ixl;
         }
 
-        protected void ld_ixh_iyh() {
+        void ld_ixh_iyh() {
             r1.ixh = r1.iyh;
         }
 
-        protected void ld_ixh_iyl() {
+        void ld_ixh_iyl() {
             r1.ixh = r1.iyl;
         }
 
-        protected void ld_ixl_a() {
+        void ld_ixl_a() {
             r1.ixl = r1.a;
         }
 
-        protected void ld_ixl_b() {
+        void ld_ixl_b() {
             r1.ixl = r1.b;
         }
 
-        protected void ld_ixl_c() {
+        void ld_ixl_c() {
             r1.ixl = r1.c;
         }
 
-        protected void ld_ixl_d() {
+        void ld_ixl_d() {
             r1.ixl = r1.d;
         }
 
-        protected void ld_ixl_e() {
+        void ld_ixl_e() {
             r1.ixl = r1.e;
         }
 
-        protected void ld_ixl_h() {
+        void ld_ixl_h() {
             r1.ixl = r1.h;
         }
 
-        protected void ld_ixl_l() {
+        void ld_ixl_l() {
             r1.ixl = r1.l;
         }
 
-        protected void ld_ixl_ixh() {
+        void ld_ixl_ixh() {
             r1.ixl = r1.ixh;
         }
 
-        protected void ld_ixl_ixl() {
+        void ld_ixl_ixl() {
         }
 
-        protected void ld_ixl_iyh() {
+        void ld_ixl_iyh() {
             r1.ixl = r1.iyh;
         }
 
-        protected void ld_ixl_iyl() {
+        void ld_ixl_iyl() {
             r1.ixl = r1.iyl;
         }
 
-        protected void ld_iyh_a() {
+        void ld_iyh_a() {
             r1.iyh = r1.a;
         }
 
-        protected void ld_iyh_b() {
+        void ld_iyh_b() {
             r1.iyh = r1.b;
         }
 
-        protected void ld_iyh_c() {
+        void ld_iyh_c() {
             r1.iyh = r1.c;
         }
 
-        protected void ld_iyh_d() {
+        void ld_iyh_d() {
             r1.iyh = r1.d;
         }
 
-        protected void ld_iyh_e() {
+        void ld_iyh_e() {
             r1.iyh = r1.e;
         }
 
-        protected void ld_iyh_h() {
+        void ld_iyh_h() {
             r1.iyh = r1.h;
         }
 
-        protected void ld_iyh_l() {
+        void ld_iyh_l() {
             r1.iyh = r1.l;
         }
 
-        protected void ld_iyh_ixh() {
+        void ld_iyh_ixh() {
             r1.iyh = r1.ixh;
         }
 
-        protected void ld_iyh_ixl() {
+        void ld_iyh_ixl() {
             r1.iyh = r1.ixl;
         }
 
-        protected void ld_iyh_iyh() {
+        void ld_iyh_iyh() {
         }
 
-        protected void ld_iyh_iyl() {
+        void ld_iyh_iyl() {
             r1.iyh = r1.iyl;
         }
 
-        protected void ld_iyl_a() {
+        void ld_iyl_a() {
             r1.iyl = r1.a;
         }
 
-        protected void ld_iyl_b() {
+        void ld_iyl_b() {
             r1.iyl = r1.b;
         }
 
-        protected void ld_iyl_c() {
+        void ld_iyl_c() {
             r1.iyl = r1.c;
         }
 
-        protected void ld_iyl_d() {
+        void ld_iyl_d() {
             r1.iyl = r1.d;
         }
 
-        protected void ld_iyl_e() {
+        void ld_iyl_e() {
             r1.iyl = r1.e;
         }
 
-        protected void ld_iyl_h() {
+        void ld_iyl_h() {
             r1.iyl = r1.h;
         }
 
-        protected void ld_iyl_l() {
+        void ld_iyl_l() {
             r1.iyl = r1.l;
         }
 
-        protected void ld_iyl_ixh() {
+        void ld_iyl_ixh() {
             r1.iyl = r1.ixh;
         }
 
-        protected void ld_iyl_ixl() {
+        void ld_iyl_ixl() {
             r1.iyl = r1.ixl;
         }
 
-        protected void ld_iyl_iyh() {
+        void ld_iyl_iyh() {
             r1.iyl = r1.iyh;
         }
 
-        protected void ld_iyl_iyl() {
+        void ld_iyl_iyl() {
         }
 
-        protected void ld_a_n() {
+        void ld_a_n() {
             r1.a = Read8(pc++);
         }
 
-        protected void ld_b_n() {
+        void ld_b_n() {
             r1.b = Read8(pc++);
         }
 
-        protected void ld_c_n() {
+        void ld_c_n() {
             r1.c = Read8(pc++);
         }
 
-        protected void ld_d_n() {
+        void ld_d_n() {
             r1.d = Read8(pc++);
         }
 
-        protected void ld_e_n() {
+        void ld_e_n() {
             r1.e = Read8(pc++);
         }
 
-        protected void ld_h_n() {
+        void ld_h_n() {
             r1.h = Read8(pc++);
         }
 
-        protected void ld_l_n() {
+        void ld_l_n() {
             r1.l = Read8(pc++);
         }
 
-        protected void ld_ixh_n() {
+        void ld_ixh_n() {
             r1.ixh = Read8(pc++);
         }
 
-        protected void ld_ixl_n() {
+        void ld_ixl_n() {
             r1.ixl = Read8(pc++);
         }
 
-        protected void ld_iyh_n() {
+        void ld_iyh_n() {
             r1.iyh = Read8(pc++);
         }
 
-        protected void ld_iyl_n() {
+        void ld_iyl_n() {
             r1.iyl = Read8(pc++);
         }
 
-        protected void ld_a__hl_() {
+        void ld_a__hl_() {
             r1.a = Read8(r1.hl);
         }
 
-        protected void ld_b__hl_() {
+        void ld_b__hl_() {
             r1.b = Read8(r1.hl);
         }
 
-        protected void ld_c__hl_() {
+        void ld_c__hl_() {
             r1.c = Read8(r1.hl);
         }
 
-        protected void ld_d__hl_() {
+        void ld_d__hl_() {
             r1.d = Read8(r1.hl);
         }
 
-        protected void ld_e__hl_() {
+        void ld_e__hl_() {
             r1.e = Read8(r1.hl);
         }
 
-        protected void ld_h__hl_() {
+        void ld_h__hl_() {
             r1.h = Read8(r1.hl);
         }
 
-        protected void ld_l__hl_() {
+        void ld_l__hl_() {
             r1.l = Read8(r1.hl);
         }
 
-        protected void ld__hl__a() {
+        void ld__hl__a() {
             Write8(r1.hl, r1.a);
         }
 
-        protected void ld__hl__b() {
+        void ld__hl__b() {
             Write8(r1.hl, r1.b);
         }
 
-        protected void ld__hl__c() {
+        void ld__hl__c() {
             Write8(r1.hl, r1.c);
         }
 
-        protected void ld__hl__d() {
+        void ld__hl__d() {
             Write8(r1.hl, r1.d);
         }
 
-        protected void ld__hl__e() {
+        void ld__hl__e() {
             Write8(r1.hl, r1.e);
         }
 
-        protected void ld__hl__h() {
+        void ld__hl__h() {
             Write8(r1.hl, r1.h);
         }
 
-        protected void ld__hl__l() {
+        void ld__hl__l() {
             Write8(r1.hl, r1.l);
         }
 
-        protected void ld__hl__n() {
+        void ld__hl__n() {
             Write8(r1.hl, Read8(pc++));
         }
         
-        protected void ld_a__bc_() {
+        void ld_a__bc_() {
             r1.a = Read8(r1.bc);
         }
         
-        protected void ld__bc__a() {
+        void ld__bc__a() {
             Write8(r1.bc, r1.a);
         }
-        protected void ld_a__de_() {
+        void ld_a__de_() {
             r1.a = Read8(r1.de);
         }
         
-        protected void ld__de__a() {
+        void ld__de__a() {
             Write8(r1.de, r1.a);
         }
 
-        protected void ld_a__nn_() {
+        void ld_a__nn_() {
             r1.a = Read8(Read16(pc));
             pc += 2;
         }        
         
-        protected void ld__nn__a() {
+        void ld__nn__a() {
             Write8(Read16(pc), r1.a);
             pc += 2;
         }
         
-        protected void ld_a_i() {
+        void ld_a_i() {
             tStates++;
             r1.a = i;
             AdjustFlags(r1.a);
@@ -3209,11 +3209,11 @@ namespace Z80 {
             ValFlag(f_z, r1.a == 0);
         }
         
-        protected void ld_i_a() {
+        void ld_i_a() {
             tStates++;
             i = r1.a;
         }
-        protected void ld_a_r() {
+        void ld_a_r() {
             tStates++;
             r1.a = r;
             AdjustFlags(r1.a);
@@ -3223,385 +3223,385 @@ namespace Z80 {
             ValFlag(f_z, r1.a == 0);
         }
         
-        protected void ld_r_a() {
+        void ld_r_a() {
             tStates++;
             r = r1.a;
         }
-        protected void ld_a__ix_d_() {
+        void ld_a__ix_d_() {
             tStates += 5;
             var offset = (SByte)Read8(pc++);
             r1.a = Read8((ushort)(r1.ix + offset));
         }
         
-        protected void ld__ix_d__a() {
+        void ld__ix_d__a() {
             tStates += 5;
             var offset = (SByte)Read8(pc++);
             Write8((ushort)(r1.ix + offset), r1.a);
         }
         
-        protected void ld_a__iy_d_() {
+        void ld_a__iy_d_() {
             tStates += 5;
             var offset = (SByte)Read8(pc++);
             r1.a = Read8((ushort)(r1.iy + offset));
         }
         
-        protected void ld__iy_d__a() {
+        void ld__iy_d__a() {
             tStates += 5;
             var offset = (SByte)Read8(pc++);
             Write8((ushort)(r1.iy + offset), r1.a);
         }
         
-        protected void ld_b__ix_d_() {
+        void ld_b__ix_d_() {
             tStates += 5;
             var offset = (SByte)Read8(pc++);
             r1.b = Read8((ushort)(r1.ix + offset));
         }
         
-        protected void ld__ix_d__b() {
+        void ld__ix_d__b() {
             tStates += 5;
             var offset = (SByte)Read8(pc++);
             Write8((ushort)(r1.ix + offset), r1.b);
         }
         
-        protected void ld_b__iy_d_() {
+        void ld_b__iy_d_() {
             tStates += 5;
             var offset = (SByte)Read8(pc++);
             r1.b = Read8((ushort)(r1.iy + offset));
         }
         
-        protected void ld__iy_d__b() {
+        void ld__iy_d__b() {
             tStates += 5;
             var offset = (SByte)Read8(pc++);
             Write8((ushort)(r1.iy + offset), r1.b);
         }
         
-        protected void ld_c__ix_d_() {
+        void ld_c__ix_d_() {
             tStates += 5;
             var offset = (SByte)Read8(pc++);
             r1.c = Read8((ushort)(r1.ix + offset));
         }
         
-        protected void ld__ix_d__c() {
+        void ld__ix_d__c() {
             tStates += 5;
             var offset = (SByte)Read8(pc++);
             Write8((ushort)(r1.ix + offset), r1.c);
         }
         
-        protected void ld_c__iy_d_() {
+        void ld_c__iy_d_() {
             tStates += 5;
             var offset = (SByte)Read8(pc++);
             r1.c = Read8((ushort)(r1.iy + offset));
         }
         
-        protected void ld__iy_d__c() {
+        void ld__iy_d__c() {
             tStates += 5;
             var offset = (SByte)Read8(pc++);
             Write8((ushort)(r1.iy + offset), r1.c);
         }
         
-        protected void ld_d__ix_d_() {
+        void ld_d__ix_d_() {
             tStates += 5;
             var offset = (SByte)Read8(pc++);
             r1.d = Read8((ushort)(r1.ix + offset));
         }
         
-        protected void ld__ix_d__d() {
+        void ld__ix_d__d() {
             tStates += 5;
             var offset = (SByte)Read8(pc++);
             Write8((ushort)(r1.ix + offset), r1.d);
         }
         
-        protected void ld_d__iy_d_() {
+        void ld_d__iy_d_() {
             tStates += 5;
             var offset = (SByte)Read8(pc++);
             r1.d = Read8((ushort)(r1.iy + offset));
         }
         
-        protected void ld__iy_d__d() {
+        void ld__iy_d__d() {
             tStates += 5;
             var offset = (SByte)Read8(pc++);
             Write8((ushort)(r1.iy + offset), r1.d);
         }
         
-        protected void ld_e__ix_d_() {
+        void ld_e__ix_d_() {
             tStates += 5;
             var offset = (SByte)Read8(pc++);
             r1.e = Read8((ushort)(r1.ix + offset));
         }
         
-        protected void ld__ix_d__e() {
+        void ld__ix_d__e() {
             tStates += 5;
             var offset = (SByte)Read8(pc++);
             Write8((ushort)(r1.ix + offset), r1.e);
         }
         
-        protected void ld_e__iy_d_() {
+        void ld_e__iy_d_() {
             tStates += 5;
             var offset = (SByte)Read8(pc++);
             r1.e = Read8((ushort)(r1.iy + offset));
         }
         
-        protected void ld__iy_d__e() {
+        void ld__iy_d__e() {
             tStates += 5;
             var offset = (SByte)Read8(pc++);
             Write8((ushort)(r1.iy + offset), r1.e);
         }
         
-        protected void ld_h__ix_d_() {
+        void ld_h__ix_d_() {
             tStates += 5;
             var offset = (SByte)Read8(pc++);
             r1.h = Read8((ushort)(r1.ix + offset));
         }
         
-        protected void ld__ix_d__h() {
+        void ld__ix_d__h() {
             tStates += 5;
             var offset = (SByte)Read8(pc++);
             Write8((ushort)(r1.ix + offset), r1.h);
         }
         
-        protected void ld_h__iy_d_() {
+        void ld_h__iy_d_() {
             tStates += 5;
             var offset = (SByte)Read8(pc++);
             r1.h = Read8((ushort)(r1.iy + offset));
         }
         
-        protected void ld__iy_d__h() {
+        void ld__iy_d__h() {
             tStates += 5;
             var offset = (SByte)Read8(pc++);
             Write8((ushort)(r1.iy + offset), r1.h);
         }
         
-        protected void ld_l__ix_d_() {
+        void ld_l__ix_d_() {
             tStates += 5;
             var offset = (SByte)Read8(pc++);
             r1.l = Read8((ushort)(r1.ix + offset));
         }
         
-        protected void ld__ix_d__l() {
+        void ld__ix_d__l() {
             tStates += 5;
             var offset = (SByte)Read8(pc++);
             Write8((ushort)(r1.ix + offset), r1.l);
         }
         
-        protected void ld_l__iy_d_() {
+        void ld_l__iy_d_() {
             tStates += 5;
             var offset = (SByte)Read8(pc++);
             r1.l = Read8((ushort)(r1.iy + offset));
         }
         
-        protected void ld__iy_d__l() {
+        void ld__iy_d__l() {
             tStates += 5;
             var offset = (SByte)Read8(pc++);
             Write8((ushort)(r1.iy + offset), r1.l);
         }
         
-        protected void ld__ix_d__n() {
+        void ld__ix_d__n() {
             tStates += 2;
             var offset = (SByte)Read8(pc++);
             var n = Read8(pc++);
             Write8((ushort)(r1.ix + offset), n);
         }
         
-        protected void ld__iy_d__n() {
+        void ld__iy_d__n() {
             tStates += 2;
             var offset = (SByte)Read8(pc++);
             var n = Read8(pc++);
             Write8((ushort)(r1.iy + offset), n);
         }
         
-        protected void ld_bc_nn() {
+        void ld_bc_nn() {
             r1.bc = Read16(pc);
             pc += 2;
         }
         
-        protected void ld_bc__nn_() {
+        void ld_bc__nn_() {
             r1.bc = Read16(Read16(pc));
             pc += 2;
         }
         
-        protected void ld__nn__bc() {
+        void ld__nn__bc() {
             var addr = Read16(pc);
             pc += 2;
             Write16(addr, r1.bc);
         }
         
-        protected void ld_de_nn() {
+        void ld_de_nn() {
             r1.de = Read16(pc);
             pc += 2;
         }
         
-        protected void ld_de__nn_() {
+        void ld_de__nn_() {
             r1.de = Read16(Read16(pc));
             pc += 2;
         }
         
-        protected void ld__nn__de() {
+        void ld__nn__de() {
             var addr = Read16(pc);
             pc += 2;
             Write16(addr, r1.de);
         }
         
-        protected void ld_hl_nn() {
+        void ld_hl_nn() {
             r1.hl = Read16(pc);
             pc += 2;
         }
         
-        protected void ld_hl__nn_() {
+        void ld_hl__nn_() {
             r1.hl = Read16(Read16(pc));
             pc += 2;
         }
         
-        protected void ld__nn__hl() {
+        void ld__nn__hl() {
             var addr = Read16(pc);
             pc += 2;
             Write16(addr, r1.hl);
         }
         
-        protected void ld_sp_nn() {
+        void ld_sp_nn() {
             r1.sp = Read16(pc);
             pc += 2;
         }
         
-        protected void ld_sp__nn_() {
+        void ld_sp__nn_() {
             r1.sp = Read16(Read16(pc));
             pc += 2;
         }
         
-        protected void ld__nn__sp() {
+        void ld__nn__sp() {
             var addr = Read16(pc);
             pc += 2;
             Write16(addr, r1.sp);
         }
         
-        protected void ld_ix_nn() {
+        void ld_ix_nn() {
             r1.ix = Read16(pc);
             pc += 2;
         }
         
-        protected void ld_ix__nn_() {
+        void ld_ix__nn_() {
             r1.ix = Read16(Read16(pc));
             pc += 2;
         }
         
-        protected void ld__nn__ix() {
+        void ld__nn__ix() {
             var addr = Read16(pc);
             pc += 2;
             Write16(addr, r1.ix);
         }
         
-        protected void ld_iy_nn() {
+        void ld_iy_nn() {
             r1.iy = Read16(pc);
             pc += 2;
         }
         
-        protected void ld_iy__nn_() {
+        void ld_iy__nn_() {
             r1.iy = Read16(Read16(pc));
             pc += 2;
         }
         
-        protected void ld__nn__iy() {
+        void ld__nn__iy() {
             var addr = Read16(pc);
             pc += 2;
             Write16(addr, r1.iy);
         }
         
-        protected void ld_sp_hl() {
+        void ld_sp_hl() {
             tStates += 2;
             r1.sp = r1.hl;
         }
         
-        protected void ex__sp__hl() {
+        void ex__sp__hl() {
             tStates += 3;
             var _t = r1.hl;
             r1.hl = Read16(r1.sp);
             Write16(r1.sp, _t);
         }
         
-        protected void ld_sp_ix() {
+        void ld_sp_ix() {
             tStates += 2;
             r1.sp = r1.ix;
         }
         
-        protected void ex__sp__ix() {
+        void ex__sp__ix() {
             tStates += 3;
             var _t = r1.ix;
             r1.ix = Read16(r1.sp);
             Write16(r1.sp, _t);
         }
         
-        protected void ld_sp_iy() {
+        void ld_sp_iy() {
             tStates += 2;
             r1.sp = r1.iy;
         }
         
-        protected void ex__sp__iy() {
+        void ex__sp__iy() {
             tStates += 3;
             var _t = r1.iy;
             r1.iy = Read16(r1.sp);
             Write16(r1.sp, _t);
         }
         
-        protected void push_af() {
+        void push_af() {
             tStates++;
             DoPush(r1.af);
         }
         
-        protected void pop_af() {
+        void pop_af() {
             r1.af = DoPop();
         }
-        protected void push_bc() {
+        void push_bc() {
             tStates++;
             DoPush(r1.bc);
         }
         
-        protected void pop_bc() {
+        void pop_bc() {
             r1.bc = DoPop();
         }
-        protected void push_de() {
+        void push_de() {
             tStates++;
             DoPush(r1.de);
         }
         
-        protected void pop_de() {
+        void pop_de() {
             r1.de = DoPop();
         }
-        protected void push_hl() {
+        void push_hl() {
             tStates++;
             DoPush(r1.hl);
         }
         
-        protected void pop_hl() {
+        void pop_hl() {
             r1.hl = DoPop();
         }
-        protected void push_ix() {
+        void push_ix() {
             tStates++;
             DoPush(r1.ix);
         }
         
-        protected void pop_ix() {
+        void pop_ix() {
             r1.ix = DoPop();
         }
-        protected void push_iy() {
+        void push_iy() {
             tStates++;
             DoPush(r1.iy);
         }
         
-        protected void pop_iy() {
+        void pop_iy() {
             r1.iy = DoPop();
         }
-        protected void ex_de_hl() {
+        void ex_de_hl() {
             var _t = r1.de;
             r1.de = r1.hl;
             r1.hl = _t;
         }
         
-        protected void ex_af_af_() {
+        void ex_af_af_() {
             var _t = r1.af;
             r1.af = r2.af;
             r2.af = _t;
         }
         
-        protected void exx() {
+        void exx() {
             ushort _t;
             
             _t = r1.bc;
@@ -3615,7 +3615,7 @@ namespace Z80 {
             r2.hl= _t;
         }
         
-        protected void ldi() {
+        void ldi() {
             byte val, sum;
             
             tStates += 2;
@@ -3629,7 +3629,7 @@ namespace Z80 {
             ValFlag(f_pv, r1.bc != 0);
         }
         
-        protected void ldir() {
+        void ldir() {
             ldi();
             if (r1.bc != 0) {
                 tStates += 5;
@@ -3637,7 +3637,7 @@ namespace Z80 {
             }
         }
 
-        protected void ldd() {
+        void ldd() {
             byte val, sum;
             
             tStates += 2;
@@ -3651,7 +3651,7 @@ namespace Z80 {
             ValFlag(f_pv, r1.bc != 0);
         }
         
-        protected void lddr() {
+        void lddr() {
             ldd();
             if (r1.bc != 0) {
                 tStates += 5;
@@ -3659,7 +3659,7 @@ namespace Z80 {
             }
         }
         
-        protected void cpi() {
+        void cpi() {
             tStates += 5;
             var carry = GetFlag(f_c);
             var value = DoCPHL();
@@ -3674,7 +3674,7 @@ namespace Z80 {
             ValFlag(f_3, (value & (1 << 3)) != 0);
         }
         
-        protected void cpir() {
+        void cpir() {
             cpi();
             if (r1.bc != 0 && !GetFlag(f_z)) {
                 tStates += 5;
@@ -3682,7 +3682,7 @@ namespace Z80 {
             }
         }
         
-        protected void cpd() {
+        void cpd() {
             tStates += 5;
             var carry = GetFlag(f_c);
             var value = DoCPHL();
@@ -3697,7 +3697,7 @@ namespace Z80 {
             ValFlag(f_3, (value & (1 << 3)) != 0);
         }
         
-        protected void cpdr() {
+        void cpdr() {
             cpd();
             if (r1.bc != 0 && !GetFlag(f_z)) {
                 tStates += 5;
@@ -3705,637 +3705,637 @@ namespace Z80 {
             }
         }
         
-        protected void adc_a_a() {
+        void adc_a_a() {
             r1.a = DoArithmetics(r1.a, hasCarry_adc, isSub_adc);
         }
         
-        protected void adc_a_b() {
+        void adc_a_b() {
             r1.a = DoArithmetics(r1.b, hasCarry_adc, isSub_adc);
         }
         
-        protected void adc_a_c() {
+        void adc_a_c() {
             r1.a = DoArithmetics(r1.c, hasCarry_adc, isSub_adc);
         }
         
-        protected void adc_a_d() {
+        void adc_a_d() {
             r1.a = DoArithmetics(r1.d, hasCarry_adc, isSub_adc);
         }
         
-        protected void adc_a_e() {
+        void adc_a_e() {
             r1.a = DoArithmetics(r1.e, hasCarry_adc, isSub_adc);
         }
         
-        protected void adc_a_h() {
+        void adc_a_h() {
             r1.a = DoArithmetics(r1.h, hasCarry_adc, isSub_adc);
         }
         
-        protected void adc_a_l() {
+        void adc_a_l() {
             r1.a = DoArithmetics(r1.l, hasCarry_adc, isSub_adc);
         }
         
-        protected void adc_a_ixh() {
+        void adc_a_ixh() {
             r1.a = DoArithmetics(r1.ixh, hasCarry_adc, isSub_adc);
         }
         
-        protected void adc_a_ixl() {
+        void adc_a_ixl() {
             r1.a = DoArithmetics(r1.ixl, hasCarry_adc, isSub_adc);
         }
         
-        protected void adc_a_iyh() {
+        void adc_a_iyh() {
             r1.a = DoArithmetics(r1.iyh, hasCarry_adc, isSub_adc);
         }
         
-        protected void adc_a_iyl() {
+        void adc_a_iyl() {
             r1.a = DoArithmetics(r1.iyl, hasCarry_adc, isSub_adc);
         }
         
-        protected void adc_a_n() {
+        void adc_a_n() {
             r1.a = DoArithmetics(Read8(pc++), hasCarry_adc, isSub_adc);
         }
 
-		protected void adc_a__hl_() {
-			r1.a = DoArithmetics(Read8(r1.hl), hasCarry_adc, isSub_adc);
-		}
+        void adc_a__hl_() {
+            r1.a = DoArithmetics(Read8(r1.hl), hasCarry_adc, isSub_adc);
+        }
         
-		protected void adc_a__ix_d_() {
-			tStates += 5;
-			var offset = (SByte)Read8(pc++);
-			r1.a = DoArithmetics(Read8((ushort)(r1.ix + offset)), hasCarry_adc, isSub_adc);
-		}
+        void adc_a__ix_d_() {
+            tStates += 5;
+            var offset = (SByte)Read8(pc++);
+            r1.a = DoArithmetics(Read8((ushort)(r1.ix + offset)), hasCarry_adc, isSub_adc);
+        }
         
-		protected void adc_a__iy_d_() {
-			tStates += 5;
-			var offset = (SByte)Read8(pc++);
-			r1.a = DoArithmetics(Read8((ushort)(r1.iy + offset)), hasCarry_adc, isSub_adc);
-		}
+        void adc_a__iy_d_() {
+            tStates += 5;
+            var offset = (SByte)Read8(pc++);
+            r1.a = DoArithmetics(Read8((ushort)(r1.iy + offset)), hasCarry_adc, isSub_adc);
+        }
         
-        protected void sbc_a_a() {
+        void sbc_a_a() {
             r1.a = DoArithmetics(r1.a, hasCarry_sbc, isSub_sbc);
         }
         
-        protected void sbc_a_b() {
+        void sbc_a_b() {
             r1.a = DoArithmetics(r1.b, hasCarry_sbc, isSub_sbc);
         }
         
-        protected void sbc_a_c() {
+        void sbc_a_c() {
             r1.a = DoArithmetics(r1.c, hasCarry_sbc, isSub_sbc);
         }
         
-        protected void sbc_a_d() {
+        void sbc_a_d() {
             r1.a = DoArithmetics(r1.d, hasCarry_sbc, isSub_sbc);
         }
         
-        protected void sbc_a_e() {
+        void sbc_a_e() {
             r1.a = DoArithmetics(r1.e, hasCarry_sbc, isSub_sbc);
         }
         
-        protected void sbc_a_h() {
+        void sbc_a_h() {
             r1.a = DoArithmetics(r1.h, hasCarry_sbc, isSub_sbc);
         }
         
-        protected void sbc_a_l() {
+        void sbc_a_l() {
             r1.a = DoArithmetics(r1.l, hasCarry_sbc, isSub_sbc);
         }
         
-        protected void sbc_a_ixh() {
+        void sbc_a_ixh() {
             r1.a = DoArithmetics(r1.ixh, hasCarry_sbc, isSub_sbc);
         }
         
-        protected void sbc_a_ixl() {
+        void sbc_a_ixl() {
             r1.a = DoArithmetics(r1.ixl, hasCarry_sbc, isSub_sbc);
         }
         
-        protected void sbc_a_iyh() {
+        void sbc_a_iyh() {
             r1.a = DoArithmetics(r1.iyh, hasCarry_sbc, isSub_sbc);
         }
         
-        protected void sbc_a_iyl() {
+        void sbc_a_iyl() {
             r1.a = DoArithmetics(r1.iyl, hasCarry_sbc, isSub_sbc);
         }
         
-        protected void sbc_a_n() {
+        void sbc_a_n() {
             r1.a = DoArithmetics(Read8(pc++), hasCarry_sbc, isSub_sbc);
         }
 
-		protected void sbc_a__hl_() {
-			r1.a = DoArithmetics(Read8(r1.hl), hasCarry_sbc, isSub_sbc);
-		}
+        void sbc_a__hl_() {
+            r1.a = DoArithmetics(Read8(r1.hl), hasCarry_sbc, isSub_sbc);
+        }
         
-		protected void sbc_a__ix_d_() {
-			tStates += 5;
-			var offset = (SByte)Read8(pc++);
-			r1.a = DoArithmetics(Read8((ushort)(r1.ix + offset)), hasCarry_sbc, isSub_sbc);
-		}
+        void sbc_a__ix_d_() {
+            tStates += 5;
+            var offset = (SByte)Read8(pc++);
+            r1.a = DoArithmetics(Read8((ushort)(r1.ix + offset)), hasCarry_sbc, isSub_sbc);
+        }
         
-		protected void sbc_a__iy_d_() {
-			tStates += 5;
-			var offset = (SByte)Read8(pc++);
-			r1.a = DoArithmetics(Read8((ushort)(r1.iy + offset)), hasCarry_sbc, isSub_sbc);
-		}
+        void sbc_a__iy_d_() {
+            tStates += 5;
+            var offset = (SByte)Read8(pc++);
+            r1.a = DoArithmetics(Read8((ushort)(r1.iy + offset)), hasCarry_sbc, isSub_sbc);
+        }
         
-        protected void add_a_a() {
+        void add_a_a() {
             r1.a = DoArithmetics(r1.a, hasCarry_add, isSub_add);
         }
         
-        protected void add_a_b() {
+        void add_a_b() {
             r1.a = DoArithmetics(r1.b, hasCarry_add, isSub_add);
         }
         
-        protected void add_a_c() {
+        void add_a_c() {
             r1.a = DoArithmetics(r1.c, hasCarry_add, isSub_add);
         }
         
-        protected void add_a_d() {
+        void add_a_d() {
             r1.a = DoArithmetics(r1.d, hasCarry_add, isSub_add);
         }
         
-        protected void add_a_e() {
+        void add_a_e() {
             r1.a = DoArithmetics(r1.e, hasCarry_add, isSub_add);
         }
         
-        protected void add_a_h() {
+        void add_a_h() {
             r1.a = DoArithmetics(r1.h, hasCarry_add, isSub_add);
         }
         
-        protected void add_a_l() {
+        void add_a_l() {
             r1.a = DoArithmetics(r1.l, hasCarry_add, isSub_add);
         }
         
-        protected void add_a_ixh() {
+        void add_a_ixh() {
             r1.a = DoArithmetics(r1.ixh, hasCarry_add, isSub_add);
         }
         
-        protected void add_a_ixl() {
+        void add_a_ixl() {
             r1.a = DoArithmetics(r1.ixl, hasCarry_add, isSub_add);
         }
         
-        protected void add_a_iyh() {
+        void add_a_iyh() {
             r1.a = DoArithmetics(r1.iyh, hasCarry_add, isSub_add);
         }
         
-        protected void add_a_iyl() {
+        void add_a_iyl() {
             r1.a = DoArithmetics(r1.iyl, hasCarry_add, isSub_add);
         }
         
-        protected void add_a_n() {
+        void add_a_n() {
             r1.a = DoArithmetics(Read8(pc++), hasCarry_add, isSub_add);
         }
 
-		protected void add_a__hl_() {
-			r1.a = DoArithmetics(Read8(r1.hl), hasCarry_add, isSub_add);
-		}
+        void add_a__hl_() {
+            r1.a = DoArithmetics(Read8(r1.hl), hasCarry_add, isSub_add);
+        }
         
-		protected void add_a__ix_d_() {
-			tStates += 5;
-			var offset = (SByte)Read8(pc++);
-			r1.a = DoArithmetics(Read8((ushort)(r1.ix + offset)), hasCarry_add, isSub_add);
-		}
+        void add_a__ix_d_() {
+            tStates += 5;
+            var offset = (SByte)Read8(pc++);
+            r1.a = DoArithmetics(Read8((ushort)(r1.ix + offset)), hasCarry_add, isSub_add);
+        }
         
-		protected void add_a__iy_d_() {
-			tStates += 5;
-			var offset = (SByte)Read8(pc++);
-			r1.a = DoArithmetics(Read8((ushort)(r1.iy + offset)), hasCarry_add, isSub_add);
-		}
+        void add_a__iy_d_() {
+            tStates += 5;
+            var offset = (SByte)Read8(pc++);
+            r1.a = DoArithmetics(Read8((ushort)(r1.iy + offset)), hasCarry_add, isSub_add);
+        }
         
-        protected void sub_a_a() {
+        void sub_a_a() {
             r1.a = DoArithmetics(r1.a, hasCarry_sub, isSub_sub);
         }
         
-        protected void sub_a_b() {
+        void sub_a_b() {
             r1.a = DoArithmetics(r1.b, hasCarry_sub, isSub_sub);
         }
         
-        protected void sub_a_c() {
+        void sub_a_c() {
             r1.a = DoArithmetics(r1.c, hasCarry_sub, isSub_sub);
         }
         
-        protected void sub_a_d() {
+        void sub_a_d() {
             r1.a = DoArithmetics(r1.d, hasCarry_sub, isSub_sub);
         }
         
-        protected void sub_a_e() {
+        void sub_a_e() {
             r1.a = DoArithmetics(r1.e, hasCarry_sub, isSub_sub);
         }
         
-        protected void sub_a_h() {
+        void sub_a_h() {
             r1.a = DoArithmetics(r1.h, hasCarry_sub, isSub_sub);
         }
         
-        protected void sub_a_l() {
+        void sub_a_l() {
             r1.a = DoArithmetics(r1.l, hasCarry_sub, isSub_sub);
         }
         
-        protected void sub_a_ixh() {
+        void sub_a_ixh() {
             r1.a = DoArithmetics(r1.ixh, hasCarry_sub, isSub_sub);
         }
         
-        protected void sub_a_ixl() {
+        void sub_a_ixl() {
             r1.a = DoArithmetics(r1.ixl, hasCarry_sub, isSub_sub);
         }
         
-        protected void sub_a_iyh() {
+        void sub_a_iyh() {
             r1.a = DoArithmetics(r1.iyh, hasCarry_sub, isSub_sub);
         }
         
-        protected void sub_a_iyl() {
+        void sub_a_iyl() {
             r1.a = DoArithmetics(r1.iyl, hasCarry_sub, isSub_sub);
         }
         
-        protected void sub_a_n() {
+        void sub_a_n() {
             r1.a = DoArithmetics(Read8(pc++), hasCarry_sub, isSub_sub);
         }
 
-		protected void sub_a__hl_() {
-			r1.a = DoArithmetics(Read8(r1.hl), hasCarry_sub, isSub_sub);
-		}
+        void sub_a__hl_() {
+            r1.a = DoArithmetics(Read8(r1.hl), hasCarry_sub, isSub_sub);
+        }
         
-		protected void sub_a__ix_d_() {
-			tStates += 5;
-			var offset = (SByte)Read8(pc++);
-			r1.a = DoArithmetics(Read8((ushort)(r1.ix + offset)), hasCarry_sub, isSub_sub);
-		}
+        void sub_a__ix_d_() {
+            tStates += 5;
+            var offset = (SByte)Read8(pc++);
+            r1.a = DoArithmetics(Read8((ushort)(r1.ix + offset)), hasCarry_sub, isSub_sub);
+        }
         
-		protected void sub_a__iy_d_() {
-			tStates += 5;
-			var offset = (SByte)Read8(pc++);
-			r1.a = DoArithmetics(Read8((ushort)(r1.iy + offset)), hasCarry_sub, isSub_sub);
-		}
+        void sub_a__iy_d_() {
+            tStates += 5;
+            var offset = (SByte)Read8(pc++);
+            r1.a = DoArithmetics(Read8((ushort)(r1.iy + offset)), hasCarry_sub, isSub_sub);
+        }
         
-		protected void add_hl_hl() {
-			tStates += 7;
-			r1.hl = DoAddWord(r1.hl, r1.hl,  hasCarry_add, isSub_add);
-		}
+        void add_hl_hl() {
+            tStates += 7;
+            r1.hl = DoAddWord(r1.hl, r1.hl,  hasCarry_add, isSub_add);
+        }
 
-		protected void add_hl_bc() {
-			tStates += 7;
-			r1.hl = DoAddWord(r1.hl, r1.bc,  hasCarry_add, isSub_add);
-		}
+        void add_hl_bc() {
+            tStates += 7;
+            r1.hl = DoAddWord(r1.hl, r1.bc,  hasCarry_add, isSub_add);
+        }
 
-		protected void add_hl_de() {
-			tStates += 7;
-			r1.hl = DoAddWord(r1.hl, r1.de,  hasCarry_add, isSub_add);
-		}
+        void add_hl_de() {
+            tStates += 7;
+            r1.hl = DoAddWord(r1.hl, r1.de,  hasCarry_add, isSub_add);
+        }
 
-		protected void add_hl_sp() {
-			tStates += 7;
-			r1.hl = DoAddWord(r1.hl, r1.sp,  hasCarry_add, isSub_add);
-		}
+        void add_hl_sp() {
+            tStates += 7;
+            r1.hl = DoAddWord(r1.hl, r1.sp,  hasCarry_add, isSub_add);
+        }
 
-		protected void adc_hl_hl() {
-			tStates += 7;
-			r1.hl = DoAddWord(r1.hl, r1.hl,  hasCarry_adc, isSub_adc);
-		}
+        void adc_hl_hl() {
+            tStates += 7;
+            r1.hl = DoAddWord(r1.hl, r1.hl,  hasCarry_adc, isSub_adc);
+        }
 
-		protected void adc_hl_bc() {
-			tStates += 7;
-			r1.hl = DoAddWord(r1.hl, r1.bc,  hasCarry_adc, isSub_adc);
-		}
+        void adc_hl_bc() {
+            tStates += 7;
+            r1.hl = DoAddWord(r1.hl, r1.bc,  hasCarry_adc, isSub_adc);
+        }
 
-		protected void adc_hl_de() {
-			tStates += 7;
-			r1.hl = DoAddWord(r1.hl, r1.de,  hasCarry_adc, isSub_adc);
-		}
+        void adc_hl_de() {
+            tStates += 7;
+            r1.hl = DoAddWord(r1.hl, r1.de,  hasCarry_adc, isSub_adc);
+        }
 
-		protected void adc_hl_sp() {
-			tStates += 7;
-			r1.hl = DoAddWord(r1.hl, r1.sp,  hasCarry_adc, isSub_adc);
-		}
+        void adc_hl_sp() {
+            tStates += 7;
+            r1.hl = DoAddWord(r1.hl, r1.sp,  hasCarry_adc, isSub_adc);
+        }
 
-		protected void sbc_hl_hl() {
-			tStates += 7;
-			r1.hl = DoAddWord(r1.hl, r1.hl,  hasCarry_sbc, isSub_sbc);
-		}
+        void sbc_hl_hl() {
+            tStates += 7;
+            r1.hl = DoAddWord(r1.hl, r1.hl,  hasCarry_sbc, isSub_sbc);
+        }
 
-		protected void sbc_hl_bc() {
-			tStates += 7;
-			r1.hl = DoAddWord(r1.hl, r1.bc,  hasCarry_sbc, isSub_sbc);
-		}
+        void sbc_hl_bc() {
+            tStates += 7;
+            r1.hl = DoAddWord(r1.hl, r1.bc,  hasCarry_sbc, isSub_sbc);
+        }
 
-		protected void sbc_hl_de() {
-			tStates += 7;
-			r1.hl = DoAddWord(r1.hl, r1.de,  hasCarry_sbc, isSub_sbc);
-		}
+        void sbc_hl_de() {
+            tStates += 7;
+            r1.hl = DoAddWord(r1.hl, r1.de,  hasCarry_sbc, isSub_sbc);
+        }
 
-		protected void sbc_hl_sp() {
-			tStates += 7;
-			r1.hl = DoAddWord(r1.hl, r1.sp,  hasCarry_sbc, isSub_sbc);
-		}
+        void sbc_hl_sp() {
+            tStates += 7;
+            r1.hl = DoAddWord(r1.hl, r1.sp,  hasCarry_sbc, isSub_sbc);
+        }
 
-		protected void add_ix_ix() {
-			tStates += 7;
-			r1.ix = DoAddWord(r1.ix, r1.ix,  false, false);
-		}
+        void add_ix_ix() {
+            tStates += 7;
+            r1.ix = DoAddWord(r1.ix, r1.ix,  false, false);
+        }
 
-		protected void add_ix_iy() {
-			tStates += 7;
-			r1.ix = DoAddWord(r1.ix, r1.iy,  false, false);
-		}
+        void add_ix_iy() {
+            tStates += 7;
+            r1.ix = DoAddWord(r1.ix, r1.iy,  false, false);
+        }
 
-		protected void add_ix_bc() {
-			tStates += 7;
-			r1.ix = DoAddWord(r1.ix, r1.bc,  false, false);
-		}
+        void add_ix_bc() {
+            tStates += 7;
+            r1.ix = DoAddWord(r1.ix, r1.bc,  false, false);
+        }
 
-		protected void add_ix_de() {
-			tStates += 7;
-			r1.ix = DoAddWord(r1.ix, r1.de,  false, false);
-		}
+        void add_ix_de() {
+            tStates += 7;
+            r1.ix = DoAddWord(r1.ix, r1.de,  false, false);
+        }
 
-		protected void add_ix_sp() {
-			tStates += 7;
-			r1.ix = DoAddWord(r1.ix, r1.sp,  false, false);
-		}
+        void add_ix_sp() {
+            tStates += 7;
+            r1.ix = DoAddWord(r1.ix, r1.sp,  false, false);
+        }
 
-		protected void add_iy_ix() {
-			tStates += 7;
-			r1.iy = DoAddWord(r1.iy, r1.ix,  false, false);
-		}
+        void add_iy_ix() {
+            tStates += 7;
+            r1.iy = DoAddWord(r1.iy, r1.ix,  false, false);
+        }
 
-		protected void add_iy_iy() {
-			tStates += 7;
-			r1.iy = DoAddWord(r1.iy, r1.iy,  false, false);
-		}
+        void add_iy_iy() {
+            tStates += 7;
+            r1.iy = DoAddWord(r1.iy, r1.iy,  false, false);
+        }
 
-		protected void add_iy_bc() {
-			tStates += 7;
-			r1.iy = DoAddWord(r1.iy, r1.bc,  false, false);
-		}
+        void add_iy_bc() {
+            tStates += 7;
+            r1.iy = DoAddWord(r1.iy, r1.bc,  false, false);
+        }
 
-		protected void add_iy_de() {
-			tStates += 7;
-			r1.iy = DoAddWord(r1.iy, r1.de,  false, false);
-		}
+        void add_iy_de() {
+            tStates += 7;
+            r1.iy = DoAddWord(r1.iy, r1.de,  false, false);
+        }
 
-		protected void add_iy_sp() {
-			tStates += 7;
-			r1.iy = DoAddWord(r1.iy, r1.sp,  false, false);
-		}
+        void add_iy_sp() {
+            tStates += 7;
+            r1.iy = DoAddWord(r1.iy, r1.sp,  false, false);
+        }
 
-		protected void and_a() {
-			DoAND(r1.a);
-		}
+        void and_a() {
+            DoAND(r1.a);
+        }
         
-		protected void and_b() {
-			DoAND(r1.b);
-		}
+        void and_b() {
+            DoAND(r1.b);
+        }
         
-		protected void and_c() {
-			DoAND(r1.c);
-		}
+        void and_c() {
+            DoAND(r1.c);
+        }
         
-		protected void and_d() {
-			DoAND(r1.d);
-		}
+        void and_d() {
+            DoAND(r1.d);
+        }
         
-		protected void and_e() {
-			DoAND(r1.e);
-		}
+        void and_e() {
+            DoAND(r1.e);
+        }
         
-		protected void and_h() {
-			DoAND(r1.h);
-		}
+        void and_h() {
+            DoAND(r1.h);
+        }
         
-		protected void and_l() {
-			DoAND(r1.l);
-		}
+        void and_l() {
+            DoAND(r1.l);
+        }
         
-		protected void and_ixh() {
-			DoAND(r1.ixh);
-		}
+        void and_ixh() {
+            DoAND(r1.ixh);
+        }
         
-		protected void and_ixl() {
-			DoAND(r1.ixl);
-		}
+        void and_ixl() {
+            DoAND(r1.ixl);
+        }
         
-		protected void and_iyh() {
-			DoAND(r1.iyh);
-		}
+        void and_iyh() {
+            DoAND(r1.iyh);
+        }
         
-		protected void and_iyl() {
-			DoAND(r1.iyl);
-		}
+        void and_iyl() {
+            DoAND(r1.iyl);
+        }
         
-		protected void and_n() {
-			DoAND(Read8(pc++));
-		}
+        void and_n() {
+            DoAND(Read8(pc++));
+        }
 
-		protected void and__hl_() {
-			DoAND(Read8(r1.hl));
-		}
+        void and__hl_() {
+            DoAND(Read8(r1.hl));
+        }
         
-		protected void and__ix_d_() {
-			tStates += 5;
-			var offset = (SByte)Read8(pc++);
-			DoAND(Read8((ushort)(r1.ix + offset)));
-		}
+        void and__ix_d_() {
+            tStates += 5;
+            var offset = (SByte)Read8(pc++);
+            DoAND(Read8((ushort)(r1.ix + offset)));
+        }
         
-		protected void and__iy_d_() {
-			tStates += 5;
-			var offset = (SByte)Read8(pc++);
-			DoAND(Read8((ushort)(r1.iy + offset)));
-		}
+        void and__iy_d_() {
+            tStates += 5;
+            var offset = (SByte)Read8(pc++);
+            DoAND(Read8((ushort)(r1.iy + offset)));
+        }
         
-		protected void or_a() {
-			DoOR(r1.a);
-		}
+        void or_a() {
+            DoOR(r1.a);
+        }
         
-		protected void or_b() {
-			DoOR(r1.b);
-		}
+        void or_b() {
+            DoOR(r1.b);
+        }
         
-		protected void or_c() {
-			DoOR(r1.c);
-		}
+        void or_c() {
+            DoOR(r1.c);
+        }
         
-		protected void or_d() {
-			DoOR(r1.d);
-		}
+        void or_d() {
+            DoOR(r1.d);
+        }
         
-		protected void or_e() {
-			DoOR(r1.e);
-		}
+        void or_e() {
+            DoOR(r1.e);
+        }
         
-		protected void or_h() {
-			DoOR(r1.h);
-		}
+        void or_h() {
+            DoOR(r1.h);
+        }
         
-		protected void or_l() {
-			DoOR(r1.l);
-		}
+        void or_l() {
+            DoOR(r1.l);
+        }
         
-		protected void or_ixh() {
-			DoOR(r1.ixh);
-		}
+        void or_ixh() {
+            DoOR(r1.ixh);
+        }
         
-		protected void or_ixl() {
-			DoOR(r1.ixl);
-		}
+        void or_ixl() {
+            DoOR(r1.ixl);
+        }
         
-		protected void or_iyh() {
-			DoOR(r1.iyh);
-		}
+        void or_iyh() {
+            DoOR(r1.iyh);
+        }
         
-		protected void or_iyl() {
-			DoOR(r1.iyl);
-		}
+        void or_iyl() {
+            DoOR(r1.iyl);
+        }
         
-		protected void or_n() {
-			DoOR(Read8(pc++));
-		}
+        void or_n() {
+            DoOR(Read8(pc++));
+        }
 
-		protected void or__hl_() {
-			DoOR(Read8(r1.hl));
-		}
+        void or__hl_() {
+            DoOR(Read8(r1.hl));
+        }
         
-		protected void or__ix_d_() {
-			tStates += 5;
-			var offset = (SByte)Read8(pc++);
-			DoOR(Read8((ushort)(r1.ix + offset)));
-		}
+        void or__ix_d_() {
+            tStates += 5;
+            var offset = (SByte)Read8(pc++);
+            DoOR(Read8((ushort)(r1.ix + offset)));
+        }
         
-		protected void or__iy_d_() {
-			tStates += 5;
-			var offset = (SByte)Read8(pc++);
-			DoOR(Read8((ushort)(r1.iy + offset)));
-		}
+        void or__iy_d_() {
+            tStates += 5;
+            var offset = (SByte)Read8(pc++);
+            DoOR(Read8((ushort)(r1.iy + offset)));
+        }
         
-		protected void xor_a() {
-			DoXOR(r1.a);
-		}
+        void xor_a() {
+            DoXOR(r1.a);
+        }
         
-		protected void xor_b() {
-			DoXOR(r1.b);
-		}
+        void xor_b() {
+            DoXOR(r1.b);
+        }
         
-		protected void xor_c() {
-			DoXOR(r1.c);
-		}
+        void xor_c() {
+            DoXOR(r1.c);
+        }
         
-		protected void xor_d() {
-			DoXOR(r1.d);
-		}
+        void xor_d() {
+            DoXOR(r1.d);
+        }
         
-		protected void xor_e() {
-			DoXOR(r1.e);
-		}
+        void xor_e() {
+            DoXOR(r1.e);
+        }
         
-		protected void xor_h() {
-			DoXOR(r1.h);
-		}
+        void xor_h() {
+            DoXOR(r1.h);
+        }
         
-		protected void xor_l() {
-			DoXOR(r1.l);
-		}
+        void xor_l() {
+            DoXOR(r1.l);
+        }
         
-		protected void xor_ixh() {
-			DoXOR(r1.ixh);
-		}
+        void xor_ixh() {
+            DoXOR(r1.ixh);
+        }
         
-		protected void xor_ixl() {
-			DoXOR(r1.ixl);
-		}
+        void xor_ixl() {
+            DoXOR(r1.ixl);
+        }
         
-		protected void xor_iyh() {
-			DoXOR(r1.iyh);
-		}
+        void xor_iyh() {
+            DoXOR(r1.iyh);
+        }
         
-		protected void xor_iyl() {
-			DoXOR(r1.iyl);
-		}
+        void xor_iyl() {
+            DoXOR(r1.iyl);
+        }
         
-		protected void xor_n() {
-			DoXOR(Read8(pc++));
-		}
+        void xor_n() {
+            DoXOR(Read8(pc++));
+        }
 
-		protected void xor__hl_() {
-			DoXOR(Read8(r1.hl));
-		}
+        void xor__hl_() {
+            DoXOR(Read8(r1.hl));
+        }
         
-		protected void xor__ix_d_() {
-			tStates += 5;
-			var offset = (SByte)Read8(pc++);
-			DoXOR(Read8((ushort)(r1.ix + offset)));
-		}
+        void xor__ix_d_() {
+            tStates += 5;
+            var offset = (SByte)Read8(pc++);
+            DoXOR(Read8((ushort)(r1.ix + offset)));
+        }
         
-		protected void xor__iy_d_() {
-			tStates += 5;
-			var offset = (SByte)Read8(pc++);
-			DoXOR(Read8((ushort)(r1.iy + offset)));
-		}
+        void xor__iy_d_() {
+            tStates += 5;
+            var offset = (SByte)Read8(pc++);
+            DoXOR(Read8((ushort)(r1.iy + offset)));
+        }
         
-        protected void cp_a() {
+        void cp_a() {
             DoArithmetics(r1.a, false, true);
             AdjustFlags(r1.a);
         }
         
-        protected void cp_b() {
+        void cp_b() {
             DoArithmetics(r1.b, false, true);
             AdjustFlags(r1.b);
         }
         
-        protected void cp_c() {
+        void cp_c() {
             DoArithmetics(r1.c, false, true);
             AdjustFlags(r1.c);
         }
         
-        protected void cp_d() {
+        void cp_d() {
             DoArithmetics(r1.d, false, true);
             AdjustFlags(r1.d);
         }
         
-        protected void cp_e() {
+        void cp_e() {
             DoArithmetics(r1.e, false, true);
             AdjustFlags(r1.e);
         }
         
-        protected void cp_h() {
+        void cp_h() {
             DoArithmetics(r1.h, false, true);
             AdjustFlags(r1.h);
         }
         
-        protected void cp_l() {
+        void cp_l() {
             DoArithmetics(r1.l, false, true);
             AdjustFlags(r1.l);
         }
         
-        protected void cp_ixh() {
+        void cp_ixh() {
             DoArithmetics(r1.ixh, false, true);
             AdjustFlags(r1.ixh);
         }
         
-        protected void cp_ixl() {
+        void cp_ixl() {
             DoArithmetics(r1.ixl, false, true);
             AdjustFlags(r1.ixl);
         }
         
-        protected void cp_iyh() {
+        void cp_iyh() {
             DoArithmetics(r1.iyh, false, true);
             AdjustFlags(r1.iyh);
         }
         
-        protected void cp_iyl() {
+        void cp_iyl() {
             DoArithmetics(r1.iyl, false, true);
             AdjustFlags(r1.iyl);
         }
         
-        protected void cp__hl_() {
+        void cp__hl_() {
             DoCPHL();
         }
         
-        protected void cp_n() {
+        void cp_n() {
             var value = Read8(pc++);
             DoArithmetics(value, false, true);
             AdjustFlags(value);
         }
         
-        protected void cp__ix_d_() {
+        void cp__ix_d_() {
             tStates += 5;
             var offset = (SByte)Read8(pc++);
             var value = Read8((ushort)(r1.ix + offset));
             DoArithmetics(value, false, true);
             AdjustFlags(value);
         }
-        protected void cp__iy_d_() {
+        void cp__iy_d_() {
             tStates += 5;
             var offset = (SByte)Read8(pc++);
             var value = Read8((ushort)(r1.iy + offset));
@@ -4343,56 +4343,56 @@ namespace Z80 {
             AdjustFlags(value);
         }
 
-        protected void inc_a() {
+        void inc_a() {
             r1.a = DoIncDec(r1.a, isDec_inc);
         }
         
-        protected void inc_b() {
+        void inc_b() {
             r1.b = DoIncDec(r1.b, isDec_inc);
         }
         
-        protected void inc_c() {
+        void inc_c() {
             r1.c = DoIncDec(r1.c, isDec_inc);
         }
         
-        protected void inc_d() {
+        void inc_d() {
             r1.d = DoIncDec(r1.d, isDec_inc);
         }
         
-        protected void inc_e() {
+        void inc_e() {
             r1.e = DoIncDec(r1.e, isDec_inc);
         }
         
-        protected void inc_h() {
+        void inc_h() {
             r1.h = DoIncDec(r1.h, isDec_inc);
         }
         
-        protected void inc_l() {
+        void inc_l() {
             r1.l = DoIncDec(r1.l, isDec_inc);
         }
         
-        protected void inc_ixh() {
+        void inc_ixh() {
             r1.ixh = DoIncDec(r1.ixh, isDec_inc);
         }
         
-        protected void inc_ixl() {
+        void inc_ixl() {
             r1.ixl = DoIncDec(r1.ixl, isDec_inc);
         }
         
-        protected void inc_iyh() {
+        void inc_iyh() {
             r1.iyh = DoIncDec(r1.iyh, isDec_inc);
         }
         
-        protected void inc_iyl() {
+        void inc_iyl() {
             r1.iyl = DoIncDec(r1.iyl, isDec_inc);
         }
         
-        protected void inc__hl_() {
+        void inc__hl_() {
             tStates++;
             var value = Read8(r1.hl);
             Write8(r1.hl, DoIncDec(value, isDec_inc));
         }
-        protected void inc__ix_d_() {
+        void inc__ix_d_() {
             tStates += 6;
             var offset = (SByte)Read8(pc++);
             var addr = (ushort)(r1.ix + offset);
@@ -4400,7 +4400,7 @@ namespace Z80 {
             Write8(addr, DoIncDec(value, isDec_inc));
         }
         
-        protected void inc__iy_d_() {
+        void inc__iy_d_() {
             tStates += 6;
             var offset = (SByte)Read8(pc++);
             var addr = (ushort)(r1.iy + offset);
@@ -4408,56 +4408,56 @@ namespace Z80 {
             Write8(addr, DoIncDec(value, isDec_inc));
         }
         
-        protected void dec_a() {
+        void dec_a() {
             r1.a = DoIncDec(r1.a, isDec_dec);
         }
         
-        protected void dec_b() {
+        void dec_b() {
             r1.b = DoIncDec(r1.b, isDec_dec);
         }
         
-        protected void dec_c() {
+        void dec_c() {
             r1.c = DoIncDec(r1.c, isDec_dec);
         }
         
-        protected void dec_d() {
+        void dec_d() {
             r1.d = DoIncDec(r1.d, isDec_dec);
         }
         
-        protected void dec_e() {
+        void dec_e() {
             r1.e = DoIncDec(r1.e, isDec_dec);
         }
         
-        protected void dec_h() {
+        void dec_h() {
             r1.h = DoIncDec(r1.h, isDec_dec);
         }
         
-        protected void dec_l() {
+        void dec_l() {
             r1.l = DoIncDec(r1.l, isDec_dec);
         }
         
-        protected void dec_ixh() {
+        void dec_ixh() {
             r1.ixh = DoIncDec(r1.ixh, isDec_dec);
         }
         
-        protected void dec_ixl() {
+        void dec_ixl() {
             r1.ixl = DoIncDec(r1.ixl, isDec_dec);
         }
         
-        protected void dec_iyh() {
+        void dec_iyh() {
             r1.iyh = DoIncDec(r1.iyh, isDec_dec);
         }
         
-        protected void dec_iyl() {
+        void dec_iyl() {
             r1.iyl = DoIncDec(r1.iyl, isDec_dec);
         }
         
-        protected void dec__hl_() {
+        void dec__hl_() {
             tStates++;
             var value = Read8(r1.hl);
             Write8(r1.hl, DoIncDec(value, isDec_dec));
         }
-        protected void dec__ix_d_() {
+        void dec__ix_d_() {
             tStates += 6;
             var offset = (SByte)Read8(pc++);
             var addr = (ushort)(r1.ix + offset);
@@ -4465,7 +4465,7 @@ namespace Z80 {
             Write8(addr, DoIncDec(value, isDec_dec));
         }
         
-        protected void dec__iy_d_() {
+        void dec__iy_d_() {
             tStates += 6;
             var offset = (SByte)Read8(pc++);
             var addr = (ushort)(r1.iy + offset);
@@ -4473,648 +4473,648 @@ namespace Z80 {
             Write8(addr, DoIncDec(value, isDec_dec));
         }
         
-        protected void inc_hl() {
+        void inc_hl() {
             tStates += 2;
             r1.hl++;
         }
         
-        protected void dec_hl() {
+        void dec_hl() {
             tStates += 2;
             r1.hl--;
         }
         
-        protected void inc_sp() {
+        void inc_sp() {
             tStates += 2;
             r1.sp++;
         }
         
-        protected void dec_sp() {
+        void dec_sp() {
             tStates += 2;
             r1.sp--;
         }
         
-        protected void inc_de() {
+        void inc_de() {
             tStates += 2;
             r1.de++;
         }
         
-        protected void dec_de() {
+        void dec_de() {
             tStates += 2;
             r1.de--;
         }
         
-        protected void inc_bc() {
+        void inc_bc() {
             tStates += 2;
             r1.bc++;
         }
         
-        protected void dec_bc() {
+        void dec_bc() {
             tStates += 2;
             r1.bc--;
         }
         
-        protected void inc_ix() {
+        void inc_ix() {
             tStates += 2;
             r1.ix++;
         }
         
-        protected void dec_ix() {
+        void dec_ix() {
             tStates += 2;
             r1.ix--;
         }
         
-        protected void inc_iy() {
+        void inc_iy() {
             tStates += 2;
             r1.iy++;
         }
         
-        protected void dec_iy() {
+        void dec_iy() {
             tStates += 2;
             r1.iy--;
         }
         
 
-        protected void daa() {
+        void daa() {
             DoDAA();
         }
         
-        protected void cpl() {
+        void cpl() {
             r1.a = (byte)~r1.a;
             SetFlag(f_h | f_n);
             AdjustFlags(r1.a);
         }
         
-        protected void neg() {
+        void neg() {
             var _t = r1.a;
             r1.a = 0;
             r1.a = DoArithmetics(_t, false, true);
             SetFlag(f_n);
         }
         
-        protected void ccf() {
+        void ccf() {
             ValFlag(f_c, !GetFlag(f_c));
             ResFlag(f_n);
             AdjustFlags(r1.a);
         }
         
-        protected void scf() {
+        void scf() {
             SetFlag(f_c);
             ResFlag(f_h | f_n);
             AdjustFlags(r1.a);
         }
         
-        protected void halt() {
+        void halt() {
             halted = true;
             pc--;
         }
         
-        protected void di() {
+        void di() {
             iff1 = false;
             iff2 = false;
             deferInt = true;
         }
 
-        protected void ei() {
+        void ei() {
             iff1 = true;
             iff2 = true;
             deferInt = true;
         }
-        protected void im_0() {
+        void im_0() {
             im = 0;
         }
         
-        protected void im_1() {
+        void im_1() {
             im = 1;
         }
         
-        protected void im_2() {
+        void im_2() {
             im = 2;
         }
         
 
         // ROTATE AND SHIFT
         
-        protected void rlca() {
+        void rlca() {
             r1.a = DoRLC(r1.a, false);
         }
         
-        protected void rlc_a() {
+        void rlc_a() {
             r1.a = DoRLC(r1.a, true);
         }
         
-        protected void rlc_b() {
+        void rlc_b() {
             r1.b = DoRLC(r1.b, true);
         }
         
-        protected void rlc_c() {
+        void rlc_c() {
             r1.c = DoRLC(r1.c, true);
         }
         
-        protected void rlc_d() {
+        void rlc_d() {
             r1.d = DoRLC(r1.d, true);
         }
         
-        protected void rlc_e() {
+        void rlc_e() {
             r1.e = DoRLC(r1.e, true);
         }
         
-        protected void rlc_h() {
+        void rlc_h() {
             r1.h = DoRLC(r1.h, true);
         }
         
-        protected void rlc_l() {
+        void rlc_l() {
             r1.l = DoRLC(r1.l, true);
         }
         
-        protected void rlc_ixh() {
+        void rlc_ixh() {
             r1.ixh = DoRLC(r1.ixh, true);
         }
         
-        protected void rlc_ixl() {
+        void rlc_ixl() {
             r1.ixl = DoRLC(r1.ixl, true);
         }
         
-        protected void rlc_iyh() {
+        void rlc_iyh() {
             r1.iyh = DoRLC(r1.iyh, true);
         }
         
-        protected void rlc_iyl() {
+        void rlc_iyl() {
             r1.iyl = DoRLC(r1.iyl, true);
         }
         
-        protected void rlc__hl_() {
+        void rlc__hl_() {
             tStates++;
             Write8(r1.hl, DoRLC(Read8(r1.hl), true));
         }
 
-        protected void rlc__ix_d_() {
+        void rlc__ix_d_() {
             tStates += 2;
             var offset = (SByte)Read8(pc++);
             var addr = (ushort)(r1.ix + offset);
             Write8(addr, DoRLC(Read8(addr), true));
         }
                 
-        protected void rlc__iy_d_() {
+        void rlc__iy_d_() {
             tStates += 2;
             var offset = (SByte)Read8(pc++);
             var addr = (ushort)(r1.iy + offset);
             Write8(addr, DoRLC(Read8(addr), true));
         }
                 
-        protected void rla() {
+        void rla() {
             r1.a = DoRL(r1.a, false);
         }
         
-        protected void rl_a() {
+        void rl_a() {
             r1.a = DoRL(r1.a, true);
         }
         
-        protected void rl_b() {
+        void rl_b() {
             r1.b = DoRL(r1.b, true);
         }
         
-        protected void rl_c() {
+        void rl_c() {
             r1.c = DoRL(r1.c, true);
         }
         
-        protected void rl_d() {
+        void rl_d() {
             r1.d = DoRL(r1.d, true);
         }
         
-        protected void rl_e() {
+        void rl_e() {
             r1.e = DoRL(r1.e, true);
         }
         
-        protected void rl_h() {
+        void rl_h() {
             r1.h = DoRL(r1.h, true);
         }
         
-        protected void rl_l() {
+        void rl_l() {
             r1.l = DoRL(r1.l, true);
         }
         
-        protected void rl_ixh() {
+        void rl_ixh() {
             r1.ixh = DoRL(r1.ixh, true);
         }
         
-        protected void rl_ixl() {
+        void rl_ixl() {
             r1.ixl = DoRL(r1.ixl, true);
         }
         
-        protected void rl_iyh() {
+        void rl_iyh() {
             r1.iyh = DoRL(r1.iyh, true);
         }
         
-        protected void rl_iyl() {
+        void rl_iyl() {
             r1.iyl = DoRL(r1.iyl, true);
         }
         
-        protected void rl__hl_() {
+        void rl__hl_() {
             tStates++;
             Write8(r1.hl, DoRL(Read8(r1.hl), true));
         }
 
-        protected void rl__ix_d_() {
+        void rl__ix_d_() {
             tStates += 2;
             var offset = (SByte)Read8(pc++);
             var addr = (ushort)(r1.ix + offset);
             Write8(addr, DoRL(Read8(addr), true));
         }
                 
-        protected void rl__iy_d_() {
+        void rl__iy_d_() {
             tStates += 2;
             var offset = (SByte)Read8(pc++);
             var addr = (ushort)(r1.iy + offset);
             Write8(addr, DoRL(Read8(addr), true));
         }
                 
-        protected void rrca() {
+        void rrca() {
             r1.a = DoRRC(r1.a, false);
         }
         
-        protected void rrc_a() {
+        void rrc_a() {
             r1.a = DoRRC(r1.a, true);
         }
         
-        protected void rrc_b() {
+        void rrc_b() {
             r1.b = DoRRC(r1.b, true);
         }
         
-        protected void rrc_c() {
+        void rrc_c() {
             r1.c = DoRRC(r1.c, true);
         }
         
-        protected void rrc_d() {
+        void rrc_d() {
             r1.d = DoRRC(r1.d, true);
         }
         
-        protected void rrc_e() {
+        void rrc_e() {
             r1.e = DoRRC(r1.e, true);
         }
         
-        protected void rrc_h() {
+        void rrc_h() {
             r1.h = DoRRC(r1.h, true);
         }
         
-        protected void rrc_l() {
+        void rrc_l() {
             r1.l = DoRRC(r1.l, true);
         }
         
-        protected void rrc_ixh() {
+        void rrc_ixh() {
             r1.ixh = DoRRC(r1.ixh, true);
         }
         
-        protected void rrc_ixl() {
+        void rrc_ixl() {
             r1.ixl = DoRRC(r1.ixl, true);
         }
         
-        protected void rrc_iyh() {
+        void rrc_iyh() {
             r1.iyh = DoRRC(r1.iyh, true);
         }
         
-        protected void rrc_iyl() {
+        void rrc_iyl() {
             r1.iyl = DoRRC(r1.iyl, true);
         }
         
-        protected void rrc__hl_() {
+        void rrc__hl_() {
             tStates++;
             Write8(r1.hl, DoRRC(Read8(r1.hl), true));
         }
 
-        protected void rrc__ix_d_() {
+        void rrc__ix_d_() {
             tStates += 2;
             var offset = (SByte)Read8(pc++);
             var addr = (ushort)(r1.ix + offset);
             Write8(addr, DoRRC(Read8(addr), true));
         }
                 
-        protected void rrc__iy_d_() {
+        void rrc__iy_d_() {
             tStates += 2;
             var offset = (SByte)Read8(pc++);
             var addr = (ushort)(r1.iy + offset);
             Write8(addr, DoRRC(Read8(addr), true));
         }
                 
-        protected void rra() {
+        void rra() {
             r1.a = DoRR(r1.a, false);
         }
         
-        protected void rr_a() {
+        void rr_a() {
             r1.a = DoRR(r1.a, true);
         }
         
-        protected void rr_b() {
+        void rr_b() {
             r1.b = DoRR(r1.b, true);
         }
         
-        protected void rr_c() {
+        void rr_c() {
             r1.c = DoRR(r1.c, true);
         }
         
-        protected void rr_d() {
+        void rr_d() {
             r1.d = DoRR(r1.d, true);
         }
         
-        protected void rr_e() {
+        void rr_e() {
             r1.e = DoRR(r1.e, true);
         }
         
-        protected void rr_h() {
+        void rr_h() {
             r1.h = DoRR(r1.h, true);
         }
         
-        protected void rr_l() {
+        void rr_l() {
             r1.l = DoRR(r1.l, true);
         }
         
-        protected void rr_ixh() {
+        void rr_ixh() {
             r1.ixh = DoRR(r1.ixh, true);
         }
         
-        protected void rr_ixl() {
+        void rr_ixl() {
             r1.ixl = DoRR(r1.ixl, true);
         }
         
-        protected void rr_iyh() {
+        void rr_iyh() {
             r1.iyh = DoRR(r1.iyh, true);
         }
         
-        protected void rr_iyl() {
+        void rr_iyl() {
             r1.iyl = DoRR(r1.iyl, true);
         }
         
-        protected void rr__hl_() {
+        void rr__hl_() {
             tStates++;
             Write8(r1.hl, DoRR(Read8(r1.hl), true));
         }
 
-        protected void rr__ix_d_() {
+        void rr__ix_d_() {
             tStates += 2;
             var offset = (SByte)Read8(pc++);
             var addr = (ushort)(r1.ix + offset);
             Write8(addr, DoRR(Read8(addr), true));
         }
                 
-        protected void rr__iy_d_() {
+        void rr__iy_d_() {
             tStates += 2;
             var offset = (SByte)Read8(pc++);
             var addr = (ushort)(r1.iy + offset);
             Write8(addr, DoRR(Read8(addr), true));
         }
                 
-        protected void sla_a() {
+        void sla_a() {
             r1.a = DoSL(r1.a, isArithmeticsA);
         }
         
-        protected void sla_b() {
+        void sla_b() {
             r1.b = DoSL(r1.b, isArithmeticsA);
         }
         
-        protected void sla_c() {
+        void sla_c() {
             r1.c = DoSL(r1.c, isArithmeticsA);
         }
         
-        protected void sla_d() {
+        void sla_d() {
             r1.d = DoSL(r1.d, isArithmeticsA);
         }
         
-        protected void sla_e() {
+        void sla_e() {
             r1.e = DoSL(r1.e, isArithmeticsA);
         }
         
-        protected void sla_h() {
+        void sla_h() {
             r1.h = DoSL(r1.h, isArithmeticsA);
         }
         
-        protected void sla_l() {
+        void sla_l() {
             r1.l = DoSL(r1.l, isArithmeticsA);
         }
         
-        protected void sla_ixh() {
+        void sla_ixh() {
             r1.ixh = DoSL(r1.ixh, isArithmeticsA);
         }
         
-        protected void sla_ixl() {
+        void sla_ixl() {
             r1.ixl = DoSL(r1.ixl, isArithmeticsA);
         }
         
-        protected void sla_iyh() {
+        void sla_iyh() {
             r1.iyh = DoSL(r1.iyh, isArithmeticsA);
         }
         
-        protected void sla_iyl() {
+        void sla_iyl() {
             r1.iyl = DoSL(r1.iyl, isArithmeticsA);
         }
         
-        protected void sla__hl_() {
+        void sla__hl_() {
             tStates++;
             Write8(r1.hl, DoSL(Read8(r1.hl), isArithmeticsA));
         }
 
-        protected void sla__ix_d_() {
+        void sla__ix_d_() {
             tStates += 2;
             var offset = (SByte)Read8(pc++);
             var addr = (ushort)(r1.ix + offset);
             Write8(addr, DoSL(Read8(addr), isArithmeticsA));
         }
                 
-        protected void sla__iy_d_() {
+        void sla__iy_d_() {
             tStates += 2;
             var offset = (SByte)Read8(pc++);
             var addr = (ushort)(r1.iy + offset);
             Write8(addr, DoSL(Read8(addr), isArithmeticsA));
         }
                 
-        protected void sll_a() {
+        void sll_a() {
             r1.a = DoSL(r1.a, isArithmeticsL);
         }
         
-        protected void sll_b() {
+        void sll_b() {
             r1.b = DoSL(r1.b, isArithmeticsL);
         }
         
-        protected void sll_c() {
+        void sll_c() {
             r1.c = DoSL(r1.c, isArithmeticsL);
         }
         
-        protected void sll_d() {
+        void sll_d() {
             r1.d = DoSL(r1.d, isArithmeticsL);
         }
         
-        protected void sll_e() {
+        void sll_e() {
             r1.e = DoSL(r1.e, isArithmeticsL);
         }
         
-        protected void sll_h() {
+        void sll_h() {
             r1.h = DoSL(r1.h, isArithmeticsL);
         }
         
-        protected void sll_l() {
+        void sll_l() {
             r1.l = DoSL(r1.l, isArithmeticsL);
         }
         
-        protected void sll_ixh() {
+        void sll_ixh() {
             r1.ixh = DoSL(r1.ixh, isArithmeticsL);
         }
         
-        protected void sll_ixl() {
+        void sll_ixl() {
             r1.ixl = DoSL(r1.ixl, isArithmeticsL);
         }
         
-        protected void sll_iyh() {
+        void sll_iyh() {
             r1.iyh = DoSL(r1.iyh, isArithmeticsL);
         }
         
-        protected void sll_iyl() {
+        void sll_iyl() {
             r1.iyl = DoSL(r1.iyl, isArithmeticsL);
         }
         
-        protected void sll__hl_() {
+        void sll__hl_() {
             tStates++;
             Write8(r1.hl, DoSL(Read8(r1.hl), isArithmeticsL));
         }
 
-        protected void sll__ix_d_() {
+        void sll__ix_d_() {
             tStates += 2;
             var offset = (SByte)Read8(pc++);
             var addr = (ushort)(r1.ix + offset);
             Write8(addr, DoSL(Read8(addr), isArithmeticsL));
         }
                 
-        protected void sll__iy_d_() {
+        void sll__iy_d_() {
             tStates += 2;
             var offset = (SByte)Read8(pc++);
             var addr = (ushort)(r1.iy + offset);
             Write8(addr, DoSL(Read8(addr), isArithmeticsL));
         }
                 
-        protected void sra_a() {
+        void sra_a() {
             r1.a = DoSR(r1.a, isArithmeticsA);
         }
         
-        protected void sra_b() {
+        void sra_b() {
             r1.b = DoSR(r1.b, isArithmeticsA);
         }
         
-        protected void sra_c() {
+        void sra_c() {
             r1.c = DoSR(r1.c, isArithmeticsA);
         }
         
-        protected void sra_d() {
+        void sra_d() {
             r1.d = DoSR(r1.d, isArithmeticsA);
         }
         
-        protected void sra_e() {
+        void sra_e() {
             r1.e = DoSR(r1.e, isArithmeticsA);
         }
         
-        protected void sra_h() {
+        void sra_h() {
             r1.h = DoSR(r1.h, isArithmeticsA);
         }
         
-        protected void sra_l() {
+        void sra_l() {
             r1.l = DoSR(r1.l, isArithmeticsA);
         }
         
-        protected void sra_ixh() {
+        void sra_ixh() {
             r1.ixh = DoSR(r1.ixh, isArithmeticsA);
         }
         
-        protected void sra_ixl() {
+        void sra_ixl() {
             r1.ixl = DoSR(r1.ixl, isArithmeticsA);
         }
         
-        protected void sra_iyh() {
+        void sra_iyh() {
             r1.iyh = DoSR(r1.iyh, isArithmeticsA);
         }
         
-        protected void sra_iyl() {
+        void sra_iyl() {
             r1.iyl = DoSR(r1.iyl, isArithmeticsA);
         }
         
-        protected void sra__hl_() {
+        void sra__hl_() {
             tStates++;
             Write8(r1.hl, DoSR(Read8(r1.hl), isArithmeticsA));
         }
 
-        protected void sra__ix_d_() {
+        void sra__ix_d_() {
             tStates += 2;
             var offset = (SByte)Read8(pc++);
             var addr = (ushort)(r1.ix + offset);
             Write8(addr, DoSR(Read8(addr), isArithmeticsA));
         }
                 
-        protected void sra__iy_d_() {
+        void sra__iy_d_() {
             tStates += 2;
             var offset = (SByte)Read8(pc++);
             var addr = (ushort)(r1.iy + offset);
             Write8(addr, DoSR(Read8(addr), isArithmeticsA));
         }
                 
-        protected void srl_a() {
+        void srl_a() {
             r1.a = DoSR(r1.a, isArithmeticsL);
         }
         
-        protected void srl_b() {
+        void srl_b() {
             r1.b = DoSR(r1.b, isArithmeticsL);
         }
         
-        protected void srl_c() {
+        void srl_c() {
             r1.c = DoSR(r1.c, isArithmeticsL);
         }
         
-        protected void srl_d() {
+        void srl_d() {
             r1.d = DoSR(r1.d, isArithmeticsL);
         }
         
-        protected void srl_e() {
+        void srl_e() {
             r1.e = DoSR(r1.e, isArithmeticsL);
         }
         
-        protected void srl_h() {
+        void srl_h() {
             r1.h = DoSR(r1.h, isArithmeticsL);
         }
         
-        protected void srl_l() {
+        void srl_l() {
             r1.l = DoSR(r1.l, isArithmeticsL);
         }
         
-        protected void srl_ixh() {
+        void srl_ixh() {
             r1.ixh = DoSR(r1.ixh, isArithmeticsL);
         }
         
-        protected void srl_ixl() {
+        void srl_ixl() {
             r1.ixl = DoSR(r1.ixl, isArithmeticsL);
         }
         
-        protected void srl_iyh() {
+        void srl_iyh() {
             r1.iyh = DoSR(r1.iyh, isArithmeticsL);
         }
         
-        protected void srl_iyl() {
+        void srl_iyl() {
             r1.iyl = DoSR(r1.iyl, isArithmeticsL);
         }
         
-        protected void srl__hl_() {
+        void srl__hl_() {
             tStates++;
             Write8(r1.hl, DoSR(Read8(r1.hl), isArithmeticsL));
         }
 
-        protected void srl__ix_d_() {
+        void srl__ix_d_() {
             tStates += 2;
             var offset = (SByte)Read8(pc++);
             var addr = (ushort)(r1.ix + offset);
             Write8(addr, DoSR(Read8(addr), isArithmeticsL));
         }
                 
-        protected void srl__iy_d_() {
+        void srl__iy_d_() {
             tStates += 2;
             var offset = (SByte)Read8(pc++);
             var addr = (ushort)(r1.iy + offset);
             Write8(addr, DoSR(Read8(addr), isArithmeticsL));
         }
                 
-        protected void rld() {
+        void rld() {
             tStates += 4;
             var ah = r1.a & 0x0F;
             var hl = Read8(r1.hl);
@@ -5126,7 +5126,7 @@ namespace Z80 {
             AdjustFlags(r1.a);
         }
     
-        protected void rrd() {
+        void rrd() {
             tStates += 4;
             var ah = r1.a & 0x0F;
             var hl = Read8(r1.hl);
@@ -5137,376 +5137,376 @@ namespace Z80 {
             AdjustFlagsSZP(r1.a);
         }
         
-        protected void bit_0_a() {
+        void bit_0_a() {
             DoBitR(0, r1.a);
         }
         
-        protected void bit_0_b() {
+        void bit_0_b() {
             DoBitR(0, r1.b);
         }
         
-        protected void bit_0_c() {
+        void bit_0_c() {
             DoBitR(0, r1.c);
         }
         
-        protected void bit_0_d() {
+        void bit_0_d() {
             DoBitR(0, r1.d);
         }
         
-        protected void bit_0_e() {
+        void bit_0_e() {
             DoBitR(0, r1.e);
         }
         
-        protected void bit_0_h() {
+        void bit_0_h() {
             DoBitR(0, r1.h);
         }
         
-        protected void bit_0_l() {
+        void bit_0_l() {
             DoBitR(0, r1.l);
         }
         
-        protected void bit_0__hl_() {
+        void bit_0__hl_() {
             tStates++;
             DoBitR(0, Read8(r1.hl));
         }
         
-        protected void bit_0__ix_d_() {
+        void bit_0__ix_d_() {
             tStates += 2;
             var offset = (SByte)Read8(pc++);
             var addr = (ushort)(r1.ix + offset);
             DoBitIndexed(0, addr);
         }
         
-        protected void bit_0__iy_d_() {
+        void bit_0__iy_d_() {
             tStates += 2;
             var offset = (SByte)Read8(pc++);
             var addr = (ushort)(r1.iy + offset);
             DoBitIndexed(0, addr);
         }
         
-        protected void bit_1_a() {
+        void bit_1_a() {
             DoBitR(1, r1.a);
         }
         
-        protected void bit_1_b() {
+        void bit_1_b() {
             DoBitR(1, r1.b);
         }
         
-        protected void bit_1_c() {
+        void bit_1_c() {
             DoBitR(1, r1.c);
         }
         
-        protected void bit_1_d() {
+        void bit_1_d() {
             DoBitR(1, r1.d);
         }
         
-        protected void bit_1_e() {
+        void bit_1_e() {
             DoBitR(1, r1.e);
         }
         
-        protected void bit_1_h() {
+        void bit_1_h() {
             DoBitR(1, r1.h);
         }
         
-        protected void bit_1_l() {
+        void bit_1_l() {
             DoBitR(1, r1.l);
         }
         
-        protected void bit_1__hl_() {
+        void bit_1__hl_() {
             tStates++;
             DoBitR(1, Read8(r1.hl));
         }
         
-        protected void bit_1__ix_d_() {
+        void bit_1__ix_d_() {
             tStates += 2;
             var offset = (SByte)Read8(pc++);
             var addr = (ushort)(r1.ix + offset);
             DoBitIndexed(1, addr);
         }
         
-        protected void bit_1__iy_d_() {
+        void bit_1__iy_d_() {
             tStates += 2;
             var offset = (SByte)Read8(pc++);
             var addr = (ushort)(r1.iy + offset);
             DoBitIndexed(1, addr);
         }
         
-        protected void bit_2_a() {
+        void bit_2_a() {
             DoBitR(2, r1.a);
         }
         
-        protected void bit_2_b() {
+        void bit_2_b() {
             DoBitR(2, r1.b);
         }
         
-        protected void bit_2_c() {
+        void bit_2_c() {
             DoBitR(2, r1.c);
         }
         
-        protected void bit_2_d() {
+        void bit_2_d() {
             DoBitR(2, r1.d);
         }
         
-        protected void bit_2_e() {
+        void bit_2_e() {
             DoBitR(2, r1.e);
         }
         
-        protected void bit_2_h() {
+        void bit_2_h() {
             DoBitR(2, r1.h);
         }
         
-        protected void bit_2_l() {
+        void bit_2_l() {
             DoBitR(2, r1.l);
         }
         
-        protected void bit_2__hl_() {
+        void bit_2__hl_() {
             tStates++;
             DoBitR(2, Read8(r1.hl));
         }
         
-        protected void bit_2__ix_d_() {
+        void bit_2__ix_d_() {
             tStates += 2;
             var offset = (SByte)Read8(pc++);
             var addr = (ushort)(r1.ix + offset);
             DoBitIndexed(2, addr);
         }
         
-        protected void bit_2__iy_d_() {
+        void bit_2__iy_d_() {
             tStates += 2;
             var offset = (SByte)Read8(pc++);
             var addr = (ushort)(r1.iy + offset);
             DoBitIndexed(2, addr);
         }
         
-        protected void bit_3_a() {
+        void bit_3_a() {
             DoBitR(3, r1.a);
         }
         
-        protected void bit_3_b() {
+        void bit_3_b() {
             DoBitR(3, r1.b);
         }
         
-        protected void bit_3_c() {
+        void bit_3_c() {
             DoBitR(3, r1.c);
         }
         
-        protected void bit_3_d() {
+        void bit_3_d() {
             DoBitR(3, r1.d);
         }
         
-        protected void bit_3_e() {
+        void bit_3_e() {
             DoBitR(3, r1.e);
         }
         
-        protected void bit_3_h() {
+        void bit_3_h() {
             DoBitR(3, r1.h);
         }
         
-        protected void bit_3_l() {
+        void bit_3_l() {
             DoBitR(3, r1.l);
         }
         
-        protected void bit_3__hl_() {
+        void bit_3__hl_() {
             tStates++;
             DoBitR(3, Read8(r1.hl));
         }
         
-        protected void bit_3__ix_d_() {
+        void bit_3__ix_d_() {
             tStates += 2;
             var offset = (SByte)Read8(pc++);
             var addr = (ushort)(r1.ix + offset);
             DoBitIndexed(3, addr);
         }
         
-        protected void bit_3__iy_d_() {
+        void bit_3__iy_d_() {
             tStates += 2;
             var offset = (SByte)Read8(pc++);
             var addr = (ushort)(r1.iy + offset);
             DoBitIndexed(3, addr);
         }
         
-        protected void bit_4_a() {
+        void bit_4_a() {
             DoBitR(4, r1.a);
         }
         
-        protected void bit_4_b() {
+        void bit_4_b() {
             DoBitR(4, r1.b);
         }
         
-        protected void bit_4_c() {
+        void bit_4_c() {
             DoBitR(4, r1.c);
         }
         
-        protected void bit_4_d() {
+        void bit_4_d() {
             DoBitR(4, r1.d);
         }
         
-        protected void bit_4_e() {
+        void bit_4_e() {
             DoBitR(4, r1.e);
         }
         
-        protected void bit_4_h() {
+        void bit_4_h() {
             DoBitR(4, r1.h);
         }
         
-        protected void bit_4_l() {
+        void bit_4_l() {
             DoBitR(4, r1.l);
         }
         
-        protected void bit_4__hl_() {
+        void bit_4__hl_() {
             tStates++;
             DoBitR(4, Read8(r1.hl));
         }
         
-        protected void bit_4__ix_d_() {
+        void bit_4__ix_d_() {
             tStates += 2;
             var offset = (SByte)Read8(pc++);
             var addr = (ushort)(r1.ix + offset);
             DoBitIndexed(4, addr);
         }
         
-        protected void bit_4__iy_d_() {
+        void bit_4__iy_d_() {
             tStates += 2;
             var offset = (SByte)Read8(pc++);
             var addr = (ushort)(r1.iy + offset);
             DoBitIndexed(4, addr);
         }
         
-        protected void bit_5_a() {
+        void bit_5_a() {
             DoBitR(5, r1.a);
         }
         
-        protected void bit_5_b() {
+        void bit_5_b() {
             DoBitR(5, r1.b);
         }
         
-        protected void bit_5_c() {
+        void bit_5_c() {
             DoBitR(5, r1.c);
         }
         
-        protected void bit_5_d() {
+        void bit_5_d() {
             DoBitR(5, r1.d);
         }
         
-        protected void bit_5_e() {
+        void bit_5_e() {
             DoBitR(5, r1.e);
         }
         
-        protected void bit_5_h() {
+        void bit_5_h() {
             DoBitR(5, r1.h);
         }
         
-        protected void bit_5_l() {
+        void bit_5_l() {
             DoBitR(5, r1.l);
         }
         
-        protected void bit_5__hl_() {
+        void bit_5__hl_() {
             tStates++;
             DoBitR(5, Read8(r1.hl));
         }
         
-        protected void bit_5__ix_d_() {
+        void bit_5__ix_d_() {
             tStates += 2;
             var offset = (SByte)Read8(pc++);
             var addr = (ushort)(r1.ix + offset);
             DoBitIndexed(5, addr);
         }
         
-        protected void bit_5__iy_d_() {
+        void bit_5__iy_d_() {
             tStates += 2;
             var offset = (SByte)Read8(pc++);
             var addr = (ushort)(r1.iy + offset);
             DoBitIndexed(5, addr);
         }
         
-        protected void bit_6_a() {
+        void bit_6_a() {
             DoBitR(6, r1.a);
         }
         
-        protected void bit_6_b() {
+        void bit_6_b() {
             DoBitR(6, r1.b);
         }
         
-        protected void bit_6_c() {
+        void bit_6_c() {
             DoBitR(6, r1.c);
         }
         
-        protected void bit_6_d() {
+        void bit_6_d() {
             DoBitR(6, r1.d);
         }
         
-        protected void bit_6_e() {
+        void bit_6_e() {
             DoBitR(6, r1.e);
         }
         
-        protected void bit_6_h() {
+        void bit_6_h() {
             DoBitR(6, r1.h);
         }
         
-        protected void bit_6_l() {
+        void bit_6_l() {
             DoBitR(6, r1.l);
         }
         
-        protected void bit_6__hl_() {
+        void bit_6__hl_() {
             tStates++;
             DoBitR(6, Read8(r1.hl));
         }
         
-        protected void bit_6__ix_d_() {
+        void bit_6__ix_d_() {
             tStates += 2;
             var offset = (SByte)Read8(pc++);
             var addr = (ushort)(r1.ix + offset);
             DoBitIndexed(6, addr);
         }
         
-        protected void bit_6__iy_d_() {
+        void bit_6__iy_d_() {
             tStates += 2;
             var offset = (SByte)Read8(pc++);
             var addr = (ushort)(r1.iy + offset);
             DoBitIndexed(6, addr);
         }
         
-        protected void bit_7_a() {
+        void bit_7_a() {
             DoBitR(7, r1.a);
         }
         
-        protected void bit_7_b() {
+        void bit_7_b() {
             DoBitR(7, r1.b);
         }
         
-        protected void bit_7_c() {
+        void bit_7_c() {
             DoBitR(7, r1.c);
         }
         
-        protected void bit_7_d() {
+        void bit_7_d() {
             DoBitR(7, r1.d);
         }
         
-        protected void bit_7_e() {
+        void bit_7_e() {
             DoBitR(7, r1.e);
         }
         
-        protected void bit_7_h() {
+        void bit_7_h() {
             DoBitR(7, r1.h);
         }
         
-        protected void bit_7_l() {
+        void bit_7_l() {
             DoBitR(7, r1.l);
         }
         
-        protected void bit_7__hl_() {
+        void bit_7__hl_() {
             tStates++;
             DoBitR(7, Read8(r1.hl));
         }
         
-        protected void bit_7__ix_d_() {
+        void bit_7__ix_d_() {
             tStates += 2;
             var offset = (SByte)Read8(pc++);
             var addr = (ushort)(r1.ix + offset);
             DoBitIndexed(7, addr);
         }
         
-        protected void bit_7__iy_d_() {
+        void bit_7__iy_d_() {
             tStates += 2;
             var offset = (SByte)Read8(pc++);
             var addr = (ushort)(r1.iy + offset);
@@ -5516,771 +5516,771 @@ namespace Z80 {
 
         // SET / RES
         
-        protected void set_0_a() {
+        void set_0_a() {
             r1.a = DoSetRes(bitStateSET, 0, r1.a);
         }
         
-        protected void set_0_b() {
+        void set_0_b() {
             r1.b = DoSetRes(bitStateSET, 0, r1.b);
         }
         
-        protected void set_0_c() {
+        void set_0_c() {
             r1.c = DoSetRes(bitStateSET, 0, r1.c);
         }
         
-        protected void set_0_d() {
+        void set_0_d() {
             r1.d = DoSetRes(bitStateSET, 0, r1.d);
         }
         
-        protected void set_0_e() {
+        void set_0_e() {
             r1.e = DoSetRes(bitStateSET, 0, r1.e);
         }
         
-        protected void set_0_h() {
+        void set_0_h() {
             r1.h = DoSetRes(bitStateSET, 0, r1.h);
         }
         
-        protected void set_0_l() {
+        void set_0_l() {
             r1.l = DoSetRes(bitStateSET, 0, r1.l);
         }
         
-        protected void set_0__hl_() {
+        void set_0__hl_() {
             tStates++;
             Write8(r1.hl, DoSetRes(bitStateSET, 0, Read8(r1.hl)));
         }
         
-        protected void set_0__ix_d_() {
+        void set_0__ix_d_() {
             tStates += 2;
             var offset = (SByte)Read8(pc++);
             var addr = (ushort)(r1.ix + offset);
             Write8(addr, DoSetRes(bitStateSET, 0, Read8(addr)));
         }
         
-        protected void set_0__iy_d_() {
+        void set_0__iy_d_() {
             tStates += 2;
             var offset = (SByte)Read8(pc++);
             var addr = (ushort)(r1.iy + offset);
             Write8(addr, DoSetRes(bitStateSET, 0, Read8(addr)));
         }
         
-        protected void set_1_a() {
+        void set_1_a() {
             r1.a = DoSetRes(bitStateSET, 1, r1.a);
         }
         
-        protected void set_1_b() {
+        void set_1_b() {
             r1.b = DoSetRes(bitStateSET, 1, r1.b);
         }
         
-        protected void set_1_c() {
+        void set_1_c() {
             r1.c = DoSetRes(bitStateSET, 1, r1.c);
         }
         
-        protected void set_1_d() {
+        void set_1_d() {
             r1.d = DoSetRes(bitStateSET, 1, r1.d);
         }
         
-        protected void set_1_e() {
+        void set_1_e() {
             r1.e = DoSetRes(bitStateSET, 1, r1.e);
         }
         
-        protected void set_1_h() {
+        void set_1_h() {
             r1.h = DoSetRes(bitStateSET, 1, r1.h);
         }
         
-        protected void set_1_l() {
+        void set_1_l() {
             r1.l = DoSetRes(bitStateSET, 1, r1.l);
         }
         
-        protected void set_1__hl_() {
+        void set_1__hl_() {
             tStates++;
             Write8(r1.hl, DoSetRes(bitStateSET, 1, Read8(r1.hl)));
         }
         
-        protected void set_1__ix_d_() {
+        void set_1__ix_d_() {
             tStates += 2;
             var offset = (SByte)Read8(pc++);
             var addr = (ushort)(r1.ix + offset);
             Write8(addr, DoSetRes(bitStateSET, 1, Read8(addr)));
         }
         
-        protected void set_1__iy_d_() {
+        void set_1__iy_d_() {
             tStates += 2;
             var offset = (SByte)Read8(pc++);
             var addr = (ushort)(r1.iy + offset);
             Write8(addr, DoSetRes(bitStateSET, 1, Read8(addr)));
         }
         
-        protected void set_2_a() {
+        void set_2_a() {
             r1.a = DoSetRes(bitStateSET, 2, r1.a);
         }
         
-        protected void set_2_b() {
+        void set_2_b() {
             r1.b = DoSetRes(bitStateSET, 2, r1.b);
         }
         
-        protected void set_2_c() {
+        void set_2_c() {
             r1.c = DoSetRes(bitStateSET, 2, r1.c);
         }
         
-        protected void set_2_d() {
+        void set_2_d() {
             r1.d = DoSetRes(bitStateSET, 2, r1.d);
         }
         
-        protected void set_2_e() {
+        void set_2_e() {
             r1.e = DoSetRes(bitStateSET, 2, r1.e);
         }
         
-        protected void set_2_h() {
+        void set_2_h() {
             r1.h = DoSetRes(bitStateSET, 2, r1.h);
         }
         
-        protected void set_2_l() {
+        void set_2_l() {
             r1.l = DoSetRes(bitStateSET, 2, r1.l);
         }
         
-        protected void set_2__hl_() {
+        void set_2__hl_() {
             tStates++;
             Write8(r1.hl, DoSetRes(bitStateSET, 2, Read8(r1.hl)));
         }
         
-        protected void set_2__ix_d_() {
+        void set_2__ix_d_() {
             tStates += 2;
             var offset = (SByte)Read8(pc++);
             var addr = (ushort)(r1.ix + offset);
             Write8(addr, DoSetRes(bitStateSET, 2, Read8(addr)));
         }
         
-        protected void set_2__iy_d_() {
+        void set_2__iy_d_() {
             tStates += 2;
             var offset = (SByte)Read8(pc++);
             var addr = (ushort)(r1.iy + offset);
             Write8(addr, DoSetRes(bitStateSET, 2, Read8(addr)));
         }
         
-        protected void set_3_a() {
+        void set_3_a() {
             r1.a = DoSetRes(bitStateSET, 3, r1.a);
         }
         
-        protected void set_3_b() {
+        void set_3_b() {
             r1.b = DoSetRes(bitStateSET, 3, r1.b);
         }
         
-        protected void set_3_c() {
+        void set_3_c() {
             r1.c = DoSetRes(bitStateSET, 3, r1.c);
         }
         
-        protected void set_3_d() {
+        void set_3_d() {
             r1.d = DoSetRes(bitStateSET, 3, r1.d);
         }
         
-        protected void set_3_e() {
+        void set_3_e() {
             r1.e = DoSetRes(bitStateSET, 3, r1.e);
         }
         
-        protected void set_3_h() {
+        void set_3_h() {
             r1.h = DoSetRes(bitStateSET, 3, r1.h);
         }
         
-        protected void set_3_l() {
+        void set_3_l() {
             r1.l = DoSetRes(bitStateSET, 3, r1.l);
         }
         
-        protected void set_3__hl_() {
+        void set_3__hl_() {
             tStates++;
             Write8(r1.hl, DoSetRes(bitStateSET, 3, Read8(r1.hl)));
         }
         
-        protected void set_3__ix_d_() {
+        void set_3__ix_d_() {
             tStates += 2;
             var offset = (SByte)Read8(pc++);
             var addr = (ushort)(r1.ix + offset);
             Write8(addr, DoSetRes(bitStateSET, 3, Read8(addr)));
         }
         
-        protected void set_3__iy_d_() {
+        void set_3__iy_d_() {
             tStates += 2;
             var offset = (SByte)Read8(pc++);
             var addr = (ushort)(r1.iy + offset);
             Write8(addr, DoSetRes(bitStateSET, 3, Read8(addr)));
         }
         
-        protected void set_4_a() {
+        void set_4_a() {
             r1.a = DoSetRes(bitStateSET, 4, r1.a);
         }
         
-        protected void set_4_b() {
+        void set_4_b() {
             r1.b = DoSetRes(bitStateSET, 4, r1.b);
         }
         
-        protected void set_4_c() {
+        void set_4_c() {
             r1.c = DoSetRes(bitStateSET, 4, r1.c);
         }
         
-        protected void set_4_d() {
+        void set_4_d() {
             r1.d = DoSetRes(bitStateSET, 4, r1.d);
         }
         
-        protected void set_4_e() {
+        void set_4_e() {
             r1.e = DoSetRes(bitStateSET, 4, r1.e);
         }
         
-        protected void set_4_h() {
+        void set_4_h() {
             r1.h = DoSetRes(bitStateSET, 4, r1.h);
         }
         
-        protected void set_4_l() {
+        void set_4_l() {
             r1.l = DoSetRes(bitStateSET, 4, r1.l);
         }
         
-        protected void set_4__hl_() {
+        void set_4__hl_() {
             tStates++;
             Write8(r1.hl, DoSetRes(bitStateSET, 4, Read8(r1.hl)));
         }
         
-        protected void set_4__ix_d_() {
+        void set_4__ix_d_() {
             tStates += 2;
             var offset = (SByte)Read8(pc++);
             var addr = (ushort)(r1.ix + offset);
             Write8(addr, DoSetRes(bitStateSET, 4, Read8(addr)));
         }
         
-        protected void set_4__iy_d_() {
+        void set_4__iy_d_() {
             tStates += 2;
             var offset = (SByte)Read8(pc++);
             var addr = (ushort)(r1.iy + offset);
             Write8(addr, DoSetRes(bitStateSET, 4, Read8(addr)));
         }
         
-        protected void set_5_a() {
+        void set_5_a() {
             r1.a = DoSetRes(bitStateSET, 5, r1.a);
         }
         
-        protected void set_5_b() {
+        void set_5_b() {
             r1.b = DoSetRes(bitStateSET, 5, r1.b);
         }
         
-        protected void set_5_c() {
+        void set_5_c() {
             r1.c = DoSetRes(bitStateSET, 5, r1.c);
         }
         
-        protected void set_5_d() {
+        void set_5_d() {
             r1.d = DoSetRes(bitStateSET, 5, r1.d);
         }
         
-        protected void set_5_e() {
+        void set_5_e() {
             r1.e = DoSetRes(bitStateSET, 5, r1.e);
         }
         
-        protected void set_5_h() {
+        void set_5_h() {
             r1.h = DoSetRes(bitStateSET, 5, r1.h);
         }
         
-        protected void set_5_l() {
+        void set_5_l() {
             r1.l = DoSetRes(bitStateSET, 5, r1.l);
         }
         
-        protected void set_5__hl_() {
+        void set_5__hl_() {
             tStates++;
             Write8(r1.hl, DoSetRes(bitStateSET, 5, Read8(r1.hl)));
         }
         
-        protected void set_5__ix_d_() {
+        void set_5__ix_d_() {
             tStates += 2;
             var offset = (SByte)Read8(pc++);
             var addr = (ushort)(r1.ix + offset);
             Write8(addr, DoSetRes(bitStateSET, 5, Read8(addr)));
         }
         
-        protected void set_5__iy_d_() {
+        void set_5__iy_d_() {
             tStates += 2;
             var offset = (SByte)Read8(pc++);
             var addr = (ushort)(r1.iy + offset);
             Write8(addr, DoSetRes(bitStateSET, 5, Read8(addr)));
         }
         
-        protected void set_6_a() {
+        void set_6_a() {
             r1.a = DoSetRes(bitStateSET, 6, r1.a);
         }
         
-        protected void set_6_b() {
+        void set_6_b() {
             r1.b = DoSetRes(bitStateSET, 6, r1.b);
         }
         
-        protected void set_6_c() {
+        void set_6_c() {
             r1.c = DoSetRes(bitStateSET, 6, r1.c);
         }
         
-        protected void set_6_d() {
+        void set_6_d() {
             r1.d = DoSetRes(bitStateSET, 6, r1.d);
         }
         
-        protected void set_6_e() {
+        void set_6_e() {
             r1.e = DoSetRes(bitStateSET, 6, r1.e);
         }
         
-        protected void set_6_h() {
+        void set_6_h() {
             r1.h = DoSetRes(bitStateSET, 6, r1.h);
         }
         
-        protected void set_6_l() {
+        void set_6_l() {
             r1.l = DoSetRes(bitStateSET, 6, r1.l);
         }
         
-        protected void set_6__hl_() {
+        void set_6__hl_() {
             tStates++;
             Write8(r1.hl, DoSetRes(bitStateSET, 6, Read8(r1.hl)));
         }
         
-        protected void set_6__ix_d_() {
+        void set_6__ix_d_() {
             tStates += 2;
             var offset = (SByte)Read8(pc++);
             var addr = (ushort)(r1.ix + offset);
             Write8(addr, DoSetRes(bitStateSET, 6, Read8(addr)));
         }
         
-        protected void set_6__iy_d_() {
+        void set_6__iy_d_() {
             tStates += 2;
             var offset = (SByte)Read8(pc++);
             var addr = (ushort)(r1.iy + offset);
             Write8(addr, DoSetRes(bitStateSET, 6, Read8(addr)));
         }
         
-        protected void set_7_a() {
+        void set_7_a() {
             r1.a = DoSetRes(bitStateSET, 7, r1.a);
         }
         
-        protected void set_7_b() {
+        void set_7_b() {
             r1.b = DoSetRes(bitStateSET, 7, r1.b);
         }
         
-        protected void set_7_c() {
+        void set_7_c() {
             r1.c = DoSetRes(bitStateSET, 7, r1.c);
         }
         
-        protected void set_7_d() {
+        void set_7_d() {
             r1.d = DoSetRes(bitStateSET, 7, r1.d);
         }
         
-        protected void set_7_e() {
+        void set_7_e() {
             r1.e = DoSetRes(bitStateSET, 7, r1.e);
         }
         
-        protected void set_7_h() {
+        void set_7_h() {
             r1.h = DoSetRes(bitStateSET, 7, r1.h);
         }
         
-        protected void set_7_l() {
+        void set_7_l() {
             r1.l = DoSetRes(bitStateSET, 7, r1.l);
         }
         
-        protected void set_7__hl_() {
+        void set_7__hl_() {
             tStates++;
             Write8(r1.hl, DoSetRes(bitStateSET, 7, Read8(r1.hl)));
         }
         
-        protected void set_7__ix_d_() {
+        void set_7__ix_d_() {
             tStates += 2;
             var offset = (SByte)Read8(pc++);
             var addr = (ushort)(r1.ix + offset);
             Write8(addr, DoSetRes(bitStateSET, 7, Read8(addr)));
         }
         
-        protected void set_7__iy_d_() {
+        void set_7__iy_d_() {
             tStates += 2;
             var offset = (SByte)Read8(pc++);
             var addr = (ushort)(r1.iy + offset);
             Write8(addr, DoSetRes(bitStateSET, 7, Read8(addr)));
         }
         
-        protected void res_0_a() {
+        void res_0_a() {
             r1.a = DoSetRes(bitStateRES, 0, r1.a);
         }
         
-        protected void res_0_b() {
+        void res_0_b() {
             r1.b = DoSetRes(bitStateRES, 0, r1.b);
         }
         
-        protected void res_0_c() {
+        void res_0_c() {
             r1.c = DoSetRes(bitStateRES, 0, r1.c);
         }
         
-        protected void res_0_d() {
+        void res_0_d() {
             r1.d = DoSetRes(bitStateRES, 0, r1.d);
         }
         
-        protected void res_0_e() {
+        void res_0_e() {
             r1.e = DoSetRes(bitStateRES, 0, r1.e);
         }
         
-        protected void res_0_h() {
+        void res_0_h() {
             r1.h = DoSetRes(bitStateRES, 0, r1.h);
         }
         
-        protected void res_0_l() {
+        void res_0_l() {
             r1.l = DoSetRes(bitStateRES, 0, r1.l);
         }
         
-        protected void res_0__hl_() {
+        void res_0__hl_() {
             tStates++;
             Write8(r1.hl, DoSetRes(bitStateRES, 0, Read8(r1.hl)));
         }
         
-        protected void res_0__ix_d_() {
+        void res_0__ix_d_() {
             tStates += 2;
             var offset = (SByte)Read8(pc++);
             var addr = (ushort)(r1.ix + offset);
             Write8(addr, DoSetRes(bitStateRES, 0, Read8(addr)));
         }
         
-        protected void res_0__iy_d_() {
+        void res_0__iy_d_() {
             tStates += 2;
             var offset = (SByte)Read8(pc++);
             var addr = (ushort)(r1.iy + offset);
             Write8(addr, DoSetRes(bitStateRES, 0, Read8(addr)));
         }
         
-        protected void res_1_a() {
+        void res_1_a() {
             r1.a = DoSetRes(bitStateRES, 1, r1.a);
         }
         
-        protected void res_1_b() {
+        void res_1_b() {
             r1.b = DoSetRes(bitStateRES, 1, r1.b);
         }
         
-        protected void res_1_c() {
+        void res_1_c() {
             r1.c = DoSetRes(bitStateRES, 1, r1.c);
         }
         
-        protected void res_1_d() {
+        void res_1_d() {
             r1.d = DoSetRes(bitStateRES, 1, r1.d);
         }
         
-        protected void res_1_e() {
+        void res_1_e() {
             r1.e = DoSetRes(bitStateRES, 1, r1.e);
         }
         
-        protected void res_1_h() {
+        void res_1_h() {
             r1.h = DoSetRes(bitStateRES, 1, r1.h);
         }
         
-        protected void res_1_l() {
+        void res_1_l() {
             r1.l = DoSetRes(bitStateRES, 1, r1.l);
         }
         
-        protected void res_1__hl_() {
+        void res_1__hl_() {
             tStates++;
             Write8(r1.hl, DoSetRes(bitStateRES, 1, Read8(r1.hl)));
         }
         
-        protected void res_1__ix_d_() {
+        void res_1__ix_d_() {
             tStates += 2;
             var offset = (SByte)Read8(pc++);
             var addr = (ushort)(r1.ix + offset);
             Write8(addr, DoSetRes(bitStateRES, 1, Read8(addr)));
         }
         
-        protected void res_1__iy_d_() {
+        void res_1__iy_d_() {
             tStates += 2;
             var offset = (SByte)Read8(pc++);
             var addr = (ushort)(r1.iy + offset);
             Write8(addr, DoSetRes(bitStateRES, 1, Read8(addr)));
         }
         
-        protected void res_2_a() {
+        void res_2_a() {
             r1.a = DoSetRes(bitStateRES, 2, r1.a);
         }
         
-        protected void res_2_b() {
+        void res_2_b() {
             r1.b = DoSetRes(bitStateRES, 2, r1.b);
         }
         
-        protected void res_2_c() {
+        void res_2_c() {
             r1.c = DoSetRes(bitStateRES, 2, r1.c);
         }
         
-        protected void res_2_d() {
+        void res_2_d() {
             r1.d = DoSetRes(bitStateRES, 2, r1.d);
         }
         
-        protected void res_2_e() {
+        void res_2_e() {
             r1.e = DoSetRes(bitStateRES, 2, r1.e);
         }
         
-        protected void res_2_h() {
+        void res_2_h() {
             r1.h = DoSetRes(bitStateRES, 2, r1.h);
         }
         
-        protected void res_2_l() {
+        void res_2_l() {
             r1.l = DoSetRes(bitStateRES, 2, r1.l);
         }
         
-        protected void res_2__hl_() {
+        void res_2__hl_() {
             tStates++;
             Write8(r1.hl, DoSetRes(bitStateRES, 2, Read8(r1.hl)));
         }
         
-        protected void res_2__ix_d_() {
+        void res_2__ix_d_() {
             tStates += 2;
             var offset = (SByte)Read8(pc++);
             var addr = (ushort)(r1.ix + offset);
             Write8(addr, DoSetRes(bitStateRES, 2, Read8(addr)));
         }
         
-        protected void res_2__iy_d_() {
+        void res_2__iy_d_() {
             tStates += 2;
             var offset = (SByte)Read8(pc++);
             var addr = (ushort)(r1.iy + offset);
             Write8(addr, DoSetRes(bitStateRES, 2, Read8(addr)));
         }
         
-        protected void res_3_a() {
+        void res_3_a() {
             r1.a = DoSetRes(bitStateRES, 3, r1.a);
         }
         
-        protected void res_3_b() {
+        void res_3_b() {
             r1.b = DoSetRes(bitStateRES, 3, r1.b);
         }
         
-        protected void res_3_c() {
+        void res_3_c() {
             r1.c = DoSetRes(bitStateRES, 3, r1.c);
         }
         
-        protected void res_3_d() {
+        void res_3_d() {
             r1.d = DoSetRes(bitStateRES, 3, r1.d);
         }
         
-        protected void res_3_e() {
+        void res_3_e() {
             r1.e = DoSetRes(bitStateRES, 3, r1.e);
         }
         
-        protected void res_3_h() {
+        void res_3_h() {
             r1.h = DoSetRes(bitStateRES, 3, r1.h);
         }
         
-        protected void res_3_l() {
+        void res_3_l() {
             r1.l = DoSetRes(bitStateRES, 3, r1.l);
         }
         
-        protected void res_3__hl_() {
+        void res_3__hl_() {
             tStates++;
             Write8(r1.hl, DoSetRes(bitStateRES, 3, Read8(r1.hl)));
         }
         
-        protected void res_3__ix_d_() {
+        void res_3__ix_d_() {
             tStates += 2;
             var offset = (SByte)Read8(pc++);
             var addr = (ushort)(r1.ix + offset);
             Write8(addr, DoSetRes(bitStateRES, 3, Read8(addr)));
         }
         
-        protected void res_3__iy_d_() {
+        void res_3__iy_d_() {
             tStates += 2;
             var offset = (SByte)Read8(pc++);
             var addr = (ushort)(r1.iy + offset);
             Write8(addr, DoSetRes(bitStateRES, 3, Read8(addr)));
         }
         
-        protected void res_4_a() {
+        void res_4_a() {
             r1.a = DoSetRes(bitStateRES, 4, r1.a);
         }
         
-        protected void res_4_b() {
+        void res_4_b() {
             r1.b = DoSetRes(bitStateRES, 4, r1.b);
         }
         
-        protected void res_4_c() {
+        void res_4_c() {
             r1.c = DoSetRes(bitStateRES, 4, r1.c);
         }
         
-        protected void res_4_d() {
+        void res_4_d() {
             r1.d = DoSetRes(bitStateRES, 4, r1.d);
         }
         
-        protected void res_4_e() {
+        void res_4_e() {
             r1.e = DoSetRes(bitStateRES, 4, r1.e);
         }
         
-        protected void res_4_h() {
+        void res_4_h() {
             r1.h = DoSetRes(bitStateRES, 4, r1.h);
         }
         
-        protected void res_4_l() {
+        void res_4_l() {
             r1.l = DoSetRes(bitStateRES, 4, r1.l);
         }
         
-        protected void res_4__hl_() {
+        void res_4__hl_() {
             tStates++;
             Write8(r1.hl, DoSetRes(bitStateRES, 4, Read8(r1.hl)));
         }
         
-        protected void res_4__ix_d_() {
+        void res_4__ix_d_() {
             tStates += 2;
             var offset = (SByte)Read8(pc++);
             var addr = (ushort)(r1.ix + offset);
             Write8(addr, DoSetRes(bitStateRES, 4, Read8(addr)));
         }
         
-        protected void res_4__iy_d_() {
+        void res_4__iy_d_() {
             tStates += 2;
             var offset = (SByte)Read8(pc++);
             var addr = (ushort)(r1.iy + offset);
             Write8(addr, DoSetRes(bitStateRES, 4, Read8(addr)));
         }
         
-        protected void res_5_a() {
+        void res_5_a() {
             r1.a = DoSetRes(bitStateRES, 5, r1.a);
         }
         
-        protected void res_5_b() {
+        void res_5_b() {
             r1.b = DoSetRes(bitStateRES, 5, r1.b);
         }
         
-        protected void res_5_c() {
+        void res_5_c() {
             r1.c = DoSetRes(bitStateRES, 5, r1.c);
         }
         
-        protected void res_5_d() {
+        void res_5_d() {
             r1.d = DoSetRes(bitStateRES, 5, r1.d);
         }
         
-        protected void res_5_e() {
+        void res_5_e() {
             r1.e = DoSetRes(bitStateRES, 5, r1.e);
         }
         
-        protected void res_5_h() {
+        void res_5_h() {
             r1.h = DoSetRes(bitStateRES, 5, r1.h);
         }
         
-        protected void res_5_l() {
+        void res_5_l() {
             r1.l = DoSetRes(bitStateRES, 5, r1.l);
         }
         
-        protected void res_5__hl_() {
+        void res_5__hl_() {
             tStates++;
             Write8(r1.hl, DoSetRes(bitStateRES, 5, Read8(r1.hl)));
         }
         
-        protected void res_5__ix_d_() {
+        void res_5__ix_d_() {
             tStates += 2;
             var offset = (SByte)Read8(pc++);
             var addr = (ushort)(r1.ix + offset);
             Write8(addr, DoSetRes(bitStateRES, 5, Read8(addr)));
         }
         
-        protected void res_5__iy_d_() {
+        void res_5__iy_d_() {
             tStates += 2;
             var offset = (SByte)Read8(pc++);
             var addr = (ushort)(r1.iy + offset);
             Write8(addr, DoSetRes(bitStateRES, 5, Read8(addr)));
         }
         
-        protected void res_6_a() {
+        void res_6_a() {
             r1.a = DoSetRes(bitStateRES, 6, r1.a);
         }
         
-        protected void res_6_b() {
+        void res_6_b() {
             r1.b = DoSetRes(bitStateRES, 6, r1.b);
         }
         
-        protected void res_6_c() {
+        void res_6_c() {
             r1.c = DoSetRes(bitStateRES, 6, r1.c);
         }
         
-        protected void res_6_d() {
+        void res_6_d() {
             r1.d = DoSetRes(bitStateRES, 6, r1.d);
         }
         
-        protected void res_6_e() {
+        void res_6_e() {
             r1.e = DoSetRes(bitStateRES, 6, r1.e);
         }
         
-        protected void res_6_h() {
+        void res_6_h() {
             r1.h = DoSetRes(bitStateRES, 6, r1.h);
         }
         
-        protected void res_6_l() {
+        void res_6_l() {
             r1.l = DoSetRes(bitStateRES, 6, r1.l);
         }
         
-        protected void res_6__hl_() {
+        void res_6__hl_() {
             tStates++;
             Write8(r1.hl, DoSetRes(bitStateRES, 6, Read8(r1.hl)));
         }
         
-        protected void res_6__ix_d_() {
+        void res_6__ix_d_() {
             tStates += 2;
             var offset = (SByte)Read8(pc++);
             var addr = (ushort)(r1.ix + offset);
             Write8(addr, DoSetRes(bitStateRES, 6, Read8(addr)));
         }
         
-        protected void res_6__iy_d_() {
+        void res_6__iy_d_() {
             tStates += 2;
             var offset = (SByte)Read8(pc++);
             var addr = (ushort)(r1.iy + offset);
             Write8(addr, DoSetRes(bitStateRES, 6, Read8(addr)));
         }
         
-        protected void res_7_a() {
+        void res_7_a() {
             r1.a = DoSetRes(bitStateRES, 7, r1.a);
         }
         
-        protected void res_7_b() {
+        void res_7_b() {
             r1.b = DoSetRes(bitStateRES, 7, r1.b);
         }
         
-        protected void res_7_c() {
+        void res_7_c() {
             r1.c = DoSetRes(bitStateRES, 7, r1.c);
         }
         
-        protected void res_7_d() {
+        void res_7_d() {
             r1.d = DoSetRes(bitStateRES, 7, r1.d);
         }
         
-        protected void res_7_e() {
+        void res_7_e() {
             r1.e = DoSetRes(bitStateRES, 7, r1.e);
         }
         
-        protected void res_7_h() {
+        void res_7_h() {
             r1.h = DoSetRes(bitStateRES, 7, r1.h);
         }
         
-        protected void res_7_l() {
+        void res_7_l() {
             r1.l = DoSetRes(bitStateRES, 7, r1.l);
         }
         
-        protected void res_7__hl_() {
+        void res_7__hl_() {
             tStates++;
             Write8(r1.hl, DoSetRes(bitStateRES, 7, Read8(r1.hl)));
         }
         
-        protected void res_7__ix_d_() {
+        void res_7__ix_d_() {
             tStates += 2;
             var offset = (SByte)Read8(pc++);
             var addr = (ushort)(r1.ix + offset);
             Write8(addr, DoSetRes(bitStateRES, 7, Read8(addr)));
         }
         
-        protected void res_7__iy_d_() {
+        void res_7__iy_d_() {
             tStates += 2;
             var offset = (SByte)Read8(pc++);
             var addr = (ushort)(r1.iy + offset);
             Write8(addr, DoSetRes(bitStateRES, 7, Read8(addr)));
         }
         
-        protected void in_a__n_() {
+        void in_a__n_() {
             ushort port = (ushort)Read8(pc++);
             port = (ushort)((r1.a << 8) | port);
             r1.a = IORead(port);
         }
         
-        protected void out__n__a() {
+        void out__n__a() {
             ushort port = (ushort)Read8(pc++);
             port = (ushort)((r1.a << 8) | port);
             IOWrite(port, r1.a);        
         }
         
-        protected void ind() {
+        void ind() {
             tStates++;
             var value = IORead(r1.bc);
             Write8(r1.hl--, value);
@@ -6292,7 +6292,7 @@ namespace Z80 {
             ValFlag(f_pv, parityBit[(fv & 7) ^ r1.b]);
         }
         
-        protected void indr() {
+        void indr() {
             ind();
             if (r1.b != 0) {
                 tStates += 5;
@@ -6300,7 +6300,7 @@ namespace Z80 {
             }
         }
         
-        protected void ini() {
+        void ini() {
             tStates++;
             var value = IORead(r1.bc);
             Write8(r1.hl++, value);
@@ -6312,7 +6312,7 @@ namespace Z80 {
             ValFlag(f_pv, parityBit[(fv & 7) ^ r1.b]);
         }
         
-        protected void inir() {
+        void inir() {
             ini();
             if (r1.b != 0) {
                 tStates += 5;
@@ -6320,7 +6320,7 @@ namespace Z80 {
             }
         }
         
-        protected void outi() {
+        void outi() {
             tStates++;
             var value = Read8(r1.hl++);
             r1.b = DoIncDec(r1.b, isDec_dec);
@@ -6333,7 +6333,7 @@ namespace Z80 {
             AdjustFlags(r1.b);
         }
         
-        protected void otir() {
+        void otir() {
             outi();
             if (r1.b != 0) {
                 tStates += 5;
@@ -6341,7 +6341,7 @@ namespace Z80 {
             }
         }
         
-        protected void outd() {
+        void outd() {
             tStates++;
             var value = Read8(r1.hl--);
             r1.b = DoIncDec(r1.b, isDec_dec);
@@ -6354,7 +6354,7 @@ namespace Z80 {
             AdjustFlags(r1.b);
         }
         
-        protected void otdr() {
+        void otdr() {
             outd();
             if (r1.b != 0) {
                 tStates += 5;
@@ -6362,106 +6362,106 @@ namespace Z80 {
             }
         }
         
-        protected void in_a__c_() {
+        void in_a__c_() {
             r1.a = IORead(r1.bc);
             ResFlag(f_h | f_n);
             AdjustFlagsSZP(r1.a);
             AdjustFlags(r1.a);
         }    
 
-        protected void out__c__a() {
+        void out__c__a() {
             IOWrite(r1.bc, r1.a);
         }
         
-        protected void in_b__c_() {
+        void in_b__c_() {
             r1.b = IORead(r1.bc);
             ResFlag(f_h | f_n);
             AdjustFlagsSZP(r1.b);
             AdjustFlags(r1.b);
         }    
 
-        protected void out__c__b() {
+        void out__c__b() {
             IOWrite(r1.bc, r1.b);
         }
         
-        protected void in_c__c_() {
+        void in_c__c_() {
             r1.c = IORead(r1.bc);
             ResFlag(f_h | f_n);
             AdjustFlagsSZP(r1.c);
             AdjustFlags(r1.c);
         }    
 
-        protected void out__c__c() {
+        void out__c__c() {
             IOWrite(r1.bc, r1.c);
         }
         
-        protected void in_d__c_() {
+        void in_d__c_() {
             r1.d = IORead(r1.bc);
             ResFlag(f_h | f_n);
             AdjustFlagsSZP(r1.d);
             AdjustFlags(r1.d);
         }    
 
-        protected void out__c__d() {
+        void out__c__d() {
             IOWrite(r1.bc, r1.d);
         }
         
-        protected void in_e__c_() {
+        void in_e__c_() {
             r1.e = IORead(r1.bc);
             ResFlag(f_h | f_n);
             AdjustFlagsSZP(r1.e);
             AdjustFlags(r1.e);
         }    
 
-        protected void out__c__e() {
+        void out__c__e() {
             IOWrite(r1.bc, r1.e);
         }
         
-        protected void in_f__c_() {
+        void in_f__c_() {
             r1.f = IORead(r1.bc);
             ResFlag(f_h | f_n);
             AdjustFlagsSZP(r1.f);
             AdjustFlags(r1.f);
         }    
 
-        protected void in_h__c_() {
+        void in_h__c_() {
             r1.h = IORead(r1.bc);
             ResFlag(f_h | f_n);
             AdjustFlagsSZP(r1.h);
             AdjustFlags(r1.h);
         }    
 
-        protected void out__c__h() {
+        void out__c__h() {
             IOWrite(r1.bc, r1.h);
         }
         
-        protected void in_l__c_() {
+        void in_l__c_() {
             r1.l = IORead(r1.bc);
             ResFlag(f_h | f_n);
             AdjustFlagsSZP(r1.l);
             AdjustFlags(r1.l);
         }    
 
-        protected void out__c__l() {
+        void out__c__l() {
             IOWrite(r1.bc, r1.l);
         }
         
       
-        protected void out__c__0() {
+        void out__c__0() {
             IOWrite(r1.bc, 0);
         }
         
-        protected void jp_nn() {
+        void jp_nn() {
             pc = Read16(pc);
         }
         
-        protected void jr_pc_e() {
+        void jr_pc_e() {
             var offset = (SByte)Read8(pc++);
             tStates += 5;
             pc = (ushort)(pc + offset);
         }
         
-        protected void djnz_pc_e() {
+        void djnz_pc_e() {
             tStates++;
             var offset = (SByte)Read8(pc++);
             r1.b--;
@@ -6471,7 +6471,7 @@ namespace Z80 {
             }
         }
         
-        protected void call_nn() {
+        void call_nn() {
             var addr = Read16(pc);
             pc += 2;
             tStates++;
@@ -6479,21 +6479,21 @@ namespace Z80 {
             pc = addr;
         }
         
-        protected void ret() {
+        void ret() {
             pc = DoPop();
         }
         
-        protected void retn() {
+        void retn() {
             iff1 = iff2;
             ret();
         }
         
-        protected void reti() {
+        void reti() {
             iff1 = iff2;
             ret();
         }
         
-        protected void jp_nz_nn() {
+        void jp_nz_nn() {
             // no matter if the condition is true we spend 6 tstates to read the addr
             ushort addr = Read16(pc);
             if (Condition(c_nz)) {
@@ -6503,7 +6503,7 @@ namespace Z80 {
             }
         }
         
-        protected void call_nz_nn() {
+        void call_nz_nn() {
             var addr = Read16(pc);
             pc += 2;
             if (Condition(c_nz)) {
@@ -6513,14 +6513,14 @@ namespace Z80 {
             }
         }
         
-        protected void ret_nz() {
+        void ret_nz() {
             tStates++;
             if (Condition(c_nz)) {
                 ret();
             }
         }
         
-        protected void jp_z_nn() {
+        void jp_z_nn() {
             // no matter if the condition is true we spend 6 tstates to read the addr
             ushort addr = Read16(pc);
             if (Condition(c_z)) {
@@ -6530,7 +6530,7 @@ namespace Z80 {
             }
         }
         
-        protected void call_z_nn() {
+        void call_z_nn() {
             var addr = Read16(pc);
             pc += 2;
             if (Condition(c_z)) {
@@ -6540,14 +6540,14 @@ namespace Z80 {
             }
         }
         
-        protected void ret_z() {
+        void ret_z() {
             tStates++;
             if (Condition(c_z)) {
                 ret();
             }
         }
         
-        protected void jp_nc_nn() {
+        void jp_nc_nn() {
             // no matter if the condition is true we spend 6 tstates to read the addr
             ushort addr = Read16(pc);
             if (Condition(c_nc)) {
@@ -6557,7 +6557,7 @@ namespace Z80 {
             }
         }
         
-        protected void call_nc_nn() {
+        void call_nc_nn() {
             var addr = Read16(pc);
             pc += 2;
             if (Condition(c_nc)) {
@@ -6567,14 +6567,14 @@ namespace Z80 {
             }
         }
         
-        protected void ret_nc() {
+        void ret_nc() {
             tStates++;
             if (Condition(c_nc)) {
                 ret();
             }
         }
         
-        protected void jp_c_nn() {
+        void jp_c_nn() {
             // no matter if the condition is true we spend 6 tstates to read the addr
             ushort addr = Read16(pc);
             if (Condition(c_c)) {
@@ -6584,7 +6584,7 @@ namespace Z80 {
             }
         }
         
-        protected void call_c_nn() {
+        void call_c_nn() {
             var addr = Read16(pc);
             pc += 2;
             if (Condition(c_c)) {
@@ -6594,14 +6594,14 @@ namespace Z80 {
             }
         }
         
-        protected void ret_c() {
+        void ret_c() {
             tStates++;
             if (Condition(c_c)) {
                 ret();
             }
         }
         
-        protected void jp_po_nn() {
+        void jp_po_nn() {
             // no matter if the condition is true we spend 6 tstates to read the addr
             ushort addr = Read16(pc);
             if (Condition(c_po)) {
@@ -6611,7 +6611,7 @@ namespace Z80 {
             }
         }
         
-        protected void call_po_nn() {
+        void call_po_nn() {
             var addr = Read16(pc);
             pc += 2;
             if (Condition(c_po)) {
@@ -6621,14 +6621,14 @@ namespace Z80 {
             }
         }
         
-        protected void ret_po() {
+        void ret_po() {
             tStates++;
             if (Condition(c_po)) {
                 ret();
             }
         }
         
-        protected void jp_pe_nn() {
+        void jp_pe_nn() {
             // no matter if the condition is true we spend 6 tstates to read the addr
             ushort addr = Read16(pc);
             if (Condition(c_pe)) {
@@ -6638,7 +6638,7 @@ namespace Z80 {
             }
         }
         
-        protected void call_pe_nn() {
+        void call_pe_nn() {
             var addr = Read16(pc);
             pc += 2;
             if (Condition(c_pe)) {
@@ -6648,14 +6648,14 @@ namespace Z80 {
             }
         }
         
-        protected void ret_pe() {
+        void ret_pe() {
             tStates++;
             if (Condition(c_pe)) {
                 ret();
             }
         }
         
-        protected void jp_p_nn() {
+        void jp_p_nn() {
             // no matter if the condition is true we spend 6 tstates to read the addr
             ushort addr = Read16(pc);
             if (Condition(c_p)) {
@@ -6665,7 +6665,7 @@ namespace Z80 {
             }
         }
         
-        protected void call_p_nn() {
+        void call_p_nn() {
             var addr = Read16(pc);
             pc += 2;
             if (Condition(c_p)) {
@@ -6675,14 +6675,14 @@ namespace Z80 {
             }
         }
         
-        protected void ret_p() {
+        void ret_p() {
             tStates++;
             if (Condition(c_p)) {
                 ret();
             }
         }
         
-        protected void jp_m_nn() {
+        void jp_m_nn() {
             // no matter if the condition is true we spend 6 tstates to read the addr
             ushort addr = Read16(pc);
             if (Condition(c_m)) {
@@ -6692,7 +6692,7 @@ namespace Z80 {
             }
         }
         
-        protected void call_m_nn() {
+        void call_m_nn() {
             var addr = Read16(pc);
             pc += 2;
             if (Condition(c_m)) {
@@ -6702,14 +6702,14 @@ namespace Z80 {
             }
         }
         
-        protected void ret_m() {
+        void ret_m() {
             tStates++;
             if (Condition(c_m)) {
                 ret();
             }
         }
         
-        protected void jr_c_pc_e() {
+        void jr_c_pc_e() {
             var offset = (SByte)Read8(pc++);
             if (Condition(c_c)) {
                 tStates += 5;
@@ -6717,7 +6717,7 @@ namespace Z80 {
             }
         }
         
-        protected void jr_nc_pc_e() {
+        void jr_nc_pc_e() {
             var offset = (SByte)Read8(pc++);
             if (Condition(c_nc)) {
                 tStates += 5;
@@ -6725,7 +6725,7 @@ namespace Z80 {
             }
         }
         
-        protected void jr_z_pc_e() {
+        void jr_z_pc_e() {
             var offset = (SByte)Read8(pc++);
             if (Condition(c_z)) {
                 tStates += 5;
@@ -6733,7 +6733,7 @@ namespace Z80 {
             }
         }
         
-        protected void jr_nz_pc_e() {
+        void jr_nz_pc_e() {
             var offset = (SByte)Read8(pc++);
             if (Condition(c_nz)) {
                 tStates += 5;
@@ -6741,69 +6741,69 @@ namespace Z80 {
             }
         }
         
-        protected void jp__hl_() {
+        void jp__hl_() {
             pc = r1.hl;
         }
         
-        protected void jp__ix_() {
+        void jp__ix_() {
             pc = r1.ix;
         }
         
-        protected void jp__iy_() {
+        void jp__iy_() {
             pc = r1.iy;
         }
         
 
-        protected void rst_00h() {
+        void rst_00h() {
             tStates++;
             DoPush(pc);
             pc = 0x00;
         }
         
-        protected void rst_08h() {
+        void rst_08h() {
             tStates++;
             DoPush(pc);
             pc = 0x08;
         }
         
-        protected void rst_10h() {
+        void rst_10h() {
             tStates++;
             DoPush(pc);
             pc = 0x10;
         }
         
-        protected void rst_18h() {
+        void rst_18h() {
             tStates++;
             DoPush(pc);
             pc = 0x18;
         }
         
-        protected void rst_20h() {
+        void rst_20h() {
             tStates++;
             DoPush(pc);
             pc = 0x20;
         }
         
-        protected void rst_28h() {
+        void rst_28h() {
             tStates++;
             DoPush(pc);
             pc = 0x28;
         }
         
-        protected void rst_30h() {
+        void rst_30h() {
             tStates++;
             DoPush(pc);
             pc = 0x30;
         }
         
-        protected void rst_38h() {
+        void rst_38h() {
             tStates++;
             DoPush(pc);
             pc = 0x38;
         }
         
 
-        protected void ld_a_set_0__ix_d_() {
+        void ld_a_set_0__ix_d_() {
             tStates += 2;
             var offset = (SByte)Read8(pc++);
             ushort addr = (ushort)(r1.ix + offset);
@@ -6811,7 +6811,7 @@ namespace Z80 {
             Write8(addr, r1.a);
         }
         
-        protected void ld_a_set_0__iy_d_() {
+        void ld_a_set_0__iy_d_() {
             tStates += 2;
             var offset = (SByte)Read8(pc++);
             ushort addr = (ushort)(r1.iy + offset);
@@ -6819,7 +6819,7 @@ namespace Z80 {
             Write8(addr, r1.a);
         }
         
-        protected void ld_a_set_1__ix_d_() {
+        void ld_a_set_1__ix_d_() {
             tStates += 2;
             var offset = (SByte)Read8(pc++);
             ushort addr = (ushort)(r1.ix + offset);
@@ -6827,7 +6827,7 @@ namespace Z80 {
             Write8(addr, r1.a);
         }
         
-        protected void ld_a_set_1__iy_d_() {
+        void ld_a_set_1__iy_d_() {
             tStates += 2;
             var offset = (SByte)Read8(pc++);
             ushort addr = (ushort)(r1.iy + offset);
@@ -6835,7 +6835,7 @@ namespace Z80 {
             Write8(addr, r1.a);
         }
         
-        protected void ld_a_set_2__ix_d_() {
+        void ld_a_set_2__ix_d_() {
             tStates += 2;
             var offset = (SByte)Read8(pc++);
             ushort addr = (ushort)(r1.ix + offset);
@@ -6843,7 +6843,7 @@ namespace Z80 {
             Write8(addr, r1.a);
         }
         
-        protected void ld_a_set_2__iy_d_() {
+        void ld_a_set_2__iy_d_() {
             tStates += 2;
             var offset = (SByte)Read8(pc++);
             ushort addr = (ushort)(r1.iy + offset);
@@ -6851,7 +6851,7 @@ namespace Z80 {
             Write8(addr, r1.a);
         }
         
-        protected void ld_a_set_3__ix_d_() {
+        void ld_a_set_3__ix_d_() {
             tStates += 2;
             var offset = (SByte)Read8(pc++);
             ushort addr = (ushort)(r1.ix + offset);
@@ -6859,7 +6859,7 @@ namespace Z80 {
             Write8(addr, r1.a);
         }
         
-        protected void ld_a_set_3__iy_d_() {
+        void ld_a_set_3__iy_d_() {
             tStates += 2;
             var offset = (SByte)Read8(pc++);
             ushort addr = (ushort)(r1.iy + offset);
@@ -6867,7 +6867,7 @@ namespace Z80 {
             Write8(addr, r1.a);
         }
         
-        protected void ld_a_set_4__ix_d_() {
+        void ld_a_set_4__ix_d_() {
             tStates += 2;
             var offset = (SByte)Read8(pc++);
             ushort addr = (ushort)(r1.ix + offset);
@@ -6875,7 +6875,7 @@ namespace Z80 {
             Write8(addr, r1.a);
         }
         
-        protected void ld_a_set_4__iy_d_() {
+        void ld_a_set_4__iy_d_() {
             tStates += 2;
             var offset = (SByte)Read8(pc++);
             ushort addr = (ushort)(r1.iy + offset);
@@ -6883,7 +6883,7 @@ namespace Z80 {
             Write8(addr, r1.a);
         }
         
-        protected void ld_a_set_5__ix_d_() {
+        void ld_a_set_5__ix_d_() {
             tStates += 2;
             var offset = (SByte)Read8(pc++);
             ushort addr = (ushort)(r1.ix + offset);
@@ -6891,7 +6891,7 @@ namespace Z80 {
             Write8(addr, r1.a);
         }
         
-        protected void ld_a_set_5__iy_d_() {
+        void ld_a_set_5__iy_d_() {
             tStates += 2;
             var offset = (SByte)Read8(pc++);
             ushort addr = (ushort)(r1.iy + offset);
@@ -6899,7 +6899,7 @@ namespace Z80 {
             Write8(addr, r1.a);
         }
         
-        protected void ld_a_set_6__ix_d_() {
+        void ld_a_set_6__ix_d_() {
             tStates += 2;
             var offset = (SByte)Read8(pc++);
             ushort addr = (ushort)(r1.ix + offset);
@@ -6907,7 +6907,7 @@ namespace Z80 {
             Write8(addr, r1.a);
         }
         
-        protected void ld_a_set_6__iy_d_() {
+        void ld_a_set_6__iy_d_() {
             tStates += 2;
             var offset = (SByte)Read8(pc++);
             ushort addr = (ushort)(r1.iy + offset);
@@ -6915,7 +6915,7 @@ namespace Z80 {
             Write8(addr, r1.a);
         }
         
-        protected void ld_a_set_7__ix_d_() {
+        void ld_a_set_7__ix_d_() {
             tStates += 2;
             var offset = (SByte)Read8(pc++);
             ushort addr = (ushort)(r1.ix + offset);
@@ -6923,7 +6923,7 @@ namespace Z80 {
             Write8(addr, r1.a);
         }
         
-        protected void ld_a_set_7__iy_d_() {
+        void ld_a_set_7__iy_d_() {
             tStates += 2;
             var offset = (SByte)Read8(pc++);
             ushort addr = (ushort)(r1.iy + offset);
@@ -6931,7 +6931,7 @@ namespace Z80 {
             Write8(addr, r1.a);
         }
         
-        protected void ld_a_res_0__ix_d_() {
+        void ld_a_res_0__ix_d_() {
             tStates += 2;
             var offset = (SByte)Read8(pc++);
             ushort addr = (ushort)(r1.ix + offset);
@@ -6939,7 +6939,7 @@ namespace Z80 {
             Write8(addr, r1.a);
         }
         
-        protected void ld_a_res_0__iy_d_() {
+        void ld_a_res_0__iy_d_() {
             tStates += 2;
             var offset = (SByte)Read8(pc++);
             ushort addr = (ushort)(r1.iy + offset);
@@ -6947,7 +6947,7 @@ namespace Z80 {
             Write8(addr, r1.a);
         }
         
-        protected void ld_a_res_1__ix_d_() {
+        void ld_a_res_1__ix_d_() {
             tStates += 2;
             var offset = (SByte)Read8(pc++);
             ushort addr = (ushort)(r1.ix + offset);
@@ -6955,7 +6955,7 @@ namespace Z80 {
             Write8(addr, r1.a);
         }
         
-        protected void ld_a_res_1__iy_d_() {
+        void ld_a_res_1__iy_d_() {
             tStates += 2;
             var offset = (SByte)Read8(pc++);
             ushort addr = (ushort)(r1.iy + offset);
@@ -6963,7 +6963,7 @@ namespace Z80 {
             Write8(addr, r1.a);
         }
         
-        protected void ld_a_res_2__ix_d_() {
+        void ld_a_res_2__ix_d_() {
             tStates += 2;
             var offset = (SByte)Read8(pc++);
             ushort addr = (ushort)(r1.ix + offset);
@@ -6971,7 +6971,7 @@ namespace Z80 {
             Write8(addr, r1.a);
         }
         
-        protected void ld_a_res_2__iy_d_() {
+        void ld_a_res_2__iy_d_() {
             tStates += 2;
             var offset = (SByte)Read8(pc++);
             ushort addr = (ushort)(r1.iy + offset);
@@ -6979,7 +6979,7 @@ namespace Z80 {
             Write8(addr, r1.a);
         }
         
-        protected void ld_a_res_3__ix_d_() {
+        void ld_a_res_3__ix_d_() {
             tStates += 2;
             var offset = (SByte)Read8(pc++);
             ushort addr = (ushort)(r1.ix + offset);
@@ -6987,7 +6987,7 @@ namespace Z80 {
             Write8(addr, r1.a);
         }
         
-        protected void ld_a_res_3__iy_d_() {
+        void ld_a_res_3__iy_d_() {
             tStates += 2;
             var offset = (SByte)Read8(pc++);
             ushort addr = (ushort)(r1.iy + offset);
@@ -6995,7 +6995,7 @@ namespace Z80 {
             Write8(addr, r1.a);
         }
         
-        protected void ld_a_res_4__ix_d_() {
+        void ld_a_res_4__ix_d_() {
             tStates += 2;
             var offset = (SByte)Read8(pc++);
             ushort addr = (ushort)(r1.ix + offset);
@@ -7003,7 +7003,7 @@ namespace Z80 {
             Write8(addr, r1.a);
         }
         
-        protected void ld_a_res_4__iy_d_() {
+        void ld_a_res_4__iy_d_() {
             tStates += 2;
             var offset = (SByte)Read8(pc++);
             ushort addr = (ushort)(r1.iy + offset);
@@ -7011,7 +7011,7 @@ namespace Z80 {
             Write8(addr, r1.a);
         }
         
-        protected void ld_a_res_5__ix_d_() {
+        void ld_a_res_5__ix_d_() {
             tStates += 2;
             var offset = (SByte)Read8(pc++);
             ushort addr = (ushort)(r1.ix + offset);
@@ -7019,7 +7019,7 @@ namespace Z80 {
             Write8(addr, r1.a);
         }
         
-        protected void ld_a_res_5__iy_d_() {
+        void ld_a_res_5__iy_d_() {
             tStates += 2;
             var offset = (SByte)Read8(pc++);
             ushort addr = (ushort)(r1.iy + offset);
@@ -7027,7 +7027,7 @@ namespace Z80 {
             Write8(addr, r1.a);
         }
         
-        protected void ld_a_res_6__ix_d_() {
+        void ld_a_res_6__ix_d_() {
             tStates += 2;
             var offset = (SByte)Read8(pc++);
             ushort addr = (ushort)(r1.ix + offset);
@@ -7035,7 +7035,7 @@ namespace Z80 {
             Write8(addr, r1.a);
         }
         
-        protected void ld_a_res_6__iy_d_() {
+        void ld_a_res_6__iy_d_() {
             tStates += 2;
             var offset = (SByte)Read8(pc++);
             ushort addr = (ushort)(r1.iy + offset);
@@ -7043,7 +7043,7 @@ namespace Z80 {
             Write8(addr, r1.a);
         }
         
-        protected void ld_a_res_7__ix_d_() {
+        void ld_a_res_7__ix_d_() {
             tStates += 2;
             var offset = (SByte)Read8(pc++);
             ushort addr = (ushort)(r1.ix + offset);
@@ -7051,7 +7051,7 @@ namespace Z80 {
             Write8(addr, r1.a);
         }
         
-        protected void ld_a_res_7__iy_d_() {
+        void ld_a_res_7__iy_d_() {
             tStates += 2;
             var offset = (SByte)Read8(pc++);
             ushort addr = (ushort)(r1.iy + offset);
@@ -7059,7 +7059,7 @@ namespace Z80 {
             Write8(addr, r1.a);
         }
         
-        protected void ld_a_sla__ix_d_() {
+        void ld_a_sla__ix_d_() {
             tStates += 2;
             var offset = (SByte)Read8(pc++);
             ushort addr = (ushort)(r1.ix + offset);
@@ -7068,7 +7068,7 @@ namespace Z80 {
             
         }
         
-        protected void ld_a_sla__iy_d_() {
+        void ld_a_sla__iy_d_() {
             tStates += 2;
             var offset = (SByte)Read8(pc++);
             ushort addr = (ushort)(r1.iy + offset);
@@ -7077,7 +7077,7 @@ namespace Z80 {
             
         }
         
-        protected void ld_a_sll__ix_d_() {
+        void ld_a_sll__ix_d_() {
             tStates += 2;
             var offset = (SByte)Read8(pc++);
             ushort addr = (ushort)(r1.ix + offset);
@@ -7086,7 +7086,7 @@ namespace Z80 {
             
         }
         
-        protected void ld_a_sll__iy_d_() {
+        void ld_a_sll__iy_d_() {
             tStates += 2;
             var offset = (SByte)Read8(pc++);
             ushort addr = (ushort)(r1.iy + offset);
@@ -7095,7 +7095,7 @@ namespace Z80 {
             
         }
         
-        protected void ld_a_sra__ix_d_() {
+        void ld_a_sra__ix_d_() {
             tStates += 2;
             var offset = (SByte)Read8(pc++);
             ushort addr = (ushort)(r1.ix + offset);
@@ -7104,7 +7104,7 @@ namespace Z80 {
             
         }
         
-        protected void ld_a_sra__iy_d_() {
+        void ld_a_sra__iy_d_() {
             tStates += 2;
             var offset = (SByte)Read8(pc++);
             ushort addr = (ushort)(r1.iy + offset);
@@ -7113,7 +7113,7 @@ namespace Z80 {
             
         }
         
-        protected void ld_a_srl__ix_d_() {
+        void ld_a_srl__ix_d_() {
             tStates += 2;
             var offset = (SByte)Read8(pc++);
             ushort addr = (ushort)(r1.ix + offset);
@@ -7122,7 +7122,7 @@ namespace Z80 {
             
         }
         
-        protected void ld_a_srl__iy_d_() {
+        void ld_a_srl__iy_d_() {
             tStates += 2;
             var offset = (SByte)Read8(pc++);
             ushort addr = (ushort)(r1.iy + offset);
@@ -7131,7 +7131,7 @@ namespace Z80 {
             
         }
         
-        protected void ld_a_rl__ix_d_() {
+        void ld_a_rl__ix_d_() {
             tStates += 2;
             var offset = (SByte)Read8(pc++);
             ushort addr = (ushort)(r1.ix + offset);
@@ -7139,7 +7139,7 @@ namespace Z80 {
             Write8(addr, r1.a);            
         }
         
-        protected void ld_a_rl__iy_d_() {
+        void ld_a_rl__iy_d_() {
             tStates += 2;
             var offset = (SByte)Read8(pc++);
             ushort addr = (ushort)(r1.iy + offset);
@@ -7147,7 +7147,7 @@ namespace Z80 {
             Write8(addr, r1.a);            
         }
         
-        protected void ld_a_rlc__ix_d_() {
+        void ld_a_rlc__ix_d_() {
             tStates += 2;
             var offset = (SByte)Read8(pc++);
             ushort addr = (ushort)(r1.ix + offset);
@@ -7155,7 +7155,7 @@ namespace Z80 {
             Write8(addr, r1.a);            
         }
         
-        protected void ld_a_rlc__iy_d_() {
+        void ld_a_rlc__iy_d_() {
             tStates += 2;
             var offset = (SByte)Read8(pc++);
             ushort addr = (ushort)(r1.iy + offset);
@@ -7163,7 +7163,7 @@ namespace Z80 {
             Write8(addr, r1.a);            
         }
         
-        protected void ld_a_rr__ix_d_() {
+        void ld_a_rr__ix_d_() {
             tStates += 2;
             var offset = (SByte)Read8(pc++);
             ushort addr = (ushort)(r1.ix + offset);
@@ -7171,7 +7171,7 @@ namespace Z80 {
             Write8(addr, r1.a);            
         }
         
-        protected void ld_a_rr__iy_d_() {
+        void ld_a_rr__iy_d_() {
             tStates += 2;
             var offset = (SByte)Read8(pc++);
             ushort addr = (ushort)(r1.iy + offset);
@@ -7179,7 +7179,7 @@ namespace Z80 {
             Write8(addr, r1.a);            
         }
         
-        protected void ld_a_rrc__ix_d_() {
+        void ld_a_rrc__ix_d_() {
             tStates += 2;
             var offset = (SByte)Read8(pc++);
             ushort addr = (ushort)(r1.ix + offset);
@@ -7187,7 +7187,7 @@ namespace Z80 {
             Write8(addr, r1.a);            
         }
         
-        protected void ld_a_rrc__iy_d_() {
+        void ld_a_rrc__iy_d_() {
             tStates += 2;
             var offset = (SByte)Read8(pc++);
             ushort addr = (ushort)(r1.iy + offset);
@@ -7195,7 +7195,7 @@ namespace Z80 {
             Write8(addr, r1.a);            
         }
         
-        protected void ld_b_set_0__ix_d_() {
+        void ld_b_set_0__ix_d_() {
             tStates += 2;
             var offset = (SByte)Read8(pc++);
             ushort addr = (ushort)(r1.ix + offset);
@@ -7203,7 +7203,7 @@ namespace Z80 {
             Write8(addr, r1.b);
         }
         
-        protected void ld_b_set_0__iy_d_() {
+        void ld_b_set_0__iy_d_() {
             tStates += 2;
             var offset = (SByte)Read8(pc++);
             ushort addr = (ushort)(r1.iy + offset);
@@ -7211,7 +7211,7 @@ namespace Z80 {
             Write8(addr, r1.b);
         }
         
-        protected void ld_b_set_1__ix_d_() {
+        void ld_b_set_1__ix_d_() {
             tStates += 2;
             var offset = (SByte)Read8(pc++);
             ushort addr = (ushort)(r1.ix + offset);
@@ -7219,7 +7219,7 @@ namespace Z80 {
             Write8(addr, r1.b);
         }
         
-        protected void ld_b_set_1__iy_d_() {
+        void ld_b_set_1__iy_d_() {
             tStates += 2;
             var offset = (SByte)Read8(pc++);
             ushort addr = (ushort)(r1.iy + offset);
@@ -7227,7 +7227,7 @@ namespace Z80 {
             Write8(addr, r1.b);
         }
         
-        protected void ld_b_set_2__ix_d_() {
+        void ld_b_set_2__ix_d_() {
             tStates += 2;
             var offset = (SByte)Read8(pc++);
             ushort addr = (ushort)(r1.ix + offset);
@@ -7235,7 +7235,7 @@ namespace Z80 {
             Write8(addr, r1.b);
         }
         
-        protected void ld_b_set_2__iy_d_() {
+        void ld_b_set_2__iy_d_() {
             tStates += 2;
             var offset = (SByte)Read8(pc++);
             ushort addr = (ushort)(r1.iy + offset);
@@ -7243,7 +7243,7 @@ namespace Z80 {
             Write8(addr, r1.b);
         }
         
-        protected void ld_b_set_3__ix_d_() {
+        void ld_b_set_3__ix_d_() {
             tStates += 2;
             var offset = (SByte)Read8(pc++);
             ushort addr = (ushort)(r1.ix + offset);
@@ -7251,7 +7251,7 @@ namespace Z80 {
             Write8(addr, r1.b);
         }
         
-        protected void ld_b_set_3__iy_d_() {
+        void ld_b_set_3__iy_d_() {
             tStates += 2;
             var offset = (SByte)Read8(pc++);
             ushort addr = (ushort)(r1.iy + offset);
@@ -7259,7 +7259,7 @@ namespace Z80 {
             Write8(addr, r1.b);
         }
         
-        protected void ld_b_set_4__ix_d_() {
+        void ld_b_set_4__ix_d_() {
             tStates += 2;
             var offset = (SByte)Read8(pc++);
             ushort addr = (ushort)(r1.ix + offset);
@@ -7267,7 +7267,7 @@ namespace Z80 {
             Write8(addr, r1.b);
         }
         
-        protected void ld_b_set_4__iy_d_() {
+        void ld_b_set_4__iy_d_() {
             tStates += 2;
             var offset = (SByte)Read8(pc++);
             ushort addr = (ushort)(r1.iy + offset);
@@ -7275,7 +7275,7 @@ namespace Z80 {
             Write8(addr, r1.b);
         }
         
-        protected void ld_b_set_5__ix_d_() {
+        void ld_b_set_5__ix_d_() {
             tStates += 2;
             var offset = (SByte)Read8(pc++);
             ushort addr = (ushort)(r1.ix + offset);
@@ -7283,7 +7283,7 @@ namespace Z80 {
             Write8(addr, r1.b);
         }
         
-        protected void ld_b_set_5__iy_d_() {
+        void ld_b_set_5__iy_d_() {
             tStates += 2;
             var offset = (SByte)Read8(pc++);
             ushort addr = (ushort)(r1.iy + offset);
@@ -7291,7 +7291,7 @@ namespace Z80 {
             Write8(addr, r1.b);
         }
         
-        protected void ld_b_set_6__ix_d_() {
+        void ld_b_set_6__ix_d_() {
             tStates += 2;
             var offset = (SByte)Read8(pc++);
             ushort addr = (ushort)(r1.ix + offset);
@@ -7299,7 +7299,7 @@ namespace Z80 {
             Write8(addr, r1.b);
         }
         
-        protected void ld_b_set_6__iy_d_() {
+        void ld_b_set_6__iy_d_() {
             tStates += 2;
             var offset = (SByte)Read8(pc++);
             ushort addr = (ushort)(r1.iy + offset);
@@ -7307,7 +7307,7 @@ namespace Z80 {
             Write8(addr, r1.b);
         }
         
-        protected void ld_b_set_7__ix_d_() {
+        void ld_b_set_7__ix_d_() {
             tStates += 2;
             var offset = (SByte)Read8(pc++);
             ushort addr = (ushort)(r1.ix + offset);
@@ -7315,7 +7315,7 @@ namespace Z80 {
             Write8(addr, r1.b);
         }
         
-        protected void ld_b_set_7__iy_d_() {
+        void ld_b_set_7__iy_d_() {
             tStates += 2;
             var offset = (SByte)Read8(pc++);
             ushort addr = (ushort)(r1.iy + offset);
@@ -7323,7 +7323,7 @@ namespace Z80 {
             Write8(addr, r1.b);
         }
         
-        protected void ld_b_res_0__ix_d_() {
+        void ld_b_res_0__ix_d_() {
             tStates += 2;
             var offset = (SByte)Read8(pc++);
             ushort addr = (ushort)(r1.ix + offset);
@@ -7331,7 +7331,7 @@ namespace Z80 {
             Write8(addr, r1.b);
         }
         
-        protected void ld_b_res_0__iy_d_() {
+        void ld_b_res_0__iy_d_() {
             tStates += 2;
             var offset = (SByte)Read8(pc++);
             ushort addr = (ushort)(r1.iy + offset);
@@ -7339,7 +7339,7 @@ namespace Z80 {
             Write8(addr, r1.b);
         }
         
-        protected void ld_b_res_1__ix_d_() {
+        void ld_b_res_1__ix_d_() {
             tStates += 2;
             var offset = (SByte)Read8(pc++);
             ushort addr = (ushort)(r1.ix + offset);
@@ -7347,7 +7347,7 @@ namespace Z80 {
             Write8(addr, r1.b);
         }
         
-        protected void ld_b_res_1__iy_d_() {
+        void ld_b_res_1__iy_d_() {
             tStates += 2;
             var offset = (SByte)Read8(pc++);
             ushort addr = (ushort)(r1.iy + offset);
@@ -7355,7 +7355,7 @@ namespace Z80 {
             Write8(addr, r1.b);
         }
         
-        protected void ld_b_res_2__ix_d_() {
+        void ld_b_res_2__ix_d_() {
             tStates += 2;
             var offset = (SByte)Read8(pc++);
             ushort addr = (ushort)(r1.ix + offset);
@@ -7363,7 +7363,7 @@ namespace Z80 {
             Write8(addr, r1.b);
         }
         
-        protected void ld_b_res_2__iy_d_() {
+        void ld_b_res_2__iy_d_() {
             tStates += 2;
             var offset = (SByte)Read8(pc++);
             ushort addr = (ushort)(r1.iy + offset);
@@ -7371,7 +7371,7 @@ namespace Z80 {
             Write8(addr, r1.b);
         }
         
-        protected void ld_b_res_3__ix_d_() {
+        void ld_b_res_3__ix_d_() {
             tStates += 2;
             var offset = (SByte)Read8(pc++);
             ushort addr = (ushort)(r1.ix + offset);
@@ -7379,7 +7379,7 @@ namespace Z80 {
             Write8(addr, r1.b);
         }
         
-        protected void ld_b_res_3__iy_d_() {
+        void ld_b_res_3__iy_d_() {
             tStates += 2;
             var offset = (SByte)Read8(pc++);
             ushort addr = (ushort)(r1.iy + offset);
@@ -7387,7 +7387,7 @@ namespace Z80 {
             Write8(addr, r1.b);
         }
         
-        protected void ld_b_res_4__ix_d_() {
+        void ld_b_res_4__ix_d_() {
             tStates += 2;
             var offset = (SByte)Read8(pc++);
             ushort addr = (ushort)(r1.ix + offset);
@@ -7395,7 +7395,7 @@ namespace Z80 {
             Write8(addr, r1.b);
         }
         
-        protected void ld_b_res_4__iy_d_() {
+        void ld_b_res_4__iy_d_() {
             tStates += 2;
             var offset = (SByte)Read8(pc++);
             ushort addr = (ushort)(r1.iy + offset);
@@ -7403,7 +7403,7 @@ namespace Z80 {
             Write8(addr, r1.b);
         }
         
-        protected void ld_b_res_5__ix_d_() {
+        void ld_b_res_5__ix_d_() {
             tStates += 2;
             var offset = (SByte)Read8(pc++);
             ushort addr = (ushort)(r1.ix + offset);
@@ -7411,7 +7411,7 @@ namespace Z80 {
             Write8(addr, r1.b);
         }
         
-        protected void ld_b_res_5__iy_d_() {
+        void ld_b_res_5__iy_d_() {
             tStates += 2;
             var offset = (SByte)Read8(pc++);
             ushort addr = (ushort)(r1.iy + offset);
@@ -7419,7 +7419,7 @@ namespace Z80 {
             Write8(addr, r1.b);
         }
         
-        protected void ld_b_res_6__ix_d_() {
+        void ld_b_res_6__ix_d_() {
             tStates += 2;
             var offset = (SByte)Read8(pc++);
             ushort addr = (ushort)(r1.ix + offset);
@@ -7427,7 +7427,7 @@ namespace Z80 {
             Write8(addr, r1.b);
         }
         
-        protected void ld_b_res_6__iy_d_() {
+        void ld_b_res_6__iy_d_() {
             tStates += 2;
             var offset = (SByte)Read8(pc++);
             ushort addr = (ushort)(r1.iy + offset);
@@ -7435,7 +7435,7 @@ namespace Z80 {
             Write8(addr, r1.b);
         }
         
-        protected void ld_b_res_7__ix_d_() {
+        void ld_b_res_7__ix_d_() {
             tStates += 2;
             var offset = (SByte)Read8(pc++);
             ushort addr = (ushort)(r1.ix + offset);
@@ -7443,7 +7443,7 @@ namespace Z80 {
             Write8(addr, r1.b);
         }
         
-        protected void ld_b_res_7__iy_d_() {
+        void ld_b_res_7__iy_d_() {
             tStates += 2;
             var offset = (SByte)Read8(pc++);
             ushort addr = (ushort)(r1.iy + offset);
@@ -7451,7 +7451,7 @@ namespace Z80 {
             Write8(addr, r1.b);
         }
         
-        protected void ld_b_sla__ix_d_() {
+        void ld_b_sla__ix_d_() {
             tStates += 2;
             var offset = (SByte)Read8(pc++);
             ushort addr = (ushort)(r1.ix + offset);
@@ -7460,7 +7460,7 @@ namespace Z80 {
             
         }
         
-        protected void ld_b_sla__iy_d_() {
+        void ld_b_sla__iy_d_() {
             tStates += 2;
             var offset = (SByte)Read8(pc++);
             ushort addr = (ushort)(r1.iy + offset);
@@ -7469,7 +7469,7 @@ namespace Z80 {
             
         }
         
-        protected void ld_b_sll__ix_d_() {
+        void ld_b_sll__ix_d_() {
             tStates += 2;
             var offset = (SByte)Read8(pc++);
             ushort addr = (ushort)(r1.ix + offset);
@@ -7478,7 +7478,7 @@ namespace Z80 {
             
         }
         
-        protected void ld_b_sll__iy_d_() {
+        void ld_b_sll__iy_d_() {
             tStates += 2;
             var offset = (SByte)Read8(pc++);
             ushort addr = (ushort)(r1.iy + offset);
@@ -7487,7 +7487,7 @@ namespace Z80 {
             
         }
         
-        protected void ld_b_sra__ix_d_() {
+        void ld_b_sra__ix_d_() {
             tStates += 2;
             var offset = (SByte)Read8(pc++);
             ushort addr = (ushort)(r1.ix + offset);
@@ -7496,7 +7496,7 @@ namespace Z80 {
             
         }
         
-        protected void ld_b_sra__iy_d_() {
+        void ld_b_sra__iy_d_() {
             tStates += 2;
             var offset = (SByte)Read8(pc++);
             ushort addr = (ushort)(r1.iy + offset);
@@ -7505,7 +7505,7 @@ namespace Z80 {
             
         }
         
-        protected void ld_b_srl__ix_d_() {
+        void ld_b_srl__ix_d_() {
             tStates += 2;
             var offset = (SByte)Read8(pc++);
             ushort addr = (ushort)(r1.ix + offset);
@@ -7514,7 +7514,7 @@ namespace Z80 {
             
         }
         
-        protected void ld_b_srl__iy_d_() {
+        void ld_b_srl__iy_d_() {
             tStates += 2;
             var offset = (SByte)Read8(pc++);
             ushort addr = (ushort)(r1.iy + offset);
@@ -7523,7 +7523,7 @@ namespace Z80 {
             
         }
         
-        protected void ld_b_rl__ix_d_() {
+        void ld_b_rl__ix_d_() {
             tStates += 2;
             var offset = (SByte)Read8(pc++);
             ushort addr = (ushort)(r1.ix + offset);
@@ -7531,7 +7531,7 @@ namespace Z80 {
             Write8(addr, r1.b);            
         }
         
-        protected void ld_b_rl__iy_d_() {
+        void ld_b_rl__iy_d_() {
             tStates += 2;
             var offset = (SByte)Read8(pc++);
             ushort addr = (ushort)(r1.iy + offset);
@@ -7539,7 +7539,7 @@ namespace Z80 {
             Write8(addr, r1.b);            
         }
         
-        protected void ld_b_rlc__ix_d_() {
+        void ld_b_rlc__ix_d_() {
             tStates += 2;
             var offset = (SByte)Read8(pc++);
             ushort addr = (ushort)(r1.ix + offset);
@@ -7547,7 +7547,7 @@ namespace Z80 {
             Write8(addr, r1.b);            
         }
         
-        protected void ld_b_rlc__iy_d_() {
+        void ld_b_rlc__iy_d_() {
             tStates += 2;
             var offset = (SByte)Read8(pc++);
             ushort addr = (ushort)(r1.iy + offset);
@@ -7555,7 +7555,7 @@ namespace Z80 {
             Write8(addr, r1.b);            
         }
         
-        protected void ld_b_rr__ix_d_() {
+        void ld_b_rr__ix_d_() {
             tStates += 2;
             var offset = (SByte)Read8(pc++);
             ushort addr = (ushort)(r1.ix + offset);
@@ -7563,7 +7563,7 @@ namespace Z80 {
             Write8(addr, r1.b);            
         }
         
-        protected void ld_b_rr__iy_d_() {
+        void ld_b_rr__iy_d_() {
             tStates += 2;
             var offset = (SByte)Read8(pc++);
             ushort addr = (ushort)(r1.iy + offset);
@@ -7571,7 +7571,7 @@ namespace Z80 {
             Write8(addr, r1.b);            
         }
         
-        protected void ld_b_rrc__ix_d_() {
+        void ld_b_rrc__ix_d_() {
             tStates += 2;
             var offset = (SByte)Read8(pc++);
             ushort addr = (ushort)(r1.ix + offset);
@@ -7579,7 +7579,7 @@ namespace Z80 {
             Write8(addr, r1.b);            
         }
         
-        protected void ld_b_rrc__iy_d_() {
+        void ld_b_rrc__iy_d_() {
             tStates += 2;
             var offset = (SByte)Read8(pc++);
             ushort addr = (ushort)(r1.iy + offset);
@@ -7587,7 +7587,7 @@ namespace Z80 {
             Write8(addr, r1.b);            
         }
         
-        protected void ld_c_set_0__ix_d_() {
+        void ld_c_set_0__ix_d_() {
             tStates += 2;
             var offset = (SByte)Read8(pc++);
             ushort addr = (ushort)(r1.ix + offset);
@@ -7595,7 +7595,7 @@ namespace Z80 {
             Write8(addr, r1.c);
         }
         
-        protected void ld_c_set_0__iy_d_() {
+        void ld_c_set_0__iy_d_() {
             tStates += 2;
             var offset = (SByte)Read8(pc++);
             ushort addr = (ushort)(r1.iy + offset);
@@ -7603,7 +7603,7 @@ namespace Z80 {
             Write8(addr, r1.c);
         }
         
-        protected void ld_c_set_1__ix_d_() {
+        void ld_c_set_1__ix_d_() {
             tStates += 2;
             var offset = (SByte)Read8(pc++);
             ushort addr = (ushort)(r1.ix + offset);
@@ -7611,7 +7611,7 @@ namespace Z80 {
             Write8(addr, r1.c);
         }
         
-        protected void ld_c_set_1__iy_d_() {
+        void ld_c_set_1__iy_d_() {
             tStates += 2;
             var offset = (SByte)Read8(pc++);
             ushort addr = (ushort)(r1.iy + offset);
@@ -7619,7 +7619,7 @@ namespace Z80 {
             Write8(addr, r1.c);
         }
         
-        protected void ld_c_set_2__ix_d_() {
+        void ld_c_set_2__ix_d_() {
             tStates += 2;
             var offset = (SByte)Read8(pc++);
             ushort addr = (ushort)(r1.ix + offset);
@@ -7627,7 +7627,7 @@ namespace Z80 {
             Write8(addr, r1.c);
         }
         
-        protected void ld_c_set_2__iy_d_() {
+        void ld_c_set_2__iy_d_() {
             tStates += 2;
             var offset = (SByte)Read8(pc++);
             ushort addr = (ushort)(r1.iy + offset);
@@ -7635,7 +7635,7 @@ namespace Z80 {
             Write8(addr, r1.c);
         }
         
-        protected void ld_c_set_3__ix_d_() {
+        void ld_c_set_3__ix_d_() {
             tStates += 2;
             var offset = (SByte)Read8(pc++);
             ushort addr = (ushort)(r1.ix + offset);
@@ -7643,7 +7643,7 @@ namespace Z80 {
             Write8(addr, r1.c);
         }
         
-        protected void ld_c_set_3__iy_d_() {
+        void ld_c_set_3__iy_d_() {
             tStates += 2;
             var offset = (SByte)Read8(pc++);
             ushort addr = (ushort)(r1.iy + offset);
@@ -7651,7 +7651,7 @@ namespace Z80 {
             Write8(addr, r1.c);
         }
         
-        protected void ld_c_set_4__ix_d_() {
+        void ld_c_set_4__ix_d_() {
             tStates += 2;
             var offset = (SByte)Read8(pc++);
             ushort addr = (ushort)(r1.ix + offset);
@@ -7659,7 +7659,7 @@ namespace Z80 {
             Write8(addr, r1.c);
         }
         
-        protected void ld_c_set_4__iy_d_() {
+        void ld_c_set_4__iy_d_() {
             tStates += 2;
             var offset = (SByte)Read8(pc++);
             ushort addr = (ushort)(r1.iy + offset);
@@ -7667,7 +7667,7 @@ namespace Z80 {
             Write8(addr, r1.c);
         }
         
-        protected void ld_c_set_5__ix_d_() {
+        void ld_c_set_5__ix_d_() {
             tStates += 2;
             var offset = (SByte)Read8(pc++);
             ushort addr = (ushort)(r1.ix + offset);
@@ -7675,7 +7675,7 @@ namespace Z80 {
             Write8(addr, r1.c);
         }
         
-        protected void ld_c_set_5__iy_d_() {
+        void ld_c_set_5__iy_d_() {
             tStates += 2;
             var offset = (SByte)Read8(pc++);
             ushort addr = (ushort)(r1.iy + offset);
@@ -7683,7 +7683,7 @@ namespace Z80 {
             Write8(addr, r1.c);
         }
         
-        protected void ld_c_set_6__ix_d_() {
+        void ld_c_set_6__ix_d_() {
             tStates += 2;
             var offset = (SByte)Read8(pc++);
             ushort addr = (ushort)(r1.ix + offset);
@@ -7691,7 +7691,7 @@ namespace Z80 {
             Write8(addr, r1.c);
         }
         
-        protected void ld_c_set_6__iy_d_() {
+        void ld_c_set_6__iy_d_() {
             tStates += 2;
             var offset = (SByte)Read8(pc++);
             ushort addr = (ushort)(r1.iy + offset);
@@ -7699,7 +7699,7 @@ namespace Z80 {
             Write8(addr, r1.c);
         }
         
-        protected void ld_c_set_7__ix_d_() {
+        void ld_c_set_7__ix_d_() {
             tStates += 2;
             var offset = (SByte)Read8(pc++);
             ushort addr = (ushort)(r1.ix + offset);
@@ -7707,7 +7707,7 @@ namespace Z80 {
             Write8(addr, r1.c);
         }
         
-        protected void ld_c_set_7__iy_d_() {
+        void ld_c_set_7__iy_d_() {
             tStates += 2;
             var offset = (SByte)Read8(pc++);
             ushort addr = (ushort)(r1.iy + offset);
@@ -7715,7 +7715,7 @@ namespace Z80 {
             Write8(addr, r1.c);
         }
         
-        protected void ld_c_res_0__ix_d_() {
+        void ld_c_res_0__ix_d_() {
             tStates += 2;
             var offset = (SByte)Read8(pc++);
             ushort addr = (ushort)(r1.ix + offset);
@@ -7723,7 +7723,7 @@ namespace Z80 {
             Write8(addr, r1.c);
         }
         
-        protected void ld_c_res_0__iy_d_() {
+        void ld_c_res_0__iy_d_() {
             tStates += 2;
             var offset = (SByte)Read8(pc++);
             ushort addr = (ushort)(r1.iy + offset);
@@ -7731,7 +7731,7 @@ namespace Z80 {
             Write8(addr, r1.c);
         }
         
-        protected void ld_c_res_1__ix_d_() {
+        void ld_c_res_1__ix_d_() {
             tStates += 2;
             var offset = (SByte)Read8(pc++);
             ushort addr = (ushort)(r1.ix + offset);
@@ -7739,7 +7739,7 @@ namespace Z80 {
             Write8(addr, r1.c);
         }
         
-        protected void ld_c_res_1__iy_d_() {
+        void ld_c_res_1__iy_d_() {
             tStates += 2;
             var offset = (SByte)Read8(pc++);
             ushort addr = (ushort)(r1.iy + offset);
@@ -7747,7 +7747,7 @@ namespace Z80 {
             Write8(addr, r1.c);
         }
         
-        protected void ld_c_res_2__ix_d_() {
+        void ld_c_res_2__ix_d_() {
             tStates += 2;
             var offset = (SByte)Read8(pc++);
             ushort addr = (ushort)(r1.ix + offset);
@@ -7755,7 +7755,7 @@ namespace Z80 {
             Write8(addr, r1.c);
         }
         
-        protected void ld_c_res_2__iy_d_() {
+        void ld_c_res_2__iy_d_() {
             tStates += 2;
             var offset = (SByte)Read8(pc++);
             ushort addr = (ushort)(r1.iy + offset);
@@ -7763,7 +7763,7 @@ namespace Z80 {
             Write8(addr, r1.c);
         }
         
-        protected void ld_c_res_3__ix_d_() {
+        void ld_c_res_3__ix_d_() {
             tStates += 2;
             var offset = (SByte)Read8(pc++);
             ushort addr = (ushort)(r1.ix + offset);
@@ -7771,7 +7771,7 @@ namespace Z80 {
             Write8(addr, r1.c);
         }
         
-        protected void ld_c_res_3__iy_d_() {
+        void ld_c_res_3__iy_d_() {
             tStates += 2;
             var offset = (SByte)Read8(pc++);
             ushort addr = (ushort)(r1.iy + offset);
@@ -7779,7 +7779,7 @@ namespace Z80 {
             Write8(addr, r1.c);
         }
         
-        protected void ld_c_res_4__ix_d_() {
+        void ld_c_res_4__ix_d_() {
             tStates += 2;
             var offset = (SByte)Read8(pc++);
             ushort addr = (ushort)(r1.ix + offset);
@@ -7787,7 +7787,7 @@ namespace Z80 {
             Write8(addr, r1.c);
         }
         
-        protected void ld_c_res_4__iy_d_() {
+        void ld_c_res_4__iy_d_() {
             tStates += 2;
             var offset = (SByte)Read8(pc++);
             ushort addr = (ushort)(r1.iy + offset);
@@ -7795,7 +7795,7 @@ namespace Z80 {
             Write8(addr, r1.c);
         }
         
-        protected void ld_c_res_5__ix_d_() {
+        void ld_c_res_5__ix_d_() {
             tStates += 2;
             var offset = (SByte)Read8(pc++);
             ushort addr = (ushort)(r1.ix + offset);
@@ -7803,7 +7803,7 @@ namespace Z80 {
             Write8(addr, r1.c);
         }
         
-        protected void ld_c_res_5__iy_d_() {
+        void ld_c_res_5__iy_d_() {
             tStates += 2;
             var offset = (SByte)Read8(pc++);
             ushort addr = (ushort)(r1.iy + offset);
@@ -7811,7 +7811,7 @@ namespace Z80 {
             Write8(addr, r1.c);
         }
         
-        protected void ld_c_res_6__ix_d_() {
+        void ld_c_res_6__ix_d_() {
             tStates += 2;
             var offset = (SByte)Read8(pc++);
             ushort addr = (ushort)(r1.ix + offset);
@@ -7819,7 +7819,7 @@ namespace Z80 {
             Write8(addr, r1.c);
         }
         
-        protected void ld_c_res_6__iy_d_() {
+        void ld_c_res_6__iy_d_() {
             tStates += 2;
             var offset = (SByte)Read8(pc++);
             ushort addr = (ushort)(r1.iy + offset);
@@ -7827,7 +7827,7 @@ namespace Z80 {
             Write8(addr, r1.c);
         }
         
-        protected void ld_c_res_7__ix_d_() {
+        void ld_c_res_7__ix_d_() {
             tStates += 2;
             var offset = (SByte)Read8(pc++);
             ushort addr = (ushort)(r1.ix + offset);
@@ -7835,7 +7835,7 @@ namespace Z80 {
             Write8(addr, r1.c);
         }
         
-        protected void ld_c_res_7__iy_d_() {
+        void ld_c_res_7__iy_d_() {
             tStates += 2;
             var offset = (SByte)Read8(pc++);
             ushort addr = (ushort)(r1.iy + offset);
@@ -7843,7 +7843,7 @@ namespace Z80 {
             Write8(addr, r1.c);
         }
         
-        protected void ld_c_sla__ix_d_() {
+        void ld_c_sla__ix_d_() {
             tStates += 2;
             var offset = (SByte)Read8(pc++);
             ushort addr = (ushort)(r1.ix + offset);
@@ -7852,7 +7852,7 @@ namespace Z80 {
             
         }
         
-        protected void ld_c_sla__iy_d_() {
+        void ld_c_sla__iy_d_() {
             tStates += 2;
             var offset = (SByte)Read8(pc++);
             ushort addr = (ushort)(r1.iy + offset);
@@ -7861,7 +7861,7 @@ namespace Z80 {
             
         }
         
-        protected void ld_c_sll__ix_d_() {
+        void ld_c_sll__ix_d_() {
             tStates += 2;
             var offset = (SByte)Read8(pc++);
             ushort addr = (ushort)(r1.ix + offset);
@@ -7870,7 +7870,7 @@ namespace Z80 {
             
         }
         
-        protected void ld_c_sll__iy_d_() {
+        void ld_c_sll__iy_d_() {
             tStates += 2;
             var offset = (SByte)Read8(pc++);
             ushort addr = (ushort)(r1.iy + offset);
@@ -7879,7 +7879,7 @@ namespace Z80 {
             
         }
         
-        protected void ld_c_sra__ix_d_() {
+        void ld_c_sra__ix_d_() {
             tStates += 2;
             var offset = (SByte)Read8(pc++);
             ushort addr = (ushort)(r1.ix + offset);
@@ -7888,7 +7888,7 @@ namespace Z80 {
             
         }
         
-        protected void ld_c_sra__iy_d_() {
+        void ld_c_sra__iy_d_() {
             tStates += 2;
             var offset = (SByte)Read8(pc++);
             ushort addr = (ushort)(r1.iy + offset);
@@ -7897,7 +7897,7 @@ namespace Z80 {
             
         }
         
-        protected void ld_c_srl__ix_d_() {
+        void ld_c_srl__ix_d_() {
             tStates += 2;
             var offset = (SByte)Read8(pc++);
             ushort addr = (ushort)(r1.ix + offset);
@@ -7906,7 +7906,7 @@ namespace Z80 {
             
         }
         
-        protected void ld_c_srl__iy_d_() {
+        void ld_c_srl__iy_d_() {
             tStates += 2;
             var offset = (SByte)Read8(pc++);
             ushort addr = (ushort)(r1.iy + offset);
@@ -7915,7 +7915,7 @@ namespace Z80 {
             
         }
         
-        protected void ld_c_rl__ix_d_() {
+        void ld_c_rl__ix_d_() {
             tStates += 2;
             var offset = (SByte)Read8(pc++);
             ushort addr = (ushort)(r1.ix + offset);
@@ -7923,7 +7923,7 @@ namespace Z80 {
             Write8(addr, r1.c);            
         }
         
-        protected void ld_c_rl__iy_d_() {
+        void ld_c_rl__iy_d_() {
             tStates += 2;
             var offset = (SByte)Read8(pc++);
             ushort addr = (ushort)(r1.iy + offset);
@@ -7931,7 +7931,7 @@ namespace Z80 {
             Write8(addr, r1.c);            
         }
         
-        protected void ld_c_rlc__ix_d_() {
+        void ld_c_rlc__ix_d_() {
             tStates += 2;
             var offset = (SByte)Read8(pc++);
             ushort addr = (ushort)(r1.ix + offset);
@@ -7939,7 +7939,7 @@ namespace Z80 {
             Write8(addr, r1.c);            
         }
         
-        protected void ld_c_rlc__iy_d_() {
+        void ld_c_rlc__iy_d_() {
             tStates += 2;
             var offset = (SByte)Read8(pc++);
             ushort addr = (ushort)(r1.iy + offset);
@@ -7947,7 +7947,7 @@ namespace Z80 {
             Write8(addr, r1.c);            
         }
         
-        protected void ld_c_rr__ix_d_() {
+        void ld_c_rr__ix_d_() {
             tStates += 2;
             var offset = (SByte)Read8(pc++);
             ushort addr = (ushort)(r1.ix + offset);
@@ -7955,7 +7955,7 @@ namespace Z80 {
             Write8(addr, r1.c);            
         }
         
-        protected void ld_c_rr__iy_d_() {
+        void ld_c_rr__iy_d_() {
             tStates += 2;
             var offset = (SByte)Read8(pc++);
             ushort addr = (ushort)(r1.iy + offset);
@@ -7963,7 +7963,7 @@ namespace Z80 {
             Write8(addr, r1.c);            
         }
         
-        protected void ld_c_rrc__ix_d_() {
+        void ld_c_rrc__ix_d_() {
             tStates += 2;
             var offset = (SByte)Read8(pc++);
             ushort addr = (ushort)(r1.ix + offset);
@@ -7971,7 +7971,7 @@ namespace Z80 {
             Write8(addr, r1.c);            
         }
         
-        protected void ld_c_rrc__iy_d_() {
+        void ld_c_rrc__iy_d_() {
             tStates += 2;
             var offset = (SByte)Read8(pc++);
             ushort addr = (ushort)(r1.iy + offset);
@@ -7979,7 +7979,7 @@ namespace Z80 {
             Write8(addr, r1.c);            
         }
         
-        protected void ld_d_set_0__ix_d_() {
+        void ld_d_set_0__ix_d_() {
             tStates += 2;
             var offset = (SByte)Read8(pc++);
             ushort addr = (ushort)(r1.ix + offset);
@@ -7987,7 +7987,7 @@ namespace Z80 {
             Write8(addr, r1.d);
         }
         
-        protected void ld_d_set_0__iy_d_() {
+        void ld_d_set_0__iy_d_() {
             tStates += 2;
             var offset = (SByte)Read8(pc++);
             ushort addr = (ushort)(r1.iy + offset);
@@ -7995,7 +7995,7 @@ namespace Z80 {
             Write8(addr, r1.d);
         }
         
-        protected void ld_d_set_1__ix_d_() {
+        void ld_d_set_1__ix_d_() {
             tStates += 2;
             var offset = (SByte)Read8(pc++);
             ushort addr = (ushort)(r1.ix + offset);
@@ -8003,7 +8003,7 @@ namespace Z80 {
             Write8(addr, r1.d);
         }
         
-        protected void ld_d_set_1__iy_d_() {
+        void ld_d_set_1__iy_d_() {
             tStates += 2;
             var offset = (SByte)Read8(pc++);
             ushort addr = (ushort)(r1.iy + offset);
@@ -8011,7 +8011,7 @@ namespace Z80 {
             Write8(addr, r1.d);
         }
         
-        protected void ld_d_set_2__ix_d_() {
+        void ld_d_set_2__ix_d_() {
             tStates += 2;
             var offset = (SByte)Read8(pc++);
             ushort addr = (ushort)(r1.ix + offset);
@@ -8019,7 +8019,7 @@ namespace Z80 {
             Write8(addr, r1.d);
         }
         
-        protected void ld_d_set_2__iy_d_() {
+        void ld_d_set_2__iy_d_() {
             tStates += 2;
             var offset = (SByte)Read8(pc++);
             ushort addr = (ushort)(r1.iy + offset);
@@ -8027,7 +8027,7 @@ namespace Z80 {
             Write8(addr, r1.d);
         }
         
-        protected void ld_d_set_3__ix_d_() {
+        void ld_d_set_3__ix_d_() {
             tStates += 2;
             var offset = (SByte)Read8(pc++);
             ushort addr = (ushort)(r1.ix + offset);
@@ -8035,7 +8035,7 @@ namespace Z80 {
             Write8(addr, r1.d);
         }
         
-        protected void ld_d_set_3__iy_d_() {
+        void ld_d_set_3__iy_d_() {
             tStates += 2;
             var offset = (SByte)Read8(pc++);
             ushort addr = (ushort)(r1.iy + offset);
@@ -8043,7 +8043,7 @@ namespace Z80 {
             Write8(addr, r1.d);
         }
         
-        protected void ld_d_set_4__ix_d_() {
+        void ld_d_set_4__ix_d_() {
             tStates += 2;
             var offset = (SByte)Read8(pc++);
             ushort addr = (ushort)(r1.ix + offset);
@@ -8051,7 +8051,7 @@ namespace Z80 {
             Write8(addr, r1.d);
         }
         
-        protected void ld_d_set_4__iy_d_() {
+        void ld_d_set_4__iy_d_() {
             tStates += 2;
             var offset = (SByte)Read8(pc++);
             ushort addr = (ushort)(r1.iy + offset);
@@ -8059,7 +8059,7 @@ namespace Z80 {
             Write8(addr, r1.d);
         }
         
-        protected void ld_d_set_5__ix_d_() {
+        void ld_d_set_5__ix_d_() {
             tStates += 2;
             var offset = (SByte)Read8(pc++);
             ushort addr = (ushort)(r1.ix + offset);
@@ -8067,7 +8067,7 @@ namespace Z80 {
             Write8(addr, r1.d);
         }
         
-        protected void ld_d_set_5__iy_d_() {
+        void ld_d_set_5__iy_d_() {
             tStates += 2;
             var offset = (SByte)Read8(pc++);
             ushort addr = (ushort)(r1.iy + offset);
@@ -8075,7 +8075,7 @@ namespace Z80 {
             Write8(addr, r1.d);
         }
         
-        protected void ld_d_set_6__ix_d_() {
+        void ld_d_set_6__ix_d_() {
             tStates += 2;
             var offset = (SByte)Read8(pc++);
             ushort addr = (ushort)(r1.ix + offset);
@@ -8083,7 +8083,7 @@ namespace Z80 {
             Write8(addr, r1.d);
         }
         
-        protected void ld_d_set_6__iy_d_() {
+        void ld_d_set_6__iy_d_() {
             tStates += 2;
             var offset = (SByte)Read8(pc++);
             ushort addr = (ushort)(r1.iy + offset);
@@ -8091,7 +8091,7 @@ namespace Z80 {
             Write8(addr, r1.d);
         }
         
-        protected void ld_d_set_7__ix_d_() {
+        void ld_d_set_7__ix_d_() {
             tStates += 2;
             var offset = (SByte)Read8(pc++);
             ushort addr = (ushort)(r1.ix + offset);
@@ -8099,7 +8099,7 @@ namespace Z80 {
             Write8(addr, r1.d);
         }
         
-        protected void ld_d_set_7__iy_d_() {
+        void ld_d_set_7__iy_d_() {
             tStates += 2;
             var offset = (SByte)Read8(pc++);
             ushort addr = (ushort)(r1.iy + offset);
@@ -8107,7 +8107,7 @@ namespace Z80 {
             Write8(addr, r1.d);
         }
         
-        protected void ld_d_res_0__ix_d_() {
+        void ld_d_res_0__ix_d_() {
             tStates += 2;
             var offset = (SByte)Read8(pc++);
             ushort addr = (ushort)(r1.ix + offset);
@@ -8115,7 +8115,7 @@ namespace Z80 {
             Write8(addr, r1.d);
         }
         
-        protected void ld_d_res_0__iy_d_() {
+        void ld_d_res_0__iy_d_() {
             tStates += 2;
             var offset = (SByte)Read8(pc++);
             ushort addr = (ushort)(r1.iy + offset);
@@ -8123,7 +8123,7 @@ namespace Z80 {
             Write8(addr, r1.d);
         }
         
-        protected void ld_d_res_1__ix_d_() {
+        void ld_d_res_1__ix_d_() {
             tStates += 2;
             var offset = (SByte)Read8(pc++);
             ushort addr = (ushort)(r1.ix + offset);
@@ -8131,7 +8131,7 @@ namespace Z80 {
             Write8(addr, r1.d);
         }
         
-        protected void ld_d_res_1__iy_d_() {
+        void ld_d_res_1__iy_d_() {
             tStates += 2;
             var offset = (SByte)Read8(pc++);
             ushort addr = (ushort)(r1.iy + offset);
@@ -8139,7 +8139,7 @@ namespace Z80 {
             Write8(addr, r1.d);
         }
         
-        protected void ld_d_res_2__ix_d_() {
+        void ld_d_res_2__ix_d_() {
             tStates += 2;
             var offset = (SByte)Read8(pc++);
             ushort addr = (ushort)(r1.ix + offset);
@@ -8147,7 +8147,7 @@ namespace Z80 {
             Write8(addr, r1.d);
         }
         
-        protected void ld_d_res_2__iy_d_() {
+        void ld_d_res_2__iy_d_() {
             tStates += 2;
             var offset = (SByte)Read8(pc++);
             ushort addr = (ushort)(r1.iy + offset);
@@ -8155,7 +8155,7 @@ namespace Z80 {
             Write8(addr, r1.d);
         }
         
-        protected void ld_d_res_3__ix_d_() {
+        void ld_d_res_3__ix_d_() {
             tStates += 2;
             var offset = (SByte)Read8(pc++);
             ushort addr = (ushort)(r1.ix + offset);
@@ -8163,7 +8163,7 @@ namespace Z80 {
             Write8(addr, r1.d);
         }
         
-        protected void ld_d_res_3__iy_d_() {
+        void ld_d_res_3__iy_d_() {
             tStates += 2;
             var offset = (SByte)Read8(pc++);
             ushort addr = (ushort)(r1.iy + offset);
@@ -8171,7 +8171,7 @@ namespace Z80 {
             Write8(addr, r1.d);
         }
         
-        protected void ld_d_res_4__ix_d_() {
+        void ld_d_res_4__ix_d_() {
             tStates += 2;
             var offset = (SByte)Read8(pc++);
             ushort addr = (ushort)(r1.ix + offset);
@@ -8179,7 +8179,7 @@ namespace Z80 {
             Write8(addr, r1.d);
         }
         
-        protected void ld_d_res_4__iy_d_() {
+        void ld_d_res_4__iy_d_() {
             tStates += 2;
             var offset = (SByte)Read8(pc++);
             ushort addr = (ushort)(r1.iy + offset);
@@ -8187,7 +8187,7 @@ namespace Z80 {
             Write8(addr, r1.d);
         }
         
-        protected void ld_d_res_5__ix_d_() {
+        void ld_d_res_5__ix_d_() {
             tStates += 2;
             var offset = (SByte)Read8(pc++);
             ushort addr = (ushort)(r1.ix + offset);
@@ -8195,7 +8195,7 @@ namespace Z80 {
             Write8(addr, r1.d);
         }
         
-        protected void ld_d_res_5__iy_d_() {
+        void ld_d_res_5__iy_d_() {
             tStates += 2;
             var offset = (SByte)Read8(pc++);
             ushort addr = (ushort)(r1.iy + offset);
@@ -8203,7 +8203,7 @@ namespace Z80 {
             Write8(addr, r1.d);
         }
         
-        protected void ld_d_res_6__ix_d_() {
+        void ld_d_res_6__ix_d_() {
             tStates += 2;
             var offset = (SByte)Read8(pc++);
             ushort addr = (ushort)(r1.ix + offset);
@@ -8211,7 +8211,7 @@ namespace Z80 {
             Write8(addr, r1.d);
         }
         
-        protected void ld_d_res_6__iy_d_() {
+        void ld_d_res_6__iy_d_() {
             tStates += 2;
             var offset = (SByte)Read8(pc++);
             ushort addr = (ushort)(r1.iy + offset);
@@ -8219,7 +8219,7 @@ namespace Z80 {
             Write8(addr, r1.d);
         }
         
-        protected void ld_d_res_7__ix_d_() {
+        void ld_d_res_7__ix_d_() {
             tStates += 2;
             var offset = (SByte)Read8(pc++);
             ushort addr = (ushort)(r1.ix + offset);
@@ -8227,7 +8227,7 @@ namespace Z80 {
             Write8(addr, r1.d);
         }
         
-        protected void ld_d_res_7__iy_d_() {
+        void ld_d_res_7__iy_d_() {
             tStates += 2;
             var offset = (SByte)Read8(pc++);
             ushort addr = (ushort)(r1.iy + offset);
@@ -8235,7 +8235,7 @@ namespace Z80 {
             Write8(addr, r1.d);
         }
         
-        protected void ld_d_sla__ix_d_() {
+        void ld_d_sla__ix_d_() {
             tStates += 2;
             var offset = (SByte)Read8(pc++);
             ushort addr = (ushort)(r1.ix + offset);
@@ -8244,7 +8244,7 @@ namespace Z80 {
             
         }
         
-        protected void ld_d_sla__iy_d_() {
+        void ld_d_sla__iy_d_() {
             tStates += 2;
             var offset = (SByte)Read8(pc++);
             ushort addr = (ushort)(r1.iy + offset);
@@ -8253,7 +8253,7 @@ namespace Z80 {
             
         }
         
-        protected void ld_d_sll__ix_d_() {
+        void ld_d_sll__ix_d_() {
             tStates += 2;
             var offset = (SByte)Read8(pc++);
             ushort addr = (ushort)(r1.ix + offset);
@@ -8262,7 +8262,7 @@ namespace Z80 {
             
         }
         
-        protected void ld_d_sll__iy_d_() {
+        void ld_d_sll__iy_d_() {
             tStates += 2;
             var offset = (SByte)Read8(pc++);
             ushort addr = (ushort)(r1.iy + offset);
@@ -8271,7 +8271,7 @@ namespace Z80 {
             
         }
         
-        protected void ld_d_sra__ix_d_() {
+        void ld_d_sra__ix_d_() {
             tStates += 2;
             var offset = (SByte)Read8(pc++);
             ushort addr = (ushort)(r1.ix + offset);
@@ -8280,7 +8280,7 @@ namespace Z80 {
             
         }
         
-        protected void ld_d_sra__iy_d_() {
+        void ld_d_sra__iy_d_() {
             tStates += 2;
             var offset = (SByte)Read8(pc++);
             ushort addr = (ushort)(r1.iy + offset);
@@ -8289,7 +8289,7 @@ namespace Z80 {
             
         }
         
-        protected void ld_d_srl__ix_d_() {
+        void ld_d_srl__ix_d_() {
             tStates += 2;
             var offset = (SByte)Read8(pc++);
             ushort addr = (ushort)(r1.ix + offset);
@@ -8298,7 +8298,7 @@ namespace Z80 {
             
         }
         
-        protected void ld_d_srl__iy_d_() {
+        void ld_d_srl__iy_d_() {
             tStates += 2;
             var offset = (SByte)Read8(pc++);
             ushort addr = (ushort)(r1.iy + offset);
@@ -8307,7 +8307,7 @@ namespace Z80 {
             
         }
         
-        protected void ld_d_rl__ix_d_() {
+        void ld_d_rl__ix_d_() {
             tStates += 2;
             var offset = (SByte)Read8(pc++);
             ushort addr = (ushort)(r1.ix + offset);
@@ -8315,7 +8315,7 @@ namespace Z80 {
             Write8(addr, r1.d);            
         }
         
-        protected void ld_d_rl__iy_d_() {
+        void ld_d_rl__iy_d_() {
             tStates += 2;
             var offset = (SByte)Read8(pc++);
             ushort addr = (ushort)(r1.iy + offset);
@@ -8323,7 +8323,7 @@ namespace Z80 {
             Write8(addr, r1.d);            
         }
         
-        protected void ld_d_rlc__ix_d_() {
+        void ld_d_rlc__ix_d_() {
             tStates += 2;
             var offset = (SByte)Read8(pc++);
             ushort addr = (ushort)(r1.ix + offset);
@@ -8331,7 +8331,7 @@ namespace Z80 {
             Write8(addr, r1.d);            
         }
         
-        protected void ld_d_rlc__iy_d_() {
+        void ld_d_rlc__iy_d_() {
             tStates += 2;
             var offset = (SByte)Read8(pc++);
             ushort addr = (ushort)(r1.iy + offset);
@@ -8339,7 +8339,7 @@ namespace Z80 {
             Write8(addr, r1.d);            
         }
         
-        protected void ld_d_rr__ix_d_() {
+        void ld_d_rr__ix_d_() {
             tStates += 2;
             var offset = (SByte)Read8(pc++);
             ushort addr = (ushort)(r1.ix + offset);
@@ -8347,7 +8347,7 @@ namespace Z80 {
             Write8(addr, r1.d);            
         }
         
-        protected void ld_d_rr__iy_d_() {
+        void ld_d_rr__iy_d_() {
             tStates += 2;
             var offset = (SByte)Read8(pc++);
             ushort addr = (ushort)(r1.iy + offset);
@@ -8355,7 +8355,7 @@ namespace Z80 {
             Write8(addr, r1.d);            
         }
         
-        protected void ld_d_rrc__ix_d_() {
+        void ld_d_rrc__ix_d_() {
             tStates += 2;
             var offset = (SByte)Read8(pc++);
             ushort addr = (ushort)(r1.ix + offset);
@@ -8363,7 +8363,7 @@ namespace Z80 {
             Write8(addr, r1.d);            
         }
         
-        protected void ld_d_rrc__iy_d_() {
+        void ld_d_rrc__iy_d_() {
             tStates += 2;
             var offset = (SByte)Read8(pc++);
             ushort addr = (ushort)(r1.iy + offset);
@@ -8371,7 +8371,7 @@ namespace Z80 {
             Write8(addr, r1.d);            
         }
         
-        protected void ld_e_set_0__ix_d_() {
+        void ld_e_set_0__ix_d_() {
             tStates += 2;
             var offset = (SByte)Read8(pc++);
             ushort addr = (ushort)(r1.ix + offset);
@@ -8379,7 +8379,7 @@ namespace Z80 {
             Write8(addr, r1.e);
         }
         
-        protected void ld_e_set_0__iy_d_() {
+        void ld_e_set_0__iy_d_() {
             tStates += 2;
             var offset = (SByte)Read8(pc++);
             ushort addr = (ushort)(r1.iy + offset);
@@ -8387,7 +8387,7 @@ namespace Z80 {
             Write8(addr, r1.e);
         }
         
-        protected void ld_e_set_1__ix_d_() {
+        void ld_e_set_1__ix_d_() {
             tStates += 2;
             var offset = (SByte)Read8(pc++);
             ushort addr = (ushort)(r1.ix + offset);
@@ -8395,7 +8395,7 @@ namespace Z80 {
             Write8(addr, r1.e);
         }
         
-        protected void ld_e_set_1__iy_d_() {
+        void ld_e_set_1__iy_d_() {
             tStates += 2;
             var offset = (SByte)Read8(pc++);
             ushort addr = (ushort)(r1.iy + offset);
@@ -8403,7 +8403,7 @@ namespace Z80 {
             Write8(addr, r1.e);
         }
         
-        protected void ld_e_set_2__ix_d_() {
+        void ld_e_set_2__ix_d_() {
             tStates += 2;
             var offset = (SByte)Read8(pc++);
             ushort addr = (ushort)(r1.ix + offset);
@@ -8411,7 +8411,7 @@ namespace Z80 {
             Write8(addr, r1.e);
         }
         
-        protected void ld_e_set_2__iy_d_() {
+        void ld_e_set_2__iy_d_() {
             tStates += 2;
             var offset = (SByte)Read8(pc++);
             ushort addr = (ushort)(r1.iy + offset);
@@ -8419,7 +8419,7 @@ namespace Z80 {
             Write8(addr, r1.e);
         }
         
-        protected void ld_e_set_3__ix_d_() {
+        void ld_e_set_3__ix_d_() {
             tStates += 2;
             var offset = (SByte)Read8(pc++);
             ushort addr = (ushort)(r1.ix + offset);
@@ -8427,7 +8427,7 @@ namespace Z80 {
             Write8(addr, r1.e);
         }
         
-        protected void ld_e_set_3__iy_d_() {
+        void ld_e_set_3__iy_d_() {
             tStates += 2;
             var offset = (SByte)Read8(pc++);
             ushort addr = (ushort)(r1.iy + offset);
@@ -8435,7 +8435,7 @@ namespace Z80 {
             Write8(addr, r1.e);
         }
         
-        protected void ld_e_set_4__ix_d_() {
+        void ld_e_set_4__ix_d_() {
             tStates += 2;
             var offset = (SByte)Read8(pc++);
             ushort addr = (ushort)(r1.ix + offset);
@@ -8443,7 +8443,7 @@ namespace Z80 {
             Write8(addr, r1.e);
         }
         
-        protected void ld_e_set_4__iy_d_() {
+        void ld_e_set_4__iy_d_() {
             tStates += 2;
             var offset = (SByte)Read8(pc++);
             ushort addr = (ushort)(r1.iy + offset);
@@ -8451,7 +8451,7 @@ namespace Z80 {
             Write8(addr, r1.e);
         }
         
-        protected void ld_e_set_5__ix_d_() {
+        void ld_e_set_5__ix_d_() {
             tStates += 2;
             var offset = (SByte)Read8(pc++);
             ushort addr = (ushort)(r1.ix + offset);
@@ -8459,7 +8459,7 @@ namespace Z80 {
             Write8(addr, r1.e);
         }
         
-        protected void ld_e_set_5__iy_d_() {
+        void ld_e_set_5__iy_d_() {
             tStates += 2;
             var offset = (SByte)Read8(pc++);
             ushort addr = (ushort)(r1.iy + offset);
@@ -8467,7 +8467,7 @@ namespace Z80 {
             Write8(addr, r1.e);
         }
         
-        protected void ld_e_set_6__ix_d_() {
+        void ld_e_set_6__ix_d_() {
             tStates += 2;
             var offset = (SByte)Read8(pc++);
             ushort addr = (ushort)(r1.ix + offset);
@@ -8475,7 +8475,7 @@ namespace Z80 {
             Write8(addr, r1.e);
         }
         
-        protected void ld_e_set_6__iy_d_() {
+        void ld_e_set_6__iy_d_() {
             tStates += 2;
             var offset = (SByte)Read8(pc++);
             ushort addr = (ushort)(r1.iy + offset);
@@ -8483,7 +8483,7 @@ namespace Z80 {
             Write8(addr, r1.e);
         }
         
-        protected void ld_e_set_7__ix_d_() {
+        void ld_e_set_7__ix_d_() {
             tStates += 2;
             var offset = (SByte)Read8(pc++);
             ushort addr = (ushort)(r1.ix + offset);
@@ -8491,7 +8491,7 @@ namespace Z80 {
             Write8(addr, r1.e);
         }
         
-        protected void ld_e_set_7__iy_d_() {
+        void ld_e_set_7__iy_d_() {
             tStates += 2;
             var offset = (SByte)Read8(pc++);
             ushort addr = (ushort)(r1.iy + offset);
@@ -8499,7 +8499,7 @@ namespace Z80 {
             Write8(addr, r1.e);
         }
         
-        protected void ld_e_res_0__ix_d_() {
+        void ld_e_res_0__ix_d_() {
             tStates += 2;
             var offset = (SByte)Read8(pc++);
             ushort addr = (ushort)(r1.ix + offset);
@@ -8507,7 +8507,7 @@ namespace Z80 {
             Write8(addr, r1.e);
         }
         
-        protected void ld_e_res_0__iy_d_() {
+        void ld_e_res_0__iy_d_() {
             tStates += 2;
             var offset = (SByte)Read8(pc++);
             ushort addr = (ushort)(r1.iy + offset);
@@ -8515,7 +8515,7 @@ namespace Z80 {
             Write8(addr, r1.e);
         }
         
-        protected void ld_e_res_1__ix_d_() {
+        void ld_e_res_1__ix_d_() {
             tStates += 2;
             var offset = (SByte)Read8(pc++);
             ushort addr = (ushort)(r1.ix + offset);
@@ -8523,7 +8523,7 @@ namespace Z80 {
             Write8(addr, r1.e);
         }
         
-        protected void ld_e_res_1__iy_d_() {
+        void ld_e_res_1__iy_d_() {
             tStates += 2;
             var offset = (SByte)Read8(pc++);
             ushort addr = (ushort)(r1.iy + offset);
@@ -8531,7 +8531,7 @@ namespace Z80 {
             Write8(addr, r1.e);
         }
         
-        protected void ld_e_res_2__ix_d_() {
+        void ld_e_res_2__ix_d_() {
             tStates += 2;
             var offset = (SByte)Read8(pc++);
             ushort addr = (ushort)(r1.ix + offset);
@@ -8539,7 +8539,7 @@ namespace Z80 {
             Write8(addr, r1.e);
         }
         
-        protected void ld_e_res_2__iy_d_() {
+        void ld_e_res_2__iy_d_() {
             tStates += 2;
             var offset = (SByte)Read8(pc++);
             ushort addr = (ushort)(r1.iy + offset);
@@ -8547,7 +8547,7 @@ namespace Z80 {
             Write8(addr, r1.e);
         }
         
-        protected void ld_e_res_3__ix_d_() {
+        void ld_e_res_3__ix_d_() {
             tStates += 2;
             var offset = (SByte)Read8(pc++);
             ushort addr = (ushort)(r1.ix + offset);
@@ -8555,7 +8555,7 @@ namespace Z80 {
             Write8(addr, r1.e);
         }
         
-        protected void ld_e_res_3__iy_d_() {
+        void ld_e_res_3__iy_d_() {
             tStates += 2;
             var offset = (SByte)Read8(pc++);
             ushort addr = (ushort)(r1.iy + offset);
@@ -8563,7 +8563,7 @@ namespace Z80 {
             Write8(addr, r1.e);
         }
         
-        protected void ld_e_res_4__ix_d_() {
+        void ld_e_res_4__ix_d_() {
             tStates += 2;
             var offset = (SByte)Read8(pc++);
             ushort addr = (ushort)(r1.ix + offset);
@@ -8571,7 +8571,7 @@ namespace Z80 {
             Write8(addr, r1.e);
         }
         
-        protected void ld_e_res_4__iy_d_() {
+        void ld_e_res_4__iy_d_() {
             tStates += 2;
             var offset = (SByte)Read8(pc++);
             ushort addr = (ushort)(r1.iy + offset);
@@ -8579,7 +8579,7 @@ namespace Z80 {
             Write8(addr, r1.e);
         }
         
-        protected void ld_e_res_5__ix_d_() {
+        void ld_e_res_5__ix_d_() {
             tStates += 2;
             var offset = (SByte)Read8(pc++);
             ushort addr = (ushort)(r1.ix + offset);
@@ -8587,7 +8587,7 @@ namespace Z80 {
             Write8(addr, r1.e);
         }
         
-        protected void ld_e_res_5__iy_d_() {
+        void ld_e_res_5__iy_d_() {
             tStates += 2;
             var offset = (SByte)Read8(pc++);
             ushort addr = (ushort)(r1.iy + offset);
@@ -8595,7 +8595,7 @@ namespace Z80 {
             Write8(addr, r1.e);
         }
         
-        protected void ld_e_res_6__ix_d_() {
+        void ld_e_res_6__ix_d_() {
             tStates += 2;
             var offset = (SByte)Read8(pc++);
             ushort addr = (ushort)(r1.ix + offset);
@@ -8603,7 +8603,7 @@ namespace Z80 {
             Write8(addr, r1.e);
         }
         
-        protected void ld_e_res_6__iy_d_() {
+        void ld_e_res_6__iy_d_() {
             tStates += 2;
             var offset = (SByte)Read8(pc++);
             ushort addr = (ushort)(r1.iy + offset);
@@ -8611,7 +8611,7 @@ namespace Z80 {
             Write8(addr, r1.e);
         }
         
-        protected void ld_e_res_7__ix_d_() {
+        void ld_e_res_7__ix_d_() {
             tStates += 2;
             var offset = (SByte)Read8(pc++);
             ushort addr = (ushort)(r1.ix + offset);
@@ -8619,7 +8619,7 @@ namespace Z80 {
             Write8(addr, r1.e);
         }
         
-        protected void ld_e_res_7__iy_d_() {
+        void ld_e_res_7__iy_d_() {
             tStates += 2;
             var offset = (SByte)Read8(pc++);
             ushort addr = (ushort)(r1.iy + offset);
@@ -8627,7 +8627,7 @@ namespace Z80 {
             Write8(addr, r1.e);
         }
         
-        protected void ld_e_sla__ix_d_() {
+        void ld_e_sla__ix_d_() {
             tStates += 2;
             var offset = (SByte)Read8(pc++);
             ushort addr = (ushort)(r1.ix + offset);
@@ -8636,7 +8636,7 @@ namespace Z80 {
             
         }
         
-        protected void ld_e_sla__iy_d_() {
+        void ld_e_sla__iy_d_() {
             tStates += 2;
             var offset = (SByte)Read8(pc++);
             ushort addr = (ushort)(r1.iy + offset);
@@ -8645,7 +8645,7 @@ namespace Z80 {
             
         }
         
-        protected void ld_e_sll__ix_d_() {
+        void ld_e_sll__ix_d_() {
             tStates += 2;
             var offset = (SByte)Read8(pc++);
             ushort addr = (ushort)(r1.ix + offset);
@@ -8654,7 +8654,7 @@ namespace Z80 {
             
         }
         
-        protected void ld_e_sll__iy_d_() {
+        void ld_e_sll__iy_d_() {
             tStates += 2;
             var offset = (SByte)Read8(pc++);
             ushort addr = (ushort)(r1.iy + offset);
@@ -8663,7 +8663,7 @@ namespace Z80 {
             
         }
         
-        protected void ld_e_sra__ix_d_() {
+        void ld_e_sra__ix_d_() {
             tStates += 2;
             var offset = (SByte)Read8(pc++);
             ushort addr = (ushort)(r1.ix + offset);
@@ -8672,7 +8672,7 @@ namespace Z80 {
             
         }
         
-        protected void ld_e_sra__iy_d_() {
+        void ld_e_sra__iy_d_() {
             tStates += 2;
             var offset = (SByte)Read8(pc++);
             ushort addr = (ushort)(r1.iy + offset);
@@ -8681,7 +8681,7 @@ namespace Z80 {
             
         }
         
-        protected void ld_e_srl__ix_d_() {
+        void ld_e_srl__ix_d_() {
             tStates += 2;
             var offset = (SByte)Read8(pc++);
             ushort addr = (ushort)(r1.ix + offset);
@@ -8690,7 +8690,7 @@ namespace Z80 {
             
         }
         
-        protected void ld_e_srl__iy_d_() {
+        void ld_e_srl__iy_d_() {
             tStates += 2;
             var offset = (SByte)Read8(pc++);
             ushort addr = (ushort)(r1.iy + offset);
@@ -8699,7 +8699,7 @@ namespace Z80 {
             
         }
         
-        protected void ld_e_rl__ix_d_() {
+        void ld_e_rl__ix_d_() {
             tStates += 2;
             var offset = (SByte)Read8(pc++);
             ushort addr = (ushort)(r1.ix + offset);
@@ -8707,7 +8707,7 @@ namespace Z80 {
             Write8(addr, r1.e);            
         }
         
-        protected void ld_e_rl__iy_d_() {
+        void ld_e_rl__iy_d_() {
             tStates += 2;
             var offset = (SByte)Read8(pc++);
             ushort addr = (ushort)(r1.iy + offset);
@@ -8715,7 +8715,7 @@ namespace Z80 {
             Write8(addr, r1.e);            
         }
         
-        protected void ld_e_rlc__ix_d_() {
+        void ld_e_rlc__ix_d_() {
             tStates += 2;
             var offset = (SByte)Read8(pc++);
             ushort addr = (ushort)(r1.ix + offset);
@@ -8723,7 +8723,7 @@ namespace Z80 {
             Write8(addr, r1.e);            
         }
         
-        protected void ld_e_rlc__iy_d_() {
+        void ld_e_rlc__iy_d_() {
             tStates += 2;
             var offset = (SByte)Read8(pc++);
             ushort addr = (ushort)(r1.iy + offset);
@@ -8731,7 +8731,7 @@ namespace Z80 {
             Write8(addr, r1.e);            
         }
         
-        protected void ld_e_rr__ix_d_() {
+        void ld_e_rr__ix_d_() {
             tStates += 2;
             var offset = (SByte)Read8(pc++);
             ushort addr = (ushort)(r1.ix + offset);
@@ -8739,7 +8739,7 @@ namespace Z80 {
             Write8(addr, r1.e);            
         }
         
-        protected void ld_e_rr__iy_d_() {
+        void ld_e_rr__iy_d_() {
             tStates += 2;
             var offset = (SByte)Read8(pc++);
             ushort addr = (ushort)(r1.iy + offset);
@@ -8747,7 +8747,7 @@ namespace Z80 {
             Write8(addr, r1.e);            
         }
         
-        protected void ld_e_rrc__ix_d_() {
+        void ld_e_rrc__ix_d_() {
             tStates += 2;
             var offset = (SByte)Read8(pc++);
             ushort addr = (ushort)(r1.ix + offset);
@@ -8755,7 +8755,7 @@ namespace Z80 {
             Write8(addr, r1.e);            
         }
         
-        protected void ld_e_rrc__iy_d_() {
+        void ld_e_rrc__iy_d_() {
             tStates += 2;
             var offset = (SByte)Read8(pc++);
             ushort addr = (ushort)(r1.iy + offset);
@@ -8763,7 +8763,7 @@ namespace Z80 {
             Write8(addr, r1.e);            
         }
         
-        protected void ld_h_set_0__ix_d_() {
+        void ld_h_set_0__ix_d_() {
             tStates += 2;
             var offset = (SByte)Read8(pc++);
             ushort addr = (ushort)(r1.ix + offset);
@@ -8771,7 +8771,7 @@ namespace Z80 {
             Write8(addr, r1.h);
         }
         
-        protected void ld_h_set_0__iy_d_() {
+        void ld_h_set_0__iy_d_() {
             tStates += 2;
             var offset = (SByte)Read8(pc++);
             ushort addr = (ushort)(r1.iy + offset);
@@ -8779,7 +8779,7 @@ namespace Z80 {
             Write8(addr, r1.h);
         }
         
-        protected void ld_h_set_1__ix_d_() {
+        void ld_h_set_1__ix_d_() {
             tStates += 2;
             var offset = (SByte)Read8(pc++);
             ushort addr = (ushort)(r1.ix + offset);
@@ -8787,7 +8787,7 @@ namespace Z80 {
             Write8(addr, r1.h);
         }
         
-        protected void ld_h_set_1__iy_d_() {
+        void ld_h_set_1__iy_d_() {
             tStates += 2;
             var offset = (SByte)Read8(pc++);
             ushort addr = (ushort)(r1.iy + offset);
@@ -8795,7 +8795,7 @@ namespace Z80 {
             Write8(addr, r1.h);
         }
         
-        protected void ld_h_set_2__ix_d_() {
+        void ld_h_set_2__ix_d_() {
             tStates += 2;
             var offset = (SByte)Read8(pc++);
             ushort addr = (ushort)(r1.ix + offset);
@@ -8803,7 +8803,7 @@ namespace Z80 {
             Write8(addr, r1.h);
         }
         
-        protected void ld_h_set_2__iy_d_() {
+        void ld_h_set_2__iy_d_() {
             tStates += 2;
             var offset = (SByte)Read8(pc++);
             ushort addr = (ushort)(r1.iy + offset);
@@ -8811,7 +8811,7 @@ namespace Z80 {
             Write8(addr, r1.h);
         }
         
-        protected void ld_h_set_3__ix_d_() {
+        void ld_h_set_3__ix_d_() {
             tStates += 2;
             var offset = (SByte)Read8(pc++);
             ushort addr = (ushort)(r1.ix + offset);
@@ -8819,7 +8819,7 @@ namespace Z80 {
             Write8(addr, r1.h);
         }
         
-        protected void ld_h_set_3__iy_d_() {
+        void ld_h_set_3__iy_d_() {
             tStates += 2;
             var offset = (SByte)Read8(pc++);
             ushort addr = (ushort)(r1.iy + offset);
@@ -8827,7 +8827,7 @@ namespace Z80 {
             Write8(addr, r1.h);
         }
         
-        protected void ld_h_set_4__ix_d_() {
+        void ld_h_set_4__ix_d_() {
             tStates += 2;
             var offset = (SByte)Read8(pc++);
             ushort addr = (ushort)(r1.ix + offset);
@@ -8835,7 +8835,7 @@ namespace Z80 {
             Write8(addr, r1.h);
         }
         
-        protected void ld_h_set_4__iy_d_() {
+        void ld_h_set_4__iy_d_() {
             tStates += 2;
             var offset = (SByte)Read8(pc++);
             ushort addr = (ushort)(r1.iy + offset);
@@ -8843,7 +8843,7 @@ namespace Z80 {
             Write8(addr, r1.h);
         }
         
-        protected void ld_h_set_5__ix_d_() {
+        void ld_h_set_5__ix_d_() {
             tStates += 2;
             var offset = (SByte)Read8(pc++);
             ushort addr = (ushort)(r1.ix + offset);
@@ -8851,7 +8851,7 @@ namespace Z80 {
             Write8(addr, r1.h);
         }
         
-        protected void ld_h_set_5__iy_d_() {
+        void ld_h_set_5__iy_d_() {
             tStates += 2;
             var offset = (SByte)Read8(pc++);
             ushort addr = (ushort)(r1.iy + offset);
@@ -8859,7 +8859,7 @@ namespace Z80 {
             Write8(addr, r1.h);
         }
         
-        protected void ld_h_set_6__ix_d_() {
+        void ld_h_set_6__ix_d_() {
             tStates += 2;
             var offset = (SByte)Read8(pc++);
             ushort addr = (ushort)(r1.ix + offset);
@@ -8867,7 +8867,7 @@ namespace Z80 {
             Write8(addr, r1.h);
         }
         
-        protected void ld_h_set_6__iy_d_() {
+        void ld_h_set_6__iy_d_() {
             tStates += 2;
             var offset = (SByte)Read8(pc++);
             ushort addr = (ushort)(r1.iy + offset);
@@ -8875,7 +8875,7 @@ namespace Z80 {
             Write8(addr, r1.h);
         }
         
-        protected void ld_h_set_7__ix_d_() {
+        void ld_h_set_7__ix_d_() {
             tStates += 2;
             var offset = (SByte)Read8(pc++);
             ushort addr = (ushort)(r1.ix + offset);
@@ -8883,7 +8883,7 @@ namespace Z80 {
             Write8(addr, r1.h);
         }
         
-        protected void ld_h_set_7__iy_d_() {
+        void ld_h_set_7__iy_d_() {
             tStates += 2;
             var offset = (SByte)Read8(pc++);
             ushort addr = (ushort)(r1.iy + offset);
@@ -8891,7 +8891,7 @@ namespace Z80 {
             Write8(addr, r1.h);
         }
         
-        protected void ld_h_res_0__ix_d_() {
+        void ld_h_res_0__ix_d_() {
             tStates += 2;
             var offset = (SByte)Read8(pc++);
             ushort addr = (ushort)(r1.ix + offset);
@@ -8899,7 +8899,7 @@ namespace Z80 {
             Write8(addr, r1.h);
         }
         
-        protected void ld_h_res_0__iy_d_() {
+        void ld_h_res_0__iy_d_() {
             tStates += 2;
             var offset = (SByte)Read8(pc++);
             ushort addr = (ushort)(r1.iy + offset);
@@ -8907,7 +8907,7 @@ namespace Z80 {
             Write8(addr, r1.h);
         }
         
-        protected void ld_h_res_1__ix_d_() {
+        void ld_h_res_1__ix_d_() {
             tStates += 2;
             var offset = (SByte)Read8(pc++);
             ushort addr = (ushort)(r1.ix + offset);
@@ -8915,7 +8915,7 @@ namespace Z80 {
             Write8(addr, r1.h);
         }
         
-        protected void ld_h_res_1__iy_d_() {
+        void ld_h_res_1__iy_d_() {
             tStates += 2;
             var offset = (SByte)Read8(pc++);
             ushort addr = (ushort)(r1.iy + offset);
@@ -8923,7 +8923,7 @@ namespace Z80 {
             Write8(addr, r1.h);
         }
         
-        protected void ld_h_res_2__ix_d_() {
+        void ld_h_res_2__ix_d_() {
             tStates += 2;
             var offset = (SByte)Read8(pc++);
             ushort addr = (ushort)(r1.ix + offset);
@@ -8931,7 +8931,7 @@ namespace Z80 {
             Write8(addr, r1.h);
         }
         
-        protected void ld_h_res_2__iy_d_() {
+        void ld_h_res_2__iy_d_() {
             tStates += 2;
             var offset = (SByte)Read8(pc++);
             ushort addr = (ushort)(r1.iy + offset);
@@ -8939,7 +8939,7 @@ namespace Z80 {
             Write8(addr, r1.h);
         }
         
-        protected void ld_h_res_3__ix_d_() {
+        void ld_h_res_3__ix_d_() {
             tStates += 2;
             var offset = (SByte)Read8(pc++);
             ushort addr = (ushort)(r1.ix + offset);
@@ -8947,7 +8947,7 @@ namespace Z80 {
             Write8(addr, r1.h);
         }
         
-        protected void ld_h_res_3__iy_d_() {
+        void ld_h_res_3__iy_d_() {
             tStates += 2;
             var offset = (SByte)Read8(pc++);
             ushort addr = (ushort)(r1.iy + offset);
@@ -8955,7 +8955,7 @@ namespace Z80 {
             Write8(addr, r1.h);
         }
         
-        protected void ld_h_res_4__ix_d_() {
+        void ld_h_res_4__ix_d_() {
             tStates += 2;
             var offset = (SByte)Read8(pc++);
             ushort addr = (ushort)(r1.ix + offset);
@@ -8963,7 +8963,7 @@ namespace Z80 {
             Write8(addr, r1.h);
         }
         
-        protected void ld_h_res_4__iy_d_() {
+        void ld_h_res_4__iy_d_() {
             tStates += 2;
             var offset = (SByte)Read8(pc++);
             ushort addr = (ushort)(r1.iy + offset);
@@ -8971,7 +8971,7 @@ namespace Z80 {
             Write8(addr, r1.h);
         }
         
-        protected void ld_h_res_5__ix_d_() {
+        void ld_h_res_5__ix_d_() {
             tStates += 2;
             var offset = (SByte)Read8(pc++);
             ushort addr = (ushort)(r1.ix + offset);
@@ -8979,7 +8979,7 @@ namespace Z80 {
             Write8(addr, r1.h);
         }
         
-        protected void ld_h_res_5__iy_d_() {
+        void ld_h_res_5__iy_d_() {
             tStates += 2;
             var offset = (SByte)Read8(pc++);
             ushort addr = (ushort)(r1.iy + offset);
@@ -8987,7 +8987,7 @@ namespace Z80 {
             Write8(addr, r1.h);
         }
         
-        protected void ld_h_res_6__ix_d_() {
+        void ld_h_res_6__ix_d_() {
             tStates += 2;
             var offset = (SByte)Read8(pc++);
             ushort addr = (ushort)(r1.ix + offset);
@@ -8995,7 +8995,7 @@ namespace Z80 {
             Write8(addr, r1.h);
         }
         
-        protected void ld_h_res_6__iy_d_() {
+        void ld_h_res_6__iy_d_() {
             tStates += 2;
             var offset = (SByte)Read8(pc++);
             ushort addr = (ushort)(r1.iy + offset);
@@ -9003,7 +9003,7 @@ namespace Z80 {
             Write8(addr, r1.h);
         }
         
-        protected void ld_h_res_7__ix_d_() {
+        void ld_h_res_7__ix_d_() {
             tStates += 2;
             var offset = (SByte)Read8(pc++);
             ushort addr = (ushort)(r1.ix + offset);
@@ -9011,7 +9011,7 @@ namespace Z80 {
             Write8(addr, r1.h);
         }
         
-        protected void ld_h_res_7__iy_d_() {
+        void ld_h_res_7__iy_d_() {
             tStates += 2;
             var offset = (SByte)Read8(pc++);
             ushort addr = (ushort)(r1.iy + offset);
@@ -9019,7 +9019,7 @@ namespace Z80 {
             Write8(addr, r1.h);
         }
         
-        protected void ld_h_sla__ix_d_() {
+        void ld_h_sla__ix_d_() {
             tStates += 2;
             var offset = (SByte)Read8(pc++);
             ushort addr = (ushort)(r1.ix + offset);
@@ -9028,7 +9028,7 @@ namespace Z80 {
             
         }
         
-        protected void ld_h_sla__iy_d_() {
+        void ld_h_sla__iy_d_() {
             tStates += 2;
             var offset = (SByte)Read8(pc++);
             ushort addr = (ushort)(r1.iy + offset);
@@ -9037,7 +9037,7 @@ namespace Z80 {
             
         }
         
-        protected void ld_h_sll__ix_d_() {
+        void ld_h_sll__ix_d_() {
             tStates += 2;
             var offset = (SByte)Read8(pc++);
             ushort addr = (ushort)(r1.ix + offset);
@@ -9046,7 +9046,7 @@ namespace Z80 {
             
         }
         
-        protected void ld_h_sll__iy_d_() {
+        void ld_h_sll__iy_d_() {
             tStates += 2;
             var offset = (SByte)Read8(pc++);
             ushort addr = (ushort)(r1.iy + offset);
@@ -9055,7 +9055,7 @@ namespace Z80 {
             
         }
         
-        protected void ld_h_sra__ix_d_() {
+        void ld_h_sra__ix_d_() {
             tStates += 2;
             var offset = (SByte)Read8(pc++);
             ushort addr = (ushort)(r1.ix + offset);
@@ -9064,7 +9064,7 @@ namespace Z80 {
             
         }
         
-        protected void ld_h_sra__iy_d_() {
+        void ld_h_sra__iy_d_() {
             tStates += 2;
             var offset = (SByte)Read8(pc++);
             ushort addr = (ushort)(r1.iy + offset);
@@ -9073,7 +9073,7 @@ namespace Z80 {
             
         }
         
-        protected void ld_h_srl__ix_d_() {
+        void ld_h_srl__ix_d_() {
             tStates += 2;
             var offset = (SByte)Read8(pc++);
             ushort addr = (ushort)(r1.ix + offset);
@@ -9082,7 +9082,7 @@ namespace Z80 {
             
         }
         
-        protected void ld_h_srl__iy_d_() {
+        void ld_h_srl__iy_d_() {
             tStates += 2;
             var offset = (SByte)Read8(pc++);
             ushort addr = (ushort)(r1.iy + offset);
@@ -9091,7 +9091,7 @@ namespace Z80 {
             
         }
         
-        protected void ld_h_rl__ix_d_() {
+        void ld_h_rl__ix_d_() {
             tStates += 2;
             var offset = (SByte)Read8(pc++);
             ushort addr = (ushort)(r1.ix + offset);
@@ -9099,7 +9099,7 @@ namespace Z80 {
             Write8(addr, r1.h);            
         }
         
-        protected void ld_h_rl__iy_d_() {
+        void ld_h_rl__iy_d_() {
             tStates += 2;
             var offset = (SByte)Read8(pc++);
             ushort addr = (ushort)(r1.iy + offset);
@@ -9107,7 +9107,7 @@ namespace Z80 {
             Write8(addr, r1.h);            
         }
         
-        protected void ld_h_rlc__ix_d_() {
+        void ld_h_rlc__ix_d_() {
             tStates += 2;
             var offset = (SByte)Read8(pc++);
             ushort addr = (ushort)(r1.ix + offset);
@@ -9115,7 +9115,7 @@ namespace Z80 {
             Write8(addr, r1.h);            
         }
         
-        protected void ld_h_rlc__iy_d_() {
+        void ld_h_rlc__iy_d_() {
             tStates += 2;
             var offset = (SByte)Read8(pc++);
             ushort addr = (ushort)(r1.iy + offset);
@@ -9123,7 +9123,7 @@ namespace Z80 {
             Write8(addr, r1.h);            
         }
         
-        protected void ld_h_rr__ix_d_() {
+        void ld_h_rr__ix_d_() {
             tStates += 2;
             var offset = (SByte)Read8(pc++);
             ushort addr = (ushort)(r1.ix + offset);
@@ -9131,7 +9131,7 @@ namespace Z80 {
             Write8(addr, r1.h);            
         }
         
-        protected void ld_h_rr__iy_d_() {
+        void ld_h_rr__iy_d_() {
             tStates += 2;
             var offset = (SByte)Read8(pc++);
             ushort addr = (ushort)(r1.iy + offset);
@@ -9139,7 +9139,7 @@ namespace Z80 {
             Write8(addr, r1.h);            
         }
         
-        protected void ld_h_rrc__ix_d_() {
+        void ld_h_rrc__ix_d_() {
             tStates += 2;
             var offset = (SByte)Read8(pc++);
             ushort addr = (ushort)(r1.ix + offset);
@@ -9147,7 +9147,7 @@ namespace Z80 {
             Write8(addr, r1.h);            
         }
         
-        protected void ld_h_rrc__iy_d_() {
+        void ld_h_rrc__iy_d_() {
             tStates += 2;
             var offset = (SByte)Read8(pc++);
             ushort addr = (ushort)(r1.iy + offset);
@@ -9155,7 +9155,7 @@ namespace Z80 {
             Write8(addr, r1.h);            
         }
         
-        protected void ld_l_set_0__ix_d_() {
+        void ld_l_set_0__ix_d_() {
             tStates += 2;
             var offset = (SByte)Read8(pc++);
             ushort addr = (ushort)(r1.ix + offset);
@@ -9163,7 +9163,7 @@ namespace Z80 {
             Write8(addr, r1.l);
         }
         
-        protected void ld_l_set_0__iy_d_() {
+        void ld_l_set_0__iy_d_() {
             tStates += 2;
             var offset = (SByte)Read8(pc++);
             ushort addr = (ushort)(r1.iy + offset);
@@ -9171,7 +9171,7 @@ namespace Z80 {
             Write8(addr, r1.l);
         }
         
-        protected void ld_l_set_1__ix_d_() {
+        void ld_l_set_1__ix_d_() {
             tStates += 2;
             var offset = (SByte)Read8(pc++);
             ushort addr = (ushort)(r1.ix + offset);
@@ -9179,7 +9179,7 @@ namespace Z80 {
             Write8(addr, r1.l);
         }
         
-        protected void ld_l_set_1__iy_d_() {
+        void ld_l_set_1__iy_d_() {
             tStates += 2;
             var offset = (SByte)Read8(pc++);
             ushort addr = (ushort)(r1.iy + offset);
@@ -9187,7 +9187,7 @@ namespace Z80 {
             Write8(addr, r1.l);
         }
         
-        protected void ld_l_set_2__ix_d_() {
+        void ld_l_set_2__ix_d_() {
             tStates += 2;
             var offset = (SByte)Read8(pc++);
             ushort addr = (ushort)(r1.ix + offset);
@@ -9195,7 +9195,7 @@ namespace Z80 {
             Write8(addr, r1.l);
         }
         
-        protected void ld_l_set_2__iy_d_() {
+        void ld_l_set_2__iy_d_() {
             tStates += 2;
             var offset = (SByte)Read8(pc++);
             ushort addr = (ushort)(r1.iy + offset);
@@ -9203,7 +9203,7 @@ namespace Z80 {
             Write8(addr, r1.l);
         }
         
-        protected void ld_l_set_3__ix_d_() {
+        void ld_l_set_3__ix_d_() {
             tStates += 2;
             var offset = (SByte)Read8(pc++);
             ushort addr = (ushort)(r1.ix + offset);
@@ -9211,7 +9211,7 @@ namespace Z80 {
             Write8(addr, r1.l);
         }
         
-        protected void ld_l_set_3__iy_d_() {
+        void ld_l_set_3__iy_d_() {
             tStates += 2;
             var offset = (SByte)Read8(pc++);
             ushort addr = (ushort)(r1.iy + offset);
@@ -9219,7 +9219,7 @@ namespace Z80 {
             Write8(addr, r1.l);
         }
         
-        protected void ld_l_set_4__ix_d_() {
+        void ld_l_set_4__ix_d_() {
             tStates += 2;
             var offset = (SByte)Read8(pc++);
             ushort addr = (ushort)(r1.ix + offset);
@@ -9227,7 +9227,7 @@ namespace Z80 {
             Write8(addr, r1.l);
         }
         
-        protected void ld_l_set_4__iy_d_() {
+        void ld_l_set_4__iy_d_() {
             tStates += 2;
             var offset = (SByte)Read8(pc++);
             ushort addr = (ushort)(r1.iy + offset);
@@ -9235,7 +9235,7 @@ namespace Z80 {
             Write8(addr, r1.l);
         }
         
-        protected void ld_l_set_5__ix_d_() {
+        void ld_l_set_5__ix_d_() {
             tStates += 2;
             var offset = (SByte)Read8(pc++);
             ushort addr = (ushort)(r1.ix + offset);
@@ -9243,7 +9243,7 @@ namespace Z80 {
             Write8(addr, r1.l);
         }
         
-        protected void ld_l_set_5__iy_d_() {
+        void ld_l_set_5__iy_d_() {
             tStates += 2;
             var offset = (SByte)Read8(pc++);
             ushort addr = (ushort)(r1.iy + offset);
@@ -9251,7 +9251,7 @@ namespace Z80 {
             Write8(addr, r1.l);
         }
         
-        protected void ld_l_set_6__ix_d_() {
+        void ld_l_set_6__ix_d_() {
             tStates += 2;
             var offset = (SByte)Read8(pc++);
             ushort addr = (ushort)(r1.ix + offset);
@@ -9259,7 +9259,7 @@ namespace Z80 {
             Write8(addr, r1.l);
         }
         
-        protected void ld_l_set_6__iy_d_() {
+        void ld_l_set_6__iy_d_() {
             tStates += 2;
             var offset = (SByte)Read8(pc++);
             ushort addr = (ushort)(r1.iy + offset);
@@ -9267,7 +9267,7 @@ namespace Z80 {
             Write8(addr, r1.l);
         }
         
-        protected void ld_l_set_7__ix_d_() {
+        void ld_l_set_7__ix_d_() {
             tStates += 2;
             var offset = (SByte)Read8(pc++);
             ushort addr = (ushort)(r1.ix + offset);
@@ -9275,7 +9275,7 @@ namespace Z80 {
             Write8(addr, r1.l);
         }
         
-        protected void ld_l_set_7__iy_d_() {
+        void ld_l_set_7__iy_d_() {
             tStates += 2;
             var offset = (SByte)Read8(pc++);
             ushort addr = (ushort)(r1.iy + offset);
@@ -9283,7 +9283,7 @@ namespace Z80 {
             Write8(addr, r1.l);
         }
         
-        protected void ld_l_res_0__ix_d_() {
+        void ld_l_res_0__ix_d_() {
             tStates += 2;
             var offset = (SByte)Read8(pc++);
             ushort addr = (ushort)(r1.ix + offset);
@@ -9291,7 +9291,7 @@ namespace Z80 {
             Write8(addr, r1.l);
         }
         
-        protected void ld_l_res_0__iy_d_() {
+        void ld_l_res_0__iy_d_() {
             tStates += 2;
             var offset = (SByte)Read8(pc++);
             ushort addr = (ushort)(r1.iy + offset);
@@ -9299,7 +9299,7 @@ namespace Z80 {
             Write8(addr, r1.l);
         }
         
-        protected void ld_l_res_1__ix_d_() {
+        void ld_l_res_1__ix_d_() {
             tStates += 2;
             var offset = (SByte)Read8(pc++);
             ushort addr = (ushort)(r1.ix + offset);
@@ -9307,7 +9307,7 @@ namespace Z80 {
             Write8(addr, r1.l);
         }
         
-        protected void ld_l_res_1__iy_d_() {
+        void ld_l_res_1__iy_d_() {
             tStates += 2;
             var offset = (SByte)Read8(pc++);
             ushort addr = (ushort)(r1.iy + offset);
@@ -9315,7 +9315,7 @@ namespace Z80 {
             Write8(addr, r1.l);
         }
         
-        protected void ld_l_res_2__ix_d_() {
+        void ld_l_res_2__ix_d_() {
             tStates += 2;
             var offset = (SByte)Read8(pc++);
             ushort addr = (ushort)(r1.ix + offset);
@@ -9323,7 +9323,7 @@ namespace Z80 {
             Write8(addr, r1.l);
         }
         
-        protected void ld_l_res_2__iy_d_() {
+        void ld_l_res_2__iy_d_() {
             tStates += 2;
             var offset = (SByte)Read8(pc++);
             ushort addr = (ushort)(r1.iy + offset);
@@ -9331,7 +9331,7 @@ namespace Z80 {
             Write8(addr, r1.l);
         }
         
-        protected void ld_l_res_3__ix_d_() {
+        void ld_l_res_3__ix_d_() {
             tStates += 2;
             var offset = (SByte)Read8(pc++);
             ushort addr = (ushort)(r1.ix + offset);
@@ -9339,7 +9339,7 @@ namespace Z80 {
             Write8(addr, r1.l);
         }
         
-        protected void ld_l_res_3__iy_d_() {
+        void ld_l_res_3__iy_d_() {
             tStates += 2;
             var offset = (SByte)Read8(pc++);
             ushort addr = (ushort)(r1.iy + offset);
@@ -9347,7 +9347,7 @@ namespace Z80 {
             Write8(addr, r1.l);
         }
         
-        protected void ld_l_res_4__ix_d_() {
+        void ld_l_res_4__ix_d_() {
             tStates += 2;
             var offset = (SByte)Read8(pc++);
             ushort addr = (ushort)(r1.ix + offset);
@@ -9355,7 +9355,7 @@ namespace Z80 {
             Write8(addr, r1.l);
         }
         
-        protected void ld_l_res_4__iy_d_() {
+        void ld_l_res_4__iy_d_() {
             tStates += 2;
             var offset = (SByte)Read8(pc++);
             ushort addr = (ushort)(r1.iy + offset);
@@ -9363,7 +9363,7 @@ namespace Z80 {
             Write8(addr, r1.l);
         }
         
-        protected void ld_l_res_5__ix_d_() {
+        void ld_l_res_5__ix_d_() {
             tStates += 2;
             var offset = (SByte)Read8(pc++);
             ushort addr = (ushort)(r1.ix + offset);
@@ -9371,7 +9371,7 @@ namespace Z80 {
             Write8(addr, r1.l);
         }
         
-        protected void ld_l_res_5__iy_d_() {
+        void ld_l_res_5__iy_d_() {
             tStates += 2;
             var offset = (SByte)Read8(pc++);
             ushort addr = (ushort)(r1.iy + offset);
@@ -9379,7 +9379,7 @@ namespace Z80 {
             Write8(addr, r1.l);
         }
         
-        protected void ld_l_res_6__ix_d_() {
+        void ld_l_res_6__ix_d_() {
             tStates += 2;
             var offset = (SByte)Read8(pc++);
             ushort addr = (ushort)(r1.ix + offset);
@@ -9387,7 +9387,7 @@ namespace Z80 {
             Write8(addr, r1.l);
         }
         
-        protected void ld_l_res_6__iy_d_() {
+        void ld_l_res_6__iy_d_() {
             tStates += 2;
             var offset = (SByte)Read8(pc++);
             ushort addr = (ushort)(r1.iy + offset);
@@ -9395,7 +9395,7 @@ namespace Z80 {
             Write8(addr, r1.l);
         }
         
-        protected void ld_l_res_7__ix_d_() {
+        void ld_l_res_7__ix_d_() {
             tStates += 2;
             var offset = (SByte)Read8(pc++);
             ushort addr = (ushort)(r1.ix + offset);
@@ -9403,7 +9403,7 @@ namespace Z80 {
             Write8(addr, r1.l);
         }
         
-        protected void ld_l_res_7__iy_d_() {
+        void ld_l_res_7__iy_d_() {
             tStates += 2;
             var offset = (SByte)Read8(pc++);
             ushort addr = (ushort)(r1.iy + offset);
@@ -9411,7 +9411,7 @@ namespace Z80 {
             Write8(addr, r1.l);
         }
         
-        protected void ld_l_sla__ix_d_() {
+        void ld_l_sla__ix_d_() {
             tStates += 2;
             var offset = (SByte)Read8(pc++);
             ushort addr = (ushort)(r1.ix + offset);
@@ -9420,7 +9420,7 @@ namespace Z80 {
             
         }
         
-        protected void ld_l_sla__iy_d_() {
+        void ld_l_sla__iy_d_() {
             tStates += 2;
             var offset = (SByte)Read8(pc++);
             ushort addr = (ushort)(r1.iy + offset);
@@ -9429,7 +9429,7 @@ namespace Z80 {
             
         }
         
-        protected void ld_l_sll__ix_d_() {
+        void ld_l_sll__ix_d_() {
             tStates += 2;
             var offset = (SByte)Read8(pc++);
             ushort addr = (ushort)(r1.ix + offset);
@@ -9438,7 +9438,7 @@ namespace Z80 {
             
         }
         
-        protected void ld_l_sll__iy_d_() {
+        void ld_l_sll__iy_d_() {
             tStates += 2;
             var offset = (SByte)Read8(pc++);
             ushort addr = (ushort)(r1.iy + offset);
@@ -9447,7 +9447,7 @@ namespace Z80 {
             
         }
         
-        protected void ld_l_sra__ix_d_() {
+        void ld_l_sra__ix_d_() {
             tStates += 2;
             var offset = (SByte)Read8(pc++);
             ushort addr = (ushort)(r1.ix + offset);
@@ -9456,7 +9456,7 @@ namespace Z80 {
             
         }
         
-        protected void ld_l_sra__iy_d_() {
+        void ld_l_sra__iy_d_() {
             tStates += 2;
             var offset = (SByte)Read8(pc++);
             ushort addr = (ushort)(r1.iy + offset);
@@ -9465,7 +9465,7 @@ namespace Z80 {
             
         }
         
-        protected void ld_l_srl__ix_d_() {
+        void ld_l_srl__ix_d_() {
             tStates += 2;
             var offset = (SByte)Read8(pc++);
             ushort addr = (ushort)(r1.ix + offset);
@@ -9474,7 +9474,7 @@ namespace Z80 {
             
         }
         
-        protected void ld_l_srl__iy_d_() {
+        void ld_l_srl__iy_d_() {
             tStates += 2;
             var offset = (SByte)Read8(pc++);
             ushort addr = (ushort)(r1.iy + offset);
@@ -9483,7 +9483,7 @@ namespace Z80 {
             
         }
         
-        protected void ld_l_rl__ix_d_() {
+        void ld_l_rl__ix_d_() {
             tStates += 2;
             var offset = (SByte)Read8(pc++);
             ushort addr = (ushort)(r1.ix + offset);
@@ -9491,7 +9491,7 @@ namespace Z80 {
             Write8(addr, r1.l);            
         }
         
-        protected void ld_l_rl__iy_d_() {
+        void ld_l_rl__iy_d_() {
             tStates += 2;
             var offset = (SByte)Read8(pc++);
             ushort addr = (ushort)(r1.iy + offset);
@@ -9499,7 +9499,7 @@ namespace Z80 {
             Write8(addr, r1.l);            
         }
         
-        protected void ld_l_rlc__ix_d_() {
+        void ld_l_rlc__ix_d_() {
             tStates += 2;
             var offset = (SByte)Read8(pc++);
             ushort addr = (ushort)(r1.ix + offset);
@@ -9507,7 +9507,7 @@ namespace Z80 {
             Write8(addr, r1.l);            
         }
         
-        protected void ld_l_rlc__iy_d_() {
+        void ld_l_rlc__iy_d_() {
             tStates += 2;
             var offset = (SByte)Read8(pc++);
             ushort addr = (ushort)(r1.iy + offset);
@@ -9515,7 +9515,7 @@ namespace Z80 {
             Write8(addr, r1.l);            
         }
         
-        protected void ld_l_rr__ix_d_() {
+        void ld_l_rr__ix_d_() {
             tStates += 2;
             var offset = (SByte)Read8(pc++);
             ushort addr = (ushort)(r1.ix + offset);
@@ -9523,7 +9523,7 @@ namespace Z80 {
             Write8(addr, r1.l);            
         }
         
-        protected void ld_l_rr__iy_d_() {
+        void ld_l_rr__iy_d_() {
             tStates += 2;
             var offset = (SByte)Read8(pc++);
             ushort addr = (ushort)(r1.iy + offset);
@@ -9531,7 +9531,7 @@ namespace Z80 {
             Write8(addr, r1.l);            
         }
         
-        protected void ld_l_rrc__ix_d_() {
+        void ld_l_rrc__ix_d_() {
             tStates += 2;
             var offset = (SByte)Read8(pc++);
             ushort addr = (ushort)(r1.ix + offset);
@@ -9539,7 +9539,7 @@ namespace Z80 {
             Write8(addr, r1.l);            
         }
         
-        protected void ld_l_rrc__iy_d_() {
+        void ld_l_rrc__iy_d_() {
             tStates += 2;
             var offset = (SByte)Read8(pc++);
             ushort addr = (ushort)(r1.iy + offset);

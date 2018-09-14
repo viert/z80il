@@ -383,27 +383,27 @@ namespace Z80 {
             opcodeTable.entries[0xD6] = new OpcodeTableEntry(sub_a_n, "sub {0}", new ArgType[]{ArgType.Byte});
             opcodeTable.entries[0xDE] = new OpcodeTableEntry(sbc_a_n, "sbc a, {0}", new ArgType[]{ArgType.Byte});
 
-			opcodeTable.entries[0x86] = new OpcodeTableEntry(add_a__hl_, "add a, (hl)", new ArgType[]{});
-			opcodeTableDD.entries[0x86] = new OpcodeTableEntry(add_a__ix_d_, "add a, (ix{0})", new ArgType[]{ArgType.Offset});
-			opcodeTableFD.entries[0x86] = new OpcodeTableEntry(add_a__iy_d_, "add a, (iy{0})", new ArgType[]{ArgType.Offset});
-			opcodeTable.entries[0x8E] = new OpcodeTableEntry(adc_a__hl_, "adc a, (hl)", new ArgType[]{});
-			opcodeTableDD.entries[0x8E] = new OpcodeTableEntry(adc_a__ix_d_, "adc a, (ix{0})", new ArgType[]{ArgType.Offset});
-			opcodeTableFD.entries[0x8E] = new OpcodeTableEntry(adc_a__iy_d_, "adc a, (iy{0})", new ArgType[]{ArgType.Offset});
-			opcodeTable.entries[0x96] = new OpcodeTableEntry(sub_a__hl_, "sub (hl)", new ArgType[]{});
-			opcodeTableDD.entries[0x96] = new OpcodeTableEntry(sub_a__ix_d_, "sub (ix{0})", new ArgType[]{ArgType.Offset});
-			opcodeTableFD.entries[0x96] = new OpcodeTableEntry(sub_a__iy_d_, "sub (iy{0})", new ArgType[]{ArgType.Offset});
-			opcodeTable.entries[0x9E] = new OpcodeTableEntry(sbc_a__hl_, "sbc a, (hl)", new ArgType[]{});
-			opcodeTableDD.entries[0x9E] = new OpcodeTableEntry(sbc_a__ix_d_, "sbc a, (ix{0})", new ArgType[]{ArgType.Offset});
-			opcodeTableFD.entries[0x9E] = new OpcodeTableEntry(sbc_a__iy_d_, "sbc a, (iy{0})", new ArgType[]{ArgType.Offset});
+            opcodeTable.entries[0x86] = new OpcodeTableEntry(add_a__hl_, "add a, (hl)", new ArgType[]{});
+            opcodeTableDD.entries[0x86] = new OpcodeTableEntry(add_a__ix_d_, "add a, (ix{0})", new ArgType[]{ArgType.Offset});
+            opcodeTableFD.entries[0x86] = new OpcodeTableEntry(add_a__iy_d_, "add a, (iy{0})", new ArgType[]{ArgType.Offset});
+            opcodeTable.entries[0x8E] = new OpcodeTableEntry(adc_a__hl_, "adc a, (hl)", new ArgType[]{});
+            opcodeTableDD.entries[0x8E] = new OpcodeTableEntry(adc_a__ix_d_, "adc a, (ix{0})", new ArgType[]{ArgType.Offset});
+            opcodeTableFD.entries[0x8E] = new OpcodeTableEntry(adc_a__iy_d_, "adc a, (iy{0})", new ArgType[]{ArgType.Offset});
+            opcodeTable.entries[0x96] = new OpcodeTableEntry(sub_a__hl_, "sub (hl)", new ArgType[]{});
+            opcodeTableDD.entries[0x96] = new OpcodeTableEntry(sub_a__ix_d_, "sub (ix{0})", new ArgType[]{ArgType.Offset});
+            opcodeTableFD.entries[0x96] = new OpcodeTableEntry(sub_a__iy_d_, "sub (iy{0})", new ArgType[]{ArgType.Offset});
+            opcodeTable.entries[0x9E] = new OpcodeTableEntry(sbc_a__hl_, "sbc a, (hl)", new ArgType[]{});
+            opcodeTableDD.entries[0x9E] = new OpcodeTableEntry(sbc_a__ix_d_, "sbc a, (ix{0})", new ArgType[]{ArgType.Offset});
+            opcodeTableFD.entries[0x9E] = new OpcodeTableEntry(sbc_a__iy_d_, "sbc a, (iy{0})", new ArgType[]{ArgType.Offset});
 
-			// ADD HL, BC/DE/HL/SP
+            // ADD HL, BC/DE/HL/SP
 <#
-	foreach (var rCode in Register16Map) {
-		opCode = 0x09 | (rCode.Key << 4);
-		opFuncName = string.Format("add_hl_{0}", rCode.Value);
-		dasm = string.Format("add hl, {0}", rCode.Value);
+    foreach (var rCode in Register16Map) {
+        opCode = 0x09 | (rCode.Key << 4);
+        opFuncName = string.Format("add_hl_{0}", rCode.Value);
+        dasm = string.Format("add hl, {0}", rCode.Value);
 #>
-			opcodeTable.entries[<#= opCode #>] = new OpcodeTableEntry(<#= opFuncName #>, "<#= dasm #>", new ArgType[]{});
+            opcodeTable.entries[<#= opCode #>] = new OpcodeTableEntry(<#= opFuncName #>, "<#= dasm #>", new ArgType[]{});
 <#
         foreach (var iReg in Prefixes) {
             var sReg = rCode.Value == "hl" ? iReg.Key : rCode.Value;
@@ -415,19 +415,19 @@ namespace Z80 {
 <#
         }
         
-		opCode = 0x4A | (rCode.Key << 4);
-		opFuncName = string.Format("adc_hl_{0}", rCode.Value);
-		dasm = string.Format("adc hl, {0}", rCode.Value);
+        opCode = 0x4A | (rCode.Key << 4);
+        opFuncName = string.Format("adc_hl_{0}", rCode.Value);
+        dasm = string.Format("adc hl, {0}", rCode.Value);
 #>
-			opcodeTableED.entries[<#= opCode #>] = new OpcodeTableEntry(<#= opFuncName #>, "<#= dasm #>", new ArgType[]{});
+            opcodeTableED.entries[<#= opCode #>] = new OpcodeTableEntry(<#= opFuncName #>, "<#= dasm #>", new ArgType[]{});
 <#
-		opCode = 0x42 | (rCode.Key << 4);
-		opFuncName = string.Format("sbc_hl_{0}", rCode.Value);
-		dasm = string.Format("sbc hl, {0}", rCode.Value);
+        opCode = 0x42 | (rCode.Key << 4);
+        opFuncName = string.Format("sbc_hl_{0}", rCode.Value);
+        dasm = string.Format("sbc hl, {0}", rCode.Value);
 #>
-			opcodeTableED.entries[<#= opCode #>] = new OpcodeTableEntry(<#= opFuncName #>, "<#= dasm #>", new ArgType[]{});
+            opcodeTableED.entries[<#= opCode #>] = new OpcodeTableEntry(<#= opFuncName #>, "<#= dasm #>", new ArgType[]{});
 <#
-	}
+    }
     
     foreach (var rCode in RegisterMap) {
         opCode = 0xA0 | rCode.Key;
@@ -923,14 +923,14 @@ namespace Z80 {
                                                                                                                                                                                                 
         }
         
-        protected void nop() {
+        void nop() {
             // NOP
         }
 <#  
     foreach (var dst in All8BitRegs) {
         foreach (var src in All8BitRegs) { 
 #>
-        protected void ld_<#= dst #>_<#= src #>() {
+        void ld_<#= dst #>_<#= src #>() {
 <# 
     if (dst != src) { 
 #>
@@ -942,11 +942,11 @@ namespace Z80 {
 
 <#
         }    
-	}
+    }
 
     foreach (var dst in All8BitRegs) {
 #>
-        protected void ld_<#= dst #>_n() {
+        void ld_<#= dst #>_n() {
             r1.<#= dst #> = Read8(pc++);
         }
 
@@ -955,7 +955,7 @@ namespace Z80 {
 
     foreach (var dst in Lim8BitRegs) {
 #>
-        protected void ld_<#= dst #>__hl_() {
+        void ld_<#= dst #>__hl_() {
             r1.<#= dst #> = Read8(r1.hl);
         }
 
@@ -964,37 +964,37 @@ namespace Z80 {
 
     foreach (var src in Lim8BitRegs) {
 #>
-        protected void ld__hl__<#= src #>() {
+        void ld__hl__<#= src #>() {
             Write8(r1.hl, r1.<#= src #>);
         }
 
 <#  
     }
 #>
-        protected void ld__hl__n() {
+        void ld__hl__n() {
             Write8(r1.hl, Read8(pc++));
         }
         
 <#  
     foreach (var reg in new string[]{"bc", "de"}) {
 #>
-        protected void ld_a__<#= reg #>_() {
+        void ld_a__<#= reg #>_() {
             r1.a = Read8(r1.<#= reg #>);
         }
         
-        protected void ld__<#= reg #>__a() {
+        void ld__<#= reg #>__a() {
             Write8(r1.<#= reg #>, r1.a);
         }
 <#  
     }
 #>
 
-        protected void ld_a__nn_() {
+        void ld_a__nn_() {
             r1.a = Read8(Read16(pc));
             pc += 2;
         }        
         
-        protected void ld__nn__a() {
+        void ld__nn__a() {
             Write8(Read16(pc), r1.a);
             pc += 2;
         }
@@ -1002,7 +1002,7 @@ namespace Z80 {
 <#
     foreach (var reg in new string[]{"i", "r"}) {
 #>
-        protected void ld_a_<#= reg #>() {
+        void ld_a_<#= reg #>() {
             tStates++;
             r1.a = <#= reg #>;
             AdjustFlags(r1.a);
@@ -1012,7 +1012,7 @@ namespace Z80 {
             ValFlag(f_z, r1.a == 0);
         }
         
-        protected void ld_<#= reg #>_a() {
+        void ld_<#= reg #>_a() {
             tStates++;
             <#= reg #> = r1.a;
         }
@@ -1022,13 +1022,13 @@ namespace Z80 {
     foreach (var reg in Lim8BitRegs) {
         foreach (var iReg in Prefixes) {
 #>
-        protected void ld_<#= reg #>__<#= iReg.Key #>_d_() {
+        void ld_<#= reg #>__<#= iReg.Key #>_d_() {
             tStates += 5;
             var offset = (SByte)Read8(pc++);
             r1.<#= reg #> = Read8((ushort)(r1.<#= iReg.Key #> + offset));
         }
         
-        protected void ld__<#= iReg.Key #>_d__<#= reg #>() {
+        void ld__<#= iReg.Key #>_d__<#= reg #>() {
             tStates += 5;
             var offset = (SByte)Read8(pc++);
             Write8((ushort)(r1.<#= iReg.Key #> + offset), r1.<#= reg #>);
@@ -1040,7 +1040,7 @@ namespace Z80 {
 
     foreach (var iReg in Prefixes) {
 #>
-        protected void ld__<#= iReg.Key #>_d__n() {
+        void ld__<#= iReg.Key #>_d__n() {
             tStates += 2;
             var offset = (SByte)Read8(pc++);
             var n = Read8(pc++);
@@ -1052,17 +1052,17 @@ namespace Z80 {
 
     foreach (var reg in new string[]{"bc", "de", "hl", "sp", "ix", "iy"}) {
 #>
-        protected void ld_<#= reg #>_nn() {
+        void ld_<#= reg #>_nn() {
             r1.<#= reg #> = Read16(pc);
             pc += 2;
         }
         
-        protected void ld_<#= reg #>__nn_() {
+        void ld_<#= reg #>__nn_() {
             r1.<#= reg #> = Read16(Read16(pc));
             pc += 2;
         }
         
-        protected void ld__nn__<#= reg #>() {
+        void ld__nn__<#= reg #>() {
             var addr = Read16(pc);
             pc += 2;
             Write16(addr, r1.<#= reg #>);
@@ -1073,12 +1073,12 @@ namespace Z80 {
 
     foreach (var reg in new string[]{"hl", "ix", "iy"}) {
 #>
-        protected void ld_sp_<#= reg #>() {
+        void ld_sp_<#= reg #>() {
             tStates += 2;
             r1.sp = r1.<#= reg #>;
         }
         
-        protected void ex__sp__<#= reg #>() {
+        void ex__sp__<#= reg #>() {
             tStates += 3;
             var _t = r1.<#= reg #>;
             r1.<#= reg #> = Read16(r1.sp);
@@ -1090,30 +1090,30 @@ namespace Z80 {
 
     foreach (var reg in new string[]{"af", "bc", "de", "hl", "ix", "iy"}) {
 #>
-        protected void push_<#= reg #>() {
+        void push_<#= reg #>() {
             tStates++;
             DoPush(r1.<#= reg #>);
         }
         
-        protected void pop_<#= reg #>() {
+        void pop_<#= reg #>() {
             r1.<#= reg #> = DoPop();
         }
 <#    
     }
 #>
-        protected void ex_de_hl() {
+        void ex_de_hl() {
             var _t = r1.de;
             r1.de = r1.hl;
             r1.hl = _t;
         }
         
-        protected void ex_af_af_() {
+        void ex_af_af_() {
             var _t = r1.af;
             r1.af = r2.af;
             r2.af = _t;
         }
         
-        protected void exx() {
+        void exx() {
             ushort _t;
             
             _t = r1.bc;
@@ -1127,7 +1127,7 @@ namespace Z80 {
             r2.hl= _t;
         }
         
-        protected void ldi() {
+        void ldi() {
             byte val, sum;
             
             tStates += 2;
@@ -1141,7 +1141,7 @@ namespace Z80 {
             ValFlag(f_pv, r1.bc != 0);
         }
         
-        protected void ldir() {
+        void ldir() {
             ldi();
             if (r1.bc != 0) {
                 tStates += 5;
@@ -1149,7 +1149,7 @@ namespace Z80 {
             }
         }
 
-        protected void ldd() {
+        void ldd() {
             byte val, sum;
             
             tStates += 2;
@@ -1163,7 +1163,7 @@ namespace Z80 {
             ValFlag(f_pv, r1.bc != 0);
         }
         
-        protected void lddr() {
+        void lddr() {
             ldd();
             if (r1.bc != 0) {
                 tStates += 5;
@@ -1171,7 +1171,7 @@ namespace Z80 {
             }
         }
         
-        protected void cpi() {
+        void cpi() {
             tStates += 5;
             var carry = GetFlag(f_c);
             var value = DoCPHL();
@@ -1186,7 +1186,7 @@ namespace Z80 {
             ValFlag(f_3, (value & (1 << 3)) != 0);
         }
         
-        protected void cpir() {
+        void cpir() {
             cpi();
             if (r1.bc != 0 && !GetFlag(f_z)) {
                 tStates += 5;
@@ -1194,7 +1194,7 @@ namespace Z80 {
             }
         }
         
-        protected void cpd() {
+        void cpd() {
             tStates += 5;
             var carry = GetFlag(f_c);
             var value = DoCPHL();
@@ -1209,7 +1209,7 @@ namespace Z80 {
             ValFlag(f_3, (value & (1 << 3)) != 0);
         }
         
-        protected void cpdr() {
+        void cpdr() {
             cpd();
             if (r1.bc != 0 && !GetFlag(f_z)) {
                 tStates += 5;
@@ -1221,91 +1221,91 @@ namespace Z80 {
     foreach (var cmd in new string[]{"adc", "sbc", "add", "sub"}) {
         foreach (var reg in new string[]{"a", "b", "c", "d", "e", "h", "l", "ixh", "ixl", "iyh", "iyl"}) {
 #>
-        protected void <#= cmd #>_a_<#= reg #>() {
+        void <#= cmd #>_a_<#= reg #>() {
             r1.a = DoArithmetics(r1.<#= reg #>, hasCarry_<#= cmd #>, isSub_<#= cmd #>);
         }
         
 <#  
         }
 #>
-        protected void <#= cmd #>_a_n() {
+        void <#= cmd #>_a_n() {
             r1.a = DoArithmetics(Read8(pc++), hasCarry_<#= cmd #>, isSub_<#= cmd #>);
         }
 
-		protected void <#= cmd #>_a__hl_() {
-			r1.a = DoArithmetics(Read8(r1.hl), hasCarry_<#= cmd #>, isSub_<#= cmd #>);
-		}
+        void <#= cmd #>_a__hl_() {
+            r1.a = DoArithmetics(Read8(r1.hl), hasCarry_<#= cmd #>, isSub_<#= cmd #>);
+        }
         
 <#
-		foreach (var reg in new string[]{"ix", "iy"}) {
+        foreach (var reg in new string[]{"ix", "iy"}) {
 #>
-		protected void <#= cmd #>_a__<#= reg #>_d_() {
-			tStates += 5;
-			var offset = (SByte)Read8(pc++);
-			r1.a = DoArithmetics(Read8((ushort)(r1.<#= reg #> + offset)), hasCarry_<#= cmd #>, isSub_<#= cmd #>);
-		}
+        void <#= cmd #>_a__<#= reg #>_d_() {
+            tStates += 5;
+            var offset = (SByte)Read8(pc++);
+            r1.a = DoArithmetics(Read8((ushort)(r1.<#= reg #> + offset)), hasCarry_<#= cmd #>, isSub_<#= cmd #>);
+        }
         
 <#
-		}
+        }
     }
 
-	foreach (var cmd in new string[]{"add", "adc", "sbc"}) {
-		foreach (var reg in new string[]{"hl", "bc", "de", "sp"}) {
+    foreach (var cmd in new string[]{"add", "adc", "sbc"}) {
+        foreach (var reg in new string[]{"hl", "bc", "de", "sp"}) {
 #>
-		protected void <#= cmd #>_hl_<#= reg #>() {
-			tStates += 7;
-			r1.hl = DoAddWord(r1.hl, r1.<#= reg #>,  hasCarry_<#= cmd #>, isSub_<#= cmd #>);
-		}
+        void <#= cmd #>_hl_<#= reg #>() {
+            tStates += 7;
+            r1.hl = DoAddWord(r1.hl, r1.<#= reg #>,  hasCarry_<#= cmd #>, isSub_<#= cmd #>);
+        }
 
 <#
-		}
-	}
+        }
+    }
 
-	foreach (var reg1 in new string[]{"ix", "iy"}) {
-		foreach (var reg2 in new string[]{"ix", "iy", "bc", "de", "sp"}) {
+    foreach (var reg1 in new string[]{"ix", "iy"}) {
+        foreach (var reg2 in new string[]{"ix", "iy", "bc", "de", "sp"}) {
 #>
-		protected void add_<#= reg1 #>_<#= reg2 #>() {
-			tStates += 7;
-			r1.<#= reg1 #> = DoAddWord(r1.<#= reg1 #>, r1.<#= reg2 #>,  false, false);
-		}
+        void add_<#= reg1 #>_<#= reg2 #>() {
+            tStates += 7;
+            r1.<#= reg1 #> = DoAddWord(r1.<#= reg1 #>, r1.<#= reg2 #>,  false, false);
+        }
 
 <#
-		}
-	}
+        }
+    }
 
     foreach (var cmd in new string[]{"and", "or", "xor"}) {
         foreach (var reg in new string[]{"a", "b", "c", "d", "e", "h", "l", "ixh", "ixl", "iyh", "iyl"}) {
 #>
-		protected void <#= cmd #>_<#= reg #>() {
-			Do<#= cmd.ToUpper() #>(r1.<#= reg #>);
-		}
+        void <#= cmd #>_<#= reg #>() {
+            Do<#= cmd.ToUpper() #>(r1.<#= reg #>);
+        }
         
 <#
-		}
+        }
 #>
-		protected void <#= cmd #>_n() {
-			Do<#= cmd.ToUpper() #>(Read8(pc++));
-		}
+        void <#= cmd #>_n() {
+            Do<#= cmd.ToUpper() #>(Read8(pc++));
+        }
 
-		protected void <#= cmd #>__hl_() {
-			Do<#= cmd.ToUpper() #>(Read8(r1.hl));
-		}
+        void <#= cmd #>__hl_() {
+            Do<#= cmd.ToUpper() #>(Read8(r1.hl));
+        }
         
 <#
-		foreach (var reg in new string[]{"ix", "iy"}) {
+        foreach (var reg in new string[]{"ix", "iy"}) {
 #>
-		protected void <#= cmd #>__<#= reg #>_d_() {
-			tStates += 5;
-			var offset = (SByte)Read8(pc++);
-			Do<#= cmd.ToUpper() #>(Read8((ushort)(r1.<#= reg #> + offset)));
-		}
+        void <#= cmd #>__<#= reg #>_d_() {
+            tStates += 5;
+            var offset = (SByte)Read8(pc++);
+            Do<#= cmd.ToUpper() #>(Read8((ushort)(r1.<#= reg #> + offset)));
+        }
         
 <#
-		}
-	}
+        }
+    }
     foreach (var reg in new string[]{"a", "b", "c", "d", "e", "h", "l", "ixh", "ixl", "iyh", "iyl"}) {
 #>
-        protected void cp_<#= reg #>() {
+        void cp_<#= reg #>() {
             DoArithmetics(r1.<#= reg #>, false, true);
             AdjustFlags(r1.<#= reg #>);
         }
@@ -1313,11 +1313,11 @@ namespace Z80 {
 <#
     }
 #>
-        protected void cp__hl_() {
+        void cp__hl_() {
             DoCPHL();
         }
         
-        protected void cp_n() {
+        void cp_n() {
             var value = Read8(pc++);
             DoArithmetics(value, false, true);
             AdjustFlags(value);
@@ -1326,7 +1326,7 @@ namespace Z80 {
 <#
     foreach (var reg in new string[]{"ix", "iy"}) {
 #>
-        protected void cp__<#= reg #>_d_() {
+        void cp__<#= reg #>_d_() {
             tStates += 5;
             var offset = (SByte)Read8(pc++);
             var value = Read8((ushort)(r1.<#= reg #> + offset));
@@ -1341,14 +1341,14 @@ namespace Z80 {
     foreach (var cmd in new string[]{"inc", "dec"}) {
         foreach (var reg in new string[]{"a", "b", "c", "d", "e", "h", "l", "ixh", "ixl", "iyh", "iyl"}) {
 #>
-        protected void <#= cmd #>_<#= reg #>() {
+        void <#= cmd #>_<#= reg #>() {
             r1.<#= reg #> = DoIncDec(r1.<#= reg #>, isDec_<#= cmd #>);
         }
         
 <#
         }
 #>
-        protected void <#= cmd #>__hl_() {
+        void <#= cmd #>__hl_() {
             tStates++;
             var value = Read8(r1.hl);
             Write8(r1.hl, DoIncDec(value, isDec_<#= cmd #>));
@@ -1356,7 +1356,7 @@ namespace Z80 {
 <#
         foreach (var reg in new string[]{"ix", "iy"}) {
 #>
-        protected void <#= cmd #>__<#= reg #>_d_() {
+        void <#= cmd #>__<#= reg #>_d_() {
             tStates += 6;
             var offset = (SByte)Read8(pc++);
             var addr = (ushort)(r1.<#= reg #> + offset);
@@ -1370,12 +1370,12 @@ namespace Z80 {
     
     foreach (var reg in new string[]{"hl", "sp", "de", "bc", "ix", "iy"}) {
 #>
-        protected void inc_<#= reg #>() {
+        void inc_<#= reg #>() {
             tStates += 2;
             r1.<#= reg #>++;
         }
         
-        protected void dec_<#= reg #>() {
+        void dec_<#= reg #>() {
             tStates += 2;
             r1.<#= reg #>--;
         }
@@ -1384,47 +1384,47 @@ namespace Z80 {
     }
 #>
 
-        protected void daa() {
+        void daa() {
             DoDAA();
         }
         
-        protected void cpl() {
+        void cpl() {
             r1.a = (byte)~r1.a;
             SetFlag(f_h | f_n);
             AdjustFlags(r1.a);
         }
         
-        protected void neg() {
+        void neg() {
             var _t = r1.a;
             r1.a = 0;
             r1.a = DoArithmetics(_t, false, true);
             SetFlag(f_n);
         }
         
-        protected void ccf() {
+        void ccf() {
             ValFlag(f_c, !GetFlag(f_c));
             ResFlag(f_n);
             AdjustFlags(r1.a);
         }
         
-        protected void scf() {
+        void scf() {
             SetFlag(f_c);
             ResFlag(f_h | f_n);
             AdjustFlags(r1.a);
         }
         
-        protected void halt() {
+        void halt() {
             halted = true;
             pc--;
         }
         
-        protected void di() {
+        void di() {
             iff1 = false;
             iff2 = false;
             deferInt = true;
         }
 
-        protected void ei() {
+        void ei() {
             iff1 = true;
             iff2 = true;
             deferInt = true;
@@ -1432,7 +1432,7 @@ namespace Z80 {
 <#
     for (var mode = 0; mode < 3; mode++) {
 #>
-        protected void im_<#= mode #>() {
+        void im_<#= mode #>() {
             im = <#= mode #>;
         }
         
@@ -1445,21 +1445,21 @@ namespace Z80 {
 <#
     foreach (var rtt in new string[]{"rlc", "rl", "rrc", "rr"}) {
 #>
-        protected void <#= rtt #>a() {
+        void <#= rtt #>a() {
             r1.a = Do<#= rtt.ToUpper() #>(r1.a, false);
         }
         
 <#
         foreach (var reg in new string[]{"a", "b", "c", "d", "e", "h", "l", "ixh", "ixl", "iyh", "iyl"}) {
 #>
-        protected void <#= rtt #>_<#= reg #>() {
+        void <#= rtt #>_<#= reg #>() {
             r1.<#= reg #> = Do<#= rtt.ToUpper() #>(r1.<#= reg #>, true);
         }
         
 <#
         }
 #>
-        protected void <#= rtt #>__hl_() {
+        void <#= rtt #>__hl_() {
             tStates++;
             Write8(r1.hl, Do<#= rtt.ToUpper() #>(Read8(r1.hl), true));
         }
@@ -1467,7 +1467,7 @@ namespace Z80 {
 <#
         foreach (var reg in new string[]{"ix", "iy"}) {
 #>
-        protected void <#= rtt #>__<#= reg #>_d_() {
+        void <#= rtt #>__<#= reg #>_d_() {
             tStates += 2;
             var offset = (SByte)Read8(pc++);
             var addr = (ushort)(r1.<#= reg #> + offset);
@@ -1482,14 +1482,14 @@ namespace Z80 {
         foreach (var shiftType in new string[]{"a", "l"}) {
             foreach (var reg in new string[]{"a", "b", "c", "d", "e", "h", "l", "ixh", "ixl", "iyh", "iyl"}) {
 #>
-        protected void <#= shiftDir #><#= shiftType #>_<#= reg #>() {
+        void <#= shiftDir #><#= shiftType #>_<#= reg #>() {
             r1.<#= reg #> = Do<#= shiftDir.ToUpper() #>(r1.<#= reg #>, isArithmetics<#= shiftType.ToUpper() #>);
         }
         
 <#
             }
 #>
-        protected void <#= shiftDir #><#= shiftType #>__hl_() {
+        void <#= shiftDir #><#= shiftType #>__hl_() {
             tStates++;
             Write8(r1.hl, Do<#= shiftDir.ToUpper() #>(Read8(r1.hl), isArithmetics<#= shiftType.ToUpper() #>));
         }
@@ -1497,7 +1497,7 @@ namespace Z80 {
 <#
             foreach (var reg in new string[]{"ix", "iy"}) {
 #>
-        protected void <#= shiftDir #><#= shiftType #>__<#= reg #>_d_() {
+        void <#= shiftDir #><#= shiftType #>__<#= reg #>_d_() {
             tStates += 2;
             var offset = (SByte)Read8(pc++);
             var addr = (ushort)(r1.<#= reg #> + offset);
@@ -1509,7 +1509,7 @@ namespace Z80 {
         }
     }
 #>
-        protected void rld() {
+        void rld() {
             tStates += 4;
             var ah = r1.a & 0x0F;
             var hl = Read8(r1.hl);
@@ -1521,7 +1521,7 @@ namespace Z80 {
             AdjustFlags(r1.a);
         }
     
-        protected void rrd() {
+        void rrd() {
             tStates += 4;
             var ah = r1.a & 0x0F;
             var hl = Read8(r1.hl);
@@ -1536,14 +1536,14 @@ namespace Z80 {
     for (var b = 0; b < 8; b++) {
         foreach (var reg in new string[]{"a", "b", "c", "d", "e", "h", "l"}) {
 #>
-        protected void bit_<#= b #>_<#= reg #>() {
+        void bit_<#= b #>_<#= reg #>() {
             DoBitR(<#= b #>, r1.<#= reg #>);
         }
         
 <#
         }
 #>
-        protected void bit_<#= b #>__hl_() {
+        void bit_<#= b #>__hl_() {
             tStates++;
             DoBitR(<#= b #>, Read8(r1.hl));
         }
@@ -1551,7 +1551,7 @@ namespace Z80 {
 <#      
         foreach (var reg in new string[]{"ix", "iy"}) {
 #>
-        protected void bit_<#= b #>__<#= reg #>_d_() {
+        void bit_<#= b #>__<#= reg #>_d_() {
             tStates += 2;
             var offset = (SByte)Read8(pc++);
             var addr = (ushort)(r1.<#= reg #> + offset);
@@ -1570,14 +1570,14 @@ namespace Z80 {
         for (var b = 0; b < 8; b++) {
             foreach (var reg in new string[]{"a", "b", "c", "d", "e", "h", "l"}) {
 #>
-        protected void <#= cmd #>_<#= b #>_<#= reg #>() {
+        void <#= cmd #>_<#= b #>_<#= reg #>() {
             r1.<#= reg #> = DoSetRes(bitState<#= cmd.ToUpper() #>, <#= b #>, r1.<#= reg #>);
         }
         
 <#
         }
 #>
-        protected void <#= cmd #>_<#= b #>__hl_() {
+        void <#= cmd #>_<#= b #>__hl_() {
             tStates++;
             Write8(r1.hl, DoSetRes(bitState<#= cmd.ToUpper() #>, <#= b #>, Read8(r1.hl)));
         }
@@ -1585,7 +1585,7 @@ namespace Z80 {
 <#      
         foreach (var reg in new string[]{"ix", "iy"}) {
 #>
-        protected void <#= cmd #>_<#= b #>__<#= reg #>_d_() {
+        void <#= cmd #>_<#= b #>__<#= reg #>_d_() {
             tStates += 2;
             var offset = (SByte)Read8(pc++);
             var addr = (ushort)(r1.<#= reg #> + offset);
@@ -1597,19 +1597,19 @@ namespace Z80 {
         }  
     }
 #>
-        protected void in_a__n_() {
+        void in_a__n_() {
             ushort port = (ushort)Read8(pc++);
             port = (ushort)((r1.a << 8) | port);
             r1.a = IORead(port);
         }
         
-        protected void out__n__a() {
+        void out__n__a() {
             ushort port = (ushort)Read8(pc++);
             port = (ushort)((r1.a << 8) | port);
             IOWrite(port, r1.a);        
         }
         
-        protected void ind() {
+        void ind() {
             tStates++;
             var value = IORead(r1.bc);
             Write8(r1.hl--, value);
@@ -1621,7 +1621,7 @@ namespace Z80 {
             ValFlag(f_pv, parityBit[(fv & 7) ^ r1.b]);
         }
         
-        protected void indr() {
+        void indr() {
             ind();
             if (r1.b != 0) {
                 tStates += 5;
@@ -1629,7 +1629,7 @@ namespace Z80 {
             }
         }
         
-        protected void ini() {
+        void ini() {
             tStates++;
             var value = IORead(r1.bc);
             Write8(r1.hl++, value);
@@ -1641,7 +1641,7 @@ namespace Z80 {
             ValFlag(f_pv, parityBit[(fv & 7) ^ r1.b]);
         }
         
-        protected void inir() {
+        void inir() {
             ini();
             if (r1.b != 0) {
                 tStates += 5;
@@ -1649,7 +1649,7 @@ namespace Z80 {
             }
         }
         
-        protected void outi() {
+        void outi() {
             tStates++;
             var value = Read8(r1.hl++);
             r1.b = DoIncDec(r1.b, isDec_dec);
@@ -1662,7 +1662,7 @@ namespace Z80 {
             AdjustFlags(r1.b);
         }
         
-        protected void otir() {
+        void otir() {
             outi();
             if (r1.b != 0) {
                 tStates += 5;
@@ -1670,7 +1670,7 @@ namespace Z80 {
             }
         }
         
-        protected void outd() {
+        void outd() {
             tStates++;
             var value = Read8(r1.hl--);
             r1.b = DoIncDec(r1.b, isDec_dec);
@@ -1683,7 +1683,7 @@ namespace Z80 {
             AdjustFlags(r1.b);
         }
         
-        protected void otdr() {
+        void otdr() {
             outd();
             if (r1.b != 0) {
                 tStates += 5;
@@ -1694,7 +1694,7 @@ namespace Z80 {
 <#
     foreach (var reg in new string[]{"a", "b", "c", "d", "e", "f", "h", "l"}) {
 #>
-        protected void in_<#= reg #>__c_() {
+        void in_<#= reg #>__c_() {
             r1.<#= reg #> = IORead(r1.bc);
             ResFlag(f_h | f_n);
             AdjustFlagsSZP(r1.<#= reg #>);
@@ -1704,7 +1704,7 @@ namespace Z80 {
 <#
         if (reg != "f") {
 #>
-        protected void out__c__<#= reg #>() {
+        void out__c__<#= reg #>() {
             IOWrite(r1.bc, r1.<#= reg #>);
         }
         
@@ -1712,21 +1712,21 @@ namespace Z80 {
         }
     }       
 #>      
-        protected void out__c__0() {
+        void out__c__0() {
             IOWrite(r1.bc, 0);
         }
         
-        protected void jp_nn() {
+        void jp_nn() {
             pc = Read16(pc);
         }
         
-        protected void jr_pc_e() {
+        void jr_pc_e() {
             var offset = (SByte)Read8(pc++);
             tStates += 5;
             pc = (ushort)(pc + offset);
         }
         
-        protected void djnz_pc_e() {
+        void djnz_pc_e() {
             tStates++;
             var offset = (SByte)Read8(pc++);
             r1.b--;
@@ -1736,7 +1736,7 @@ namespace Z80 {
             }
         }
         
-        protected void call_nn() {
+        void call_nn() {
             var addr = Read16(pc);
             pc += 2;
             tStates++;
@@ -1744,16 +1744,16 @@ namespace Z80 {
             pc = addr;
         }
         
-        protected void ret() {
+        void ret() {
             pc = DoPop();
         }
         
-        protected void retn() {
+        void retn() {
             iff1 = iff2;
             ret();
         }
         
-        protected void reti() {
+        void reti() {
             iff1 = iff2;
             ret();
         }
@@ -1761,7 +1761,7 @@ namespace Z80 {
 <#
     foreach (var cond in Conditions) {
 #>
-        protected void jp_<#= cond.Value #>_nn() {
+        void jp_<#= cond.Value #>_nn() {
             // no matter if the condition is true we spend 6 tstates to read the addr
             ushort addr = Read16(pc);
             if (Condition(c_<#= cond.Value #>)) {
@@ -1771,7 +1771,7 @@ namespace Z80 {
             }
         }
         
-        protected void call_<#= cond.Value #>_nn() {
+        void call_<#= cond.Value #>_nn() {
             var addr = Read16(pc);
             pc += 2;
             if (Condition(c_<#= cond.Value #>)) {
@@ -1781,7 +1781,7 @@ namespace Z80 {
             }
         }
         
-        protected void ret_<#= cond.Value #>() {
+        void ret_<#= cond.Value #>() {
             tStates++;
             if (Condition(c_<#= cond.Value #>)) {
                 ret();
@@ -1794,7 +1794,7 @@ namespace Z80 {
 <#
     foreach (var cond in new string[]{"c", "nc", "z", "nz"}) {
 #>
-        protected void jr_<#= cond #>_pc_e() {
+        void jr_<#= cond #>_pc_e() {
             var offset = (SByte)Read8(pc++);
             if (Condition(c_<#= cond #>)) {
                 tStates += 5;
@@ -1808,7 +1808,7 @@ namespace Z80 {
 <#
     foreach (var reg in new string[]{"hl", "ix", "iy"}) {
 #>
-        protected void jp__<#= reg #>_() {
+        void jp__<#= reg #>_() {
             pc = r1.<#= reg #>;
         }
         
@@ -1819,7 +1819,7 @@ namespace Z80 {
 <#
     foreach (var vector in new string[]{"00", "08", "10", "18", "20", "28", "30", "38"}) {
 #>
-        protected void rst_<#= vector #>h() {
+        void rst_<#= vector #>h() {
             tStates++;
             DoPush(pc);
             pc = 0x<#= vector #>;
@@ -1835,7 +1835,7 @@ namespace Z80 {
             for (var b = 0; b < 8; b++) {
                 foreach (var iReg in new string[]{"ix", "iy"}) {
 #>
-        protected void ld_<#= reg #>_<#= cmd #>_<#= b #>__<#= iReg #>_d_() {
+        void ld_<#= reg #>_<#= cmd #>_<#= b #>__<#= iReg #>_d_() {
             tStates += 2;
             var offset = (SByte)Read8(pc++);
             ushort addr = (ushort)(r1.<#= iReg #> + offset);
@@ -1852,7 +1852,7 @@ namespace Z80 {
             foreach (var shiftType in new string[]{"a", "l"}) {
                 foreach (var iReg in new string[]{"ix", "iy"}) {
 #>
-        protected void ld_<#= reg #>_<#= shiftDir #><#= shiftType #>__<#= iReg #>_d_() {
+        void ld_<#= reg #>_<#= shiftDir #><#= shiftType #>__<#= iReg #>_d_() {
             tStates += 2;
             var offset = (SByte)Read8(pc++);
             ushort addr = (ushort)(r1.<#= iReg #> + offset);
@@ -1869,7 +1869,7 @@ namespace Z80 {
         foreach (var cmd in new string[]{"rl", "rlc", "rr", "rrc"}) {
             foreach (var iReg in new string[]{"ix", "iy"}) {
 #>
-        protected void ld_<#= reg #>_<#= cmd #>__<#= iReg #>_d_() {
+        void ld_<#= reg #>_<#= cmd #>__<#= iReg #>_d_() {
             tStates += 2;
             var offset = (SByte)Read8(pc++);
             ushort addr = (ushort)(r1.<#= iReg #> + offset);
