@@ -14,3 +14,11 @@ Building an emulator you'll definitely need some OS window UI, something to work
 This port is ready to use with Unity3d, however one should keep in mind that to obtain enough speed to emulate CPU (even such an old one like Z80) the only thing you can do is running the CPU emulation in a separate thread which will disallow you to communicate with Unity UI and other classes directly.
 
 Happy hacking!
+
+#### MacOSX build instructions
+
+On MacOSX there's a certain way to build the dll to match Unity3D requirements. Unity Editor requires managed plugins to be built for .Net Framework 3.5 otherwise you won't be able to even use Z80 namespace in your code. I highly recommend to build the DLL using command-line tool mcs like this:
+
+```mcs -target:library -sdk:2 -out:Z80.dll *.cs```
+
+This will build the library with a proper target platform version. Once you have the library file, just drag and drop it to your Assets folder inside Unity Editor. All the references will be created for you automatically so you don't need to update VisualStudio solution properties.
