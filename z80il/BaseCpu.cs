@@ -567,6 +567,14 @@ namespace Z80
             return tStates - t;
         }
 
+        public ulong Execute(ulong tStates) {
+            ulong t = 0;
+            while (t < tStates) {
+                t += Execute();
+            }
+            return t;
+        }
+
         protected void Unhalt() {
             if (halted) {
                 halted = false;
