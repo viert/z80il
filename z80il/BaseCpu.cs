@@ -108,6 +108,7 @@ namespace Z80
         // Execution
         public ulong tStates;
         protected bool halted;
+        private HashSet<ushort> breakpoints = new HashSet<ushort>();
 
         // Interrupts
         protected bool nmiRequested;
@@ -567,9 +568,16 @@ namespace Z80
             return tStates - t;
         }
 
+        // 
+        // in case of pc == breakpoint Execute(tStates) stops and returns 0
+        // remove breakpoint to move further or use Execute() to bypass
         public ulong Execute(ulong tStates) {
             ulong t = 0;
             while (t < tStates) {
+                if (breakpoints.Contains(pc))
+                {
+                    break;
+                }
                 t += Execute();
             }
             return t;
@@ -624,6 +632,23 @@ namespace Z80
         public void Int(byte value) {
             intVector = value;
             intRequested = true;
+        }
+
+        public void AddBreakpoint(ushort addr)
+        {
+            breakpoints.Add(addr);
+        }
+
+        public void RemoveBreakpoint(ushort addr)
+        {
+            breakpoints.Remove(addr);
+        }
+
+        public ushort[] GetBreakpoints()
+        {
+            ushort[] bkpts = new ushort[breakpoints.Count];
+            breakpoints.CopyTo(bkpts);
+            return bkpts;
         }
 
         protected void DoExecute() {
