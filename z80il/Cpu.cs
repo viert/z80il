@@ -289,7 +289,7 @@ namespace Z80 {
             opcodeTable.entries[116] = new OpcodeTableEntry(ld__hl__h, "ld (hl), h", new ArgType[]{});
             opcodeTable.entries[117] = new OpcodeTableEntry(ld__hl__l, "ld (hl), l", new ArgType[]{});
             opcodeTable.entries[119] = new OpcodeTableEntry(ld__hl__a, "ld (hl), a", new ArgType[]{});
-            opcodeTable.entries[0x36] = new OpcodeTableEntry(ld__hl__n, "ld (hl), n", new ArgType[]{ArgType.Byte});
+            opcodeTable.entries[0x36] = new OpcodeTableEntry(ld__hl__n, "ld (hl), {0}", new ArgType[]{ArgType.Byte});
             
             // LD (DE/BC), A; LD A, (DE/BC)
             opcodeTable.entries[0x0A] = new OpcodeTableEntry(ld_a__bc_, "ld a, (bc)", new ArgType[]{});
