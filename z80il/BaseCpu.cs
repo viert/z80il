@@ -668,6 +668,19 @@ namespace Z80
             }
         }
 
+        public int GetIM() {
+            return im;
+        }
+
+        public bool GetIFF1() {
+            return iff1;
+        }
+
+        public bool GetIFF2()
+        {
+            return iff2;
+        }
+
         // Disassemble(ushort addr) disassembles a single CPU operation
         // based at addr and puts it into result variable. Returns the addr
         // of the next instruction
