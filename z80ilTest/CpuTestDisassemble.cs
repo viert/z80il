@@ -42,5 +42,17 @@ namespace z80ilTest
             Assert.AreEqual("inc (iy-4)", result, "Disassembly string mismatch");
         }
 
+        [TestMethod]
+        public void DisasmSet1IYd()
+        {
+            memory.Write8(0x0000, 0xFD);
+            memory.Write8(0x0001, 0xCB);
+            memory.Write8(0x0002, 0x01);
+            memory.Write8(0x0003, 0xCE);
+            ushort next = cpu.Disassemble(0x0000, out result);
+            Assert.AreEqual(0x0004, next, "The next op addr must be 0x0004");
+            Assert.AreEqual("set 1, (iy+1)", result, "Disassembly string mismatch");
+        }
+
     }
 }

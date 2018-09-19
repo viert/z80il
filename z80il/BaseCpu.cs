@@ -658,10 +658,10 @@ namespace Z80
 
         protected void DoExecute() {
             byte opCode;
-            CodesList codes = new CodesList();
             int offset = 0;
             OpcodeTableEntry operation;
             OpcodeTable current = opcodeTable;
+            ushort start = pc;
 
             while (true) {
                 if (execIntVector) {
@@ -672,27 +672,31 @@ namespace Z80
                     pc++;
                     tStates++;
                 }
-                codes.Add(opCode);
                 IncR();
 
                 operation = current.entries[opCode];
                 if (operation == null) {
                     throw new NullReferenceException(
-                        string.Format("Operation [{0}] is not implemented", 
-                                      codes));
+                        string.Format("Operation is not implemented at 0x{0:X4}", 
+                                      start));
                 }
 
                 if (operation.func != null) {
                     pc = (ushort)(pc - offset);
                     operation.func();
+                    pc = (ushort)(pc + offset);
                     break;
                 }
+
                 if (operation.nextTable != null) {
                     current = operation.nextTable;
                     offset = current.opcodeOffset;
                     if (offset > 0) {
                         DecR();
                     }
+                } else
+                {
+                    break;
                 }
 
             }
@@ -720,63 +724,87 @@ namespace Z80
         // of the next instruction
         //
         public ushort Disassemble(ushort addr, out string result) {
-            CodesList codes = new CodesList();
-            byte opCode = this.memory.Read8(addr++);
-            codes.Add(opCode);
+            ushort start = addr;
+            byte opCode;
+            int offset = 0;
+            OpcodeTableEntry operation;
+            OpcodeTable current = opcodeTable;
 
-            OpcodeTableEntry instr = opcodeTable.entries[opCode];
-            if (instr == null)
+            while (true)
             {
-                result = string.Format("Error disassembling [{0}]", codes);
-                return addr;
-            }
+                opCode = memory.Read8((ushort)(addr + offset));
+                addr++;
 
-            while (instr.nextTable != null) {
-                OpcodeTable nextTable = instr.nextTable;
-                opCode = this.memory.Read8(addr++);
-                codes.Add(opCode);
-                instr = nextTable.entries[opCode];
-                if (instr == null) {
-                    result = string.Format("Error disassembling [{0}]", codes);
+                operation = current.entries[opCode];
+                if (operation == null)
+                {
+                    result = string.Format("Error disassembling at 0x{0:X4}", start);
                     return addr;
                 }
-            }
 
-            object[] args = new object[instr.args.Length];
-            for (int j = 0; j < instr.args.Length; j++) {
-                var argType = instr.args[j];    
-                switch (argType) {
-                    case ArgType.Byte:
-                        byte value = Read8(addr++);
-                        if (dasmMode == DisassembleMode.Dec) {
-                            args[j] = value;
-                        } else {
-                            args[j] = string.Format("${0:X2}", value);
-                        }
-                        break;
-                    case ArgType.Word:
-                        ushort value16 = Read16(addr);
-                        addr += 2;
-                        if (dasmMode == DisassembleMode.Dec) {
-                            args[j] = value16;
-                        } else {
-                            args[j] = string.Format("${0:X4}", value16);
-                        }
-                        break;
-                    case ArgType.Offset:
-                        var offset = (int)((SByte)Read8(addr++));
-                        string offFormat;
-                        if (offset >= 0) {
-                            offFormat = "+{0}";
+                if (operation.func != null)
+                {
+                    addr = (ushort)(addr - offset);
+                    object[] args = new object[operation.args.Length];
+                    for (int j = 0; j < operation.args.Length; j++)
+                    {
+                        var argType = operation.args[j];
+                        switch (argType)
+                        {
+                            case ArgType.Byte:
+                                byte value = Read8(addr++);
+                                if (dasmMode == DisassembleMode.Dec)
+                                {
+                                    args[j] = value;
+                                }
+                                else
+                                {
+                                    args[j] = string.Format("${0:X2}", value);
+                                }
+                                break;
+                            case ArgType.Word:
+                                ushort value16 = Read16(addr);
+                                addr += 2;
+                                if (dasmMode == DisassembleMode.Dec)
+                                {
+                                    args[j] = value16;
+                                }
+                                else
+                                {
+                                    args[j] = string.Format("${0:X4}", value16);
+                                }
+                                break;
+                            case ArgType.Offset:
+                                var idxOffset = (SByte)Read8(addr++);
+                                string offFormat;
+                                if (idxOffset >= 0)
+                                {
+                                    offFormat = "+{0}";
 
-                        } else {
-                            offFormat = "{0}";
+                                }
+                                else
+                                {
+                                    offFormat = "{0}";
+                                }
+                                args[j] = string.Format(offFormat, idxOffset);
+                                break;
                         }
-                        args[j] = string.Format(offFormat, offset);
-                        break;
+                    }
+                    addr = (ushort)(addr + offset);
+                    result = string.Format(operation.dasm, args);
+                    return addr;
+                }
+
+                if (operation.nextTable != null)
+                {
+                    current = operation.nextTable;
+                    offset = current.opcodeOffset;
+                } else
+                {
+                    break;
                 }
             }
-            result = string.Format(instr.dasm, args);
+            result = "Disassembler logic error";
             return addr;
         }
     }
