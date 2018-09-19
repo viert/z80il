@@ -767,21 +767,10 @@ namespace Z80
                         var offset = (int)((SByte)Read8(addr++));
                         string offFormat;
                         if (offset >= 0) {
-                            if (dasmMode == DisassembleMode.Dec) {
-                                offFormat = "+{0}";
-                            }
-                            else {
-                                offFormat = "+${0:X}";
-                            }
+                            offFormat = "+{0}";
 
                         } else {
-                            if (dasmMode == DisassembleMode.Dec) {
-                                offFormat = "{0}";
-                            } 
-                            else {
-                                offFormat = "${0:X}";
-                            }
-                            args[j] = offset;
+                            offFormat = "{0}";
                         }
                         args[j] = string.Format(offFormat, offset);
                         break;

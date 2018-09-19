@@ -30,5 +30,17 @@ namespace z80ilTest
             Assert.AreEqual("ld de, $FFFF", result, "Disassembly string mismatch");
         }
 
+        [TestMethod]
+        public void DisasmINC_IYd()
+        {
+            cpu.Reset();
+            memory.Write8(0x0000, 0xFD);
+            memory.Write8(0x0001, 0x34);
+            memory.Write8(0x0002, 0xFC);
+            ushort next = cpu.Disassemble(0x0000, out result);
+            Assert.AreEqual(0x0003, next, "The next op addr must be 0x0003");
+            Assert.AreEqual("inc (iy-4)", result, "Disassembly string mismatch");
+        }
+
     }
 }
