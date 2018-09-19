@@ -760,7 +760,7 @@ namespace Z80
                         if (dasmMode == DisassembleMode.Dec) {
                             args[j] = value16;
                         } else {
-                            args[j] = string.Format("${0:X4}", Read16(addr));
+                            args[j] = string.Format("${0:X4}", value16);
                         }
                         break;
                     case ArgType.Offset:

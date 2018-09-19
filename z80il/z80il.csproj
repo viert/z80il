@@ -4,6 +4,9 @@
     <TargetFramework>netcoreapp2.0</TargetFramework>
     <AssemblyName>Z80</AssemblyName>
     <RootNamespace>Z80</RootNamespace>
+    <Authors>Pavel Vorobyov</Authors>
+    <Company>Aquavitale</Company>
+    <Copyright>(c) 2018 Pavel Vorobyov</Copyright>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
