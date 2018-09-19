@@ -17,11 +17,13 @@ namespace Z80
         }
     }
 
+    public enum DisassembleMode { Dec, Hex };
+
     public class BaseCpu
     {
         /* Code generation helpers */
         // Parity Bit
-        protected bool[] parityBit = new bool[256] {
+        protected bool[] parityBit = {
             true, false, false, true, false, true, true, false, false, true, true, false, true, false, false, true,
             false, true, true, false, true, false, false, true, true, false, false, true, false, true, true, false,
             false, true, true, false, true, false, false, true, true, false, false, true, false, true, true, false,
@@ -108,7 +110,10 @@ namespace Z80
         // Execution
         public ulong tStates;
         protected bool halted;
-        private HashSet<ushort> breakpoints = new HashSet<ushort>();
+        HashSet<ushort> breakpoints = new HashSet<ushort>();
+
+        // Disassembly
+        DisassembleMode dasmMode = DisassembleMode.Hex;
 
         // Interrupts
         protected bool nmiRequested;
@@ -706,6 +711,10 @@ namespace Z80
             return iff2;
         }
 
+        public void SetDisassembleMode(DisassembleMode mode) {
+            dasmMode = mode;
+        }
+
         // Disassemble(ushort addr) disassembles a single CPU operation
         // based at addr and puts it into result variable. Returns the addr
         // of the next instruction
@@ -738,19 +747,43 @@ namespace Z80
                 var argType = instr.args[j];    
                 switch (argType) {
                     case ArgType.Byte:
-                        args[j] = Read8(addr++);
+                        byte value = Read8(addr++);
+                        if (dasmMode == DisassembleMode.Dec) {
+                            args[j] = value;
+                        } else {
+                            args[j] = string.Format("${0:X2}", value);
+                        }
                         break;
                     case ArgType.Word:
-                        args[j] = Read16(addr);
+                        ushort value16 = Read16(addr);
                         addr += 2;
+                        if (dasmMode == DisassembleMode.Dec) {
+                            args[j] = value16;
+                        } else {
+                            args[j] = string.Format("${0:X4}", Read16(addr));
+                        }
                         break;
                     case ArgType.Offset:
                         var offset = (int)((SByte)Read8(addr++));
+                        string offFormat;
                         if (offset >= 0) {
-                            args[j] = string.Format("+{0}", offset);
+                            if (dasmMode == DisassembleMode.Dec) {
+                                offFormat = "+{0}";
+                            }
+                            else {
+                                offFormat = "+${0:X}";
+                            }
+
                         } else {
+                            if (dasmMode == DisassembleMode.Dec) {
+                                offFormat = "{0}";
+                            } 
+                            else {
+                                offFormat = "${0:X}";
+                            }
                             args[j] = offset;
                         }
+                        args[j] = string.Format(offFormat, offset);
                         break;
                 }
             }
