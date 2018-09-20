@@ -22,3 +22,7 @@ On MacOSX there's a certain way to build the dll to match Unity3D requirements. 
 ```mcs -target:library -sdk:2 -out:Z80.dll *.cs```
 
 This will build the library with a proper target platform version. Once you have the library file, just drag and drop it to your Assets folder inside Unity Editor. All the references will be created for you automatically so you don't need to update VisualStudio solution properties.
+
+#### Note on Windows building
+
+On Windows the native way to build the dll is to use Visual Studio. However modern versions of VS won't build the code to target .Net 3.5 either as it's considered as legacy. Unless you have an old version of Visual Studio you have to use mcs with `-sdk:2` flag as mentioned in MacOSX build section of this doc to use the library with Unity3D.
